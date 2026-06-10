@@ -195,11 +195,19 @@ const C: Record<string, PageContent> = {
     eyebrow: "About BALI",
     title: "National Landscape Awards",
     theme: "blue",
-    intro: "We are thrilled to announce that this years National Landscape Award entries are now open! Enter now here.",
+    intro: "The BALI National Landscape Awards are the most prestigious awards in UK landscaping, recognising design, construction, maintenance, supply and employer excellence across the industry. Held annually at a black-tie ceremony, the Awards celebrate the very best of what our members deliver.",
     sections: [
       {
         heading: "Inspiring and celebrating landscaping excellence",
-        body: "The National Landscape Awards provides the industry with a platform in which to showcase and improve their business and celebrate their achievements both within and outside of the industry. There are categories appropriate to all Accredited categories of membership. If you are an Accredited Contractor or Group or Accredited Designer member, there are categories appropriate to all scheme sizes/values and the same criteria apply, whether it is a small domestic garden or a large public landscaped space. Interested in the Supplier Exceptional Service or Employer Excellence categories? These categories have been developed to allow you to showcase your company to the industry through the exceptional service and/or products you provide or your exemplary business practices. Entries are open now! Click here. Learn more about the Awards here.",
+        body: "The National Landscape Awards give the industry a national platform to showcase outstanding projects and business practice. Categories cover every Accredited membership type and every project scale — from intimate domestic gardens to landmark public realm schemes.",
+      },
+      {
+        heading: "Categories for every member",
+        body: "Accredited Contractors, Designers, Suppliers and Affiliates can enter categories appropriate to their work. The Supplier Exceptional Service and Employer Excellence categories celebrate outstanding service, product innovation and exemplary business practice across the supply chain.",
+      },
+      {
+        heading: "How to enter",
+        body: "Entries for the 2026 National Landscape Awards are open now. Submissions are made via the BALI Awards portal — the awards team is on hand to support members through the entry process, judging and the awards evening itself.",
       },
     ],
     ctaPrimary: { label: "Join Our Association", href: "/join" },
