@@ -4,11 +4,13 @@
 export type PageSection = { heading: string; body: string; bullets?: string[] };
 export type PageHighlight = { title: string; body: string };
 export type PageCTA = { label: string; href: string };
+export type PageImage = { url: string; alt: string };
 export type PageContent = {
   eyebrow: string;
   title: string;
   intro: string;
   theme: "blue" | "green" | "slate" | "flow" | "warm" | "purple";
+  image?: PageImage;
   sections?: PageSection[];
   highlights?: PageHighlight[];
   ctaPrimary?: PageCTA;
@@ -22,6 +24,7 @@ const C: Record<string, PageContent> = {
     title: "What is BALI",
     theme: "blue",
     intro: "The British Association of Landscape Industries is the leading Trade Association representing all landscape professionals - from design, build and maintenance through to supply, training and education. Over 900 Accredited members represent some of the best landscaping businesses across the country, from large corporations, to local traders, to individual designers.",
+    image: { url: "/__l5e/assets-v1/f84f9fdd-4c58-4342-9115-d5228b3c6d78/large_mountbatten-house-min.jpeg", alt: "Mountbatten House landscape" },
     sections: [
       {
         heading: "Join the British Association of Landscape Industries",
@@ -40,6 +43,7 @@ const C: Record<string, PageContent> = {
     title: "Our Board of Directors",
     theme: "blue",
     intro: "The Board of Directors is the governing body of the Association, responsible for providing strategic leadership and the ultimate direction of the organisation. Although the Board work together for the best interests of the Association and its members, each Director has their own focus and passion within the wider industry.",
+    image: { url: "/__l5e/assets-v1/30fc6cac-fc2c-4385-b5bf-c3bbd43fa961/small_adrian-wickham-1.png", alt: "Adrian Wickham 2022" },
     sections: [
       {
         heading: "Adrian Wickham, Chair",
@@ -82,6 +86,7 @@ const C: Record<string, PageContent> = {
     title: "GoLandscape — Careers in Landscaping",
     theme: "blue",
     intro: "We have proudly established GoLandscape - an education, skills and careers initiative that is designed to inform and inspire new recruits and combat industry issues, including a severe skills shortage, which also sustains, builds on and develops this remarkable and rewarding sector.",
+    image: { url: "/__l5e/assets-v1/a5290e22-f805-49d7-932e-6e9217376059/bali-jobs-people.jpg", alt: "BALI Jobs" },
     sections: [
       {
         heading: "Overview",
@@ -103,6 +108,7 @@ const C: Record<string, PageContent> = {
     title: "BALI Charities of the Year",
     theme: "blue",
     intro: "We are proud to offer our support to these worthy causes, including our own charity, the BALI Chalk Fund.",
+    image: { url: "/__l5e/assets-v1/796d324b-86f1-4094-a94a-9d98a264d7af/medium_bali-chalk-fund.png", alt: "BALI Chalk Fund" },
     sections: [
       {
         heading: "Overview",
@@ -133,6 +139,7 @@ const C: Record<string, PageContent> = {
     title: "BALI National Landscape Conference 2026",
     theme: "blue",
     intro: "The UK’s landscaping sector is at a turning point. Climate pressures are growing, skills are in short supply, and new rules like Biodiversity Net Gain are raising the stakes. BALI’s National Landscape Conference brings together the industry’s brightest minds to ask one vital question: how do we build landscapes and organisations that are truly future-proof? Hear from visionaries including Helen Nyul, Director of Ecology at Verna, and Sir Tim Smit, Founder of the Eden Project.Book nowdetailsThe UK landscaping sector stands at a defining moment.",
+    image: { url: "/__l5e/assets-v1/ea4903cb-9e33-43c9-9370-90c0844b9740/medium_11.png", alt: "Helen Nyul" },
     sections: [
       {
         heading: "Overview",
@@ -156,6 +163,7 @@ const C: Record<string, PageContent> = {
     title: "BALI National Children's Forest",
     theme: "blue",
     intro: "The Association's National Contractor’s Forum (NCF) is a specialist group set up to lobby on important issues and address key challenges within the land-based sector.Its constituents are drawn from different sectors of the industry, creating a formalised group of influence. It provides the landscape management, maintenance and construction sectors with a structure through which they can communicate across and beyond the industry.The Forum is made up of seven of the UK’s largest landscape contractors and grounds maintenance providers. Their responsibility is to support the British Association of Landscape Industries through their lobbying efforts.",
+    image: { url: "/__l5e/assets-v1/db968096-bc3a-4274-914c-04a48337626d/bali-ncf-primary-identity.png", alt: "BALI-NCF logo" },
     sections: [
       {
         heading: "Become a member",
@@ -188,6 +196,7 @@ const C: Record<string, PageContent> = {
     title: "BALI National Landscape Awards",
     theme: "blue",
     intro: "We are thrilled to announce that this years National Landscape Award entries are now open! Enter now here.",
+    image: { url: "/__l5e/assets-v1/a179063f-7964-4e3c-8179-b686c51d9934/large_homepage-banner-3.jpeg", alt: "British landscape industry" },
     sections: [
       {
         heading: "Inspiring and celebrating landscaping excellence",
@@ -202,6 +211,7 @@ const C: Record<string, PageContent> = {
     title: "Advertise with BALI",
     theme: "blue",
     intro: "The British Association of Landscape Industries is the leading Trade Association in the UK for the landscaping industry, supporting and promoting its members and their businesses and inspiring the future workforce. With over 900 Accredited member companies and individuals, Association members pride themselves on providing clients with professional and specialist services using accredited techniques and practices.",
+    image: { url: "/__l5e/assets-v1/859a80ad-ac37-4a28-aaea-c10f84d95e66/large_homepage-banner-1.jpeg", alt: "Landscape professionals at work" },
     sections: [
       {
         heading: "Overview",
@@ -223,6 +233,7 @@ const C: Record<string, PageContent> = {
     title: "Contact the BALI Team",
     theme: "slate",
     intro: "More information about contact the bali team is available below or by contacting the BALI team.",
+    image: { url: "/__l5e/assets-v1/119be43e-6389-4927-b7eb-fc9a56fde67c/large_web-banner.png", alt: "BALI landscape banner" },
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact us", href: "/contact" },
   },
@@ -231,6 +242,7 @@ const C: Record<string, PageContent> = {
     title: "Search Our Membership Directory",
     theme: "flow",
     intro: "Our Accredited members offer the finest quality specialist products and services to suit all situations. From topographical surveys, scaled drawings and planting plans to landscape build and grounds maintenance. Our members also have the largest selection of landscaping supplies, from turf, plants, wildflower seeds and soils to paving, walling, water features and living walls.",
+    image: { url: "/__l5e/assets-v1/1bd255d7-3cfd-4955-95ca-1f6ebfc5b292/small_join-bali-small.png", alt: "join bali small" },
     sections: [
       {
         heading: "Overview",
@@ -273,6 +285,7 @@ const C: Record<string, PageContent> = {
     title: "Find a Landscape Contractor",
     theme: "flow",
     intro: "Our Accredited members offer the finest quality specialist products and services to suit all situations. From topographical surveys, scaled drawings and planting plans to landscape build and grounds maintenance. Our members also have the largest selection of landscaping supplies, from turf, plants, wildflower seeds and soils to paving, walling, water features and living walls.",
+    image: { url: "/__l5e/assets-v1/1bd255d7-3cfd-4955-95ca-1f6ebfc5b292/small_join-bali-small.png", alt: "join bali small" },
     sections: [
       {
         heading: "Overview",
@@ -315,6 +328,7 @@ const C: Record<string, PageContent> = {
     title: "Find a Landscape Designer",
     theme: "flow",
     intro: "Our Accredited members offer the finest quality specialist products and services to suit all situations. From topographical surveys, scaled drawings and planting plans to landscape build and grounds maintenance. Our members also have the largest selection of landscaping supplies, from turf, plants, wildflower seeds and soils to paving, walling, water features and living walls.",
+    image: { url: "/__l5e/assets-v1/1bd255d7-3cfd-4955-95ca-1f6ebfc5b292/small_join-bali-small.png", alt: "join bali small" },
     sections: [
       {
         heading: "Overview",
@@ -357,6 +371,7 @@ const C: Record<string, PageContent> = {
     title: "Find a Landscape Supplier",
     theme: "flow",
     intro: "Our Accredited members offer the finest quality specialist products and services to suit all situations. From topographical surveys, scaled drawings and planting plans to landscape build and grounds maintenance. Our members also have the largest selection of landscaping supplies, from turf, plants, wildflower seeds and soils to paving, walling, water features and living walls.",
+    image: { url: "/__l5e/assets-v1/1bd255d7-3cfd-4955-95ca-1f6ebfc5b292/small_join-bali-small.png", alt: "join bali small" },
     sections: [
       {
         heading: "Overview",
@@ -399,6 +414,7 @@ const C: Record<string, PageContent> = {
     title: "Find a Training Provider",
     theme: "flow",
     intro: "Our Accredited members offer the finest quality specialist products and services to suit all situations. From topographical surveys, scaled drawings and planting plans to landscape build and grounds maintenance. Our members also have the largest selection of landscaping supplies, from turf, plants, wildflower seeds and soils to paving, walling, water features and living walls.",
+    image: { url: "/__l5e/assets-v1/1bd255d7-3cfd-4955-95ca-1f6ebfc5b292/small_join-bali-small.png", alt: "join bali small" },
     sections: [
       {
         heading: "Overview",
@@ -441,6 +457,7 @@ const C: Record<string, PageContent> = {
     title: "Search All Members",
     theme: "flow",
     intro: "Our Accredited members offer the finest quality specialist products and services to suit all situations. From topographical surveys, scaled drawings and planting plans to landscape build and grounds maintenance. Our members also have the largest selection of landscaping supplies, from turf, plants, wildflower seeds and soils to paving, walling, water features and living walls.",
+    image: { url: "/__l5e/assets-v1/1bd255d7-3cfd-4955-95ca-1f6ebfc5b292/small_join-bali-small.png", alt: "join bali small" },
     sections: [
       {
         heading: "Overview",
@@ -483,6 +500,7 @@ const C: Record<string, PageContent> = {
     title: "Why Choose a BALI Member",
     theme: "flow",
     intro: "Members of the British Association of Landscape Industries are the best of the best in their sectors. They produce beautiful gardens, landscapes and high quality products fit for the most stunning gardens.",
+    image: { url: "/__l5e/assets-v1/9e53aec8-2d0a-4c70-bd1d-9c93b8d52db1/210311-registered-designer-webpage.jpg", alt: "Image of a wrought iron lamp in a green garden with white roses in the foreground." },
     sections: [
       {
         heading: "Overview",
@@ -497,6 +515,7 @@ const C: Record<string, PageContent> = {
     title: "Upcoming BALI Events",
     theme: "warm",
     intro: "Join us for this informative and educational Midlands regional event, hosted by Sky Garden",
+    image: { url: "/__l5e/assets-v1/298debb1-ddb8-40e1-8748-a332d4a7f489/worplesdon-pub-800x500.png", alt: "Upcoming BALI Events" },
     sections: [
       {
         heading: "BALI Chalk Fund Landscape Open Mic Night",
@@ -511,6 +530,7 @@ const C: Record<string, PageContent> = {
     title: "Sponsor the National Conference 2026",
     theme: "warm",
     intro: "More information about sponsor the national conference 2026 is available below or by contacting the BALI team.",
+    image: { url: "/__l5e/assets-v1/f84f9fdd-4c58-4342-9115-d5228b3c6d78/large_mountbatten-house-min.jpeg", alt: "Mountbatten House landscape" },
     ctaPrimary: { label: "See upcoming events", href: "/events" },
     ctaSecondary: { label: "Training courses", href: "/events/training" },
   },
@@ -519,6 +539,7 @@ const C: Record<string, PageContent> = {
     title: "BALI Training Courses",
     theme: "warm",
     intro: "Mandatory course for most LISS/CSCS SmartCards. This course is hosted by Landscape Training Group.",
+    image: { url: "/__l5e/assets-v1/9a43f90a-4a3a-4a31-80cb-fd5e1c43f0c0/jdrgroup-factlogo-iq-19-01-2026-v3-2-.jpg", alt: "BALI Training Courses" },
     sections: [
       {
         heading: "ROLO Health, Safety and Environmental Awareness Course for Operatives - 1 day",
@@ -557,6 +578,7 @@ const C: Record<string, PageContent> = {
     title: "BALI Help & Advice",
     theme: "slate",
     intro: "contract for use on all domestic landscape and garden design and build projects",
+    image: { url: "/__l5e/assets-v1/a179063f-7964-4e3c-8179-b686c51d9934/large_homepage-banner-3.jpeg", alt: "British landscape industry" },
     sections: [
       {
         heading: "Health And Safety",
@@ -594,6 +616,7 @@ const C: Record<string, PageContent> = {
     title: "Contracts, Law and Regulations",
     theme: "slate",
     intro: "Water abstraction refers to the process of taking or extracting water from a natural source (rivers, lakes, groundwater aquifers, etc.) for various uses, from drinking to irrigation, treatment, and industrial applications.",
+    image: { url: "/__l5e/assets-v1/859a80ad-ac37-4a28-aaea-c10f84d95e66/large_homepage-banner-1.jpeg", alt: "Landscape professionals at work" },
     sections: [
       {
         heading: "VAT reverse charge",
@@ -612,6 +635,7 @@ const C: Record<string, PageContent> = {
     title: "Dispute Resolution Service",
     theme: "slate",
     intro: "More information about dispute resolution service is available below or by contacting the BALI team.",
+    image: { url: "/__l5e/assets-v1/119be43e-6389-4927-b7eb-fc9a56fde67c/large_web-banner.png", alt: "BALI landscape banner" },
     ctaPrimary: { label: "Browse all guides", href: "/help" },
     ctaSecondary: { label: "Contact our team", href: "/contact" },
   },
@@ -620,6 +644,7 @@ const C: Record<string, PageContent> = {
     title: "BALI Hardship Fund",
     theme: "slate",
     intro: "The Membership Hardship Fund is intended to help current members continue their association with BALI in the event of unforeseen financial difficulty.",
+    image: { url: "/__l5e/assets-v1/f84f9fdd-4c58-4342-9115-d5228b3c6d78/large_mountbatten-house-min.jpeg", alt: "Mountbatten House landscape" },
     sections: [
       {
         heading: "Overview",
@@ -641,6 +666,7 @@ const C: Record<string, PageContent> = {
     title: "Health & Safety Guidance",
     theme: "slate",
     intro: "The law requires employers to identify the hazards that could cause injury or illness to staff. Learn more here",
+    image: { url: "/__l5e/assets-v1/a179063f-7964-4e3c-8179-b686c51d9934/large_homepage-banner-3.jpeg", alt: "British landscape industry" },
     sections: [
       {
         heading: "Lone Working",
@@ -655,6 +681,7 @@ const C: Record<string, PageContent> = {
     title: "Contracts, Law and Regulations",
     theme: "slate",
     intro: "Water abstraction refers to the process of taking or extracting water from a natural source (rivers, lakes, groundwater aquifers, etc.) for various uses, from drinking to irrigation, treatment, and industrial applications.",
+    image: { url: "/__l5e/assets-v1/859a80ad-ac37-4a28-aaea-c10f84d95e66/large_homepage-banner-1.jpeg", alt: "Landscape professionals at work" },
     sections: [
       {
         heading: "VAT reverse charge",
@@ -673,6 +700,7 @@ const C: Record<string, PageContent> = {
     title: "Pests and Diseases",
     theme: "slate",
     intro: "A resource for all disciplines of landscape professional wishing to learn about the threat from high profile pests and diseases, together with the latest legal requirements and best practice for specific species. Some of the articles on this page are for members only. To access, become a member by making an enquiry.",
+    image: { url: "/__l5e/assets-v1/119be43e-6389-4927-b7eb-fc9a56fde67c/large_web-banner.png", alt: "BALI landscape banner" },
     ctaPrimary: { label: "Browse all guides", href: "/help" },
     ctaSecondary: { label: "Contact our team", href: "/contact" },
   },
@@ -681,6 +709,7 @@ const C: Record<string, PageContent> = {
     title: "Guides, Podcasts & Resources",
     theme: "slate",
     intro: "Unlock your marketing potential with our exclusive collection of best practice guides, created just for BALI members.",
+    image: { url: "/__l5e/assets-v1/bc91e89c-7621-4445-86f6-d1496974c933/small_4smbpg-800x500.png", alt: "Social Media Best Practice Guide" },
     sections: [
       {
         heading: "Overview",
@@ -695,6 +724,7 @@ const C: Record<string, PageContent> = {
     title: "Join Our Association",
     theme: "green",
     intro: "Become a member of the British Association of Landscape Industries and access exclusive benefits designed to help your business grow, thrive, and stand out.",
+    image: { url: "/__l5e/assets-v1/f84f9fdd-4c58-4342-9115-d5228b3c6d78/large_mountbatten-house-min.jpeg", alt: "Mountbatten House landscape" },
     sections: [
       {
         heading: "Why Join BALI?",
@@ -754,6 +784,7 @@ const C: Record<string, PageContent> = {
     title: "Lay of the Land 2025",
     theme: "green",
     intro: "With a contribution of £38bn to UK GDP and the supporting of 722,000 jobs, the environmental and landscaping sector provides clear benefits to the UK, not only financially, but also in mental wellbeing and the enjoyment of our communities and outdoor spaces.",
+    image: { url: "/__l5e/assets-v1/a179063f-7964-4e3c-8179-b686c51d9934/large_homepage-banner-3.jpeg", alt: "British landscape industry" },
     sections: [
       {
         heading: "Overview",
@@ -780,6 +811,7 @@ const C: Record<string, PageContent> = {
     title: "What is LISS/CSCS?",
     theme: "blue",
     intro: "LISS/CSCS is both a standalone scheme and a mandatory requirement of the National Highways Sector Scheme 18 (Land-based) recognised by Build UK. It is designed to support the development of an industry framework for skills development and progression in the workplace alongside CSCS.",
+    image: { url: "/__l5e/assets-v1/7d357e1d-8b62-4bc6-bfb8-a4f86c403651/screenshot-2020-10-16-at-10.08.26.png", alt: "LISS/CSCS SmartCards" },
     sections: [
       {
         heading: "Overview",
@@ -809,6 +841,7 @@ const C: Record<string, PageContent> = {
     title: "LISS/CSCS Industry Accreditation",
     theme: "blue",
     intro: "To meet the requirements of the Construction Leadership Council (CLC) LISS/CSCS develop plans to move all Industry Accreditation (IA) cardholders to a recognised qualification.",
+    image: { url: "/__l5e/assets-v1/859a80ad-ac37-4a28-aaea-c10f84d95e66/large_homepage-banner-1.jpeg", alt: "Landscape professionals at work" },
     ctaPrimary: { label: "Apply for a card", href: "/liss-cscs/apply" },
     ctaSecondary: { label: "Check qualifications", href: "/liss-cscs/check" },
   },
@@ -817,6 +850,7 @@ const C: Record<string, PageContent> = {
     title: "Apply for a LISS/CSCS Smartcard",
     theme: "blue",
     intro: "Depending on the type of work you or your employee(s) carry out, choose from one of seven industry categories below. This includes New, Update, Renewal or Duplicate SmartCards.",
+    image: { url: "/__l5e/assets-v1/119be43e-6389-4927-b7eb-fc9a56fde67c/large_web-banner.png", alt: "BALI landscape banner" },
     sections: [
       {
         heading: "Overview",
@@ -831,6 +865,7 @@ const C: Record<string, PageContent> = {
     title: "Check Qualifications",
     theme: "blue",
     intro: "It is advisable to map your qualification(s) to the relevant LISS/CSCS SmartCard before making your application. Find out which SmartCard is suited to you based on whether you hold a UK or overseas qualification. By using the Construction Industry App - Smart Check, a free-to-download application for handheld devices and PCs, your LISS/CSCS SmartCard can be read electronically.",
+    image: { url: "/__l5e/assets-v1/f84f9fdd-4c58-4342-9115-d5228b3c6d78/large_mountbatten-house-min.jpeg", alt: "Mountbatten House landscape" },
     ctaPrimary: { label: "Apply for a card", href: "/liss-cscs/apply" },
     ctaSecondary: { label: "Check qualifications", href: "/liss-cscs/check" },
   },
@@ -839,6 +874,7 @@ const C: Record<string, PageContent> = {
     title: "NHSS 18 Highway Sector Scheme",
     theme: "blue",
     intro: "The National Highways Sector Scheme 18 (NHSS18) is the customised management system for landscaping and the environment (including ecology) and is a mandatory requirement for all contractors working for Highways England and other infrastructure providers.",
+    image: { url: "/__l5e/assets-v1/a179063f-7964-4e3c-8179-b686c51d9934/large_homepage-banner-3.jpeg", alt: "British landscape industry" },
     sections: [
       {
         heading: "Overview",
@@ -860,6 +896,7 @@ const C: Record<string, PageContent> = {
     title: "ROLO Health, Safety & Environmental Awareness",
     theme: "blue",
     intro: "ROLO (Register of Land-based Operations) is recognised by Build UK as one of the leading Health, Safety and Environmental Awareness Courses in the UK, designed exclusively for the Land-based industries by landscaping professionals.ROLO was developed and is owned by the British Association of Landscape Industries to raise the standard of health and safety, environmental awareness, and reduce the risk of accidents in the workplace. It also encourages employers to keep a record of workers in the Land-based sector who have achieved a recognised level of competence.",
+    image: { url: "/__l5e/assets-v1/859a80ad-ac37-4a28-aaea-c10f84d95e66/large_homepage-banner-1.jpeg", alt: "Landscape professionals at work" },
     sections: [
       {
         heading: "Why is ROLO important?",
@@ -906,6 +943,7 @@ const C: Record<string, PageContent> = {
     title: "BALI Membership",
     theme: "green",
     intro: "Our Accredited members offer the finest quality specialist products and services to suit all situations. From topographical surveys, scaled drawings and planting plans to landscape build and grounds maintenance. Our members also have the largest selection of landscaping supplies, from turf, plants, wildflower seeds and soils to paving, walling, water features and living walls.",
+    image: { url: "/__l5e/assets-v1/1bd255d7-3cfd-4955-95ca-1f6ebfc5b292/small_join-bali-small.png", alt: "join bali small" },
     sections: [
       {
         heading: "Overview",
@@ -948,6 +986,7 @@ const C: Record<string, PageContent> = {
     title: "BALI Code of Conduct",
     theme: "green",
     intro: "More information about bali code of conduct is available below or by contacting the BALI team.",
+    image: { url: "/__l5e/assets-v1/119be43e-6389-4927-b7eb-fc9a56fde67c/large_web-banner.png", alt: "BALI landscape banner" },
     sections: [
       {
         heading: "Continued membership of the Association is dependent upon agreement to abide by the Association’s Code of Conduct detailed below",
@@ -972,6 +1011,7 @@ const C: Record<string, PageContent> = {
     title: "BALI Quality Standard",
     theme: "green",
     intro: "The purpose of this standard is to ensure that British Association of Landscape Industries' Accredited members can demonstrate that they have sufficient commitment, systems, skills, resources and controls in place to consistently meet relevant customer, legislative and regulatory requirements in a measured and professional manner.",
+    image: { url: "/__l5e/assets-v1/f84f9fdd-4c58-4342-9115-d5228b3c6d78/large_mountbatten-house-min.jpeg", alt: "Mountbatten House landscape" },
     sections: [
       {
         heading: "Introduction",
@@ -986,6 +1026,7 @@ const C: Record<string, PageContent> = {
     title: "Terms of Membership",
     theme: "green",
     intro: "These are the standard terms and conditions of membership of BALI (which supplement the provisions contained in the Articles of Association). They may be varied by the Board of Directors. Notice of any variation will be given to members. The current version of the terms and conditions is available at https://www.bali.org.uk/members/terms-of-membership/. These terms and conditions along with your application form and the provisions of the Articles of Association form the agreement (“Agreement”) between each member and BALI.",
+    image: { url: "/__l5e/assets-v1/a179063f-7964-4e3c-8179-b686c51d9934/large_homepage-banner-3.jpeg", alt: "British landscape industry" },
     sections: [
       {
         heading: "Applying for membership",
@@ -1028,6 +1069,7 @@ const C: Record<string, PageContent> = {
     title: "Latest News",
     theme: "purple",
     intro: "Volunteers from Jack Moody Group have recently completed a new community landscaping project in Cheslyn Hay",
+    image: { url: "/__l5e/assets-v1/731280f5-5ca5-49ee-9543-e7d1c1ebcc68/large_cheslyn-hay-min.jpeg", alt: "Latest News" },
     sections: [
       {
         heading: "Water ways: latest government white paper brings a flood of landscaping opportunity",
@@ -1070,6 +1112,7 @@ const C: Record<string, PageContent> = {
     title: "Landscape News Magazine",
     theme: "purple",
     intro: "Landscape News is BALI's official member magazine, filled with great stories about member projects, helpful business advice, and thought-provoking opinion, along with news and events updates from the UK's biggest trade association for the landscape industries.",
+    image: { url: "/__l5e/assets-v1/859a80ad-ac37-4a28-aaea-c10f84d95e66/large_homepage-banner-1.jpeg", alt: "Landscape professionals at work" },
     sections: [
       {
         heading: "Overview",
@@ -1124,6 +1167,7 @@ const C: Record<string, PageContent> = {
     title: "Privacy Policy",
     theme: "slate",
     intro: "This policy (together with our Terms and Conditions and any other documents referred to on it) sets out the basis on which any personal data we collect from you, or that you provide to us, will be processed by us. Please read the following carefully to understand our views and practices regarding your personal data and how we will treat it.",
+    image: { url: "/__l5e/assets-v1/119be43e-6389-4927-b7eb-fc9a56fde67c/large_web-banner.png", alt: "BALI landscape banner" },
     sections: [
       {
         heading: "Overview",
@@ -1166,6 +1210,7 @@ const C: Record<string, PageContent> = {
     title: "Cookie Policy",
     theme: "slate",
     intro: "There are a number of ways we collect your data. We process your data to provide a service to you, whether you make an enquiry, locate a member, log in to your member's area (applicable to members only) or by purchasing a product or service. When you complete a form, we collect information which we will use to respond to your enquiry. In order to satisfy your request, we ask for relevant contact details such as name, email address and telephone number. We may also ask for your geographic area and industry specialisms. This depends on which enquiry form you are completing.",
+    image: { url: "/__l5e/assets-v1/f84f9fdd-4c58-4342-9115-d5228b3c6d78/large_mountbatten-house-min.jpeg", alt: "Mountbatten House landscape" },
     sections: [
       {
         heading: "We collect some information",
@@ -1208,6 +1253,7 @@ const C: Record<string, PageContent> = {
     title: "Terms and Conditions",
     theme: "slate",
     intro: "This acceptable use policy sets out the content standards that apply when you upload content to our site, make contact with other users on our site, link to our site, or interact with our site in any other way.",
+    image: { url: "/__l5e/assets-v1/a179063f-7964-4e3c-8179-b686c51d9934/large_homepage-banner-3.jpeg", alt: "British landscape industry" },
     sections: [
       {
         heading: "Who we are and how to contact us",
@@ -1262,6 +1308,7 @@ const C: Record<string, PageContent> = {
     title: "Website Disclaimer",
     theme: "slate",
     intro: "1.1 bali.org.uk is the website (\"site\") of the British Association of Landscape Industries (\"BALI\"). BALI makes no warranties, representations or undertakings about any of the content of this site (including, without limitation, any as to the quality, accuracy, completeness or fitness for any particular purpose of such content), or any content of any other website referred to, referred by or accessed by hypertext link through this site (‘third party site’).",
+    image: { url: "/__l5e/assets-v1/859a80ad-ac37-4a28-aaea-c10f84d95e66/large_homepage-banner-1.jpeg", alt: "Landscape professionals at work" },
     sections: [
       {
         heading: "Overview",
@@ -1276,6 +1323,7 @@ const C: Record<string, PageContent> = {
     title: "Site Map",
     theme: "slate",
     intro: "More information about site map is available below or by contacting the BALI team.",
+    image: { url: "/__l5e/assets-v1/119be43e-6389-4927-b7eb-fc9a56fde67c/large_web-banner.png", alt: "BALI landscape banner" },
     sections: [
       {
         heading: "Key points",
@@ -1300,6 +1348,7 @@ const C: Record<string, PageContent> = {
     title: "Forgotten Password",
     theme: "slate",
     intro: "*Once your password is renewed, please close the browser and re-open it, then enter your credentials to avoid any issues.*",
+    image: { url: "/__l5e/assets-v1/f84f9fdd-4c58-4342-9115-d5228b3c6d78/large_mountbatten-house-min.jpeg", alt: "Mountbatten House landscape" },
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact us", href: "/contact" },
   },
