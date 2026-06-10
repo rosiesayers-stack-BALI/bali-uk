@@ -607,21 +607,26 @@ const C: Record<string, PageContent> = {
   },
   "/help/health-safety": {
     eyebrow: "Help & Advice",
-    title: "Health And Safety",
+    title: "Health & Safety",
     theme: "flow",
-    intro: "Online resource for members, including helpful tools, templates and documents",
+    intro: "BALI provides members with practical health and safety guidance, tools and templates to help keep their teams and clients safe. From risk assessments and method statements to lone-working policies and PPE guidance, our resources are tailored to the realities of landscape work.",
     sections: [
       {
-        heading: "risk assessment",
-        body: "The law requires employers to identify the hazards that could cause injury or illness to staff. Learn more here",
+        heading: "Risk assessment",
+        body: "The law requires employers to identify hazards that could cause injury or illness to staff. BALI's risk assessment templates and guidance help members meet their legal duties and embed safe systems of work on every site.",
       },
       {
-        heading: "lone working",
-        body: "As with any other work-related task, employers have a responsibility to manage the risk employees face when working alone.",
+        heading: "Lone working",
+        body: "Many landscape activities involve staff working alone. Employers have a responsibility to manage the risk lone workers face — BALI's guidance covers communication, check-in procedures and emergency response.",
+      },
+      {
+        heading: "Member-only resources",
+        body: "Logged-in members can access a growing library of downloadable templates, toolbox talks and policy documents covering all major aspects of landscape health and safety.",
       },
     ],
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
   },
   "/help/law": {
     eyebrow: "Help & Advice",
