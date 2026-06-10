@@ -20,6 +20,12 @@ export const Route = createFileRoute("/$")({
         { name: "description", content: desc },
         { property: "og:title", content: `${title} — BALI` },
         { property: "og:description", content: desc },
+        ...(content?.image
+          ? [
+              { property: "og:image", content: content.image.url },
+              { name: "twitter:image", content: content.image.url },
+            ]
+          : []),
       ],
     };
   },
