@@ -415,16 +415,24 @@ const C: Record<string, PageContent> = {
   },
   "/events": {
     eyebrow: "Events",
-    title: "Events",
+    title: "BALI Events",
     theme: "warm",
-    intro: "Join us for this informative and educational Midlands regional event, hosted by Sky Garden",
+    intro: "From the flagship National Conference and Landscape Awards to regional Connect meet-ups, training days and supplier forums, BALI events bring the UK landscape industry together. Browse upcoming events, book your place and meet members, partners and industry leaders.",
     sections: [
       {
-        heading: "16 Jul 2026 | STIHL Places available Book now BALI Chalk Fund Landscape Open Mic Night",
-        body: "The BALI Chalk team is hosting an Open Mic event at the Spice of Life Bar, Soho on 1 October",
+        heading: "National events",
+        body: "Our flagship national events — including the National Conference, the National Landscape Awards and the Lay of the Land Forum — are unmissable dates in the industry calendar, attracting senior leaders from across the sector.",
+      },
+      {
+        heading: "Regional Connects",
+        body: "Our regional committees host informal Connect evenings, site visits and networking events across the UK throughout the year — an ideal way to meet other members and committee leads in your area.",
+      },
+      {
+        heading: "Supplier Forums and training",
+        body: "Supplier Forum events bring product manufacturers and the wider membership together, while our training partners deliver CPD-accredited short courses and qualifications nationwide.",
       },
     ],
-    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaPrimary: { label: "Browse upcoming events", href: "/events" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
   "/events/sponsor": {
