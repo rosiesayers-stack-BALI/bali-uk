@@ -611,16 +611,71 @@ const C: Record<string, PageContent> = {
     image: { url: "/__l5e/assets-v1/859a80ad-ac37-4a28-aaea-c10f84d95e66/large_homepage-banner-1.jpeg", alt: "Landscape professionals at work" },
     sections: [
       {
-        heading: "water abstraction",
-        body: "Water abstraction refers to the process of taking or extracting water from a natural source (rivers, lakes, groundwater aquifers, etc.) for various uses, from drinking to irrigation, treatment, and industrial applications.",
+        heading: "Construction Design Management CDM",
+        body: "The Construction (Design & Management) Regulations 2015 are the main set of regulations for managing the health, safety and welfare of construction projects. The scope of works covered by the definition of 'Construction' in CDM includes many aspects of landscape works, including site clearance, excavation, drainage and earthworks. In addition, any landscape contractor undertaking work on a construction site where other contractors are present will have responsibilities under CDM. Please click on the buttons below to learn more about your responsibilities under CDM:",
       },
       {
-        heading: "VAT reverse charge",
-        body: "The domestic VAT reverse charge for building and construction services will affect nearly all landscape contractors. Learn about the changes due from 1st March 2021",
+        heading: "Evolution Of Employment",
+        body: "Whilst new working arrangements have the potential to enable short-term or highly flexible demands for labour to be fulfilled, the existing legislative framework – which has evolved to cater for traditional ‘employees’ – often does not afford sufficient protection to the rights of a new position labelled ‘workers’. Workers are a half-way house between employees and self-employed individuals, often at risk from losing basic employment rights as a result of unscrupulous employers. In 2017 a report commissioned by the government evaluated the changing landscape of work and made recommendations to ensure future legislation reflects these changes. Many changes in law have already been adopted or will do in the near future. One of the areas of legislation to be changed as a result of this review is section 1 of the Employment Rights Act 1996. Currently, ‘employees’ in a role for more than one month must be given a document containing specific information including holiday pay, sick leave, and length of time the job is likely to last within 2 months of the date they start work. This document may often be refereed to as an employment contract or written statement, and may be in parts, provided this 2-month limit is met. Anyone defined as a ‘worker’ - which may include people employed under zero-hours contracts or employed through an agency - is not currently entitled to any of this information at any stage in their role. This leaves a significant number of contemporary ‘workers’ in a vulnerable position so, as of 6th April 2020, new requirements will be enforced:",
+        bullets: [
+          "Both employees and workers are entitled to a section 1 statement on the first day of work, regardless of the duration of their role.",
+          "Details concerning working periods, leave entitlement, sick pay, renumeration, probationary period and training must be given.",
+        ],
       },
       {
-        heading: "the good work plan",
-        body: "Whilst COVID-19 is likely to be at the forefront of members’ minds, several important employment law changes came into effect on Monday 6 April 2020 which are worthy of note.",
+        heading: "GDPR",
+        body: "The regulation has fundamentally reshaped the way in which data is handled across every sector, from healthcare to banking and beyond. The British Association of Landscape Industries has been working closely with members to ensure they are compliant with the new regulation by producing a helpful data protection fact sheet. The General Data Protection Regulation forms part of the data protection regime in the UK, together with the new Data Protection Act 2018 (DPA 2018). This replaces the Data Protection Act 1988. The main provisions of this applied from 25 May 2018, which means all business should already be applying the principles of the GDPR in their daily work activities. The GDPR applies to businesses who may be called a ‘controller’ or ‘processor’. A controller determines the purposes and means of processing personal data. A processor is responsible for processing personal data on behalf of a controller. As a landscape contractor or designer, it is most likely that you are a controller, since you will frequently be deciding what personal data to collect (for example, the names, email addresses, telephone numbers and addresses of clients) and how this information will be recorded e.g. on a phone, in a book or via email. Note that GDPR applies to historic, current and all future electronic and manual records held by your company. Personal data only includes information relating to natural persons who can be identified or who are identifiable, directly from the information in question (e.g. name, address, email, NI number); or who can be indirectly identified from that information in combination with other information (e.g. Computer’s IP address). As a landscape contractor or garden designer, it is likely you will record personal data from clients which includes their name, address and email address. Information about companies or public authorities is not personal data, however, information about individuals acting as sole traders, employees, partners and company directors where they are individually identifiable, and the information relates to them as an individual, may constitute personal data.",
+        bullets: [
+          "Data Protection Factsheet 12 Mar 2019 223kb PDF",
+        ],
+      },
+      {
+        heading: "IR35",
+        body: "By setting up as a limited company, workers can continue to work for an existing employer, but as a ‘contractor’. Personal service companies are a variation of this and are popular where clients and recruitment agencies avoid hiring contractors operating as sole traders. Operating as a contractor or personal service company allows workers to avoid paying national insurance contributions on a significant part of their income, which traditional employees must do. When used legitimately, this reduced tax is intended to provide the contractor with money for holiday or sick pay, but also paying for equipment necessary to do their job. This arrangement also benefits the client, as they do not need to pay annual leave or sick pay to contractors or personal service companies. Whilst operating as a contractor can be entirely legitimate, Her Majesty’s Revenue and Customs (HMRC) regard the practice of masquerading as a ‘contractor’ as a form of tax avoidance, and introduced IR35 to ensure, where appropriate, contractors deemed to be employees pay the same amount of tax as traditional employees. If HMRC identify cases where individuals have been masquerading as self-employed contractors without justification, they will be required to pay the missing tax back to HMRC, with interest and penalties for a period of up to 6 years. Working ‘Inside IR35’ is where a worker is considered an employee (commonly referred to as a ‘deemed employee’) for the purposes of tax by HMRC. The following are likely to apply in this scenario:",
+        bullets: [
+          "The client decides how, when and where the workers services are provided",
+          "Contractor is paid regardless of the quality of services provided",
+          "Client would not be willing to accept a substitute to provide the services",
+          "Contractor does not provide own equipment",
+          "The contractor decides how, when and where the workers services are provided",
+          "Contractor may be paid according to work or service delivered",
+          "Client would accept a substitute to provide the services",
+          "Contractor provides own equipment for services provided",
+        ],
+      },
+      {
+        heading: "JCLI Contracts",
+        body: "These documents update the CPSE/JCLI Guidance for the Advanced Ordering or Contract Growing of Hardy Nursery Stock (HTA 1999). October 2014. The JCLI Contracts Forum agrees and badges commercial and domestic project standard forms of contract and associated guidance documents for the landscape industry. The contracts and guidance are produced and published by individual member organisations. The JCLI Contracts Forum is organised by the Landscape Institute. Its members are the Association of Professional Landscapers (APL), the British Association of Landscape Industries (BALI), the Horticultural Trades Association (HTA), the Institute of Chartered Foresters (ICF), the Landscape Institute (LI) and the Society of Garden Designers (SGD). The JCLI badging of contracts is considered important for two main reasons: firstly, because ‘JCLI’ has a strong reputation for contracts, based on the reputation of the Landscape Contract originally produced in 1978; and secondly, because the documents are agreed by the members of the Forum and are therefore non-partisan industry standard documents.",
+      },
+      {
+        heading: "Water Abstraction",
+        body: "The abstraction of water is managed by the government. Most businesses taking more than 20,000 litres of water a day directly from rivers or groundwater require an abstraction license. Following review and consultation, shortcomings were identified in the existing system of abstraction, which led to the government introducing a series of new measures in 2016. Over the next few years, rules concerning abstraction are likely to change and may affect Association members. Historically, taking water from the environment for certain uses and from certain sources could be done without a license. These uses and sources were called ‘exempt activities’ and included, amongst others: • All forms of irrigation including trickle • Abstractions from previously exempt areas",
+        bullets: [
+          "Change to abstraction licensing rules 31 Jul 2019 257kb PDF",
+        ],
+      },
+      {
+        heading: "VAT Reverse Charge",
+        body: "From 1st March 2021 the domestic VAT reverse charge will apply to most supplies of building and construction services. This change will affect nearly all landscape contractors to some extent, and it is important our members understand the consequences of the changes. - What is the domestic VAT reverse charge? - Why is the domestic VAT reverse charge being introduced? - Who will the domestic VAT reverse charge apply to? - Which services will the reverse charge apply to? - Are there any circumstances when the VAT reverse charge does not apply? - Where do responsibilities lie regarding notification of VAT reverse charge? From 1st March 2021, all businesses performing sub-contractor duties by supplying construction services to a VAT-registered customer (a contractor) will no longer charge VAT. Instead, the customer (contractor) will pay the VAT owed by the sub-contractor directly to HMRC. This means if you are a VAT-registered sub-contractor, who is registered with the CIS scheme and currently receives VAT payments from a contractor client, as of 1st March 2021 you will no longer receive VAT from these clients.",
+        bullets: [
+          "When contractors use sub-contractors for zero-rated work",
+          "If the contractor or sub-contractor is not VAT registered",
+          "Where building or construction works are for end users",
+          "The customer (the contractor) must advise the supplier (sub-contractor) if they are an end user – and therefore not subject to the reverse charge – in writing. HMRC suggest the following wording is used:",
+          "The subcontractor may need to ask the customer if they are an end user and should record this request and any response in writing and retain as evidence. It is important the subcontractor also identifies and records evidence supplied to suggest the customer (contractor) is VAT registered and subject to CIS.",
+          "The supplier (the sub-contractor) must advise on their invoice if the VAT reverse VAT charge applies. Whilst no VAT will be charged on the invoice, the invoice must refer to the reverse charge and how much VAT is due (20% or 5%). HMRC suggest the following wording is used:",
+        ],
+      },
+      {
+        heading: "The Good Work Plan",
+        body: "In 2017 Matthew Taylor, the Chief Executive of the Royal Society for the Encouragement of Arts, Manufacturers and Commerce , published the Good Work report. This document outlined 53 proposals to the government, aimed at improving modern working practices. Specifically, the report considered how employment practices needed to change in order to keep pace with modern business models, and discussed the developing nature of self-employed and contracted workers, and how the existing labour laws must change to accommodate these individuals and the businesses that employ them. The government responded to the report by publishing The Good Work Plan in 2018, which identified the changes that would be implemented. These affect England, Wales and Scotland, and the following changes came into effect last week: Full details of the changes can be reviewed on the government’s website.",
+        bullets: [
+          "A written statement of main terms and conditions (frequently known as written statement of particulars) must now be provided to Employees and Workers by their employer on or before the first day of their employment",
+          "The period to break continuous service has now extended from 1 week to 4 weeks, which means employees who work intermittently for their employees can access their employment rights",
+          "The pay reference period for holiday calculations has increased from 12 to 52 weeks, or for employees with less than 52 weeks service, the total number of weeks they have worked. This means the holiday pay for employees with variable hours will reflect their working hours across the year, and not vary according to high or low season.",
+          "Employees who do not have regular working hours are now able to request a more stable contract after 26 weeks continuous service, with a more fixed working pattern and guaranteed hours.",
+          "Agency workers are now entitled to the same pay as the direct recruits of a business after they have performed the same role with the same hirer for 12 consecutive calendar weeks",
+        ],
       },
     ],
     ctaPrimary: { label: "Browse all guides", href: "/help" },
@@ -631,6 +686,34 @@ const C: Record<string, PageContent> = {
     title: "Dispute resolution service",
     theme: "flow",
     intro: "Dispute resolution service",
+    sections: [
+      {
+        heading: "Client Information",
+        body: "Historically, the last resort for disagreements between clients and tradespeople was the courts. Options for relatively low value civil claims such as small claims, fast track and multi-track simplified the process and proved popular amongst tradespeople and clients. However, a significant backlog arose during 2020 - 2021 and resulted in long waiting times for court hearings which continue to the present day. Delays of over 12 months are still common. To reduce the burden on the courts, a greater emphasis has been placed on dispute resolution services, which seek to resolve disputes before they reach the courts. In many cases a court will specify dispute resolution before initiating court proceedings. In light of this shift towards dispute resolution, the Association has appointed a third-party provider of dispute services: Dispute Resolution Ombudsman .",
+        bullets: [
+          "Project documentation",
+          "High resolution photographs of the project and areas of concern",
+          "Correspondence exchanged during the project",
+          "Variations agreed during the project",
+          "Client Resolution Form 4 Jul 2024 1072kb PDF",
+          "Quick Start Guide 4 Jul 2024 90kb PDF",
+        ],
+      },
+      {
+        heading: "Frequently Asked Questions",
+        body: "What are the benefits of the dispute resolution service? What type of complaints can the dispute resolution service help with? What complaints can the Dispute Resolution Ombudsman not help with? How will DRO make a decision and what are the possible outcomes?",
+        bullets: [
+          "Dispute Resolution Ombudsman is independent and impartial",
+          "The service is free for customers who have used the services of a member of the British Association of Landscape Industries",
+          "The service will provide a clear resolution the member is legally bound to comply with.",
+          "The resolution process is easy to access, meaning the Customer can avoid potentially lengthy and costly litigation.",
+          "Work carried out by an Accredited designer or contractor who is a current member of the British Association of Landscape Industries",
+          "A service performed by an Accredited designer or contractor who is a member of the British Association of Landscape Industries",
+          "The Customer has a complaint against a business that is not currently a member of the British Association of Landscape Industries",
+          "The Customer has a complaint against a member of the British Association of Landscape Industries who has entered administration, liquidation or has ceased trading",
+        ],
+      },
+    ],
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
@@ -649,8 +732,145 @@ const C: Record<string, PageContent> = {
     intro: "The law requires employers to identify the hazards that could cause injury or illness to staff. Learn more here",
     sections: [
       {
-        heading: "lone working",
-        body: "As with any other work-related task, employers have a responsibility to manage the risk employees face when working alone.",
+        heading: "Risk Assessments",
+        body: "The Management of Health and Safety at Work Regulations 1999 requires the following measures as a minimum: Whilst it is not necessary for employers to eliminate all risks associated with their business practices, it is essential that measures are taken to do everything reasonably practicable to protect people from harm. For most small and medium-sized landscape businesses, risk assessment is a straightforward process and does not require the person undertaking the risk assessment process to possess any additional training or qualifications. Association members have free access to a variety of risk assessment and method statement templates, ranging from a single table to a suite of risk assessment documents covering the most common landscape construction and maintenance tasks.",
+        bullets: [
+          "Identify the hazards that could cause injury or illness in your business",
+          "Evaluate the likelihood that someone could be harmed and the severity of this risk",
+          "Eliminate the hazard if possible, and if not, control the risk",
+          "Introduction to risk assessment",
+          "Risk assessment and method statement document",
+          "Guidance document",
+          "Inventory",
+          "Blank template",
+        ],
+      },
+      {
+        heading: "Alcohol In The Workplace",
+        body: "Whilst The Health and Safety at Work etc Act 1974 states employers have a duty to ensure the health, safety and welfare of employees in relation to alcohol at work, there is no legislation in the UK which requires a company to implement alcohol policies in the workplace. Furthermore, the management of any company can set its own alcohol limit, which may be enforceable according to site or job role. Many employers and site managers have adopted a zero-tolerance approach (i.e. zero alcohol in the system of an individual) to alcohol. This means that, in the event of a test for alcohol, being under the drink drive limit alone may not be acceptable. Alcohol limits may be detailed during a site or company induction, but operatives are advised to seek clarification if in doubt. Operatives on construction sites may be subject to random drugs and alcohol tests. The reason for a zero-tolerance approach to alcohol is that, even at blood alcohol concentrations lower than the legal driving limit, research has shown alcohol can reduce physical co-ordination and reaction speeds. On a construction site there is a risk of injury to operatives and third parties if these abilities are impaired.",
+      },
+      {
+        heading: "Allergic Reactions To Insect Stings",
+        body: "Regardless of age or geographic location, whether you work in an office or out on site, spend your free time worshipping the sun or hiding in the shade, wasps and bees are one of the few invertebrates we encounter in Europe which pose a risk of harm. For most people, a sting from a bee or wasp is a short-term inconvenience. A few hours of significant pain, which can be alleviated with nothing more than a rude word, some cold water and perhaps a mild painkiller. For other people, however, bees and wasps pose a significant danger. Allergic reactions or anaphylaxis can develop from a sting, which are potentially life-threatening. The article, written by Dr. Aarn Huissoon (MB, PhD, FRCP, FRCPath) for BALI, has been possible thanks to a financial grant from ALK-Abello, a global, research-driven pharmaceutical company which focusses on allergy diagnosis and treatment. It has been written specifically for landscape professionals and explores the types of reactions, the symptoms and treatment. For more information about how to treat insect stings visit the NHS website here.",
+        bullets: [
+          "Allergic Reactions to Insect Stings by Dr Aarn Huissoon 12 Mar 2019 220kb PDF",
+        ],
+      },
+      {
+        heading: "Bats And Rabies",
+        body: "Whilst bats in the UK can carry the disease, rabies, it is not the classical rabies associated with dogs and horror movies. Some bats in the UK carry a type of rabies virus called European Bat Lyssaviruses (EBLV). The risk of catching the virus from a bat in the UK is very low; surveillance of bats in the UK has identified a very low number infected. EBLV is transmitted only through a bite of an infected bat or by its saliva entering a wound or mucous membrane such as the nostrils, mouth and lips, eyelids and ears. Direct contact between landscape operatives and bats is also rare. However, a risk remains. In 2002 a batworker from Scotland died from EBLV, and earlier this month the Animal and Plant Health Agency (APHA) confirmed a dead bat found in Poole, Dorset, carried the virus. Landscape operatives may work in the proximity of bats, particularly on works associated with old buildings. EBLV can be treated by GPs, but it is essential this is administered as soon as possible after exposure. It is also important to be aware of symptoms on humans infected:",
+        bullets: [
+          "Anxiety, headaches and fever in early stages",
+          "Spasms of the swallowing muscles making it difficult or impossible to drink",
+          "Breathing difficulties Operatives who are bitten or scratched by a bat must:",
+          "Wash the wound or contact area with soap and water",
+          "Disinfect the wound",
+          "Contact a doctor immediately for advice",
+          "bats and rabies 4 Sep 2019 244kb PDF",
+        ],
+      },
+      {
+        heading: "Hand Arm Vibration",
+        body: "Landscape tools which fit into this category include chainsaws, brush cutters, hedge trimmers, blowers and disc cutters. Using this equipment on a regular basis for several hours each day can cause damage to nerves, blood vessels and joints of the hand, wrist and arm. The damage is irreversible, and can result in tingling and numbness in the fingers, loss of dexterity and even loss of strength. A property management and development company has been fined £600,000 and ordered to pay costs of £13,995.06 after pleading guilty to breaching Section 2(1) of the Health and Safety at work Act 1974. A court heard that between 2009 and 2014 five employees working for Places for People used power tools to carry out grounds maintenance at sites in Milton Keynes, Rotherham and Hull. An investigation by the HSE discovered the company failed to assess or manage the risks associated with vibrating tools, failed to provide training or health surveillance for its maintenance workers, and failed to maintain equipment appropriately. Members not committed to providing health surveillance, particularly in relation to hand arm vibration syndrome, are advised to pay attention to this substantial fine imposed for failure to identify and manage hand arm vibration. HAVS risk assessment and health surveillance is essential where the workforce uses handheld power tools.",
+        bullets: [
+          "Assess the vibration risk to your employees;",
+          "Take action to reduce vibration exposure that produces those risks",
+          "Decide if employees are likely to be exposed above the:",
+          "Daily exposure action value (EAV) and if they are:",
+          "introduce a programme of controls to eliminate risk, or reduce exposure to as low a level as is reasonably practicable;",
+          "Daily exposure limit value (ELV) and if they are:",
+          "take immediate action to reduce their exposure below the limit value;",
+          "Make sure the legal limits on vibration exposure are not exceeded;",
+        ],
+      },
+      {
+        heading: "Interior Landscaping",
+        body: "Interior landscaping; what does it mean to you? An unnecessary expense or a means of improving worker productivity? A feature to draw visitors or a potential headache for the cleaners? Interior landscaping has come a long way since the days of using a sickly Peace Lily to prop open a door. Peer-reviewed scientific articles support the theory that interior landscaping has the potential to make offices, restaurants, houses, schools, universities and public realm areas healthier, and anyone in these spaces more contented and productive. Sound too good to be true? Well-executed and maintained interior planting has been scientifically proven to bring benefits to workers and the office environment including: The range of health and wellbeing benefits seems unlikely until one considers the reality of office life. Most offices are in urban areas where outside air pollution is consistently high. A significant volume of exterior pollutants enter buildings and mix with office pollutants – commonly volatile organic compounds from items such as furniture, printers, air fresheners and paint - to create an unhealthy environment. Even small concentrations of these chemicals can have an effect and result in ailments familiar to most office workers: headaches, sore eyes, nose and throat, and nausea. These are commonly grouped as sick building syndrome.",
+        bullets: [
+          "Increased productivity",
+          "Decreased stress (lower blood pressure)",
+          "Increased attentiveness",
+          "More job satisfaction",
+          "Better perceived work-life balance",
+        ],
+      },
+      {
+        heading: "Latex Allergies",
+        body: "With the increase of personal protective equipment (PPE) use, the Health and Safety Executive (HSE) has warned of the potential for workers to develop allergic reactions to items containing latex. The Association has produced a technical document containing more information and links to helpful resources, which can be downloaded to the right of this page.",
+        bullets: [
+          "HSE issue warning over latex allergies 8 Oct 2020 121kb PDF",
+        ],
+      },
+      {
+        heading: "Lone Working",
+        body: "Managing the risks associated with lone working involves considering which employees are likely to work alone, and which areas of their work pose a hazard. Employers have a responsibility to ensure they train, supervise, and monitor lone workers, as well as keep in touch with them. As the Health and Safety Executive (HSE) defines a lone worker as ‘ anyone who works by themselves without close or direct supervision ’, most landscape professionals are likely to fit within the definition at some point in their working life. Social distancing guidance issued by the government during the coronavirus pandemic had the potential to create additional lone workers in many BALI member companies, who must be identified and managed appropriately. This management extends to employees now working from home instead of an office. Risks of relevance to lone workers on sites and at home include:",
+        bullets: [
+          "The place of work (e.g. isolated or rural location)",
+          "A person’s medical suitability",
+          "Stress and mental wellbeing",
+          "Violence directed towards the lone worker from the public",
+          "Arranging pre-arranged visitors from supervisors",
+          "Knowing where lone workers are at all times, with regular contact using phones, radios and email. The frequency of this contact may vary from hourly to daily depending on the site",
+          "Systems for raising alarm where worker needs help or support immediately, or where worker fails to check-in with supervisor at a predetermined time.",
+        ],
+      },
+      {
+        heading: "Mental Health",
+        body: "► How common are mental health issues in the UK? ► How many people in the UK get treatment for mental health issues? ► Employees: Looking after your mental health at work ► Employers: Advice and resources for line managers ► Contacts * Suicidal thoughts are not mental health diagnoses, but they are related to mental health How to be mentally healthy at work by MIND ( link to document ) How to manage stress by MIND ( link to document ) People managers guide to mental health by Chartered Institute of Personnel and Development (CIPD) and MIND ( link to document ) How to support staff who are experiencing a mental health problem by MIND ( link to document ) How to take stock of mental health in your workplace by MIND ( link to document ) Line Managers' Resource by Mental Health First Aid (MHFA) ( link to document )",
+        bullets: [
+          "1 in 4 people will experience a mental health problem of some kind each year in England",
+          "1 in 6 people report experiencing a common mental health problem (like anxiety and depression) in any given week in England",
+          "Between 2011 and 2015, 13% of in-work suicides* were from within the skilled construction and building trades - despite construction accounting for 7% of the UK workforce",
+          "Suicide kills more construction workers than falls each year",
+          "Approximately 1 in 8 adults with a mental health problem are currently getting treatment",
+          "Mental Health - Line managers resource 4 Feb 2021 615kb PDF",
+        ],
+      },
+      {
+        heading: "Outdoor Safety",
+        body: "This page will be regularly updated with helpful guidance designed to mitigate the risks of working outdoors. A recent enquiry from an Association member prompted a specific technical report to be written, which concerns the use of sunscreen in the workplace. The member asked whether it is the responsibility of an employer to supply sunscreen when the employee spends most of his/her working day outside. You can find this document, and many more, available to download on this page.",
+        bullets: [
+          "Sunscreen and outdoor working: Employer and employee responsibilities 27 Jun 2019 247kb PDF",
+          "BALI's guide to working in hot conditions outdoors 24 Jul 2019 262kb PDF",
+        ],
+      },
+      {
+        heading: "Safe Digging",
+        body: "Earlier this month a groundworks contractor was fined £32,400 and ordered to pay costs of £2657,18 for breaching Construction (Design and Management) Regulations (CDM) which resulted in one of its employees sustaining serious burns to his face, chest, abdomen, groin, both arms and legs, amounting to roughly 50% of his total body. These burns were caused when an electric breaker used by an operative struck an 11kv electricity cable. Of significance to the landscape industry is the photo included in the Health and Safety Executive’s report, below: The image above shows a situation which many landscape operatives face on a regular basis: digging (relatively shallow) holes in unfamiliar areas of grass. In this instance the operative had used an electronic breaker to break through concrete haunching at the back of a kerb with the intention of installing a new fence. The hole was relatively shallow when the incident occurred. As indicated in the HSE report, following a safe system of work would have avoided this situation. A sae system in this instance consists of three elements:",
+        bullets: [
+          "Planning the work",
+          "Detecting, identifying and marking underground services",
+          "Safe excavation/safe digging practices",
+        ],
+      },
+      {
+        heading: "Silica Dust",
+        body: "The risks associated with asbestos are widely publicised nowadays and, hopefully, the number of fatalities associated with this material will be reduced due to the increased awareness. However, another material – silica dust – is equally damaging to the human respiratory system and found in many of the materials landscape operatives are likely to encounter on a daily basis. Limestone, sandstone, ironstone, marble, granite, concrete, aggregates, mortar, bricks, tiles and slate all contain silica. The silica in these materials is harmless if undisturbed, but drilling, cutting, breaking or grinding can generate dust particles of silica which are harmful to health. Small particles of silica remain airborne for a significant period of time, during which they may be inhaled by unprotected operatives. The small size of silica particles allow them to be inhaled deep into the lungs, where they remain lodged. The body is unable to remove the particles, which means they cause inflammation and scarring. In the long-term, this can cause lung diseases. Appropriate management of exposure to silica dust is of critical importance to the health and well-being of employees. The points below are intended as a guide only, and an expert should be consulted to ensure all risks are correctly identified and appropriate control measures implemented.",
+      },
+      {
+        heading: "Slopes",
+        body: "The Association’s own accident statistics, as well as those of the Health and Safety Executive (HSE), report landscape operatives suffer a disproportionately high number of accidents whilst completing tasks on slopes. 1. operator loses control of ride-on machinery - machine loses traction or becomes unstable due to gradient - machine over-turns with operator on-board 2. operator slips or trips whilst using pedestrian or hand-held equipment, resulting in",
+        bullets: [
+          "Machine over-turning due to gradient of slope",
+          "Loss of traction between machine tyres and slope, causing machine to slide",
+          "Sharp steering input from machine operator causing machine to tip",
+          "Operator slips",
+          "Inadequate maintenance of machine/equipment",
+          "Site-specific risk assessment",
+          "Equipment suited to the task and site",
+          "Equipment that is correctly maintained",
+        ],
+      },
+      {
+        heading: "Whole Body Vibration",
+        body: "Whole body vibration (WBV) is a health issue caused by prolonged exposure to vibration, shocks or jolts, transmitted from mobile machinery to the operator through the seat or feet. Whilst research on landscape-specific equipment is limited, prolonged periods spent on ride-on machinery such as tractors, mowers and quads over uneven ground are believed to result in symptoms associated with WBV. Symptoms commonly include lower back pain, WBV may also cause musculoskeletal disorders. Some or all of the articles on this page are for members only. To access, become a member by making an enquiry.",
+        bullets: [
+          "Whole body vibration 20 Aug 2019 348kb PDF",
+        ],
+      },
+      {
+        heading: "Winter Care",
+        body: "The location of outdoor spaces means most are used throughout the year regardless of weather. Plant growth cycles mean that autumn and winter are a great opportunity to undertake maintenance of a wide range of plant specimens, particularly trees. Hard surfaces are equally like to be under pressure, and require maintenance to promote their continued use. Grass will continue to grow at a minimum temperature of 14 degrees Celsius, so mowing may continue into the months that are unseasonably mild, subject to the weather and areas being dry enough. Leaves and plant debris will need to be removed from grassed area to prevent lawns from dying and from walkways and hard surfaces to prevent pedestrians slipping and the surfaces becoming stained.",
       },
     ],
     ctaPrimary: { label: "Join Our Association", href: "/join" },
@@ -664,16 +884,71 @@ const C: Record<string, PageContent> = {
     image: { url: "/__l5e/assets-v1/859a80ad-ac37-4a28-aaea-c10f84d95e66/large_homepage-banner-1.jpeg", alt: "Landscape professionals at work" },
     sections: [
       {
-        heading: "water abstraction",
-        body: "Water abstraction refers to the process of taking or extracting water from a natural source (rivers, lakes, groundwater aquifers, etc.) for various uses, from drinking to irrigation, treatment, and industrial applications.",
+        heading: "Construction Design Management CDM",
+        body: "The Construction (Design & Management) Regulations 2015 are the main set of regulations for managing the health, safety and welfare of construction projects. The scope of works covered by the definition of 'Construction' in CDM includes many aspects of landscape works, including site clearance, excavation, drainage and earthworks. In addition, any landscape contractor undertaking work on a construction site where other contractors are present will have responsibilities under CDM. Please click on the buttons below to learn more about your responsibilities under CDM:",
       },
       {
-        heading: "VAT reverse charge",
-        body: "The domestic VAT reverse charge for building and construction services will affect nearly all landscape contractors. Learn about the changes due from 1st March 2021",
+        heading: "Evolution Of Employment",
+        body: "Whilst new working arrangements have the potential to enable short-term or highly flexible demands for labour to be fulfilled, the existing legislative framework – which has evolved to cater for traditional ‘employees’ – often does not afford sufficient protection to the rights of a new position labelled ‘workers’. Workers are a half-way house between employees and self-employed individuals, often at risk from losing basic employment rights as a result of unscrupulous employers. In 2017 a report commissioned by the government evaluated the changing landscape of work and made recommendations to ensure future legislation reflects these changes. Many changes in law have already been adopted or will do in the near future. One of the areas of legislation to be changed as a result of this review is section 1 of the Employment Rights Act 1996. Currently, ‘employees’ in a role for more than one month must be given a document containing specific information including holiday pay, sick leave, and length of time the job is likely to last within 2 months of the date they start work. This document may often be refereed to as an employment contract or written statement, and may be in parts, provided this 2-month limit is met. Anyone defined as a ‘worker’ - which may include people employed under zero-hours contracts or employed through an agency - is not currently entitled to any of this information at any stage in their role. This leaves a significant number of contemporary ‘workers’ in a vulnerable position so, as of 6th April 2020, new requirements will be enforced:",
+        bullets: [
+          "Both employees and workers are entitled to a section 1 statement on the first day of work, regardless of the duration of their role.",
+          "Details concerning working periods, leave entitlement, sick pay, renumeration, probationary period and training must be given.",
+        ],
       },
       {
-        heading: "the good work plan",
-        body: "Whilst COVID-19 is likely to be at the forefront of members’ minds, several important employment law changes came into effect on Monday 6 April 2020 which are worthy of note.",
+        heading: "GDPR",
+        body: "The regulation has fundamentally reshaped the way in which data is handled across every sector, from healthcare to banking and beyond. The British Association of Landscape Industries has been working closely with members to ensure they are compliant with the new regulation by producing a helpful data protection fact sheet. The General Data Protection Regulation forms part of the data protection regime in the UK, together with the new Data Protection Act 2018 (DPA 2018). This replaces the Data Protection Act 1988. The main provisions of this applied from 25 May 2018, which means all business should already be applying the principles of the GDPR in their daily work activities. The GDPR applies to businesses who may be called a ‘controller’ or ‘processor’. A controller determines the purposes and means of processing personal data. A processor is responsible for processing personal data on behalf of a controller. As a landscape contractor or designer, it is most likely that you are a controller, since you will frequently be deciding what personal data to collect (for example, the names, email addresses, telephone numbers and addresses of clients) and how this information will be recorded e.g. on a phone, in a book or via email. Note that GDPR applies to historic, current and all future electronic and manual records held by your company. Personal data only includes information relating to natural persons who can be identified or who are identifiable, directly from the information in question (e.g. name, address, email, NI number); or who can be indirectly identified from that information in combination with other information (e.g. Computer’s IP address). As a landscape contractor or garden designer, it is likely you will record personal data from clients which includes their name, address and email address. Information about companies or public authorities is not personal data, however, information about individuals acting as sole traders, employees, partners and company directors where they are individually identifiable, and the information relates to them as an individual, may constitute personal data.",
+        bullets: [
+          "Data Protection Factsheet 12 Mar 2019 223kb PDF",
+        ],
+      },
+      {
+        heading: "IR35",
+        body: "By setting up as a limited company, workers can continue to work for an existing employer, but as a ‘contractor’. Personal service companies are a variation of this and are popular where clients and recruitment agencies avoid hiring contractors operating as sole traders. Operating as a contractor or personal service company allows workers to avoid paying national insurance contributions on a significant part of their income, which traditional employees must do. When used legitimately, this reduced tax is intended to provide the contractor with money for holiday or sick pay, but also paying for equipment necessary to do their job. This arrangement also benefits the client, as they do not need to pay annual leave or sick pay to contractors or personal service companies. Whilst operating as a contractor can be entirely legitimate, Her Majesty’s Revenue and Customs (HMRC) regard the practice of masquerading as a ‘contractor’ as a form of tax avoidance, and introduced IR35 to ensure, where appropriate, contractors deemed to be employees pay the same amount of tax as traditional employees. If HMRC identify cases where individuals have been masquerading as self-employed contractors without justification, they will be required to pay the missing tax back to HMRC, with interest and penalties for a period of up to 6 years. Working ‘Inside IR35’ is where a worker is considered an employee (commonly referred to as a ‘deemed employee’) for the purposes of tax by HMRC. The following are likely to apply in this scenario:",
+        bullets: [
+          "The client decides how, when and where the workers services are provided",
+          "Contractor is paid regardless of the quality of services provided",
+          "Client would not be willing to accept a substitute to provide the services",
+          "Contractor does not provide own equipment",
+          "The contractor decides how, when and where the workers services are provided",
+          "Contractor may be paid according to work or service delivered",
+          "Client would accept a substitute to provide the services",
+          "Contractor provides own equipment for services provided",
+        ],
+      },
+      {
+        heading: "JCLI Contracts",
+        body: "These documents update the CPSE/JCLI Guidance for the Advanced Ordering or Contract Growing of Hardy Nursery Stock (HTA 1999). October 2014. The JCLI Contracts Forum agrees and badges commercial and domestic project standard forms of contract and associated guidance documents for the landscape industry. The contracts and guidance are produced and published by individual member organisations. The JCLI Contracts Forum is organised by the Landscape Institute. Its members are the Association of Professional Landscapers (APL), the British Association of Landscape Industries (BALI), the Horticultural Trades Association (HTA), the Institute of Chartered Foresters (ICF), the Landscape Institute (LI) and the Society of Garden Designers (SGD). The JCLI badging of contracts is considered important for two main reasons: firstly, because ‘JCLI’ has a strong reputation for contracts, based on the reputation of the Landscape Contract originally produced in 1978; and secondly, because the documents are agreed by the members of the Forum and are therefore non-partisan industry standard documents.",
+      },
+      {
+        heading: "Water Abstraction",
+        body: "The abstraction of water is managed by the government. Most businesses taking more than 20,000 litres of water a day directly from rivers or groundwater require an abstraction license. Following review and consultation, shortcomings were identified in the existing system of abstraction, which led to the government introducing a series of new measures in 2016. Over the next few years, rules concerning abstraction are likely to change and may affect Association members. Historically, taking water from the environment for certain uses and from certain sources could be done without a license. These uses and sources were called ‘exempt activities’ and included, amongst others: • All forms of irrigation including trickle • Abstractions from previously exempt areas",
+        bullets: [
+          "Change to abstraction licensing rules 31 Jul 2019 257kb PDF",
+        ],
+      },
+      {
+        heading: "VAT Reverse Charge",
+        body: "From 1st March 2021 the domestic VAT reverse charge will apply to most supplies of building and construction services. This change will affect nearly all landscape contractors to some extent, and it is important our members understand the consequences of the changes. - What is the domestic VAT reverse charge? - Why is the domestic VAT reverse charge being introduced? - Who will the domestic VAT reverse charge apply to? - Which services will the reverse charge apply to? - Are there any circumstances when the VAT reverse charge does not apply? - Where do responsibilities lie regarding notification of VAT reverse charge? From 1st March 2021, all businesses performing sub-contractor duties by supplying construction services to a VAT-registered customer (a contractor) will no longer charge VAT. Instead, the customer (contractor) will pay the VAT owed by the sub-contractor directly to HMRC. This means if you are a VAT-registered sub-contractor, who is registered with the CIS scheme and currently receives VAT payments from a contractor client, as of 1st March 2021 you will no longer receive VAT from these clients.",
+        bullets: [
+          "When contractors use sub-contractors for zero-rated work",
+          "If the contractor or sub-contractor is not VAT registered",
+          "Where building or construction works are for end users",
+          "The customer (the contractor) must advise the supplier (sub-contractor) if they are an end user – and therefore not subject to the reverse charge – in writing. HMRC suggest the following wording is used:",
+          "The subcontractor may need to ask the customer if they are an end user and should record this request and any response in writing and retain as evidence. It is important the subcontractor also identifies and records evidence supplied to suggest the customer (contractor) is VAT registered and subject to CIS.",
+          "The supplier (the sub-contractor) must advise on their invoice if the VAT reverse VAT charge applies. Whilst no VAT will be charged on the invoice, the invoice must refer to the reverse charge and how much VAT is due (20% or 5%). HMRC suggest the following wording is used:",
+        ],
+      },
+      {
+        heading: "The Good Work Plan",
+        body: "In 2017 Matthew Taylor, the Chief Executive of the Royal Society for the Encouragement of Arts, Manufacturers and Commerce , published the Good Work report. This document outlined 53 proposals to the government, aimed at improving modern working practices. Specifically, the report considered how employment practices needed to change in order to keep pace with modern business models, and discussed the developing nature of self-employed and contracted workers, and how the existing labour laws must change to accommodate these individuals and the businesses that employ them. The government responded to the report by publishing The Good Work Plan in 2018, which identified the changes that would be implemented. These affect England, Wales and Scotland, and the following changes came into effect last week: Full details of the changes can be reviewed on the government’s website.",
+        bullets: [
+          "A written statement of main terms and conditions (frequently known as written statement of particulars) must now be provided to Employees and Workers by their employer on or before the first day of their employment",
+          "The period to break continuous service has now extended from 1 week to 4 weeks, which means employees who work intermittently for their employees can access their employment rights",
+          "The pay reference period for holiday calculations has increased from 12 to 52 weeks, or for employees with less than 52 weeks service, the total number of weeks they have worked. This means the holiday pay for employees with variable hours will reflect their working hours across the year, and not vary according to high or low season.",
+          "Employees who do not have regular working hours are now able to request a more stable contract after 26 weeks continuous service, with a more fixed working pattern and guaranteed hours.",
+          "Agency workers are now entitled to the same pay as the direct recruits of a business after they have performed the same role with the same hirer for 12 consecutive calendar weeks",
+        ],
       },
     ],
     ctaPrimary: { label: "Browse all guides", href: "/help" },
