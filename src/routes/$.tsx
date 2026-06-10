@@ -206,6 +206,24 @@ function RichPage({ path, content }: { path: string; content: PageContent }) {
         </section>
       )}
 
+      {content.embed && (
+        <section className="py-12 sm:py-16 bg-white">
+          <div className="max-w-3xl mx-auto px-6">
+            <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm bg-white">
+              <iframe
+                src={content.embed.url}
+                title={content.embed.title}
+                height={content.embed.height ?? 480}
+                width="100%"
+                style={{ border: 0, display: "block" }}
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Sections — editorial article layout */}
       {content.sections && content.sections.length > 0 && (
         <section className="py-16 sm:py-20 bg-white">
