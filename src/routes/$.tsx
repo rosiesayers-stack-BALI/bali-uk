@@ -3,150 +3,326 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CookieBanner from "../components/CookieBanner";
 import Link from "../components/SmartLink";
+import { getPageContent, type PageContent } from "../content/pages";
 
 export const Route = createFileRoute("/$")({
   head: ({ params }) => {
-    const title = titleFromPath((params as { _splat?: string })._splat ?? "");
+    const splat = (params as { _splat?: string })._splat ?? "";
+    const path = "/" + splat;
+    const content = getPageContent(path);
+    const title = content?.title ?? titleFromPath(splat);
+    const desc =
+      content?.intro?.slice(0, 155) ??
+      `${title} | British Association of Landscape Industries.`;
     return {
       meta: [
         { title: `${title} — BALI` },
-        { name: "description", content: `${title} | British Association of Landscape Industries.` },
+        { name: "description", content: desc },
         { property: "og:title", content: `${title} — BALI` },
-        { property: "og:description", content: `${title} | British Association of Landscape Industries.` },
+        { property: "og:description", content: desc },
       ],
     };
   },
-  component: PlaceholderPage,
+  component: SplatPage,
 });
 
 function titleFromPath(splat: string): string {
   if (!splat) return "Page";
   const last = splat.split("/").filter(Boolean).pop() ?? "Page";
-  return last
-    .replace(/[-_]+/g, " ")
-    .replace(/\b\w/g, (c) => c.toUpperCase());
+  return last.replace(/[-_]+/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
-function PlaceholderPage() {
+// Theme → gradient + accent classes
+type Theme = PageContent["theme"];
+const themes: Record<
+  Theme,
+  { gradient: string; accent: string; accentBg: string; iconColor: string; btn: string }
+> = {
+  blue: {
+    gradient: "linear-gradient(135deg, #1D4D59 0%, #21509A 60%, #0E8B61 100%)",
+    accent: "text-bali-blue",
+    accentBg: "bg-bali-blue/10",
+    iconColor: "text-bali-blue",
+    btn: "bg-bali-blue hover:bg-blue-800",
+  },
+  green: {
+    gradient: "linear-gradient(135deg, #0E8B61 0%, #1D4D59 100%)",
+    accent: "text-bali-green",
+    accentBg: "bg-bali-green/10",
+    iconColor: "text-bali-green",
+    btn: "bg-bali-green hover:bg-green-700",
+  },
+  slate: {
+    gradient: "linear-gradient(135deg, #1D4D59 0%, #21509A 100%)",
+    accent: "text-bali-slate",
+    accentBg: "bg-bali-slate/10",
+    iconColor: "text-bali-slate",
+    btn: "bg-bali-slate hover:bg-slate-800",
+  },
+  flow: {
+    gradient: "linear-gradient(135deg, #30A1C0 0%, #21509A 100%)",
+    accent: "text-bali-flow",
+    accentBg: "bg-bali-flow/10",
+    iconColor: "text-bali-flow",
+    btn: "bg-bali-flow hover:bg-cyan-700",
+  },
+  warm: {
+    gradient: "linear-gradient(135deg, #CF5E2C 0%, #6D4276 100%)",
+    accent: "text-bali-warm",
+    accentBg: "bg-bali-warm/10",
+    iconColor: "text-bali-warm",
+    btn: "bg-bali-warm hover:bg-orange-700",
+  },
+  purple: {
+    gradient: "linear-gradient(135deg, #6D4276 0%, #21509A 100%)",
+    accent: "text-bali-purple",
+    accentBg: "bg-bali-purple/10",
+    iconColor: "text-bali-purple",
+    btn: "bg-bali-purple hover:bg-purple-800",
+  },
+};
+
+function SplatPage() {
   const { _splat } = Route.useParams();
   const path = "/" + (_splat ?? "");
-  const title = titleFromPath(_splat ?? "");
-  const crumbs = (_splat ?? "").split("/").filter(Boolean);
+  const content = getPageContent(path);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-white">
       <Navbar />
-
-      {/* Hero */}
-      <section
-        className="relative overflow-hidden py-20 text-white"
-        style={{ background: "linear-gradient(135deg, #1D4D59 0%, #21509A 60%, #0E8B61 100%)" }}
-      >
-        <div className="max-w-7xl mx-auto px-6 relative">
-          {/* Breadcrumbs */}
-          <nav className="text-sm text-blue-100/80 mb-4 flex flex-wrap items-center gap-2 animate-fade-in">
-            <Link to="/" className="hover:text-white transition-colors">Home</Link>
-            {crumbs.map((c: string, i: number) => {
-              const href = "/" + crumbs.slice(0, i + 1).join("/");
-              const last = i === crumbs.length - 1;
-              return (
-                <span key={href} className="flex items-center gap-2">
-                  <span className="opacity-60">/</span>
-                  {last ? (
-                    <span className="text-white">{titleFromPath(c)}</span>
-                  ) : (
-                    <Link to={href} className="hover:text-white transition-colors">
-                      {titleFromPath(c)}
-                    </Link>
-                  )}
-                </span>
-              );
-            })}
-          </nav>
-
-          <p className="text-bali-grass uppercase tracking-widest text-sm font-semibold mb-3">
-            BALI
-          </p>
-          <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-4 animate-fade-up">
-            {title}
-          </h1>
-          <p className="text-blue-100 text-lg max-w-2xl">
-            This page is part of the BALI website and is being prepared.
-            In the meantime, explore the rest of the site or get in touch with our team.
-          </p>
-        </div>
-      </section>
-
-      {/* Body */}
-      <section className="flex-1 py-16 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-8 sm:p-12">
-            <div className="flex flex-col sm:flex-row gap-8">
-              <div className="flex-shrink-0">
-                <div className="w-16 h-16 bg-bali-blue/10 rounded-2xl flex items-center justify-center">
-                  <svg className="w-8 h-8 text-bali-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                </div>
-              </div>
-              <div className="flex-1">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                  {title} — coming soon
-                </h2>
-                <p className="text-gray-600 leading-relaxed mb-6">
-                  The content for{" "}
-                  <code className="bg-gray-100 text-bali-blue text-sm px-1.5 py-0.5 rounded">
-                    {path}
-                  </code>{" "}
-                  hasn't been published yet. Our team is working on it. If you were looking
-                  for something specific, please reach out and we'll point you in the right
-                  direction.
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  <Link
-                    to="/contact"
-                    className="bg-bali-blue hover:bg-blue-800 text-white px-5 py-2.5 rounded-lg font-semibold transition-all hover:scale-105"
-                  >
-                    Contact BALI
-                  </Link>
-                  <Link
-                    to="/"
-                    className="border-2 border-bali-blue text-bali-blue hover:bg-bali-blue hover:text-white px-5 py-2.5 rounded-lg font-semibold transition-all"
-                  >
-                    Back to Home
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Quick links */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
-            {[
-              { label: "Find an Expert", href: "/directory", color: "text-bali-blue", bg: "bg-bali-blue/10" },
-              { label: "Join BALI", href: "/join", color: "text-bali-green", bg: "bg-bali-green/10" },
-              { label: "Latest News", href: "/news", color: "text-bali-flow", bg: "bg-bali-flow/10" },
-              { label: "Events & Training", href: "/events", color: "text-bali-warm", bg: "bg-bali-warm/10" },
-            ].map((l) => (
-              <Link
-                key={l.href}
-                to={l.href}
-                className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md hover:-translate-y-0.5 transition-all flex items-center gap-3"
-              >
-                <div className={`w-9 h-9 ${l.bg} rounded-lg flex items-center justify-center`}>
-                  <svg className={`w-4 h-4 ${l.color}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-                <span className="text-sm font-semibold text-gray-800">{l.label}</span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      {content ? <RichPage path={path} content={content} /> : <ComingSoon path={path} />}
       <Footer />
       <CookieBanner />
     </div>
+  );
+}
+
+function Breadcrumbs({ path }: { path: string }) {
+  const crumbs = path.split("/").filter(Boolean);
+  return (
+    <nav className="text-sm text-blue-100/80 mb-4 flex flex-wrap items-center gap-2 animate-fade-in">
+      <Link to="/" className="hover:text-white transition-colors">Home</Link>
+      {crumbs.map((c: string, i: number) => {
+        const href = "/" + crumbs.slice(0, i + 1).join("/");
+        const last = i === crumbs.length - 1;
+        return (
+          <span key={href} className="flex items-center gap-2">
+            <span className="opacity-60">/</span>
+            {last ? (
+              <span className="text-white">{titleFromPath(c)}</span>
+            ) : (
+              <Link to={href} className="hover:text-white transition-colors">
+                {titleFromPath(c)}
+              </Link>
+            )}
+          </span>
+        );
+      })}
+    </nav>
+  );
+}
+
+function RichPage({ path, content }: { path: string; content: PageContent }) {
+  // Type narrowing — some entries use "grass" theme key (typo-safe fallback)
+  const themeKey = (themes[content.theme] ? content.theme : "green") as Theme;
+  const t = themes[themeKey];
+
+  return (
+    <>
+      {/* Hero */}
+      <section className="relative overflow-hidden py-20 text-white" style={{ background: t.gradient }}>
+        <div
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 20% 20%, rgba(255,255,255,0.4), transparent 40%), radial-gradient(circle at 80% 80%, rgba(255,255,255,0.3), transparent 50%)",
+          }}
+        />
+        <div className="max-w-6xl mx-auto px-6 relative">
+          <Breadcrumbs path={path} />
+          <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass">
+            {content.eyebrow}
+          </p>
+          <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-5 max-w-3xl animate-fade-up">
+            {content.title}
+          </h1>
+          <p className="text-blue-100 text-lg leading-relaxed max-w-2xl">{content.intro}</p>
+
+          {content.ctaPrimary || content.ctaSecondary ? (
+            <div className="flex flex-wrap gap-3 mt-8">
+              {content.ctaPrimary && (
+                <Link
+                  to={content.ctaPrimary.href}
+                  className="bg-white text-bali-blue hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition-all hover:scale-105 shadow-lg"
+                >
+                  {content.ctaPrimary.label}
+                </Link>
+              )}
+              {content.ctaSecondary && (
+                <Link
+                  to={content.ctaSecondary.href}
+                  className="bg-white/10 hover:bg-white/20 border border-white/40 text-white backdrop-blur-sm px-6 py-3 rounded-lg font-semibold transition-all"
+                >
+                  {content.ctaSecondary.label}
+                </Link>
+              )}
+            </div>
+          ) : null}
+        </div>
+      </section>
+
+      {/* Stats strip */}
+      {content.stats && content.stats.length > 0 && (
+        <section className="bg-gray-50 border-b border-gray-200 py-10">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+              {content.stats.map((s) => (
+                <div key={s.label}>
+                  <div className={`text-3xl font-bold ${t.accent}`}>{s.value}</div>
+                  <div className="text-sm text-gray-500 mt-1">{s.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Sections */}
+      {content.sections && content.sections.length > 0 && (
+        <section className="py-16 bg-white">
+          <div className="max-w-4xl mx-auto px-6 space-y-12">
+            {content.sections.map((s, i) => (
+              <article key={s.heading} className="relative pl-6">
+                <span
+                  className={`absolute left-0 top-1 bottom-1 w-1 rounded-full ${t.accentBg}`}
+                  aria-hidden="true"
+                />
+                <h2 className="text-2xl font-bold text-gray-900 mb-3">
+                  <span className={`${t.accent} mr-2`}>{String(i + 1).padStart(2, "0")}.</span>
+                  {s.heading}
+                </h2>
+                <p className="text-gray-700 leading-relaxed text-lg">{s.body}</p>
+                {s.bullets && s.bullets.length > 0 && (
+                  <ul className="mt-4 space-y-2">
+                    {s.bullets.map((b) => (
+                      <li key={b} className="flex items-start gap-3 text-gray-700">
+                        <svg
+                          className={`w-5 h-5 ${t.iconColor} flex-shrink-0 mt-0.5`}
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Highlights grid */}
+      {content.highlights && content.highlights.length > 0 && (
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {content.highlights.map((h) => (
+                <div
+                  key={h.title}
+                  className="bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-lg hover:-translate-y-1 transition-all"
+                >
+                  <div
+                    className={`w-11 h-11 ${t.accentBg} rounded-xl flex items-center justify-center mb-4`}
+                  >
+                    <svg
+                      className={`w-5 h-5 ${t.iconColor}`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <h3 className="font-bold text-gray-900 mb-2">{h.title}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">{h.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Bottom CTA */}
+      <section className="py-16 text-white" style={{ background: t.gradient }}>
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold mb-4">Ready to take the next step?</h2>
+          <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
+            Whether you're a landscape professional or a client, BALI is here to help. Get in touch with our team — we respond to every enquiry within 48 hours.
+          </p>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <Link
+              to="/contact"
+              className="bg-white text-bali-blue hover:bg-gray-100 px-7 py-3 rounded-lg font-bold transition-all hover:scale-105 shadow-lg"
+            >
+              Contact BALI
+            </Link>
+            <Link
+              to="/join"
+              className="bg-bali-green hover:bg-green-700 text-white px-7 py-3 rounded-lg font-bold transition-all hover:scale-105"
+            >
+              Join Today
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function ComingSoon({ path }: { path: string }) {
+  const title = titleFromPath(path.replace(/^\//, ""));
+  return (
+    <>
+      <section
+        className="relative overflow-hidden py-20 text-white"
+        style={{ background: themes.blue.gradient }}
+      >
+        <div className="max-w-6xl mx-auto px-6 relative">
+          <Breadcrumbs path={path} />
+          <p className="text-bali-grass uppercase tracking-widest text-sm font-semibold mb-3">BALI</p>
+          <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-4 animate-fade-up">{title}</h1>
+          <p className="text-blue-100 text-lg max-w-2xl">
+            This page is part of the BALI website and is being prepared.
+          </p>
+        </div>
+      </section>
+      <section className="flex-1 py-16 bg-gray-50">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <p className="text-gray-600 mb-6">
+            The content for{" "}
+            <code className="bg-gray-100 text-bali-blue text-sm px-1.5 py-0.5 rounded">{path}</code>{" "}
+            isn't published yet. In the meantime, explore the rest of the site or get in touch.
+          </p>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <Link
+              to="/contact"
+              className="bg-bali-blue hover:bg-blue-800 text-white px-5 py-2.5 rounded-lg font-semibold transition-all"
+            >
+              Contact BALI
+            </Link>
+            <Link
+              to="/"
+              className="border-2 border-bali-blue text-bali-blue hover:bg-bali-blue hover:text-white px-5 py-2.5 rounded-lg font-semibold transition-all"
+            >
+              Back to Home
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
