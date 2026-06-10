@@ -974,11 +974,11 @@ const C: Record<string, PageContent> = {
     eyebrow: "Membership",
     title: "Code of Conduct",
     theme: "green",
-    intro: "",
+    intro: "The BALI Code of Conduct sets out the standards of business practice and professional behaviour expected of every member of the Association. Continued membership depends on the agreement to uphold these standards, which protect both clients and the wider industry.",
     sections: [
       {
-        heading: "Continued membership of the Association is dependent upon agreement to abide by the Association’s Code of Conduct detailed below:",
-        body: "",
+        heading: "Commitments of every BALI member",
+        body: "All members commit to the following obligations as a condition of membership of the British Association of Landscape Industries:",
         bullets: [
           "To uphold the standing of the British Association of Landscape Industries, its members, and the wider landscape industry by seeking to achieve and maintain the highest standards of business and professional expertise",
           "To provide services only within their areas of competence and be responsible for the actions of all their staff and sub-contractors",
