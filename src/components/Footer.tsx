@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import Link from './SmartLink'
 
 const quickLinks = [
   { label: 'Join Our Association', href: '/join' },

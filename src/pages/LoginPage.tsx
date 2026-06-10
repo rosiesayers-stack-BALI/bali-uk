@@ -1,5 +1,6 @@
 import { useState, FormEvent } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from '@tanstack/react-router'
+import Link from '../components/SmartLink'
 
 export default function LoginPage() {
   const navigate = useNavigate()
@@ -28,7 +29,7 @@ export default function LoginPage() {
     // const res = await fetch('/api/auth/login', { method: 'POST', body: JSON.stringify({ email, password }) })
     await new Promise((r) => setTimeout(r, 1200))
     setLoading(false)
-    navigate('/portal')
+    navigate({ to: '/portal' })
   }
 
   return (
