@@ -24,7 +24,7 @@ const C: Record<string, PageContent> = {
     eyebrow: "About BALI",
     title: "What is BALI",
     theme: "blue",
-    intro: "A Trade Association for all landscape professionals",
+    intro: "The British Association of Landscape Industries is the leading Trade Association representing all landscape professionals - from design, build and maintenance through to supply, training and education. Over 900 Accredited members represent some of the best landscaping businesses across the country, from large corporations, to local traders, to individual designers.",
     image: { url: "/__l5e/assets-v1/f84f9fdd-4c58-4342-9115-d5228b3c6d78/large_mountbatten-house-min.jpeg", alt: "Mountbatten House landscape" },
     sections: [
       {
@@ -98,9 +98,13 @@ const C: Record<string, PageContent> = {
     eyebrow: "About BALI",
     title: "GoLandscape — Careers in Landscaping",
     theme: "blue",
-    intro: "Our Association and its members recognise the importance of introducing new talent into the landscaping industry, directly tackling the skills deficit.",
+    intro: "We have proudly established GoLandscape - an education, skills and careers initiative that is designed to inform and inspire new recruits and combat industry issues, including a severe skills shortage, which also sustains, builds on and develops this remarkable and rewarding sector.",
     image: { url: "/__l5e/assets-v1/a5290e22-f805-49d7-932e-6e9217376059/bali-jobs-people.jpg", alt: "BALI Jobs" },
     sections: [
+      {
+        heading: "Our Association and its members recognise the importance of introducing new talent into the landscaping industry, directly tackling the skills deficit.",
+        body: "GoLandscape provides a wealth of inspiring and educational career advice on landscaping jobs to young people. The advice is mapped to the UK government's curriculum for the land-based sector and linked to the Trailblazer Apprenticeship Standards . The British Association of Landscape Industries has played an instrumental part in lobbying at a parliamentary level and establishing the Trailblazer Apprenticeship Standards as recognised qualifications in land-based colleges throughout the country. GoLandscape brings together real-life stories and exemplary projects from leading landscape industry organisations and individuals. These provide practical examples of what it is really like to work in the industry that we are all so proud of, and why landscaping jobs offer serious career paths that provide opportunities for everyone. For more information visit our GoLandscape website .",
+      },
       {
         heading: "documents",
         body: "",
@@ -116,9 +120,13 @@ const C: Record<string, PageContent> = {
     eyebrow: "About BALI",
     title: "BALI Charities of the Year",
     theme: "blue",
-    intro: "The British Association of Landscape Industries supports a number of different charities helping those working across our industry.",
+    intro: "We are proud to offer our support to these worthy causes, including our own charity, the BALI Chalk Fund .",
     image: { url: "/__l5e/assets-v1/796d324b-86f1-4094-a94a-9d98a264d7af/medium_bali-chalk-fund.png", alt: "BALI Chalk Fund" },
     sections: [
+      {
+        heading: "The British Association of Landscape Industries supports a number of different charities helping those working across our industry.",
+        body: "Every year we choose one of our nominated charities to raise money for, alongside the Chalk Fund, at our National Landscape Awards , the biggest landscaping awards ceremony in Europe.",
+      },
       {
         heading: "BALI Chalk Fund",
         body: "Established in the mid-1970s in memory of BALI founder member Geoffrey Chalk, the BALI Chalk Fund provides funding and bursaries for skills development across the landscape industry. Trustees comprise past and current members (including several past chairmen) whose role it is to identify industry causes that meet the Fund’s criteria for support. To date, the Chalk Fund has facilitated the development of industry training materials, awarded travel scholarships to enable young landscapers to learn from their counterparts overseas, provided training prizes for the winners of the national finals of the WorldSkills UK Landscape Gardening competition, and supported land-based colleges by providing trophies to students on landscape-related courses. visit the website",
@@ -158,7 +166,7 @@ const C: Record<string, PageContent> = {
     eyebrow: "About BALI",
     title: "BALI National Children's Forest",
     theme: "blue",
-    intro: "Introducing the British Association of Landscape Industries’ National Contractor’s Forum",
+    intro: "The Association's National Contractor’s Forum (NCF) is a specialist group set up to lobby on important issues and address key challenges within the land-based sector. Its constituents are drawn from different sectors of the industry, creating a formalised group of influence. It provides the landscape management, maintenance and construction sectors with a structure through which they can communicate across and beyond the industry. The Forum is made up of seven of the UK’s largest landscape contractors and grounds maintenance providers. Their responsibility is to support the British Association of Landscape Industries through their lobbying efforts.",
     image: { url: "/__l5e/assets-v1/db968096-bc3a-4274-914c-04a48337626d/bali-ncf-primary-identity.png", alt: "BALI-NCF logo" },
     sections: [
       {
@@ -193,7 +201,7 @@ const C: Record<string, PageContent> = {
     eyebrow: "About BALI",
     title: "National Landscape Awards",
     theme: "blue",
-    intro: "2026 National Landscape Award entries are now open!",
+    intro: "We are thrilled to announce that this years National Landscape Award entries are now open! Enter now here .",
     sections: [
       {
         heading: "Inspiring and celebrating landscaping excellence",
@@ -207,9 +215,13 @@ const C: Record<string, PageContent> = {
     eyebrow: "About BALI",
     title: "Advertise with BALI",
     theme: "blue",
-    intro: "Advertise your business with our Association and access over 900 members including the UK's largest landscape contractor network.",
+    intro: "The British Association of Landscape Industries is the leading Trade Association in the UK for the landscaping industry, supporting and promoting its members and their businesses and inspiring the future workforce. With over 900 Accredited member companies and individuals, Association members pride themselves on providing clients with professional and specialist services using accredited techniques and practices.",
     image: { url: "/__l5e/assets-v1/859a80ad-ac37-4a28-aaea-c10f84d95e66/large_homepage-banner-1.jpeg", alt: "Landscape professionals at work" },
     sections: [
+      {
+        heading: "Advertise your business with our Association and access over 900 members including the UK's largest landscape contractor network.",
+        body: "By advertising with our Association, you can now promote your company to an active landscaping network of over 1,700 total members operating within the landscape services industry worth £11.6bn to the UK economy supporting 196,300 jobs in 2017.* We offer a variety of online and offline advertising platforms including our quarterly membership journal Landscape News, our annually published Who’s Who Landscape Directory, a weekly e-newsletter and website. This is an opportunity to reach over 900 Accredited members and over 1,800 total members who actively visit the website and read our publications in a creative and compelling way. For more information on advertising please contact Joanna Pieprzak, Media Sales & Sponsorship Officer, via email at joanna.pieprzak@bali.org.uk or on +44(0)24 7669 0333 . *Oxford Economics' The Economic Impact of Ornamental Horticulture and Landscaping in the UK",
+      },
       {
         heading: "documents",
         body: "",
@@ -258,7 +270,13 @@ const C: Record<string, PageContent> = {
     eyebrow: "Landscape Directory",
     title: "Find an Accredited landscape professional",
     theme: "blue",
-    intro: "Find your nearest Accredited garden designer, landscaper, supplier or training provider. You can refine your search to make it even easier.",
+    intro: "Our Accredited members offer the finest quality specialist products and services to suit all situations. From topographical surveys, scaled drawings and planting plans to landscape build and grounds maintenance. Our members also have the largest selection of landscaping supplies, from turf, plants, wildflower seeds and soils to paving, walling, water features and living walls.",
+    sections: [
+      {
+        heading: "Find your nearest Accredited garden designer, landscaper, supplier or training provider. You can refine your search to make it even easier.",
+        body: "If you are considering joining BALI, click the button below to find out more.",
+      },
+    ],
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
@@ -266,7 +284,7 @@ const C: Record<string, PageContent> = {
     eyebrow: "Landscape Directory",
     title: "Find a landscape contractor",
     theme: "blue",
-    intro: "Accredited Contractor membership is for contractors whose main business involves hard/soft landscaping or grounds maintenance.",
+    intro: "For British Association of Landscape Industries Accredited Contractor membership, the contractor must have been trading for at least two years and meet the requirements set out below.",
     sections: [
       {
         heading: "Steps to becoming an Accredited Contractor:",
@@ -304,8 +322,12 @@ const C: Record<string, PageContent> = {
     eyebrow: "Landscape Directory",
     title: "Find a landscape designer",
     theme: "blue",
-    intro: "The British Association of Landscape Industries is committed to continually improving the landscape sector and sets high standards for its Accredited Designer members.",
+    intro: "Depending on your registered status with other landscape organisations, the British Association of Landscape Industries offers two routes to becoming an Accredited Designer member.",
     sections: [
+      {
+        heading: "The British Association of Landscape Industries is committed to continually improving the landscape sector and sets high standards for its Accredited Designer members.",
+        body: "Route one is for Registered members of the Society of Garden Designers or Chartered Landscape Institute:",
+      },
       {
         heading: "Four application form requirements:",
         body: "Route two is for non-registered members of SGD or Chartered LI:",
@@ -356,7 +378,7 @@ const C: Record<string, PageContent> = {
     eyebrow: "Landscape Directory",
     title: "Find a landscape supplier",
     theme: "blue",
-    intro: "This membership category can be a business, section or division of a business that supplies quality materials and equipment.",
+    intro: "Accredited Suppliers are widely encouraged to promote the use of their products and services to British Association of Landscape Industries Contractor and Designer members through Association workshops, exhibitions, and publications. Supplier members are also encouraged to partake in the Supplier Forum for a chance to air their views during topical discussions.",
     sections: [
       {
         heading: "Steps to becoming an Accredited Supplier:",
@@ -393,7 +415,7 @@ const C: Record<string, PageContent> = {
     eyebrow: "Landscape Directory",
     title: "Find a training provider",
     theme: "blue",
-    intro: "This category of membership is for individual trainers, commercial training organisations, FE and HE colleges and universities, delivering land-based academic and skills training, needing to keep abreast of industry news and developments.",
+    intro: "For full Training Provider member benefits and fees, please see the attached document on the right-hand side.",
     sections: [
       {
         heading: "Steps to becoming a Training Provider member:",
@@ -407,7 +429,7 @@ const C: Record<string, PageContent> = {
       },
       {
         heading: "Key member benefits include:",
-        body: "For full Training Provider member benefits and fees, please see the attached document on the right-hand side. To make an enquiry about becoming an Association Training Provider member, please follow the link here.",
+        body: "To make an enquiry about becoming an Association Training Provider member, please follow the link here.",
         bullets: [
           "Entry into Who’s Who Landscape Directory",
           "Attend regional events, technical workshops and online meetings",
@@ -454,7 +476,13 @@ const C: Record<string, PageContent> = {
     eyebrow: "Landscape Directory",
     title: "Search all Accredited members",
     theme: "blue",
-    intro: "Find your nearest Accredited garden designer, landscaper, supplier or training provider. You can refine your search to make it even easier.",
+    intro: "Our Accredited members offer the finest quality specialist products and services to suit all situations. From topographical surveys, scaled drawings and planting plans to landscape build and grounds maintenance. Our members also have the largest selection of landscaping supplies, from turf, plants, wildflower seeds and soils to paving, walling, water features and living walls.",
+    sections: [
+      {
+        heading: "Find your nearest Accredited garden designer, landscaper, supplier or training provider. You can refine your search to make it even easier.",
+        body: "If you are considering joining BALI, click the button below to find out more.",
+      },
+    ],
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
@@ -462,7 +490,13 @@ const C: Record<string, PageContent> = {
     eyebrow: "Landscape Directory",
     title: "Why choose a BALI member?",
     theme: "blue",
-    intro: "British Association of Landscape Industries members carry out their duties to the very highest industry standards. To be a member is to provide professional excellence at all times.",
+    intro: "Members of the British Association of Landscape Industries are the best of the best in their sectors. They produce beautiful gardens, landscapes and high quality products fit for the most stunning gardens.",
+    sections: [
+      {
+        heading: "British Association of Landscape Industries members carry out their duties to the very highest industry standards. To be a member is to provide professional excellence at all times.",
+        body: "To be granted Accredited membership status, Association members sign up to our Code of Conduct , pledging to carry out their business to the very highest industry standards. This means investing in staff training and skills development, adhering to health and safety regulations, considering the environmental and ethical implications of what they do and running their operations with honesty and integrity. By choosing an Association professional to design and build your garden, maintain your grounds or source ethically produced materials, you can be sure of professional excellence, value for money and outstanding customer service. START YOUR SEARCH",
+      },
+    ],
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
@@ -470,12 +504,8 @@ const C: Record<string, PageContent> = {
     eyebrow: "Events",
     title: "BALI Events",
     theme: "warm",
-    intro: "BALI Events",
+    intro: "Join us for this informative and educational Midlands regional event, hosted by Sky Garden",
     sections: [
-      {
-        heading: "Midlands Regional Event – Sky Garden",
-        body: "Join us for this informative and educational Midlands regional event, hosted by Sky Garden",
-      },
       {
         heading: "BALI Chalk Fund Landscape Open Mic Night",
         body: "The BALI Chalk team is hosting an Open Mic event at the Spice of Life Bar, Soho on 1 October",
@@ -496,13 +526,9 @@ const C: Record<string, PageContent> = {
     eyebrow: "Events",
     title: "BALI Training Courses",
     theme: "warm",
-    intro: "BALI Training Courses",
+    intro: "ROLO H&S Environmental Awareness Course for Operatives - 1 Day Online",
     image: { url: "/__l5e/assets-v1/9a43f90a-4a3a-4a31-80cb-fd5e1c43f0c0/jdrgroup-factlogo-iq-19-01-2026-v3-2-.jpg", alt: "BALI Training Courses" },
     sections: [
-      {
-        heading: "ROLO Health, Safety and Environmental Awareness Course for Operatives - 1 Day online",
-        body: "ROLO H&S Environmental Awareness Course for Operatives - 1 Day Online",
-      },
       {
         heading: "ROLO Health, Safety and Environmental Awareness Course for Operatives - Online",
         body: "Mandatory course for most LISS/CSCS SmartCards. This course is hosted by Landscape Training Group.",
@@ -543,13 +569,9 @@ const C: Record<string, PageContent> = {
     eyebrow: "Help & Advice",
     title: "BALI Help & Advice",
     theme: "slate",
-    intro: "BALI Help & Advice",
+    intro: "contract for use on all domestic landscape and garden design and build projects",
     image: { url: "/__l5e/assets-v1/a179063f-7964-4e3c-8179-b686c51d9934/large_homepage-banner-3.jpeg", alt: "British landscape industry" },
     sections: [
-      {
-        heading: "landscape contract",
-        body: "contract for use on all domestic landscape and garden design and build projects",
-      },
       {
         heading: "health and safety",
         body: "Online resource for members, including helpful tools, templates and documents",
@@ -585,13 +607,9 @@ const C: Record<string, PageContent> = {
     eyebrow: "Help & Advice",
     title: "Contracts, Law and Regulations",
     theme: "slate",
-    intro: "Contracts, Law and Regulations",
+    intro: "How CDM applies to the landscape industry",
     image: { url: "/__l5e/assets-v1/859a80ad-ac37-4a28-aaea-c10f84d95e66/large_homepage-banner-1.jpeg", alt: "Landscape professionals at work" },
     sections: [
-      {
-        heading: "CDM regulations",
-        body: "How CDM applies to the landscape industry",
-      },
       {
         heading: "water abstraction",
         body: "Water abstraction refers to the process of taking or extracting water from a natural source (rivers, lakes, groundwater aquifers, etc.) for various uses, from drinking to irrigation, treatment, and industrial applications.",
@@ -612,7 +630,7 @@ const C: Record<string, PageContent> = {
     eyebrow: "Help & Advice",
     title: "Dispute resolution service",
     theme: "flow",
-    intro: "Learn more about the dispute resolution service offered by The British Association of Landscape Industries to members and their client.",
+    intro: "Dispute resolution service",
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
@@ -628,12 +646,8 @@ const C: Record<string, PageContent> = {
     eyebrow: "Help & Advice",
     title: "Health & Safety",
     theme: "flow",
-    intro: "Health & Safety",
+    intro: "The law requires employers to identify the hazards that could cause injury or illness to staff. Learn more here",
     sections: [
-      {
-        heading: "risk assessment",
-        body: "The law requires employers to identify the hazards that could cause injury or illness to staff. Learn more here",
-      },
       {
         heading: "lone working",
         body: "As with any other work-related task, employers have a responsibility to manage the risk employees face when working alone.",
@@ -646,13 +660,9 @@ const C: Record<string, PageContent> = {
     eyebrow: "Help & Advice",
     title: "Contracts, Law and Regulations",
     theme: "slate",
-    intro: "Contracts, Law and Regulations",
+    intro: "How CDM applies to the landscape industry",
     image: { url: "/__l5e/assets-v1/859a80ad-ac37-4a28-aaea-c10f84d95e66/large_homepage-banner-1.jpeg", alt: "Landscape professionals at work" },
     sections: [
-      {
-        heading: "CDM regulations",
-        body: "How CDM applies to the landscape industry",
-      },
       {
         heading: "water abstraction",
         body: "Water abstraction refers to the process of taking or extracting water from a natural source (rivers, lakes, groundwater aquifers, etc.) for various uses, from drinking to irrigation, treatment, and industrial applications.",
@@ -689,7 +699,7 @@ const C: Record<string, PageContent> = {
     eyebrow: "Join BALI",
     title: "Join Our Association",
     theme: "green",
-    intro: "Join the UK’s Leading Landscaping Network",
+    intro: "Become a member of the British Association of Landscape Industries and access exclusive benefits designed to help your business grow, thrive, and stand out.",
     image: { url: "/__l5e/assets-v1/f84f9fdd-4c58-4342-9115-d5228b3c6d78/large_mountbatten-house-min.jpeg", alt: "Mountbatten House landscape" },
     sections: [
       {
@@ -791,12 +801,12 @@ const C: Record<string, PageContent> = {
     eyebrow: "LISS/CSCS",
     title: "What is LISS/CSCS?",
     theme: "blue",
-    intro: "What is LISS/CSCS?",
+    intro: "LISS/CSCS is both a standalone scheme and a mandatory requirement of the National Highways Sector Scheme 18 (Land-based) recognised by Build UK. It is designed to support the development of an industry framework for skills development and progression in the workplace alongside CSCS.",
     image: { url: "/__l5e/assets-v1/7d357e1d-8b62-4bc6-bfb8-a4f86c403651/screenshot-2020-10-16-at-10.08.26.png", alt: "LISS/CSCS SmartCards" },
     sections: [
       {
         heading: "Introducing LISS/CSCS",
-        body: "LISS/CSCS is both a standalone scheme and a mandatory requirement of the National Highways Sector Scheme 18 (Land-based) recognised by Build UK. It is designed to support the development of an industry framework for skills development and progression in the workplace alongside CSCS. This is achieved through a SmartCard scheme. To apply for any fully operational SmartCard you must successfully pass the ROLO Health, Safety and Environmental Awareness Course and CITB Touch Screen Test, appropriate to the SmartCard level. Only the CITB Touch Screen Test is required for the Modular Paving industry. For more information on LISS/CSCS, download our free advice leaflet which provides an additional explanation.",
+        body: "This is achieved through a SmartCard scheme. To apply for any fully operational SmartCard you must successfully pass the ROLO Health, Safety and Environmental Awareness Course and CITB Touch Screen Test, appropriate to the SmartCard level. Only the CITB Touch Screen Test is required for the Modular Paving industry. For more information on LISS/CSCS, download our free advice leaflet which provides an additional explanation.",
       },
       {
         heading: "How to obtain a LISS/CSCS SmartCard",
@@ -821,7 +831,7 @@ const C: Record<string, PageContent> = {
     eyebrow: "LISS/CSCS",
     title: "Industry Accreditation",
     theme: "slate",
-    intro: "From 1st January 2020, all LISS/CSCS cards renewed under Industry Accreditation expired on 31 December 2024.",
+    intro: "To meet the requirements of the Construction Leadership Council (CLC) LISS/CSCS develop plans to move all Industry Accreditation (IA) cardholders to a recognised qualification.",
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
@@ -829,7 +839,13 @@ const C: Record<string, PageContent> = {
     eyebrow: "LISS/CSCS",
     title: "Apply for a LISS/CSCS SmartCard",
     theme: "slate",
-    intro: "Apply for a LISS/CSCS SmartCard to gain access to commercial land-based sites. Upskill your workforce and develop your own personal career by demonstrating your qualifications, skills and knowledge.",
+    intro: "Depending on the type of work you or your employee(s) carry out, choose from one of seven industry categories below. This includes New, Update, Renewal or Duplicate SmartCards.",
+    sections: [
+      {
+        heading: "Apply for a LISS/CSCS SmartCard to gain access to commercial land-based sites. Upskill your workforce and develop your own personal career by demonstrating your qualifications, skills and knowledge.",
+        body: "Important – before applying please ensure you have passed your ROLO Health, Safety and Environmental Awareness Course and relevant CITB Touch Screen Test (these must have been completed within the last 2 years on application). Please ensure you have checked your land-based qualification(s), if applicable, to help you map your certification to the appropriate LISS/CSCS SmartCard. It's your responsibility to ensure you meet all the criteria for the specific card you’re applying for. If you apply and are later found to be ineligible (e.g., wrong qualifications, missing documents), BALI is under no obligation to refund the application fee. If you're unsure whether you meet the criteria for a specific card, please contact the LISS team, who will be happy to help guide you through the process. Contact by telephone 024 7669 0333 or email. The photo taken at the CITB test centre will be used as a default for the card. If a different photo is preferred, please state this in a supporting document attached to your application. We may request further proof of ID to reflect the different photo to confirm it is a true image of the applicant. ** CARDS CAN TAKE UP TO 28 WORKING DAYS TO PROCESS FROM THE DATE OF SUBMISSION **",
+      },
+    ],
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
@@ -837,7 +853,7 @@ const C: Record<string, PageContent> = {
     eyebrow: "LISS/CSCS",
     title: "Check qualification(s)",
     theme: "slate",
-    intro: "Prior to applying for a LISS/CSCS SmartCard check our qualifications matrix to find out which Land-based qualifications are currently being accepted to support your application",
+    intro: "It is advisable to map your qualification(s) to the relevant LISS/CSCS SmartCard before making your application. Find out which SmartCard is suited to you based on whether you hold a UK or overseas qualification. By using the Construction Industry App - Smart Check, a free-to-download application for handheld devices and PCs, your LISS/CSCS SmartCard can be read electronically.",
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
@@ -845,9 +861,13 @@ const C: Record<string, PageContent> = {
     eyebrow: "LISS/CSCS",
     title: "NHSS 18 Highway Sector Scheme",
     theme: "blue",
-    intro: "National Highways Sector Scheme 18 for the Natural Environment and Landscape, including Ecology for Infrastructure.",
+    intro: "The National Highways Sector Scheme 18 (NHSS18) is the customised management system for landscaping and the environment (including ecology) and is a mandatory requirement for all contractors working for Highways England and other infrastructure providers.",
     image: { url: "/__l5e/assets-v1/a179063f-7964-4e3c-8179-b686c51d9934/large_homepage-banner-3.jpeg", alt: "British landscape industry" },
     sections: [
+      {
+        heading: "National Highways Sector Scheme 18 for the Natural Environment and Landscape, including Ecology for Infrastructure.",
+        body: "NHSS18 reflects requirements embodied in EN IS09001:2015 Quality Management system with specific relevance to Landscape Construction and Maintenance, Arboriculture, Application and Management of Pesticides, Amenity, Ecology and Environmental Management and Countryside Management. The scheme aims to ensure that Organisations working on roads have a trained and competent workforce. Sector Schemes are designed to provide an industry benchmark, ensuring all processes are planned and demonstrate continually improving standards, promoting confidence in quality management systems by the provision of a robust and transparent system. How to obtain accreditation? Initially, you will need to familiarise yourself with the scheme document, which can be found on the NHSS18 Schedule of Suppliers website. An updated version of Appendix S can be downloaded from this page. Please note this document is advisory and is subject to change but is seen as best practice. Accreditation can be achieved through one of the following UKAS Registered Certification Bodies: This list is not exhaustive but you must only use a UKAS Registered Certification Body (CB). Advice on the current accreditation status of certification bodies should be sought directly from UKAS by calling +44(0)17 8442 9000. The Schedule of Suppliers list for NHSS18 will give you information on who is registered and for which parts of the document.",
+      },
       {
         heading: "documents",
         body: "",
@@ -863,13 +883,9 @@ const C: Record<string, PageContent> = {
     eyebrow: "LISS/CSCS",
     title: "ROLO Health, Safety & Environmental Awareness",
     theme: "blue",
-    intro: "ROLO Health, Safety & Environmental Awareness",
+    intro: "ROLO (Register of Land-based Operations) is recognised by Build UK as one of the leading Health, Safety and Environmental Awareness Courses in the UK, designed exclusively for the Land-based industries by landscaping professionals. ROLO was developed and is owned by the British Association of Landscape Industries to raise the standard of health and safety, environmental awareness, and reduce the risk of accidents in the workplace. It also encourages employers to keep a record of workers in the Land-based sector who have achieved a recognised level of competence.",
     image: { url: "/__l5e/assets-v1/859a80ad-ac37-4a28-aaea-c10f84d95e66/large_homepage-banner-1.jpeg", alt: "Landscape professionals at work" },
     sections: [
-      {
-        heading: "What is ROLO?",
-        body: "ROLO (Register of Land-based Operations) is recognised by Build UK as one of the leading Health, Safety and Environmental Awareness Courses in the UK, designed exclusively for the Land-based industries by landscaping professionals. ROLO was developed and is owned by the British Association of Landscape Industries to raise the standard of health and safety, environmental awareness, and reduce the risk of accidents in the workplace. It also encourages employers to keep a record of workers in the Land-based sector who have achieved a recognised level of competence.",
-      },
       {
         heading: "Why is ROLO important?",
         body: "The Department of Trade & Industry made it a ‘duty of care’ that all trade bodies ensure that their members are adequately trained in health and safety and that all employers should demonstrate their personnel are correctly trained. In July 2014 the United Kingdom Contractors Group (UKCG) officially recognised BALI’s ROLO Health, Safety and Environmental Awareness Course under its UKCG Health and Safety Training Standard, now known as Build UK. Their Standard Document can be found here.",
@@ -914,7 +930,7 @@ const C: Record<string, PageContent> = {
     eyebrow: "Membership",
     title: "Membership of BALI",
     theme: "green",
-    intro: "Join the UK’s Leading Landscaping Network",
+    intro: "Become a member of the British Association of Landscape Industries and access exclusive benefits designed to help your business grow, thrive, and stand out.",
     sections: [
       {
         heading: "Why Join BALI?",
@@ -997,7 +1013,25 @@ const C: Record<string, PageContent> = {
     eyebrow: "Membership",
     title: "Code of Conduct",
     theme: "green",
-    intro: "Continued membership of the Association is dependent upon agreement to abide by the Association’s Code of Conduct detailed below:",
+    intro: "Code of Conduct",
+    sections: [
+      {
+        heading: "Continued membership of the Association is dependent upon agreement to abide by the Association’s Code of Conduct detailed below:",
+        body: "",
+        bullets: [
+          "To uphold the standing of the British Association of Landscape Industries, its members, and the wider landscape industry by seeking to achieve and maintain the highest standards of business and professional expertise",
+          "To provide services only within their areas of competence and be responsible for the actions of all their staff and sub-contractors",
+          "To use appropriately trained staff and ensure on-going staff training and development",
+          "To operate in an environmentally, ethically, and commercially sustainable manner",
+          "To address client concerns promptly, maintaining professionalism and courtesy, and seek to negotiate an equitable solution in the case of a dispute",
+          "To cooperate fully with the Dispute Resolution Service (applicable to Accredited Contractor and Accredited Designer members only)",
+          "To identify and meet customer, legislative and regulatory requirements",
+          "To use the current ‘BALI Accredited’ logo appropriately (applicable to Accredited Contractor, Accredited International, Accredited Group, Accredited DSO, Accredited Supplier and Accredited Designer members only)",
+          "To maintain a satisfactory standard of workmanship and professional conduct, which may be subject to inspection at any time and will be subject to the association’s Quality Standards Review",
+          "To ensure the regular payment of the annual membership fee",
+        ],
+      },
+    ],
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
@@ -1005,11 +1039,11 @@ const C: Record<string, PageContent> = {
     eyebrow: "Membership",
     title: "Association Quality Standard",
     theme: "green",
-    intro: "Association Quality Standard",
+    intro: "For the purposes of this standard, “quality” is defined as being able to:",
     sections: [
       {
         heading: "What is Quality?",
-        body: "For the purposes of this standard, “quality” is defined as being able to: “consistently and systematically deliver what the client can reasonably expect”",
+        body: "“consistently and systematically deliver what the client can reasonably expect”",
       },
       {
         heading: "Purpose",
@@ -1027,7 +1061,7 @@ const C: Record<string, PageContent> = {
     eyebrow: "Membership",
     title: "Terms of Membership",
     theme: "green",
-    intro: "Please find the Terms of Membership for all members, and anyone looking to become a member will have to adhere to the same terms below.",
+    intro: "British Association of Landscape Industries (“BALI” and/or “we/our/us”)",
     image: { url: "/__l5e/assets-v1/a179063f-7964-4e3c-8179-b686c51d9934/large_homepage-banner-3.jpeg", alt: "British landscape industry" },
     sections: [
       {
@@ -1074,13 +1108,9 @@ const C: Record<string, PageContent> = {
     eyebrow: "News",
     title: "Latest News",
     theme: "purple",
-    intro: "Latest News",
+    intro: "Volunteers from Jack Moody Group have recently completed a new community landscaping project in Cheslyn Hay",
     image: { url: "/__l5e/assets-v1/731280f5-5ca5-49ee-9543-e7d1c1ebcc68/large_cheslyn-hay-min.jpeg", alt: "Latest News" },
     sections: [
-      {
-        heading: "Delivering social value through community landscaping in Cheslyn Hay",
-        body: "Volunteers from Jack Moody Group have recently completed a new community landscaping project in Cheslyn Hay",
-      },
       {
         heading: "Water ways: latest government white paper brings a flood of landscaping opportunity",
         body: "From climate-driven floods and droughts to sewage pollution in our rivers, water has become a hot topic in landscaping and beyond, so much so that the government launched a major review after coming to power in 2024.",
@@ -1183,9 +1213,13 @@ const C: Record<string, PageContent> = {
     eyebrow: "Legal",
     title: "Privacy Policy",
     theme: "slate",
-    intro: "British Association of Landscape Industries (The) (\"We\") are committed to protecting and respecting your privacy.",
+    intro: "This policy (together with our Terms and Conditions and any other documents referred to on it) sets out the basis on which any personal data we collect from you, or that you provide to us, will be processed by us. Please read the following carefully to understand our views and practices regarding your personal data and how we will treat it.",
     image: { url: "/__l5e/assets-v1/119be43e-6389-4927-b7eb-fc9a56fde67c/large_web-banner.png", alt: "BALI landscape banner" },
     sections: [
+      {
+        heading: "British Association of Landscape Industries (The) (\"We\") are committed to protecting and respecting your privacy.",
+        body: "By visiting bali.org.uk OR baliawards.co.uk OR golandscape.co.uk you are accepting and consenting to the practices described in this policy. In this policy “Data Protection Legislation” shall mean the Data Protection Act 1998 up to but excluding 25th May 2018 and thereafter the General Data Protection Regulation (EU 2016/679) (“GDPR”) any national implementing laws, regulations and secondary legislation as amended from time to time unless and until the GDPR is no longer directly applicable in the UK when it shall mean any successor legislation to the GDPR or Data Protection Act 1998. For the purpose of the Data Protection Legislation, the data controller is British Association of Landscape Industries (The).",
+      },
       {
         heading: "Information we collect from you",
         body: "We will collect and process the following data about you:",
@@ -1273,13 +1307,9 @@ const C: Record<string, PageContent> = {
     eyebrow: "Legal",
     title: "Cookie Policy",
     theme: "slate",
-    intro: "Cookie Policy",
+    intro: "There are a number of ways we collect your data. We process your data to provide a service to you, whether you make an enquiry, locate a member, log in to your member's area (applicable to members only) or by purchasing a product or service. When you complete a form, we collect information which we will use to respond to your enquiry. In order to satisfy your request, we ask for relevant contact details such as name, email address and telephone number. We may also ask for your geographic area and industry specialisms. This depends on which enquiry form you are completing.",
     image: { url: "/__l5e/assets-v1/f84f9fdd-4c58-4342-9115-d5228b3c6d78/large_mountbatten-house-min.jpeg", alt: "Mountbatten House landscape" },
     sections: [
-      {
-        heading: "You provide some information",
-        body: "There are a number of ways we collect your data. We process your data to provide a service to you, whether you make an enquiry, locate a member, log in to your member's area (applicable to members only) or by purchasing a product or service. When you complete a form, we collect information which we will use to respond to your enquiry. In order to satisfy your request, we ask for relevant contact details such as name, email address and telephone number. We may also ask for your geographic area and industry specialisms. This depends on which enquiry form you are completing.",
-      },
       {
         heading: "We collect some information",
         body: "Your IP (Internet Protocol) address Our website collects your IP address automatically. This is the unique address of the device you are using to access our site. The IP address, on its own, does not identify you as an individual but gives us information that helps us better understand site usage, and therefore enhances our services and website experience for you and others. We use cookies Cookies are small pieces of data that are downloaded to your computer or mobile device when you visit a website or application. Some areas of our website would not function without them, some cookies help provide a better experience for you, and some help us to understand how people use our website. They help us understand who new users are, who our existing ones are and how you have reached our site. They remember details in order that you don’t have to enter them multiple times. Most web browsers automatically accept cookies, but you can usually modify your browser settings to decline cookies if you prefer. This may prevent you from taking full advantage of our website functionality. We use Google Analytics Google Analytics is a tool that helps us understand how you interact with the website. Examples of statistics gathered include when you visit it, how long you stay on pages, what device type you are using (e.g. desktop or mobile), what page you left from and so forth. Information is collected as per Google’s terms and conditions, and associated privacy notices which we suggest you read. Information is anonymised, and any single piece of data contained within Google Analytics does not solely identify an individual. How we share your information We never sell your information to other companies. We will only share your information if you have consented for us to do so, or in accordance with our privacy policy . If we need to share your personal information for a new reason, we will ask you for your consent.",
@@ -1320,13 +1350,9 @@ const C: Record<string, PageContent> = {
     eyebrow: "Legal",
     title: "Terms and Conditions",
     theme: "slate",
-    intro: "Please read the terms and conditions before using the website.",
+    intro: "This acceptable use policy sets out the content standards that apply when you upload content to our site, make contact with other users on our site, link to our site, or interact with our site in any other way.",
     image: { url: "/__l5e/assets-v1/a179063f-7964-4e3c-8179-b686c51d9934/large_homepage-banner-3.jpeg", alt: "British landscape industry" },
     sections: [
-      {
-        heading: "What's in these terms?",
-        body: "This acceptable use policy sets out the content standards that apply when you upload content to our site, make contact with other users on our site, link to our site, or interact with our site in any other way.",
-      },
       {
         heading: "Who we are and how to contact us",
         body: "bali.org.uk or baliawards.co.uk or golandscape.co.uk is a site operated by the British Association of Landscape Industries (The) (\"We\"). We are registered in England and Wales under company number 01254410 and have our registered office at BALI, Landscape House, Stoneleigh Park, Nr Kenilworth, Warwickshire, CV8 2LG. We are a limited company. To contact us, please make an enquiry through our enquiry page.",
@@ -1428,7 +1454,13 @@ const C: Record<string, PageContent> = {
     eyebrow: "BALI",
     title: "Disclaimer",
     theme: "slate",
-    intro: "Access to, and use of, this site is provided by the British Association of Landscape Industries subject to the following terms and conditions (\"Terms\"):",
+    intro: "1 Disclaimer",
+    sections: [
+      {
+        heading: "Access to, and use of, this site is provided by the British Association of Landscape Industries subject to the following terms and conditions (\"Terms\"):",
+        body: "1.1 bali.org.uk is the website (\"site\") of the British Association of Landscape Industries (\"BALI\"). BALI makes no warranties, representations or undertakings about any of the content of this site (including, without limitation, any as to the quality, accuracy, completeness or fitness for any particular purpose of such content), or any content of any other website referred to, referred by or accessed by hypertext link through this site (‘third party site’). 1.2 BALI does not endorse or approve the content of any third party site, nor will BALI have any liability in connection with any of them (including, but not limited to, liability arising out of any allegation that the content of any third party site infringes any law or the rights of any person or entity). 2 Copyright 2.1 All rights, including copyright and database right, in BALI site and its contents, are owned by or licensed to the British Association of Landscape Industries, or otherwise used by BALI as permitted by applicable law all rights reserved. 2.2 In accessing BALI site and its contents, you agree that you will access the contents solely for your own private use but not for any commercial or public use. 2.3 Except as permitted above, you undertake not to copy, store in any medium (including in any other website), distribute, transmit, re-transmit, broadcast, modify, or show in public any part of BALI site without the prior written permission of BALI or in accordance with the Copyright, Designs and Patents Act 1988. You also undertake not to incorporate any of this site’s content into or store it in any other website, electronic retrieval system, publication or other work in any other format (whether hard copy, electronic or other) without prior permission from the British Association of Landscape Industries. In order to avoid doubt, framing of this site, or any part of it, is not permitted without express permission. 3 Viruses, Hacking and Other Offences 3.1 You must not misuse our site by knowingly introducing viruses, trojans, worms, logic bombs or other material which is malicious or technologically harmful. You must not attempt to gain unauthorised access to our site, the server on which our site is stored or any server, computer or database connected to our site. You must not attack our site via a denial-of-service attack or a distributed denial-of-service attack. 3.2 By breaching paragraph 3.1, you would commit a criminal offence under the Computer Misuse Act 1990. We will report any such breach to the relevant law enforcement authorities and we will co-operate with those authorities by disclosing your identity to them. In the event of such a breach, your right to use our site will cease immediately. 3.3 We will not be liable for any loss or damage caused by a distributed denial-of-service attack, viruses or other technologically harmful material that may infect your computer equipment, computer programs, data or other proprietary material due to your use of our site or to your downloading of any material posted on it, or on any website linked to it. 4 General Terms 4.1 Use of this site constitutes your acceptance of these Terms, which take effect immediately on your first use of the site. BALI reserves the right to change these Terms at any time by posting changes online. 4.2 You are responsible for reviewing regularly information posted online to obtain timely notice of such changes. Your continued use of this site after changes are posted constitutes your acceptance of the Terms as modified by the posted changes. 4.3 Material may not be copied, reproduced, republished, downloaded, posted, broadcast or transmitted in any way except for your own personal non-commercial use. Any other use requires the prior written permission of the British Association of Landscape Industries. You agree not to adapt, alter or create a derivative work from any of the material contained in this site or use it for any other purpose other than for your personal non-commercial use. You agree to use this site only for lawful purposes, and in a manner that does not infringe the rights of, or restrict or inhibit the use and enjoyment of this site by any third party. Such restriction or inhibition includes, without limitation, conduct which is unlawful, or which may harass or cause distress or inconvenience to any person and the transmission of obscene or offensive content or disruption of normal flow of dialogue within this site. 4.4 You should always take appropriate advice where you intend to act on any information on this site as to whether such action is suitable in your individual circumstances. You should always take appropriate safeguards against virus protection before downloading information from this site or any third party. 4.5 This site and the information, names, images, pictures, logos and icons regarding or relating to the British Association of Landscape Industries, its products and services (or to third party products and services), is provided \"AS IS\" and on an \"AS AVAILABLE\" basis and to the maximum extent permitted by law without any representation or endorsement made and without warranty of any kind whether express or implied, including but not limited to the implied warranties of satisfactory quality, fitness for a particular purpose, non-infringement, compatibility, security and accuracy. 4.6 In no event will BALI be liable for any damages including, without limitation, indirect or consequential damages, or any damages whatsoever arising from use or loss of use, data, or profits, whether in action of contract, negligence or other tortious action, arising out of or in connection with the use of the site. BALI does not warrant that the functions contained in the material contained in this site will be uninterrupted or error-free, that defects will be corrected, or that this site or the server that makes it available or any third party site are free of viruses or bugs or represents the full functionality, accuracy, and reliability of the materials. The names, images and logos identifying BALI or third parties and their products and services are proprietary marks of BALI and/or third parties. Nothing contained herein shall be construed as conferring by implication or otherwise any licence or right under any trademark or patent of the British Association of Landscape Industries, or any other third party. 4.7 If any of these Terms should be determined to be illegal, invalid or otherwise unenforceable by reason of the laws of any state or country in which these Terms are intended to be effective, then to the extent and within the jurisdiction which that Term or Condition is illegal, invalid or unenforceable, it shall be severed and deleted from the Terms and the remaining terms shall survive, remain in full force and effect and continue to be binding and enforceable. 4.8 Any reference in these Terms to any statute shall be construed as reference to that statute as amended, re-enacted or extended at the relevant time. 4.9 This site is designed to be used by persons resident in the United Kingdom. These Terms shall be governed by and construed in accordance with the laws of England and Wales. Disputes arising here from shall be exclusively subject to the jurisdiction of the courts of England and Wales. 4.10 If these Terms are not accepted in full, you do not have permission to access the contents of this site and therefore should cease using this site immediately.",
+      },
+    ],
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
