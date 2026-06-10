@@ -14,7 +14,9 @@ import { Route as LoginRouteImport } from './routes/login'
 import { Route as SplatRouteImport } from './routes/$'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as NewsIndexRouteImport } from './routes/news.index'
+import { Route as EventsIndexRouteImport } from './routes/events.index'
 import { Route as NewsSlugRouteImport } from './routes/news.$slug'
+import { Route as EventsSlugRouteImport } from './routes/events.$slug'
 
 const PortalRoute = PortalRouteImport.update({
   id: '/portal',
@@ -41,9 +43,19 @@ const NewsIndexRoute = NewsIndexRouteImport.update({
   path: '/news/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EventsIndexRoute = EventsIndexRouteImport.update({
+  id: '/events/',
+  path: '/events/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NewsSlugRoute = NewsSlugRouteImport.update({
   id: '/news/$slug',
   path: '/news/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventsSlugRoute = EventsSlugRouteImport.update({
+  id: '/events/$slug',
+  path: '/events/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -52,7 +64,9 @@ export interface FileRoutesByFullPath {
   '/$': typeof SplatRoute
   '/login': typeof LoginRoute
   '/portal': typeof PortalRoute
+  '/events/$slug': typeof EventsSlugRoute
   '/news/$slug': typeof NewsSlugRoute
+  '/events/': typeof EventsIndexRoute
   '/news/': typeof NewsIndexRoute
 }
 export interface FileRoutesByTo {
@@ -60,7 +74,9 @@ export interface FileRoutesByTo {
   '/$': typeof SplatRoute
   '/login': typeof LoginRoute
   '/portal': typeof PortalRoute
+  '/events/$slug': typeof EventsSlugRoute
   '/news/$slug': typeof NewsSlugRoute
+  '/events': typeof EventsIndexRoute
   '/news': typeof NewsIndexRoute
 }
 export interface FileRoutesById {
@@ -69,15 +85,42 @@ export interface FileRoutesById {
   '/$': typeof SplatRoute
   '/login': typeof LoginRoute
   '/portal': typeof PortalRoute
+  '/events/$slug': typeof EventsSlugRoute
   '/news/$slug': typeof NewsSlugRoute
+  '/events/': typeof EventsIndexRoute
   '/news/': typeof NewsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/$' | '/login' | '/portal' | '/news/$slug' | '/news/'
+  fullPaths:
+    | '/'
+    | '/$'
+    | '/login'
+    | '/portal'
+    | '/events/$slug'
+    | '/news/$slug'
+    | '/events/'
+    | '/news/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/$' | '/login' | '/portal' | '/news/$slug' | '/news'
-  id: '__root__' | '/' | '/$' | '/login' | '/portal' | '/news/$slug' | '/news/'
+  to:
+    | '/'
+    | '/$'
+    | '/login'
+    | '/portal'
+    | '/events/$slug'
+    | '/news/$slug'
+    | '/events'
+    | '/news'
+  id:
+    | '__root__'
+    | '/'
+    | '/$'
+    | '/login'
+    | '/portal'
+    | '/events/$slug'
+    | '/news/$slug'
+    | '/events/'
+    | '/news/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -85,7 +128,9 @@ export interface RootRouteChildren {
   SplatRoute: typeof SplatRoute
   LoginRoute: typeof LoginRoute
   PortalRoute: typeof PortalRoute
+  EventsSlugRoute: typeof EventsSlugRoute
   NewsSlugRoute: typeof NewsSlugRoute
+  EventsIndexRoute: typeof EventsIndexRoute
   NewsIndexRoute: typeof NewsIndexRoute
 }
 
@@ -126,11 +171,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NewsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/events/': {
+      id: '/events/'
+      path: '/events'
+      fullPath: '/events/'
+      preLoaderRoute: typeof EventsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/news/$slug': {
       id: '/news/$slug'
       path: '/news/$slug'
       fullPath: '/news/$slug'
       preLoaderRoute: typeof NewsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/events/$slug': {
+      id: '/events/$slug'
+      path: '/events/$slug'
+      fullPath: '/events/$slug'
+      preLoaderRoute: typeof EventsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -141,9 +200,21 @@ const rootRouteChildren: RootRouteChildren = {
   SplatRoute: SplatRoute,
   LoginRoute: LoginRoute,
   PortalRoute: PortalRoute,
+  EventsSlugRoute: EventsSlugRoute,
   NewsSlugRoute: NewsSlugRoute,
+  EventsIndexRoute: EventsIndexRoute,
   NewsIndexRoute: NewsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
