@@ -3,6 +3,8 @@ import type { AnchorHTMLAttributes, ReactNode } from "react";
 
 type Props = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> & {
   to: string;
+  params?: Record<string, string>;
+  search?: Record<string, unknown>;
   children?: ReactNode;
 };
 
