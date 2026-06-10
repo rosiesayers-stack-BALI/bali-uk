@@ -8,8 +8,9 @@ type Props = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> & {
 
 /**
  * Permissive Link wrapper that accepts any string `to`.
- * Uses TanStack Router Link for internal app routes,
- * and a plain <a> for external links, hash anchors, or routes that don't exist yet.
+ * Uses TanStack Router Link for internal app routes (matched by the splat
+ * catch-all if no explicit route exists). Falls back to a plain <a> for
+ * external links, mailto/tel, and hash-only anchors.
  */
 export default function SmartLink({ to, children, ...rest }: Props) {
   const isExternal =
@@ -18,11 +19,7 @@ export default function SmartLink({ to, children, ...rest }: Props) {
     to.startsWith("tel:") ||
     to.startsWith("#");
 
-  // Only these app routes are real TanStack routes.
-  const internalRoutes = new Set(["/", "/login", "/portal"]);
-  const path = to.split(/[?#]/)[0];
-
-  if (isExternal || !internalRoutes.has(path)) {
+  if (isExternal) {
     return (
       <a href={to} {...rest}>
         {children}
