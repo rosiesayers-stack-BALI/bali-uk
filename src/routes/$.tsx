@@ -46,7 +46,7 @@ function PlaceholderPage() {
           {/* Breadcrumbs */}
           <nav className="text-sm text-blue-100/80 mb-4 flex flex-wrap items-center gap-2 animate-fade-in">
             <Link to="/" className="hover:text-white transition-colors">Home</Link>
-            {crumbs.map((c, i) => {
+            {crumbs.map((c: string, i: number) => {
               const href = "/" + crumbs.slice(0, i + 1).join("/");
               const last = i === crumbs.length - 1;
               return (
