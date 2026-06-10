@@ -5,6 +5,7 @@ export type PageSection = { heading: string; body: string; bullets?: string[] };
 export type PageHighlight = { title: string; body: string };
 export type PageCTA = { label: string; href: string };
 export type PageImage = { url: string; alt: string };
+export type PageEmbed = { url: string; title: string; height?: number };
 export type PageContent = {
   eyebrow: string;
   title: string;
@@ -16,6 +17,7 @@ export type PageContent = {
   ctaPrimary?: PageCTA;
   ctaSecondary?: PageCTA;
   stats?: { value: string; label: string }[];
+  embed?: PageEmbed;
 };
 
 const C: Record<string, PageContent> = {
