@@ -129,7 +129,7 @@ export default function Navbar({ transparent = false }: NavbarProps) {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </Link>
-                <div className="dropdown absolute left-0 top-full mt-1 bg-white shadow-xl rounded-lg border border-gray-100 w-56 py-2 z-50">
+                <div className="dropdown absolute left-0 top-full bg-white shadow-xl rounded-lg border border-gray-100 w-56 py-2 z-50 before:content-[''] before:absolute before:-top-2 before:left-0 before:right-0 before:h-2">
                   {item.items.map((sub) => (
                     <Link
                       key={sub.label}
