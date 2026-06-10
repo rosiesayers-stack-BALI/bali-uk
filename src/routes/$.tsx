@@ -138,38 +138,51 @@ function RichPage({ path, content }: { path: string; content: PageContent }) {
               "radial-gradient(circle at 20% 20%, rgba(255,255,255,0.4), transparent 40%), radial-gradient(circle at 80% 80%, rgba(255,255,255,0.3), transparent 50%)",
           }}
         />
-        <div className="max-w-6xl mx-auto px-6 relative">
-          <Breadcrumbs path={path} />
-          <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass">
-            {content.eyebrow}
-          </p>
-          <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-5 max-w-3xl animate-fade-up">
-            {content.title}
-          </h1>
-          <p className="text-blue-100 text-lg leading-relaxed max-w-2xl">{content.intro}</p>
+        <div className="max-w-6xl mx-auto px-6 relative grid lg:grid-cols-5 gap-10 items-center">
+          <div className="lg:col-span-3">
+            <Breadcrumbs path={path} />
+            <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass">
+              {content.eyebrow}
+            </p>
+            <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-5 max-w-3xl animate-fade-up">
+              {content.title}
+            </h1>
+            <p className="text-blue-100 text-lg leading-relaxed max-w-2xl">{content.intro}</p>
 
-          {content.ctaPrimary || content.ctaSecondary ? (
-            <div className="flex flex-wrap gap-3 mt-8">
-              {content.ctaPrimary && (
-                <Link
-                  to={content.ctaPrimary.href}
-                  className="bg-white text-bali-blue hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition-all hover:scale-105 shadow-lg"
-                >
-                  {content.ctaPrimary.label}
-                </Link>
-              )}
-              {content.ctaSecondary && (
-                <Link
-                  to={content.ctaSecondary.href}
-                  className="bg-white/10 hover:bg-white/20 border border-white/40 text-white backdrop-blur-sm px-6 py-3 rounded-lg font-semibold transition-all"
-                >
-                  {content.ctaSecondary.label}
-                </Link>
-              )}
+            {content.ctaPrimary || content.ctaSecondary ? (
+              <div className="flex flex-wrap gap-3 mt-8">
+                {content.ctaPrimary && (
+                  <Link
+                    to={content.ctaPrimary.href}
+                    className="bg-white text-bali-blue hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition-all hover:scale-105 shadow-lg"
+                  >
+                    {content.ctaPrimary.label}
+                  </Link>
+                )}
+                {content.ctaSecondary && (
+                  <Link
+                    to={content.ctaSecondary.href}
+                    className="bg-white/10 hover:bg-white/20 border border-white/40 text-white backdrop-blur-sm px-6 py-3 rounded-lg font-semibold transition-all"
+                  >
+                    {content.ctaSecondary.label}
+                  </Link>
+                )}
+              </div>
+            ) : null}
+          </div>
+          {content.image && (
+            <div className="lg:col-span-2">
+              <img
+                src={content.image.url}
+                alt={content.image.alt}
+                loading="eager"
+                className="w-full h-64 lg:h-80 object-cover rounded-2xl shadow-2xl ring-1 ring-white/20"
+              />
             </div>
-          ) : null}
+          )}
         </div>
       </section>
+
 
       {/* Stats strip */}
       {content.stats && content.stats.length > 0 && (
