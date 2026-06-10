@@ -5,6 +5,7 @@ export type PageSection = { heading: string; body: string; bullets?: string[] };
 export type PageHighlight = { title: string; body: string };
 export type PageCTA = { label: string; href: string };
 export type PageImage = { url: string; alt: string };
+export type PageEmbed = { url: string; title: string; height?: number };
 export type PageContent = {
   eyebrow: string;
   title: string;
@@ -16,6 +17,7 @@ export type PageContent = {
   ctaPrimary?: PageCTA;
   ctaSecondary?: PageCTA;
   stats?: { value: string; label: string }[];
+  embed?: PageEmbed;
 };
 
 const C: Record<string, PageContent> = {
@@ -1059,9 +1061,14 @@ const C: Record<string, PageContent> = {
   },
   "/help/podcast": {
     eyebrow: "Help & Advice",
-    title: "Dig Deep — the BALI podcast",
+    title: "BALI Podcast: Dig Deep",
     theme: "flow",
-    intro: "Unlock your marketing potential with our exclusive collection of best practice guides, created just for BALI members.",
+    intro: "Dig Deep is the official podcast of the British Association of Landscape Industries — bringing you conversations with leading voices from across the UK landscape industry. Listen to every episode below.",
+    embed: {
+      url: "https://www.podbean.com/player-v2/?i=6p4rn-142a785-pbblog-playlist&share=1&download=1&rtl=0&fonts=Arial&skin=1&font-color=auto&logo_link=episode_page&order=episodic&limit=10&filter=all&ss=a713390a017602015775e868a2cf26b0&btn-skin=7&size=480",
+      title: "Dig Deep — BALI Podcast",
+      height: 540,
+    },
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
