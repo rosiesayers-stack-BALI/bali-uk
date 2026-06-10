@@ -518,7 +518,7 @@ export const newsArticles: NewsArticle[] = [
   {
     slug: "ai-and-the-future-of-garden-design-tool-threat-or-opportunity",
     title: "AI and the future of garden design: Tool, threat or opportunity?",
-    description: "By Andrew Duff MSGLD, garden designer, educator and Chair of the Society of Garden + Landscape Designers (SGLD)  Artificial intelligence is rapidly becoming part of the wider design landscape and, like many creative industries, the garden and landscape sector is beginning to grapple with what that means for the future of the profession.",
+    description: "By Andrew Duff MSGLD, garden designer, educator and Chair of the Society of Garden + Landscape Designers (SGLD)    Artificial intelligence is rapidly becoming part of the wider design landscape and, like many creative industries, the garden and landscape sector is beginning to grapple with what that means for the future of the profession.",
     date: "21 May 2026",
     image: { url: "/__l5e/assets-v1/39d8a2b3-9f7b-4877-bef2-75bbefe774dc/1sgld-image-800x500.png", alt: "AI and the future of garden design: Tool, threat or opportunity?" },
     body: [
@@ -552,7 +552,7 @@ export const newsArticles: NewsArticle[] = [
   {
     slug: "ai-and-the-future-of-garden-design-tool-threat-or-opportunity",
     title: "AI and the future of garden design: Tool, threat or opportunity?",
-    description: "By Andrew Duff MSGLD, garden designer, educator and Chair of the Society of Garden + Landscape Designers (SGLD)  Artificial intelligence is rapidly becoming part of the wider design landscape and, like many creative industries, the garden and landscape sector is beginning to grapple with what that means for the future of the profession.",
+    description: "By Andrew Duff MSGLD, garden designer, educator and Chair of the Society of Garden + Landscape Designers (SGLD)    Artificial intelligence is rapidly becoming part of the wider design landscape and, like many creative industries, the garden and landscape sector is beginning to grapple with what that means for the future of the profession.",
     date: "21 May 2026",
     image: { url: "/__l5e/assets-v1/39d8a2b3-9f7b-4877-bef2-75bbefe774dc/1sgld-image-800x500.png", alt: "AI and the future of garden design: Tool, threat or opportunity?" },
     body: [
