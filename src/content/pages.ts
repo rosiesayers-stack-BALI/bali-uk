@@ -648,9 +648,23 @@ const C: Record<string, PageContent> = {
   },
   "/help/pests": {
     eyebrow: "Help & Advice",
-    title: "Pests And Diseases",
+    title: "Pests & Diseases",
     theme: "flow",
-    intro: "Applicable to all landscape disciplines, looking at the latest UK threats",
+    intro: "Applicable to all landscape disciplines, this section looks at the latest pest and disease threats affecting UK landscapes — from invasive insects and plant pathogens to biosecurity best practice for nurseries, contractors and designers.",
+    sections: [
+      {
+        heading: "Current threats",
+        body: "BALI keeps members updated on high-profile threats including Xylella fastidiosa, oak processionary moth, Ips typographus, ash dieback and Asian hornet. Early identification and reporting are critical to protecting UK landscapes.",
+      },
+      {
+        heading: "Plant health and biosecurity",
+        body: "Our guidance and member resources help businesses meet their plant health responsibilities — including the Plant Health Management Standard, sourcing checks, traceability and on-site biosecurity measures.",
+      },
+      {
+        heading: "Reporting suspected outbreaks",
+        body: "If you suspect a notifiable pest or disease, report it to the Animal and Plant Health Agency (APHA) using TreeAlert or PlantAlert. BALI works closely with Defra, Forest Research and APHA to support member awareness and response.",
+      },
+    ],
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
