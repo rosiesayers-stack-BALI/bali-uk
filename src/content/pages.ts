@@ -627,7 +627,6 @@ const C: Record<string, PageContent> = {
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
-  },
   "/help/law": {
     eyebrow: "Help & Advice",
     title: "Contracts, Law and Regulations",
