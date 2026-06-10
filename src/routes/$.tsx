@@ -206,40 +206,40 @@ function RichPage({ path, content }: { path: string; content: PageContent }) {
         </section>
       )}
 
-      {/* Sections */}
+      {/* Sections — editorial article layout */}
       {content.sections && content.sections.length > 0 && (
-        <section className="py-16 bg-white">
-          <div className="max-w-4xl mx-auto px-6 space-y-12">
-            {content.sections.map((s, i) => (
-              <article key={s.heading} className="relative pl-6">
-                <span
-                  className={`absolute left-0 top-1 bottom-1 w-1 rounded-full ${t.accentBg}`}
-                  aria-hidden="true"
-                />
-                <h2 className="text-2xl font-bold text-gray-900 mb-3">
-                  <span className={`${t.accent} mr-2`}>{String(i + 1).padStart(2, "0")}.</span>
-                  {s.heading}
-                </h2>
-                <p className="text-gray-700 leading-relaxed text-lg">{s.body}</p>
-                {s.bullets && s.bullets.length > 0 && (
-                  <ul className="mt-4 space-y-2">
-                    {s.bullets.map((b) => (
-                      <li key={b} className="flex items-start gap-3 text-gray-700">
-                        <svg
-                          className={`w-5 h-5 ${t.iconColor} flex-shrink-0 mt-0.5`}
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </article>
-            ))}
+        <section className="py-16 sm:py-20 bg-white">
+          <div className="max-w-3xl mx-auto px-6">
+            <article className="divide-y divide-gray-200">
+              {content.sections.map((s) => (
+                <section key={s.heading} className="py-10 first:pt-0 last:pb-0">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-4">
+                    {s.heading}
+                  </h2>
+                  <p className="text-gray-700 leading-relaxed text-lg">
+                    {s.body}
+                  </p>
+                  {s.bullets && s.bullets.length > 0 && (
+                    <ul className="mt-6 space-y-3">
+                      {s.bullets.map((b) => (
+                        <li key={b} className="flex items-start gap-3 text-gray-700 leading-relaxed">
+                          <svg
+                            className={`w-5 h-5 ${t.iconColor} flex-shrink-0 mt-1`}
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </section>
+              ))}
+            </article>
           </div>
         </section>
       )}
