@@ -495,7 +495,20 @@ function ComingSoon({ path }: { path: string }) {
 }
 
 function isBoardLayout(content: PageContent): boolean {
-  return !!content.sections?.length && content.sections.every((s) => !!s.image && !!s.role);
+  if (!content.sections?.length) return false;
+  const allHaveRole = content.sections.every((s) => !!s.role);
+  const anyImage = content.sections.some((s) => !!s.image);
+  return allHaveRole && anyImage;
+}
+
+function initialsFor(name: string): string {
+  return name
+    .split(",")[0]
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((w) => w[0]?.toUpperCase() ?? "")
+    .join("");
 }
 
 function BoardGrid({
@@ -512,7 +525,7 @@ function BoardGrid({
     (acc[key] ||= [] as unknown as typeof sections).push(s);
     return acc;
   }, {});
-  const order = ["Executive", "Directors"];
+  const order = ["Executive", "Leadership Team", "Directors", "Team"];
   const keys = [
     ...order.filter((k) => groups[k]),
     ...Object.keys(groups).filter((k) => !order.includes(k)),
@@ -536,8 +549,8 @@ function BoardGrid({
                   itemScope
                   itemType="https://schema.org/Person"
                 >
-                  {s.image && (
-                    <div className="aspect-[4/5] bg-gray-100 overflow-hidden">
+                  <div className="aspect-[4/5] bg-gray-100 overflow-hidden">
+                    {s.image ? (
                       <img
                         src={s.image.url}
                         alt={s.image.alt}
@@ -545,8 +558,14 @@ function BoardGrid({
                         itemProp="image"
                         className="w-full h-full object-cover object-top"
                       />
-                    </div>
-                  )}
+                    ) : (
+                      <div className={`w-full h-full flex items-center justify-center ${accentBg}`}>
+                        <span className={`text-5xl font-bold ${accent}`}>
+                          {initialsFor(s.heading)}
+                        </span>
+                      </div>
+                    )}
+                  </div>
                   <div className="p-6 flex flex-col flex-1">
                     {s.role && (
                       <span
