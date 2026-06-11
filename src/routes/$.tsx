@@ -366,6 +366,42 @@ function RichPage({ path, content }: { path: string; content: PageContent }) {
         )
       )}
 
+      {/* Gallery */}
+      {content.gallery && content.gallery.images.length > 0 && (
+        <section className="py-16 sm:py-20 bg-gray-50">
+          <div className="max-w-6xl mx-auto px-6">
+            {(content.gallery.heading || content.gallery.caption) && (
+              <div className="text-center mb-10">
+                {content.gallery.heading && (
+                  <h2 className="text-3xl font-bold text-gray-900 tracking-tight">{content.gallery.heading}</h2>
+                )}
+                {content.gallery.caption && (
+                  <p className="text-gray-600 mt-3 max-w-2xl mx-auto">{content.gallery.caption}</p>
+                )}
+              </div>
+            )}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
+              {content.gallery.images.map((img, i) => (
+                <div
+                  key={img.url}
+                  className={`overflow-hidden rounded-xl ring-1 ring-gray-200 bg-white ${
+                    i % 5 === 0 ? "md:col-span-2 md:row-span-2 aspect-square" : "aspect-[4/3]"
+                  }`}
+                >
+                  <img
+                    src={img.url}
+                    alt={img.alt}
+                    loading="lazy"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+
       {/* Highlights grid */}
       {content.highlights && content.highlights.length > 0 && (
         <section className="py-16 bg-gray-50">

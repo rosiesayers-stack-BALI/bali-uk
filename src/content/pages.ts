@@ -26,6 +26,7 @@ export type PageContent = {
   embed?: PageEmbed;
   eventInfo?: PageEventInfo;
   testimonials?: PageTestimonial[];
+  gallery?: { images: PageImage[]; heading?: string; caption?: string };
 };
 
 const C: Record<string, PageContent> = {
@@ -386,6 +387,26 @@ const C: Record<string, PageContent> = {
     ],
     ctaPrimary: { label: "Enter the Awards", href: "https://bnla.awardsplatform.com/" },
     ctaSecondary: { label: "Learn more", href: "http://www.baliawards.co.uk/" },
+    embed: {
+      url: "https://www.youtube.com/embed/s6_HivofMvg",
+      title: "BALI National Landscape Awards 2025 highlights",
+      height: 480,
+    },
+    gallery: {
+      heading: "Highlights from the 2025 Awards",
+      caption: "A night of celebration at the BALI National Landscape Awards.",
+      images: [
+        { url: "/__l5e/assets-v1/7c708798-9086-45d4-b4ca-59d1af9a31fe/0829_bali051225_pg2_1645.jpg", alt: "Wayne Grills on stage with Origin Enterprises headline sponsor backdrop" },
+        { url: "/__l5e/assets-v1/3ec5a36c-6554-41f6-b5f4-5490c14ac67a/0944_bali051225_pga_7269.jpg", alt: "Wide view of the awards ballroom with stage screens" },
+        { url: "/__l5e/assets-v1/1af5e1ca-6ca6-44e9-9c0e-888b85370d4d/0935_bali051225_pga_7260.jpg", alt: "Packed awards dinner in full atmospheric lighting" },
+        { url: "/__l5e/assets-v1/361c3748-f195-4f9e-b3f8-ea7e8a4fbdbe/0448_bali051225_pga_6980.jpg", alt: "Table setting with candles and drinks ahead of the ceremony" },
+        { url: "/__l5e/assets-v1/4598c643-2f63-4911-97f3-ca5654dd4ca5/1225_bali051225_pga_7354.jpg", alt: "Guests celebrating at their table" },
+        { url: "/__l5e/assets-v1/73011cca-9ba8-4b34-8119-0e7669f9fd70/ba051225_tb2_0194_145.jpg", alt: "Members sharing a laugh during the evening" },
+        { url: "/__l5e/assets-v1/27420fd8-4da6-477c-95d3-b6294e2b400d/ba051225_tb2_0689_277.jpg", alt: "Winners celebrating an award announcement" },
+        { url: "/__l5e/assets-v1/1deb8fb1-a7e1-4cca-878a-0f3e910bb1ee/ba051225_tb2_0376_189.jpg", alt: "Guest raising a winning ticket during the ceremony" },
+        { url: "/__l5e/assets-v1/bdab5064-a7a2-44e9-b3f7-b134fa2b26ad/ba051225_tb2_0666_271.jpg", alt: "Two attendees laughing together at the awards" },
+      ],
+    },
   },
 
   "/about/advertise": {
