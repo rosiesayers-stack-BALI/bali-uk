@@ -26,6 +26,7 @@ export type PageContent = {
   embed?: PageEmbed;
   eventInfo?: PageEventInfo;
   testimonials?: PageTestimonial[];
+  gallery?: { images: PageImage[]; heading?: string; caption?: string };
 };
 
 const C: Record<string, PageContent> = {
