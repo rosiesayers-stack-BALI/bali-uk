@@ -139,54 +139,58 @@ function RichPage({ path, content }: { path: string; content: PageContent }) {
     <>
       {/* Hero */}
       {overlayHero && content.image ? (
-        <section className="relative overflow-hidden text-white">
-          <img
-            src={content.image.url}
-            alt={content.image.alt}
-            loading="eager"
-            className="absolute inset-0 w-full h-full object-cover object-[center_30%]"
-          />
-          {/* Scrim: dark at bottom-left, fading up-right, for legible text */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(105deg, rgba(10,20,40,0.85) 0%, rgba(10,20,40,0.55) 45%, rgba(10,20,40,0.15) 75%, rgba(10,20,40,0) 100%)",
-            }}
-          />
-          <div className="relative max-w-6xl mx-auto px-6 pt-16 pb-24 sm:pt-24 sm:pb-32 min-h-[460px] sm:min-h-[560px] flex flex-col justify-end">
-            <Breadcrumbs path={path} />
-            <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass drop-shadow">
-              {content.eyebrow}
-            </p>
-            <h1 className="text-4xl sm:text-6xl font-bold leading-tight mb-5 max-w-3xl drop-shadow-lg animate-fade-up">
-              {content.title}
-            </h1>
-            <p className="text-blue-50 text-lg leading-relaxed max-w-2xl drop-shadow">
-              {content.intro}
-            </p>
-            {content.ctaPrimary || content.ctaSecondary ? (
-              <div className="flex flex-wrap gap-3 mt-8">
-                {content.ctaPrimary && (
-                  <Link
-                    to={content.ctaPrimary.href}
-                    className="bg-white text-bali-blue hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition-all hover:scale-105 shadow-lg"
-                  >
-                    {content.ctaPrimary.label}
-                  </Link>
-                )}
-                {content.ctaSecondary && (
-                  <Link
-                    to={content.ctaSecondary.href}
-                    className="bg-white/15 hover:bg-white/25 border border-white/50 text-white backdrop-blur-sm px-6 py-3 rounded-lg font-semibold transition-all"
-                  >
-                    {content.ctaSecondary.label}
-                  </Link>
-                )}
-              </div>
-            ) : null}
-          </div>
-        </section>
+        <>
+          <section className="relative overflow-hidden py-14 sm:py-16 text-white" style={{ background: t.gradient }}>
+            <div
+              className="absolute inset-0 opacity-10"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle at 20% 20%, rgba(255,255,255,0.4), transparent 40%), radial-gradient(circle at 80% 80%, rgba(255,255,255,0.3), transparent 50%)",
+              }}
+            />
+            <div className="max-w-6xl mx-auto px-6 relative">
+              <Breadcrumbs path={path} />
+              <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass">
+                {content.eyebrow}
+              </p>
+              <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-5 max-w-3xl animate-fade-up">
+                {content.title}
+              </h1>
+              <p className="text-blue-100 text-lg leading-relaxed max-w-3xl">{content.intro}</p>
+              {content.ctaPrimary || content.ctaSecondary ? (
+                <div className="flex flex-wrap gap-3 mt-8">
+                  {content.ctaPrimary && (
+                    <Link
+                      to={content.ctaPrimary.href}
+                      className="bg-white text-bali-blue hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition-all hover:scale-105 shadow-lg"
+                    >
+                      {content.ctaPrimary.label}
+                    </Link>
+                  )}
+                  {content.ctaSecondary && (
+                    <Link
+                      to={content.ctaSecondary.href}
+                      className="bg-white/10 hover:bg-white/20 border border-white/40 text-white backdrop-blur-sm px-6 py-3 rounded-lg font-semibold transition-all"
+                    >
+                      {content.ctaSecondary.label}
+                    </Link>
+                  )}
+                </div>
+              ) : null}
+            </div>
+          </section>
+          <figure className="bg-gray-900">
+            <img
+              src={content.image.url}
+              alt={content.image.alt}
+              loading="eager"
+              className="w-full h-[280px] sm:h-[420px] lg:h-[520px] object-cover object-[center_25%]"
+            />
+            <figcaption className="max-w-6xl mx-auto px-6 py-3 text-sm text-gray-500 bg-white border-b border-gray-200">
+              {content.image.alt}
+            </figcaption>
+          </figure>
+        </>
       ) : (
         <section className="relative overflow-hidden py-20 text-white" style={{ background: t.gradient }}>
           <div
