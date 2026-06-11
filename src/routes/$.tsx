@@ -231,6 +231,14 @@ function RichPage({ path, content }: { path: string; content: PageContent }) {
             <article className="divide-y divide-gray-200">
               {content.sections.map((s) => (
                 <section key={s.heading} className="py-10 first:pt-0 last:pb-0">
+                  {s.image && (
+                    <img
+                      src={s.image.url}
+                      alt={s.image.alt}
+                      loading="lazy"
+                      className="float-right ml-6 mb-4 w-32 sm:w-40 h-auto rounded-lg shadow-md ring-1 ring-gray-200 object-cover"
+                    />
+                  )}
                   <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-4">
                     {s.heading}
                   </h2>
