@@ -19,6 +19,8 @@ import { Route as NewsIndexRouteImport } from './routes/news.index'
 import { Route as EventsIndexRouteImport } from './routes/events.index'
 import { Route as NewsSlugRouteImport } from './routes/news.$slug'
 import { Route as EventsSlugRouteImport } from './routes/events.$slug'
+import { Route as JoinCategoryApplyRouteImport } from './routes/join.$category.apply'
+import { Route as ApiPublicMembershipApplicationRouteImport } from './routes/api/public/membership-application'
 
 const PortalRoute = PortalRouteImport.update({
   id: '/portal',
@@ -70,43 +72,60 @@ const EventsSlugRoute = EventsSlugRouteImport.update({
   path: '/events/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const JoinCategoryApplyRoute = JoinCategoryApplyRouteImport.update({
+  id: '/$category/apply',
+  path: '/$category/apply',
+  getParentRoute: () => JoinRoute,
+} as any)
+const ApiPublicMembershipApplicationRoute =
+  ApiPublicMembershipApplicationRouteImport.update({
+    id: '/api/public/membership-application',
+    path: '/api/public/membership-application',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/contact': typeof ContactRoute
-  '/join': typeof JoinRoute
+  '/join': typeof JoinRouteWithChildren
   '/login': typeof LoginRoute
   '/portal': typeof PortalRoute
   '/events/$slug': typeof EventsSlugRoute
   '/news/$slug': typeof NewsSlugRoute
   '/events/': typeof EventsIndexRoute
   '/news/': typeof NewsIndexRoute
+  '/api/public/membership-application': typeof ApiPublicMembershipApplicationRoute
+  '/join/$category/apply': typeof JoinCategoryApplyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/contact': typeof ContactRoute
-  '/join': typeof JoinRoute
+  '/join': typeof JoinRouteWithChildren
   '/login': typeof LoginRoute
   '/portal': typeof PortalRoute
   '/events/$slug': typeof EventsSlugRoute
   '/news/$slug': typeof NewsSlugRoute
   '/events': typeof EventsIndexRoute
   '/news': typeof NewsIndexRoute
+  '/api/public/membership-application': typeof ApiPublicMembershipApplicationRoute
+  '/join/$category/apply': typeof JoinCategoryApplyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/contact': typeof ContactRoute
-  '/join': typeof JoinRoute
+  '/join': typeof JoinRouteWithChildren
   '/login': typeof LoginRoute
   '/portal': typeof PortalRoute
   '/events/$slug': typeof EventsSlugRoute
   '/news/$slug': typeof NewsSlugRoute
   '/events/': typeof EventsIndexRoute
   '/news/': typeof NewsIndexRoute
+  '/api/public/membership-application': typeof ApiPublicMembershipApplicationRoute
+  '/join/$category/apply': typeof JoinCategoryApplyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -121,6 +140,8 @@ export interface FileRouteTypes {
     | '/news/$slug'
     | '/events/'
     | '/news/'
+    | '/api/public/membership-application'
+    | '/join/$category/apply'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -133,6 +154,8 @@ export interface FileRouteTypes {
     | '/news/$slug'
     | '/events'
     | '/news'
+    | '/api/public/membership-application'
+    | '/join/$category/apply'
   id:
     | '__root__'
     | '/'
@@ -145,19 +168,22 @@ export interface FileRouteTypes {
     | '/news/$slug'
     | '/events/'
     | '/news/'
+    | '/api/public/membership-application'
+    | '/join/$category/apply'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SplatRoute: typeof SplatRoute
   ContactRoute: typeof ContactRoute
-  JoinRoute: typeof JoinRoute
+  JoinRoute: typeof JoinRouteWithChildren
   LoginRoute: typeof LoginRoute
   PortalRoute: typeof PortalRoute
   EventsSlugRoute: typeof EventsSlugRoute
   NewsSlugRoute: typeof NewsSlugRoute
   EventsIndexRoute: typeof EventsIndexRoute
   NewsIndexRoute: typeof NewsIndexRoute
+  ApiPublicMembershipApplicationRoute: typeof ApiPublicMembershipApplicationRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -232,20 +258,45 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EventsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/join/$category/apply': {
+      id: '/join/$category/apply'
+      path: '/$category/apply'
+      fullPath: '/join/$category/apply'
+      preLoaderRoute: typeof JoinCategoryApplyRouteImport
+      parentRoute: typeof JoinRoute
+    }
+    '/api/public/membership-application': {
+      id: '/api/public/membership-application'
+      path: '/api/public/membership-application'
+      fullPath: '/api/public/membership-application'
+      preLoaderRoute: typeof ApiPublicMembershipApplicationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
+
+interface JoinRouteChildren {
+  JoinCategoryApplyRoute: typeof JoinCategoryApplyRoute
+}
+
+const JoinRouteChildren: JoinRouteChildren = {
+  JoinCategoryApplyRoute: JoinCategoryApplyRoute,
+}
+
+const JoinRouteWithChildren = JoinRoute._addFileChildren(JoinRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SplatRoute: SplatRoute,
   ContactRoute: ContactRoute,
-  JoinRoute: JoinRoute,
+  JoinRoute: JoinRouteWithChildren,
   LoginRoute: LoginRoute,
   PortalRoute: PortalRoute,
   EventsSlugRoute: EventsSlugRoute,
   NewsSlugRoute: NewsSlugRoute,
   EventsIndexRoute: EventsIndexRoute,
   NewsIndexRoute: NewsIndexRoute,
+  ApiPublicMembershipApplicationRoute: ApiPublicMembershipApplicationRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
