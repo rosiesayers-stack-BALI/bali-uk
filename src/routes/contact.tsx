@@ -49,7 +49,7 @@ const routes = [
   {
     title: "Press & media",
     body: "Interviews, comment and press releases.",
-    email: "communications@bali.org.uk",
+    email: "marketingteam@bali.org.uk",
     icon: "📰",
   },
   {
