@@ -2158,8 +2158,10 @@ const C: Record<string, PageContent> = {
         body: "I’m dedicated to enhancing the membership experience by being a trusted point of contact for our members. My role involves understanding their needs, providing tailored support, and helping them unlock the full benefits of their membership. By fostering strong relationships, I contribute to building a vibrant and collaborative community within the landscaping industry.",
       },
       {
-        heading: "Amy Cobbett",
-        body: "Part of the team supporting BALI members and the wider association.",
+        heading: "Amy Cobbett, Head of Policy and Public Affairs",
+        body: "Focusing on advocacy and developing relationships with government, stakeholders, and industry to best ensure the growth and development of the landscaping industry.",
+        image: { url: "/__l5e/assets-v1/b645162a-3551-49a0-ab16-c1830d5f0c24/amy-cobbett.png", alt: "Amy Cobbett" },
+        role: "Head of Policy & Public Affairs",
       },
       {
         heading: "Sarah P",
