@@ -375,3 +375,82 @@ function ComingSoon({ path }: { path: string }) {
     </>
   );
 }
+
+function isBoardLayout(content: PageContent): boolean {
+  return !!content.sections?.length && content.sections.every((s) => !!s.image && !!s.role);
+}
+
+function BoardGrid({
+  sections,
+  accent,
+  accentBg,
+}: {
+  sections: NonNullable<PageContent["sections"]>;
+  accent: string;
+  accentBg: string;
+}) {
+  const groups = sections.reduce<Record<string, typeof sections>>((acc, s) => {
+    const key = s.group ?? "Directors";
+    (acc[key] ||= [] as unknown as typeof sections).push(s);
+    return acc;
+  }, {});
+  const order = ["Executive", "Directors"];
+  const keys = [
+    ...order.filter((k) => groups[k]),
+    ...Object.keys(groups).filter((k) => !order.includes(k)),
+  ];
+
+  return (
+    <section className="py-16 sm:py-20 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-6 space-y-16">
+        {keys.map((k) => (
+          <div key={k}>
+            <div className="flex items-center gap-4 mb-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">{k}</h2>
+              <div className="h-px flex-1 bg-gray-200" />
+              <span className="text-sm text-gray-500">{groups[k].length} {groups[k].length === 1 ? "member" : "members"}</span>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {groups[k].map((s) => (
+                <article
+                  key={s.heading}
+                  className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col"
+                  itemScope
+                  itemType="https://schema.org/Person"
+                >
+                  {s.image && (
+                    <div className="aspect-[4/5] bg-gray-100 overflow-hidden">
+                      <img
+                        src={s.image.url}
+                        alt={s.image.alt}
+                        loading="lazy"
+                        itemProp="image"
+                        className="w-full h-full object-cover object-top"
+                      />
+                    </div>
+                  )}
+                  <div className="p-6 flex flex-col flex-1">
+                    {s.role && (
+                      <span
+                        className={`inline-block self-start text-xs font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full mb-3 ${accentBg} ${accent}`}
+                        itemProp="jobTitle"
+                      >
+                        {s.role}
+                      </span>
+                    )}
+                    <h3 className="text-xl font-bold text-gray-900 mb-3" itemProp="name">
+                      {s.heading}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm" itemProp="description">
+                      {s.body}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
