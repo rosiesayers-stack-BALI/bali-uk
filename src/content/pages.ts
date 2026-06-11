@@ -6,6 +6,11 @@ export type PageHighlight = { title: string; body: string };
 export type PageCTA = { label: string; href: string };
 export type PageImage = { url: string; alt: string };
 export type PageEmbed = { url: string; title: string; height?: number };
+export type PageEventInfo = {
+  venue: string;
+  date: string;
+  tickets: { label: string; href: string };
+};
 export type PageContent = {
   eyebrow: string;
   title: string;
@@ -18,6 +23,7 @@ export type PageContent = {
   ctaSecondary?: PageCTA;
   stats?: { value: string; label: string }[];
   embed?: PageEmbed;
+  eventInfo?: PageEventInfo;
 };
 
 const C: Record<string, PageContent> = {
@@ -215,6 +221,11 @@ const C: Record<string, PageContent> = {
       { title: "Trevor Williams", body: "Global Trends & Economic Forces Impacting Landscaping." },
       { title: "Wayne Grills", body: "BALI Chief Executive — Closing remarks and industry outlook." },
     ],
+    eventInfo: {
+      venue: "Venue: TBC",
+      date: "Date: TBC",
+      tickets: { label: "Book tickets (TBC)", href: "/contact" },
+    },
     sections: [
       {
         heading: "About the day",
