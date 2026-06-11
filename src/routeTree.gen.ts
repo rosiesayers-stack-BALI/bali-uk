@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PortalRouteImport } from './routes/portal'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as SplatRouteImport } from './routes/$'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as NewsIndexRouteImport } from './routes/news.index'
@@ -26,6 +27,11 @@ const PortalRoute = PortalRouteImport.update({
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SplatRoute = SplatRouteImport.update({
@@ -62,6 +68,7 @@ const EventsSlugRoute = EventsSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
+  '/contact': typeof ContactRoute
   '/login': typeof LoginRoute
   '/portal': typeof PortalRoute
   '/events/$slug': typeof EventsSlugRoute
@@ -72,6 +79,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
+  '/contact': typeof ContactRoute
   '/login': typeof LoginRoute
   '/portal': typeof PortalRoute
   '/events/$slug': typeof EventsSlugRoute
@@ -83,6 +91,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
+  '/contact': typeof ContactRoute
   '/login': typeof LoginRoute
   '/portal': typeof PortalRoute
   '/events/$slug': typeof EventsSlugRoute
@@ -95,6 +104,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/$'
+    | '/contact'
     | '/login'
     | '/portal'
     | '/events/$slug'
@@ -105,6 +115,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/$'
+    | '/contact'
     | '/login'
     | '/portal'
     | '/events/$slug'
@@ -115,6 +126,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/$'
+    | '/contact'
     | '/login'
     | '/portal'
     | '/events/$slug'
@@ -126,6 +138,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SplatRoute: typeof SplatRoute
+  ContactRoute: typeof ContactRoute
   LoginRoute: typeof LoginRoute
   PortalRoute: typeof PortalRoute
   EventsSlugRoute: typeof EventsSlugRoute
@@ -148,6 +161,13 @@ declare module '@tanstack/react-router' {
       path: '/login'
       fullPath: '/login'
       preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/$': {
@@ -198,6 +218,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SplatRoute: SplatRoute,
+  ContactRoute: ContactRoute,
   LoginRoute: LoginRoute,
   PortalRoute: PortalRoute,
   EventsSlugRoute: EventsSlugRoute,
