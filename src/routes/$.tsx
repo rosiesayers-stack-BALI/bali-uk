@@ -224,8 +224,11 @@ function RichPage({ path, content }: { path: string; content: PageContent }) {
         </section>
       )}
 
-      {/* Sections — editorial article layout */}
+      {/* Sections — board card grid OR editorial article layout */}
       {content.sections && content.sections.length > 0 && (
+        isBoardLayout(content) ? (
+          <BoardGrid sections={content.sections} accent={t.accent} accentBg={t.accentBg} />
+        ) : (
         <section className="py-16 sm:py-20 bg-white">
           <div className="max-w-3xl mx-auto px-6">
             <article className="divide-y divide-gray-200">
@@ -268,6 +271,7 @@ function RichPage({ path, content }: { path: string; content: PageContent }) {
             </article>
           </div>
         </section>
+        )
       )}
 
       {/* Highlights grid */}
