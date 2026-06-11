@@ -6,7 +6,6 @@ const nav = [
     label: 'About', href: '/about',
     items: [
       { label: 'What We Do', href: '/about' },
-      { label: 'What is BALI', href: '/about/what-is-bali' },
       { label: 'Board of Directors', href: '/about/board' },
       { label: 'Meet Our Team', href: '/our-team' },
       { label: 'National Landscape Awards', href: '/about/awards' },
