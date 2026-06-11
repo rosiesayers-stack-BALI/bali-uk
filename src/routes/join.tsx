@@ -298,45 +298,59 @@ function JoinPage() {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {categories.map((c) => (
-                <Link
-                  key={c.slug}
-                  to="/contact"
-                  className={`group bg-white p-8 rounded-2xl border transition-all hover:shadow-xl hover:shadow-emerald-900/5 ${
-                    c.featured
-                      ? "border-bali-green shadow-md"
-                      : "border-slate-200 hover:border-bali-green"
-                  }`}
-                >
-                  <div
-                    className={`inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider mb-5 ${
-                      c.featured
-                        ? "bg-bali-green text-white"
-                        : "bg-slate-100 text-slate-600"
-                    }`}
+              {categories.map((c) => {
+                // Map old slugs to the new apply route slugs
+                const applySlugMap: Record<string, string> = {
+                  "accredited-contractor": "accredited-contractor",
+                  "accredited-designer": "accredited-designer",
+                  "accredited-supplier": "accredited-supplier",
+                  "accredited-group": "accredited-group",
+                  "accredited-dso": "accredited-dso",
+                  "international": "international-contractor",
+                  "associate": "associate-contractor",
+                };
+                const applySlug = applySlugMap[c.slug];
+                const hasForm = Boolean(applySlug);
+                const cardClass = `group bg-white p-8 rounded-2xl border transition-all hover:shadow-xl hover:shadow-emerald-900/5 ${
+                  c.featured ? "border-bali-green shadow-md" : "border-slate-200 hover:border-bali-green"
+                }`;
+                const badge = (
+                  <div className={`inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider mb-5 ${
+                    c.featured ? "bg-bali-green text-white" : "bg-slate-100 text-slate-600"
+                  }`}>{c.badge}</div>
+                );
+                const body = (
+                  <>
+                    {badge}
+                    <h3 className="font-bold text-xl mb-3 text-slate-900">{c.title}</h3>
+                    <p className="text-slate-500 text-sm leading-relaxed mb-6">{c.description}</p>
+                    <div className="flex items-center justify-between pt-5 border-t border-slate-100">
+                      <span className="text-bali-green font-bold text-sm">
+                        {hasForm ? "Apply online" : "Enquire by email"}
+                      </span>
+                      <svg className="w-5 h-5 text-bali-green group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </div>
+                  </>
+                );
+                if (hasForm) {
+                  return (
+                    <Link key={c.slug} to="/join/$category/apply" params={{ category: applySlug }} className={cardClass}>
+                      {body}
+                    </Link>
+                  );
+                }
+                return (
+                  <a
+                    key={c.slug}
+                    href={`mailto:membership@bali.org.uk?subject=Membership enquiry: ${encodeURIComponent(c.title)}`}
+                    className={cardClass}
                   >
-                    {c.badge}
-                  </div>
-                  <h3 className="font-bold text-xl mb-3 text-slate-900">{c.title}</h3>
-                  <p className="text-slate-500 text-sm leading-relaxed mb-6">{c.description}</p>
-                  <div className="flex items-center justify-between pt-5 border-t border-slate-100">
-                    <span className="text-bali-green font-bold text-sm">
-                      {c.featured ? "Apply now" : "Enquire"}
-                    </span>
-                    <svg
-                      className="w-5 h-5 text-bali-green group-hover:translate-x-1 transition-transform"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      strokeWidth={2}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </div>
-                </Link>
-              ))}
+                    {body}
+                  </a>
+                );
+              })}
             </div>
           </div>
         </section>
