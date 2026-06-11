@@ -2157,6 +2157,38 @@ const C: Record<string, PageContent> = {
         heading: "Sue Jones, Membership Officer",
         body: "I’m dedicated to enhancing the membership experience by being a trusted point of contact for our members. My role involves understanding their needs, providing tailored support, and helping them unlock the full benefits of their membership. By fostering strong relationships, I contribute to building a vibrant and collaborative community within the landscaping industry.",
       },
+      {
+        heading: "Amy Cobbett",
+        body: "Part of the team supporting BALI members and the wider association.",
+      },
+      {
+        heading: "Sarah P",
+        body: "Part of the team supporting BALI members and the wider association.",
+      },
+      {
+        heading: "Ian Ludgate, Technical Officer",
+        body: "Providing technical support and guidance to members across the landscaping industry.",
+      },
+      {
+        heading: "Luke Garner, Content Manager",
+        body: "Leading content across BALI's channels — telling the stories of our members and the wider industry.",
+      },
+      {
+        heading: "Mia Foster, Marketing Executive",
+        body: "Supporting BALI's marketing campaigns and member communications.",
+      },
+      {
+        heading: "Joanna Pieprzak, Media Sales & Sponsorship Officer",
+        body: "Managing media sales and sponsorship partnerships across BALI's events, awards and publications.",
+      },
+      {
+        heading: "Izzy Plain, Events Officer",
+        body: "Coordinating BALI's programme of regional events, training and industry gatherings.",
+      },
+      {
+        heading: "Nicky McMurdo, PA to Chief Executive",
+        body: "Providing executive support to the Chief Executive and the senior leadership team.",
+      },
     ],
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
