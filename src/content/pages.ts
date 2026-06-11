@@ -207,15 +207,95 @@ const C: Record<string, PageContent> = {
     eyebrow: "About BALI",
     title: "BALI National Landscape Conference 2026",
     theme: "blue",
-    intro: "The UK’s landscaping sector is at a turning point. Climate pressures are growing, skills are in short supply, and new rules like Biodiversity Net Gain are raising the stakes. BALI’s National Landscape Conference brings together the industry’s brightest minds to ask one vital question: how do we build landscapes and organisations that are truly future-proof? Hear from visionaries including Helen Nyul, Director of Ecology at Verna, and Sir Tim Smit, Founder of the Eden Project. Book now details The UK landscaping sector stands at a defining moment.",
-    image: { url: "/__l5e/assets-v1/ea4903cb-9e33-43c9-9370-90c0844b9740/medium_11.png", alt: "Helen Nyul" },
+    intro: "The UK’s landscaping sector is at a turning point. Climate pressures are growing, skills are in short supply, and new rules like Biodiversity Net Gain are raising the stakes. BALI’s National Landscape Conference brings together the industry’s brightest minds to ask one vital question: how do we build landscapes and organisations that are truly future-proof?",
+    image: { url: "/__l5e/assets-v1/ea4903cb-9e33-43c9-9370-90c0844b9740/medium_11.png", alt: "Helen Nyul, Director of Ecology at Verna" },
+    highlights: [
+      { title: "Sir Tim Smit", body: "Founder of the Eden Project — Regenerative Sustainability & The Eden Project." },
+      { title: "Helen Nyul", body: "Director of Ecology, Verna — Biodiversity Net Gain & Climate Resilience." },
+      { title: "Trevor Williams", body: "Global Trends & Economic Forces Impacting Landscaping." },
+      { title: "Wayne Grills", body: "BALI Chief Executive — Closing remarks and industry outlook." },
+    ],
     sections: [
       {
-        heading: "Agenda at a glance",
-        body: "Theme: Climate resilience and how to future proof your business. A day focused on sustainability, biodiversity, plant health, skills, and economic resilience. 09:30 to 10:00 Arrival and refreshments 10:00 to 10:05 Welcome & Opening Remarks Hosted by Adrian Wickham Setting the scene for a day focused on resilience, sustainability and opportunity across the landscaping sector. 10:05 to 10:40 Keynote: Trevor Williams - Global Trends & Economic Forces Impacting Landscaping A strategic overview of the geopolitical and economic forces shaping global trade — and what they mean for UK landscaping businesses. Key themes include: - Global trade, exports and imports: pressures on supply chains and costs - How shifting wealth dynamics are influencing demand for landscaping and luxury projects - What economic uncertainty really means for the landscaping industry - Practical, clear takeaways on managing risk, building climate resilience, and future-proofing your business 10:40 to 11:15 Keynote: Sir Tim Smit - Regenerative Sustainability & The Eden Project An inspiring exploration of how bold, regenerative thinking can transform landscapes, businesses and communities. Key themes include: - The transformation of the Eden Project from clay pit to global sustainability icon - Moving beyond sustainability towards regenerative practices that actively restore ecosystems - Practical lessons for embedding climate resilience into landscaping operations and long-term strategy 11:15 to 11:50 Refreshments and networking 11:50 to 12:25 Keynote: Helen Nyul - Biodiversity Net Gain & Climate Resilience A practical look at how Biodiversity Net Gain (BNG) can drive climate resilience while strengthening business performance. Key themes include: - BNG as a tool for sustainable, resilient business practice - How to operationalise BNG requirements using current guidance and standards - Turning compliance into opportunity 12:30 to 13:30 Lunch and networking 13:30 to 14:30 Breakout sessions (choose one) Room 1: A Workplace for the Future Hosted by Sam Grayson – Hyphae Learning Panel with Paul Downer – Oak View Landscapes/ BALI Board Director, Gamiel Yafai – Diversity Marketplace, More panellists to be announced This panel will share perspectives on what the future workplace will look and feel like, covering topics from leadership, high performance, and well-being to culture, acceptance, inclusion, and respect Room 2: Data-Driven Biodiversity With Liz Nicholson – Nicholson Nurseries Practical advice on integrating biodiversity measurement into everyday operations How biodiversity metrics support sustainable landscape practice and business strategy Introduction to Elemental Room 3: The Reality of Plant Health Hosted by Dougal Driver – Grown in Britain Panel with Will Innes-Taylor - Hillier Nurseries, Alistair Bayford – Frosts/ BALI Board Director, Malcolm Catlin – Plant Healthy This panel will explore: - Major threats to plant health in nurseries and landscaping projects - Managing increased plant health risks and import pressures - The nursery sector’s role in biodiversity and sustainability - How landscapers and nurseries can collaborate for stronger long-term outcomes 14:30 to 15:00 Refreshments and networking 15:00 to 16:00 Breakout sessions (choose one) Room 1: Training and Developing Future Talent Hosted by Jake Catling – Hyphae Learning/ BALI Board Director Panel with Ruth Orrell-Harris – Activate Learning, Jonathan Pettit – BALI, more panellists to be announced. To build a resilient workforce, leaders must move beyond traditional \"tick-box\" training. This session explores a strategic three-prong approach to talent development, analysing how we currently utilise In-House, External, and Formal training and—more importantly—how we must evolve them to resonate with a digital-first generation. Room 2: Goods to the Ground – Inside the Supply Chain Hosted by Rachel Forsyth - Hortweek Panel With Chris Swan – Green-Tech, Richard McKenna – Provender Nurseries, Richard Brown – Germinal , Michael Mclvor-New - Tobermore This panel will explore: - The journey from supplier to site: risks, delays and cost pressures - Export and import challenges affecting availability and pricing - Managing customer expectations in an “Amazon-effect” world - Being transparent about price increases without losing trust or margin - Strengthening collaboration between suppliers, contractors and clients - One practical improvement the industry can adopt to build supply-chain resilience Room 3: Where’s the Money? Navigating the Economic Landscape Hosted by Adrian Wickham – BALI, Chair Panel with Mark Powell – J M Finn Investments, Kim Sones – Sones Accountancy Services and more to be announced In an era of economic uncertainty, pricing volatility and climate pressures, how can landscaping businesses stay financially resilient and strategically positioned for growth? This session brings together leading financial voices to explore the economic landscape from global trends to business-level impact. 16:00 to 17:00 Panel Discussion & Closing Session A reflective panel with hosts from each breakout session, sharing: - Key insights and learnings from the day - Practical actions for the industry moving forward - Audience Q&A Closing remarks: Wayne Grills, BALI Chief Executive 17:00 to 18:30 Networking drinks reception Continue the conversation and connect with peers, speakers and industry leaders Note: breakout content and panellists may be subject to change. As the UK’s leading landscaping trade association, BALI is proud to convene this conversation. The challenges facing our sector are complex and urgent, but they are also an opportunity. By bringing together expertise, experience and ambition, we can help shape a more resilient, confident and future-ready industry.",
+        heading: "About the day",
+        body: "Theme: Climate resilience and how to future‑proof your business. A day focused on sustainability, biodiversity, plant health, skills, and economic resilience. As the UK’s leading landscaping trade association, BALI is proud to convene this conversation — bringing together expertise, experience and ambition to help shape a more resilient, confident and future‑ready industry.",
+      },
+      {
+        heading: "09:30 — Arrival and refreshments",
+        body: "Registration opens. Coffee, networking and exhibitor stands.",
+      },
+      {
+        heading: "10:00 — Welcome & Opening Remarks",
+        body: "Hosted by Adrian Wickham. Setting the scene for a day focused on resilience, sustainability and opportunity across the landscaping sector.",
+      },
+      {
+        heading: "10:05 — Keynote: Trevor Williams",
+        body: "Global Trends & Economic Forces Impacting Landscaping. A strategic overview of the geopolitical and economic forces shaping global trade — and what they mean for UK landscaping businesses.",
+        bullets: [
+          "Global trade, exports and imports: pressures on supply chains and costs",
+          "How shifting wealth dynamics are influencing demand for landscaping and luxury projects",
+          "What economic uncertainty really means for the landscaping industry",
+          "Practical, clear takeaways on managing risk, building climate resilience, and future‑proofing your business",
+        ],
+      },
+      {
+        heading: "10:40 — Keynote: Sir Tim Smit",
+        body: "Regenerative Sustainability & The Eden Project. An inspiring exploration of how bold, regenerative thinking can transform landscapes, businesses and communities.",
+        bullets: [
+          "The transformation of the Eden Project from clay pit to global sustainability icon",
+          "Moving beyond sustainability towards regenerative practices that actively restore ecosystems",
+          "Practical lessons for embedding climate resilience into landscaping operations and long‑term strategy",
+        ],
+      },
+      {
+        heading: "11:15 — Refreshments and networking",
+        body: "Break for coffee, networking and exhibitor stands.",
+      },
+      {
+        heading: "11:50 — Keynote: Helen Nyul",
+        body: "Biodiversity Net Gain & Climate Resilience. A practical look at how Biodiversity Net Gain (BNG) can drive climate resilience while strengthening business performance.",
+        bullets: [
+          "BNG as a tool for sustainable, resilient business practice",
+          "How to operationalise BNG requirements using current guidance and standards",
+          "Turning compliance into opportunity",
+        ],
+      },
+      {
+        heading: "12:30 — Lunch and networking",
+        body: "Hot lunch served, with time to connect with peers, speakers and exhibitors.",
+      },
+      {
+        heading: "13:30 — Breakout sessions (choose one)",
+        body: "Three parallel sessions giving you a deep dive into the topics that matter most to your business.",
+        bullets: [
+          "Room 1 — A Workplace for the Future. Hosted by Sam Grayson (Hyphae Learning) with Paul Downer (Oak View Landscapes / BALI Board) and Gamiel Yafai (Diversity Marketplace). Leadership, high performance, well‑being, culture, inclusion and respect.",
+          "Room 2 — Data‑Driven Biodiversity. With Liz Nicholson (Nicholson Nurseries). Integrating biodiversity measurement into everyday operations, with an introduction to Elemental.",
+          "Room 3 — The Reality of Plant Health. Hosted by Dougal Driver (Grown in Britain) with Will Innes‑Taylor (Hillier Nurseries), Alistair Bayford (Frosts / BALI Board) and Malcolm Catlin (Plant Healthy). Threats, import pressures and collaboration between landscapers and nurseries.",
+        ],
+      },
+      {
+        heading: "14:30 — Refreshments and networking",
+        body: "Afternoon break.",
+      },
+      {
+        heading: "15:00 — Breakout sessions (choose one)",
+        body: "A second round of parallel deep dives.",
+        bullets: [
+          "Room 1 — Training and Developing Future Talent. Hosted by Jake Catling (Hyphae Learning / BALI Board) with Ruth Orrell‑Harris (Activate Learning) and Jonathan Pettit (BALI). Moving beyond tick‑box training to a three‑prong In‑House / External / Formal approach for a digital‑first generation.",
+          "Room 2 — Goods to the Ground: Inside the Supply Chain. Hosted by Rachel Forsyth (Hortweek) with Chris Swan (Green‑Tech), Richard McKenna (Provender Nurseries), Richard Brown (Germinal) and Michael McIvor‑New (Tobermore). Risks, delays, import/export pressures, the “Amazon‑effect” and rebuilding trust.",
+          "Room 3 — Where’s the Money? Navigating the Economic Landscape. Hosted by Adrian Wickham (BALI Chair) with Mark Powell (J M Finn Investments) and Kim Sones (Sones Accountancy). Staying financially resilient amid pricing volatility and climate pressure.",
+        ],
+      },
+      {
+        heading: "16:00 — Panel Discussion & Closing Session",
+        body: "A reflective panel with hosts from each breakout session, sharing key insights, practical actions and audience Q&A. Closing remarks from Wayne Grills, BALI Chief Executive.",
+      },
+      {
+        heading: "17:00 — Networking drinks reception",
+        body: "Continue the conversation and connect with peers, speakers and industry leaders. Please note: breakout content and panellists may be subject to change.",
       },
     ],
-    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaPrimary: { label: "Book your place", href: "/contact" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
   "/about/ncf": {
