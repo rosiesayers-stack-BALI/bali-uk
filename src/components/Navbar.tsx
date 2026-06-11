@@ -16,9 +16,27 @@ const nav = [
     ],
   },
   {
+    label: 'About', href: '/about',
+    items: [
+      { label: 'What We Do', href: '/about' },
+      { label: 'What is BALI', href: '/about/what-is-bali' },
+      { label: 'Board of Directors', href: '/about/board' },
+      { label: 'Meet Our Team', href: '/our-team' },
+      { label: 'National Landscape Awards', href: '/about/awards' },
+      { label: 'BALI-NCF', href: '/about/ncf' },
+      { label: 'Landscaping Careers', href: '/about/careers' },
+      { label: 'Advertise With Us', href: '/about/advertise' },
+      { label: 'Supported Charities', href: '/about/charities' },
+      { label: 'RHS Chelsea Flower Show 2025', href: '/about/rhs-chelsea' },
+      { label: 'National Conference 2026', href: '/about/conference', highlight: true },
+    ],
+  },
+  {
     label: 'Membership', href: '/membership',
     items: [
       { label: 'Join Our Association', href: '/join' },
+      { label: 'Become a Member (start here)', href: '/membership/become-a-member' },
+      { label: 'Membership Enquiry', href: '/membership/enquiry' },
       { label: 'Member Login', href: '/login' },
       { label: 'Terms of Membership', href: '/membership/terms' },
       { label: 'Code of Conduct', href: '/membership/code' },
