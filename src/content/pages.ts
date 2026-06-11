@@ -2164,8 +2164,8 @@ const C: Record<string, PageContent> = {
         role: "Head of Policy & Public Affairs",
       },
       {
-        heading: "Sarah P",
-        body: "Part of the team supporting BALI members and the wider association.",
+        heading: "Sarah Potrykus, Head of Membership",
+        body: "Leading BALI's membership function — supporting members, growing the community, and ensuring the value of BALI membership is felt across the industry.",
       },
       {
         heading: "Ian Ludgate, Technical Officer",
