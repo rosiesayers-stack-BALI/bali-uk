@@ -1999,6 +1999,3529 @@ const C: Record<string, PageContent> = {
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
+  "/about/what-is-bali": {
+    eyebrow: "About BALI",
+    title: "What we do",
+    theme: "blue",
+    intro: "The British Association of Landscape Industries is the leading Trade Association representing all landscape professionals - from design, build and maintenance through to supply, training and education. Over 900 Accredited members represent some of the best landscaping businesses across the country, from large corporations, to local traders, to individual designers.",
+    sections: [
+      {
+        heading: "Join the British Association of Landscape Industries",
+        body: "Our Association's professional team, based at Landscape House in Warwickshire, deliver exceptional business, technical and promotional support to our members. We have a range of member benefits that can save your business thousands of pounds every year. Find out more about becoming a member.",
+      },
+      {
+        heading: "Find a landscape...",
+        body: "Looking for a high-quality and reliable landscape professional? We have Accredited members in every county, including England, Wales, Scotland and Northern Ireland. Browse our member directory and search by town or postcode to find you nearest. When you choose one of our Accredited members, you can be confident you are choosing a reputable and quality professional. To ensure our high standards are kept, membership is only granted to companies and individuals who meet our Association's stringent Terms & Conditions of Membership, and their continuation of membership depends upon the maintenance of satisfactory standards.",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/about/rhs-chelsea": {
+    eyebrow: "About BALI",
+    title: "RHS Chelsea Flower Show 2025",
+    theme: "green",
+    intro: "Plants kindly provided by The Plant Man - https://www.theplantman.co",
+    image: { url: "https://www.bali.org.uk/public/images/small_2crassula-400x400.png", alt: "Crassula" },
+    sections: [
+      {
+        heading: "Seen something you love?",
+        body: "Crassula Crassulas, commonly known as jade plants, are easy-to-grow succulents with thick, glossy leaves. They're ideal for beginners and can be grown indoors or outdoors in the UK climate. Sempervivum Sempervivums are hardy, rosette-forming succulents that come in various colours. They're perfect for rock gardens, containers, and green roofs, thriving in well-drained soil. Echeveria Echeverias are popular succulents known for their attractive rosettes and vibrant colours. They prefer bright light and minimal watering, making them suitable for indoor cultivation. Pittosporum tenufolium ‘wrinkled blue’ Pittosporum tenuifolium ‘Wrinkled Blue’ is a captivating dwarf evergreen shrub with stunning green, blue, and silver foliage. Pittosporum tobira ’variegatum’ Dense, variegated, shapely, evergreen free flowering shrub from Japan with masses of creamy-white, very fragrant flowers in early summer. Euphorbia characias subsp. wulfenii This handsome euphorbia has upright stems clothed with whorls of fleshy, glaucous leaves and topped with huge heads of chartreuse-green flowers with bronze 'eyes' from March to May. Agapanthus white Agapanthus are South African plants with strap-like leave...",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/our-team": {
+    eyebrow: "About BALI",
+    title: "Meet our team",
+    theme: "blue",
+    intro: "Meet the team behind BALI. Our dedicated professionals are committed to supporting our members, championing the landscaping industry, and delivering excellence in everything we do.",
+    image: { url: "https://www.bali.org.uk/public/images/1wayne-grills-1.png", alt: "Wayne Grills 2022" },
+    sections: [
+      {
+        heading: "Wayne Grills, Chief Executive",
+        body: "I’m committed to raising the Association’s profile at both government and industry levels. I support cross-industry working groups and committees, representing the Association and its members, including APPGHG, Scottish Ministerial Industry Roundtable Group and the OHRG.",
+      },
+      {
+        heading: "Jonathan Pettit, Head of Careers, Skills & Certification",
+        body: "Ensuring that the industry has the right people, skills, and learning opportunities is at the heart of my work at BALI and with the GoLandscape initiative. By working closely with industry leaders, members, educational establishments, and other industry partners the Skills and Careers team is committed to helping the industry to develop the tools and opportunities to succeed and thrive",
+      },
+      {
+        heading: "Rosie Sayers, Head of Marketing & Communications",
+        body: "Shaping the way the Association connects with its members and the wider industry is at the heart of my role. I focus on creating impactful campaigns and clear communication strategies that highlight the value of our work and celebrate the achievements of our members. Through strong relationships and impactful engagement, I amplify the voice of the landscaping sector.",
+      },
+      {
+        heading: "Francesca Bienek, Membership Engagement Manager",
+        body: "Building strong connections with our members is central to my role. I work closely with individuals and organisations across the landscaping industry to ensure they receive the support and resources they need to thrive. By listening to members’ needs and fostering engagement, I help strengthen our community and highlight the value of being part of the Association.",
+      },
+      {
+        heading: "Kerrie Hutchings, Membership Officer",
+        body: "Supporting our members and helping them make the most of their membership is my priority. I’m here to answer questions, provide guidance, and ensure that everyone feels connected to the wider landscaping community. Whether through events, communications, or one-on-one conversations, I’m committed to making every member’s experience rewarding and impactful.",
+      },
+      {
+        heading: "Sue Jones, Membership Officer",
+        body: "I’m dedicated to enhancing the membership experience by being a trusted point of contact for our members. My role involves understanding their needs, providing tailored support, and helping them unlock the full benefits of their membership. By fostering strong relationships, I contribute to building a vibrant and collaborative community within the landscaping industry.",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/contact/team": {
+    eyebrow: "Contact",
+    title: "Make an enquiry",
+    theme: "blue",
+    intro: "Information on make an enquiry from the British Association of Landscape Industries.",
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/events/terms": {
+    eyebrow: "Events",
+    title: "Terms and conditions of events",
+    theme: "slate",
+    intro: "Making a booking request for an event constitutes your acceptance of these Terms and your agreement to comply with them. Please read these Terms carefully before you complete an event booking request. These terms tell you how event bookings can be changed and cancelled, and other important information. Where you are making a booking on our website, these Terms should be read in conjunction with our website Terms and Conditions, Disclaimer, Privacy Policy and Cookies. We reserve the right to amend these Terms from time to time.",
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/law/cdm": {
+    eyebrow: "Help & Advice",
+    title: "CDM Regulations",
+    theme: "warm",
+    intro: "The Construction (Design & Management) Regulations 2015 are the main set of regulations for managing the health, safety and welfare of construction projects.",
+    sections: [
+      {
+        heading: "The Construction (Design & Management) Regulations 2015",
+        body: "The scope of works covered by the definition of 'Construction' in CDM includes many aspects of landscape works, including site clearance, excavation, drainage and earthworks. In addition, any landscape contractor undertaking work on a construction site where other contractors are present will have responsibilities under CDM. Please click on the buttons below to learn more about your responsibilities under CDM:",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/law/cdm/learning": {
+    eyebrow: "Help & Advice",
+    title: "CDM learning materials",
+    theme: "warm",
+    intro: "To help members understand the measures required to meet CDM regulations and implement these in their own projects, the Association has developed a suite of learning materials.",
+    sections: [
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "CDM webinar slide deck 27 Sep 2023 1713kb PDF",
+          "Construction phase safety plan 27 Sep 2023 66kb DOCX",
+          "Design Risk Assessment 27 Sep 2023 63kb DOCX",
+          "Pre Construction Checklist 27 Sep 2023 26kb DOCX",
+          "Pre Tender checklist 27 Sep 2023 29kb DOCX",
+          "Pre Tender Risk Assessment 27 Sep 2023 25kb DOCX",
+          "Design Assessment List 27 Sep 2023 21kb XLSX",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/law/cdm/commercial": {
+    eyebrow: "Help & Advice",
+    title: "Login",
+    theme: "warm",
+    intro: "Information on login from the British Association of Landscape Industries.",
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/law/cdm/domestic": {
+    eyebrow: "Help & Advice",
+    title: "Login",
+    theme: "warm",
+    intro: "Information on login from the British Association of Landscape Industries.",
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/law/cdm/what-is-construction": {
+    eyebrow: "Help & Advice",
+    title: "Login",
+    theme: "warm",
+    intro: "Information on login from the British Association of Landscape Industries.",
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/law/evolution-of-employment": {
+    eyebrow: "Help & Advice",
+    title: "Evolution of employment",
+    theme: "warm",
+    intro: "Whilst new working arrangements have the potential to enable short-term or highly flexible demands for labour to be fulfilled, the existing legislative framework – which has evolved to cater for traditional ‘employees’ – often does not afford sufficient protection to the rights of a new position labelled ‘workers’. Workers are a half-way house between employees and self-employed individuals, often at risk from losing basic employment rights as a result of unscrupulous employers.",
+    image: { url: "https://www.bali.org.uk/public/images/medium_office-1209640-1920.jpeg", alt: "Office" },
+    sections: [
+      {
+        heading: "Together with a growing trend for self-employment, mobile phone applications and an emerging gig economy are providing employers and labour markets with greater flexibility than ever before.",
+        body: "In 2017 a report commissioned by the government evaluated the changing landscape of work and made recommendations to ensure future legislation reflects these changes. Many changes in law have already been adopted or will do in the near future. One of the areas of legislation to be changed as a result of this review is section 1 of the Employment Rights Act 1996. Currently, ‘employees’ in a role for more than one month must be given a document containing specific information including holiday pay, sick leave, and length of time the job is likely to last within 2 months of the date they start work. This document may often be refereed to as an employment contract or written statement, and may be in parts, provided this 2-month limit is met. Anyone defined as a ‘worker’ - which may include people employed under zero-hours contracts or employed through an agency - is not currently entitled to any of this information at any stage in their role. This leaves a significant number of contemporary ‘workers’ in a vulnerable position so, as of 6th April 2020, new requirements will be enforced: As of 6th April 2020, employers must ensure statements, which include the full suite of employment ...",
+        bullets: [
+          "Both employees and workers are entitled to a section 1 statement on the first day of work, regardless of the duration of their role.",
+          "Details concerning working periods, leave entitlement, sick pay, renumeration, probationary period and training must be given.",
+        ],
+      },
+      {
+        heading: "Further information:",
+        body: "ACAS website The Employment Rights (Miscellaneous Amendments) Regulations 2019",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/law/gdpr": {
+    eyebrow: "Help & Advice",
+    title: "GDPR",
+    theme: "warm",
+    intro: "The regulation has fundamentally reshaped the way in which data is handled across every sector, from healthcare to banking and beyond. The British Association of Landscape Industries has been working closely with members to ensure they are compliant with the new regulation by producing a helpful data protection fact sheet.",
+    sections: [
+      {
+        heading: "What is GDPR?",
+        body: "The General Data Protection Regulation forms part of the data protection regime in the UK, together with the new Data Protection Act 2018 (DPA 2018). This replaces the Data Protection Act 1988. The main provisions of this applied from 25 May 2018, which means all business should already be applying the principles of the GDPR in their daily work activities.",
+      },
+      {
+        heading: "Who does it apply to?",
+        body: "The GDPR applies to businesses who may be called a ‘controller’ or ‘processor’. A controller determines the purposes and means of processing personal data. A processor is responsible for processing personal data on behalf of a controller. As a landscape contractor or designer, it is most likely that you are a controller, since you will frequently be deciding what personal data to collect (for example, the names, email addresses, telephone numbers and addresses of clients) and how this information will be recorded e.g. on a phone, in a book or via email. Note that GDPR applies to historic, current and all future electronic and manual records held by your company. Personal data only includes information relating to natural persons who can be identified or who are identifiable, directly from the information in question (e.g. name, address, email, NI number); or who can be indirectly identified from that information in combination with other information (e.g. Computer’s IP address). As a landscape contractor or garden designer, it is likely you will record personal data from clients which includes their name, address and email address. Information about companies or public authoriti...",
+      },
+      {
+        heading: "What are my responsibilities?",
+        body: "Whilst the owners, directors or management team are directly accountable, all employees within a business have a responsibility to ensure their business conforms with the General Data Protection Regulation. Before collecting personal information, you must identify valid grounds under the GDPR (known as a ‘lawful basis’) for collecting and using personal data from your customers and prospective customers. There are six of these lawful bases, which are listed below: 1. Consent 2. Contract 3. Legal obligation 4. Vital interests 5. Public task 6. Legitimate interests For example, you may record information such as a name and address to provide a quote or a service, offer credit terms and get paid. These examples fall under the lawful basis of processing by way of “contract” as without this basic information you could not provide your services. You must ensure that you do not do anything with the data in breach of any other laws, such as give it to others without permission (see consent) or store it in an unsecure way. Note that storing data in an insecure way could include writing client names, addresses and phone numbers in a book which is not thoughtfully looked after, or on compu...",
+      },
+      {
+        heading: "What are the rights of my customers and potential customers?",
+        body: "The individuals whose information you collect and use have particular rights. There are eight of these, which are: 1. The right to be informed (i.e. what exactly will you do with their information?) 2. The right of access (i.e. you must be able to give individuals a copy of their personal data that you hold on them) 3. The right to rectification (i.e. individuals are entitled to have their personal information corrected) 4. The right to erasure (also known as the right to be forgotten, in some circumstances an individual can request a business deletes information held about them) 5. The right to restrict processing (in some circumstances an individual can limit the way in which a business uses their data) 6. The right to data portability (this right gives individuals the right to receive information they originally provided to a business in a format that is organised and commonly used) 7. The right to object (in some circumstances, an individual can object to businesses processing their data in a specific way) 8. Rights in relation to automated decision making and profiling. (in some circumstances, businesses can be prevented from using automated – computer controlled – decision...",
+      },
+      {
+        heading: "What is consent?",
+        body: "As discussed in the responsibilities section, as a business you should ensure you process (collect, record, organise, store or use) data on a lawful basis. As a landscape contractor or garden designer, in most cases you will be processing data under the lawful basis of ‘contract’. If, for example, you wish to contact a customer regarding additional services your business can offer, or sign a customer to direct marketing materials, a different lawful basis is required – ‘consent’ is one such example of a different lawful basis. The definition of consent in GDPR is similar to the definition of consent outside of GDPR! Under GDPR, consent is given by an individual to a business when s/he gives a specific and informed decision of his or her wishes either via a statement or clear affirmative action (e.g. ticking a box) called an opt-in. For example, consent may be gained from an individual to send them additional information on relevant products by using the following text as part of a contract for works: I consent to [your company name] sending me additional information on relevant and complementary products or services, from time to time, by the following methods: □ email □ letter ...",
+      },
+      {
+        heading: "What is a breach and what do I do?",
+        body: "A personal data breach means a breach of security leading to the accidental or unlawful destruction, loss, alteration, unauthorised disclosure of, or access to, personal data. This includes breaches that are the result of both accidental and deliberate causes. For example, losing a book in which you keep client addresses is classed as a data breach, as is losing a mobile telephone which contains the names and address of clients. The GDPR introduces a duty on all organisations to report certain types of personal data breach to the relevant supervisory authority (currently this is the ICO). You must do this within 72 hours of becoming aware of the breach, where feasible. If the breach is likely to result in a high risk of adversely affecting individuals’ rights and freedoms, you must also inform those individuals without undue delay. You should ensure you have robust breach detection, investigation and internal reporting procedures in place. This will facilitate decision-making about whether or not you need to notify the relevant supervisory authority and the affected individuals. This is based on material harm to individuals, scale of impact, likelihood of recurrence, risk to oth...",
+      },
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "Data Protection Factsheet 12 Mar 2019 223kb PDF",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/law/ir35": {
+    eyebrow: "Help & Advice",
+    title: "IR35",
+    theme: "warm",
+    intro: "By setting up as a limited company, workers can continue to work for an existing employer, but as a ‘contractor’. Personal service companies are a variation of this and are popular where clients and recruitment agencies avoid hiring contractors operating as sole traders.",
+    image: { url: "https://www.bali.org.uk/public/images/medium_calculator-385506-1920.jpeg", alt: "calculator" },
+    sections: [
+      {
+        heading: "IR35 is a piece of UK tax legislation, designed to close a loophole in the tax system that allows a specific group of workers to pay less tax.",
+        body: "Operating as a contractor or personal service company allows workers to avoid paying national insurance contributions on a significant part of their income, which traditional employees must do. When used legitimately, this reduced tax is intended to provide the contractor with money for holiday or sick pay, but also paying for equipment necessary to do their job. This arrangement also benefits the client, as they do not need to pay annual leave or sick pay to contractors or personal service companies. Whilst operating as a contractor can be entirely legitimate, Her Majesty’s Revenue and Customs (HMRC) regard the practice of masquerading as a ‘contractor’ as a form of tax avoidance, and introduced IR35 to ensure, where appropriate, contractors deemed to be employees pay the same amount of tax as traditional employees. If HMRC identify cases where individuals have been masquerading as self-employed contractors without justification, they will be required to pay the missing tax back to HMRC, with interest and penalties for a period of up to 6 years. Working ‘Inside IR35’ is where a worker is considered an employee (commonly referred to as a ‘deemed employee’) for the purposes of ta...",
+        bullets: [
+          "The client decides how, when and where the workers services are provided",
+          "Contractor is paid regardless of the quality of services provided",
+          "Client would not be willing to accept a substitute to provide the services",
+          "Contractor does not provide own equipment",
+          "The contractor decides how, when and where the workers services are provided",
+          "Contractor may be paid according to work or service delivered",
+          "Client would accept a substitute to provide the services",
+          "Contractor provides own equipment for services provided",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/law/jcli-contracts": {
+    eyebrow: "Help & Advice",
+    title: "JCLI contracts",
+    theme: "warm",
+    intro: "These documents update the CPSE/JCLI Guidance for the Advanced Ordering or Contract Growing of Hardy Nursery Stock (HTA 1999). October 2014.",
+    image: { url: "https://www.bali.org.uk/public/images/small_screenshot-2019-11-14-at-15.00.52.png", alt: "JCLI Logo" },
+    sections: [
+      {
+        heading: "Guidance on the conditions of contract and other issues concerning the contract growing of plant material by nursery growers for their clients.",
+        body: "The JCLI Contracts Forum agrees and badges commercial and domestic project standard forms of contract and associated guidance documents for the landscape industry. The contracts and guidance are produced and published by individual member organisations. The JCLI Contracts Forum is organised by the Landscape Institute. Its members are the Association of Professional Landscapers (APL), the British Association of Landscape Industries (BALI), the Horticultural Trades Association (HTA), the Institute of Chartered Foresters (ICF), the Landscape Institute (LI) and the Society of Garden Designers (SGD). The JCLI badging of contracts is considered important for two main reasons: firstly, because ‘JCLI’ has a strong reputation for contracts, based on the reputation of the Landscape Contract originally produced in 1978; and secondly, because the documents are agreed by the members of the Forum and are therefore non-partisan industry standard documents. JCLI was originally the Joint Council for Landscape Industries and was convened in 1973 to bring together all those organisations in any way concerned with landscape design, construction or management. In 2004 it became the Joint Committee f...",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/law/good-work-plan": {
+    eyebrow: "Help & Advice",
+    title: "The good work plan",
+    theme: "warm",
+    intro: "In 2017 Matthew Taylor, the Chief Executive of the Royal Society for the Encouragement of Arts, Manufacturers and Commerce, published the Good Work report. This document outlined 53 proposals to the government, aimed at improving modern working practices. Specifically, the report considered how employment practices needed to change in order to keep pace with modern business models, and discussed the developing nature of self-employed and contracted workers, and how the existing labour laws must change to accommodate these individuals and the businesses that employ them.",
+    sections: [
+      {
+        heading: "Important employment law changes in effect from Monday 6 April 2020.",
+        body: "The government responded to the report by publishing The Good Work Plan in 2018, which identified the changes that would be implemented. These affect England, Wales and Scotland, and the following changes came into effect last week: Full details of the changes can be reviewed on the government’s website.",
+        bullets: [
+          "A written statement of main terms and conditions (frequently known as written statement of particulars) must now be provided to Employees and Workers by their employer on or before the first day of their employment",
+          "The period to break continuous service has now extended from 1 week to 4 weeks, which means employees who work intermittently for their employees can access their employment rights",
+          "The pay reference period for holiday calculations has increased from 12 to 52 weeks, or for employees with less than 52 weeks service, the total number of weeks they have worked. This means the holiday pay for employees with variable hours will reflect their working hours across the year, and not vary according to high or low season.",
+          "Employees who do not have regular working hours are now able to request a more stable contract after 26 weeks continuous service, with a more fixed working pattern and guaranteed hours.",
+          "Agency workers are now entitled to the same pay as the direct recruits of a business after they have performed the same role with the same hirer for 12 consecutive calendar weeks",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/law/vat-reverse-charge": {
+    eyebrow: "Help & Advice",
+    title: "VAT reverse charge",
+    theme: "warm",
+    intro: "From 1st March 2021 the domestic VAT reverse charge will apply to most supplies of building and construction services. This change will affect nearly all landscape contractors to some extent, and it is important our members understand the consequences of the changes.",
+    sections: [
+      {
+        heading: "Contents",
+        body: "- What is the domestic VAT reverse charge?- Why is the domestic VAT reverse charge being introduced?- Who will the domestic VAT reverse charge apply to?- Which services will the reverse charge apply to?- Are there any circumstances when the VAT reverse charge does not apply?- Where do responsibilities lie regarding notification of VAT reverse charge? From 1st March 2021, all businesses performing sub-contractor duties by supplying construction services to a VAT-registered customer (a contractor) will no longer charge VAT. Instead, the customer (contractor) will pay the VAT owed by the sub-contractor directly to HMRC. This means if you are a VAT-registered sub-contractor, who is registered with the CIS scheme and currently receives VAT payments from a contractor client, as of 1st March 2021 you will no longer receive VAT from these clients. HMRC believes there has been an increase in VAT fraud within labour supply chains in large construction projects, which they estimate costs the UK government over £100m per year. Specifically, companies at the end of long supply chains are not paying the VAT they receive to HMRC. The VAT reverse charge is being introduced to help reduce VAT fr...",
+        bullets: [
+          "When contractors use sub-contractors for zero-rated work",
+          "If the contractor or sub-contractor is not VAT registered",
+          "Where building or construction works are for end users",
+          "The customer (the contractor) must advise the supplier (sub-contractor) if they are an end user – and therefore not subject to the reverse charge – in writing. HMRC suggest the following wording is used:",
+          "The subcontractor may need to ask the customer if they are an end user and should record this request and any response in writing and retain as evidence. It is important the subcontractor also identifies and records evidence supplied to suggest the customer (contractor) is VAT registered and subject to CIS.",
+          "The supplier (the sub-contractor) must advise on their invoice if the VAT reverse VAT charge applies. Whilst no VAT will be charged on the invoice, the invoice must refer to the reverse charge and how much VAT is due (20% or 5%). HMRC suggest the following wording is used:",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/law/water-abstraction": {
+    eyebrow: "Help & Advice",
+    title: "Water abstraction",
+    theme: "warm",
+    intro: "The abstraction of water is managed by the government. Most businesses taking more than 20,000 litres of water a day directly from rivers or groundwater require an abstraction license. Following review and consultation, shortcomings were identified in the existing system of abstraction, which led to the government introducing a series of new measures in 2016. Over the next few years, rules concerning abstraction are likely to change and may affect Association members.",
+    image: { url: "https://www.bali.org.uk/public/images/medium_screenshot-2019-11-15-at-13.21.51.png", alt: "Environment Agency - Water Abstraction" },
+    sections: [
+      {
+        heading: "Water abstraction refers to the process of taking or extracting water from a natural source (rivers, lakes, groundwater aquifers, etc.) for various uses, from drinking to irrigation, treatment, and industrial applications.",
+        body: "Historically, taking water from the environment for certain uses and from certain sources could be done without a license. These uses and sources were called ‘exempt activities’ and included, amongst others: • All forms of irrigation including trickle • Abstractions from previously exempt areas It is likely that our members may have been using water under these exemptions. From 1st January 2018, new Environment Agency regulations came into effect, which mean these previously exempt activities cannot continue without an abstraction license. Upon changing the exemption guidelines, the Environment Agency declared a 2-year transitional period which ends on 31st December 2019. Any members who abstract more than 20 cubic metres (m3 ) per day for any previously exempt activities and want to continue to do so, must apply to the Environment Agency for a water resources abstraction license. Any persons who fail to notify the Environment Agency before the end of 2019 will automatically lose their right to abstract and be liable for enforcement action. The Environment Agency will assess all licenses applied for during the transitional period by 31 December 2022, and organisations can contin...",
+      },
+      {
+        heading: "Developing a stronger catchment focus",
+        body: "A catchment is a geographical area within which rainwater and groundwater collect and contribute to the flow of a specific river. We believe that working collaboratively at a catchment scale will improve understanding of local challenges and help identify the right solutions for individual catchments. The Environment Agency will support this by engaging with abstractors and existing local groups, such as catchment partnerships, in catchments facing the greatest challenges. This will produce updated abstraction licensing strategies that detail the solutions to environmental issues and set out approaches to help abstractors access the water they need. The figure below summarises the approach the Environment Agency will take. A free hotline and bookable appointment service have been setup to help with drafting applications for previous exemptions or answering any questions about the changes to abstraction licences. The Environment Agency may be contacted via telephone 03708 506506 or emailed: enquiries@environment-agency.gov.uk. Some or all of the articles on this page are for members only. To access, become a member by making an enquiry.",
+      },
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "Change to abstraction licensing rules 31 Jul 2019 257kb PDF",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/equipment": {
+    eyebrow: "Help & Advice",
+    title: "Machinery and driving",
+    theme: "warm",
+    intro: "Information on machinery and driving from the British Association of Landscape Industries.",
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/equipment/driving-for-better-business": {
+    eyebrow: "Help & Advice",
+    title: "Driving for better business",
+    theme: "warm",
+    intro: "The Driving for Better Business (DfBB) initiative was introduced by National Highways (formerly Highways England/Highways Agency) to help employers in the private and public sectors reduce work-related road risk, protecting staff who drive or ride for work, and others who they may share the road with. The initiative offers a range of information regarding all aspects of vehicle driving and operations.",
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/equipment/e10-fuel": {
+    eyebrow: "Help & Advice",
+    title: "E10 fuel",
+    theme: "warm",
+    intro: "The proportion of ethanol in standard unleaded petrol has now increased to 10% and is labelled ‘E10’ to reflect this change.",
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/equipment/red-diesel": {
+    eyebrow: "Help & Advice",
+    title: "Login",
+    theme: "warm",
+    intro: "Information on login from the British Association of Landscape Industries.",
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/equipment/tachographs": {
+    eyebrow: "Help & Advice",
+    title: "Tachographs",
+    theme: "warm",
+    intro: "Are your vehicles fitted with a tachograph? Do you know when to use a tachograph? Do you know when a tachograph is not needed?",
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/equipment/tachographs/landscape-contractors": {
+    eyebrow: "Help & Advice",
+    title: "Login",
+    theme: "warm",
+    intro: "Information on login from the British Association of Landscape Industries.",
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/equipment/towing-a-trailer": {
+    eyebrow: "Help & Advice",
+    title: "Towing",
+    theme: "warm",
+    intro: "What weight can I tow with a car licence? *UPDATED 16/12/2021*How much weight can my vehicle tow?How much weight can my trailer carry?What size trailer can I tow?How can I avoid exceeding the towing capacity of my trailer or vehicle?",
+    image: { url: "https://www.bali.org.uk/public/images/img-0368.jpg", alt: "VIN plate" },
+    sections: [
+      {
+        heading: "Contents",
+        body: "New rules introduced on 16th December 2021 allow anyone who passed their car driving test (Driving licence category B) from 1st January 1997 to tow trailers up to 3,500kg maximum authorised mass* (MAM). This change is significant; up until now, anyone who passed their car driving test after 1st January 1997 has been required by law to pass a car and trailer driving test to tow a trailer up to 3,500kg MAM (within the towing limits of the vehicle). Drivers will now get Category BE added to their driving licence when they next get a new photocard driving licence and do not need to contact DVLA for this to happen. Any person who passed their driving test before 1st January 1997 is permitted to drive a vehicle and trailer with a combined weight not exceeding 8,250kg Regardless of the law change, employers are reminded of the need to ensure employees are competent to drive a car or van with trailer. Training providers such as BALI member Train for Towing continue to offer packages which ensure drivers are taught how to load, attach and drive with a trailer. BALI strongly recommend new drivers and those who have not previously driven with a trailer receive professional training before ...",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/equipment/tractors": {
+    eyebrow: "Help & Advice",
+    title: "Tractors and licencing",
+    theme: "warm",
+    intro: "Following requests from members, the Association has worked with a specialist transport solicitor to clarify what driving licence entitlement is required when driving a tractor as part of a landscape or horticultural activity.",
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/equipment/tractors/driving": {
+    eyebrow: "Help & Advice",
+    title: "Login",
+    theme: "warm",
+    intro: "Information on login from the British Association of Landscape Industries.",
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/dispute/client-information": {
+    eyebrow: "Help & Advice",
+    title: "Client information",
+    theme: "warm",
+    intro: "Historically, the last resort for disagreements between clients and tradespeople was the courts. Options for relatively low value civil claims such as small claims, fast track and multi-track simplified the process and proved popular amongst tradespeople and clients.",
+    sections: [
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "Client Resolution Form 4 Jul 2024 1072kb PDF",
+          "Quick Start Guide 4 Jul 2024 90kb PDF",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/dispute/faqs": {
+    eyebrow: "Help & Advice",
+    title: "Frequently asked questions",
+    theme: "warm",
+    intro: "What are the benefits of the dispute resolution service?",
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/dispute/member-information": {
+    eyebrow: "Help & Advice",
+    title: "Login",
+    theme: "warm",
+    intro: "Information on login from the British Association of Landscape Industries.",
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/health-safety/alcohol": {
+    eyebrow: "Help & Advice",
+    title: "Alcohol in the workplace",
+    theme: "warm",
+    intro: "Whilst The Health and Safety at Work etc Act 1974 states employers have a duty to ensure the health, safety and welfare of employees in relation to alcohol at work, there is no legislation in the UK which requires a company to implement alcohol policies in the workplace. Furthermore, the management of any company can set its own alcohol limit, which may be enforceable according to site or job role.",
+    sections: [
+      {
+        heading: "There is no universal limit for alcohol levels in the landscape industry, which means being under the UK drink drive limit alone may not always be sufficient",
+        body: "Many employers and site managers have adopted a zero-tolerance approach (i.e. zero alcohol in the system of an individual) to alcohol. This means that, in the event of a test for alcohol, being under the drink drive limit alone may not be acceptable. Alcohol limits may be detailed during a site or company induction, but operatives are advised to seek clarification if in doubt. Operatives on construction sites may be subject to random drugs and alcohol tests. The reason for a zero-tolerance approach to alcohol is that, even at blood alcohol concentrations lower than the legal driving limit, research has shown alcohol can reduce physical co-ordination and reaction speeds. On a construction site there is a risk of injury to operatives and third parties if these abilities are impaired. For more information on managing drug and alcohol misuse at work, visit the HSE website",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/health-safety/insect-stings": {
+    eyebrow: "Help & Advice",
+    title: "Allergic reactions to insect stings",
+    theme: "warm",
+    intro: "Regardless of age or geographic location, whether you work in an office or out on site, spend your free time worshipping the sun or hiding in the shade, wasps and bees are one of the few invertebrates we encounter in Europe which pose a risk of harm.",
+    sections: [
+      {
+        heading: "Getting stung by an insect is an inevitable consequence of interacting with the environment.",
+        body: "For most people, a sting from a bee or wasp is a short-term inconvenience. A few hours of significant pain, which can be alleviated with nothing more than a rude word, some cold water and perhaps a mild painkiller. For other people, however, bees and wasps pose a significant danger. Allergic reactions or anaphylaxis can develop from a sting, which are potentially life-threatening. The article, written by Dr. Aarn Huissoon (MB, PhD, FRCP, FRCPath) for BALI, has been possible thanks to a financial grant from ALK-Abello, a global, research-driven pharmaceutical company which focusses on allergy diagnosis and treatment. It has been written specifically for landscape professionals and explores the types of reactions, the symptoms and treatment. For more information about how to treat insect stings visit the NHS website here.",
+      },
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "Allergic Reactions to Insect Stings by Dr Aarn Huissoon 12 Mar 2019 220kb PDF",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/health-safety/bats-rabies": {
+    eyebrow: "Help & Advice",
+    title: "Bats and rabies",
+    theme: "warm",
+    intro: "Whilst bats in the UK can carry the disease, rabies, it is not the classical rabies associated with dogs and horror movies. Some bats in the UK carry a type of rabies virus called European Bat Lyssaviruses (EBLV).",
+    sections: [
+      {
+        heading: "Rabies on bats in the UK is extremely rare. However, contracting rabies can be fatal and remains a risk for landscape operatives working on sites where bats may be living.",
+        body: "The risk of catching the virus from a bat in the UK is very low; surveillance of bats in the UK has identified a very low number infected. EBLV is transmitted only through a bite of an infected bat or by its saliva entering a wound or mucous membrane such as the nostrils, mouth and lips, eyelids and ears. Direct contact between landscape operatives and bats is also rare. However, a risk remains. In 2002 a batworker from Scotland died from EBLV, and earlier this month the Animal and Plant Health Agency (APHA) confirmed a dead bat found in Poole, Dorset, carried the virus. Landscape operatives may work in the proximity of bats, particularly on works associated with old buildings. EBLV can be treated by GPs, but it is essential this is administered as soon as possible after exposure. It is also important to be aware of symptoms on humans infected: For more advice on bats and rabies visit the Bat Conservation Trust. Some or all of the articles on this page are for members only. To access, become a member by making an enquiry.",
+        bullets: [
+          "Anxiety, headaches and fever in early stages",
+          "Spasms of the swallowing muscles making it difficult or impossible to drink",
+          "Breathing difficulties Operatives who are bitten or scratched by a bat must:",
+          "Wash the wound or contact area with soap and water",
+          "Disinfect the wound",
+          "Contact a doctor immediately for advice",
+        ],
+      },
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "bats and rabies 4 Sep 2019 244kb PDF",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/health-safety/hand-arm-vibration": {
+    eyebrow: "Help & Advice",
+    title: "Hand arm vibration",
+    theme: "warm",
+    intro: "Landscape tools which fit into this category include chainsaws, brush cutters, hedge trimmers, blowers and disc cutters. Using this equipment on a regular basis for several hours each day can cause damage to nerves, blood vessels and joints of the hand, wrist and arm. The damage is irreversible, and can result in tingling and numbness in the fingers, loss of dexterity and even loss of strength.",
+    sections: [
+      {
+        heading: "Property Management company fined £600,000 after 5 workers diagnosed with HAVS",
+        body: "A property management and development company has been fined £600,000 and ordered to pay costs of £13,995.06 after pleading guilty to breaching Section 2(1) of the Health and Safety at work Act 1974. A court heard that between 2009 and 2014 five employees working for Places for People used power tools to carry out grounds maintenance at sites in Milton Keynes, Rotherham and Hull. An investigation by the HSE discovered the company failed to assess or manage the risks associated with vibrating tools, failed to provide training or health surveillance for its maintenance workers, and failed to maintain equipment appropriately. Members not committed to providing health surveillance, particularly in relation to hand arm vibration syndrome, are advised to pay attention to this substantial fine imposed for failure to identify and manage hand arm vibration. HAVS risk assessment and health surveillance is essential where the workforce uses handheld power tools. The HSE provides a significant amount of free information and guidance for employers eager to stay within the law, including clear guidance on how to stay within the law. Specifically, employers are required to: For additional info...",
+        bullets: [
+          "Assess the vibration risk to your employees;",
+          "Take action to reduce vibration exposure that produces those risks",
+          "Decide if employees are likely to be exposed above the:",
+          "Daily exposure action value (EAV) and if they are:",
+          "introduce a programme of controls to eliminate risk, or reduce exposure to as low a level as is reasonably practicable;",
+          "Daily exposure limit value (ELV) and if they are:",
+          "take immediate action to reduce their exposure below the limit value;",
+          "Make sure the legal limits on vibration exposure are not exceeded;",
+          "Provide information and training to employees on health risks and the actions you are taking to control those risks;",
+          "Carry out health surveillance (regular health checks) where there is a risk to health;",
+          "Consult your trade union safety representative or employee representative on your proposals to control risk and to provide health surveillance",
+          "Keep a record of your risk assessment and control actions;",
+        ],
+      },
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "Health surveillance for hand-arm vibration syndrome 7 Aug 2019 280kb PDF",
+          "HSE exposure calculator 25 Sep 2019 254kb PDF",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/health-safety/interior-landscaping": {
+    eyebrow: "Help & Advice",
+    title: "Interior landscaping",
+    theme: "warm",
+    intro: "Interior landscaping; what does it mean to you? An unnecessary expense or a means of improving worker productivity? A feature to draw visitors or a potential headache for the cleaners?",
+    image: { url: "https://www.bali.org.uk/public/images/mobilane.jpg", alt: "Mobilane LivePanel Pack" },
+    sections: [
+      {
+        heading: "Recognising the health benefits of interior landscaping in domestic and commercial settings makes people more contented and productive.",
+        body: "Interior landscaping has come a long way since the days of using a sickly Peace Lily to prop open a door. Peer-reviewed scientific articles support the theory that interior landscaping has the potential to make offices, restaurants, houses, schools, universities and public realm areas healthier, and anyone in these spaces more contented and productive. Sound too good to be true? Well-executed and maintained interior planting has been scientifically proven to bring benefits to workers and the office environment including: The range of health and wellbeing benefits seems unlikely until one considers the reality of office life. Most offices are in urban areas where outside air pollution is consistently high. A significant volume of exterior pollutants enter buildings and mix with office pollutants – commonly volatile organic compounds from items such as furniture, printers, air fresheners and paint - to create an unhealthy environment. Even small concentrations of these chemicals can have an effect and result in ailments familiar to most office workers: headaches, sore eyes, nose and throat, and nausea. These are commonly grouped as sick building syndrome. The benefit of interior p...",
+        bullets: [
+          "Increased productivity",
+          "Decreased stress (lower blood pressure)",
+          "Increased attentiveness",
+          "More job satisfaction",
+          "Better perceived work-life balance",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/health-safety/latex-allergies": {
+    eyebrow: "Help & Advice",
+    title: "Latex allergies",
+    theme: "warm",
+    intro: "With the increase of personal protective equipment (PPE) use, the Health and Safety Executive (HSE) has warned of the potential for workers to develop allergic reactions to items containing latex.",
+    image: { url: "https://www.bali.org.uk/public/images/lates-allergies-mailshot.jpg", alt: "HSE issue warning over latex" },
+    sections: [
+      {
+        heading: "HSE issue warning over latex allergies with the increase in PPE usage.",
+        body: "The Association has produced a technical document containing more information and links to helpful resources, which can be downloaded to the right of this page.",
+      },
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "HSE issue warning over latex allergies 8 Oct 2020 121kb PDF",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/health-safety/lone-working": {
+    eyebrow: "Help & Advice",
+    title: "Lone working",
+    theme: "warm",
+    intro: "Managing the risks associated with lone working involves considering which employees are likely to work alone, and which areas of their work pose a hazard. Employers have a responsibility to ensure they train, supervise, and monitor lone workers, as well as keep in touch with them.",
+    image: { url: "https://www.bali.org.uk/public/images/medium_screenshot-2020-05-20-at-17.17.14.jpeg", alt: "Idverde image" },
+    sections: [
+      {
+        heading: "As with any other work-related task, employers have a responsibility to manage the risk employees face when working alone.",
+        body: "As the Health and Safety Executive (HSE) defines a lone worker as ‘anyone who works by themselves without close or direct supervision’, most landscape professionals are likely to fit within the definition at some point in their working life. Social distancing guidance issued by the government during the coronavirus pandemic had the potential to create additional lone workers in many BALI member companies, who must be identified and managed appropriately. This management extends to employees now working from home instead of an office. Risks of relevance to lone workers on sites and at home include:",
+        bullets: [
+          "The place of work (e.g. isolated or rural location)",
+          "A person’s medical suitability",
+          "Stress and mental wellbeing",
+          "Violence directed towards the lone worker from the public",
+        ],
+      },
+      {
+        heading: "Training",
+        body: "It is particularly important lone workers understand the risks associated with their work and how to control these. Training is essential where supervision may not be available in uncertain situations, or where workers need to cope with unexpected situations. It is also important for workers to understand the limitations of their role whilst lone working, and able to recognise when they should seek advice or support from other members of staff.",
+      },
+      {
+        heading: "Supervision",
+        body: "Regardless of the need to work alone, workers must also be supervised appropriately. Higher risk tasks and workers’ ability to identify health and safety issues dictate the need for additional supervision. Even if they have been trained, new workers must be supervised initially, particularly if they are undertaking a job with specific risks and are required to deal with situations that are new to them.",
+      },
+      {
+        heading: "Monitoring",
+        body: "Lone workers must be monitored, regardless of whether they are on-site or working from home. Share details of monitoring systems with lone workers, including procedures. Popular methods of monitoring include:",
+        bullets: [
+          "Arranging pre-arranged visitors from supervisors",
+          "Knowing where lone workers are at all times, with regular contact using phones, radios and email. The frequency of this contact may vary from hourly to daily depending on the site",
+          "Systems for raising alarm where worker needs help or support immediately, or where worker fails to check-in with supervisor at a predetermined time.",
+        ],
+      },
+      {
+        heading: "Additional information",
+        body: "HSE Guide: Lone working The British Association of Landscape Industries has produced a generic lone worker risk assessment, available to members free of charge. Please contact our Technical Officer Owen Baker owen.baker@bali.org.uk to receive a copy of this. If you are not a member and would like access to similar documents, please consider a membership and make an enquiry today.",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/health-safety/mental-health": {
+    eyebrow: "Help & Advice",
+    title: "Mental health",
+    theme: "warm",
+    intro: "► How common are mental health issues in the UK?► How many people in the UK get treatment for mental health issues?► Employees: Looking after your mental health at work► Employers: Advice and resources for line managers ► Contacts",
+    sections: [
+      {
+        heading: "How common are mental health issues?",
+        body: "* Suicidal thoughts are not mental health diagnoses, but they are related to mental health",
+        bullets: [
+          "1 in 4 people will experience a mental health problem of some kind each year in England",
+          "1 in 6 people report experiencing a common mental health problem (like anxiety and depression) in any given week in England",
+          "Between 2011 and 2015, 13% of in-work suicides* were from within the skilled construction and building trades - despite construction accounting for 7% of the UK workforce",
+          "Suicide kills more construction workers than falls each year",
+        ],
+      },
+      {
+        heading: "How many people get treatment for mental health issues?",
+        body: "",
+        bullets: [
+          "Approximately 1 in 8 adults with a mental health problem are currently getting treatment",
+        ],
+      },
+      {
+        heading: "Employees: Looking after your mental health at work",
+        body: "How to be mentally healthy at work by MIND (link to document)How to manage stress by MIND (link to document)",
+      },
+      {
+        heading: "Resources for employers",
+        body: "People managers guide to mental health by Chartered Institute of Personnel and Development (CIPD) and MIND (link to document)How to support staff who are experiencing a mental health problem by MIND (link to document)How to take stock of mental health in your workplace by MIND (link to document)Line Managers' Resource by Mental Health First Aid (MHFA) (link to document)",
+      },
+      {
+        heading: "Contacts",
+        body: "Perennial Provider of free and confidential advice, support and financial assistance to people of all ages working in, or retired from horticulture.https://perennial.org.uk/ SamaritansOffer a safe place for you to talk any time you like, in your own way – about whatever's getting to you https://www.samaritans.org/Telephone: 116 123SANElineSANEline is a national out-of-hours mental health helpline offering specialist emotional support, guidance and information to anyone affected by mental illness, including family, friends and carers. Telephone: 0300 304 7000PapyrusPAPYRUS is the UK Charity for the prevention of young suicide (under 35)Telephone: 0800 068 4141ShoutUK's first free, confidential, 24/7 text support service. It's a place to go if you're struggling to cope and need mental health support.Text number: 85258- Anxiety National charity helping people with AnxietyTelephone: 08444 775 774 Text number: 07537416905 - Depression Depression UKNational Self-Help Organisation helping people cope with their depressionwww.depressionuk.org - Self-Harm HarmlessAn organisation who works to address and overcome issues related to self-harm and suicidewww.harmless.org.uk - Substance Drugw...",
+      },
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "Mental Health - Line managers resource 4 Feb 2021 615kb PDF",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/health-safety/outdoor-safety": {
+    eyebrow: "Help & Advice",
+    title: "Outdoor sun safety",
+    theme: "warm",
+    intro: "This page will be regularly updated with helpful guidance designed to mitigate the risks of working outdoors. A recent enquiry from an Association member prompted a specific technical report to be written, which concerns the use of sunscreen in the workplace. The member asked whether it is the responsibility of an employer to supply sunscreen when the employee spends most of his/her working day outside. You can find this document, and many more, available to download on this page.",
+    sections: [
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "Sunscreen and outdoor working: Employer and employee responsibilities 27 Jun 2019 247kb PDF",
+          "BALI's guide to working in hot conditions outdoors 24 Jul 2019 262kb PDF",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/health-safety/risk-assessments": {
+    eyebrow: "Help & Advice",
+    title: "Risk assessment",
+    theme: "warm",
+    intro: "The Management of Health and Safety at Work Regulations 1999 requires the following measures as a minimum:",
+    sections: [
+      {
+        heading: "The law requires all employers to protect their employees, and others, from harm.",
+        body: "Whilst it is not necessary for employers to eliminate all risks associated with their business practices, it is essential that measures are taken to do everything reasonably practicable to protect people from harm. For most small and medium-sized landscape businesses, risk assessment is a straightforward process and does not require the person undertaking the risk assessment process to possess any additional training or qualifications. Association members have free access to a variety of risk assessment and method statement templates, ranging from a single table to a suite of risk assessment documents covering the most common landscape construction and maintenance tasks. Suited to smaller businesses completing multiple domestic projects of a similar nature. Contents: click here Suited to businesses completing a wide variety of construction or grounds maintenance projects including work for commercial clients. Contents: click here If you would like to become a member and access the documents on this page please make an enquiry today.",
+        bullets: [
+          "Identify the hazards that could cause injury or illness in your business",
+          "Evaluate the likelihood that someone could be harmed and the severity of this risk",
+          "Eliminate the hazard if possible, and if not, control the risk",
+          "Introduction to risk assessment",
+          "Risk assessment and method statement document",
+          "Guidance document",
+          "Inventory",
+          "Blank template",
+          "51 risk assessment and method statement documents",
+          "COVID-19 risk assessment",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/health-safety/risk-assessments/single": {
+    eyebrow: "Help & Advice",
+    title: "Single risk assessment",
+    theme: "warm",
+    intro: "The single risk assessment document is suited to smaller businesses completing multiple domestic projects of a similar nature.",
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/health-safety/risk-assessments/suite": {
+    eyebrow: "Help & Advice",
+    title: "Suite of risk assessments",
+    theme: "warm",
+    intro: "On this page, Association members have free access to a variety of risk assessment and method statement templates, covering the most common landscape construction and maintenance tasks.",
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/health-safety/safe-digging": {
+    eyebrow: "Help & Advice",
+    title: "Safe digging",
+    theme: "warm",
+    intro: "Earlier this month a groundworks contractor was fined £32,400 and ordered to pay costs of £2657,18 for breaching Construction (Design and Management) Regulations (CDM) which resulted in one of its employees sustaining serious burns to his face, chest, abdomen, groin, both arms and legs, amounting to roughly 50% of his total body.",
+    image: { url: "https://www.bali.org.uk/public/images/medium_image-1.jpeg", alt: "Health and Safety Executive report - safe digging" },
+    sections: [
+      {
+        heading: "As indicated in the HSE report, following a safe system of work avoids any serious injuries and fines from safe digging.",
+        body: "These burns were caused when an electric breaker used by an operative struck an 11kv electricity cable. Of significance to the landscape industry is the photo included in the Health and Safety Executive’s report, below: The image above shows a situation which many landscape operatives face on a regular basis: digging (relatively shallow) holes in unfamiliar areas of grass. In this instance the operative had used an electronic breaker to break through concrete haunching at the back of a kerb with the intention of installing a new fence. The hole was relatively shallow when the incident occurred. As indicated in the HSE report, following a safe system of work would have avoided this situation. A sae system in this instance consists of three elements: Each of these steps are critical to ensure the safety of operatives breaking ground in any situation. Most underground electrical cables are laid in trenches between 450mm and 1m deep. However, the location of cables should never be assumed – as is shown in the picture above. The HSE have produced a free, detailed guide on how to avoid the dangers associated with breaking ground: http://www.hse.gov.uk/pUbns/priced/hsg47.pdf",
+        bullets: [
+          "Planning the work",
+          "Detecting, identifying and marking underground services",
+          "Safe excavation/safe digging practices",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/health-safety/silica-dust": {
+    eyebrow: "Help & Advice",
+    title: "Silica dust",
+    theme: "warm",
+    intro: "The risks associated with asbestos are widely publicised nowadays and, hopefully, the number of fatalities associated with this material will be reduced due to the increased awareness. However, another material – silica dust – is equally damaging to the human respiratory system and found in many of the materials landscape operatives are likely to encounter on a daily basis.",
+    sections: [
+      {
+        heading: "Whilst awareness of asbestos is now universal, another material – silica dust – is equally damaging to the human respiratory system and found in most materials used by the landscape industry",
+        body: "Limestone, sandstone, ironstone, marble, granite, concrete, aggregates, mortar, bricks, tiles and slate all contain silica. The silica in these materials is harmless if undisturbed, but drilling, cutting, breaking or grinding can generate dust particles of silica which are harmful to health. Small particles of silica remain airborne for a significant period of time, during which they may be inhaled by unprotected operatives. The small size of silica particles allow them to be inhaled deep into the lungs, where they remain lodged. The body is unable to remove the particles, which means they cause inflammation and scarring. In the long-term, this can cause lung diseases. Appropriate management of exposure to silica dust is of critical importance to the health and well-being of employees. The points below are intended as a guide only, and an expert should be consulted to ensure all risks are correctly identified and appropriate control measures implemented. 1. Stop silica dust getting into the air; where possible, materials could be cut off-site, in a facility where there are fewer receptors to the dust; 2. Identify the tasks which will require cutting, drilling, breaking or grindi...",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/health-safety/slopes": {
+    eyebrow: "Help & Advice",
+    title: "Slopes",
+    theme: "warm",
+    intro: "The Association’s own accident statistics, as well as those of the Health and Safety Executive (HSE), report landscape operatives suffer a disproportionately high number of accidents whilst completing tasks on slopes.",
+    sections: [
+      {
+        heading: "A code of practice for the landscape industry",
+        body: "1. operator loses control of ride-on machinery - machine loses traction or becomes unstable due to gradient - machine over-turns with operator on-board 2. operator slips or trips whilst using pedestrian or hand-held equipment, resulting in - operator falling - operator losing control or struck by equipment Safely completing work on a slope without incident is not a dark-art or subject to luck; it arises from several measures being implemented: Through liaison with members and their own research, the Association discovered there is a gap in knowledge associated with landscape work on slopes; guidance available online is difficult to find or too generic to be of use. Therefore the BALI National Contractors Forum undertook a project to identify best practice when working on a gradient, to collate this information and disseminate it as a code of practice document. The information within the document is the combined knowledge and experience of established landscape contractors who, over decades, have developed techniques which have allowed them to consistently complete potentially hazardous tasks on slopes without incident. The document covers operational issues associated with the u...",
+        bullets: [
+          "Machine over-turning due to gradient of slope",
+          "Loss of traction between machine tyres and slope, causing machine to slide",
+          "Sharp steering input from machine operator causing machine to tip",
+          "Operator slips",
+          "Inadequate maintenance of machine/equipment",
+          "Site-specific risk assessment",
+          "Equipment suited to the task and site",
+          "Equipment that is correctly maintained",
+          "Knowledgeable and experienced staff",
+          "Detailed briefing document",
+          "Regular review of processes",
+        ],
+      },
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "Andrew Turner: Slopes Presentation 22 Sep 2023 434kb PDF",
+          "Slopes code of practice document 29 Nov 2023 3965kb PDF",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/health-safety/whole-body-vibration": {
+    eyebrow: "Help & Advice",
+    title: "Whole body vibration",
+    theme: "warm",
+    intro: "Whole body vibration (WBV) is a health issue caused by prolonged exposure to vibration, shocks or jolts, transmitted from mobile machinery to the operator through the seat or feet. Whilst research on landscape-specific equipment is limited, prolonged periods spent on ride-on machinery such as tractors, mowers and quads over uneven ground are believed to result in symptoms associated with WBV. Symptoms commonly include lower back pain, WBV may also cause musculoskeletal disorders.",
+    sections: [
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "Whole body vibration 20 Aug 2019 348kb PDF",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/health-safety/winter-care": {
+    eyebrow: "Help & Advice",
+    title: "Winter care",
+    theme: "warm",
+    intro: "The location of outdoor spaces means most are used throughout the year regardless of weather. Plant growth cycles mean that autumn and winter are a great opportunity to undertake maintenance of a wide range of plant specimens, particularly trees.",
+    image: { url: "https://www.bali.org.uk/public/images/medium_snow-clearance-salisbury-mar-2018.jpeg", alt: "winter care" },
+    sections: [
+      {
+        heading: "There really is no latent period in the landscape maintenance profession.",
+        body: "Hard surfaces are equally like to be under pressure, and require maintenance to promote their continued use. Grass will continue to grow at a minimum temperature of 14 degrees Celsius, so mowing may continue into the months that are unseasonably mild, subject to the weather and areas being dry enough. Leaves and plant debris will need to be removed from grassed area to prevent lawns from dying and from walkways and hard surfaces to prevent pedestrians slipping and the surfaces becoming stained. Plant and shrub growth will need to be checked and cut back appropriately if it is overhanging walk ways, cars parks or obscuring lines of sight for vehicles and pedestrians on the property. Rejuvenative pruning can take place through the winter, this presents an opportunity to cut back hard those deciduous shrubs that have become overgrown and give them a chance to produce young new healthy growth, which in turn will produce a healthier shrub with improved flowering. Evaluate any areas of soil that have been used as a cut through and may have become compacted leading to soil erosion or uneven surfaces, alleviating compaction through cultivation should take place and replanting or grass s...",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/pests/ash-dieback": {
+    eyebrow: "Help & Advice",
+    title: "Ash dieback",
+    theme: "green",
+    intro: "Ash dieback was first identified in the UK in 2012. The disease is well established throughout mainland Europe, where it is responsible for losses of commercial and amenity tree planting.",
+    sections: [
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "Ash dieback found on three new host species of tree in the UK 15 Jul 2019 423kb PDF",
+          "True cost of Ash dieback revealed 8 May 2019 356kb PDF",
+          "Ash Dieback Action Plan Toolkit 4 Apr 2019 950kb DOCX",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/pests/asian-hornet": {
+    eyebrow: "Help & Advice",
+    title: "Asian hornet",
+    theme: "green",
+    intro: "IntroductionIdentificationSightingsReportingThe Asian hornet is a highly effective predator of insects, including honey bees, flies, caterpillars, aphids and bugs. Evidence suggests Asian hornets systematically attack bee colonies and have the potential to cause significant loses.",
+    image: { url: "https://www.bali.org.uk/public/images/1asian-hornet-apha.jpg", alt: "Asian-hornet" },
+    sections: [
+      {
+        heading: "The Asian hornet is an invasive, non-native species from Asia that represents a threat to native bees and insects in the UK.",
+        body: "The Asian hornet was first sighted in the UK during 2016. Whilst the UK is still free from the Asian hornet, the risk remains high, particularly in the south of the UK with its warmer, milder climate. Despite the risk to native insects, the Asian hornet does not pose a greater danger to people; it is not aggressive unless provoked, although can sting. Accidental introductions of Asian hornet via the landscape supply chain are a possibility, and BALI members are encouraged to remain vigilant and report any sightings. Click here to view a detailed identification guide From 2016 to the present date there have been a total of 21 confirmed sightings of Asian hornet in England. During 2021 there have been two confirmed sightings and nests destroyed in Berkshire and Hampshire. To review details of all Asian hornet sightings between 2016 and the present day, please click here. Sightings of Asian hornet can be reported either online or email",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/pests/asian-longhorn-beetle": {
+    eyebrow: "Help & Advice",
+    title: "Asian longhorn beetle",
+    theme: "green",
+    intro: "The Asian Longhorn Beetle, which was first discovered in Kent in 2012 and likely imported by accident through infested imported wood packaging material, has been eradicated in the UK as a result of six years of trapping and surveillance work by the Forestry Commission and the Animal and Plant Health Agency.",
+    sections: [
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "Asian Longhorn Beetle 29 May 2019 324kb DOCX",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/pests/biosecurity-toolkit": {
+    eyebrow: "Help & Advice",
+    title: "Biosecurity toolkit",
+    theme: "green",
+    intro: "The Landscape Institute has published a new plant health and biosecurity toolkit to help built environment professionals combat Britain’s biggest pests and diseases.",
+    sections: [
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "Plant Health and Biosecurity: The Landscape Consultant's Toolkit 11 Apr 2019 586kb PDF",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/pests/brown-tail-moth": {
+    eyebrow: "Help & Advice",
+    title: "Brown-tail moth",
+    theme: "green",
+    intro: "The brown-tail moth is an insect native to the UK. During the caterpillar stage of its lifecycle, the insect develops hairs which can cause a painful, irritant rash or breathing difficulties in humans and animals upon contact. The caterpillar, easily identified by its red and white markings, is commonly found on hedgerow species such as hawthorn, blackthorn, plum, cherry, rose, blackberry and bramble. The hairs may become airborne. Although originally confined to the south of England, the insect has now spread throughout the UK. Landscape operatives are advised to familiarise themselves wit...",
+    sections: [
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "Brown Tail Moth 5 Jun 2019 366kb PDF",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/pests/canker-stain-of-plane": {
+    eyebrow: "Help & Advice",
+    title: "Canker stain of plane",
+    theme: "green",
+    intro: "Ceratocystis platani, which may also be referred to as plane wilt disease, is a serious threat to several plane species, including London plane (Platanus x acerifolia) and its parents, Platanus orientalis and Platanus occidentalis. Whilst the fungus that causes canker stain of plane is not yet in the UK, it is now in Italy, France and Greece, and responsible for notable tree fatalities.The fungus can infect specimens through wounds in bark or stems as well as root-to-root contact. As the fungus spreads, it may disrupt the water transport system of the tree and cause cankers. Whilst these ca...",
+    sections: [
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "Canker stain of plane 22 Jul 2019 243kb PDF",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/pests/eight-toothed-spruce-bark-beetle": {
+    eyebrow: "Help & Advice",
+    title: "Eight-toothed spruce bark beetle",
+    theme: "green",
+    intro: "Ips typographus, also known as European spruce bark beetle, eight-toothed spruce bark beetle, bark beetle, eight-dentate beetle, engraver beetle, eight-spined beetle and spruce bark beetle, is considered a serious pest of spruce (Picea) as well as some species in other conifer genera in Europe.",
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/pests/emerald-ash-borer": {
+    eyebrow: "Help & Advice",
+    title: "Emerald ash borer beetle",
+    theme: "green",
+    intro: "Whilst there have been no discoveries in the United Kingdom to date, the ability of the beetle to fly means it has now spread across USA, Canada and Russia, and is now within 10km of the Russian borders with Ukraine and Belarus.",
+    image: { url: "https://www.bali.org.uk/public/images/medium_eab-infested-ash-toronto-3-cropped-deagan-inwa.width-800.jpeg", alt: "emerald ash borer beetle" },
+    sections: [
+      {
+        heading: "The emerald ash borer beetle (Agrilus planipennis) is a potential threat to ash trees in the UK.",
+        body: "Infestation of ash trees by emerald ash borer is normally fatal. As UK ash trees are already under threat from Chalara ash dieback (which is already established in the UK), it is feared the effect on ash trees from further attacks would be serious. As the name suggests, emerald ash borer beetles are a metallic emerald green colour, with adults between 7.5 and 13.5mm long. Unfortunately, infestation of the beetle is difficult to detect until symptoms become severe. Clues to infestation include: Members who identify any signs of emerald ash borer are encouraged to contact either the Animal and Plant Agency (APHA) or Forest Research.",
+        bullets: [
+          "Crown dieback and dying branches",
+          "Yellowing and thinning foliage",
+          "D-shaped holes in the bark, produced by adult beetles as they emerge from larval stage",
+          "Serpentine galleries beneath bark of tree",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/pests/oak-lace-bug": {
+    eyebrow: "Help & Advice",
+    title: "Oak lace bug",
+    theme: "green",
+    intro: "Oak lace bug (Corythucha arcuata) is not yet in the UK, but is widespread in Europe. It has been highlighted as a potential future risk to broad-leaved trees in the UK, and particularly oak. The adult lace bug feeds on the underside of leaves, and whilst is not a significant threat in isolation, large numbers of the pest can cause stress, premature leaf drop and result in hosts more susceptible to pests and diseases. As with many other pests and diseases, the primary source of transmission is within traded materials.",
+    sections: [
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "oak lace bug 14 Aug 2019 323kb PDF",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/pests/oak-processionary-moth": {
+    eyebrow: "Help & Advice",
+    title: "Oak processionary moth",
+    theme: "green",
+    intro: "Introduction Identification Guidance for landscape professionalsReporting OPM Resources",
+    sections: [
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "Post Planting Inspection Form 29 Oct 2024 50kb XLSX",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/pests/ticks": {
+    eyebrow: "Help & Advice",
+    title: "Ticks and encephalitis virus",
+    theme: "green",
+    intro: "An infectious disease, discovered in the UK for the first time and carried by ticks, has the potential to damage the brain and can also affect humans through the tick's bite. Public Health England (PHE) has confirmed the presence of the encephalitis virus, which originates from the tick, in Thetford Forest Norfolk and on the Hampshire-Dorset border. While the PHE says the risk is “very low”, it is investigating how common the infected ticks might be.",
+    image: { url: "https://www.bali.org.uk/public/images/ticks-in-grass.jpg", alt: "Ticks can be found in long grass" },
+    sections: [
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "PHE Tick Awareness Tookit 31 Oct 2019 906kb PDF",
+          "PHE Surveillance Survey 2019 31 Oct 2019 519kb PDF",
+          "PHE Ticket Awareness Leaflet 31 Oct 2019 1789kb PDF",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/pests/xylella": {
+    eyebrow: "Help & Advice",
+    title: "Xylella fastidiosa",
+    theme: "green",
+    intro: "Contents- Introduction - Geographic distribution of Xylella- How the trade and public can help- New measures in 2021",
+    sections: [
+      {
+        heading: "Xylella fastidiosa has the potential to cause disease in over 350 plant species. It has not been detected in the UK but there have been major outbreaks across Europe.",
+        body: "Xylella fastidiosa, more commonly referred to as Xylella, is a bacterium which causes disease in a wide range of plants including many shrubs and herbaceous plants, olive and several species of broadleaf trees. Common symptoms of Xylella include leaf scorch, wilt, die-back and plant death. There is no known cure for the disease. Outbreaks of Xylella have previously occurred in Italy, France, Spain, Germany and Portugal, and the disease continues to spread throughout Europe. Outbreaks were discovered in Belgium in 2018, and in Southern France, Italy and Spain during 2020. The challenge associated with managing the spread of Xylella concerns its long latency period, which means infected host plants may be transported into non-infected countries such as the UK without showing any symptoms. Research suggests there is a higher risk of Xylella with olive, almond, lavender, rosemary, coffee and polygala plants. The trade and public are asked to look out for symptoms and report cases which cannot be explained by factors such as frost damage, drought or other common pests and diseases, to the TreeAlert service. Advice to help prevent the accidental introduction of Xylella includes: To pr...",
+        bullets: [
+          "Source new plants carefully, where possible purchase plants grown in the UK",
+          "Propagate your own plants from seeds or cuttings",
+          "Check plants for signs of disease before purchase and monitor the health of new plants",
+          "Never bring plants back with you from abroad",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/plant-health": {
+    eyebrow: "Help & Advice",
+    title: "Plant health information",
+    theme: "green",
+    intro: "Plant health is under threat. Climate change and human activities have altered ecosystems, reduced biodiversity and created new niches where pests and diseases can thrive. At the same time, international travel and trade has tripled in volume in the last decade and allowed pests and diseases to spread around the world causing great damage to native plants and the environment.",
+    sections: [
+      {
+        heading: "The landscape industry has an important role to play",
+        body: "Updated plant health regulations were introduced by the European Union during December 2019 to prevent the spread of pests and diseases, and place responsibilities on all landscape professionals. Most EU plant health regulations were adopted by the UK upon departure from the EU in December 2020. Use of UK plant passports is required for most movements of plants and plant material within the UK from January 2021. Plants and plant material imported into the UK from the EU will require a phytosanitary certificate upon entry. Click the buttons below to learn more about each area.",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/plant-health/exporting": {
+    eyebrow: "Help & Advice",
+    title: "Exporting plants and plant products",
+    theme: "green",
+    intro: "On 1st January 2021 new rules were placed on the movement of goods between the United Kingdom (UK) and European Union (EU) - but also between the UK and Northern Ireland. Businesses involved in the export of plants, plant material and machinery need to adapt their working practices accordingly.",
+    image: { url: "https://www.bali.org.uk/public/images/ispm15-1.jpg", alt: "ISPM-Pallet-1" },
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/plant-health/exporting/northern-ireland": {
+    eyebrow: "Help & Advice",
+    title: "Northern Ireland",
+    theme: "green",
+    intro: "- Introduction - Northern Ireland Protocol- EU-UK Trade and Cooperation Agreement- Points of Entry (PoE)- Sanitary and Phytosanitary (SPS) checks- Notification of imports to a Point of Entry - TRACES NT- Growing media- Used Agricultural and Forestry Machinery- Authorised Traders- Movement Assistance Scheme - Trader Support Service - Training course information",
+    sections: [
+      {
+        heading: "Exporting material from GB to Northern Ireland",
+        body: "The departure of the United Kingdom from the European Union (EU) had the potential to create a border – referred to as a hard border – between Northern Ireland (who voted to leave the EU with the United Kingdom) and the Republic of Ireland (a member of the European Union). There was a fear that creation of a hard border between Northern Ireland and Republic of Ireland – as has existed in the past – had the potential to create division and reignite tension between Northern Ireland and the Republic of Ireland. The Northern Ireland Protocol was presented as a solution to this potential issue. The Northern Ireland Protocol permits people and goods to travel freely between Northern Ireland and the Republic of Ireland without any physical borders, but means Northern Ireland must comply with EU rules on Sanitary and Phytosanitary (SPS) eligible goods. As a result of the Northern Ireland Protocol, trade between Northern Ireland and the European Union remains largely unaffected. However, since England, Scotland and Wales are no longer members of the EU, it has been suggested that a virtual border now exists in the Irish Sea between Great Britain and Northern Ireland. The trade deal reach...",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/plant-health/faq": {
+    eyebrow: "Help & Advice",
+    title: "FAQ",
+    theme: "green",
+    intro: "What is the purpose of a plant passport?Why has the use of plant passports been increased?My business deals with a variety of plants, how do I know which ones require a plant passport?Do I need to issue a plant passport when moving plants or plant products from one of my premises to the other?Are there any exceptions to the plant passport rule?Where can I find Part A and Part B on a Plant Passport?",
+    image: { url: "https://www.bali.org.uk/public/images/1plant-passport-copy.jpg", alt: "Plant passport" },
+    sections: [
+      {
+        heading: "Frequently Asked Questions",
+        body: "What is the purpose of a plant passport? Plant passports ensure that plants and plant products are traced throughout the supply chain and declares compliance with plant health requirements such as freedom from pests, which is essential for maintaining biosecurity. Why has the use of plant passports been increased? Plant passports allows the UK to take a more proactive approach to plant health, instead of a reactive approach. Therefore in the future we will be able tackle pest threats to industry and the environment as they emerge. My business deals with a variety of plants, how do I know which ones require a plant passport? The following require a plant passport for movement within the UK: • all plants for planting;• root and tubercle vegetables;• some common fruits other than fruit preserves by deep freezing;• some cut flowers;• some seeds ;• leafy vegetables other than vegetables preserved by deep freezing;• potatoes from some countries;• machinery or vehicles which have been operated for agricultural or forestry purposes. For a full list of plants, plant products and other objects for which a plant passport is required for movement within the Union territory from 14 December ...",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/plant-health/glossary": {
+    eyebrow: "Help & Advice",
+    title: "Glossary",
+    theme: "green",
+    intro: "Authorised operator Competent authority Phytosanitary certificate Place of destinationPlant passportProfessional operatorRegistered operator Trade Unit",
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/plant-health/plant-passports": {
+    eyebrow: "Help & Advice",
+    title: "Moving plants within the UK",
+    theme: "green",
+    intro: "Information on moving plants within the UK from the British Association of Landscape Industries.",
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/plant-health/plant-passports/commercial-contractor": {
+    eyebrow: "Help & Advice",
+    title: "Commercial landscape contractor",
+    theme: "green",
+    intro: "Any landscape business professionally involved in, and therefore legally responsible for one or more of the following activities concerning plants or plant products must register as a professional operator:",
+    sections: [
+      {
+        heading: "What do commercial landscape contractors need to do?",
+        body: "1. Register as a professional operator - Planting- Breeding- Production, including growing, multiplying and maintaining- Introduction into, and movement within and out of, the Union territory- Making available on the market- Storage, collection dispatching and processing Q: Who must I register as a professional operator with?A: You must register with the appropriate competent authority: England Animal and Plant Health Agency (APHA) Scotland Science and Advice for Scottish Agriculture (SASA) Northern Ireland Department of Agriculture Environment and Rural Affairs (DAERA) 2. Record plant passports you receive from authorised operators* together with details of the authorised operator (name and address) who sold you the plants. You need to record this information (physically or digitally) for 3 years. The minimum information which must be recorded from the plant passport(s) supplied is Part A (the botanical name(s) of the plant(s) species concerned) and Part B (the supplying operator's registration number). Click here to see where Part A and Part B may be found on a plant passport. The information contained with Part A and Part B is required for each trade unit (see glossary for de...",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/plant-health/plant-passports/designer": {
+    eyebrow: "Help & Advice",
+    title: "Designer",
+    theme: "green",
+    intro: "The role played by garden and landscape designers is likely to differ between members and projects, meaning some interpretation of the guidance may be required. Please contact BALI for help understanding your responsibilities.",
+    sections: [
+      {
+        heading: "What do designers need to do?",
+        body: "If your role involves any purchasing of plants on behalf of a domestic or commercial client, or planting on behalf of a domestic or commercial customer, you are required to register as a professional operator. If your role involves producing designs only, and a landscape contractor performs all duties relating to supplying and planting, you are not required to register as a professional operator. When to register as a professional operator: Any landscape business professionally involved in, and therefore legally responsible for one or more of the following activities concerning plants, plant products or other objects must register as a professional operator: - Planting - Breeding- Production, including growing, multiplying and maintaining - Introduction into, and movement within and out of, the Union territory - Making available on the market- Storage, collection dispatching and processing How to register as a professional operator: You must register as a professional operator with the appropriate competent authority: England: Animal and Plant Health Agency (APHA)Scotland: Science and Advice for Scottish Agriculture (SASA)Northern Ireland: Department of Agriculture Environment a...",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/plant-health/plant-passports/domestic-contractor": {
+    eyebrow: "Help & Advice",
+    title: "Domestic landscape contractor",
+    theme: "green",
+    intro: "Any landscape business professionally involved in, and therefore legally responsible for one or more of the following activities concerning plants, plant products or other objects must register as a professional operator:",
+    sections: [
+      {
+        heading: "What do domestic landscape contractors need to do?",
+        body: "1. Register as a professional operator - Planting - Breeding- Production, including growing, multiplying and maintaining - Introduction into, and movement within and out of, the Union territory - Making available on the market- Storage, collection dispatching and processing Q: Who must I register with?A: You must register with the appropriate competent authority: England Animal and Plant Health Agency (APHA)Scotland Science and Advice for Scottish Agriculture (SASA)Northern Ireland Department of Agriculture Environment and Rural Affairs (DAERA) 2. Record plant passports you receive from authorised operators* together with details of the authorised operator (name and address) who sold you the plants. You need to record this information (physically or digitally) for 3 years. The minimum information which must be recorded from the plant passport(s) supplied is Part A (the botanical name(s) of the plant(s) species concerned) and Part B (the supplying operator's registration number). This FAQ document highlights where Part A and Part B may be found on a plant passport. The information contained with Part A and Part B is required for each trade unit (see glossary for definition of tra...",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/plant-health/post-brexit": {
+    eyebrow: "Help & Advice",
+    title: "Importing plants and plant products from the EU to GB",
+    theme: "green",
+    intro: "- Summary of changes 2021/2022- Pre-notification requirements from January 2022- Place of Destination Scheme- Prioritisation of high priority plant inspections- Inspection fees- Border Control Post - Border Control Post FAQ- Control Point - Control Point FAQ- Difference between Border Control Posts and Control Points- Border Control Post and Control Point: Additional information- Imports from Ireland to GB- Content and format of UK Plant Passports- 'Pest Free Area' to replace 'Protected Zones'- IT systems associated with importing plants and plant products - PEACH - IPAFFS- Defra drop-in se...",
+    image: { url: "https://www.bali.org.uk/public/images/1plant-passport.jpg", alt: "Plant passport" },
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/guides": {
+    eyebrow: "Help & Advice",
+    title: "Guides",
+    theme: "warm",
+    intro: "Unlock your marketing potential with our exclusive collection of best practice guides, created just for BALI members.",
+    image: { url: "https://www.bali.org.uk/public/images/small_4smbpg-800x500.png", alt: "Social Media Best Practice Guide" },
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/managing-client-expectations": {
+    eyebrow: "Help & Advice",
+    title: "Login",
+    theme: "warm",
+    intro: "Information on login from the British Association of Landscape Industries.",
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/domestic-landscape-contract": {
+    eyebrow: "Help & Advice",
+    title: "Landscape contract",
+    theme: "warm",
+    intro: "The British Association of Landscape Industries has developed 3 template contracts for use by designer and contractor members with their domestic client.",
+    sections: [
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "Domestic Contracts: Design only 17 May 2023 86kb DOCX",
+          "Domestic Contract: Build only 17 May 2023 97kb DOCX",
+          "Domestic Contracts: Design and Build 17 May 2023 98kb DOCX",
+          "Project variation template 18 May 2023 593kb DOCX",
+          "Practical completion certificate 8 Nov 2024 25kb DOCX",
+          "Contact details 8 Nov 2024 23kb DOCX",
+          "Privacy notice 8 Nov 2024 23kb DOCX",
+          "Biodiversity Net Gain - Member Views 24 Jul 2025 386kb PDF",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/help/online-renewals-faqs": {
+    eyebrow: "Help & Advice",
+    title: "Online renewals FAQs",
+    theme: "warm",
+    intro: "All membership renewals must be completed in full* by 31 March 2026.* For your renewal to be completed in full, you must check and confirm your company information is correct and the Association must have received payment of your fees.",
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/liss-cscs/apply/amenity": {
+    eyebrow: "LISS/CSCS",
+    title: "Amenity",
+    theme: "green",
+    intro: "The application form can be completed using Google Chrome, Safari, Mozilla Firefox, Microsoft Edge, IE11, IE10 and IE9. IE8 or earlier is not supported. The form can be completed on mobile browsers but we recommend using a desktop browser for the best experience.",
+    image: { url: "https://www.bali.org.uk/public/smart-cards/labourer-hi-res-rgb.jpg", alt: "amenity" },
+    sections: [
+      {
+        heading: "Please select the appropriate SmartCard below.",
+        body: "**PLEASE ENSURE YOU DO NOT USE ANY SPECIAL CHARACTERS IN THE APPLICATION FIELDS** Electronic card checks are the most secure way to check if a card is valid. Did you know there are a number of ways to check a card electronically? check a Smartcard",
+      },
+      {
+        heading: "Amenity Labourer Green",
+        body: "This SmartCard is for a labourer who is supervised by a competent skilled person.",
+      },
+      {
+        heading: "Amenity Trainee Red",
+        body: "This SmartCard is for a trainee who is registered to complete a relevant qualification, technical award/professional membership.",
+      },
+      {
+        heading: "Amenity Experienced Worker (Temporary) Red",
+        body: "This temporary card is available specifically for workers with on the job experience (at least one year in the last three) who are registered to complete a relevant NVQ/SVQ/Diploma at Level 2.",
+      },
+      {
+        heading: "Amenity Skilled Worker Blue",
+        body: "This SmartCard is for a skilled worker who has achieved a relevant NVQ/SVQ/Diploma at Level 2 appropriate to amenity or relevant training for an Artificial Grass Installer.",
+      },
+      {
+        heading: "Amenity Experienced Technical, Supervisor or Manager Red",
+        body: "This SmartCard is available specifically to Supervisors/Managers with on the job experience (at least one year in the last three) who are registered to complete a relevant NVQ/SVQ/Diploma.",
+      },
+      {
+        heading: "Amenity Supervisor Gold",
+        body: "This SmartCard is for a supervisor who has achieved a relevant NVQ/SVQ/Diploma at Level 3.",
+      },
+      {
+        heading: "Amenity Manager Black",
+        body: "This SmartCard is for a manager who has achieved a relevant NVQ/SVQ/Diploma at Level 4 or above.",
+      },
+      {
+        heading: "Amenity Academically Qualified Person (AQP) White/Yellow",
+        body: "This SmartCard is available for an applicant who has achieved a related Degree/HND/HNC.",
+      },
+      {
+        heading: "Amenity Provisional Red",
+        body: "This SmartCard is for an individual who is over 16 and is either on a probationary period or supervised work experience. This SmartCard is valid for six months and is not renewable.",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/liss-cscs/apply/arboriculture": {
+    eyebrow: "LISS/CSCS",
+    title: "Arboriculture",
+    theme: "green",
+    intro: "The application form can be completed using Google Chrome, Safari, Mozilla Firefox, Microsoft Edge, IE11, IE10 and IE9. IE8 or earlier is not supported. The form can be completed on mobile browsers but we recommend using a desktop browser for the best experience.",
+    image: { url: "https://www.bali.org.uk/public/smart-cards/small-labourer-hi-res-rgb.jpeg", alt: "arboriculture" },
+    sections: [
+      {
+        heading: "Please select the appropriate SmartCard below.",
+        body: "**PLEASE ENSURE YOU DO NOT USE ANY SPECIAL CHARACTERS IN THE APPLICATION FIELDS** Electronic card checks are the most secure way to check if a card is valid. Did you know there are a number of ways to check a card electronically? check a Smartcard",
+      },
+      {
+        heading: "Arborist Labourer Green",
+        body: "This SmartCard is for labourers who are supervised by a competent skilled person.",
+      },
+      {
+        heading: "Arborist Skilled Worker Blue",
+        body: "This SmartCard is for skilled worker who has achieved a relevant chainsaw qualification.",
+      },
+      {
+        heading: "Arborist Trainee Red",
+        body: "This SmartCard is for a trainee who is registered to complete a relevant qualification or professional membership.",
+      },
+      {
+        heading: "Arborist Experienced Technical, Supervisor or Manager Red",
+        body: "This SmartCard is available specifically to Supervisors/Managers with on the job experience (at least one year in the last three) who are registered to complete a relevant Diploma/NVQ/SVQ.",
+      },
+      {
+        heading: "Arborist Supervisor Gold",
+        body: "This SmartCard is for a supervisor who has achieved a relevant NVQ/SVQ/Diploma at Level 3.",
+      },
+      {
+        heading: "Arborist Manager Black",
+        body: "This SmartCard is for a manager who has achieved a relevant NVQ/SVQ/Diploma at Level 4 or above.",
+      },
+      {
+        heading: "Arborist Academically Qualified Person (AQP) White/Yellow",
+        body: "This SmartCard is available for an applicant who has achieved a related Degree/HND/HNC.",
+      },
+      {
+        heading: "Arborist Professionally Qualified Person (PQP) White/Yellow",
+        body: "This SmartCard is available for an applicant who is a current Full/Fellow Member of the Arboricultural Association (AA) or current Chartered/Fellow Member of the Institute of Chartered Foresters (ICF).",
+      },
+      {
+        heading: "Arborist Provisional Red",
+        body: "This SmartCard is for an individual who is over 16 and is either on a probationary period or supervised work experience. This SmartCard is valid for six months and is not renewable.",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/liss-cscs/apply/countryside-management": {
+    eyebrow: "LISS/CSCS",
+    title: "Countryside management",
+    theme: "green",
+    intro: "The application form can be completed using Google Chrome, Safari, Mozilla Firefox, Microsoft Edge, IE11, IE10 and IE9. IE8 or earlier is not supported. The form can be completed on mobile browsers but we recommend using a desktop browser for the best experience.",
+    image: { url: "https://www.bali.org.uk/public/smart-cards/2labourer-hi-res-rgb.jpg", alt: "countryside management" },
+    sections: [
+      {
+        heading: "Please select the appropriate SmartCard below.",
+        body: "**PLEASE ENSURE YOU DO NOT USE ANY SPECIAL CHARACTERS IN THE APPLICATION FIELDS** Electronic card checks are the most secure way to check if a card is valid. Did you know there are a number of ways to check a card electronically? check a Smartcard",
+      },
+      {
+        heading: "Countryside Management Labourer Green",
+        body: "This SmartCard is for labourers who are supervised by a competent skilled person.",
+      },
+      {
+        heading: "Countryside Management Trainee Red",
+        body: "This SmartCard is for a trainee who is registered to complete a relevant qualification, technical award/professional membership.",
+      },
+      {
+        heading: "Countryside Management Apprentice Red",
+        body: "This SmartCard is for an apprentice who has commenced on a recognised apprenticeship framework but has yet to achieve it.",
+      },
+      {
+        heading: "Countryside Management Experienced Worker (Temporary) Red",
+        body: "This temporary card is available specifically for workers with on the job experience (at least one year in the last three) who are registered to complete a relevant NVQ/SVQ/Diploma at Level 2.",
+      },
+      {
+        heading: "Countryside Management Skilled Worker Blue",
+        body: "This SmartCard is for a skilled worker who has achieved a relevant NVQ/SVQ/Diploma at Level 2.",
+      },
+      {
+        heading: "Countryside Management Experienced Technical, Supervisor or Manager Red",
+        body: "This SmartCard is available specifically to Supervisors/Managers with on the job experience (at least one year in the last three) who are registered to complete a relevant Diploma/NVQ/SVQ.",
+      },
+      {
+        heading: "Countryside Management Supervisor Gold",
+        body: "This SmartCard is for a supervisor who has achieved a relevant NVQ/SVQ/Diploma at Level 3.",
+      },
+      {
+        heading: "Countryside Management Manager Black",
+        body: "This SmartCard is for a manager who has achieved a relevant NVQ/SVQ/Diploma at Level 4 or above.",
+      },
+      {
+        heading: "Countryside Management Academically Qualified Person (AQP) White/Yellow",
+        body: "This SmartCard is available for an applicant who has achieved a related Degree/HND/HNC.",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/liss-cscs/apply/ecology": {
+    eyebrow: "LISS/CSCS",
+    title: "Ecology and environmental management",
+    theme: "green",
+    intro: "The application form can be completed using Google Chrome, Safari, Mozilla Firefox, Microsoft Edge, IE11, IE10 and IE9. IE8 or earlier is not supported. The form can be completed on mobile browsers but we recommend using a desktop browser for the best experience.",
+    image: { url: "https://www.bali.org.uk/public/smart-cards/4skilled-worker-hi-res-rgb.jpg", alt: "ecology and environmental management" },
+    sections: [
+      {
+        heading: "Please select the appropriate SmartCard below.",
+        body: "**PLEASE ENSURE YOU DO NOT USE ANY SPECIAL CHARACTERS IN THE APPLICATION FIELDS** Electronic card checks are the most secure way to check if a card is valid. Did you know there are a number of ways to check a card electronically? check a Smartcard",
+      },
+      {
+        heading: "Ecology and Environmental Management Skilled Worker Blue",
+        body: "This SmartCard is for a skilled worker who is approved and licensed with the appropriate licensing authorities in England, Scotland, Wales and Northern Ireland.",
+      },
+      {
+        heading: "Ecology and Environmental Management Trainee Red",
+        body: "This SmartCard is for a trainee who is registered to complete a relevant qualification/professional membership.",
+      },
+      {
+        heading: "Ecology and Environmental Management Academically Qualified Person (AQP) White/Yellow",
+        body: "This SmartCard is available for an applicant who has achieved a related Degree/HND/HNC.",
+      },
+      {
+        heading: "Ecology and Environmental Management Professionally Qualified Person (PQP) White/Yellow",
+        body: "This SmartCard is available for applicants who are Full Members of the Chartered Institute of Ecology and Environmental Management (CIEEM) or a Member Grade/Chartered/Fellow Membership of the Chartered Institution of Water and Environmental Management (CIWEM).",
+      },
+      {
+        heading: "Ecology and Environmental Management Provisional Red",
+        body: "This SmartCard is for an individual who is over 16 and is either on a probationary period or supervised work experience. This SmartCard is valid for six months and is not renewable.",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/liss-cscs/apply/landscape-maintenance": {
+    eyebrow: "LISS/CSCS",
+    title: "Landscape and maintenance",
+    theme: "green",
+    intro: "The application form can be completed using Google Chrome, Safari, Mozilla Firefox, Microsoft Edge, IE11, IE10 and IE9. IE8 or earlier is not supported. The form can be completed on mobile browsers but we recommend using a desktop browser for the best experience.",
+    image: { url: "https://www.bali.org.uk/public/smart-cards/3labourer-hi-res-rgb.jpg", alt: "landscape and maintenance" },
+    sections: [
+      {
+        heading: "Please select the appropriate SmartCard below.",
+        body: "**PLEASE ENSURE YOU DO NOT USE ANY SPECIAL CHARACTERS IN THE APPLICATION FIELDS** Electronic card checks are the most secure way to check if a card is valid. Did you know there are a number of ways to check a card electronically? check a Smartcard",
+      },
+      {
+        heading: "Landscape and Maintenance Labourer Green",
+        body: "This SmartCard is for labourers who are supervised by a competent skilled person.",
+      },
+      {
+        heading: "Landscape and Maintenance Trainee Red",
+        body: "This SmartCard is for a trainee who is registered to complete a relevant qualification, technical award/professional membership.",
+      },
+      {
+        heading: "Landscape and Maintenance Apprentice Red",
+        body: "This SmartCard is for an apprentice who has commenced on a recognised apprenticeship framework but has yet to achieve it.",
+      },
+      {
+        heading: "Landscape and Maintenance Experienced Worker (Temporary) Red",
+        body: "This temporary card is available specifically for workers with on the job experience (at least one year in the last three) who are registered to complete a relevant NVQ/SVQ/Diploma at Level 2.",
+      },
+      {
+        heading: "Landscape and Maintenance Skilled Worker Blue",
+        body: "This SmartCard is for a skilled worker who has achieved a relevant NVQ/SVQ/Diploma at Level 2 appropriate to landscaping or relevant training for an environmental maintenance operative/green roof installer.",
+      },
+      {
+        heading: "Landscape and Maintenance Experienced Technical, Supervisor or Manager Red",
+        body: "This SmartCard is available specifically to Supervisors/Managers with on the job experience (at least one year in the last three) who are registered to complete a relevant Diploma/NVQ/SVQ.",
+      },
+      {
+        heading: "Landscape and Maintenance Supervisor Gold",
+        body: "This SmartCard is for a supervisor who has achieved a relevant NVQ/SVQ/Diploma at Level 3.",
+      },
+      {
+        heading: "Landscape and Maintenance Manager Black",
+        body: "This SmartCard is for a manager who has achieved a relevant NVQ/SVQ/Diploma at Level 4 or above.",
+      },
+      {
+        heading: "Landscape and Maintenance Academically Qualified Person (AQP) White/Yellow",
+        body: "This SmartCard is available for an applicant who has achieved a related Degree/HND/HNC.",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/liss-cscs/apply/modular-paving": {
+    eyebrow: "LISS/CSCS",
+    title: "Modular paving",
+    theme: "green",
+    intro: "The application form can be completed using Google Chrome, Safari, Mozilla Firefox, Microsoft Edge, IE11, IE10 and IE9. IE8 or earlier is not supported. The form can be completed on mobile browsers but we recommend using a desktop browser for the best experience.",
+    image: { url: "https://www.bali.org.uk/public/smart-cards/52trainee-hi-res-rgb.jpg", alt: "modular paving" },
+    sections: [
+      {
+        heading: "Please select the appropriate SmartCard below.",
+        body: "**PLEASE ENSURE YOU DO NOT USE ANY SPECIAL CHARACTERS IN THE APPLICATION FIELDS** Electronic card checks are the most secure way to check if a card is valid. Did you know there are a number of ways to check a card electronically? check a Smartcard",
+      },
+      {
+        heading: "Modular Paving Trainee Red",
+        body: "This SmartCard is for a trainee who is registered to complete a relevant NVQ/SVQ/Diploma at Level 2.",
+      },
+      {
+        heading: "Modular Paving Skilled Worker Blue",
+        body: "This SmartCard is for a skilled worker who has achieved a relevant NVQ/SVQ/Diploma at Level 2.",
+      },
+      {
+        heading: "Modular Paving Provisional Red",
+        body: "This SmartCard is for an individual who is over 16 and is either on a probationary period or supervised work experience. This SmartCard is valid for six months and is not renewable.",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/liss-cscs/apply/pesticides": {
+    eyebrow: "LISS/CSCS",
+    title: "Pesticides and pest control",
+    theme: "green",
+    intro: "The application form can be completed using Google Chrome, Safari, Mozilla Firefox, Microsoft Edge, IE11, IE10 and IE9. IE8 or earlier is not supported. The form can be completed on mobile browsers but we recommend using a desktop browser for the best experience.",
+    image: { url: "https://www.bali.org.uk/public/smart-cards/3trainee-hi-res-rgb.jpeg", alt: "pesticides and pest control" },
+    sections: [
+      {
+        heading: "Please select the appropriate SmartCard below.",
+        body: "**PLEASE ENSURE YOU DO NOT USE ANY SPECIAL CHARACTERS IN THE APPLICATION FIELDS** Electronic card checks are the most secure way to check if a card is valid. Did you know there are a number of ways to check a card electronically? check a Smartcard",
+      },
+      {
+        heading: "Pesticides Trainee Red",
+        body: "This SmartCard is for a trainee who is registered to complete a relevant qualification.",
+      },
+      {
+        heading: "Pest Control Apprentice Red",
+        body: "This SmartCard is for an apprentice who has commenced on a recognised apprenticeship framework but has yet to achieve it.",
+      },
+      {
+        heading: "Pesticide Experienced Technical, Supervisor or Manager Red",
+        body: "This SmartCard is available specifically to Managers with on the job experience (at least one year in the last three) who are registered to complete a relevant Diploma/NVQ/SVQ.",
+      },
+      {
+        heading: "Pesticide or Pest Control Blue Skilled Worker",
+        body: "This SmartCard is for a skilled worker who has achieved a relevant pesticide or pest control qualification.",
+      },
+      {
+        heading: "Pesticide Manager Black",
+        body: "This SmartCard is for a manager who has achieved a relevant pesticides qualification.",
+      },
+      {
+        heading: "Pesticide Academically Qualified Person (AQP) White/Yellow",
+        body: "This SmartCard is available for applicants who has achieved a related Degree/HND/HNC.",
+      },
+      {
+        heading: "Pesticides and Pest Control Provisional Red",
+        body: "This SmartCard is for an individual who is over 16 and is either on a probationary period or supervised work experience. This SmartCard is valid for six months and is not renewable.",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/liss-cscs/check/qualification": {
+    eyebrow: "LISS/CSCS",
+    title: "Check your qualification(s)",
+    theme: "green",
+    intro: "This should relate to the role that you carry out on site. If you hold more than one qualification and they map to different Land-based sectors but link to the same level of LISS/CSCS card then you may be eligible to obtain more than one title on the reverse of your LISS/CSCS card.",
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/liss-cscs/check/qualification/amenity": {
+    eyebrow: "LISS/CSCS",
+    title: "Amenity qualifications",
+    theme: "green",
+    intro: "If your qualification is relevant to this sector and it is not listed, please contact BALI for review of this qualification.",
+    sections: [
+      {
+        heading: "Trainee (Red) Working toward Level 2 or Experienced Worker - Temporary (Red)",
+        body: "",
+        bullets: [
+          "Level 2 Work Placed Diploma in Work-based Horticulture (City & Guilds) (0065)",
+          "Level 2 BTEC First Diploma in Amenity Horticulture (Edexcel)",
+        ],
+      },
+      {
+        heading: "Level 2 - Skilled Worker (Blue) - Amenity worker",
+        body: "",
+        bullets: [
+          "Level 2 Work Placed Diploma in Work-based Horticulture (City & Guilds) (0065)",
+          "Level 2 BTEC First Diploma in Amenity Horticulture (Edexcel)",
+          "Level 2 NVQ Hard Landscape Amenity Horticulture (City & Guilds)",
+          "Level 2 NVQ Amenity Horticulture - Decorative Horticulture",
+          "Level 2 NVQ in Amenity Horticulture (NPTC)",
+          "Level 3 Certificate in Amenity Horticulture (City & Guilds)",
+          "Level 2 Horticulture or Landscape Construction Operative Level 2 (IfATE) (ST0225)",
+          "Level 2 NVQ Amenity Horticulture (City & Guilds) (Landscaping)",
+          "National Certificate in Horticulture/Amenity Horticulture (NEB)",
+        ],
+      },
+      {
+        heading: "Level 2 - Skilled Worker (Blue) - Artificial Grass Installer",
+        body: "",
+        bullets: [
+          "Installation of Artificial Grass Surfaces (Lantra link)",
+        ],
+      },
+      {
+        heading: "Trainee Supervisor (Red) Working toward Level 3 or Experienced Technical, Supervisor or Manager (Red)",
+        body: "",
+        bullets: [
+          "Level 3 Work Placed Diploma in Work-based Horticulture (City & Guilds) (0065)",
+          "Level 3 National Diploma in Horticulture (BTEC) Edexcel",
+          "Level 3 Advanced National Diploma in Horticulture (City & Guilds)",
+          "Level 3 Extended Diploma in Horticulture (BTEC) Edexcel",
+          "Level 3 Extended Diploma in Horticulture (City & Guilds)",
+          "Level 3 SVQ in Amenity Horticulture (SQA)",
+          "Level 3 Advanced Certificate in Amenity and Decorative Horticulture",
+          "National Certificate in Horticulture/Amenity Horticulture (NEB)",
+          "Level 3 Advanced National Certificate in Horticulture Landscape and Garden Design",
+          "Level 3 NVQ Diploma in Occupational Work Supervision (Landscape and Maintenance) (Lantra Awards) Click here",
+        ],
+      },
+      {
+        heading: "Level 3 - Supervisor (Gold)",
+        body: "Qualifications must contain supervisory elements.",
+        bullets: [
+          "Level 3 Work Placed Diploma in Work-based Horticulture (City & Guilds) (0065)",
+          "Level 3 National Diploma in Horticulture (BTEC) Edexcel",
+          "Level 3 Advanced National Diploma in Horticulture (City & Guilds)",
+          "Level 3 Extended Diploma in Horticulture (BTEC) Edexcel",
+          "Level 3 Extended Diploma in Horticulture (City & Guilds)",
+          "Level 3 SVQ in Amenity Horticulture (SQA)",
+          "Level 3 Advanced Certificate in Amenity and Decorative Horticulture",
+          "The Advanced National Certificate in Horticulture (NEB)",
+          "Level 3 Advanced National Certificate in Horticulture Landscape and Garden Design",
+          "Level 3 NVQ Diploma in Occupational Work Supervision (Landscape and Maintenance) (Lantra Awards) Click here",
+        ],
+      },
+      {
+        heading: "Trainee Manager (Red) Working toward Level 4 or Experienced Technical, Supervisor or Manager (Red)",
+        body: "",
+        bullets: [
+          "City & Guilds Level 4 NVQ Amenity Horticulture Management",
+          "Level 5 Diploma in Principles of Leadership & Management in Landbased Settings (Require relevant field unit breakdown)",
+          "Level 5 Horticulture and Landscaping Technical Manager Apprenticeship(Skills England) Click here",
+        ],
+      },
+      {
+        heading: "Level 4 - Manager (Black)",
+        body: "",
+        bullets: [
+          "Level 4 NVQ Amenity Horticulture Management (City & Guilds)",
+          "Level 5 Diploma in Principles of Leadership & Management in Landbased Settings (Require relevant field unit breakdown)",
+          "Level 5 Horticulture and Landscaping Technical Manager Apprenticeship ST0294 (Skills England) Click here",
+        ],
+      },
+      {
+        heading: "Red Trainee (AQP) Academically Qualified Person - Working towards a relevant Amenity degree:",
+        body: "",
+        bullets: [
+          "Amenity related Degree (proof of enrolment)",
+        ],
+      },
+      {
+        heading: "(AQP) Academically Qualified Person (White/Yellow)",
+        body: "",
+        bullets: [
+          "Foundation Degree in Landscape & Amenity Horticulture",
+          "Level 5 Higher National Diploma in Horticulture (BTEC) Edexcel",
+          "Level 4 Higher National Certificate in Horticulture (BTEC) Edexcel",
+        ],
+      },
+      {
+        heading: "Trainee PQP (Red)",
+        body: "",
+        bullets: [
+          "We are currently working on recognising professional bodies for Amenity",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/liss-cscs/check/qualification/arboriculture": {
+    eyebrow: "LISS/CSCS",
+    title: "Arboriculture qualifications",
+    theme: "green",
+    intro: "Refresher Training for Arborist Blue Skilled Worker LISS/CSCS Cards",
+    sections: [
+      {
+        heading: "Level 2 - Skilled Worker (Blue)",
+        body: "Any Chainsaw qualifications that are applicable to the blue skilled LISS/CSCS card category and are more than 5 years old will require either, evidence of refresher training, or evidence of upskilling to a higher level chainsaw qualification. Any refresher training must be supported by certification from Lantra or a City and Guild Digital Certificate at a grade 3 or above (full access to the digital certificate must be given so we can validate the grade). It is the employers’ responsibility to ensure the individual is adequately trained and competent in all related areas of their job role. This will also be applicable on renewal of all cards. LISS/CSCS Refresher Chainsaw Guidance Chainsaw Maintenance and Cross-Cutting ONLY or Tree Climbing & Aerial Rescue ONLY or Stump Grinder ONLY or Groundsman (Blue) or Ground-based Chainsaw User (Blue) or Advanced Ground-based Chainsaw User (Blue) or Arborist Chainsaw User (Off Ground) (Blue) or Advanced Arborist Chainsaw User (Off Ground) (Blue Card) or Utility Arborist Surveyor (Electrical Networks) Or Utility Arborist Surveyor (Railway Networks) Professional Tree Inspector Forest Machine Operator - (The applicant must be trained, qualified...",
+        bullets: [
+          "Level 2 Award in Chainsaw Maintenance",
+          "Level 2 Award in Cross-cut Timber Using a Chainsaw",
+          "Level 2 Award in Chainsaw Maintenance and Cross Cutting",
+          "Level 2 Award in Accessing a Tree Using a Rope and Harness",
+          "Level 3 Award in Aerial Tree Rescue Operations",
+          "Level 2 Award in Tree Climbing and Rescue",
+          "Level 2 Award in the Safe Use of a Stump Grinder (QCF)",
+          "Stump Grinder ITA",
+          "Level 2 Award in Chainsaw Maintenance",
+          "Level 2 Award in Cross-cut Timber Using a Chainsaw",
+          "Level 2 Award in Accessing a Tree Using a Rope and Harness",
+          "Level 3 Award in Aerial Tree Rescue Operations",
+        ],
+      },
+      {
+        heading: "Trainee Supervisor (Red) Working towards Level 3 Qualifications or Experienced Technical, Supervisor or Manager (Red)",
+        body: "",
+        bullets: [
+          "Level 3 Certificate in Forestry and Arboriculture (QAN 500/8719/8)",
+          "Level 3 Subsidiary Diploma in Forestry and Arboriculture (QAN 500/8724/1)",
+          "Level 3 Diploma in Forestry and Arboriculture (QAN 500/8564/5)",
+          "Level 3 Extended Diploma in Forestry and Arboriculture (QAN 500/8720/4)",
+          "Level 3 Diploma in Work-based Trees and Timber (QAN 501/0304/0) Pathways:",
+          "0083-31 Level 3 Diploma in Work-based Trees and Timber (Forestry Harvesting)",
+          "0083-32 Level 3 Diploma in Work-based Trees and Timber (Forestry Establishment and Maintenance)",
+          "0083-33 Level 3 Diploma in Work-based Trees and Timber (Forestry Social)",
+          "0083-34 Level 3 Diploma in Work-based Trees and Timber (Forestry Green Wood Trades)",
+          "0083-35 Level 3 Diploma in Work-based Trees and Timber (Arboriculture)",
+          "Level 3 Diploma in Arb (BTEC) Edexcel",
+          "Level 3 National Diploma in Forestry and Arboriculture",
+        ],
+      },
+      {
+        heading: "Level 3 - Supervisor (Gold)",
+        body: "Qualifications must contain supervisory elements.",
+        bullets: [
+          "Level 3 Certificate in Forestry and Arboriculture (QAN 500/8719/8)",
+          "Level 3 Subsidiary Diploma in Forestry and Arboriculture (QAN 500/8724/1)",
+          "Level 3 Diploma in Forestry and Arboriculture (QAN 500/8564/5)",
+          "Level 3 Extended Diploma in Forestry and Arboriculture (QAN 500/8720/4)",
+          "Level 3 Diploma in Work-based Trees and Timber (QAN 501/0304/0) Pathways:",
+          "0083-31 Level 3 Diploma in Work-based Trees and Timber (Forestry Harvesting)",
+          "0083-32 Level 3 Diploma in Work-based Trees and Timber (Forestry Establishment and Maintenance)",
+          "0083-33 Level 3 Diploma in Work-based Trees and Timber (Forestry Social)",
+          "0083-34 Level 3 Diploma in Work-based Trees and Timber (Forestry Green Wood Trades)",
+          "0083-35 Level 3 Diploma in Work-based Trees and Timber (Arboriculture)",
+          "Level 3 Diploma in Arboriculture (BTEC) Edexcel",
+          "Level 3 National Diploma in Forestry and Arboriculture",
+        ],
+      },
+      {
+        heading: "Trainee Manager (Red) or Experienced Technical, Supervisor or Manager (Red)",
+        body: "",
+        bullets: [
+          "ABC Level 4 Diploma in Arboriculture",
+          "ABC Level 6 Professional Diploma in Arboriculture",
+          "Level 5 Diploma in Principles of Leadership & Management in Landbased Settings (QCF) (Require relevant field unit breakdown)",
+          "ABC Level 4 Certificate in Arboriculture",
+        ],
+      },
+      {
+        heading: "Level 4 - Manager (Black)",
+        body: "",
+        bullets: [
+          "ABC Level 4 Diploma in Arboriculture",
+          "Level 5 Diploma in Principles of Leadership & Management in Landbased Settings (QCF) (Require relevant field unit breakdown)",
+          "ABC Level 4 Certificate in Arboriculture",
+        ],
+      },
+      {
+        heading: "Red Trainee (AQP) Academically Qualified Person - Working towards a relevant Arboriculture degree:",
+        body: "",
+        bullets: [
+          "Arboriculture related Degree (proof of enrolment)",
+        ],
+      },
+      {
+        heading: "(AQP) Academically Qualified Person (White/Yellow)",
+        body: "",
+        bullets: [
+          "Kew Diploma",
+          "Professional Diploma in Arboriculture (L6)",
+          "HND in Arboriculture (BTEC) Edexcel",
+          "HNC in Arboriculture (BTEC) Edexcel",
+          "Bachelor Degree in Forestry and Forest Products",
+          "Bachelor Degree in Forest and Woodland Management",
+          "Bachelor of Science in Arboriculture and Tree Management",
+          "MSc in Arboriculture and Urban Forestry",
+        ],
+      },
+      {
+        heading: "Trainee (PQP) Professionally Qualified Person (Red)",
+        body: "or",
+        bullets: [
+          "Provide proof of current membership as a Technician/Associate/Student/ member of the Arboricultural Association",
+          "Institute of Chartered Foresters - Provide current evidence of your Technician/Associate/Student membership",
+        ],
+      },
+      {
+        heading: "(PQP) Professionally Qualified Person (White/Yellow):",
+        body: "or If your qualification is relevant to this sector and it is not listed, please contact BALI for review of this qualification.",
+        bullets: [
+          "Provide proof of current membership as a Full/Fellow Professional Member of Arboricultural Association",
+          "Institute of Chartered Foresters - Provide current evidence of your Chartered/Fellow membership",
+        ],
+      },
+      {
+        heading: "NOTE: OVERSEAS QUALIFICATIONS",
+        body: "If you have a land-based related qualification that was awarded outside the UK and is not currently recognised by LISS/CSCS you should contact Ecctis so that they can review your qualification and determine whether it is comparable to an NVQ, SVQ or other qualification appropriate to your occupation and the LISS/CSCS SmartCard you wish to apply for. To find out further information please click here.",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/liss-cscs/check/qualification/countryside": {
+    eyebrow: "LISS/CSCS",
+    title: "Countryside management qualifications",
+    theme: "green",
+    intro: "If your qualification is relevant to this sector and it is not listed, please contact BALI for review of this qualification.",
+    sections: [
+      {
+        heading: "Trainee (Red) Working toward Level 2 or Experienced Worker - Temporary (Red)",
+        body: "",
+        bullets: [
+          "Pearson BTEC Level 2 Diploma in Countryside and Environment (QCF)",
+          "City & Guilds Level 2 Diploma in Countryside and Environment (QCF)",
+          "Pearson BTEC Level 2 Certificate in Countryside and Environment (QCF)",
+          "Pearson BTEC Level 2 Extended Certificate in Countryside and Environment (QCF)",
+          "City & Guilds Level 2 Certificate in Countryside and Environment (QCF)",
+          "City & Guilds Level 2 Extended Certificate in Countryside and Environment (QCF)",
+          "Level 2 Certificate in Dry Stone Walling (QCF)",
+          "Level 3 Certificate in Dry Stone Walling (QCF)",
+          "City & Guilds Level 2 Diploma in work-based Environmental Conservation",
+          "The BTEC First Diploma in Countryside Management",
+          "BTEC Level 2 Environmental Conservation (Landscape and Ecosystem)",
+        ],
+      },
+      {
+        heading: "Apprentice (Red) Working towards Level 2",
+        body: "",
+        bullets: [
+          "Institute for Apprenticeships and Technical Education - Countryside Worker (Click link)",
+        ],
+      },
+      {
+        heading: "Level 2 - Skilled Worker (Blue)",
+        body: "",
+        bullets: [
+          "Pearson BTEC Level 2 Diploma in Countryside and Environment (QCF)",
+          "City & Guilds Level 2 Diploma in Countryside and Environment (QCF)",
+          "Pearson BTEC Level 2 Certificate in Countryside and Environment (QCF)",
+          "Pearson BTEC Level 2 Extended Certificate in Countryside and Environment (QCF)",
+          "City & Guilds Level 2 Certificate in Countryside and Environment (QCF)",
+          "City & Guilds Level 2 Extended Certificate in Countryside and Environment (QCF)",
+          "Level 2 Certificate in Dry Stone Walling (QCF)",
+          "Level 3 Certificate in Dry Stone Walling (QCF)",
+          "City & Guilds Level 2 Diploma in work-based Environmental Conservation",
+          "The BTEC First Diploma in Countryside Management",
+          "BTEC Level 2 Environmental Conservation (Landscape and Ecosystem)",
+        ],
+      },
+      {
+        heading: "Trainee Supervisor (Red) Working toward Level 3 or Experienced Technical, Supervisor or Manager (Red)",
+        body: "",
+        bullets: [
+          "Pearson BTEC Level 3 Certificate in Countryside Management (QCF)",
+          "City & Guilds Level 3 Extended Diploma in Countryside Management (QCF)",
+          "Pearson BTEC Level 3 Subsidiary Diploma in Countryside Management (QCF)",
+          "Pearson BTEC Level 3 Diploma in Countryside Management (QCF)",
+          "City & Guilds Level 3 Diploma in Countryside Management (QCF)",
+          "City & Guilds Level 3 Certificate in Countryside Management (QCF)",
+          "Pearson BTEC Level 3 Extended Diploma in Countryside Management (QCF)",
+          "City & Guilds Level 3 Subsidiary Diploma in Countryside Management (QCF)",
+          "Pearson BTEC Level 3 90-credit Diploma in Countryside Management (QCF)",
+          "City & Guilds Level 3 90-Credit Diploma in Countryside Management (QCF)",
+          "Level 3 National Diploma (BTEC) Edexcel",
+          "National Certificate in Countryside related studies (breakdown of units required)",
+        ],
+      },
+      {
+        heading: "Level 3 - Supervisor (Gold)",
+        body: "Qualifications must contain supervisory elements.",
+        bullets: [
+          "Pearson BTEC Level 3 Certificate in Countryside Management (QCF)",
+          "City & Guilds Level 3 Extended Diploma in Countryside Management (QCF)",
+          "Pearson BTEC Level 3 Subsidiary Diploma in Countryside Management (QCF)",
+          "Pearson BTEC Level 3 Diploma in Countryside Management (QCF)",
+          "City & Guilds Level 3 Diploma in Countryside Management (QCF)",
+          "City & Guilds Level 3 Certificate in Countryside Management (QCF)",
+          "Pearson BTEC Level 3 Extended Diploma in Countryside Management (QCF)",
+          "City & Guilds Level 3 Subsidiary Diploma in Countryside Management (QCF)",
+          "Pearson BTEC Level 3 90-credit Diploma in Countryside Management (QCF)",
+          "City & Guilds Level 3 90-Credit Diploma in Countryside Management (QCF)",
+          "Level 3 National Diploma (BTEC) Edexcel",
+          "National Diploma in Rural Studies (unit breakdown required)",
+        ],
+      },
+      {
+        heading: "Trainee Manager (Red) Working toward Level 4 or Experienced Technical, Supervisor or Manager (Red)",
+        body: "",
+        bullets: [
+          "Level 5 Diploma in Principles of Leadership & Management in Landbased Settings (Require relevant field unit breakdown)",
+        ],
+      },
+      {
+        heading: "Level 4 - Manager (Black)",
+        body: "",
+        bullets: [
+          "Level 5 Diploma in Principles of Leadership & Management in Landbased Settings (Require relevant field unit breakdown)",
+        ],
+      },
+      {
+        heading: "(AQP) Academically Qualified Person (White/Yellow)",
+        body: "",
+        bullets: [
+          "Degree in Countryside Management BSc",
+          "Foundation Degree in Countryside Management",
+          "Countryside Management (FdSc), Foundation Degree",
+          "Landscape and Countryside Management, FdSc Foundation Degree",
+          "Master degree in Countryside Management",
+          "Countryside and Protected Area Management (Postgraduate Diploma)",
+          "Degree in Rural Estate Management",
+          "Degree in Rural Sustainability",
+          "Foundation Degree in Countryside Conservation and Recreational Management",
+          "HND in Countryside Management",
+          "Master degree in Land Management",
+          "Certificate of Higher Education in Conservation and Countryside Management",
+        ],
+      },
+      {
+        heading: "Trainee (PQP) Professionally Qualified Person (Red Card)",
+        body: "",
+        bullets: [
+          "British Society of Soil Science (BSSS) - Provide current evidence of your Associate/Technical Membership",
+        ],
+      },
+      {
+        heading: "(PQP) Professionally Qualified Person (White/Yellow)",
+        body: "",
+        bullets: [
+          "British Society of Soil Science (BSSS) - Provide current evidence of your Full/Chartered/Fellow Membership",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/liss-cscs/check/qualification/ecology": {
+    eyebrow: "LISS/CSCS",
+    title: "Ecology and environmental qualifications",
+    theme: "green",
+    intro: "If your qualification is relevant to this sector and it is not listed, please contact BALI for review of this qualification.",
+    sections: [
+      {
+        heading: "Level 2 Skilled Worker - Blue",
+        body: "",
+        bullets: [
+          "Natural England/DEFRA (or equivalents with Scottish Natural Heritage, Natural Resources Wales and Northern Ireland Environment Agency) Class licence (s) for Wildlife Management - Provide current evidence of your licence.",
+        ],
+      },
+      {
+        heading: "Red Trainee (AQP) Academically Qualified Person - Working towards a relevant Ecology & Environmental degree:",
+        body: "",
+        bullets: [
+          "Ecology & Environmental Management related Degree (proof of enrolment)",
+        ],
+      },
+      {
+        heading: "(AQP) Academically Qualified Person (White/Yellow)",
+        body: "",
+        bullets: [
+          "BSc Animal Biology",
+          "BSc Animal Conservation and Biodiversity",
+          "BSc Animal Science",
+          "BSc Applied Ecology",
+          "BSc Biodiversity Survey",
+          "BSc Biological Recording - Collection and Management",
+          "BSc Biological Sciences",
+          "BSc Conservation and Biodiversity",
+          "BSc Conservation and Wildlife Management",
+          "BSc Conservation Science",
+          "BSc Degree in Rural Estate Management",
+          "BSc Ecological Management and Conservation Biology",
+        ],
+      },
+      {
+        heading: "Trainee (PQP) Professionally Qualified Person (Red)",
+        body: "",
+        bullets: [
+          "Chartered Institute of Ecology and Environmental Management (CIEEM) - Provide current evidence of your Student/Qualifying/Graduate or Associate Membership",
+          "Chartered Institute of Water & Environmental Management (CIWEM) - Provide current evidence of your Student/Apprentice or Graduate/Technician Membership",
+        ],
+      },
+      {
+        heading: "(PQP) Professionally Qualified Person (White/Yellow)",
+        body: "",
+        bullets: [
+          "Chartered Institute of Ecology and Environmental Management (CIEEM) - Provide current evidence of your Full/Fellow Membership",
+          "Chartered Institute of Water & Environmental Management (CIWEM) - Provide current evidence of your Member Grade/Chartered/Fellow Membership",
+        ],
+      },
+      {
+        heading: "NOTE: OVERSEAS QUALIFICATIONS",
+        body: "If you have a land-based related qualification that was awarded outside the UK and is not currently recognised by LISS/CSCS you should contact Ecctis so that they can review your qualification and determine whether it is comparable to an NVQ, SVQ or other qualification appropriate to your occupation and the LISS/CSCS SmartCard you wish to apply for. To find out further information please click here.",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/liss-cscs/check/qualification/landscape": {
+    eyebrow: "LISS/CSCS",
+    title: "Landscape & maintenance qualifications",
+    theme: "green",
+    intro: "If your qualification is relevant to this sector and it is not listed, please contact BALI for review of this qualification.",
+    sections: [
+      {
+        heading: "Trainee (Red) working toward Level 2 or Experienced Worker -Temporary (Red)",
+        body: "",
+        bullets: [
+          "Level 2 NVQ Amenity Horticulture (Landscaping) (0329 -22 & -92) or Level 2 Diploma in Work-based Horticulture (Landscaping) (0065-23)",
+          "Level 2 Diploma in Work-based Horticulture (C&G)",
+          "Level 2 Diploma in Work-Based Horticulture (QCF) (HABC)",
+          "Level 2 Certificate in the Principles of Horticulture (RHS) (Previously known as a general certificate)",
+          "Work-based Horticulture (QCF)",
+          "Level 2 Certificate in Gardening (C&G)",
+          "Level 2 Diploma in Horticulture (C&G)",
+          "Level 2 National Certificate in Horticulture(C&G)",
+          "Level 2 Certificate in Horticulture (BTEC)",
+          "Level 2 Diploma in Horticulture (BTEC)",
+          "Level 2 Certificate in Practical Horticulture (RHS)",
+          "Level 2 First Diploma in Horticulture (BTEC) Level 2 Diploma in the Principles and Practices of Horticulture (RHS)",
+        ],
+      },
+      {
+        heading: "Trainee (Red) Green Roof Installer",
+        body: "",
+        bullets: [
+          "Technical Award in The Introduction to Installing and Maintaining Green Roofs - Lantra",
+        ],
+      },
+      {
+        heading: "Apprentice (Red) Working toward Level 2",
+        body: "",
+        bullets: [
+          "Institute for Apprenticeships and Technical Education - Horticulture or Landscape Operative - Click here",
+        ],
+      },
+      {
+        heading: "Level 2 - Skilled Worker (Blue) - Landscaper",
+        body: "",
+        bullets: [
+          "Level 2 NVQ Amenity Horticulture (Landscaping) (0329 -22 & -92) or Level 2 Diploma in Work-based Horticulture (Landscaping) (0065-23)",
+          "Level 2 Diploma in Work-based Horticulture (C&G)",
+          "Level 2 Diploma in Work-based Horticulture (QCF) (HABC)",
+          "Level 2 Certificate in the Principles of Horticulture (RHS)",
+          "Work-based Horticulture (QCF)",
+          "Level 2 Certificate in Gardening (C&G)",
+          "Level 2 Diploma in Horticulture (C&G)",
+          "Level 2 Diploma in Sports & Amenity Turf Maintenance (C&G)",
+          "Level 2 National Certificate in Horticulture(C&G)",
+          "Level 2 Certificate in Horticulture (BTEC)",
+          "Level 2 Diploma in Horticulture (BTEC)",
+          "Level 2 Certificate in Practical Horticulture (RHS)",
+        ],
+      },
+      {
+        heading: "Level 2 - Skilled Worker (Blue) - Environmental Maintenance Operative",
+        body: "",
+        bullets: [
+          "LISS/CSCS Litter Picking and Environmental Maintenance (Lantra e-learning link)",
+          "Please refer to Appendix ‘Q’ of the NHSS18 ISO2001:2015 on this link and scroll down to find the 2015 version for NHSS18.",
+        ],
+      },
+      {
+        heading: "Level 2 - Skilled Worker (Blue) Green Roof Installer",
+        body: "",
+        bullets: [
+          "Green Roofs Installer - Lantra click here",
+        ],
+      },
+      {
+        heading: "Trainee Supervisor (Red) working toward Level 3 or Experienced Technical, Supervisor or Manager (Red)",
+        body: "",
+        bullets: [
+          "National Diploma in Horticulture (BTEC) Edexcel",
+          "National Diploma in Landscape & Horticulture (BTEC) Edexcel",
+          "Level 3 Diploma in Horticulture (C&G)",
+          "Level 3 Diploma in Work-based Horticulture (C&G)",
+          "Level 3 Diploma in Horticulture (BTEC) Edexcel",
+          "Level 3 in the Principles & Practices of Horticulture (RHS)",
+          "Level 3 Certificate in Practical Horticulture (RHS)",
+          "Level 3 Certificate in the Principles of Garden Planning, Construction and Planting (RHS)",
+          "Level 3 Subsidiary Diploma in Horticulture (C&G)",
+          "Level 3 BTEC National Diploma in Countryside Management",
+          "Level 3 Extended Diploma in Horticulture (C&G)",
+          "Level 3 90-Credit Diploma in Horticulture (C&G)",
+        ],
+      },
+      {
+        heading: "Apprentice (Red) Working toward Level 3",
+        body: "",
+        bullets: [
+          "Institute for Apprenticeships and Technical Education - Landscape or Horticulture Supervisor - Click here",
+        ],
+      },
+      {
+        heading: "Level 3 - Supervisor (Gold)",
+        body: "Qualifications must contain supervisory elements.",
+        bullets: [
+          "National Diploma in Horticulture (BTEC) Edexcel",
+          "National Diploma in Landscape & Horticulture (BTEC) Edexcel",
+          "Level 3 Diploma in Horticulture (C&G)",
+          "Level 3 Diploma in Work-based Horticulture (C&G)",
+          "Level 3 Diploma in Horticulture (BTEC) Edexcel",
+          "Level 3 in the Principles & Practices of Horticulture (RHS)",
+          "Level 3 Certificate in Practical Horticulture (RHS)",
+          "Level 3 Certificate in the Principles of Garden Planning, Construction and Planting (RHS)",
+          "Level 3 Subsidiary Diploma in Horticulture (C&G)",
+          "Level 3 Extended Diploma in Horticulture (C&G)",
+          "Level 3 90-Credit Diploma in Horticulture (C&G)",
+          "Level 3 BTEC National Diploma in Countryside Management",
+        ],
+      },
+      {
+        heading: "Trainee Manager (Red) working toward Level 4 or Experienced Technical, Supervisor or Manager (Red)",
+        body: "",
+        bullets: [
+          "Level 4 Amenity Horticulture Management",
+          "Level 5 Horticulture and Landscaping Technical Manager (Ofqual Apprenticeship) Click here",
+          "Level 5 Diploma in Principles of Leadership & Management in Landbased Settings (Require relevant field unit breakdown) Click here",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/liss-cscs/check/qualification/modular-paving": {
+    eyebrow: "LISS/CSCS",
+    title: "Modular paving qualifications",
+    theme: "green",
+    intro: "Highways Maintenance Modular Pavement – acceptable qualifications",
+    sections: [
+      {
+        heading: "Level 2 - Skilled Worker (Blue)",
+        body: "",
+        bullets: [
+          "CSkills Awards Level 2 NVQ QUA083) Mason Pavior",
+          "CSkills Awards Level 2 NVQ (QUA317) Construction Operations",
+          "CSkills Awards Level 2 NVQ (QUA501) Construction & Civil Engineering Services (Mandatory: PR01, PR02 & PR14 Plus Optional: CR05, CR10, CR11 & PR06 - Modular Pavement Construction (CMP) Additional Units: CR03, CR04, CR06, CR07, CR13, PR07",
+          "Magenta Level 2 NVQ (QUA757) Construction Operations - Modular Pavement Construction",
+          "Edexcel Level 2 NVQ Construction Operations (Modular Pavement Construction)",
+          "CSkills Awards Level 2 NVQ Diploma (QUA857) Construction Operations – Modular Paving Construction",
+          "SQA Level 2 Construction Operations – Modular Paving Construction",
+          "NOCN Level 2 NVQ Certificate in Roadbuilding and Maintenance (Construction)",
+          "CSkills Awards Level 2 NVQ (QUA501) Construction & Civil Engineering (Mandatory: PR01, PR02, PR14 CR03, CR10, CR11 & PR06 - Highways Maintenance - Modular Pavement Construction (HMP) Additional Units: CR05, CR14, CR18, CR19, CR20, PR07 & PR12)",
+          "CSkills Awards Level 2 NVQ (QUA758) Highways Maintenance - Modular Pavement Construction",
+          "CSkills Awards Level 2 NVQ Diploma (QUA858) Highways Maintenance (Construction) – Modular Pavement Construction",
+          "CSkills Awards Level 2 NVQ (QUA501) Construction & Civil Engineering Services",
+        ],
+      },
+      {
+        heading: "Trainee Supervisor (Red) Working toward Level 3",
+        body: "",
+        bullets: [
+          "Contact CSCS through the Core Scheme as this card is not available through LISS/CSCS",
+        ],
+      },
+      {
+        heading: "Level 3 - Supervisor (Gold)",
+        body: "",
+        bullets: [
+          "Contact CSCS through the Core Scheme as this card is not available through LISS/CSCS",
+        ],
+      },
+      {
+        heading: "Trainee Manager (Red) Working toward Level 4",
+        body: "",
+        bullets: [
+          "Contact CSCS through the Core Scheme as this card is not available through LISS/CSCS",
+        ],
+      },
+      {
+        heading: "Level 4 - Manager (Black)",
+        body: "",
+        bullets: [
+          "Contact CSCS through the Core Scheme as this card is not available through LISS/CSCS",
+        ],
+      },
+      {
+        heading: "(AQP) Academically Qualified Person (White/Yellow)",
+        body: "",
+        bullets: [
+          "Contact CSCS through the Core Scheme as this card is not available through LISS/CSCS",
+        ],
+      },
+      {
+        heading: "(PQP) Professionally Qualified Person (White/Yellow)",
+        body: "If your qualification is relevant to this sector and it is not listed, please contact BALI for review of this qualification.",
+        bullets: [
+          "Contact CSCS through the Core Scheme as this card is not available through LISS/CSCS",
+        ],
+      },
+      {
+        heading: "NOTE: OVERSEAS QUALIFICATIONS",
+        body: "If you have a land-based related qualification that was awarded outside the UK and is not currently recognised by LISS/CSCS you should contact Ecctis so that they can review your qualification and determine whether it is comparable to an NVQ, SVQ or other qualification appropriate to your occupation and the LISS/CSCS SmartCard you wish to apply for. To find out further information please click here.",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/liss-cscs/check/qualification/pesticides": {
+    eyebrow: "LISS/CSCS",
+    title: "Pesticides and pest control qualifications",
+    theme: "green",
+    intro: "Institute for Apprenticeships and Technical Education - Pest Control Technician - Click here",
+    sections: [
+      {
+        heading: "Level 2 Skilled Worker (Blue) - Pesticide",
+        body: "Pesticide Operator Boom Sprayer Plus one of the following: or Plus the following: Pesticide Operator Handheld Application City & Guilds Plus one of the following: or Plus the following: Pesticide Operator Granule or Pellet Application Plus one of the following: or Plus the following: Pesticide Operator Ecoplug Installation Plus the following: or Plus the following: Pesticide Operator Stem Injection Plus the following: or Plus the following: Invasive Species Technician Invasive Species Surveyor",
+        bullets: [
+          "PA1 - Level 2 Principles of Safe Handling and Application of Pesticides Guidance",
+          "PA2 - Level 2 Award in the Safe Application of Pesticides Using Self Propelled, Mounted, Trailed Horizontal Boom Sprayers",
+          "PA2A - Boom type Hydraulic Nozzle and/or Boom type Rotary Atomiser",
+          "PA2C - Boom type Twin Fluid Nozzle",
+          "PA2D - Electro-statically charged",
+          "PA2E - Boom type fitted with downward air assistance",
+          "Level 2 Award in the Safe Use of Pesticides",
+          "Level 2 Award in the Safe Application of Pesticides using Vehicle Mounted Boom Sprayer",
+          "PA1 - Level 2 Principles of Safe Handling and Application of Pesticides Guidance",
+          "PA6 - Level 2 Award in the Safe Application of Pesticides using Pedestrian Hand Held Equipment",
+          "PA6A - Hand Held Applicators Hydraulic Nozzle and/or Rotary Atomiser Types",
+          "PA6AW - Hand Held Applicators Application to water using Hydraulic Nozzle or Rotary atomiser type sprayers",
+        ],
+      },
+      {
+        heading: "Level 2 - Skilled Worker (Blue) - Pest Control",
+        body: "",
+        bullets: [
+          "RSPH Level 2 Award in Pest Management",
+          "RSPH Level 2 Certificate in Pest Management",
+          "RSPH Level 2 Award in using Aluminium Phosphide Safely for the",
+          "Management of Vertebrate Pests",
+          "RSPH Level 2 Award in the Safe Use of Rodenticides",
+          "Lantra Awards Level 2 Award in the Safe Use of Aluminum Phosphide",
+          "Vertebrate Pest Control",
+          "C&G Level 2 Award in the Safe Use of Pesticides for Vertebrate Pest Control for Grey Squirrels",
+          "C&G Level 2 Award in the Safe Use of Pesticides for Vertebrate Pest Control for Rats and Mice",
+          "C&G Level 2 Award in the Safe Use of Aluminium Phosphide for Vertebrate Pest Control",
+          "C&G Level 2 Award in the Safe Use of Traps for Vertebrate Pest Control",
+          "RSPH Level 3 Award in Safe Use of Fumigants for the Management of Invertebrate Pests",
+        ],
+      },
+      {
+        heading: "Trainee Manager (Red) or Experienced Technical, Supervisor or Manager (Red)",
+        body: "",
+        bullets: [
+          "BASIS Foundation Award Amenity (This qualification is for those individuals who need to gain further experience and are working towards the BASIS Certificate in Crop Protection – Amenity Horticulture For Field, Sales and Technical Staff (FSTS)).",
+        ],
+      },
+      {
+        heading: "Level 4 - Pesticides Manager (Black)",
+        body: "",
+        bullets: [
+          "BASIS Certificate in Crop Protection – Amenity Horticulture For Field, Sales and Technical Staff (FSTS). Provide current evidence of your BASIS Amenity Register membership.",
+        ],
+      },
+      {
+        heading: "Red Trainee (AQP) Academically Qualified Person - Working towards a relevant Pesticide degree:",
+        body: "",
+        bullets: [
+          "Pesticide-related Degree (proof of enrolment)",
+        ],
+      },
+      {
+        heading: "(AQP) Academically Qualified Person (White/Yellow)",
+        body: "If your qualification is relevant to this sector and it is not listed, please contact BALI for review of this qualification.",
+        bullets: [
+          "Pesticide-related Degree",
+        ],
+      },
+      {
+        heading: "NOTE: OVERSEAS QUALIFICATIONS",
+        body: "If you have a land-based related qualification that was awarded outside the UK and is not currently recognised by LISS/CSCS you should contact Ecctis so that they can review your qualification and determine whether it is comparable to an NVQ, SVQ or other qualification appropriate to your occupation and the LISS/CSCS SmartCard you wish to apply for. To find out further information please click here.",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/liss-cscs/check/overseas": {
+    eyebrow: "LISS/CSCS",
+    title: "Overseas Qualifications",
+    theme: "green",
+    intro: "Ecctis is the parent company that previously looked after the UK NARIC brand and will now be the external facing name.",
+    sections: [
+      {
+        heading: "",
+        body: "Historically, LISS/CSCS requested that applicants with overseas qualifications apply to the UK’s international qualifications agency UK NARIC for a Statement of Comparability to compare their awards to UK levels. From 1 October 2019, applicants will be required to obtain an Industry Skills Statement. This Ecctis service maps the skills of overseas qualification holders to UK National Occupational Standards, and also use Primary Source Verification (PSV) to verify that the overseas qualification is genuine. This assists industry bodies in maintaining standards of work and health & safety on construction and land-based industry sites, and in preventing fraudulent applications for cards using fake or altered qualification and training certificates. -------------------------------------------------------------------------------------------------------------------------------------------- Industry Skills Statement for Academically Qualified Persons – relevant for overseas applicants applying for the Academically Qualified Person (AQP) LISS/CSCS SmartCard. As part of the wider strategy for combatting fraud, LISS/CSCS worked with Ecctis to introduce “Primary Source Verification” (PSV) ...",
+      },
+      {
+        heading: "Applying for a LISS/CSCS SmartCard",
+        body: "Applicants whose qualifications pass the PSV process are required to provide the following when applying for a LISS/CSCS SmartCard: -------------------------------------------------------------------------------------------------------------------------------------------- Industry Skills Statement with Skills Mapping – relevant for overseas applicants applying for a skilled LISS/CSCS SmartCard: Overseas land-based industry workers wishing to work in the UK must now have the technical content of their overseas vocational qualification mapped against the relevant UK National Occupational Standard for that occupation. This provides an in-depth record of each individual’s skills and capabilities, mapped against units in the National Occupational Standard for their trade. This will improve understanding of the relationship between the UK and overseas land-based industry qualifications at a unit-by-unit level. The mapping to National Occupational Standards will help to ensure that workers have the training they require for their job and will pinpoint areas for additional training if required. The mapping will be verified by Lantra (acting as the Standard Setting Body for the Land-base...",
+        bullets: [
+          "An Ecctis Industry Skills Statement, AQP option",
+          "A Primary Source Verification Report (issued with the above)",
+          "A copy of the original qualification (translated)",
+          "Once this information is received LISS/CSCS will review and confirm if the qualification is suitable for a LISS/CSCS card",
+        ],
+      },
+      {
+        heading: "Applying for a LISS/CSCS SmartCard",
+        body: "Applicants whose qualifications pass the enhanced verification process are required to provide the following when applying for a LISS/CSCS SmartCard: --------------------------------------------------------------------------------------------------------------------------------------------",
+        bullets: [
+          "An Ecctis Industry Skills Statement, trades option",
+          "A Primary Source Verification Report (issued with the above)",
+          "A copy of the original qualification (translated)",
+          "Once this information is received LISS/CSCS will review and confirm if the qualification is suitable for a LISS/CSCS SmartCard",
+        ],
+      },
+      {
+        heading: "Benefits",
+        body: "The introduction of the new verification process and the mapping of overseas qualifications against the appropriate UK NOS is a positive step that provides the industry with a robust level of scrutiny, similar to that already in place for UK based card applications. By certifying that overseas land-based industry workers have the correct training and qualifications Ecctis and LISS/CSCS are improving standards and safety in the UK land-based industry.",
+      },
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "Ecctis Industry Skills Statement - AQP Flowchart 10 May 2021 348kb PDF",
+          "Ecctis Industry Skills Statement - Skills Statement Flowchart 10 May 2021 359kb PDF",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/liss-cscs/check/smart-check-app": {
+    eyebrow: "LISS/CSCS",
+    title: "Smart Check App",
+    theme: "green",
+    intro: "Site managers can read this information using a smartphone, tablet or PC with the Smart Check app installed, allowing them to instantly record the cardholder’s information, and be secure in the knowledge that the cardholder is qualified for the job they do on-site.",
+    sections: [
+      {
+        heading: "All CSCS cards are Smart (including LISS/CSCS) – they contain a chip that stores information on the cardholder's identity, qualifications and training.",
+        body: "Find out how to use CSCS SmartCards (including LISS/CSCS) and the Smart Check app here. There are three ways to check a card using CSCS Smart Check: via Contactless (NFC), using QR codes or by performing a manual check. The explainer videos are below, including what a successful and failed verification attempt looks like on the app.",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/liss-cscs/accreditation/cardholders": {
+    eyebrow: "LISS/CSCS",
+    title: "Industry accreditation cardholders",
+    theme: "green",
+    intro: "The process of certifying training and qualifications ensures LISS/CSCS can play its part in improving standards and safety on UK construction sites. LISS/CSCS’s principle objective is focused on the achievement of industry recognised qualifications, achieved through strong support from many industry stakeholders.",
+    sections: [
+      {
+        heading: "LISS/CSCS cards available to individuals working in the landbased sectors.",
+        body: "LISS/CSCS commitment to a fully qualified workforce is underpinned by the Industrial Strategy for Construction. The Construction Leadership Council (CLC), responsible for delivering the Strategy, announced in 2015 that all card schemes should carry the CSCS logo and must operate with nationally recognised qualifications in place for all occupations relevant to their sector. Since the announcement LISS/CSCS developed a number of plans to meet the CLC’s requirements, including agreement on appropriate qualifications for each occupation, with the minimum standard for skilled occupations established by the CLC at Level 2 or equivalent. To meet the requirements of the CLC, previous Industry Accreditation (IA) cardholders can be moved to a recognised qualification. The withdrawal of Industry Accreditation is the final step towards achieving the CLC’s requirement of ensuring nationally recognised qualifications are in place for all occupations. What Happens Next? From 1 January 2020, all Land-based Industry Skills Scheme (LISS)/Construction Skills Certification Scheme (CSCS) cards renewed under Industry Accreditation expired on 31 December 2024 and CSCS stopped issuing the card from 30...",
+      },
+      {
+        heading: "I would like to renew my LISS/CSCS Black Managers Card, what are my options?",
+        body: "Lantra has supported BALI by developing the Level 5 Diploma in Principles of Leadership & Management in Landbased Settings (require relevant field unit breakdown) qualification. Please follow the link above to learn more about the course and identify a suitable training provider. This course is available online. Alternatively visit the check your qualifications page for further qualifications. You must ensure that your managers ROLO Health and Safety and managers CITB Touch Screen Test have been completed within the last 2 years when renewing your card.",
+      },
+      {
+        heading: "I would like to renew my LISS/CSCS Gold Supervisors Card, what are my options?",
+        body: "Lantra has supported BALI by developing the Lantra Awards Level 3 NVQ Diploma in Occupational Work Supervision (Landscape and Maintenance) qualification. Please follow the link above to learn more about the course and identify a suitable training provider. This course is available online. Alternatively visit the check your qualifications page for further qualifications. You must ensure that your supervisors ROLO Health and Safety and supervisors CITB Touch Screen Test have been completed within the last 2 years when renewing your card.",
+      },
+      {
+        heading: "I would like to renew my LISS/CSCS Blue Skilled Workers Card, what are my options?",
+        body: "Please visit the check your qualifications page for all qualifications which we would accept for the blue card. You must ensure that your operatives ROLO Health and Safety and operatives CITB Touch Screen Test have been completed within the last 2 years when renewing your card.",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/liss-cscs/accreditation/withdrawal-2024": {
+    eyebrow: "LISS/CSCS",
+    title: "Industry Accreditation SmartCards withdrawal in 2024",
+    theme: "green",
+    intro: "Do you work in the commercial land-based industry? Looking to upskill your own workforce? Trouble accessing certain live commercial sites? The Land-based Industry Skills Scheme (LISS) and Construction Skills Certification Scheme (CSCS) is a jointly managed scheme (LISS/CSCS) administered by the British Association of Landscape Industries (BALI) and enables you to work on live commercial landbased/construction sites.",
+    sections: [
+      {
+        heading: "BALI’s LISS/CSCS SmartCard scheme announces the withdrawal of all Industry Accreditation cards by 2024",
+        body: "The scheme recognises qualifications and training experience, in turn improving employment prospects and enabling the ability to tender for commercial work that requires a LISS/CSCS SmartCard. LISS/CSCS is administered by the British Association of Landscape Industries (BALI). It is a standalone scheme but is also a requirement of the National Highways Sector Scheme 18 (Land-based). For all full operational SmartCard levels, the minimum requirement is the ROLO Health, Safety and Environmental Awareness Course and the CITB Touch Screen Test appropriate to the SmartCard level. Please note for the Modular Paving industry only, the CITB Touch Screen Test appropriate to your SmartCard level is required. For several years the strategic direction of the Construction Skills Certification Scheme (CSCS) has focused on ensuring that all applicants can demonstrate the achievement of a nationally recognised construction related qualification. With the withdrawal of the Construction Related Occupation card and the planned removal of the Site Visitor card, the next step was the withdrawal of cards issued under Industry Accreditation. Industry Accreditation allowed workers to obtain LISS/CSCS c...",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/liss-cscs/accreditation/latest-developments": {
+    eyebrow: "LISS/CSCS",
+    title: "Latest Developments",
+    theme: "green",
+    intro: "Following a recent communication from CSCS we felt it was time to update our members and LISS/CSCS customers on the current situation with the withdrawal of Industry Accreditation (IA), We will continue to monitor the situation and update our members should any further changes be made.",
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/liss-cscs/rolo/find-provider": {
+    eyebrow: "LISS/CSCS",
+    title: "ROLO",
+    theme: "green",
+    intro: "Traditionally ROLO courses are based on-site at training provider venues around the UK, as seen in our directory below, and often see multiple people from different organisations in attendance. As an alternative many Training Providers are offering the ROLO course online.",
+    image: { url: "https://www.bali.org.uk/themes/bali/gfx/directory/Online-false.svg", alt: "Course type - Online" },
+    sections: [
+      {
+        heading: "One Ash Training Ltd",
+        body: "BALI & ROLO Training Provider Cheshire, WA8 5PY info@oneashtraining.com 0151 420 4522 www.oneashtraining.com",
+      },
+      {
+        heading: "Train To Safety Ltd",
+        body: "BALI & ROLO Training Provider Derbyshire, S41 0TZ hello@traintosafety.co.uk 0843 289 0579 www.traintosafety.co.uk",
+      },
+      {
+        heading: "Guthrie & Craig (Training Services)",
+        body: "BALI & ROLO Training Provider County Durham, DH1 1TW training@guthrieandcraig.co.uk 0191 603 1066 www.guthrieandcraig.co.uk",
+      },
+      {
+        heading: "Keith Cook Training Ltd",
+        body: "BALI & ROLO Training Provider Leicestershire, LE12 9YA david.owen@kcts.me.uk 01509 600330 www.kcts.me.uk",
+      },
+      {
+        heading: "CITP Ltd",
+        body: "BALI & ROLO Training Provider Berkshire, RG19 8FZ steve@constructiontrainingproviders.co.uk 01189 700 200 www.constructiontrainingproviders.co.uk",
+      },
+      {
+        heading: "Multevo Ltd",
+        body: "BALI & ROLO Training Provider Lancashire, BB3 1BF nfo@multevo.co.uk 01254 703212 https://multevo.co.uk",
+      },
+      {
+        heading: "Horticultural Landscape Solutions",
+        body: "BALI & ROLO Training Provider Tyne And Wear, SR6 0NJ hortlandscape.solutions@gmail.com 07769 359545",
+      },
+      {
+        heading: "TQ Exel Ltd",
+        body: "BALI & ROLO Training Provider Somerset, BS26 2UG sam.abbott@tqexel.co.uk 01934 750066 www.tqexel.co.uk",
+      },
+      {
+        heading: "Arboricultural & Forestry Support Services",
+        body: "BALI & ROLO Training Provider Lancashire, PR1 0UX mpl.g1mail@gmail.com 07901 514259 www.arb-forestry.com",
+      },
+      {
+        heading: "Penarth Management Ltd",
+        body: "Accredited Supplier / ROLO Training Provider Glamorgan, CF24 2SA bali@penarth.co.uk 02920 703328 www.penarth.co.uk/landscaping Page 1 of 5",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/liss-cscs/rolo/find-course": {
+    eyebrow: "LISS/CSCS",
+    title: "Training courses",
+    theme: "green",
+    intro: "ROLO H&S Environmental Awareness Course for Operatives - 1 Day Online",
+    image: { url: "https://www.bali.org.uk/public/events/3bali-image-for-event-june.png", alt: "training courses" },
+    sections: [
+      {
+        heading: "ROLO Health, Safety and Environmental Awareness Course for Operatives - 1 day",
+        body: "ROLO Operatives Certification with Assessment",
+      },
+      {
+        heading: "ROLO Health, Safety and Environmental Awareness Course for Operatives - 1 Day Online",
+        body: "ROLO Operative - 1 day online, hosted by Orchard Learning.",
+      },
+      {
+        heading: "ROLO Health, Safety and Environmental Awareness Course for Operatives - 1 day",
+        body: "ROLO Operatives Certification with Assessment",
+      },
+      {
+        heading: "ROLO Health, Safety and Environmental Awareness for Operatives - 1 Day Online",
+        body: "Remote online training course for CITB HS&E test for most LISS/CSCS Smart Cards.",
+      },
+      {
+        heading: "ROLO Health, Safety and Environmental Awareness Course for Operatives - 1 Day Online",
+        body: "ROLO Operative - 1 day online, hosted by Orchard Learning.",
+      },
+      {
+        heading: "ROLO Health, Safety and Environmental Awareness Course for Operatives - 1 day",
+        body: "ROLO Operatives Certification with Assessment Page 1 of 14",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/liss-cscs/faqs": {
+    eyebrow: "LISS/CSCS",
+    title: "FAQ's",
+    theme: "green",
+    intro: "Below are some commonly asked questions. If you are unable to find the answer to your questions below, please email liss@bali.org.uk.",
+    sections: [
+      {
+        heading: "ROLO",
+        body: "I have not received my ROLO certificate.Certificates are issued by your training provider. If you have not received your certificate, please contact your training provider directly. If you are looking to apply for a LISS CSCS card and you have not yet received your ROLO certificate, please upload a letter from your training provider outlining the date you took your course and your pass mark. We will then be able to start processing your application. I’ve lost my ROLO certificate how do I get a replacement?Certificates are issued by your training provider. Please contact your training provider to obtain a replacement certificate. What is the minimum age for a ROLO course?16+ Where can I book a ROLO course?A complete list of courses is available to view on our website. There are 3 levels of courses – operative, supervisor and manager. Access Operative courses here Access Supervisor courses here Access Manager courses here All courses can be viewed here",
+      },
+      {
+        heading: "LISS CSCS",
+        body: "How long does the application process take? It can take up to 28 working days for card applications to be processed and sent. How much does a LISS CSCS card cost?£38 What qualifications do I need for a LISS CSCS card?Qualification requirements are dependent on the type of card you are applying for. Please see our dedicated web pages for more details. I have an overseas qualification, can I still get a LISS CSCS card?Applicants will be required to obtain an Industry Skills Statement from ECCTIS. Further information can be found on our overseas qualification web pages. What route should I choose on my application?If you are not sure please choose certificate of competence and the team will change accordingly. I applied for my card, but it hasn’t arrived yet?If you applied for your card more than 30 working days ago, please email the LISS CSCS team at liss@bali.org.uk, including your full name and the date of your application. We will then check the status of your application and confirm back to you. My LISS CSCS has expired, can I still renew it?LISS CSCS cards can only be renewed 6 months prior to, and up to 6 months after, the expiry date printed on the card. The expiry date of ...",
+      },
+      {
+        heading: "Technical Issues",
+        body: "I cannot get to the payment screen; how do I progress my application?Occasionally attachments can be too big. Please reduce the file size and re-upload. If you still find you are having issues, please continue your application without the attachments and send them separately to liss@bali.org.uk, including the full name of the person the card is for. You can also download the application form and send it to us by post, including all relevant documentation and payment to: LISS CSCS TeamLandscape HouseStoneleigh ParkKenilworthWarwickshireCV8 2LG",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/join/contractor": {
+    eyebrow: "Membership",
+    title: "Accredited contractor",
+    theme: "blue",
+    intro: "For British Association of Landscape Industries Accredited Contractor membership, the contractor must have been trading for at least two years and meet the requirements set out below.",
+    sections: [
+      {
+        heading: "Accredited Contractor membership is for contractors whose main business involves hard/soft landscaping or grounds maintenance.",
+        body: "For Accredited Contractor member benefits and fees, please see attached documents on the right-hand side. To begin your application process of joining the British Association of Landscape Industries make an enquiry today by clicking the button below and our membership team will be in touch with you within 48 hours. make an enquiry",
+        bullets: [
+          "Submit the application form and pay the application fee",
+          "Internal vetting takes place. The Association will check all documents submitted and referees will be contacted",
+          "External vetting takes place. Vetting Officer will visit, checking internal processes and perform site visits",
+          "Upon approval of the vetting report, an invoice for membership fees will be issued",
+          "Once paid, the Association will activate membership giving member access to a suite of benefits",
+          "Use of the British Association of Landscape Industries Accredited logo",
+          "Entry into the Association's National Landscape Awards",
+          "Access to the Dispute Resolution Service",
+        ],
+      },
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "BALI Membership Benefits 2025-26 1 Apr 2025 191kb PDF",
+          "BALI Membership Fees 2026-27 1 Apr 2025 143kb PDF",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/join/designer": {
+    eyebrow: "Membership",
+    title: "Accredited designer",
+    theme: "blue",
+    intro: "Depending on your registered status with other landscape organisations, the British Association of Landscape Industries offers two routes to becoming an Accredited Designer member.",
+    sections: [
+      {
+        heading: "The British Association of Landscape Industries is committed to continually improving the landscape sector and sets high standards for its Accredited Designer members.",
+        body: "Route one is for Registered members of the Society of Garden Designers or Chartered Landscape Institute: Route two is for non-registered members of SGD or Chartered LI: For full Accredited Designer member benefits and fees, please see the attached document on the right-hand side. make an enquiry",
+        bullets: [
+          "Submit the application form and pay the application fee. The Association will check all documents submitted and referees will be contacted",
+          "External vetting takes place. Invited to attend an assessment day consisting of one or more of the Design Panel who will review your projects",
+          "Upon approval of vetting an invoice for membership fees will be issued",
+          "Once paid, the Association will activate membership, giving member access to a suite of benefits",
+          "Submit the application form and pay the application fee, plus assessment day fee Internal vetting takes place. The Association will check all documents submitted and referees will be contacted",
+          "External vetting takes place. Invited to attend an assessment day consisting of one or more of the Design Panel who will review your projects",
+          "Upon approval of vetting an invoice for membership fees will be issued",
+          "Once paid, the Association will activate membership, giving member access to a suite of benefits",
+          "Use of the British Association of Landscape Industries Accredited logo",
+          "Entry into the annual National Landscape Awards",
+          "Access to Dispute Resolution Service",
+          "Exclusive access to BALI Blueprint powered by Vectorworks",
+        ],
+      },
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "BALI Membership Benefits 2025-26 1 Apr 2025 191kb PDF",
+          "BALI Membership Fees 2026-27 1 Apr 2025 143kb PDF",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/join/dso": {
+    eyebrow: "Membership",
+    title: "Accredited dso",
+    theme: "blue",
+    intro: "DSO membership is ideal for companies operating separately but working solely for the parent organisation.",
+    sections: [
+      {
+        heading: "Accredited Direct Service Organisation (DSO) membership is for the grounds maintenance departments of public or local authorities.",
+        body: "Copy of public liability For full Accredited Direct Service Organisation member benefits and fees, please see the attached document on the right-hand side. make an enquiry",
+        bullets: [
+          "Make an enquiry, submit the application form and pay the application fee",
+          "Internal vetting takes place. The Association will check all documents submitted and references will be contacted",
+          "External vetting takes place. The Vetting Officer will visit, checking internal processes and perform site visits",
+          "Upon approval of the vetting report, an invoice for membership fees will be issued",
+          "Once paid, the Association will activate membership, giving you access to a suite of benefits",
+          "Use of the British Association of Landscape Industries Accredited logo",
+          "Entry into the annual National Landscape Awards",
+          "HR / H&S support",
+          "Insurance support",
+        ],
+      },
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "BALI Membership Benefits 2025-26 1 Apr 2025 191kb PDF",
+          "BALI Membership Fees 2026-27 1 Apr 2025 143kb PDF",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/join/group": {
+    eyebrow: "Membership",
+    title: "Accredited group",
+    theme: "blue",
+    intro: "This category is for companies with branches across the UK or companies run on a franchise basis who have been trading for at least two years.",
+    sections: [
+      {
+        heading: "An Accredited Group membership is for contractors whose main business involves hard/soft landscaping or grounds maintenance.",
+        body: "For full Accredited Group member benefits and fees, please see the attached document on the right-hand side. make an enquiry",
+        bullets: [
+          "Submit the application form and pay the application fee",
+          "Internal vetting takes place. The Association will check all documents submitted and references will be contacted",
+          "External vetting takes place. The Vetting Officer will visit, check internal processes and perform site visits",
+          "Upon approval of the vetting report, an invoice for membership fees will be issued",
+          "Once paid, the Association will activate membership, giving member access to a suite of benefits",
+          "Use of the British Association of Landscape Industries Accredited logo",
+          "Entry in Who’s Who Landscape Directory",
+          "Dispute Resolution Service",
+        ],
+      },
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "BALI Membership Benefits 2025-26 1 Apr 2025 191kb PDF",
+          "BALI Membership Fees 2026-27 1 Apr 2025 143kb PDF",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/join/supplier": {
+    eyebrow: "Membership",
+    title: "Accredited supplier",
+    theme: "blue",
+    intro: "Accredited Suppliers are widely encouraged to promote the use of their products and services to British Association of Landscape Industries Contractor and Designer members through Association workshops, exhibitions, and publications. Supplier members are also encouraged to partake in the Supplier Forum for a chance to air their views during topical discussions.",
+    sections: [
+      {
+        heading: "This membership category can be a business, section or division of a business that supplies quality materials and equipment.",
+        body: "For full Accredited Supplier member benefits and fees, please see the attached document on the right-hand side. make an enquiry",
+        bullets: [
+          "Submit the application form and pay the application fee",
+          "Internal vetting takes place",
+          "Upon acceptance of documents - invoice for membership fees will be issued",
+          "Once paid, the Association will activate membership, giving member access to a suite of benefits",
+          "Use of the British Association of Landscape Industries Accredited logo",
+          "Entry into the annual National Landscape Awards",
+          "Discounted rates for exhibitions and conferences",
+        ],
+      },
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "BALI Membership Benefits 2025-26 1 Apr 2025 191kb PDF",
+          "BALI Membership Fees 2026-27 1 Apr 2025 143kb PDF",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/join/associate": {
+    eyebrow: "Membership",
+    title: "Associate",
+    theme: "blue",
+    intro: "Associate membership is offered to contractors, suppliers of the landscaping industry, landscape designers or landscape architects, or anyone who is involved in the landscaping industry.",
+    sections: [
+      {
+        heading: "Associate membership is for those trading for less than two years and are looking to explore the benefits of being a British Association of Landscape Industries member.",
+        body: "For full Associate member benefits and fees, please see the attached document on the right-hand side. make an enquiry",
+        bullets: [
+          "Make an enquiry and complete the application form",
+          "Internal vetting takes place, documents submitted to be checked by the Association's Membership team",
+          "Once internal vetting is complete, an invoice for membership fees will be issued",
+          "Once paid, membership is activated and the member has access to benefits",
+          "Special rates for British Association of Landscape Industries exhibitions and conferences",
+          "Access to weekly British Association of Landscape Industries newsletter",
+          "Access to the members-only area of the Association's website",
+          "Attend forums, online meetings and events",
+        ],
+      },
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "BALI Membership Benefits 2025-26 1 Apr 2025 191kb PDF",
+          "BALI Membership Fees 2026-27 1 Apr 2025 143kb PDF",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/join/international": {
+    eyebrow: "Membership",
+    title: "International",
+    theme: "blue",
+    intro: "Prospect International members must first complete the application and vetting process outlined below before accessing the International member benefits.",
+    sections: [
+      {
+        heading: "International membership is ideal for contractors who carry out hard and soft landscaping and/or grounds maintenance work and operate outside of the UK and the Channel Islands.",
+        body: "For international member benefits and fees, please see the attached documents on the right-hand side. make an enquiry",
+        bullets: [
+          "Make an enquiry",
+          "Submit the application form and pay the relevant application fee",
+          "Internal vetting takes place. The Association will check all documents submitted and referees will be contacted",
+          "Upon approval of internal vetting, an invoice for membership fees will be issued",
+          "Once paid, the Association will activate membership, giving the member access to a suite of benefits",
+          "Use of the British Association of Landscape Industries Accredited logo",
+          "Entry into the annual National Landscape Awards",
+          "Entry in the annual Who's Who Landscape Directory",
+        ],
+      },
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "BALI Membership Benefits 2025-26 1 Apr 2025 191kb PDF",
+          "BALI Membership Fees 2026-27 1 Apr 2025 143kb PDF",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/join/student": {
+    eyebrow: "Membership",
+    title: "Student",
+    theme: "blue",
+    intro: "Student membership ideal for students looking to gain footing into the landscaping industry with links to GoLandscape and up-to-date industry-relevant news.",
+    sections: [
+      {
+        heading: "This category of membership is for students attending commercial training organisations, FE and HE colleges and universities.",
+        body: "For full Student member benefits and fees, please see the attached documents on the right-hand side. make an enquiry",
+        bullets: [
+          "Submit application form",
+          "Internal vetting takes place. The Association will check all documents submitted",
+          "Upon approval of internal vetting",
+          "The Association will activate membership, giving the member access to a suite of benefits",
+          "Submit application form",
+          "Internal vetting takes place. The Association will check all documents submitted",
+          "Upon approval of internal vetting, an invoice for membership fees will be issued",
+          "Once paid, the Association will activate membership, giving member access to a suite of benefits",
+          "Weekly digital newsletter",
+          "British Association of Landscape Industries jobs",
+          "Access to GoLandscape",
+        ],
+      },
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "BALI Membership Benefits 2025-26 1 Apr 2025 191kb PDF",
+          "BALI Membership Fees 2026-27 1 Apr 2025 143kb PDF",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/join/training-provider": {
+    eyebrow: "Membership",
+    title: "Training provider",
+    theme: "blue",
+    intro: "For full Training Provider member benefits and fees, please see the attached document on the right-hand side.",
+    sections: [
+      {
+        heading: "This category of membership is for individual trainers, commercial training organisations, FE and HE colleges and universities, delivering land-based academic and skills training, needing to keep abreast of industry news and developments.",
+        body: "To make an enquiry about becoming an Association Training Provider member, please follow the link here.",
+        bullets: [
+          "Make an enquiry online or by phone and complete the application form",
+          "Internal vetting takes place. The Association checks all submitted documents",
+          "Upon vetting an invoice for the membership fee is issued",
+          "Once paid the member has access to various member benefits",
+          "Entry into Who’s Who Landscape Directory",
+          "Attend regional events, technical workshops and online meetings",
+          "Company profile on the website",
+        ],
+      },
+      {
+        heading: "British Association of Landscape Industries and ROLO Training Provider",
+        body: "Individual trainers, commercial training organisations, FE and HE colleges and universities, delivering land-based academic and skills training, needing to keep abreast of industry news and developments. Training Provider Membership keeps them in touch with the industry and with the potential employers of the students they are training and ROLO (Register of Land-based Operations) membership accredits the organisation for the delivery of the ROLO course. Your business must have been trading for at least two years. make an enquiry",
+        bullets: [
+          "Submit the application form and pay the application fee",
+          "Internal vetting takes place. The Association will check all documents submitted and references will be contacted",
+          "An invoice for membership fees will be issued",
+          "Once paid, the Association will activate membership, giving member access to a suite of benefits",
+          "Free student member benefits",
+          "ROLO accreditation and exclusive use of the ROLO logo",
+          "Entry into Who’s Who Landscape Directory",
+          "Company profile on the website",
+        ],
+      },
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "BALI Membership Benefits 2025-26 1 Apr 2025 191kb PDF",
+          "BALI Membership Fees 2026-27 1 Apr 2025 143kb PDF",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/membership/enquiry": {
+    eyebrow: "Membership",
+    title: "Make an enquiry",
+    theme: "blue",
+    intro: "Information on make an enquiry from the British Association of Landscape Industries.",
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/membership/training-provider-declaration": {
+    eyebrow: "Membership",
+    title: "Training Provider declaration",
+    theme: "blue",
+    intro: "Information on Training Provider declaration from the British Association of Landscape Industries.",
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/membership/become-a-member": {
+    eyebrow: "Membership",
+    title: "Become a member",
+    theme: "blue",
+    intro: "Promotion of Your Business and Accreditation: Boost client confidence with the BALI accreditation logo, showcasing quality and professionalism. Gain visibility through high-traffic profiles, the ‘Find a Professional’ tool, and promotional platforms like Landscape News and the National Landscape Awards.",
+    sections: [
+      {
+        heading: "\"4 P's\" of Membership",
+        body: "Practical Advice and Industry Updates: Access expert guidance on contracts, plant health, and compliance via BALI Technical Managers. Stay ahead with webinars, regional networking events, and exclusive industry updates. Political Representation and Community: Influence policy and legislation through BALI’s advocacy efforts. Join a thriving community of 2,000+ professionals, attend events, and voice your concerns at AGMs. Professional Services and Discounts: Access discounts on recruitment and insurance, HR/Legal helplines, free templates, and digital marketing audits.",
+      },
+      {
+        heading: "Join us",
+        body: "The British Association of Landscape Industries offers a range of membership categories, tailored to suit your business. Becoming a member couldn’t be easier, requiring a range of business documents and references, plus a vetting visit to ensure the quality of work meets the standard expected of an accredited member. For further information on the process and a full list of benefits, please download the relevant leaflet in the documents section.",
+      },
+      {
+        heading: "Start your application today!",
+        body: "Please complete the form below and our membership team will be in touch.",
+      },
+      {
+        heading: "documents",
+        body: "",
+        bullets: [
+          "Join us - Suppliers 12 Jan 2025 2781kb PDF",
+          "Join us - Designers 12 Jan 2025 3128kb PDF",
+          "Join us - Contractors 12 Jan 2025 2813kb PDF",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/membership/quality/management": {
+    eyebrow: "Quality Standard",
+    title: "Management responsibility",
+    theme: "blue",
+    intro: "Senior management shall demonstrate a clear commitment to quality performance by",
+    sections: [
+      {
+        heading: "1.01 Management Commitment",
+        body: "",
+        bullets: [
+          "Communicating to all elements of the organisation and clients the importance of identifying and meeting customer, legislative and regulatory requirements",
+          "Monitoring performance against identified requirements",
+          "Rectifying deviations from these requirements in a prompt and professional manner",
+        ],
+      },
+      {
+        heading: "1.02 Customer Focus",
+        body: "Senior management shall ensure that customer requirements are determined and met with the aim of enhancing customer satisfaction. The organisation should determine and implement effective arrangements for communicating with customers in relation to:",
+        bullets: [
+          "customer feedback, including customer complaints",
+          "Product/service information",
+          "Enquiries, contracts or order handling, including amendments, valuations",
+        ],
+      },
+      {
+        heading: "1.03 Responsibility, Authority and Communication",
+        body: "Senior management shall ensure that responsibilities and authorities are clearly defined and communicated throughout the organisation and to the Client.",
+      },
+      {
+        heading: "1.04 Planning",
+        body: "Senior management shall ensure that there is a clearly defined plan for the business and that this plan is communicated throughout the organisation and reviewed at appropriate intervals.",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/membership/quality/management/commitment": {
+    eyebrow: "Quality Standard",
+    title: "1.01 - management commitment",
+    theme: "blue",
+    intro: "Senior management shall demonstrate a clear commitment to quality performance by",
+    sections: [
+      {
+        heading: "The Standard",
+        body: "",
+        bullets: [
+          "Communicating to all elements of the organisation and clients the importance of identifying and meeting customer, legislative and regulatory requirements",
+          "Monitoring performance against identified requirements",
+          "Rectifying deviations from these requirements in a prompt and professional manner",
+        ],
+      },
+      {
+        heading: "Guidance Notes",
+        body: "Here we are looking for evidence that supports the company’s commitment to delivering quality Have they clearly defined what quality means to them? How do they communicate the importance of quality to their team Do they formalise agreements with customers, suppliers and sub-contractors in order for them to support their aims and expectations Do they employ fair and reasonable Terms & Conditions The point is, how do top management make it clear to staff and maybe customers too that quality matters?",
+      },
+      {
+        heading: "Possible Sources of Evidence",
+        body: "In small organisations it may be sufficient to demonstrate awareness of the British Association of Landscape Industries' “Code of Conduct” and the very fact that they have applied for “Registered Membership” and have therefore agreed to adopt the Code demonstrates adequate commitment. In larger companies it may be considered that to satisfy this element a written policy should be in place and available to all staff by way of a “Handbook”, a formalised induction process and/or specific training records.",
+      },
+      {
+        heading: "Templates",
+        body: "",
+        bullets: [
+          "British Association of Landscape Industries' Code of Conduct",
+          "British Association of Landscape Industries' Domestic Contract",
+          "Induction Checklist",
+          "Quality Policy",
+        ],
+      },
+      {
+        heading: "Links",
+        body: "",
+        bullets: [
+          "Quest Employee Handbook",
+          "JCLI Contract",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/membership/quality/management/customer-focus": {
+    eyebrow: "Quality Standard",
+    title: "1.02 - customer focus",
+    theme: "blue",
+    intro: "Senior management shall ensure that customer requirements are determined and met with the aim of enhancing customer satisfaction. The organisation should determine and implement effective arrangements for communicating with customers in relation to:",
+    sections: [
+      {
+        heading: "The Standard",
+        body: "",
+        bullets: [
+          "Customer feedback, including customer complaints",
+          "Product/service information.",
+          "Enquiries, contracts or order handling, including amendments, valuations.",
+        ],
+      },
+      {
+        heading: "Guidance Notes",
+        body: "In this section we are looking to see that the level of and detail in the communications with the client is sufficient and appropriate for the type and style of the work being carried out, before during and after the works. Can the client make an informed decision? Is there a process to agree variations? How are complaints handled? What is the approach to customer service? Do they seek, monitor and act upon customer feedback effectively?",
+      },
+      {
+        heading: "Possible Sources of Evidence",
+        body: "In smaller organisations or for smaller jobs/contracts this may be as simple as diary notes transferred into a clearly worded quotation, detailing the requirements. As organisations and/or contracts become larger and more diverse more structured methods would be expected, these may include Client Briefings, plans, Specifications, Bills of Quantity, Priced Schedules, VO’s, Contract Documents and client surveys.",
+      },
+      {
+        heading: "Templates",
+        body: "",
+        bullets: [
+          "British Association of Landscape Industries' Domestic Contract",
+          "Annual schedule",
+          "Annual schedule costed",
+          "Enquiry Form",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/membership/quality/management/responsibility-authority": {
+    eyebrow: "Quality Standard",
+    title: "1.03 - responsibility, authority and communication",
+    theme: "blue",
+    intro: "Senior management shall ensure that responsibilities and authorities are clearly defined and communicated throughout the organisation and to the Client.",
+    sections: [
+      {
+        heading: "Guidance Notes",
+        body: "It’s important that people at all levels in the organisation have a clear picture of the company, where they fit in and what they are there to do. As with all the evidence requirements, it needs to be appropriate to the size of the organisation, as a smaller organisation is not likely to have an org. chart or a company handbook but an employee may be able to describe what the future holds or where they see the business this time next year, does this validate the response to similar questions asked of the employer?",
+      },
+      {
+        heading: "Possible Sources of Evidence",
+        body: "In most cases these would be documented in some way, e.g. Job Descriptions, company or corporate structures, Quality Policies or procedures manuals.",
+      },
+      {
+        heading: "Templates",
+        body: "",
+        bullets: [
+          "Job Description – Supervisor",
+          "Job Description – Operative",
+          "Quality Policy",
+          "Organisation Chart",
+        ],
+      },
+      {
+        heading: "Links",
+        body: "",
+        bullets: [
+          "Quest Staff Handbook",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/membership/quality/management/planning": {
+    eyebrow: "Quality Standard",
+    title: "1.04 - planning",
+    theme: "blue",
+    intro: "In the smallest organisations this may be verbally communicated and verified through staff interview, but as businesses get larger expectation will rise and a basic documented plan is likely to be required.",
+    sections: [
+      {
+        heading: "The Standard",
+        body: "",
+        bullets: [
+          "Senior management shall ensure that there is a clearly defined plan for the business and that this plan is communicated throughout the organisation and reviewed at appropriate intervals.",
+        ],
+      },
+      {
+        heading: "Guidance Notes",
+        body: "",
+        bullets: [
+          "It’s important for staff to understand where the company is trying to get to, in order for them to contribute effectively rather than swim alone in the opposite direction.",
+          "In larger organisations we are looking to see that plans are set and effectively communicated, the bigger the company the more robust the plans and the methods of communication are expected to be.",
+          "Questioning may be used to validate the effectiveness of the communications.",
+        ],
+      },
+      {
+        heading: "Possible Sources of Evidence",
+        body: "Evidence of the communication and review throughout a larger company may include training records, minutes of meetings, handbooks, posters etc.",
+      },
+      {
+        heading: "Templates",
+        body: "",
+        bullets: [
+          "Job Description – Supervisor",
+          "Job Description – Operative",
+          "Training record (Example) (Blank)",
+          "Management Meeting Agenda",
+          "Strategic Plan (Example) (Blank)",
+        ],
+      },
+      {
+        heading: "Links",
+        body: "",
+        bullets: [
+          "Quest Staff Handbook",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/membership/quality/delivery": {
+    eyebrow: "Quality Standard",
+    title: "Product and service delivery",
+    theme: "blue",
+    intro: "The business shall identify the processes required to provide product or service delivery consistent with the customer, legislative and regulatory requirements. In planning product and/or service delivery, the organisation shall determine",
+    sections: [
+      {
+        heading: "3.01 - Planning",
+        body: "",
+        bullets: [
+          "The requirements of the project, product or service.",
+          "The processes, documents and resources specific to the project, product or service.",
+          "The success criteria and the appropriate records to allow validation, monitoring, inspection and testing specific to the project, product or service specification/requirements.",
+        ],
+      },
+      {
+        heading: "3.02 - Customer Related Processes",
+        body: "The organisation shall determine",
+        bullets: [
+          "Requirements specified by the customer, including arrangements for delivery and post-delivery activities.",
+          "Any other project requirements not stated by the customer but necessary for the specified or intended use/purpose, where known.",
+          "Statutory and regulatory requirements applicable to the product",
+          "Any additional requirements considered necessary by the organisation",
+        ],
+      },
+      {
+        heading: "3.03 - Design Control",
+        body: "The organisation shall plan and implement suitable arrangements to ensure that the design process clearly identifies Minimum considerations throughout the design process should include Suitable controls should also be in place to ensure revisions and alterations to design are recorded and that any changes are evaluated against the above criteria",
+        bullets: [
+          "Design stages",
+          "Responsibilities and authorities",
+          "Approval process",
+          "Review process",
+          "Form and function",
+          "Statutory and regulatory requirements",
+        ],
+      },
+      {
+        heading: "3.04 – Purchasing",
+        body: "The organisation shall ensure that a purchased product or service conforms to the specified requirements. The type and extent of control applied to the supplier/sub-contractor and the resulting product/service shall be dependent upon the effect of the product/service on the final product/service itself. Purchasing information shall describe the product or service to be purchased, including, where appropriate",
+        bullets: [
+          "Requirements for approving products, procedures and equipment, and",
+          "Requirement for qualifications and experience of personnel to be engaged on the works.",
+        ],
+      },
+      {
+        heading: "3.05 – Control of Product and Service Provision",
+        body: "The organisation shall plan and carry out product and service provision under controlled conditions. This will be evidenced by",
+        bullets: [
+          "The availability of the information that describes the characteristics of the product or service",
+          "The availability of work instructions, as necessary",
+          "The use of suitable equipment",
+          "The availability and use of monitoring and measuring equipment",
+          "The implementation of monitoring and measuring",
+        ],
+      },
+      {
+        heading: "3.06 – Customer Property and Preservation of Works",
+        body: "",
+        bullets: [
+          "The organisation shall exercise care with customer property while it is under the organisation’s control or being used by the organisation. The organisation shall identify, verify, protect and safeguard customer property provided for use or incorporation into the product.",
+          "The organisation shall preserve the product during the course of works and delivery to the intended destination in order to ensure that it still conforms to the specified requirement. As applicable preservation shall include but not be restricted to identification, handling, packaging, storage and protection. Preservation shall also apply to constituent parts of a product.",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/membership/quality/delivery/planning": {
+    eyebrow: "Quality Standard",
+    title: "3.01 - planning",
+    theme: "blue",
+    intro: "The business shall identify the processes required to provide product or service delivery consistent with the customer, legislative and regulatory requirements. In planning product and/or service delivery, the organisation shall determine",
+    sections: [
+      {
+        heading: "The Standard",
+        body: "",
+        bullets: [
+          "The requirements of the project, product or service.",
+          "The processes, documents and resources specific to the project, product or service.",
+          "The success criteria and the appropriate records to allow validation, monitoring, inspection and testing specific to the project, product or service specification/requirements.",
+        ],
+      },
+      {
+        heading: "Guidance Notes",
+        body: "What we are looking for is how well the company considers the requirements of each enquiry/job.",
+        bullets: [
+          "Does the business have the skills, man power and money?",
+          "Do they ask for deposits?",
+          "Do they try and use existing material stock where appropriate to do so?",
+          "Evidence of the planning should also be evident on site, is the job well resourced and running to schedule or are the team held up waiting on materials or sub-contractors?",
+        ],
+      },
+      {
+        heading: "Possible Sources of Evidence",
+        body: "For small and simple projects this may be as simple as allocating time in a diary or work schedule and as operations become more complex it may require Gantt charts, procurement records, inspection reports, valuations and payment schedules, samples and detailed validation procedures.",
+      },
+      {
+        heading: "Templates",
+        body: "",
+        bullets: [
+          "Asset Register",
+          "Maintenance Record",
+          "COSHH Assessment",
+        ],
+      },
+      {
+        heading: "Links",
+        body: "",
+        bullets: [
+          "HSE PUWER Registration",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/membership/quality/delivery/customer-processes": {
+    eyebrow: "Quality Standard",
+    title: "3.02 - customer related processes",
+    theme: "blue",
+    intro: "This is about ensuring the customer receives what they expect/asked for, whilst accepting that what has been asked for may not be fully specified.",
+    sections: [
+      {
+        heading: "The Standard",
+        body: "The organisation shall determine",
+        bullets: [
+          "Requirements specified by the customer, including arrangements for delivery and post-delivery activities.",
+          "Any other project requirements not stated by the customer but necessary for the specified or intended use/purpose, where known.",
+          "statutory and regulatory requirements applicable to the product, and",
+          "Any additional requirements considered necessary by the organisation.",
+        ],
+      },
+      {
+        heading: "Guidance Notes",
+        body: "For example, the client wants a path laid from A to B, but is unlikely to know what sub-base would be suitable or may not have given much thought as to the width it will need to be. The contractor will need to fill in the gaps and detail this in the specification or quotation. This happens a lot and does pose the question as to whether it constitutes a design and if so, is it covered via a PI policy. We also need to see how the company applies the relevant legislation to the job i.e. nesting birds check list/training, bat awareness, CDM, Risk Assessment, COSHH and so on.",
+      },
+      {
+        heading: "Possible Sources of Evidence",
+        body: "Evidence may include a client brief, agreed design or specification, other client correspondence, research notes, supplier stipulations or recommendations, reference to British Standards or other relevant regulatory or statutory guidelines.",
+      },
+      {
+        heading: "Templates",
+        body: "",
+        bullets: [
+          "COSHH Assessment",
+          "Pre Tender Checklist",
+          "Construction Phase Safety Plan",
+          "Site Induction",
+          "Risk Assessment",
+          "Legal Register",
+        ],
+      },
+      {
+        heading: "Links",
+        body: "",
+        bullets: [
+          "HSE CDM Registration",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/membership/quality/delivery/design-control": {
+    eyebrow: "Quality Standard",
+    title: "3.03 - design control",
+    theme: "blue",
+    intro: "The organisation shall plan and implement suitable arrangements to ensure that the design process clearly identifies",
+    sections: [
+      {
+        heading: "The Standard",
+        body: "Minimum considerations throughout the design process should include Suitable controls should also be in place to ensure revisions and alterations to design are recorded and that any changes are evaluated against the above criteria",
+        bullets: [
+          "Design stages",
+          "Responsibilities and authorities",
+          "Approval process",
+          "Review process",
+          "Form and function",
+          "Statutory and regulatory requirements",
+        ],
+      },
+      {
+        heading: "Guidance Notes",
+        body: "In this section we’re concerned that whoever undertakes the design is competent, that there is an awareness of the various legal requirements such as DDA, CDM and the like. PI insurance is also likely to be required. In addition, what is the process for getting client approval and for making sure the approved design is the one that gets implemented? Its largely about document control. If the company does not carry out design this is not assessed. Many companies outsource the design process, in which case how is the process managed, are subcontractors “vetted” and their insurances, skills and knowledge recorded?",
+      },
+      {
+        heading: "Possible Sources of Evidence",
+        body: "Much of the evidence required for this section will be covered in standard terms of business or contracts implemented by the organisation. In addition documents such as client questionnaires will demonstrate adherence to client brief (form and function) and clear knowledge of statutory requirements may be demonstrated by knowledge and use of regulation websites.",
+      },
+      {
+        heading: "Templates",
+        body: "",
+        bullets: [
+          "Pre Tender Checklist",
+          "Design Risk Assessment",
+          "Design Assessment List",
+          "Legal Register",
+        ],
+      },
+      {
+        heading: "Links",
+        body: "",
+        bullets: [
+          "HSE CDM Registration",
+          "Legislation",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/membership/quality/delivery/purchasing": {
+    eyebrow: "Quality Standard",
+    title: "3.04 - purchasing",
+    theme: "blue",
+    intro: "The organisation shall ensure that a purchased product or service conforms to the specified requirements. The type and extent of control applied to the supplier/sub-contractor and the resulting product/service shall be dependent upon the effect of the product/service on the final product/service itself. Purchasing information shall describe the product or service to be purchased, including, where appropriate",
+    sections: [
+      {
+        heading: "The Standard",
+        body: "",
+        bullets: [
+          "Requirements for approving products, procedures and equipment, and",
+          "Requirement for qualifications and experience of personnel to be engaged on the works.",
+        ],
+      },
+      {
+        heading: "Guidance Notes",
+        body: "The critical question here is “Do the company get what they ordered”? If the person ordering the goods (maybe by phone or online from the office) is not the person that will receive them (probably a Supervisor on site), how does the Supervisor know what’s been ordered? Happily accepting and signing for the wrong goods could have huge consequences on the quality or the service ie. wrong grade of turf, wrong colour paving? Control of Sub-contractors is also key, how are they assessed for competence, are records kept of insurances and certification, do they receive clear instructions/orders?",
+      },
+      {
+        heading: "Possible Sources of Evidence",
+        body: "Evidence for purchasing of goods may vary from informal emails, simple purchase orders to full design drawings, detailed specification and/or contracts. When engaging sub-contractors to provide a critical element of the product realisation process then clear instructions, specifications and /or contracts may be considered a requirement to evidence this element as well as evidence that the providers and their people are competent. Appropriate records of all instructions and processes should be retained as evidence.",
+      },
+      {
+        heading: "Templates",
+        body: "",
+        bullets: [
+          "Contract for Services",
+          "Approved Sub-Contractor Questionnaire (5 or more employees)",
+          "Approved Sub-Contractor Questionnaire (under 5 employees)",
+          "Purchase Order Log",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/membership/quality/delivery/control-of-provision": {
+    eyebrow: "Quality Standard",
+    title: "3.05 - control of product and service provision",
+    theme: "blue",
+    intro: "The organisation shall plan and carry out product and service provision under controlled conditions. This will be evidenced by",
+    sections: [
+      {
+        heading: "The Standard",
+        body: "",
+        bullets: [
+          "The availability of the information that describes the characteristics of the product or service.",
+          "The availability of work instructions, as necessary.",
+          "The use of suitable equipment.",
+          "the availability and use of monitoring and measuring equipment, and",
+          "The implementation of monitoring and measuring.",
+        ],
+      },
+      {
+        heading: "Guidance Notes",
+        body: "This is mainly about the “live” site visit, how do the site team know what to do? Do they have a job file, work instructions, drawings, a copy of material orders to cross reference? Do they have the skills, knowledge, equipment and support to do the job and is it working? Are they doing a good job and how do they know, what it’s being measured or judged against, spec., drawings, quotation etc.? Possible Sources of Evidence Evidence may include correspondence with the client representative, quotations, drawings, contracts, job files, plant and equipment maintenance records, invoices, calibration certificates, training records, certificates of competence, site inspection forms etc.",
+      },
+      {
+        heading: "Templates",
+        body: "",
+        bullets: [
+          "Training Record - Example / Blank",
+          "Site Induction",
+          "Contract for services",
+          "Compliance Inspection Report",
+          "Risk Assessment",
+          "COSHH Assessment",
+          "Method Statement",
+        ],
+      },
+      {
+        heading: "Links",
+        body: "",
+        bullets: [
+          "PUWER Registration",
+          "CDM Registration",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/membership/quality/delivery/customer-property": {
+    eyebrow: "Quality Standard",
+    title: "3.06 - customer property and preservation of works",
+    theme: "blue",
+    intro: "This section is about clearly defining how customer property will be protected, temporarily removed and replaced etc. for example, an existing sculpture that is to form the centre piece of the new design, who will move it, where to and who is responsible for damage?",
+    sections: [
+      {
+        heading: "The Standard",
+        body: "",
+        bullets: [
+          "The organisation shall exercise care with customer property while it is under the organisation’s control or being used by the organisation. The organisation shall identify, verify, protect and safeguard customer property provided for use or incorporation into the product.",
+          "The organisation shall preserve the product during the course of works and delivery to the intended destination in order to ensure that it still conforms to the specified requirement. As applicable preservation shall include but not be restricted to identification, handling, packaging, storage and protection. Preservation shall also apply to constituent parts of a product.",
+        ],
+      },
+      {
+        heading: "Guidance Notes",
+        body: "Other things to consider are protecting existing surfaces such as the drive way or access routes across soft ground etc. The solution can often be as simple as a line of text in the quotation but can also be included in contract documents etc.",
+      },
+      {
+        heading: "Possible Sources of Evidence",
+        body: "Suitable correspondence which could take many forms would be appropriate to evidence this element. Evidence for this element may vary considerably depending on the volume and type of any items requiring preservation. Remember products or assets requiring protection could be fixed (e.g. trees or buildings) as well as items you may have in stock or have delivered to your premises and are stored and transported to site later.",
+      },
+      {
+        heading: "Templates",
+        body: "",
+        bullets: [
+          "British Association of Landscape Industries' Domestic Contract",
+          "Contract for Services",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/membership/quality/resources": {
+    eyebrow: "Quality Standard",
+    title: "Resource management",
+    theme: "blue",
+    intro: "The organisation shall ensure that its personnel are competent to deliver the organisations products and services on the basis of appropriate education, training, skills and experience.",
+    sections: [
+      {
+        heading: "2.02 - Infrastructure",
+        body: "The organisation shall determine, provide and maintain an infrastructure to enable conformity of product and service delivery; such infrastructure may include but not be restricted to:",
+        bullets: [
+          "Buildings, office, workspace and associated utilities.",
+          "Process equipment (such as site, yard and office plant and equipment including any appropriate software).",
+          "Supporting services (such as transport, communication and information systems)",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/membership/quality/resources/human": {
+    eyebrow: "Quality Standard",
+    title: "2.01 - human resources, competence, training and awareness",
+    theme: "blue",
+    intro: "The organisation shall ensure that its personnel are competent to deliver the organisations products and services on the basis of appropriate education, training, skills and experience.",
+    sections: [
+      {
+        heading: "The Standard",
+        body: "The organisation shall:",
+        bullets: [
+          "Determine the necessary competence for its personnel performing work that affects, product or service delivery.",
+          "Where applicable, provide training and development for its personnel to achieve the necessary competence.",
+          "Evaluate the effectiveness of the training and development undertaken.",
+          "Maintain appropriate records of education, training skills and experience.",
+        ],
+      },
+      {
+        heading: "Guidance Notes",
+        body: "As the possible evidence suggests there are many ways to demonstrate, deliver and record competence, not to be confused with qualifications. The important thing here is the quality of work and skills being displayed on site, coupled with conversations about what they are doing and how they plan to achieve it etc. It may well be that training records are not held on site but names should cross reference with records once back in the office.",
+      },
+      {
+        heading: "Possible Sources of Evidence",
+        body: "A whole range of documents may demonstrate compliance to this aspect of the standard for example, diary notes, staff appraisals, skills matrices, training records, Personal Development Plans, company training plans, receipts for training courses, certificates etc.",
+      },
+      {
+        heading: "Templates",
+        body: "",
+        bullets: [
+          "Training Register",
+          "Training Record (Example) (Blank)",
+          "Skills Matrix",
+          "Job Description – Supervisor",
+          "Job Description – Operative",
+          "Personal Development Plan (PDP)",
+        ],
+      },
+      {
+        heading: "Links",
+        body: "",
+        bullets: [
+          "HSE PUWER Regulation",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/membership/quality/resources/infrastructure": {
+    eyebrow: "Quality Standard",
+    title: "2.02 - infrastructure",
+    theme: "blue",
+    intro: "The organisation shall determine, provide and maintain an infrastructure to enable conformity of product and service delivery; such infrastructure may include but not be restricted to:",
+    sections: [
+      {
+        heading: "The Standard",
+        body: "",
+        bullets: [
+          "Buildings, office, workspace and associated utilities.",
+          "Process equipment (such as site, yard and office plant and equipment including any appropriate software).",
+          "Supporting services (such as transport, communication and information systems)",
+        ],
+      },
+      {
+        heading: "Guidance Notes",
+        body: "Here we are looking for suitable resources to run the business being assessed, a small business can comfortably operate from the kitchen table or spare room, whilst a larger company may need larger facilities. Todays technology can limit the paper storage requirements as well as enabling staff to work remotely, so space at a single location can now be less important. This section includes aspects such as equipment and vehicles including the maintenance records, COSHH records and hazardous product storage, insurances, website and use of BALI logo etc.",
+      },
+      {
+        heading: "Possible Sources of Evidence",
+        body: "The resources available should be appropriate to the size and nature of the business and the work being undertaken. For example, a small company with just 2-3 people may have all they need in one van and a home office, larger businesses will be able to demonstrate storage and yard facilities, more vehicles and possibly dedicated offices. N.B. This will largely be determined by the effectiveness of the processes employed by the business rather than the totting up of resources that may be considered necessary.",
+      },
+      {
+        heading: "Templates",
+        body: "",
+        bullets: [
+          "Asset Register",
+          "Maintenance Record",
+          "COSHH Assessment",
+        ],
+      },
+      {
+        heading: "Links",
+        body: "",
+        bullets: [
+          "HSE PUWER Regulations",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/directory/whos-who": {
+    eyebrow: "Directory",
+    title: "Who's Who Directory 2025/2026",
+    theme: "slate",
+    intro: "Information on Who's Who Directory 2025/2026 from the British Association of Landscape Industries.",
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/policy": {
+    eyebrow: "Policy",
+    title: "Your hub for landscape industry news & policy",
+    theme: "blue",
+    intro: "Discover the latest policy updates, government announcements, and industry news from the forefront landscaping professionals in the UK",
+    image: { url: "https://bali-policy.org.uk/hubfs/nick-page-tWpv57Ip-3c-unsplash.jpg", alt: "Your hub for landscape industry news & policy" },
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/site-search": {
+    eyebrow: "Search",
+    title: "Search",
+    theme: "slate",
+    intro: "Information on Search from the British Association of Landscape Industries.",
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/about/conference/discount-code": {
+    eyebrow: "Conference",
+    title: "BALI National Conference 2026 discount code",
+    theme: "green",
+    intro: "26 March 2026 · The Royal Society, London · 9:30am – 6:30pm",
+    sections: [
+      {
+        heading: "BALI National Conference 2026",
+        body: "You have been sent a private discount code. Enter it below to be taken directly to the booking page with your exclusive 10% member rate applied.",
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
+  "/news/landscape-news": {
+    eyebrow: "News",
+    title: "Landscape News",
+    theme: "blue",
+    intro: "Landscape News is BALI's official member magazine, filled with great stories about member projects, helpful business advice, and thought-provoking opinion, along with news and events updates from the UK's biggest trade association for the landscape industries.",
+    sections: [
+      {
+        heading: "Spring 2026:",
+        body: "If you've got a story you want to share with our readers, email your ideas to our editor at landscapenews@bali.org.uk",
+        bullets: [
+          "Court is in session - Three decades behind the scenes with the \"King of Chelsea\", Mark Gregory",
+          "Is your brand working hard enough for you? - Expert advice on knowing when your brand needs a refresh and how to do it",
+          "From natural to nourishing - A look at the domestic design trends set to shape 2026",
+          "Smiley, happy people - Why a people first philosophy can solve the industry's ills",
+        ],
+      },
+      {
+        heading: "Winter 2025:",
+        body: "In this issue:",
+        bullets: [
+          "Isn't that Grand? - An exclusive interview with the BALI Awards Grand Award winner 2025, The Outdoor Room",
+          "It's only natural: the rise of natural pools in UK garden landscapes - Ellicar invites us into this eco-friendly world of harmony with the environment",
+          "Shout about it - Our social media guru reveals the top tips and tricks for a successful social media strategy",
+          "Under the surface - Tim O'Hare Associates examine the importance of soil choice in landscaping",
+        ],
+      },
+      {
+        heading: "Autumn 2025:",
+        body: "In this issue:",
+        bullets: [
+          "Inside the mind of a BALI awards judge - Chair of the judging panel, John Melmoe, reveals the secrets to a successful awards entry",
+          "Weathering the storm - In a cautious market, designer Adam Vetere shares how creativity and personalisation can help you to thrive",
+          "Pitch perfect - North Hort's Gareth Jones lifts the lid on finding success with celebrity clients",
+          "First impressions - How to make the most of probationary periods and set your employees up for success",
+        ],
+      },
+      {
+        heading: "Summer 2025:",
+        body: "In this issue:",
+        bullets: [
+          "Unhappy clients: what can you do when a dispute arises? - Discover how BALI's impartial ombudsman can help resolve client disputes",
+          "Going for gold - We relive five glorious days at Chelsea and how BALI members bagged a mammoth medal haul",
+          "From eye to bee - Garden designer Jamie Langlands explores how and why you should embrace our natural landscape in your designs",
+          "A call to arms - How ex-military personnel can offer a wealth of transferable skills to landscaping",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
 };
 
 export function getPageContent(path: string): PageContent | undefined {
