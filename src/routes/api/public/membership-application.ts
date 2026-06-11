@@ -83,7 +83,8 @@ export const Route = createFileRoute("/api/public/membership-application")({
           // Try to send via Lovable Emails queue if available; otherwise log to console.
           let emailSent = false;
           try {
-            const { error: enqErr } = await supabaseAdmin.rpc("enqueue_email", {
+            const rpc = (supabaseAdmin as unknown as { rpc: (fn: string, args: Record<string, unknown>) => Promise<{ error: unknown }> }).rpc;
+            const { error: enqErr } = await rpc("enqueue_email", {
               queue_name: "transactional_emails",
               payload: {
                 to: MEMBERSHIP_EMAIL,
