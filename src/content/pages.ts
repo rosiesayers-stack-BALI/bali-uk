@@ -52,6 +52,23 @@ const C: Record<string, PageContent> = {
     ],
     ctaPrimary: { label: "Find an accredited member", href: "/directory" },
     ctaSecondary: { label: "Become a member", href: "/join" },
+    testimonials: [
+      {
+        quote: "The support you get from BALI members is invaluable. People genuinely care about how you're getting on, and the conversations are honest, real and incredibly reassuring.",
+        name: "Will Innes-Taylor",
+        role: "Hillier",
+      },
+      {
+        quote: "BALI is about high standards and trusted referrals. When I recommend someone, it will be a BALI member, because I know the standards they have been assessed against.",
+        name: "Charles Blumlein",
+        role: "Location Landscapes",
+      },
+      {
+        quote: "BALI brings the industry together. Through networking, collaboration and shared learning, we're all better, and we're all stronger.",
+        name: "Nick Coslett",
+        role: "BALI Awards judge and Chalk Fund Chair",
+      },
+    ],
   },
   "/about/board": {
     eyebrow: "About BALI",
