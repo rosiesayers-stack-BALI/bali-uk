@@ -92,7 +92,15 @@ export default function Navbar({ transparent = false }: NavbarProps) {
           <span className="text-blue-200 text-xs hidden sm:block">
             The UK's leading landscaping trade association
           </span>
-          <div className="flex gap-4 ml-auto">
+          <div className="flex gap-4 ml-auto items-center">
+            <Link to="/contact" className="hover:text-bali-grass transition-colors font-medium uppercase tracking-wide text-xs">
+              Contact
+            </Link>
+            <span className="text-blue-300">|</span>
+            <a href="https://bali-policy.org.uk/news" target="_blank" rel="noopener noreferrer" className="hover:text-bali-grass transition-colors font-medium uppercase tracking-wide text-xs">
+              Policy
+            </a>
+            <span className="text-blue-300">|</span>
             <Link to="/join" className="hover:text-bali-grass transition-colors font-medium uppercase tracking-wide text-xs">
               Join
             </Link>
