@@ -254,7 +254,7 @@ const C: Record<string, PageContent> = {
       },
     ],
     ctaPrimary: { label: "Visit GoLandscape", href: "https://www.golandscape.co.uk/" },
-    ctaSecondary: { label: "Contact the Skills & Careers team", href: "/contact" },
+    ctaSecondary: { label: "Contact the Skills & Careers team", href: "mailto:golandscape@bali.org.uk" },
   },
   "/about/charities": {
     eyebrow: "About BALI",
