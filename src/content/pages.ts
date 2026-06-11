@@ -385,7 +385,7 @@ const C: Record<string, PageContent> = {
         body: "Entries are open now — submit your entry via the BALI Awards platform. Learn more about the Awards at baliawards.co.uk.",
       },
     ],
-    ctaPrimary: { label: "Enter the Awards", href: "https://bnla.awardsplatform.com/" },
+    ctaPrimary: { label: "Enter the Awards", href: "https://www.baliawards.co.uk/" },
     ctaSecondary: { label: "Learn more", href: "http://www.baliawards.co.uk/" },
     embed: {
       url: "https://www.youtube.com/embed/s6_HivofMvg",
