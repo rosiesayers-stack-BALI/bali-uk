@@ -1,7 +1,7 @@
 // AUTO-GENERATED from bali.org.uk — verbatim copy ported into the new site.
 // Central content store for all BALI website pages rendered via the splat route.
 
-export type PageSection = { heading: string; body: string; bullets?: string[] };
+export type PageSection = { heading: string; body: string; bullets?: string[]; image?: PageImage };
 export type PageHighlight = { title: string; body: string };
 export type PageCTA = { label: string; href: string };
 export type PageImage = { url: string; alt: string };
@@ -51,46 +51,72 @@ const C: Record<string, PageContent> = {
       {
         heading: "Adrian Wickham, Chair",
         body: "I believe, as a passionate member of the Board, we can protect and ensure that the future of the industry is good for all the people within it; as well as promote the industry, its disciplines, and the skills of the people within it. Equally, I wish to attract all those who may never have considered a career within the green skills sector.",
+        image: { url: "/__l5e/assets-v1/3d338334-e59a-4b97-b136-9555cbeafed4/small_adrian-wickham-1.png", alt: "Adrian Wickham" },
       },
       {
         heading: "Matt Nokes",
         body: "I am a chartered Landscape Architect with over 20 years of industry experience. I feel I offer a perspective on the Board that compliments the other Directors and focus on encouraging and promoting integrated collaboration to create high-quality landscapes.",
+        image: { url: "/__l5e/assets-v1/b738a3ac-f15f-48f4-bcf0-7fd0ec9c3e5e/small_matt-nokes-1.png", alt: "Matt Nokes" },
       },
       {
         heading: "Matt O'Conner, Immediate Past Chair",
         body: "My vision is one of constant innovation and delivering benchmarked landscape services via a skilled and trained workforce. I will support the current Chair and Vice-Chair and am driven to ensure quality is the golden thread that runs throughout the association and its membership.",
+        image: { url: "/__l5e/assets-v1/111db854-b1f3-4ac4-b530-bc198b666f04/1matt-o-conner-1.png", alt: "Matt O'Conner" },
+      },
+      {
+        heading: "Richard Stone, Treasurer",
+        body: "On the Board, I undertake the role of Honorary Treasurer, responsible for financial reports, financial analysis, and budgeting. I take an active part in all Board activities, with a particular passion to help develop the Association's digital offering, evolving business planning and improving processes.",
+        image: { url: "/__l5e/assets-v1/00529d70-f8b3-49c8-ab5c-ada74f91bd72/richard-stone-1.png", alt: "Richard Stone" },
       },
       {
         heading: "Wayne Grills, Chief Executive",
         body: "I’m committed to raising the Association’s profile at both government and industry levels. I support cross-industry working groups and committees, representing the Association and its members, including APPGHG, Scottish Ministerial Industry Roundtable Group and the OHRG.",
+        image: { url: "/__l5e/assets-v1/44628158-235d-4c6e-a21e-b7cac7d5b91d/1wayne-grills-1.png", alt: "Wayne Grills" },
+      },
+      {
+        heading: "Jake Catling",
+        body: "As South Thames Chair and now a Board Director, I am in a position to continue helping GoLandscape increase industry engagement both through better story-telling on a local and national level. My other focus is the development of the Academy pilot.",
+        image: { url: "/__l5e/assets-v1/e98b6e40-9fc2-47ff-877c-cbe49141b4dc/jake-catling.png", alt: "Jake Catling" },
+      },
+      {
+        heading: "Paul Downer",
+        body: "I am a great believer in “giving back”, carrying out guest lectures to students and acting as a mentor to provide business advice and support less experienced companies. I am also a GoLandscape Ambassador and a Trustee of the BALI Chalk Fund.",
+        image: { url: "/__l5e/assets-v1/f8178405-6d82-42bf-8a08-18d31f1415dd/paul-downer.png", alt: "Paul Downer" },
       },
       {
         heading: "Richard Gill",
         body: "I have been on the Yorkshire & North East committee for 10 years and am currently Vice-Chair, as well as a GoLandscape Ambassador. I’m very honoured to join the Board, and look forward to helping increase membership levels, and support the industry’s leading association.",
+        image: { url: "/__l5e/assets-v1/c0af2ae4-e2c6-4adc-832e-a176037ba590/small_richard-gill-1.png", alt: "Richard Gill" },
       },
       {
         heading: "Ricky Whiteman",
         body: "As Student Director, I promote the industry to people who may be considering a career or studying towards a qualification in the industry, sharing my experience and enthusiasm for how fulfilling and diverse a career in our industry can be.",
+        image: { url: "/__l5e/assets-v1/f1e15ba8-e87c-44d7-95d9-06f16034f546/ricky-whiteman-1.png", alt: "Ricky Whiteman" },
       },
       {
         heading: "Mark Gregory",
         body: "Returning to the BALI Board in 2024, I am a well-known technical expert in the landscape industry. I am also a RHS garden assessor and judge/Ambassador and lectures widely in the UK and overseas on landscaping",
+        image: { url: "/__l5e/assets-v1/cb6850dc-fc70-4a03-b81a-47f4ae0f5f02/mark-gregory-website.gif", alt: "Mark Gregory" },
       },
       {
         heading: "Alistair Bayford",
         body: "I was elected to the BALI Board at this year's AGM. I am a Chartered Member of the Landscape Institute with many years in the industry, and have worked in private, public and non-profit sectors.",
+        image: { url: "/__l5e/assets-v1/46012745-96eb-4c63-82fc-7364b520bab4/alistair-bayford-website.gif", alt: "Alistair Bayford" },
       },
       {
         heading: "Kersten Catella",
         body: "Newly elected to the BALI Board, I have worked in the industry for over 20 years, mentoring many colleagues. I wanted to join the BALI Board because of its commitment to excellence in landscaping and horticulture, an area I am passionate about.",
+        image: { url: "/__l5e/assets-v1/529295d4-7ec2-4ddc-8141-be56a27e955d/kersten-catella-website.gif", alt: "Kersten Catella" },
       },
       {
         heading: "Paul Lynch",
         body: "Chair of the South West regional committee since 2020, I have recently been elected to the BALI Board. I am committed to helping members get the most out of their BALI membership and feel strongly about the contribution mentoring can make to members' success.",
+        image: { url: "/__l5e/assets-v1/8804a077-b582-4976-8c9a-c6020c8daae0/paul-lynch-website.gif", alt: "Paul Lynch" },
       },
       {
         heading: "Dave Twist",
         body: "New to the BALI Board, I am a seasoned industry professional with over 40 years' experience. I support diversity on boards as a member of Women of Boards, and I am also a member of Perennial, the horticulture industry's support charity.",
+        image: { url: "/__l5e/assets-v1/5383bced-dbf4-4fb1-9dc4-333c07bae006/dave-twist-website.gif", alt: "Dave Twist" },
       },
     ],
     ctaPrimary: { label: "Join Our Association", href: "/join" },
