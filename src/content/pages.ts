@@ -2131,7 +2131,7 @@ const C: Record<string, PageContent> = {
     title: "Meet our team",
     theme: "blue",
     intro: "Meet the team behind BALI. Our dedicated professionals are committed to supporting our members, championing the landscaping industry, and delivering excellence in everything we do.",
-    image: { url: "https://www.bali.org.uk/public/images/1wayne-grills-1.png", alt: "Wayne Grills 2022" },
+    
     sections: [
       {
         heading: "Wayne Grills, Chief Executive",
