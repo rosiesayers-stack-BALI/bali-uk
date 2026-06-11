@@ -11,6 +11,7 @@ export type PageEventInfo = {
   date: string;
   tickets: { label: string; href: string };
 };
+export type PageTestimonial = { quote: string; name: string; role: string };
 export type PageContent = {
   eyebrow: string;
   title: string;
@@ -24,6 +25,7 @@ export type PageContent = {
   stats?: { value: string; label: string }[];
   embed?: PageEmbed;
   eventInfo?: PageEventInfo;
+  testimonials?: PageTestimonial[];
 };
 
 const C: Record<string, PageContent> = {
