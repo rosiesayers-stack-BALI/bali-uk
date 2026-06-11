@@ -6,19 +6,6 @@ const nav = [
     label: 'About', href: '/about',
     items: [
       { label: 'What We Do', href: '/about' },
-      { label: 'Board of Directors', href: '/about/board' },
-      { label: 'National Landscape Awards', href: '/about/awards' },
-      { label: 'BALI-NCF', href: '/about/ncf' },
-      { label: 'Landscaping Careers', href: '/about/careers' },
-      { label: 'Advertise With Us', href: '/about/advertise' },
-      { label: 'Supported Charities', href: '/about/charities' },
-      { label: 'National Conference 2026', href: '/about/conference', highlight: true },
-    ],
-  },
-  {
-    label: 'About', href: '/about',
-    items: [
-      { label: 'What We Do', href: '/about' },
       { label: 'What is BALI', href: '/about/what-is-bali' },
       { label: 'Board of Directors', href: '/about/board' },
       { label: 'Meet Our Team', href: '/our-team' },
