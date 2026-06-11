@@ -46,6 +46,7 @@ const C: Record<string, PageContent> = {
     title: "Our Board of Directors",
     theme: "blue",
     intro: "The Board of Directors is the governing body of the Association, responsible for providing strategic leadership and the ultimate direction of the organisation. Although the Board work together for the best interests of the Association and its members, each Director has their own focus and passion within the wider industry.",
+    image: { url: "/__l5e/assets-v1/2e3cf479-71c9-4fa9-8f01-dd36d49c8420/board-of-directors.jpg", alt: "The BALI Board of Directors" },
     sections: [
       {
         heading: "Adrian Wickham",
