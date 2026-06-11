@@ -221,6 +221,11 @@ const C: Record<string, PageContent> = {
       { title: "Trevor Williams", body: "Global Trends & Economic Forces Impacting Landscaping." },
       { title: "Wayne Grills", body: "BALI Chief Executive — Closing remarks and industry outlook." },
     ],
+    eventInfo: {
+      venue: "Venue: TBC",
+      date: "Date: TBC",
+      tickets: { label: "Book tickets (TBC)", href: "/contact" },
+    },
     sections: [
       {
         heading: "About the day",
