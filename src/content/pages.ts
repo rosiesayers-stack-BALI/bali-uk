@@ -369,16 +369,25 @@ const C: Record<string, PageContent> = {
     eyebrow: "About BALI",
     title: "National Landscape Awards",
     theme: "blue",
-    intro: "We are thrilled to announce that this years National Landscape Award entries are now open! Enter now here .",
+    intro: "2026 National Landscape Award entries are now open! We are thrilled to announce that this year's National Landscape Award entries are now open.",
     sections: [
       {
         heading: "Inspiring and celebrating landscaping excellence",
-        body: "The National Landscape Awards provides the industry with a platform in which to showcase and improve their business and celebrate their achievements both within and outside of the industry. There are categories appropriate to all Accredited categories of membership. If you are an Accredited Contractor or Group or Accredited Designer member, there are categories appropriate to all scheme sizes/values and the same criteria apply, whether it is a small domestic garden or a large public landscaped space. Interested in the Supplier Exceptional Service or Employer Excellence categories? These categories have been developed to allow you to showcase your company to the industry through the exceptional service and/or products you provide or your exemplary business practices. Entries are open now! Click here . Learn more about the Awards here .",
+        body: "The National Landscape Awards provides the industry with a platform in which to showcase and improve their business and celebrate their achievements both within and outside of the industry. There are categories appropriate to all Accredited categories of membership.",
+      },
+      {
+        heading: "Categories for every member",
+        body: "If you are an Accredited Contractor or Group or Accredited Designer member, there are categories appropriate to all scheme sizes/values and the same criteria apply, whether it is a small domestic garden or a large public landscaped space. Interested in the Supplier Exceptional Service or Employer Excellence categories? These categories have been developed to allow you to showcase your company to the industry through the exceptional service and/or products you provide or your exemplary business practices.",
+      },
+      {
+        heading: "Enter now",
+        body: "Entries are open now — submit your entry via the BALI Awards platform. Learn more about the Awards at baliawards.co.uk.",
       },
     ],
-    ctaPrimary: { label: "Join Our Association", href: "/join" },
-    ctaSecondary: { label: "Contact the team", href: "/contact" },
+    ctaPrimary: { label: "Enter the Awards", href: "https://bnla.awardsplatform.com/" },
+    ctaSecondary: { label: "Learn more", href: "http://www.baliawards.co.uk/" },
   },
+
   "/about/advertise": {
     eyebrow: "About BALI",
     title: "Advertise with BALI",
