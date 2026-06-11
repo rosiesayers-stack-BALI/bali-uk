@@ -2094,24 +2094,6 @@ const C: Record<string, PageContent> = {
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
-  "/about/what-is-bali": {
-    eyebrow: "About BALI",
-    title: "What we do",
-    theme: "blue",
-    intro: "The British Association of Landscape Industries is the leading Trade Association representing all landscape professionals - from design, build and maintenance through to supply, training and education. Over 900 Accredited members represent some of the best landscaping businesses across the country, from large corporations, to local traders, to individual designers.",
-    sections: [
-      {
-        heading: "Join the British Association of Landscape Industries",
-        body: "Our Association's professional team, based at Landscape House in Warwickshire, deliver exceptional business, technical and promotional support to our members. We have a range of member benefits that can save your business thousands of pounds every year. Find out more about becoming a member.",
-      },
-      {
-        heading: "Find a landscape...",
-        body: "Looking for a high-quality and reliable landscape professional? We have Accredited members in every county, including England, Wales, Scotland and Northern Ireland. Browse our member directory and search by town or postcode to find you nearest. When you choose one of our Accredited members, you can be confident you are choosing a reputable and quality professional. To ensure our high standards are kept, membership is only granted to companies and individuals who meet our Association's stringent Terms & Conditions of Membership, and their continuation of membership depends upon the maintenance of satisfactory standards.",
-      },
-    ],
-    ctaPrimary: { label: "Join Our Association", href: "/join" },
-    ctaSecondary: { label: "Contact the team", href: "/contact" },
-  },
   "/about/rhs-chelsea": {
     eyebrow: "About BALI",
     title: "RHS Chelsea Flower Show 2025",
