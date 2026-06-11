@@ -19,6 +19,7 @@ import { Route as NewsIndexRouteImport } from './routes/news.index'
 import { Route as EventsIndexRouteImport } from './routes/events.index'
 import { Route as NewsSlugRouteImport } from './routes/news.$slug'
 import { Route as EventsSlugRouteImport } from './routes/events.$slug'
+import { Route as AboutAwardsRouteImport } from './routes/about.awards'
 import { Route as JoinCategoryApplyRouteImport } from './routes/join.$category.apply'
 import { Route as ApiPublicMembershipApplicationRouteImport } from './routes/api/public/membership-application'
 
@@ -72,6 +73,11 @@ const EventsSlugRoute = EventsSlugRouteImport.update({
   path: '/events/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutAwardsRoute = AboutAwardsRouteImport.update({
+  id: '/about/awards',
+  path: '/about/awards',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const JoinCategoryApplyRoute = JoinCategoryApplyRouteImport.update({
   id: '/$category/apply',
   path: '/$category/apply',
@@ -91,6 +97,7 @@ export interface FileRoutesByFullPath {
   '/join': typeof JoinRouteWithChildren
   '/login': typeof LoginRoute
   '/portal': typeof PortalRoute
+  '/about/awards': typeof AboutAwardsRoute
   '/events/$slug': typeof EventsSlugRoute
   '/news/$slug': typeof NewsSlugRoute
   '/events/': typeof EventsIndexRoute
@@ -105,6 +112,7 @@ export interface FileRoutesByTo {
   '/join': typeof JoinRouteWithChildren
   '/login': typeof LoginRoute
   '/portal': typeof PortalRoute
+  '/about/awards': typeof AboutAwardsRoute
   '/events/$slug': typeof EventsSlugRoute
   '/news/$slug': typeof NewsSlugRoute
   '/events': typeof EventsIndexRoute
@@ -120,6 +128,7 @@ export interface FileRoutesById {
   '/join': typeof JoinRouteWithChildren
   '/login': typeof LoginRoute
   '/portal': typeof PortalRoute
+  '/about/awards': typeof AboutAwardsRoute
   '/events/$slug': typeof EventsSlugRoute
   '/news/$slug': typeof NewsSlugRoute
   '/events/': typeof EventsIndexRoute
@@ -136,6 +145,7 @@ export interface FileRouteTypes {
     | '/join'
     | '/login'
     | '/portal'
+    | '/about/awards'
     | '/events/$slug'
     | '/news/$slug'
     | '/events/'
@@ -150,6 +160,7 @@ export interface FileRouteTypes {
     | '/join'
     | '/login'
     | '/portal'
+    | '/about/awards'
     | '/events/$slug'
     | '/news/$slug'
     | '/events'
@@ -164,6 +175,7 @@ export interface FileRouteTypes {
     | '/join'
     | '/login'
     | '/portal'
+    | '/about/awards'
     | '/events/$slug'
     | '/news/$slug'
     | '/events/'
@@ -179,6 +191,7 @@ export interface RootRouteChildren {
   JoinRoute: typeof JoinRouteWithChildren
   LoginRoute: typeof LoginRoute
   PortalRoute: typeof PortalRoute
+  AboutAwardsRoute: typeof AboutAwardsRoute
   EventsSlugRoute: typeof EventsSlugRoute
   NewsSlugRoute: typeof NewsSlugRoute
   EventsIndexRoute: typeof EventsIndexRoute
@@ -258,6 +271,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EventsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about/awards': {
+      id: '/about/awards'
+      path: '/about/awards'
+      fullPath: '/about/awards'
+      preLoaderRoute: typeof AboutAwardsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/join/$category/apply': {
       id: '/join/$category/apply'
       path: '/$category/apply'
@@ -292,6 +312,7 @@ const rootRouteChildren: RootRouteChildren = {
   JoinRoute: JoinRouteWithChildren,
   LoginRoute: LoginRoute,
   PortalRoute: PortalRoute,
+  AboutAwardsRoute: AboutAwardsRoute,
   EventsSlugRoute: EventsSlugRoute,
   NewsSlugRoute: NewsSlugRoute,
   EventsIndexRoute: EventsIndexRoute,
@@ -301,3 +322,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
