@@ -176,8 +176,6 @@ const C: Record<string, PageContent> = {
         image: { url: "/__l5e/assets-v1/5383bced-dbf4-4fb1-9dc4-333c07bae006/dave-twist-website.gif", alt: "Dave Twist" },
       },
     ],
-    ctaPrimary: { label: "Contact the Board", href: "/contact" },
-    ctaSecondary: { label: "About BALI", href: "/about" },
   },
   "/about/careers": {
     eyebrow: "About BALI",
