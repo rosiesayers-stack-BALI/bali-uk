@@ -75,14 +75,35 @@ const categories: Array<{
     badge: "Outside UK",
     title: "International",
     description:
-      "For contractors carrying out landscaping work outside the UK and the Channel Islands.",
+      "For contractors and suppliers based outside the UK. Pick contractor or supplier on the form.",
   },
   {
-    slug: "associate",
+    slug: "associate-contractor",
     badge: "Early career",
-    title: "Associate",
+    title: "Associate Contractor",
     description:
-      "For businesses trading less than two years — a supported pathway to full accreditation.",
+      "For contractors trading less than two years — a supported pathway to full accreditation.",
+  },
+  {
+    slug: "associate-designer",
+    badge: "Early career",
+    title: "Associate Designer",
+    description:
+      "For designers or landscape architects trading less than two years.",
+  },
+  {
+    slug: "associate-supplier",
+    badge: "Early career",
+    title: "Associate Supplier",
+    description:
+      "For suppliers trading less than two years who offer products or services to the trade.",
+  },
+  {
+    slug: "associate-individual",
+    badge: "Individual",
+    title: "Associate Individual",
+    description:
+      "For individuals retired from the industry or exploring a move into landscaping.",
   },
   {
     slug: "training-provider",
