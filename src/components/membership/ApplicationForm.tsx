@@ -524,6 +524,13 @@ export default function ApplicationForm({ config: rawConfig }: Props) {
         <div className="bg-red-50 border border-red-200 rounded-xl p-4 text-sm text-red-700">{serverError}</div>
       )}
 
+      {showErrorSummary && Object.keys(errors).length > 0 && (
+        <div className="bg-red-50 border border-red-200 rounded-xl p-4 text-sm text-red-700">
+          <p className="font-bold mb-1">Please fix the highlighted fields before submitting.</p>
+          <p className="text-red-600/80">Some required information is missing or invalid — scroll up to see the fields marked in red.</p>
+        </div>
+      )}
+
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4">
         <p className="text-xs text-slate-500">
           By submitting, you confirm the information provided is accurate to the best of your knowledge.
