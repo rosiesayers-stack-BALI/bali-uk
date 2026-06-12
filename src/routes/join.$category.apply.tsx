@@ -66,7 +66,7 @@ function ApplyPage() {
             </p>
           </div>
         </section>
-        <ApplicationForm config={config} />
+        {config.isIndividual ? <IndividualApplicationForm config={config} /> : <ApplicationForm config={config} />}
       </main>
       <Footer />
       <CookieBanner />
