@@ -206,11 +206,12 @@ function Page() {
               <button
                 onClick={() => setModalIssue(latest)}
                 className="md:hidden group relative w-full rounded-2xl overflow-hidden border border-slate-200 shadow-lg block"
-                style={{ aspectRatio: "3 / 4", background: `#${latest.bg}` }}
+                style={{ aspectRatio: "3 / 4" }}
               >
-                <img src={coverUrl(latest.issuuId)} alt={`${latest.season} cover`} className="w-full h-full object-cover" loading="lazy" />
+                <CoverTile issue={latest} />
                 <span className="absolute inset-0 flex items-center justify-center bg-black/30 text-white font-bold text-lg">▶ Read issue</span>
               </button>
+
 
               {/* Highlights for latest */}
               <div className="grid sm:grid-cols-2 gap-3 mt-6">
