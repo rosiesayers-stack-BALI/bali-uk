@@ -57,13 +57,7 @@ import { Route as DirectorySupplierRouteImport } from './routes/directory.suppli
 import { Route as DirectorySearchRouteImport } from './routes/directory.search'
 import { Route as DirectoryDesignerRouteImport } from './routes/directory.designer'
 import { Route as DirectoryContractorRouteImport } from './routes/directory.contractor'
-import { Route as AboutNcfRouteImport } from './routes/about.ncf'
-import { Route as AboutConferenceRouteImport } from './routes/about.conference'
-import { Route as AboutCharitiesRouteImport } from './routes/about.charities'
-import { Route as AboutCareersRouteImport } from './routes/about.careers'
-import { Route as AboutBoardRouteImport } from './routes/about.board'
 import { Route as AboutAwardsRouteImport } from './routes/about.awards'
-import { Route as AboutAdvertiseRouteImport } from './routes/about.advertise'
 import { Route as JoinCategoryApplyRouteImport } from './routes/join.$category.apply'
 import { Route as ApiPublicMembershipApplicationRouteImport } from './routes/api/public/membership-application'
 import { Route as ApiPublicConferenceInterestRouteImport } from './routes/api/public/conference-interest'
@@ -309,39 +303,9 @@ const DirectoryContractorRoute = DirectoryContractorRouteImport.update({
   path: '/directory/contractor',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AboutNcfRoute = AboutNcfRouteImport.update({
-  id: '/about/ncf',
-  path: '/about/ncf',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AboutConferenceRoute = AboutConferenceRouteImport.update({
-  id: '/about/conference',
-  path: '/about/conference',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AboutCharitiesRoute = AboutCharitiesRouteImport.update({
-  id: '/about/charities',
-  path: '/about/charities',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AboutCareersRoute = AboutCareersRouteImport.update({
-  id: '/about/careers',
-  path: '/about/careers',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AboutBoardRoute = AboutBoardRouteImport.update({
-  id: '/about/board',
-  path: '/about/board',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const AboutAwardsRoute = AboutAwardsRouteImport.update({
   id: '/about/awards',
   path: '/about/awards',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AboutAdvertiseRoute = AboutAdvertiseRouteImport.update({
-  id: '/about/advertise',
-  path: '/about/advertise',
   getParentRoute: () => rootRouteImport,
 } as any)
 const JoinCategoryApplyRoute = JoinCategoryApplyRouteImport.update({
@@ -370,13 +334,7 @@ export interface FileRoutesByFullPath {
   '/login': typeof LoginRoute
   '/our-team': typeof OurTeamRoute
   '/portal': typeof PortalRoute
-  '/about/advertise': typeof AboutAdvertiseRoute
   '/about/awards': typeof AboutAwardsRoute
-  '/about/board': typeof AboutBoardRoute
-  '/about/careers': typeof AboutCareersRoute
-  '/about/charities': typeof AboutCharitiesRoute
-  '/about/conference': typeof AboutConferenceRoute
-  '/about/ncf': typeof AboutNcfRoute
   '/directory/contractor': typeof DirectoryContractorRoute
   '/directory/designer': typeof DirectoryDesignerRoute
   '/directory/search': typeof DirectorySearchRoute
@@ -430,13 +388,7 @@ export interface FileRoutesByTo {
   '/login': typeof LoginRoute
   '/our-team': typeof OurTeamRoute
   '/portal': typeof PortalRoute
-  '/about/advertise': typeof AboutAdvertiseRoute
   '/about/awards': typeof AboutAwardsRoute
-  '/about/board': typeof AboutBoardRoute
-  '/about/careers': typeof AboutCareersRoute
-  '/about/charities': typeof AboutCharitiesRoute
-  '/about/conference': typeof AboutConferenceRoute
-  '/about/ncf': typeof AboutNcfRoute
   '/directory/contractor': typeof DirectoryContractorRoute
   '/directory/designer': typeof DirectoryDesignerRoute
   '/directory/search': typeof DirectorySearchRoute
@@ -491,13 +443,7 @@ export interface FileRoutesById {
   '/login': typeof LoginRoute
   '/our-team': typeof OurTeamRoute
   '/portal': typeof PortalRoute
-  '/about/advertise': typeof AboutAdvertiseRoute
   '/about/awards': typeof AboutAwardsRoute
-  '/about/board': typeof AboutBoardRoute
-  '/about/careers': typeof AboutCareersRoute
-  '/about/charities': typeof AboutCharitiesRoute
-  '/about/conference': typeof AboutConferenceRoute
-  '/about/ncf': typeof AboutNcfRoute
   '/directory/contractor': typeof DirectoryContractorRoute
   '/directory/designer': typeof DirectoryDesignerRoute
   '/directory/search': typeof DirectorySearchRoute
@@ -553,13 +499,7 @@ export interface FileRouteTypes {
     | '/login'
     | '/our-team'
     | '/portal'
-    | '/about/advertise'
     | '/about/awards'
-    | '/about/board'
-    | '/about/careers'
-    | '/about/charities'
-    | '/about/conference'
-    | '/about/ncf'
     | '/directory/contractor'
     | '/directory/designer'
     | '/directory/search'
@@ -613,13 +553,7 @@ export interface FileRouteTypes {
     | '/login'
     | '/our-team'
     | '/portal'
-    | '/about/advertise'
     | '/about/awards'
-    | '/about/board'
-    | '/about/careers'
-    | '/about/charities'
-    | '/about/conference'
-    | '/about/ncf'
     | '/directory/contractor'
     | '/directory/designer'
     | '/directory/search'
@@ -673,13 +607,7 @@ export interface FileRouteTypes {
     | '/login'
     | '/our-team'
     | '/portal'
-    | '/about/advertise'
     | '/about/awards'
-    | '/about/board'
-    | '/about/careers'
-    | '/about/charities'
-    | '/about/conference'
-    | '/about/ncf'
     | '/directory/contractor'
     | '/directory/designer'
     | '/directory/search'
@@ -734,13 +662,7 @@ export interface RootRouteChildren {
   LoginRoute: typeof LoginRoute
   OurTeamRoute: typeof OurTeamRoute
   PortalRoute: typeof PortalRoute
-  AboutAdvertiseRoute: typeof AboutAdvertiseRoute
   AboutAwardsRoute: typeof AboutAwardsRoute
-  AboutBoardRoute: typeof AboutBoardRoute
-  AboutCareersRoute: typeof AboutCareersRoute
-  AboutCharitiesRoute: typeof AboutCharitiesRoute
-  AboutConferenceRoute: typeof AboutConferenceRoute
-  AboutNcfRoute: typeof AboutNcfRoute
   DirectoryContractorRoute: typeof DirectoryContractorRoute
   DirectoryDesignerRoute: typeof DirectoryDesignerRoute
   DirectorySearchRoute: typeof DirectorySearchRoute
@@ -1124,53 +1046,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DirectoryContractorRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/about/ncf': {
-      id: '/about/ncf'
-      path: '/about/ncf'
-      fullPath: '/about/ncf'
-      preLoaderRoute: typeof AboutNcfRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about/conference': {
-      id: '/about/conference'
-      path: '/about/conference'
-      fullPath: '/about/conference'
-      preLoaderRoute: typeof AboutConferenceRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about/charities': {
-      id: '/about/charities'
-      path: '/about/charities'
-      fullPath: '/about/charities'
-      preLoaderRoute: typeof AboutCharitiesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about/careers': {
-      id: '/about/careers'
-      path: '/about/careers'
-      fullPath: '/about/careers'
-      preLoaderRoute: typeof AboutCareersRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about/board': {
-      id: '/about/board'
-      path: '/about/board'
-      fullPath: '/about/board'
-      preLoaderRoute: typeof AboutBoardRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/about/awards': {
       id: '/about/awards'
       path: '/about/awards'
       fullPath: '/about/awards'
       preLoaderRoute: typeof AboutAwardsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about/advertise': {
-      id: '/about/advertise'
-      path: '/about/advertise'
-      fullPath: '/about/advertise'
-      preLoaderRoute: typeof AboutAdvertiseRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/join/$category/apply': {
@@ -1215,13 +1095,7 @@ const rootRouteChildren: RootRouteChildren = {
   LoginRoute: LoginRoute,
   OurTeamRoute: OurTeamRoute,
   PortalRoute: PortalRoute,
-  AboutAdvertiseRoute: AboutAdvertiseRoute,
   AboutAwardsRoute: AboutAwardsRoute,
-  AboutBoardRoute: AboutBoardRoute,
-  AboutCareersRoute: AboutCareersRoute,
-  AboutCharitiesRoute: AboutCharitiesRoute,
-  AboutConferenceRoute: AboutConferenceRoute,
-  AboutNcfRoute: AboutNcfRoute,
   DirectoryContractorRoute: DirectoryContractorRoute,
   DirectoryDesignerRoute: DirectoryDesignerRoute,
   DirectorySearchRoute: DirectorySearchRoute,
