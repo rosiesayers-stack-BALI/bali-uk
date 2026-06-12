@@ -21,7 +21,7 @@ const nav: NavItem[] = [
     label: 'About', href: '/about',
     items: [
       { label: 'What We Do', href: '/about' },
-      { label: 'How We Represent the Industry', href: 'https://bali-policy.org.uk', external: true },
+      { label: 'How We Represent the Industry', href: '/policy' },
       { label: 'Board of Directors', href: '/about/board' },
       { label: 'Meet Our Team', href: '/our-team' },
       { label: 'BALI-NCF', href: '/about/ncf' },
