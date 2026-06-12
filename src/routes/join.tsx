@@ -327,8 +327,11 @@ function JoinPage() {
                   "accredited-supplier": "accredited-supplier",
                   "accredited-group": "accredited-group",
                   "accredited-dso": "accredited-dso",
-                  "international": "international-contractor",
-                  "associate": "associate-contractor",
+                  "international": "accredited-international",
+                  "associate-contractor": "associate-contractor",
+                  "associate-designer": "associate-designer",
+                  "associate-supplier": "associate-supplier",
+                  "associate-individual": "associate-individual",
                 };
                 const applySlug = applySlugMap[c.slug];
                 const hasForm = Boolean(applySlug);
