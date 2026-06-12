@@ -1,8 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CookieBanner from "../components/CookieBanner";
-import Link from "../components/SmartLink";
 
 export const Route = createFileRoute("/join")({
   head: () => ({
@@ -362,9 +361,13 @@ function JoinPage() {
                 );
                 if (hasForm) {
                   return (
-                    <Link key={c.slug} to="/join/$category/apply" params={{ category: applySlug }} className={cardClass}>
+                    <a
+                      key={c.slug}
+                      href={`/join/${applySlug}/apply`}
+                      className={cardClass}
+                    >
                       {body}
-                    </Link>
+                    </a>
                   );
                 }
                 return (
