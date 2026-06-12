@@ -35,42 +35,26 @@ const C: Record<string, PageContent> = {
     eyebrow: "About BALI",
     title: "What we do",
     theme: "blue",
-    intro: "BALI is the UK's leading trade association for the landscape industry. We set the standards, accredit the professionals, champion the sector in Westminster, and connect clients with landscape businesses they can trust — from garden designers and contractors to growers, suppliers and training providers.",
+    intro: "The British Association of Landscape Industries is the leading Trade Association representing all landscape professionals — from design, build and maintenance through to supply, training and education. Over 900 Accredited members represent some of the best landscaping businesses across the country, from large corporations to local traders and individual designers.",
     image: { url: "/__l5e/assets-v1/f84f9fdd-4c58-4342-9115-d5228b3c6d78/large_mountbatten-house-min.jpeg", alt: "An award-winning BALI member landscape project" },
-    stats: [
-      { value: "900+", label: "Accredited members" },
-      { value: "55", label: "Years championing the industry" },
-      { value: "UK-wide", label: "Every county covered" },
-      { value: "£0", label: "To search the directory" },
-    ],
-    highlights: [
-      { title: "Set the standard", body: "Accreditation, Terms & Conditions of Membership, and our Code of Conduct give clients confidence and members a benchmark to work to." },
-      { title: "Champion the industry", body: "We represent members to Government, regulators and the wider construction sector — including APPGHG and the Scottish Ministerial Roundtable." },
-      { title: "Celebrate the best work", body: "The National Landscape Awards recognise outstanding design, build, maintenance and supply across the UK every year." },
-      { title: "Grow the next generation", body: "Through GoLandscape, BALI-NCF and the BALI Chalk Fund we attract, train and support new talent into landscaping careers." },
-      { title: "Support our members", body: "Business, technical, legal and marketing support from Landscape House — plus member benefits that can save thousands every year." },
-      { title: "Bring the industry together", body: "Regional events, training courses, the National Conference, and our presence at RHS Chelsea connect members across the UK." },
+    sections: [
+      {
+        heading: "A Trade Association for all landscape professionals",
+        body: "The British Association of Landscape Industries is the leading Trade Association representing all landscape professionals — from design, build and maintenance through to supply, training and education. Over 900 Accredited members represent some of the best landscaping businesses across the country, from large corporations, to local traders, to individual designers.",
+      },
+      {
+        heading: "Join the British Association of Landscape Industries",
+        body: "Our Association's professional team, based at Landscape House in Warwickshire, deliver exceptional business, technical and promotional support to our members. We have a range of member benefits that can save your business thousands of pounds every year. Find out more about becoming a member.",
+      },
+      {
+        heading: "Find a landscape professional",
+        body: "Looking for a high-quality and reliable landscape professional? We have Accredited members in every county, including England, Wales, Scotland and Northern Ireland. Browse our member directory and search by town or postcode to find your nearest. When you choose one of our Accredited members, you can be confident you are choosing a reputable and quality professional. To ensure our high standards are kept, membership is only granted to companies and individuals who meet our Association's stringent Terms & Conditions of Membership, and their continuation of membership depends upon the maintenance of satisfactory standards.",
+      },
     ],
     ctaPrimary: { label: "Find an accredited member", href: "/directory" },
     ctaSecondary: { label: "Become a member", href: "/join" },
-    testimonials: [
-      {
-        quote: "The support you get from BALI members is invaluable. People genuinely care about how you're getting on, and the conversations are honest, real and incredibly reassuring.",
-        name: "Will Innes-Taylor",
-        role: "Hillier",
-      },
-      {
-        quote: "BALI is about high standards and trusted referrals. When I recommend someone, it will be a BALI member, because I know the standards they have been assessed against.",
-        name: "Charles Blumlein",
-        role: "Location Landscapes",
-      },
-      {
-        quote: "BALI brings the industry together. Through networking, collaboration and shared learning, we're all better, and we're all stronger.",
-        name: "Nick Coslett",
-        role: "BALI Awards judge and Chalk Fund Chair",
-      },
-    ],
   },
+
   "/about/board": {
     eyebrow: "About BALI",
     title: "Our Board of Directors",
