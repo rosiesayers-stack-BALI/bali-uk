@@ -267,12 +267,13 @@ function Page() {
                   <button
                     onClick={() => setModalIssue(iss)}
                     className="relative block w-full overflow-hidden"
-                    style={{ aspectRatio: "3 / 4", background: `#${iss.bg}` }}
+                    style={{ aspectRatio: "3 / 4" }}
                     aria-label={`Read ${iss.season}`}
                   >
-                    <img src={coverUrl(iss.issuuId)} alt={`${iss.season} cover`} loading="lazy" className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform" />
+                    <CoverTile issue={iss} className="group-hover:scale-[1.02] transition-transform" />
                     <span className="absolute bottom-3 left-3 right-3 text-center text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full bg-black/50 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity">▶ Read issue</span>
                   </button>
+
                   <div className="p-4 flex-1 flex flex-col">
                     <div className="font-bold text-slate-900 leading-snug">{iss.season}</div>
                     <div className="text-xs text-slate-500 mb-3">{iss.published} · {iss.pages} pages</div>
