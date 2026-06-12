@@ -471,7 +471,8 @@ const C: Record<string, PageContent> = {
     theme: "blue",
     intro: "Put your brand in front of the UK's largest community of accredited landscape professionals. From our flagship National Landscape Awards to Landscape News magazine, the BALI website and weekly newsletter, we offer trusted, targeted routes to the decision-makers shaping a £11.6bn industry.",
     image: { url: "/__l5e/assets-v1/859a80ad-ac37-4a28-aaea-c10f84d95e66/large_homepage-banner-1.jpeg", alt: "Landscape professionals at work" },
-    embed: { url: "/__l5e/assets-v1/698abc5b-605d-44a3-972d-3ec0be546abd/bali-media-pack-2025-26.pdf#view=FitH", title: "BALI Media Pack 2025/26", height: 900 },
+    ctaPrimary: { label: "Download the 2025/26 Media Pack (PDF)", href: "/__l5e/assets-v1/698abc5b-605d-44a3-972d-3ec0be546abd/bali-media-pack-2025-26.pdf" },
+    ctaSecondary: { label: "Email Joanna for bookings", href: "mailto:joanna.pieprzak@bali.org.uk?subject=BALI%20Media%20Pack%20enquiry" },
     stats: [
       { value: "1,000+", label: "Members across the UK & internationally" },
       { value: "15,000+", label: "Website visits every month" },
@@ -542,8 +543,6 @@ const C: Record<string, PageContent> = {
         body: "For bookings, bespoke packages or to request the full Media Pack, contact Joanna Pieprzak, Media Sales & Sponsorship Officer, at joanna.pieprzak@bali.org.uk or call +44 (0)24 7518 5614. For editorial enquiries about Landscape News, email our editor Luke Garner at luke.garner@bali.org.uk.",
       },
     ],
-    ctaPrimary: { label: "Email Joanna for the Media Pack", href: "mailto:joanna.pieprzak@bali.org.uk?subject=BALI%20Media%20Pack%20request" },
-    ctaSecondary: { label: "Call +44 (0)24 7518 5614", href: "tel:+442475185614" },
   },
   "/contact": {
     eyebrow: "Contact",
