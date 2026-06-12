@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useMemo, useState } from "react";
 import HelpPage from "../components/HelpPage";
 
 const TITLE = "Landscape News Magazine — BALI";
@@ -16,114 +17,284 @@ export const Route = createFileRoute("/news/magazine")({
   component: Page,
 });
 
+type Topic = "Awards" | "Chelsea" | "Business" | "Design" | "People" | "Sustainability";
+
+type Highlight = { title: string; body: string; topics: Topic[] };
+
 type Issue = {
   season: string;
+  published: string;        // e.g. "March 2026"
+  pages: number;
   issuuId: string;
-  bg: string; // hex without #
-  highlights: { title: string; body: string }[];
+  bg: string;               // hex without #
+  highlights: Highlight[];
 };
 
 const ISSUES: Issue[] = [
   {
     season: "Spring 2026",
+    published: "March 2026",
+    pages: 56,
     issuuId: "bali_landscape_news_spring_2026",
     bg: "0e8b61",
     highlights: [
-      { title: "Court is in session", body: "Three decades behind the scenes with the \"King of Chelsea\", Mark Gregory." },
-      { title: "Is your brand working hard enough for you?", body: "Expert advice on knowing when your brand needs a refresh and how to do it." },
-      { title: "From natural to nourishing", body: "A look at the domestic design trends set to shape 2026." },
-      { title: "Smiley, happy people", body: "Why a people-first philosophy can solve the industry's ills." },
+      { title: "Court is in session", body: "Three decades behind the scenes with the \"King of Chelsea\", Mark Gregory.", topics: ["Chelsea", "People"] },
+      { title: "Is your brand working hard enough for you?", body: "Expert advice on knowing when your brand needs a refresh and how to do it.", topics: ["Business"] },
+      { title: "From natural to nourishing", body: "A look at the domestic design trends set to shape 2026.", topics: ["Design"] },
+      { title: "Smiley, happy people", body: "Why a people-first philosophy can solve the industry's ills.", topics: ["People", "Business"] },
     ],
   },
   {
     season: "Winter 2025",
+    published: "December 2025",
+    pages: 56,
     issuuId: "bali_landscape_news_winter_25",
     bg: "3b62ae",
     highlights: [
-      { title: "Isn't that Grand?", body: "An exclusive interview with the BALI Awards Grand Award winner 2025, The Outdoor Room." },
-      { title: "It's only natural: the rise of natural pools in UK garden landscapes", body: "Ellicar invites us into this eco-friendly world of harmony with the environment." },
-      { title: "Shout about it", body: "Our social media guru reveals the top tips and tricks for a successful social media strategy." },
-      { title: "Under the surface", body: "Tim O'Hare Associates examine the importance of soil choice in landscaping." },
+      { title: "Isn't that Grand?", body: "An exclusive interview with the BALI Awards Grand Award winner 2025, The Outdoor Room.", topics: ["Awards"] },
+      { title: "It's only natural: the rise of natural pools in UK garden landscapes", body: "Ellicar invites us into this eco-friendly world of harmony with the environment.", topics: ["Sustainability", "Design"] },
+      { title: "Shout about it", body: "Our social media guru reveals the top tips and tricks for a successful social media strategy.", topics: ["Business"] },
+      { title: "Under the surface", body: "Tim O'Hare Associates examine the importance of soil choice in landscaping.", topics: ["Design"] },
     ],
   },
   {
     season: "Autumn 2025",
+    published: "September 2025",
+    pages: 56,
     issuuId: "bali_landscape_news_autumn_2025",
     bg: "CF5e2c",
     highlights: [
-      { title: "Inside the mind of a BALI awards judge", body: "Chair of the judging panel, John Melmoe, reveals the secrets to a successful awards entry." },
-      { title: "Weathering the storm", body: "In a cautious market, designer Adam Vetere shares how creativity and personalisation can help you to thrive." },
-      { title: "Pitch perfect", body: "North Hort's Gareth Jones lifts the lid on finding success with celebrity clients." },
-      { title: "First impressions", body: "How to make the most of probationary periods and set your employees up for success." },
+      { title: "Inside the mind of a BALI awards judge", body: "Chair of the judging panel, John Melmoe, reveals the secrets to a successful awards entry.", topics: ["Awards", "People"] },
+      { title: "Weathering the storm", body: "In a cautious market, designer Adam Vetere shares how creativity and personalisation can help you to thrive.", topics: ["Business", "Design"] },
+      { title: "Pitch perfect", body: "North Hort's Gareth Jones lifts the lid on finding success with celebrity clients.", topics: ["Business"] },
+      { title: "First impressions", body: "How to make the most of probationary periods and set your employees up for success.", topics: ["People", "Business"] },
     ],
   },
   {
     season: "Summer 2025",
+    published: "June 2025",
+    pages: 56,
     issuuId: "landscape_news_summer_2025",
     bg: "28a49e",
     highlights: [
-      { title: "Unhappy clients: what can you do when a dispute arises?", body: "Discover how BALI's impartial ombudsman can help resolve client disputes." },
-      { title: "Going for gold", body: "We relive five glorious days at Chelsea and how BALI members bagged a mammoth medal haul." },
-      { title: "From eye to bee", body: "Garden designer Jamie Langlands explores how and why you should embrace our natural landscape in your designs." },
-      { title: "A call to arms", body: "How ex-military personnel can offer a wealth of transferable skills to landscaping." },
+      { title: "Unhappy clients: what can you do when a dispute arises?", body: "Discover how BALI's impartial ombudsman can help resolve client disputes.", topics: ["Business"] },
+      { title: "Going for gold", body: "We relive five glorious days at Chelsea and how BALI members bagged a mammoth medal haul.", topics: ["Chelsea", "Awards"] },
+      { title: "From eye to bee", body: "Garden designer Jamie Langlands explores how and why you should embrace our natural landscape in your designs.", topics: ["Design", "Sustainability"] },
+      { title: "A call to arms", body: "How ex-military personnel can offer a wealth of transferable skills to landscaping.", topics: ["People"] },
     ],
   },
 ];
 
-function IssueBlock({ issue, latest }: { issue: Issue; latest?: boolean }) {
-  const src = `https://e.issuu.com/embed.html?backgroundColor=%23${issue.bg}&backgroundColorFullscreen=%23${issue.bg}&d=${issue.issuuId}&hideIssuuLogo=true&u=balilandscapeuk`;
-  return (
-    <div className="not-prose mb-12">
-      <div className="flex items-baseline justify-between flex-wrap gap-2 mb-4">
-        <h3 className="font-bold text-2xl text-bali-blue">{issue.season}{latest && <span className="ml-3 text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-emerald-50 text-bali-green border border-emerald-100 align-middle">Latest issue</span>}</h3>
-        <a
-          href={`https://issuu.com/balilandscapeuk/docs/${issue.issuuId}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm font-semibold text-bali-green hover:underline"
-        >
-          Open on Issuu →
-        </a>
-      </div>
-      <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-white mb-5" style={{ aspectRatio: "3 / 2" }}>
-        <iframe
-          title={`Landscape News — ${issue.season}`}
-          src={src}
-          width="100%"
-          height="100%"
-          frameBorder={0}
-          allow="fullscreen"
-          allowFullScreen
-          loading="lazy"
-          className="block w-full h-full"
-        />
-      </div>
-      <div className="grid sm:grid-cols-2 gap-3">
-        {issue.highlights.map((h) => (
-          <div key={h.title} className="p-4 bg-white border border-slate-200 rounded-xl">
-            <div className="font-bold text-slate-900 mb-1 leading-snug">{h.title}</div>
-            <p className="text-sm text-slate-600 leading-relaxed">{h.body}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
+const ALL_TOPICS: Topic[] = ["Awards", "Chelsea", "Business", "Design", "People", "Sustainability"];
+
+const coverUrl = (id: string) => `https://image.isu.pub/${id}/jpg/page_1.jpg`;
+const issuuPage = (id: string) => `https://issuu.com/balilandscapeuk/docs/${id}`;
+const embedSrc = (i: Issue) => `https://e.issuu.com/embed.html?backgroundColor=%23${i.bg}&backgroundColorFullscreen=%23${i.bg}&d=${i.issuuId}&hideIssuuLogo=true&u=balilandscapeuk`;
 
 function Page() {
+  const [query, setQuery] = useState("");
+  const [topic, setTopic] = useState<Topic | "All">("All");
+  const [modalIssue, setModalIssue] = useState<Issue | null>(null);
+
+  // Lock body scroll while modal open + close on Esc
+  useEffect(() => {
+    if (!modalIssue) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setModalIssue(null); };
+    window.addEventListener("keydown", onKey);
+    return () => { document.body.style.overflow = prev; window.removeEventListener("keydown", onKey); };
+  }, [modalIssue]);
+
+  const latest = ISSUES[0];
+  const archive = ISSUES.slice(1);
+
+  // Search filters across all issues + highlights
+  const filteredArchive = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    return archive
+      .map((iss) => {
+        const matchingHighlights = iss.highlights.filter((h) => {
+          const topicOk = topic === "All" || h.topics.includes(topic);
+          const qOk = !q || h.title.toLowerCase().includes(q) || h.body.toLowerCase().includes(q) || iss.season.toLowerCase().includes(q);
+          return topicOk && qOk;
+        });
+        return { iss, matchingHighlights };
+      })
+      .filter((x) => x.matchingHighlights.length > 0);
+  }, [query, topic, archive]);
+
   return (
     <HelpPage
       eyebrow="News"
       title="Landscape News"
-      intro="Landscape News is BALI's official member magazine — filled with great stories about member projects, helpful business advice, and thought-provoking opinion, along with news and events updates from the UK's biggest trade association for the landscape industries."
+      intro="Landscape News is BALI's official member magazine — filled with great stories about member projects, helpful business advice, and thought-provoking opinion."
       body={
         <>
-          <p className="text-slate-600 mb-8">Read the latest issue below, or browse the archive. Got a story to share? Email our editor at <a href="mailto:landscapenews@bali.org.uk">landscapenews@bali.org.uk</a>.</p>
-          {ISSUES.map((iss, i) => (
-            <IssueBlock key={iss.issuuId} issue={iss} latest={i === 0} />
-          ))}
+          {/* FACT STRIP */}
+          <div className="not-prose -mt-2 mb-10 grid grid-cols-2 md:grid-cols-4 gap-3">
+            {[
+              { v: "Quarterly", l: "4 issues a year" },
+              { v: "1972", l: "Publishing since" },
+              { v: "1,200+", l: "Print readers" },
+              { v: "2,000+", l: "Digital subscribers" },
+            ].map((s) => (
+              <div key={s.l} className="p-4 rounded-xl bg-slate-50 border border-slate-200 text-center">
+                <div className="font-bold text-bali-blue text-xl md:text-2xl leading-tight">{s.v}</div>
+                <div className="text-xs text-slate-500 mt-1 uppercase tracking-wider font-semibold">{s.l}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* HERO LATEST ISSUE */}
+          <div className="not-prose mb-14">
+            <div className="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-3 mb-4">
+              <div className="min-w-0">
+                <div className="text-xs font-bold uppercase tracking-wider text-bali-green mb-1.5">Latest issue</div>
+                <h3 className="font-bold text-2xl md:text-3xl text-bali-blue leading-tight">{latest.season}</h3>
+                <div className="text-sm text-slate-500 mt-1">{latest.published} · {latest.pages} pages</div>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-2 shrink-0">
+                <a href={issuuPage(latest.issuuId)} target="_blank" rel="noopener noreferrer" className="text-xs font-bold px-3 py-2 rounded-full border border-slate-200 hover:border-bali-green hover:text-bali-green transition-colors text-slate-600">Open on Issuu ↗</a>
+                <button onClick={() => setModalIssue(latest)} className="text-xs font-bold px-3 py-2 rounded-full bg-bali-green text-white hover:bg-bali-slate transition-colors">Fullscreen ⤢</button>
+              </div>
+            </div>
+
+            {/* Desktop: embed. Mobile: tap cover. */}
+            <div className="hidden md:block rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-slate-100" style={{ height: 720 }}>
+              <iframe
+                title={`Landscape News — ${latest.season}`}
+                src={embedSrc(latest)}
+                width="100%"
+                height="100%"
+                frameBorder={0}
+                allow="fullscreen"
+                allowFullScreen
+                loading="lazy"
+                className="block w-full h-full"
+              />
+            </div>
+            <button
+              onClick={() => setModalIssue(latest)}
+              className="md:hidden group relative w-full rounded-2xl overflow-hidden border border-slate-200 shadow-lg block"
+              style={{ aspectRatio: "3 / 4", background: `#${latest.bg}` }}
+            >
+              <img src={coverUrl(latest.issuuId)} alt={`${latest.season} cover`} className="w-full h-full object-cover" loading="lazy" />
+              <span className="absolute inset-0 flex items-center justify-center bg-black/30 text-white font-bold text-lg">▶ Read issue</span>
+            </button>
+
+            {/* Highlights for latest */}
+            <div className="grid sm:grid-cols-2 gap-3 mt-6">
+              {latest.highlights.map((h, i) => (
+                <div key={h.title} className="p-4 bg-white border border-slate-200 rounded-xl">
+                  <div className="text-[10px] font-bold uppercase tracking-wider text-bali-green mb-1.5">In this issue · {String(i + 1).padStart(2, "0")}</div>
+                  <div className="font-bold text-slate-900 mb-1 leading-snug">{h.title}</div>
+                  <p className="text-sm text-slate-600 leading-relaxed mb-2.5">{h.body}</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {h.topics.map((t) => (
+                      <span key={t} className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 uppercase tracking-wider">{t}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* ARCHIVE */}
+          <h3>Browse the archive</h3>
+          <p className="text-slate-600 -mt-1 mb-5">Search by keyword or filter by topic. Tap any cover to read the full issue.</p>
+
+          <div className="not-prose mb-6 space-y-3">
+            <div className="relative">
+              <svg className="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" /></svg>
+              <input
+                type="search"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search articles, topics, issues…"
+                className="w-full pl-11 pr-4 py-3 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-bali-green/30 focus:border-bali-green text-sm"
+              />
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {(["All", ...ALL_TOPICS] as const).map((t) => {
+                const active = topic === t;
+                return (
+                  <button
+                    key={t}
+                    onClick={() => setTopic(t)}
+                    className={`text-xs font-semibold px-3 py-1.5 rounded-full border transition-colors ${active ? "bg-bali-green text-white border-bali-green" : "bg-white text-slate-600 border-slate-200 hover:border-bali-green hover:text-bali-green"}`}
+                  >
+                    {t}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="not-prose grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
+            {filteredArchive.map(({ iss, matchingHighlights }) => (
+              <article key={iss.issuuId} className="group flex flex-col rounded-2xl overflow-hidden border border-slate-200 bg-white hover:shadow-lg transition-all">
+                <button
+                  onClick={() => setModalIssue(iss)}
+                  className="relative block w-full overflow-hidden"
+                  style={{ aspectRatio: "3 / 4", background: `#${iss.bg}` }}
+                  aria-label={`Read ${iss.season}`}
+                >
+                  <img src={coverUrl(iss.issuuId)} alt={`${iss.season} cover`} loading="lazy" className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform" />
+                  <span className="absolute bottom-3 left-3 right-3 text-center text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full bg-black/50 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity">▶ Read issue</span>
+                </button>
+                <div className="p-4 flex-1 flex flex-col">
+                  <div className="font-bold text-slate-900 leading-snug">{iss.season}</div>
+                  <div className="text-xs text-slate-500 mb-3">{iss.published} · {iss.pages} pages</div>
+                  <ul className="space-y-1.5 text-sm text-slate-600 mb-3 flex-1">
+                    {matchingHighlights.slice(0, 3).map((h) => (
+                      <li key={h.title} className="leading-snug">
+                        <span className="text-bali-green mr-1.5">›</span>{h.title}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 text-xs">
+                    <button onClick={() => setModalIssue(iss)} className="font-bold text-bali-green hover:underline">Read →</button>
+                    <a href={issuuPage(iss.issuuId)} target="_blank" rel="noopener noreferrer" className="font-semibold text-slate-500 hover:text-bali-green">Issuu ↗</a>
+                  </div>
+                </div>
+              </article>
+            ))}
+            {filteredArchive.length === 0 && (
+              <div className="col-span-full p-8 text-center text-slate-500 border border-dashed border-slate-200 rounded-2xl">
+                No issues match your search. <button onClick={() => { setQuery(""); setTopic("All"); }} className="text-bali-green font-semibold underline">Clear filters</button>
+              </div>
+            )}
+          </div>
+
+          {/* CTA CARDS */}
+          <div className="not-prose grid md:grid-cols-3 gap-4 mb-6">
+            <a href="mailto:landscapenews@bali.org.uk" className="p-6 rounded-2xl border border-slate-200 bg-white hover:border-bali-green hover:shadow-md transition-all">
+              <div className="text-2xl mb-2">✍️</div>
+              <h4 className="font-bold text-slate-900 mb-1">Pitch a story</h4>
+              <p className="text-sm text-slate-600 leading-relaxed mb-3">Got a project, opinion or piece of expertise the industry should hear? Email the editor.</p>
+              <span className="text-sm font-bold text-bali-green">landscapenews@bali.org.uk →</span>
+            </a>
+            <a href="/about/advertise" className="p-6 rounded-2xl border border-slate-200 bg-white hover:border-bali-green hover:shadow-md transition-all">
+              <div className="text-2xl mb-2">📣</div>
+              <h4 className="font-bold text-slate-900 mb-1">Advertise in Landscape News</h4>
+              <p className="text-sm text-slate-600 leading-relaxed mb-3">Quarterly print + digital. Full media-pack rates, specs and deadlines.</p>
+              <span className="text-sm font-bold text-bali-green">See ad rates →</span>
+            </a>
+            <a href="/join" className="p-6 rounded-2xl border border-slate-200 bg-white hover:border-bali-green hover:shadow-md transition-all">
+              <div className="text-2xl mb-2">📬</div>
+              <h4 className="font-bold text-slate-900 mb-1">Get it in print</h4>
+              <p className="text-sm text-slate-600 leading-relaxed mb-3">Print copies are posted free to BALI members every quarter. Join the Association.</p>
+              <span className="text-sm font-bold text-bali-green">Become a member →</span>
+            </a>
+          </div>
         </>
       }
     />
+    {/* eslint-disable-next-line */}
+    || null
   );
 }
+
+// Render the modal at the document root so it overlays everything
+// (HelpPage is the wrapper — we mount the modal as a sibling via portal-free fixed positioning)
