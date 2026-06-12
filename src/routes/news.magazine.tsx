@@ -1,6 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import HelpPage from "../components/HelpPage";
+import autumn2025Cover from "../assets/news/landscape-news-autumn-2025.png.asset.json";
+import winter2025Cover from "../assets/news/landscape-news-winter-2025.png.asset.json";
+
+const COVERS: Record<string, string> = {
+  bali_landscape_news_autumn_2025: autumn2025Cover.url,
+  bali_landscape_news_winter_25: winter2025Cover.url,
+};
 
 const TITLE = "Landscape News Magazine — BALI";
 const DESC = "Landscape News is BALI's official member magazine — member project stories, business advice, opinion, news and events from the UK's biggest trade association for the landscape industries.";
@@ -91,9 +98,20 @@ const coverUrl = (id: string) => `https://image.isu.pub/${id}/jpg/page_1.jpg`;
 const issuuPage = (id: string) => `https://issuu.com/balilandscapeuk/docs/${id}`;
 const embedSrc = (i: Issue) => `https://e.issuu.com/embed.html?backgroundColor=%23${i.bg}&backgroundColorFullscreen=%23${i.bg}&d=${i.issuuId}&hideIssuuLogo=true&u=balilandscapeuk`;
 
-/** Designed cover tile — Issuu's real cover JPGs require a private hash, so we render a styled card. */
+/** Cover tile — uses the real magazine cover when available, otherwise a styled card. */
 function CoverTile({ issue, className = "" }: { issue: Issue; className?: string }) {
+  const realCover = COVERS[issue.issuuId];
   const [season, year] = issue.season.split(" ");
+  if (realCover) {
+    return (
+      <img
+        src={realCover}
+        alt={`Landscape News — ${issue.season} cover`}
+        loading="lazy"
+        className={`w-full h-full object-cover ${className}`}
+      />
+    );
+  }
   return (
     <div
       className={`relative w-full h-full flex flex-col justify-between p-5 text-white overflow-hidden ${className}`}
@@ -112,7 +130,6 @@ function CoverTile({ issue, className = "" }: { issue: Issue; className?: string
         <span>{issue.pages} pages</span>
         <span>{issue.highlights[0]?.topics[0]}</span>
       </div>
-      {/* subtle decorative arc */}
       <div className="pointer-events-none absolute -right-16 -bottom-16 w-64 h-64 rounded-full border-[14px] border-white/10" />
     </div>
   );
