@@ -361,15 +361,13 @@ function JoinPage() {
                 );
                 if (hasForm) {
                   return (
-                    <Link
+                    <a
                       key={c.slug}
-                      to="/join/$category/apply"
-                      params={{ category: applySlug }}
-                      preload="intent"
+                      href={`/join/${applySlug}/apply`}
                       className={cardClass}
                     >
                       {body}
-                    </Link>
+                    </a>
                   );
                 }
                 return (
