@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import CookieBanner from "../components/CookieBanner";
 import Link from "../components/SmartLink";
 import ConferenceInterestForm from "../components/ConferenceInterestForm";
+import ConferenceHighlights from "../components/ConferenceHighlights";
 import { getPageContent, type PageContent } from "../content/pages";
 
 export const Route = createFileRoute("/$")({
@@ -98,6 +99,7 @@ function SplatPage() {
     <div className="min-h-screen flex flex-col bg-white">
       <Navbar />
       {content ? <RichPage path={path} content={content} /> : <ComingSoon path={path} />}
+      {path === "/about/conference" && <ConferenceHighlights />}
       {path === "/about/conference" && <ConferenceInterestForm />}
       <Footer />
       <CookieBanner />
