@@ -471,6 +471,7 @@ const C: Record<string, PageContent> = {
     theme: "blue",
     intro: "Put your brand in front of the UK's largest community of accredited landscape professionals. From our flagship National Landscape Awards to Landscape News magazine, the BALI website and weekly newsletter, we offer trusted, targeted routes to the decision-makers shaping a £11.6bn industry.",
     image: { url: "/__l5e/assets-v1/859a80ad-ac37-4a28-aaea-c10f84d95e66/large_homepage-banner-1.jpeg", alt: "Landscape professionals at work" },
+    embed: { url: "/__l5e/assets-v1/698abc5b-605d-44a3-972d-3ec0be546abd/bali-media-pack-2025-26.pdf#view=FitH", title: "BALI Media Pack 2025/26", height: 900 },
     stats: [
       { value: "1,000+", label: "Members across the UK & internationally" },
       { value: "15,000+", label: "Website visits every month" },
