@@ -91,6 +91,34 @@ const coverUrl = (id: string) => `https://image.isu.pub/${id}/jpg/page_1.jpg`;
 const issuuPage = (id: string) => `https://issuu.com/balilandscapeuk/docs/${id}`;
 const embedSrc = (i: Issue) => `https://e.issuu.com/embed.html?backgroundColor=%23${i.bg}&backgroundColorFullscreen=%23${i.bg}&d=${i.issuuId}&hideIssuuLogo=true&u=balilandscapeuk`;
 
+/** Designed cover tile — Issuu's real cover JPGs require a private hash, so we render a styled card. */
+function CoverTile({ issue, className = "" }: { issue: Issue; className?: string }) {
+  const [season, year] = issue.season.split(" ");
+  return (
+    <div
+      className={`relative w-full h-full flex flex-col justify-between p-5 text-white overflow-hidden ${className}`}
+      style={{ background: `linear-gradient(160deg, #${issue.bg} 0%, #${issue.bg}cc 60%, #00000040 100%)` }}
+    >
+      <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-[0.18em] opacity-90">
+        <span>Landscape News</span>
+        <span>BALI</span>
+      </div>
+      <div>
+        <div className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-80 mb-1">Issue · {year}</div>
+        <div className="font-bold text-3xl md:text-4xl leading-[0.95] mb-1">{season}</div>
+        <div className="text-sm opacity-80">{issue.published}</div>
+      </div>
+      <div className="flex items-end justify-between text-[10px] font-semibold uppercase tracking-wider opacity-80">
+        <span>{issue.pages} pages</span>
+        <span>{issue.highlights[0]?.topics[0]}</span>
+      </div>
+      {/* subtle decorative arc */}
+      <div className="pointer-events-none absolute -right-16 -bottom-16 w-64 h-64 rounded-full border-[14px] border-white/10" />
+    </div>
+  );
+}
+
+
 function Page() {
   const [query, setQuery] = useState("");
   const [topic, setTopic] = useState<Topic | "All">("All");
