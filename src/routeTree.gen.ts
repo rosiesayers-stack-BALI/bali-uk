@@ -10,16 +10,58 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PortalRouteImport } from './routes/portal'
+import { Route as OurTeamRouteImport } from './routes/our-team'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as JoinRouteImport } from './routes/join'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as SplatRouteImport } from './routes/$'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as NewsIndexRouteImport } from './routes/news.index'
+import { Route as MembershipIndexRouteImport } from './routes/membership.index'
+import { Route as LissCscsIndexRouteImport } from './routes/liss-cscs.index'
+import { Route as HelpIndexRouteImport } from './routes/help.index'
 import { Route as EventsIndexRouteImport } from './routes/events.index'
+import { Route as DirectoryIndexRouteImport } from './routes/directory.index'
+import { Route as AboutIndexRouteImport } from './routes/about.index'
+import { Route as NewsMagazineRouteImport } from './routes/news.magazine'
 import { Route as NewsSlugRouteImport } from './routes/news.$slug'
+import { Route as MembershipTermsRouteImport } from './routes/membership.terms'
+import { Route as MembershipQualityRouteImport } from './routes/membership.quality'
+import { Route as MembershipEnquiryRouteImport } from './routes/membership.enquiry'
+import { Route as MembershipCodeRouteImport } from './routes/membership.code'
+import { Route as MembershipBecomeAMemberRouteImport } from './routes/membership.become-a-member'
+import { Route as LissCscsRoloRouteImport } from './routes/liss-cscs.rolo'
+import { Route as LissCscsNhss18RouteImport } from './routes/liss-cscs.nhss18'
+import { Route as LissCscsCheckRouteImport } from './routes/liss-cscs.check'
+import { Route as LissCscsApplyRouteImport } from './routes/liss-cscs.apply'
+import { Route as LissCscsAccreditationRouteImport } from './routes/liss-cscs.accreditation'
+import { Route as HelpPodcastRouteImport } from './routes/help.podcast'
+import { Route as HelpPlantHealthRouteImport } from './routes/help.plant-health'
+import { Route as HelpPestsRouteImport } from './routes/help.pests'
+import { Route as HelpLawRouteImport } from './routes/help.law'
+import { Route as HelpHealthSafetyRouteImport } from './routes/help.health-safety'
+import { Route as HelpHardshipRouteImport } from './routes/help.hardship'
+import { Route as HelpGuidesRouteImport } from './routes/help.guides'
+import { Route as HelpEquipmentRouteImport } from './routes/help.equipment'
+import { Route as HelpDomesticLandscapeContractRouteImport } from './routes/help.domestic-landscape-contract'
+import { Route as HelpDisputeRouteImport } from './routes/help.dispute'
+import { Route as HelpContractRouteImport } from './routes/help.contract'
+import { Route as EventsTrainingRouteImport } from './routes/events.training'
+import { Route as EventsSponsorRouteImport } from './routes/events.sponsor'
 import { Route as EventsSlugRouteImport } from './routes/events.$slug'
+import { Route as DirectoryWhyRouteImport } from './routes/directory.why'
+import { Route as DirectoryTrainingRouteImport } from './routes/directory.training'
+import { Route as DirectorySupplierRouteImport } from './routes/directory.supplier'
+import { Route as DirectorySearchRouteImport } from './routes/directory.search'
+import { Route as DirectoryDesignerRouteImport } from './routes/directory.designer'
+import { Route as DirectoryContractorRouteImport } from './routes/directory.contractor'
+import { Route as AboutNcfRouteImport } from './routes/about.ncf'
+import { Route as AboutConferenceRouteImport } from './routes/about.conference'
+import { Route as AboutCharitiesRouteImport } from './routes/about.charities'
+import { Route as AboutCareersRouteImport } from './routes/about.careers'
+import { Route as AboutBoardRouteImport } from './routes/about.board'
 import { Route as AboutAwardsRouteImport } from './routes/about.awards'
+import { Route as AboutAdvertiseRouteImport } from './routes/about.advertise'
 import { Route as JoinCategoryApplyRouteImport } from './routes/join.$category.apply'
 import { Route as ApiPublicMembershipApplicationRouteImport } from './routes/api/public/membership-application'
 import { Route as ApiPublicConferenceInterestRouteImport } from './routes/api/public/conference-interest'
@@ -27,6 +69,11 @@ import { Route as ApiPublicConferenceInterestRouteImport } from './routes/api/pu
 const PortalRoute = PortalRouteImport.update({
   id: '/portal',
   path: '/portal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OurTeamRoute = OurTeamRouteImport.update({
+  id: '/our-team',
+  path: '/our-team',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LoginRoute = LoginRouteImport.update({
@@ -59,9 +106,39 @@ const NewsIndexRoute = NewsIndexRouteImport.update({
   path: '/news/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MembershipIndexRoute = MembershipIndexRouteImport.update({
+  id: '/membership/',
+  path: '/membership/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LissCscsIndexRoute = LissCscsIndexRouteImport.update({
+  id: '/liss-cscs/',
+  path: '/liss-cscs/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpIndexRoute = HelpIndexRouteImport.update({
+  id: '/help/',
+  path: '/help/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EventsIndexRoute = EventsIndexRouteImport.update({
   id: '/events/',
   path: '/events/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DirectoryIndexRoute = DirectoryIndexRouteImport.update({
+  id: '/directory/',
+  path: '/directory/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutIndexRoute = AboutIndexRouteImport.update({
+  id: '/about/',
+  path: '/about/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsMagazineRoute = NewsMagazineRouteImport.update({
+  id: '/news/magazine',
+  path: '/news/magazine',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NewsSlugRoute = NewsSlugRouteImport.update({
@@ -69,14 +146,190 @@ const NewsSlugRoute = NewsSlugRouteImport.update({
   path: '/news/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MembershipTermsRoute = MembershipTermsRouteImport.update({
+  id: '/membership/terms',
+  path: '/membership/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MembershipQualityRoute = MembershipQualityRouteImport.update({
+  id: '/membership/quality',
+  path: '/membership/quality',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MembershipEnquiryRoute = MembershipEnquiryRouteImport.update({
+  id: '/membership/enquiry',
+  path: '/membership/enquiry',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MembershipCodeRoute = MembershipCodeRouteImport.update({
+  id: '/membership/code',
+  path: '/membership/code',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MembershipBecomeAMemberRoute = MembershipBecomeAMemberRouteImport.update({
+  id: '/membership/become-a-member',
+  path: '/membership/become-a-member',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LissCscsRoloRoute = LissCscsRoloRouteImport.update({
+  id: '/liss-cscs/rolo',
+  path: '/liss-cscs/rolo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LissCscsNhss18Route = LissCscsNhss18RouteImport.update({
+  id: '/liss-cscs/nhss18',
+  path: '/liss-cscs/nhss18',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LissCscsCheckRoute = LissCscsCheckRouteImport.update({
+  id: '/liss-cscs/check',
+  path: '/liss-cscs/check',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LissCscsApplyRoute = LissCscsApplyRouteImport.update({
+  id: '/liss-cscs/apply',
+  path: '/liss-cscs/apply',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LissCscsAccreditationRoute = LissCscsAccreditationRouteImport.update({
+  id: '/liss-cscs/accreditation',
+  path: '/liss-cscs/accreditation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpPodcastRoute = HelpPodcastRouteImport.update({
+  id: '/help/podcast',
+  path: '/help/podcast',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpPlantHealthRoute = HelpPlantHealthRouteImport.update({
+  id: '/help/plant-health',
+  path: '/help/plant-health',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpPestsRoute = HelpPestsRouteImport.update({
+  id: '/help/pests',
+  path: '/help/pests',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpLawRoute = HelpLawRouteImport.update({
+  id: '/help/law',
+  path: '/help/law',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpHealthSafetyRoute = HelpHealthSafetyRouteImport.update({
+  id: '/help/health-safety',
+  path: '/help/health-safety',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpHardshipRoute = HelpHardshipRouteImport.update({
+  id: '/help/hardship',
+  path: '/help/hardship',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpGuidesRoute = HelpGuidesRouteImport.update({
+  id: '/help/guides',
+  path: '/help/guides',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpEquipmentRoute = HelpEquipmentRouteImport.update({
+  id: '/help/equipment',
+  path: '/help/equipment',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpDomesticLandscapeContractRoute =
+  HelpDomesticLandscapeContractRouteImport.update({
+    id: '/help/domestic-landscape-contract',
+    path: '/help/domestic-landscape-contract',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const HelpDisputeRoute = HelpDisputeRouteImport.update({
+  id: '/help/dispute',
+  path: '/help/dispute',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpContractRoute = HelpContractRouteImport.update({
+  id: '/help/contract',
+  path: '/help/contract',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventsTrainingRoute = EventsTrainingRouteImport.update({
+  id: '/events/training',
+  path: '/events/training',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventsSponsorRoute = EventsSponsorRouteImport.update({
+  id: '/events/sponsor',
+  path: '/events/sponsor',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EventsSlugRoute = EventsSlugRouteImport.update({
   id: '/events/$slug',
   path: '/events/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DirectoryWhyRoute = DirectoryWhyRouteImport.update({
+  id: '/directory/why',
+  path: '/directory/why',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DirectoryTrainingRoute = DirectoryTrainingRouteImport.update({
+  id: '/directory/training',
+  path: '/directory/training',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DirectorySupplierRoute = DirectorySupplierRouteImport.update({
+  id: '/directory/supplier',
+  path: '/directory/supplier',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DirectorySearchRoute = DirectorySearchRouteImport.update({
+  id: '/directory/search',
+  path: '/directory/search',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DirectoryDesignerRoute = DirectoryDesignerRouteImport.update({
+  id: '/directory/designer',
+  path: '/directory/designer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DirectoryContractorRoute = DirectoryContractorRouteImport.update({
+  id: '/directory/contractor',
+  path: '/directory/contractor',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutNcfRoute = AboutNcfRouteImport.update({
+  id: '/about/ncf',
+  path: '/about/ncf',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutConferenceRoute = AboutConferenceRouteImport.update({
+  id: '/about/conference',
+  path: '/about/conference',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutCharitiesRoute = AboutCharitiesRouteImport.update({
+  id: '/about/charities',
+  path: '/about/charities',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutCareersRoute = AboutCareersRouteImport.update({
+  id: '/about/careers',
+  path: '/about/careers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutBoardRoute = AboutBoardRouteImport.update({
+  id: '/about/board',
+  path: '/about/board',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutAwardsRoute = AboutAwardsRouteImport.update({
   id: '/about/awards',
   path: '/about/awards',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutAdvertiseRoute = AboutAdvertiseRouteImport.update({
+  id: '/about/advertise',
+  path: '/about/advertise',
   getParentRoute: () => rootRouteImport,
 } as any)
 const JoinCategoryApplyRoute = JoinCategoryApplyRouteImport.update({
@@ -103,11 +356,53 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/join': typeof JoinRouteWithChildren
   '/login': typeof LoginRoute
+  '/our-team': typeof OurTeamRoute
   '/portal': typeof PortalRoute
+  '/about/advertise': typeof AboutAdvertiseRoute
   '/about/awards': typeof AboutAwardsRoute
+  '/about/board': typeof AboutBoardRoute
+  '/about/careers': typeof AboutCareersRoute
+  '/about/charities': typeof AboutCharitiesRoute
+  '/about/conference': typeof AboutConferenceRoute
+  '/about/ncf': typeof AboutNcfRoute
+  '/directory/contractor': typeof DirectoryContractorRoute
+  '/directory/designer': typeof DirectoryDesignerRoute
+  '/directory/search': typeof DirectorySearchRoute
+  '/directory/supplier': typeof DirectorySupplierRoute
+  '/directory/training': typeof DirectoryTrainingRoute
+  '/directory/why': typeof DirectoryWhyRoute
   '/events/$slug': typeof EventsSlugRoute
+  '/events/sponsor': typeof EventsSponsorRoute
+  '/events/training': typeof EventsTrainingRoute
+  '/help/contract': typeof HelpContractRoute
+  '/help/dispute': typeof HelpDisputeRoute
+  '/help/domestic-landscape-contract': typeof HelpDomesticLandscapeContractRoute
+  '/help/equipment': typeof HelpEquipmentRoute
+  '/help/guides': typeof HelpGuidesRoute
+  '/help/hardship': typeof HelpHardshipRoute
+  '/help/health-safety': typeof HelpHealthSafetyRoute
+  '/help/law': typeof HelpLawRoute
+  '/help/pests': typeof HelpPestsRoute
+  '/help/plant-health': typeof HelpPlantHealthRoute
+  '/help/podcast': typeof HelpPodcastRoute
+  '/liss-cscs/accreditation': typeof LissCscsAccreditationRoute
+  '/liss-cscs/apply': typeof LissCscsApplyRoute
+  '/liss-cscs/check': typeof LissCscsCheckRoute
+  '/liss-cscs/nhss18': typeof LissCscsNhss18Route
+  '/liss-cscs/rolo': typeof LissCscsRoloRoute
+  '/membership/become-a-member': typeof MembershipBecomeAMemberRoute
+  '/membership/code': typeof MembershipCodeRoute
+  '/membership/enquiry': typeof MembershipEnquiryRoute
+  '/membership/quality': typeof MembershipQualityRoute
+  '/membership/terms': typeof MembershipTermsRoute
   '/news/$slug': typeof NewsSlugRoute
+  '/news/magazine': typeof NewsMagazineRoute
+  '/about/': typeof AboutIndexRoute
+  '/directory/': typeof DirectoryIndexRoute
   '/events/': typeof EventsIndexRoute
+  '/help/': typeof HelpIndexRoute
+  '/liss-cscs/': typeof LissCscsIndexRoute
+  '/membership/': typeof MembershipIndexRoute
   '/news/': typeof NewsIndexRoute
   '/api/public/conference-interest': typeof ApiPublicConferenceInterestRoute
   '/api/public/membership-application': typeof ApiPublicMembershipApplicationRoute
@@ -119,11 +414,53 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/join': typeof JoinRouteWithChildren
   '/login': typeof LoginRoute
+  '/our-team': typeof OurTeamRoute
   '/portal': typeof PortalRoute
+  '/about/advertise': typeof AboutAdvertiseRoute
   '/about/awards': typeof AboutAwardsRoute
+  '/about/board': typeof AboutBoardRoute
+  '/about/careers': typeof AboutCareersRoute
+  '/about/charities': typeof AboutCharitiesRoute
+  '/about/conference': typeof AboutConferenceRoute
+  '/about/ncf': typeof AboutNcfRoute
+  '/directory/contractor': typeof DirectoryContractorRoute
+  '/directory/designer': typeof DirectoryDesignerRoute
+  '/directory/search': typeof DirectorySearchRoute
+  '/directory/supplier': typeof DirectorySupplierRoute
+  '/directory/training': typeof DirectoryTrainingRoute
+  '/directory/why': typeof DirectoryWhyRoute
   '/events/$slug': typeof EventsSlugRoute
+  '/events/sponsor': typeof EventsSponsorRoute
+  '/events/training': typeof EventsTrainingRoute
+  '/help/contract': typeof HelpContractRoute
+  '/help/dispute': typeof HelpDisputeRoute
+  '/help/domestic-landscape-contract': typeof HelpDomesticLandscapeContractRoute
+  '/help/equipment': typeof HelpEquipmentRoute
+  '/help/guides': typeof HelpGuidesRoute
+  '/help/hardship': typeof HelpHardshipRoute
+  '/help/health-safety': typeof HelpHealthSafetyRoute
+  '/help/law': typeof HelpLawRoute
+  '/help/pests': typeof HelpPestsRoute
+  '/help/plant-health': typeof HelpPlantHealthRoute
+  '/help/podcast': typeof HelpPodcastRoute
+  '/liss-cscs/accreditation': typeof LissCscsAccreditationRoute
+  '/liss-cscs/apply': typeof LissCscsApplyRoute
+  '/liss-cscs/check': typeof LissCscsCheckRoute
+  '/liss-cscs/nhss18': typeof LissCscsNhss18Route
+  '/liss-cscs/rolo': typeof LissCscsRoloRoute
+  '/membership/become-a-member': typeof MembershipBecomeAMemberRoute
+  '/membership/code': typeof MembershipCodeRoute
+  '/membership/enquiry': typeof MembershipEnquiryRoute
+  '/membership/quality': typeof MembershipQualityRoute
+  '/membership/terms': typeof MembershipTermsRoute
   '/news/$slug': typeof NewsSlugRoute
+  '/news/magazine': typeof NewsMagazineRoute
+  '/about': typeof AboutIndexRoute
+  '/directory': typeof DirectoryIndexRoute
   '/events': typeof EventsIndexRoute
+  '/help': typeof HelpIndexRoute
+  '/liss-cscs': typeof LissCscsIndexRoute
+  '/membership': typeof MembershipIndexRoute
   '/news': typeof NewsIndexRoute
   '/api/public/conference-interest': typeof ApiPublicConferenceInterestRoute
   '/api/public/membership-application': typeof ApiPublicMembershipApplicationRoute
@@ -136,11 +473,53 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/join': typeof JoinRouteWithChildren
   '/login': typeof LoginRoute
+  '/our-team': typeof OurTeamRoute
   '/portal': typeof PortalRoute
+  '/about/advertise': typeof AboutAdvertiseRoute
   '/about/awards': typeof AboutAwardsRoute
+  '/about/board': typeof AboutBoardRoute
+  '/about/careers': typeof AboutCareersRoute
+  '/about/charities': typeof AboutCharitiesRoute
+  '/about/conference': typeof AboutConferenceRoute
+  '/about/ncf': typeof AboutNcfRoute
+  '/directory/contractor': typeof DirectoryContractorRoute
+  '/directory/designer': typeof DirectoryDesignerRoute
+  '/directory/search': typeof DirectorySearchRoute
+  '/directory/supplier': typeof DirectorySupplierRoute
+  '/directory/training': typeof DirectoryTrainingRoute
+  '/directory/why': typeof DirectoryWhyRoute
   '/events/$slug': typeof EventsSlugRoute
+  '/events/sponsor': typeof EventsSponsorRoute
+  '/events/training': typeof EventsTrainingRoute
+  '/help/contract': typeof HelpContractRoute
+  '/help/dispute': typeof HelpDisputeRoute
+  '/help/domestic-landscape-contract': typeof HelpDomesticLandscapeContractRoute
+  '/help/equipment': typeof HelpEquipmentRoute
+  '/help/guides': typeof HelpGuidesRoute
+  '/help/hardship': typeof HelpHardshipRoute
+  '/help/health-safety': typeof HelpHealthSafetyRoute
+  '/help/law': typeof HelpLawRoute
+  '/help/pests': typeof HelpPestsRoute
+  '/help/plant-health': typeof HelpPlantHealthRoute
+  '/help/podcast': typeof HelpPodcastRoute
+  '/liss-cscs/accreditation': typeof LissCscsAccreditationRoute
+  '/liss-cscs/apply': typeof LissCscsApplyRoute
+  '/liss-cscs/check': typeof LissCscsCheckRoute
+  '/liss-cscs/nhss18': typeof LissCscsNhss18Route
+  '/liss-cscs/rolo': typeof LissCscsRoloRoute
+  '/membership/become-a-member': typeof MembershipBecomeAMemberRoute
+  '/membership/code': typeof MembershipCodeRoute
+  '/membership/enquiry': typeof MembershipEnquiryRoute
+  '/membership/quality': typeof MembershipQualityRoute
+  '/membership/terms': typeof MembershipTermsRoute
   '/news/$slug': typeof NewsSlugRoute
+  '/news/magazine': typeof NewsMagazineRoute
+  '/about/': typeof AboutIndexRoute
+  '/directory/': typeof DirectoryIndexRoute
   '/events/': typeof EventsIndexRoute
+  '/help/': typeof HelpIndexRoute
+  '/liss-cscs/': typeof LissCscsIndexRoute
+  '/membership/': typeof MembershipIndexRoute
   '/news/': typeof NewsIndexRoute
   '/api/public/conference-interest': typeof ApiPublicConferenceInterestRoute
   '/api/public/membership-application': typeof ApiPublicMembershipApplicationRoute
@@ -154,11 +533,53 @@ export interface FileRouteTypes {
     | '/contact'
     | '/join'
     | '/login'
+    | '/our-team'
     | '/portal'
+    | '/about/advertise'
     | '/about/awards'
+    | '/about/board'
+    | '/about/careers'
+    | '/about/charities'
+    | '/about/conference'
+    | '/about/ncf'
+    | '/directory/contractor'
+    | '/directory/designer'
+    | '/directory/search'
+    | '/directory/supplier'
+    | '/directory/training'
+    | '/directory/why'
     | '/events/$slug'
+    | '/events/sponsor'
+    | '/events/training'
+    | '/help/contract'
+    | '/help/dispute'
+    | '/help/domestic-landscape-contract'
+    | '/help/equipment'
+    | '/help/guides'
+    | '/help/hardship'
+    | '/help/health-safety'
+    | '/help/law'
+    | '/help/pests'
+    | '/help/plant-health'
+    | '/help/podcast'
+    | '/liss-cscs/accreditation'
+    | '/liss-cscs/apply'
+    | '/liss-cscs/check'
+    | '/liss-cscs/nhss18'
+    | '/liss-cscs/rolo'
+    | '/membership/become-a-member'
+    | '/membership/code'
+    | '/membership/enquiry'
+    | '/membership/quality'
+    | '/membership/terms'
     | '/news/$slug'
+    | '/news/magazine'
+    | '/about/'
+    | '/directory/'
     | '/events/'
+    | '/help/'
+    | '/liss-cscs/'
+    | '/membership/'
     | '/news/'
     | '/api/public/conference-interest'
     | '/api/public/membership-application'
@@ -170,11 +591,53 @@ export interface FileRouteTypes {
     | '/contact'
     | '/join'
     | '/login'
+    | '/our-team'
     | '/portal'
+    | '/about/advertise'
     | '/about/awards'
+    | '/about/board'
+    | '/about/careers'
+    | '/about/charities'
+    | '/about/conference'
+    | '/about/ncf'
+    | '/directory/contractor'
+    | '/directory/designer'
+    | '/directory/search'
+    | '/directory/supplier'
+    | '/directory/training'
+    | '/directory/why'
     | '/events/$slug'
+    | '/events/sponsor'
+    | '/events/training'
+    | '/help/contract'
+    | '/help/dispute'
+    | '/help/domestic-landscape-contract'
+    | '/help/equipment'
+    | '/help/guides'
+    | '/help/hardship'
+    | '/help/health-safety'
+    | '/help/law'
+    | '/help/pests'
+    | '/help/plant-health'
+    | '/help/podcast'
+    | '/liss-cscs/accreditation'
+    | '/liss-cscs/apply'
+    | '/liss-cscs/check'
+    | '/liss-cscs/nhss18'
+    | '/liss-cscs/rolo'
+    | '/membership/become-a-member'
+    | '/membership/code'
+    | '/membership/enquiry'
+    | '/membership/quality'
+    | '/membership/terms'
     | '/news/$slug'
+    | '/news/magazine'
+    | '/about'
+    | '/directory'
     | '/events'
+    | '/help'
+    | '/liss-cscs'
+    | '/membership'
     | '/news'
     | '/api/public/conference-interest'
     | '/api/public/membership-application'
@@ -186,11 +649,53 @@ export interface FileRouteTypes {
     | '/contact'
     | '/join'
     | '/login'
+    | '/our-team'
     | '/portal'
+    | '/about/advertise'
     | '/about/awards'
+    | '/about/board'
+    | '/about/careers'
+    | '/about/charities'
+    | '/about/conference'
+    | '/about/ncf'
+    | '/directory/contractor'
+    | '/directory/designer'
+    | '/directory/search'
+    | '/directory/supplier'
+    | '/directory/training'
+    | '/directory/why'
     | '/events/$slug'
+    | '/events/sponsor'
+    | '/events/training'
+    | '/help/contract'
+    | '/help/dispute'
+    | '/help/domestic-landscape-contract'
+    | '/help/equipment'
+    | '/help/guides'
+    | '/help/hardship'
+    | '/help/health-safety'
+    | '/help/law'
+    | '/help/pests'
+    | '/help/plant-health'
+    | '/help/podcast'
+    | '/liss-cscs/accreditation'
+    | '/liss-cscs/apply'
+    | '/liss-cscs/check'
+    | '/liss-cscs/nhss18'
+    | '/liss-cscs/rolo'
+    | '/membership/become-a-member'
+    | '/membership/code'
+    | '/membership/enquiry'
+    | '/membership/quality'
+    | '/membership/terms'
     | '/news/$slug'
+    | '/news/magazine'
+    | '/about/'
+    | '/directory/'
     | '/events/'
+    | '/help/'
+    | '/liss-cscs/'
+    | '/membership/'
     | '/news/'
     | '/api/public/conference-interest'
     | '/api/public/membership-application'
@@ -203,11 +708,53 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   JoinRoute: typeof JoinRouteWithChildren
   LoginRoute: typeof LoginRoute
+  OurTeamRoute: typeof OurTeamRoute
   PortalRoute: typeof PortalRoute
+  AboutAdvertiseRoute: typeof AboutAdvertiseRoute
   AboutAwardsRoute: typeof AboutAwardsRoute
+  AboutBoardRoute: typeof AboutBoardRoute
+  AboutCareersRoute: typeof AboutCareersRoute
+  AboutCharitiesRoute: typeof AboutCharitiesRoute
+  AboutConferenceRoute: typeof AboutConferenceRoute
+  AboutNcfRoute: typeof AboutNcfRoute
+  DirectoryContractorRoute: typeof DirectoryContractorRoute
+  DirectoryDesignerRoute: typeof DirectoryDesignerRoute
+  DirectorySearchRoute: typeof DirectorySearchRoute
+  DirectorySupplierRoute: typeof DirectorySupplierRoute
+  DirectoryTrainingRoute: typeof DirectoryTrainingRoute
+  DirectoryWhyRoute: typeof DirectoryWhyRoute
   EventsSlugRoute: typeof EventsSlugRoute
+  EventsSponsorRoute: typeof EventsSponsorRoute
+  EventsTrainingRoute: typeof EventsTrainingRoute
+  HelpContractRoute: typeof HelpContractRoute
+  HelpDisputeRoute: typeof HelpDisputeRoute
+  HelpDomesticLandscapeContractRoute: typeof HelpDomesticLandscapeContractRoute
+  HelpEquipmentRoute: typeof HelpEquipmentRoute
+  HelpGuidesRoute: typeof HelpGuidesRoute
+  HelpHardshipRoute: typeof HelpHardshipRoute
+  HelpHealthSafetyRoute: typeof HelpHealthSafetyRoute
+  HelpLawRoute: typeof HelpLawRoute
+  HelpPestsRoute: typeof HelpPestsRoute
+  HelpPlantHealthRoute: typeof HelpPlantHealthRoute
+  HelpPodcastRoute: typeof HelpPodcastRoute
+  LissCscsAccreditationRoute: typeof LissCscsAccreditationRoute
+  LissCscsApplyRoute: typeof LissCscsApplyRoute
+  LissCscsCheckRoute: typeof LissCscsCheckRoute
+  LissCscsNhss18Route: typeof LissCscsNhss18Route
+  LissCscsRoloRoute: typeof LissCscsRoloRoute
+  MembershipBecomeAMemberRoute: typeof MembershipBecomeAMemberRoute
+  MembershipCodeRoute: typeof MembershipCodeRoute
+  MembershipEnquiryRoute: typeof MembershipEnquiryRoute
+  MembershipQualityRoute: typeof MembershipQualityRoute
+  MembershipTermsRoute: typeof MembershipTermsRoute
   NewsSlugRoute: typeof NewsSlugRoute
+  NewsMagazineRoute: typeof NewsMagazineRoute
+  AboutIndexRoute: typeof AboutIndexRoute
+  DirectoryIndexRoute: typeof DirectoryIndexRoute
   EventsIndexRoute: typeof EventsIndexRoute
+  HelpIndexRoute: typeof HelpIndexRoute
+  LissCscsIndexRoute: typeof LissCscsIndexRoute
+  MembershipIndexRoute: typeof MembershipIndexRoute
   NewsIndexRoute: typeof NewsIndexRoute
   ApiPublicConferenceInterestRoute: typeof ApiPublicConferenceInterestRoute
   ApiPublicMembershipApplicationRoute: typeof ApiPublicMembershipApplicationRoute
@@ -220,6 +767,13 @@ declare module '@tanstack/react-router' {
       path: '/portal'
       fullPath: '/portal'
       preLoaderRoute: typeof PortalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/our-team': {
+      id: '/our-team'
+      path: '/our-team'
+      fullPath: '/our-team'
+      preLoaderRoute: typeof OurTeamRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/login': {
@@ -264,11 +818,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NewsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/membership/': {
+      id: '/membership/'
+      path: '/membership'
+      fullPath: '/membership/'
+      preLoaderRoute: typeof MembershipIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/liss-cscs/': {
+      id: '/liss-cscs/'
+      path: '/liss-cscs'
+      fullPath: '/liss-cscs/'
+      preLoaderRoute: typeof LissCscsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help/': {
+      id: '/help/'
+      path: '/help'
+      fullPath: '/help/'
+      preLoaderRoute: typeof HelpIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/events/': {
       id: '/events/'
       path: '/events'
       fullPath: '/events/'
       preLoaderRoute: typeof EventsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/directory/': {
+      id: '/directory/'
+      path: '/directory'
+      fullPath: '/directory/'
+      preLoaderRoute: typeof DirectoryIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/': {
+      id: '/about/'
+      path: '/about'
+      fullPath: '/about/'
+      preLoaderRoute: typeof AboutIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news/magazine': {
+      id: '/news/magazine'
+      path: '/news/magazine'
+      fullPath: '/news/magazine'
+      preLoaderRoute: typeof NewsMagazineRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/news/$slug': {
@@ -278,6 +874,167 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NewsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/membership/terms': {
+      id: '/membership/terms'
+      path: '/membership/terms'
+      fullPath: '/membership/terms'
+      preLoaderRoute: typeof MembershipTermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/membership/quality': {
+      id: '/membership/quality'
+      path: '/membership/quality'
+      fullPath: '/membership/quality'
+      preLoaderRoute: typeof MembershipQualityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/membership/enquiry': {
+      id: '/membership/enquiry'
+      path: '/membership/enquiry'
+      fullPath: '/membership/enquiry'
+      preLoaderRoute: typeof MembershipEnquiryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/membership/code': {
+      id: '/membership/code'
+      path: '/membership/code'
+      fullPath: '/membership/code'
+      preLoaderRoute: typeof MembershipCodeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/membership/become-a-member': {
+      id: '/membership/become-a-member'
+      path: '/membership/become-a-member'
+      fullPath: '/membership/become-a-member'
+      preLoaderRoute: typeof MembershipBecomeAMemberRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/liss-cscs/rolo': {
+      id: '/liss-cscs/rolo'
+      path: '/liss-cscs/rolo'
+      fullPath: '/liss-cscs/rolo'
+      preLoaderRoute: typeof LissCscsRoloRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/liss-cscs/nhss18': {
+      id: '/liss-cscs/nhss18'
+      path: '/liss-cscs/nhss18'
+      fullPath: '/liss-cscs/nhss18'
+      preLoaderRoute: typeof LissCscsNhss18RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/liss-cscs/check': {
+      id: '/liss-cscs/check'
+      path: '/liss-cscs/check'
+      fullPath: '/liss-cscs/check'
+      preLoaderRoute: typeof LissCscsCheckRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/liss-cscs/apply': {
+      id: '/liss-cscs/apply'
+      path: '/liss-cscs/apply'
+      fullPath: '/liss-cscs/apply'
+      preLoaderRoute: typeof LissCscsApplyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/liss-cscs/accreditation': {
+      id: '/liss-cscs/accreditation'
+      path: '/liss-cscs/accreditation'
+      fullPath: '/liss-cscs/accreditation'
+      preLoaderRoute: typeof LissCscsAccreditationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help/podcast': {
+      id: '/help/podcast'
+      path: '/help/podcast'
+      fullPath: '/help/podcast'
+      preLoaderRoute: typeof HelpPodcastRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help/plant-health': {
+      id: '/help/plant-health'
+      path: '/help/plant-health'
+      fullPath: '/help/plant-health'
+      preLoaderRoute: typeof HelpPlantHealthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help/pests': {
+      id: '/help/pests'
+      path: '/help/pests'
+      fullPath: '/help/pests'
+      preLoaderRoute: typeof HelpPestsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help/law': {
+      id: '/help/law'
+      path: '/help/law'
+      fullPath: '/help/law'
+      preLoaderRoute: typeof HelpLawRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help/health-safety': {
+      id: '/help/health-safety'
+      path: '/help/health-safety'
+      fullPath: '/help/health-safety'
+      preLoaderRoute: typeof HelpHealthSafetyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help/hardship': {
+      id: '/help/hardship'
+      path: '/help/hardship'
+      fullPath: '/help/hardship'
+      preLoaderRoute: typeof HelpHardshipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help/guides': {
+      id: '/help/guides'
+      path: '/help/guides'
+      fullPath: '/help/guides'
+      preLoaderRoute: typeof HelpGuidesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help/equipment': {
+      id: '/help/equipment'
+      path: '/help/equipment'
+      fullPath: '/help/equipment'
+      preLoaderRoute: typeof HelpEquipmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help/domestic-landscape-contract': {
+      id: '/help/domestic-landscape-contract'
+      path: '/help/domestic-landscape-contract'
+      fullPath: '/help/domestic-landscape-contract'
+      preLoaderRoute: typeof HelpDomesticLandscapeContractRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help/dispute': {
+      id: '/help/dispute'
+      path: '/help/dispute'
+      fullPath: '/help/dispute'
+      preLoaderRoute: typeof HelpDisputeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help/contract': {
+      id: '/help/contract'
+      path: '/help/contract'
+      fullPath: '/help/contract'
+      preLoaderRoute: typeof HelpContractRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/events/training': {
+      id: '/events/training'
+      path: '/events/training'
+      fullPath: '/events/training'
+      preLoaderRoute: typeof EventsTrainingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/events/sponsor': {
+      id: '/events/sponsor'
+      path: '/events/sponsor'
+      fullPath: '/events/sponsor'
+      preLoaderRoute: typeof EventsSponsorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/events/$slug': {
       id: '/events/$slug'
       path: '/events/$slug'
@@ -285,11 +1042,95 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EventsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/directory/why': {
+      id: '/directory/why'
+      path: '/directory/why'
+      fullPath: '/directory/why'
+      preLoaderRoute: typeof DirectoryWhyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/directory/training': {
+      id: '/directory/training'
+      path: '/directory/training'
+      fullPath: '/directory/training'
+      preLoaderRoute: typeof DirectoryTrainingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/directory/supplier': {
+      id: '/directory/supplier'
+      path: '/directory/supplier'
+      fullPath: '/directory/supplier'
+      preLoaderRoute: typeof DirectorySupplierRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/directory/search': {
+      id: '/directory/search'
+      path: '/directory/search'
+      fullPath: '/directory/search'
+      preLoaderRoute: typeof DirectorySearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/directory/designer': {
+      id: '/directory/designer'
+      path: '/directory/designer'
+      fullPath: '/directory/designer'
+      preLoaderRoute: typeof DirectoryDesignerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/directory/contractor': {
+      id: '/directory/contractor'
+      path: '/directory/contractor'
+      fullPath: '/directory/contractor'
+      preLoaderRoute: typeof DirectoryContractorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/ncf': {
+      id: '/about/ncf'
+      path: '/about/ncf'
+      fullPath: '/about/ncf'
+      preLoaderRoute: typeof AboutNcfRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/conference': {
+      id: '/about/conference'
+      path: '/about/conference'
+      fullPath: '/about/conference'
+      preLoaderRoute: typeof AboutConferenceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/charities': {
+      id: '/about/charities'
+      path: '/about/charities'
+      fullPath: '/about/charities'
+      preLoaderRoute: typeof AboutCharitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/careers': {
+      id: '/about/careers'
+      path: '/about/careers'
+      fullPath: '/about/careers'
+      preLoaderRoute: typeof AboutCareersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/board': {
+      id: '/about/board'
+      path: '/about/board'
+      fullPath: '/about/board'
+      preLoaderRoute: typeof AboutBoardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about/awards': {
       id: '/about/awards'
       path: '/about/awards'
       fullPath: '/about/awards'
       preLoaderRoute: typeof AboutAwardsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/advertise': {
+      id: '/about/advertise'
+      path: '/about/advertise'
+      fullPath: '/about/advertise'
+      preLoaderRoute: typeof AboutAdvertiseRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/join/$category/apply': {
@@ -332,11 +1173,53 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   JoinRoute: JoinRouteWithChildren,
   LoginRoute: LoginRoute,
+  OurTeamRoute: OurTeamRoute,
   PortalRoute: PortalRoute,
+  AboutAdvertiseRoute: AboutAdvertiseRoute,
   AboutAwardsRoute: AboutAwardsRoute,
+  AboutBoardRoute: AboutBoardRoute,
+  AboutCareersRoute: AboutCareersRoute,
+  AboutCharitiesRoute: AboutCharitiesRoute,
+  AboutConferenceRoute: AboutConferenceRoute,
+  AboutNcfRoute: AboutNcfRoute,
+  DirectoryContractorRoute: DirectoryContractorRoute,
+  DirectoryDesignerRoute: DirectoryDesignerRoute,
+  DirectorySearchRoute: DirectorySearchRoute,
+  DirectorySupplierRoute: DirectorySupplierRoute,
+  DirectoryTrainingRoute: DirectoryTrainingRoute,
+  DirectoryWhyRoute: DirectoryWhyRoute,
   EventsSlugRoute: EventsSlugRoute,
+  EventsSponsorRoute: EventsSponsorRoute,
+  EventsTrainingRoute: EventsTrainingRoute,
+  HelpContractRoute: HelpContractRoute,
+  HelpDisputeRoute: HelpDisputeRoute,
+  HelpDomesticLandscapeContractRoute: HelpDomesticLandscapeContractRoute,
+  HelpEquipmentRoute: HelpEquipmentRoute,
+  HelpGuidesRoute: HelpGuidesRoute,
+  HelpHardshipRoute: HelpHardshipRoute,
+  HelpHealthSafetyRoute: HelpHealthSafetyRoute,
+  HelpLawRoute: HelpLawRoute,
+  HelpPestsRoute: HelpPestsRoute,
+  HelpPlantHealthRoute: HelpPlantHealthRoute,
+  HelpPodcastRoute: HelpPodcastRoute,
+  LissCscsAccreditationRoute: LissCscsAccreditationRoute,
+  LissCscsApplyRoute: LissCscsApplyRoute,
+  LissCscsCheckRoute: LissCscsCheckRoute,
+  LissCscsNhss18Route: LissCscsNhss18Route,
+  LissCscsRoloRoute: LissCscsRoloRoute,
+  MembershipBecomeAMemberRoute: MembershipBecomeAMemberRoute,
+  MembershipCodeRoute: MembershipCodeRoute,
+  MembershipEnquiryRoute: MembershipEnquiryRoute,
+  MembershipQualityRoute: MembershipQualityRoute,
+  MembershipTermsRoute: MembershipTermsRoute,
   NewsSlugRoute: NewsSlugRoute,
+  NewsMagazineRoute: NewsMagazineRoute,
+  AboutIndexRoute: AboutIndexRoute,
+  DirectoryIndexRoute: DirectoryIndexRoute,
   EventsIndexRoute: EventsIndexRoute,
+  HelpIndexRoute: HelpIndexRoute,
+  LissCscsIndexRoute: LissCscsIndexRoute,
+  MembershipIndexRoute: MembershipIndexRoute,
   NewsIndexRoute: NewsIndexRoute,
   ApiPublicConferenceInterestRoute: ApiPublicConferenceInterestRoute,
   ApiPublicMembershipApplicationRoute: ApiPublicMembershipApplicationRoute,
