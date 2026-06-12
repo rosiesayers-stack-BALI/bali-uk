@@ -72,11 +72,24 @@ const sectionCls = "bg-white border border-slate-200 rounded-2xl p-6 lg:p-8 shad
 const sectionTitleCls = "text-xl font-bold text-bali-blue mb-1";
 const sectionDescCls = "text-sm text-slate-500 mb-6";
 
-export default function ApplicationForm({ config }: Props) {
+export default function ApplicationForm({ config: rawConfig }: Props) {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [serverError, setServerError] = useState<string | null>(null);
   const [files, setFiles] = useState<Record<string, File | null>>({});
+  const [intlVariant, setIntlVariant] = useState<"contractor" | "supplier">("contractor");
+
+  // For international, merge the chosen variant's fields into the active config.
+  const config: CategoryConfig = rawConfig.intlVariants
+    ? {
+        ...rawConfig,
+        title: `${rawConfig.intlVariants[intlVariant].label}`,
+        disciplines: rawConfig.intlVariants[intlVariant].disciplines,
+        clientRefs: rawConfig.intlVariants[intlVariant].clientRefs,
+        clientRefsHelp: rawConfig.intlVariants[intlVariant].clientRefsHelp,
+        documents: rawConfig.intlVariants[intlVariant].documents,
+      }
+    : rawConfig;
 
   const schema = buildSchema(config);
 
@@ -94,7 +107,7 @@ export default function ApplicationForm({ config }: Props) {
         town: "",
         county: "",
         postcode: "",
-        country: config.slug.startsWith("international") ? "" : "United Kingdom",
+        country: config.slug.includes("international") ? "" : "United Kingdom",
         regions: [],
         registrationNumber: "",
         vatNumber: "",
@@ -177,6 +190,47 @@ export default function ApplicationForm({ config }: Props) {
 
   return (
     <form onSubmit={form.handleSubmit(onSubmit)} className="max-w-4xl mx-auto px-6 py-10 space-y-8">
+      {rawConfig.intlVariants && (
+        <div className={sectionCls}>
+          <h2 className={sectionTitleCls}>Which best describes you?</h2>
+          <p className={sectionDescCls}>
+            Pick the category that matches your business — the rest of the form will adjust to match.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {(["contractor", "supplier"] as const).map((v) => {
+              const variant = rawConfig.intlVariants![v];
+              const active = intlVariant === v;
+              return (
+                <button
+                  key={v}
+                  type="button"
+                  onClick={() => setIntlVariant(v)}
+                  className={`text-left p-5 rounded-xl border-2 transition ${
+                    active
+                      ? "border-bali-green bg-emerald-50/40"
+                      : "border-slate-200 hover:border-slate-300 bg-white"
+                  }`}
+                >
+                  <div className="flex items-center gap-3 mb-1">
+                    <span
+                      className={`w-4 h-4 rounded-full border-2 ${
+                        active ? "border-bali-green bg-bali-green" : "border-slate-300"
+                      }`}
+                    />
+                    <span className="font-bold text-slate-900">{variant.label}</span>
+                  </div>
+                  <p className="text-xs text-slate-500 pl-7">
+                    {v === "contractor"
+                      ? "Hard and soft landscaping and/or grounds maintenance."
+                      : "Materials, equipment or services to the landscape industry."}
+                  </p>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
       {/* Section 1 - Company info */}
       <div className={sectionCls}>
         <h2 className={sectionTitleCls}>1. Company information</h2>
