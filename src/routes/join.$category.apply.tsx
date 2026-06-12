@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import CookieBanner from "../components/CookieBanner";
 import ApplicationForm from "../components/membership/ApplicationForm";
 import IndividualApplicationForm from "../components/membership/IndividualApplicationForm";
+import StudentApplicationForm from "../components/membership/StudentApplicationForm";
 import { CATEGORIES } from "../lib/membership/types";
 
 export const Route = createFileRoute("/join/$category/apply")({
@@ -66,7 +67,13 @@ function ApplyPage() {
             </p>
           </div>
         </section>
-        {config.isIndividual ? <IndividualApplicationForm config={config} /> : <ApplicationForm config={config} />}
+        {config.isStudent ? (
+          <StudentApplicationForm config={config} />
+        ) : config.isIndividual ? (
+          <IndividualApplicationForm config={config} />
+        ) : (
+          <ApplicationForm config={config} />
+        )}
       </main>
       <Footer />
       <CookieBanner />
