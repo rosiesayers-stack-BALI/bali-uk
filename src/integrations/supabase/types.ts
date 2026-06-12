@@ -14,7 +14,42 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      conference_interest: {
+        Row: {
+          company: string | null
+          created_at: string
+          email: string
+          id: string
+          member: boolean
+          name: string
+          notes: string | null
+          role: string | null
+          sponsor_interest: boolean
+        }
+        Insert: {
+          company?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          member?: boolean
+          name: string
+          notes?: string | null
+          role?: string | null
+          sponsor_interest?: boolean
+        }
+        Update: {
+          company?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          member?: boolean
+          name?: string
+          notes?: string | null
+          role?: string | null
+          sponsor_interest?: boolean
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
