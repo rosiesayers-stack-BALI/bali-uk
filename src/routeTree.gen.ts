@@ -23,7 +23,6 @@ import { Route as LissCscsIndexRouteImport } from './routes/liss-cscs.index'
 import { Route as HelpIndexRouteImport } from './routes/help.index'
 import { Route as EventsIndexRouteImport } from './routes/events.index'
 import { Route as DirectoryIndexRouteImport } from './routes/directory.index'
-import { Route as AboutIndexRouteImport } from './routes/about.index'
 import { Route as PolicySlugRouteImport } from './routes/policy.$slug'
 import { Route as NewsMagazineRouteImport } from './routes/news.magazine'
 import { Route as NewsSlugRouteImport } from './routes/news.$slug'
@@ -130,11 +129,6 @@ const EventsIndexRoute = EventsIndexRouteImport.update({
 const DirectoryIndexRoute = DirectoryIndexRouteImport.update({
   id: '/directory/',
   path: '/directory/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AboutIndexRoute = AboutIndexRouteImport.update({
-  id: '/about/',
-  path: '/about/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PolicySlugRoute = PolicySlugRouteImport.update({
@@ -368,7 +362,6 @@ export interface FileRoutesByFullPath {
   '/news/$slug': typeof NewsSlugRoute
   '/news/magazine': typeof NewsMagazineRoute
   '/policy/$slug': typeof PolicySlugRoute
-  '/about/': typeof AboutIndexRoute
   '/directory/': typeof DirectoryIndexRoute
   '/events/': typeof EventsIndexRoute
   '/help/': typeof HelpIndexRoute
@@ -422,7 +415,6 @@ export interface FileRoutesByTo {
   '/news/$slug': typeof NewsSlugRoute
   '/news/magazine': typeof NewsMagazineRoute
   '/policy/$slug': typeof PolicySlugRoute
-  '/about': typeof AboutIndexRoute
   '/directory': typeof DirectoryIndexRoute
   '/events': typeof EventsIndexRoute
   '/help': typeof HelpIndexRoute
@@ -477,7 +469,6 @@ export interface FileRoutesById {
   '/news/$slug': typeof NewsSlugRoute
   '/news/magazine': typeof NewsMagazineRoute
   '/policy/$slug': typeof PolicySlugRoute
-  '/about/': typeof AboutIndexRoute
   '/directory/': typeof DirectoryIndexRoute
   '/events/': typeof EventsIndexRoute
   '/help/': typeof HelpIndexRoute
@@ -533,7 +524,6 @@ export interface FileRouteTypes {
     | '/news/$slug'
     | '/news/magazine'
     | '/policy/$slug'
-    | '/about/'
     | '/directory/'
     | '/events/'
     | '/help/'
@@ -587,7 +577,6 @@ export interface FileRouteTypes {
     | '/news/$slug'
     | '/news/magazine'
     | '/policy/$slug'
-    | '/about'
     | '/directory'
     | '/events'
     | '/help'
@@ -641,7 +630,6 @@ export interface FileRouteTypes {
     | '/news/$slug'
     | '/news/magazine'
     | '/policy/$slug'
-    | '/about/'
     | '/directory/'
     | '/events/'
     | '/help/'
@@ -696,7 +684,6 @@ export interface RootRouteChildren {
   NewsSlugRoute: typeof NewsSlugRoute
   NewsMagazineRoute: typeof NewsMagazineRoute
   PolicySlugRoute: typeof PolicySlugRoute
-  AboutIndexRoute: typeof AboutIndexRoute
   DirectoryIndexRoute: typeof DirectoryIndexRoute
   EventsIndexRoute: typeof EventsIndexRoute
   HelpIndexRoute: typeof HelpIndexRoute
@@ -806,13 +793,6 @@ declare module '@tanstack/react-router' {
       path: '/directory'
       fullPath: '/directory/'
       preLoaderRoute: typeof DirectoryIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about/': {
-      id: '/about/'
-      path: '/about'
-      fullPath: '/about/'
-      preLoaderRoute: typeof AboutIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/policy/$slug': {
@@ -1129,7 +1109,6 @@ const rootRouteChildren: RootRouteChildren = {
   NewsSlugRoute: NewsSlugRoute,
   NewsMagazineRoute: NewsMagazineRoute,
   PolicySlugRoute: PolicySlugRoute,
-  AboutIndexRoute: AboutIndexRoute,
   DirectoryIndexRoute: DirectoryIndexRoute,
   EventsIndexRoute: EventsIndexRoute,
   HelpIndexRoute: HelpIndexRoute,
