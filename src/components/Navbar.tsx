@@ -1,91 +1,131 @@
 import { useState } from 'react'
 import Link from './SmartLink'
 
-const nav = [
+type NavSubItem = {
+  label: string
+  href: string
+  highlight?: boolean
+  external?: boolean
+  divider?: boolean
+}
+
+type NavItem = {
+  label: string
+  href: string
+  external?: boolean
+  items: NavSubItem[]
+}
+
+const nav: NavItem[] = [
   {
     label: 'About', href: '/about',
     items: [
       { label: 'What We Do', href: '/about' },
+      { label: 'How We Represent the Industry', href: 'https://bali-policy.org.uk', external: true },
       { label: 'Board of Directors', href: '/about/board' },
       { label: 'Meet Our Team', href: '/our-team' },
-      { label: 'National Landscape Awards', href: '/about/awards' },
       { label: 'BALI-NCF', href: '/about/ncf' },
-      { label: 'Landscaping Careers', href: '/about/careers' },
-      { label: 'Advertise With Us', href: '/about/advertise' },
       { label: 'Supported Charities', href: '/about/charities' },
-      
-      { label: 'National Conference 2026', href: '/about/conference', highlight: true },
+      { label: 'Advertise With Us', href: '/about/advertise' },
     ],
   },
   {
     label: 'Membership', href: '/membership',
     items: [
-      { label: 'Join Our Association', href: '/join' },
-      { label: 'Become a Member (start here)', href: '/membership/become-a-member' },
+      { label: 'Why Join BALI', href: '/membership' },
+      { label: 'Membership Categories', href: '/join' },
+      { label: 'Become a Member (apply)', href: '/membership/become-a-member', highlight: true },
       { label: 'Membership Enquiry', href: '/membership/enquiry' },
-      { label: 'Member Login', href: '/login' },
-      { label: 'Terms of Membership', href: '/membership/terms' },
+      { label: 'Renew Membership', href: '/login' },
       { label: 'Code of Conduct', href: '/membership/code' },
-      { label: 'Association Quality Standard', href: '/membership/quality' },
+      { label: 'Quality Standard', href: '/membership/quality' },
+      { label: 'Terms of Membership', href: '/membership/terms' },
+      { label: 'Member Login', href: '/login' },
     ],
   },
   {
-    label: 'Landscape Directory', href: '/directory',
+    label: 'Find a Professional', href: '/directory',
     items: [
-      { label: 'Designer', href: '/directory/designer' },
-      { label: 'Contractor', href: '/directory/contractor' },
-      { label: 'Supplier', href: '/directory/supplier' },
-      { label: 'Training Provider', href: '/directory/training' },
-      { label: 'Why Choose a Member?', href: '/directory/why' },
-      { label: 'Search All', href: '/directory/search' },
+      { label: 'Find a Designer', href: '/directory/designer' },
+      { label: 'Find a Contractor', href: '/directory/contractor' },
+      { label: 'Find a Supplier', href: '/directory/supplier' },
+      { label: 'Find a Training Provider', href: '/directory/training' },
+      { label: 'Search the Full Directory', href: '/directory/search' },
+      { label: 'Why Choose a BALI Member?', href: '/directory/why' },
     ],
   },
   {
-    label: 'News', href: '/news',
+    label: 'Standards & Training', href: '/liss-cscs',
     items: [
-      { label: 'Latest News', href: '/news' },
-      { label: 'Landscape News Magazine', href: '/news/magazine' },
-    ],
-  },
-  {
-    label: 'Events', href: '/events',
-    items: [
-      { label: 'Upcoming Events', href: '/events' },
-      { label: 'Training Courses', href: '/events/training' },
-      { label: 'Sponsor National Conference 2026', href: '/events/sponsor', highlight: true },
-    ],
-  },
-  {
-    label: 'Help & Advice', href: '/help',
-    items: [
-      { label: 'Landscape Contract', href: '/help/contract' },
-      { label: 'Domestic Landscape Contract', href: '/help/domestic-landscape-contract' },
-      { label: 'Health & Safety', href: '/help/health-safety' },
-      { label: 'Law & Regulations', href: '/help/law' },
-      { label: 'Equipment', href: '/help/equipment' },
-      { label: 'Plant Health', href: '/help/plant-health' },
-      { label: 'Pests & Diseases', href: '/help/pests' },
-      { label: 'Dispute Service', href: '/help/dispute' },
-      { label: 'Guides & Downloads', href: '/help/guides' },
-      { label: 'Hardship Fund', href: '/help/hardship' },
-      { label: 'BALI Podcast: Dig Deep', href: '/help/podcast' },
-    ],
-  },
-  {
-    label: 'LISS/CSCS', href: '/liss-cscs',
-    items: [
-      { label: 'What is LISS/CSCS?', href: '/liss-cscs' },
+      { label: 'LISS/CSCS SmartCard', href: '/liss-cscs' },
       { label: 'Apply for a SmartCard', href: '/liss-cscs/apply' },
-      { label: 'Check Qualifications', href: '/liss-cscs/check' },
+      { label: 'Check a SmartCard', href: '/liss-cscs/check', highlight: true },
       { label: 'ROLO', href: '/liss-cscs/rolo' },
       { label: 'NHSS18', href: '/liss-cscs/nhss18' },
       { label: 'Industry Accreditation', href: '/liss-cscs/accreditation' },
+      { label: 'Training Courses', href: '/events/training' },
+      { label: 'Landscaping Careers', href: '/about/careers' },
+    ],
+  },
+  {
+    label: 'Knowledge & Insight', href: '/help',
+    items: [
+      { label: 'Latest News', href: '/news' },
+      { label: 'Landscape News Magazine', href: '/news/magazine' },
+      { label: 'Dig Deep Podcast', href: '/help/podcast' },
+      { label: 'Plant Health', href: '/help/plant-health' },
+      { label: 'Pests & Diseases', href: '/help/pests' },
+      { label: 'Health & Safety', href: '/help/health-safety' },
+      { label: 'Law & Regulations', href: '/help/law' },
+      { label: 'Equipment', href: '/help/equipment' },
+      { label: 'Contract Templates (members)', href: '/help/contract' },
+      { label: 'Domestic Landscape Contract (members)', href: '/help/domestic-landscape-contract' },
+      { label: 'Guides & Downloads (members)', href: '/help/guides' },
+      { label: 'Dispute Service (members)', href: '/help/dispute' },
+      { label: 'Hardship Fund (members)', href: '/help/hardship' },
+    ],
+  },
+  {
+    label: 'Events & Awards', href: '/events',
+    items: [
+      { label: 'Upcoming Events', href: '/events' },
+      { label: 'National Conference 2026', href: '/about/conference', highlight: true },
+      { label: 'National Landscape Awards', href: '/about/awards', highlight: true },
+      { label: 'Sponsor the Conference', href: '/events/sponsor' },
+    ],
+  },
+  {
+    label: 'Policy & Campaigns', href: 'https://bali-policy.org.uk', external: true,
+    items: [
+      { label: 'Policy News', href: 'https://bali-policy.org.uk/news', external: true },
+      { label: 'Industry Campaigns', href: 'https://bali-policy.org.uk', external: true },
     ],
   },
 ]
 
 interface NavbarProps {
   transparent?: boolean
+}
+
+function NavLink({ item, className, onClick }: { item: { href: string; label: string; external?: boolean; highlight?: boolean }, className?: string, onClick?: () => void }) {
+  if (item.external) {
+    return (
+      <a
+        href={item.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={className}
+        onClick={onClick}
+      >
+        {item.label}
+      </a>
+    )
+  }
+  return (
+    <Link to={item.href} className={className} onClick={onClick}>
+      {item.label}
+    </Link>
+  )
 }
 
 export default function Navbar({ transparent = false }: NavbarProps) {
@@ -104,10 +144,6 @@ export default function Navbar({ transparent = false }: NavbarProps) {
             <Link to="/contact" className="hover:text-bali-grass transition-colors font-medium uppercase tracking-wide text-xs">
               Contact
             </Link>
-            <span className="text-blue-300">|</span>
-            <a href="https://bali-policy.org.uk/news" target="_blank" rel="noopener noreferrer" className="hover:text-bali-grass transition-colors font-medium uppercase tracking-wide text-xs">
-              Policy
-            </a>
             <span className="text-blue-300">|</span>
             <Link to="/join" className="hover:text-bali-grass transition-colors font-medium uppercase tracking-wide text-xs">
               Join
@@ -136,26 +172,19 @@ export default function Navbar({ transparent = false }: NavbarProps) {
           <nav className="hidden lg:flex items-center gap-1 text-sm font-medium">
             {nav.map((item) => (
               <div key={item.label} className="nav-item relative group">
-                <Link
-                  to={item.href}
+                <NavLink
+                  item={item}
                   className="px-3 py-2 rounded hover:text-bali-blue transition-colors flex items-center gap-1"
-                >
-                  {item.label}
-                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </Link>
-                <div className="dropdown absolute left-0 top-full bg-white shadow-xl rounded-lg border border-gray-100 w-56 py-2 z-50 before:content-[''] before:absolute before:-top-2 before:left-0 before:right-0 before:h-2">
+                />
+                <div className="dropdown absolute left-0 top-full bg-white shadow-xl rounded-lg border border-gray-100 w-64 py-2 z-50 before:content-[''] before:absolute before:-top-2 before:left-0 before:right-0 before:h-2">
                   {item.items.map((sub) => (
-                    <Link
+                    <NavLink
                       key={sub.label}
-                      to={sub.href}
+                      item={sub}
                       className={`block px-4 py-2 hover:bg-gray-50 hover:text-bali-blue transition-colors ${
                         sub.highlight ? 'font-semibold text-bali-blue' : ''
                       }`}
-                    >
-                      {sub.label}
-                    </Link>
+                    />
                   ))}
                 </div>
               </div>
@@ -207,14 +236,12 @@ export default function Navbar({ transparent = false }: NavbarProps) {
           <div className="lg:hidden border-t border-gray-100">
             <div className="px-4 py-3 space-y-1 text-sm">
               {nav.map((item) => (
-                <Link
+                <NavLink
                   key={item.label}
-                  to={item.href}
+                  item={item}
                   className="block py-2 px-3 rounded hover:bg-gray-50 hover:text-bali-blue"
                   onClick={() => setMobileOpen(false)}
-                >
-                  {item.label}
-                </Link>
+                />
               ))}
               <Link
                 to="/contact"
@@ -223,27 +250,12 @@ export default function Navbar({ transparent = false }: NavbarProps) {
               >
                 Contact
               </Link>
-              <a
-                href="https://bali-policy.org.uk/news"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block py-2 px-3 rounded hover:bg-gray-50 hover:text-bali-blue"
-              >
-                Policy ↗
-              </a>
               <Link
                 to="/join"
                 className="block mt-2 bg-bali-green text-white text-center py-2 px-3 rounded font-medium"
                 onClick={() => setMobileOpen(false)}
               >
                 Join BALI
-              </Link>
-              <Link
-                to="/login"
-                className="block bg-bali-blue text-white text-center py-2 px-3 rounded font-medium"
-                onClick={() => setMobileOpen(false)}
-              >
-                Member Login
               </Link>
               <Link
                 to="/login"
