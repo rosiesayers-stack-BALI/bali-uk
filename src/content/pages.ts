@@ -1586,6 +1586,32 @@ const C: Record<string, PageContent> = {
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
+  "/membership/code": {
+    eyebrow: "Membership",
+    title: "Code of Conduct",
+    theme: "green",
+    intro: "Continued membership of the Association is dependent upon agreement to abide by the Association's Code of Conduct detailed below.",
+    sections: [
+      {
+        heading: "The BALI Code of Conduct",
+        body: "",
+        bullets: [
+          "To uphold the standing of the British Association of Landscape Industries, its members, and the wider landscape industry by seeking to achieve and maintain the highest standards of business and professional expertise.",
+          "To provide services only within their areas of competence and be responsible for the actions of all their staff and sub-contractors.",
+          "To use appropriately trained staff and ensure on-going staff training and development.",
+          "To operate in an environmentally, ethically, and commercially sustainable manner.",
+          "To address client concerns promptly, maintaining professionalism and courtesy, and seek to negotiate an equitable solution in the case of a dispute.",
+          "To cooperate fully with the Dispute Resolution Service (applicable to Accredited Contractor and Accredited Designer members only).",
+          "To identify and meet customer, legislative and regulatory requirements.",
+          "To use the current 'BALI Accredited' logo appropriately (applicable to Accredited Contractor, Accredited International, Accredited Group, Accredited DSO, Accredited Supplier and Accredited Designer members only).",
+          "To maintain a satisfactory standard of workmanship and professional conduct, which may be subject to inspection at any time and will be subject to the association's Quality Standards Review.",
+          "To ensure the regular payment of the annual membership fee.",
+        ],
+      },
+    ],
+    ctaPrimary: { label: "Become a member", href: "/join" },
+    ctaSecondary: { label: "Contact the team", href: "/contact" },
+  },
   "/membership/terms": {
     eyebrow: "Membership",
     title: "Terms of Membership",
