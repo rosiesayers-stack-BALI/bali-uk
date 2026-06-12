@@ -6,7 +6,7 @@ import CookieBanner from "../components/CookieBanner";
 const TITLE = "Help & Advice — BALI";
 const DESC = "Member resources from BALI: contracts, health & safety, law, equipment, plant health, dispute resolution, guides, hardship support and the Dig Deep podcast.";
 
-export const Route = createFileRoute("/help")({
+export const Route = createFileRoute("/help/")({
   head: () => ({
     meta: [
       { title: TITLE },
