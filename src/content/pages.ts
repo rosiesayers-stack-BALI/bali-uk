@@ -302,7 +302,7 @@ const C: Record<string, PageContent> = {
     eventInfo: {
       venue: "Venue: TBC",
       date: "Date: TBC",
-      tickets: { label: "Book tickets (TBC)", href: "/contact" },
+      tickets: { label: "Register interest for tickets", href: "/about/conference#register-interest" },
     },
     sections: [
       {
