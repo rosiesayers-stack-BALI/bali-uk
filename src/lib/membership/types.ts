@@ -36,6 +36,15 @@ export const COMMS_PREFS = [
   "National event invitations",
 ] as const;
 
+export type IntlVariant = {
+  key: string;
+  label: string;
+  disciplines: string[];
+  clientRefs: number;
+  clientRefsHelp?: string;
+  documents: string[];
+};
+
 export type CategoryConfig = {
   slug: string;
   title: string;
@@ -47,15 +56,18 @@ export type CategoryConfig = {
   showIncorporationDate: boolean; // associate categories
   showParentCompany: boolean; // group only
   turnoverLabel: string;
-  // disciplines
-  disciplines?: string[]; // omit -> no disciplines section
+  // disciplines (omit -> no disciplines section)
+  disciplines?: string[];
   // references
   tradeRefs: number; // 0 = no trade refs
   clientRefs: number;
   clientRefsHelp?: string;
   // supporting docs
   documents: string[];
-  // associates skip references
+  // associate-individual: very different form (no company / refs / disciplines / docs)
+  isIndividual?: boolean;
+  // accredited-international: applicant picks contractor or supplier at the top of the form
+  intlVariants?: { contractor: IntlVariant; supplier: IntlVariant };
 };
 
 export const CATEGORIES: Record<string, CategoryConfig> = {
