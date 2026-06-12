@@ -49,6 +49,12 @@ import { Route as HelpContractRouteImport } from './routes/help.contract'
 import { Route as EventsTrainingRouteImport } from './routes/events.training'
 import { Route as EventsSponsorRouteImport } from './routes/events.sponsor'
 import { Route as EventsSlugRouteImport } from './routes/events.$slug'
+import { Route as DirectoryWhyRouteImport } from './routes/directory.why'
+import { Route as DirectoryTrainingRouteImport } from './routes/directory.training'
+import { Route as DirectorySupplierRouteImport } from './routes/directory.supplier'
+import { Route as DirectorySearchRouteImport } from './routes/directory.search'
+import { Route as DirectoryDesignerRouteImport } from './routes/directory.designer'
+import { Route as DirectoryContractorRouteImport } from './routes/directory.contractor'
 import { Route as AboutNcfRouteImport } from './routes/about.ncf'
 import { Route as AboutConferenceRouteImport } from './routes/about.conference'
 import { Route as AboutCharitiesRouteImport } from './routes/about.charities'
@@ -261,6 +267,36 @@ const EventsSlugRoute = EventsSlugRouteImport.update({
   path: '/events/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DirectoryWhyRoute = DirectoryWhyRouteImport.update({
+  id: '/directory/why',
+  path: '/directory/why',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DirectoryTrainingRoute = DirectoryTrainingRouteImport.update({
+  id: '/directory/training',
+  path: '/directory/training',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DirectorySupplierRoute = DirectorySupplierRouteImport.update({
+  id: '/directory/supplier',
+  path: '/directory/supplier',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DirectorySearchRoute = DirectorySearchRouteImport.update({
+  id: '/directory/search',
+  path: '/directory/search',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DirectoryDesignerRoute = DirectoryDesignerRouteImport.update({
+  id: '/directory/designer',
+  path: '/directory/designer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DirectoryContractorRoute = DirectoryContractorRouteImport.update({
+  id: '/directory/contractor',
+  path: '/directory/contractor',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutNcfRoute = AboutNcfRouteImport.update({
   id: '/about/ncf',
   path: '/about/ncf',
@@ -329,6 +365,12 @@ export interface FileRoutesByFullPath {
   '/about/charities': typeof AboutCharitiesRoute
   '/about/conference': typeof AboutConferenceRoute
   '/about/ncf': typeof AboutNcfRoute
+  '/directory/contractor': typeof DirectoryContractorRoute
+  '/directory/designer': typeof DirectoryDesignerRoute
+  '/directory/search': typeof DirectorySearchRoute
+  '/directory/supplier': typeof DirectorySupplierRoute
+  '/directory/training': typeof DirectoryTrainingRoute
+  '/directory/why': typeof DirectoryWhyRoute
   '/events/$slug': typeof EventsSlugRoute
   '/events/sponsor': typeof EventsSponsorRoute
   '/events/training': typeof EventsTrainingRoute
@@ -381,6 +423,12 @@ export interface FileRoutesByTo {
   '/about/charities': typeof AboutCharitiesRoute
   '/about/conference': typeof AboutConferenceRoute
   '/about/ncf': typeof AboutNcfRoute
+  '/directory/contractor': typeof DirectoryContractorRoute
+  '/directory/designer': typeof DirectoryDesignerRoute
+  '/directory/search': typeof DirectorySearchRoute
+  '/directory/supplier': typeof DirectorySupplierRoute
+  '/directory/training': typeof DirectoryTrainingRoute
+  '/directory/why': typeof DirectoryWhyRoute
   '/events/$slug': typeof EventsSlugRoute
   '/events/sponsor': typeof EventsSponsorRoute
   '/events/training': typeof EventsTrainingRoute
@@ -434,6 +482,12 @@ export interface FileRoutesById {
   '/about/charities': typeof AboutCharitiesRoute
   '/about/conference': typeof AboutConferenceRoute
   '/about/ncf': typeof AboutNcfRoute
+  '/directory/contractor': typeof DirectoryContractorRoute
+  '/directory/designer': typeof DirectoryDesignerRoute
+  '/directory/search': typeof DirectorySearchRoute
+  '/directory/supplier': typeof DirectorySupplierRoute
+  '/directory/training': typeof DirectoryTrainingRoute
+  '/directory/why': typeof DirectoryWhyRoute
   '/events/$slug': typeof EventsSlugRoute
   '/events/sponsor': typeof EventsSponsorRoute
   '/events/training': typeof EventsTrainingRoute
@@ -488,6 +542,12 @@ export interface FileRouteTypes {
     | '/about/charities'
     | '/about/conference'
     | '/about/ncf'
+    | '/directory/contractor'
+    | '/directory/designer'
+    | '/directory/search'
+    | '/directory/supplier'
+    | '/directory/training'
+    | '/directory/why'
     | '/events/$slug'
     | '/events/sponsor'
     | '/events/training'
@@ -540,6 +600,12 @@ export interface FileRouteTypes {
     | '/about/charities'
     | '/about/conference'
     | '/about/ncf'
+    | '/directory/contractor'
+    | '/directory/designer'
+    | '/directory/search'
+    | '/directory/supplier'
+    | '/directory/training'
+    | '/directory/why'
     | '/events/$slug'
     | '/events/sponsor'
     | '/events/training'
@@ -592,6 +658,12 @@ export interface FileRouteTypes {
     | '/about/charities'
     | '/about/conference'
     | '/about/ncf'
+    | '/directory/contractor'
+    | '/directory/designer'
+    | '/directory/search'
+    | '/directory/supplier'
+    | '/directory/training'
+    | '/directory/why'
     | '/events/$slug'
     | '/events/sponsor'
     | '/events/training'
@@ -645,6 +717,12 @@ export interface RootRouteChildren {
   AboutCharitiesRoute: typeof AboutCharitiesRoute
   AboutConferenceRoute: typeof AboutConferenceRoute
   AboutNcfRoute: typeof AboutNcfRoute
+  DirectoryContractorRoute: typeof DirectoryContractorRoute
+  DirectoryDesignerRoute: typeof DirectoryDesignerRoute
+  DirectorySearchRoute: typeof DirectorySearchRoute
+  DirectorySupplierRoute: typeof DirectorySupplierRoute
+  DirectoryTrainingRoute: typeof DirectoryTrainingRoute
+  DirectoryWhyRoute: typeof DirectoryWhyRoute
   EventsSlugRoute: typeof EventsSlugRoute
   EventsSponsorRoute: typeof EventsSponsorRoute
   EventsTrainingRoute: typeof EventsTrainingRoute
@@ -964,6 +1042,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EventsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/directory/why': {
+      id: '/directory/why'
+      path: '/directory/why'
+      fullPath: '/directory/why'
+      preLoaderRoute: typeof DirectoryWhyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/directory/training': {
+      id: '/directory/training'
+      path: '/directory/training'
+      fullPath: '/directory/training'
+      preLoaderRoute: typeof DirectoryTrainingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/directory/supplier': {
+      id: '/directory/supplier'
+      path: '/directory/supplier'
+      fullPath: '/directory/supplier'
+      preLoaderRoute: typeof DirectorySupplierRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/directory/search': {
+      id: '/directory/search'
+      path: '/directory/search'
+      fullPath: '/directory/search'
+      preLoaderRoute: typeof DirectorySearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/directory/designer': {
+      id: '/directory/designer'
+      path: '/directory/designer'
+      fullPath: '/directory/designer'
+      preLoaderRoute: typeof DirectoryDesignerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/directory/contractor': {
+      id: '/directory/contractor'
+      path: '/directory/contractor'
+      fullPath: '/directory/contractor'
+      preLoaderRoute: typeof DirectoryContractorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about/ncf': {
       id: '/about/ncf'
       path: '/about/ncf'
@@ -1062,6 +1182,12 @@ const rootRouteChildren: RootRouteChildren = {
   AboutCharitiesRoute: AboutCharitiesRoute,
   AboutConferenceRoute: AboutConferenceRoute,
   AboutNcfRoute: AboutNcfRoute,
+  DirectoryContractorRoute: DirectoryContractorRoute,
+  DirectoryDesignerRoute: DirectoryDesignerRoute,
+  DirectorySearchRoute: DirectorySearchRoute,
+  DirectorySupplierRoute: DirectorySupplierRoute,
+  DirectoryTrainingRoute: DirectoryTrainingRoute,
+  DirectoryWhyRoute: DirectoryWhyRoute,
   EventsSlugRoute: EventsSlugRoute,
   EventsSponsorRoute: EventsSponsorRoute,
   EventsTrainingRoute: EventsTrainingRoute,
@@ -1101,3 +1227,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
