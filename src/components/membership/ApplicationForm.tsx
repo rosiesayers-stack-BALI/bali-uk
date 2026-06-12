@@ -76,6 +76,7 @@ export default function ApplicationForm({ config: rawConfig }: Props) {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [serverError, setServerError] = useState<string | null>(null);
+  const [showErrorSummary, setShowErrorSummary] = useState(false);
   const [files, setFiles] = useState<Record<string, File | null>>({});
   const [intlVariant, setIntlVariant] = useState<"contractor" | "supplier">("contractor");
 
@@ -143,6 +144,7 @@ export default function ApplicationForm({ config: rawConfig }: Props) {
   const onSubmit: SubmitHandler<FormValues> = async (values) => {
     setSubmitting(true);
     setServerError(null);
+    setShowErrorSummary(false);
     try {
       const fd = new FormData();
       fd.append("category", config.slug);
@@ -167,6 +169,15 @@ export default function ApplicationForm({ config: rawConfig }: Props) {
     }
   };
 
+  const onInvalid = () => {
+    setShowErrorSummary(true);
+    // Scroll to the first error field
+    requestAnimationFrame(() => {
+      const el = document.querySelector('[aria-invalid="true"], .text-red-600');
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+  };
+
   if (submitted) {
     return (
       <div className="max-w-3xl mx-auto px-6 py-16 text-center">
@@ -189,7 +200,7 @@ export default function ApplicationForm({ config: rawConfig }: Props) {
   const errors = form.formState.errors;
 
   return (
-    <form onSubmit={form.handleSubmit(onSubmit)} className="max-w-4xl mx-auto px-6 py-10 space-y-8">
+    <form onSubmit={form.handleSubmit(onSubmit, onInvalid)} className="max-w-4xl mx-auto px-6 py-10 space-y-8">
       {rawConfig.intlVariants && (
         <div className={sectionCls}>
           <h2 className={sectionTitleCls}>Which best describes you?</h2>
@@ -511,6 +522,13 @@ export default function ApplicationForm({ config: rawConfig }: Props) {
 
       {serverError && (
         <div className="bg-red-50 border border-red-200 rounded-xl p-4 text-sm text-red-700">{serverError}</div>
+      )}
+
+      {showErrorSummary && Object.keys(errors).length > 0 && (
+        <div className="bg-red-50 border border-red-200 rounded-xl p-4 text-sm text-red-700">
+          <p className="font-bold mb-1">Please fix the highlighted fields before submitting.</p>
+          <p className="text-red-600/80">Some required information is missing or invalid — scroll up to see the fields marked in red.</p>
+        </div>
       )}
 
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4">
