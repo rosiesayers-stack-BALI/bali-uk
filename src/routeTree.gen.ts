@@ -21,6 +21,7 @@ import { Route as HelpIndexRouteImport } from './routes/help.index'
 import { Route as EventsIndexRouteImport } from './routes/events.index'
 import { Route as DirectoryIndexRouteImport } from './routes/directory.index'
 import { Route as PolicySlugRouteImport } from './routes/policy.$slug'
+import { Route as NewsMagazineRouteImport } from './routes/news.magazine'
 import { Route as NewsSlugRouteImport } from './routes/news.$slug'
 import { Route as HelpPodcastRouteImport } from './routes/help.podcast'
 import { Route as HelpPlantHealthRouteImport } from './routes/help.plant-health'
@@ -103,6 +104,11 @@ const DirectoryIndexRoute = DirectoryIndexRouteImport.update({
 const PolicySlugRoute = PolicySlugRouteImport.update({
   id: '/policy/$slug',
   path: '/policy/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsMagazineRoute = NewsMagazineRouteImport.update({
+  id: '/news/magazine',
+  path: '/news/magazine',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NewsSlugRoute = NewsSlugRouteImport.update({
@@ -251,6 +257,7 @@ export interface FileRoutesByFullPath {
   '/help/plant-health': typeof HelpPlantHealthRoute
   '/help/podcast': typeof HelpPodcastRoute
   '/news/$slug': typeof NewsSlugRoute
+  '/news/magazine': typeof NewsMagazineRoute
   '/policy/$slug': typeof PolicySlugRoute
   '/directory/': typeof DirectoryIndexRoute
   '/events/': typeof EventsIndexRoute
@@ -288,6 +295,7 @@ export interface FileRoutesByTo {
   '/help/plant-health': typeof HelpPlantHealthRoute
   '/help/podcast': typeof HelpPodcastRoute
   '/news/$slug': typeof NewsSlugRoute
+  '/news/magazine': typeof NewsMagazineRoute
   '/policy/$slug': typeof PolicySlugRoute
   '/directory': typeof DirectoryIndexRoute
   '/events': typeof EventsIndexRoute
@@ -326,6 +334,7 @@ export interface FileRoutesById {
   '/help/plant-health': typeof HelpPlantHealthRoute
   '/help/podcast': typeof HelpPodcastRoute
   '/news/$slug': typeof NewsSlugRoute
+  '/news/magazine': typeof NewsMagazineRoute
   '/policy/$slug': typeof PolicySlugRoute
   '/directory/': typeof DirectoryIndexRoute
   '/events/': typeof EventsIndexRoute
@@ -365,6 +374,7 @@ export interface FileRouteTypes {
     | '/help/plant-health'
     | '/help/podcast'
     | '/news/$slug'
+    | '/news/magazine'
     | '/policy/$slug'
     | '/directory/'
     | '/events/'
@@ -402,6 +412,7 @@ export interface FileRouteTypes {
     | '/help/plant-health'
     | '/help/podcast'
     | '/news/$slug'
+    | '/news/magazine'
     | '/policy/$slug'
     | '/directory'
     | '/events'
@@ -439,6 +450,7 @@ export interface FileRouteTypes {
     | '/help/plant-health'
     | '/help/podcast'
     | '/news/$slug'
+    | '/news/magazine'
     | '/policy/$slug'
     | '/directory/'
     | '/events/'
@@ -477,6 +489,7 @@ export interface RootRouteChildren {
   HelpPlantHealthRoute: typeof HelpPlantHealthRoute
   HelpPodcastRoute: typeof HelpPodcastRoute
   NewsSlugRoute: typeof NewsSlugRoute
+  NewsMagazineRoute: typeof NewsMagazineRoute
   PolicySlugRoute: typeof PolicySlugRoute
   DirectoryIndexRoute: typeof DirectoryIndexRoute
   EventsIndexRoute: typeof EventsIndexRoute
@@ -571,6 +584,13 @@ declare module '@tanstack/react-router' {
       path: '/policy/$slug'
       fullPath: '/policy/$slug'
       preLoaderRoute: typeof PolicySlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news/magazine': {
+      id: '/news/magazine'
+      path: '/news/magazine'
+      fullPath: '/news/magazine'
+      preLoaderRoute: typeof NewsMagazineRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/news/$slug': {
@@ -774,6 +794,7 @@ const rootRouteChildren: RootRouteChildren = {
   HelpPlantHealthRoute: HelpPlantHealthRoute,
   HelpPodcastRoute: HelpPodcastRoute,
   NewsSlugRoute: NewsSlugRoute,
+  NewsMagazineRoute: NewsMagazineRoute,
   PolicySlugRoute: PolicySlugRoute,
   DirectoryIndexRoute: DirectoryIndexRoute,
   EventsIndexRoute: EventsIndexRoute,
