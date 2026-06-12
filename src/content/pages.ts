@@ -1533,10 +1533,11 @@ const C: Record<string, PageContent> = {
     title: "Membership of BALI",
     theme: "green",
     intro: "Become a member of the British Association of Landscape Industries and access exclusive benefits designed to help your business grow, thrive, and stand out.",
+    image: { url: "/__l5e/assets-v1/f84f9fdd-4c58-4342-9115-d5228b3c6d78/large_mountbatten-house-min.jpeg", alt: "Mountbatten House landscape" },
     sections: [
       {
-        heading: "Why Join BALI?",
-        body: "When you become a BALI member, you're joining a nationwide network of accredited landscaping professionals — committed to excellence, innovation, and leadership. Whether you're a contractor, designer, supplier, or student, our tailored support helps you raise your profile, win business, and develop your team. What BALI Offers You: Apply Now Learn about our mission and values",
+        heading: "Why join BALI?",
+        body: "When you become a BALI member, you're joining a nationwide network of accredited landscaping professionals — committed to excellence, innovation, and leadership. Whether you're a contractor, designer, supplier, or student, our tailored support helps you raise your profile, win business, and develop your team.",
         bullets: [
           "Accreditation that sets you apart",
           "Free HR and health & safety support",
@@ -1547,8 +1548,8 @@ const C: Record<string, PageContent> = {
         ],
       },
       {
-        heading: "Key Membership Benefits in Action",
-        body: "Free HR & Employment Law Support: All members get a complimentary One-to-One HR Review with Quest, our trusted partner. Health & Safety Advice: You don’t need to go it alone. BALI membership includes tailored health & safety support — from compliance to documentation. Members of the Association can save thousands of pounds by taking advantage of our vast membership benefit portfolio, including HR and health & safety support, digital marketing advice, insurance, recruitment and much more.",
+        heading: "Key benefits in action",
+        body: "Free HR & Employment Law Support: all members get a complimentary One-to-One HR Review with Quest, our trusted partner. Health & Safety Advice: tailored support, from compliance to documentation. Members of the Association can save thousands of pounds by taking advantage of our vast benefit portfolio, including HR and health & safety support, digital marketing advice, insurance, recruitment and much more.",
         bullets: [
           "HR Health Check",
           "Employment Law updates",
@@ -1560,81 +1561,23 @@ const C: Record<string, PageContent> = {
         ],
       },
       {
-        heading: "BALI’s Mission Supports You",
-        body: "We represent, support and accredit the landscape industry — providing training, professional advice and opportunity to members, and quality assurance to their clients. Our membership is more than a list — it’s a network, a benchmark, and a support system built around you.",
+        heading: "Our mission supports you",
+        body: "We represent, support and accredit the landscape industry — providing training, professional advice and opportunity to members, and quality assurance to their clients. Our membership is more than a list — it's a network, a benchmark, and a support system built around you.",
       },
       {
-        heading: "Get in Touch With Our Team",
-        body: "Need help choosing the right membership category or completing your application? Email: membership@bali.org.uk Call +44(0)24 7669 0333.",
+        heading: "Membership standards",
+        body: "Every Accredited member signs up to our Code of Conduct and is held to the Association Quality Standard. That's what gives clients confidence — and gives members a benchmark to work to.",
       },
       {
-        heading: "Membership Categories",
-        body: "BALI offers nine membership categories to suit every kind of business or individual. Click below to explore the right one for you, review the application process, fees, and benefits.",
+        heading: "Ready to apply?",
+        body: "BALI offers nine membership categories to suit every kind of business or individual — from Accredited Contractor, Designer and Supplier through to Associate, Training Provider and Student. Head to our Join page to choose your category and start your application.",
       },
       {
-        heading: "accredited contractor",
-        body: "This membership is for contractors whose main business involves hard/soft landscaping or grounds maintenance",
-      },
-      {
-        heading: "accredited designer",
-        body: "The British Association of Landscape Industries is committed to continually improving the landscape sector and sets high standards for its Accredited Designer members",
-      },
-      {
-        heading: "accredited supplier",
-        body: "This membership category can be a business, section or division of a business that supplies quality materials and equipment",
-      },
-      {
-        heading: "accredited group",
-        body: "Accredited Group membership is for contractors whose main business involves hard/soft landscaping or grounds maintenance",
-      },
-      {
-        heading: "accredited dso",
-        body: "Accredited Direct Service Organisation (DSO) membership is for the grounds maintenance departments of public or local authorities",
-      },
-      {
-        heading: "international",
-        body: "International membership is ideal for contractors who carry out hard and soft landscaping and/or grounds maintenance work and operate outside of the UK and the Channel Islands",
-      },
-      {
-        heading: "associate",
-        body: "Associate membership is for those trading for less than two years and are looking to explore the benefits of being a British Association of Landscape Industries member",
-      },
-      {
-        heading: "training provider",
-        body: "Perfect for individual trainers, commercial training organisations, FE and HE colleges and universities delivering land-based academic and skills training",
-      },
-      {
-        heading: "student",
-        body: "This category of membership is for students attending commercial training organisations, FE and HE colleges and universities",
+        heading: "Talk to the membership team",
+        body: "Need help choosing the right category or have a question about benefits? Email membership@bali.org.uk or call +44 (0)24 7669 0333.",
       },
     ],
-    ctaPrimary: { label: "Join Our Association", href: "/join" },
-    ctaSecondary: { label: "Contact the team", href: "/contact" },
-  },
-  "/membership/code": {
-    eyebrow: "Membership",
-    title: "Code of Conduct",
-    theme: "green",
-    intro: "Code of Conduct",
-    sections: [
-      {
-        heading: "Continued membership of the Association is dependent upon agreement to abide by the Association’s Code of Conduct detailed below:",
-        body: "",
-        bullets: [
-          "To uphold the standing of the British Association of Landscape Industries, its members, and the wider landscape industry by seeking to achieve and maintain the highest standards of business and professional expertise",
-          "To provide services only within their areas of competence and be responsible for the actions of all their staff and sub-contractors",
-          "To use appropriately trained staff and ensure on-going staff training and development",
-          "To operate in an environmentally, ethically, and commercially sustainable manner",
-          "To address client concerns promptly, maintaining professionalism and courtesy, and seek to negotiate an equitable solution in the case of a dispute",
-          "To cooperate fully with the Dispute Resolution Service (applicable to Accredited Contractor and Accredited Designer members only)",
-          "To identify and meet customer, legislative and regulatory requirements",
-          "To use the current ‘BALI Accredited’ logo appropriately (applicable to Accredited Contractor, Accredited International, Accredited Group, Accredited DSO, Accredited Supplier and Accredited Designer members only)",
-          "To maintain a satisfactory standard of workmanship and professional conduct, which may be subject to inspection at any time and will be subject to the association’s Quality Standards Review",
-          "To ensure the regular payment of the annual membership fee",
-        ],
-      },
-    ],
-    ctaPrimary: { label: "Join Our Association", href: "/join" },
+    ctaPrimary: { label: "Apply to join", href: "/join" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
   "/membership/quality": {
