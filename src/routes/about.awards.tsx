@@ -66,9 +66,9 @@ function AwardsPage() {
               <span className="inline-block px-3 py-1 border border-[#7FD699] text-[#7FD699] text-[10px] uppercase tracking-widest font-bold mb-6 rounded-full">
                 About BALI
               </span>
-              <h1 className="text-5xl md:text-7xl font-serif mb-8 leading-[1.05] tracking-tight">
+              <h1 className="text-5xl md:text-7xl font-sans font-bold mb-8 leading-[1.05] tracking-tight">
                 National Landscape{" "}
-                <span className="italic font-normal">Awards</span>
+                <span className="font-normal">Awards</span>
               </h1>
               <p className="text-lg text-white/85 font-light leading-relaxed mb-10 border-l-2 border-[#7FD699] pl-6">
                 2026 National Landscape Award entries are now open. We are thrilled to announce that this year's entries are now being accepted — the biggest landscaping awards ceremony in Europe.
@@ -99,7 +99,7 @@ function AwardsPage() {
             <div className="flex items-end justify-between mb-6">
               <div>
                 <p className="text-[#2FB457] text-xs font-bold uppercase tracking-[0.2em] mb-2">Watch the Highlights</p>
-                <h2 className="text-3xl sm:text-4xl font-serif text-[#002B45] italic">A night of excellence</h2>
+                <h2 className="text-3xl sm:text-4xl font-sans font-bold text-[#002B45]">A night of excellence</h2>
               </div>
             </div>
             <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5 bg-black">
@@ -136,7 +136,7 @@ function AwardsPage() {
               },
             ].map((s) => (
               <div key={s.n} className="relative pt-6">
-                <span className="text-8xl font-serif text-slate-100 absolute -top-2 -left-3 -z-10 select-none leading-none">
+                <span className="text-8xl font-sans font-bold text-slate-100 absolute -top-2 -left-3 -z-10 select-none leading-none">
                   {s.n}
                 </span>
                 <h3 className="text-xl font-bold text-[#002B45] mb-4 relative">{s.h}</h3>
@@ -161,7 +161,7 @@ function AwardsPage() {
           {/* Gallery */}
           <section className="mb-32">
             <div className="text-center mb-14">
-              <h2 className="text-4xl sm:text-5xl font-serif text-[#002B45] mb-4">
+              <h2 className="text-4xl sm:text-5xl font-sans font-bold text-[#002B45] mb-4">
                 Gallery of Excellence
               </h2>
               <div className="w-24 h-px bg-[#2FB457] mx-auto mb-4" />
@@ -186,7 +186,7 @@ function AwardsPage() {
           <section className="relative rounded-3xl bg-[#002B45] p-12 sm:p-16 text-center text-white overflow-hidden">
             <div className="absolute inset-0 bg-[#2FB457] opacity-[0.06] -skew-y-12 translate-y-20" />
             <div className="relative z-10">
-              <h2 className="text-3xl sm:text-4xl font-serif mb-6">Ready to take the next step?</h2>
+              <h2 className="text-3xl sm:text-4xl font-sans font-bold mb-6">Ready to take the next step?</h2>
               <p className="max-w-2xl mx-auto text-white/75 mb-10 text-base sm:text-lg leading-relaxed">
                 Whether you're a landscape professional or a client, BALI is here to help. Get in touch with our team — we respond to every enquiry within 48 hours.
               </p>
