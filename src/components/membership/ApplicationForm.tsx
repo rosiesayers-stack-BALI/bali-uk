@@ -72,11 +72,24 @@ const sectionCls = "bg-white border border-slate-200 rounded-2xl p-6 lg:p-8 shad
 const sectionTitleCls = "text-xl font-bold text-bali-blue mb-1";
 const sectionDescCls = "text-sm text-slate-500 mb-6";
 
-export default function ApplicationForm({ config }: Props) {
+export default function ApplicationForm({ config: rawConfig }: Props) {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [serverError, setServerError] = useState<string | null>(null);
   const [files, setFiles] = useState<Record<string, File | null>>({});
+  const [intlVariant, setIntlVariant] = useState<"contractor" | "supplier">("contractor");
+
+  // For international, merge the chosen variant's fields into the active config.
+  const config: CategoryConfig = rawConfig.intlVariants
+    ? {
+        ...rawConfig,
+        title: `${rawConfig.intlVariants[intlVariant].label}`,
+        disciplines: rawConfig.intlVariants[intlVariant].disciplines,
+        clientRefs: rawConfig.intlVariants[intlVariant].clientRefs,
+        clientRefsHelp: rawConfig.intlVariants[intlVariant].clientRefsHelp,
+        documents: rawConfig.intlVariants[intlVariant].documents,
+      }
+    : rawConfig;
 
   const schema = buildSchema(config);
 
