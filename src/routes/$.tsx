@@ -99,6 +99,7 @@ function SplatPage() {
     <div className="min-h-screen flex flex-col bg-white">
       <Navbar />
       {content ? <RichPage path={path} content={content} /> : <ComingSoon path={path} />}
+      {path === "/about/conference" && <ConferenceHighlights />}
       {path === "/about/conference" && <ConferenceInterestForm />}
       <Footer />
       <CookieBanner />
