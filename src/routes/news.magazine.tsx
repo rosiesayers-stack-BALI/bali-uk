@@ -91,6 +91,34 @@ const coverUrl = (id: string) => `https://image.isu.pub/${id}/jpg/page_1.jpg`;
 const issuuPage = (id: string) => `https://issuu.com/balilandscapeuk/docs/${id}`;
 const embedSrc = (i: Issue) => `https://e.issuu.com/embed.html?backgroundColor=%23${i.bg}&backgroundColorFullscreen=%23${i.bg}&d=${i.issuuId}&hideIssuuLogo=true&u=balilandscapeuk`;
 
+/** Designed cover tile — Issuu's real cover JPGs require a private hash, so we render a styled card. */
+function CoverTile({ issue, className = "" }: { issue: Issue; className?: string }) {
+  const [season, year] = issue.season.split(" ");
+  return (
+    <div
+      className={`relative w-full h-full flex flex-col justify-between p-5 text-white overflow-hidden ${className}`}
+      style={{ background: `linear-gradient(160deg, #${issue.bg} 0%, #${issue.bg}cc 60%, #00000040 100%)` }}
+    >
+      <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-[0.18em] opacity-90">
+        <span>Landscape News</span>
+        <span>BALI</span>
+      </div>
+      <div>
+        <div className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-80 mb-1">Issue · {year}</div>
+        <div className="font-bold text-3xl md:text-4xl leading-[0.95] mb-1">{season}</div>
+        <div className="text-sm opacity-80">{issue.published}</div>
+      </div>
+      <div className="flex items-end justify-between text-[10px] font-semibold uppercase tracking-wider opacity-80">
+        <span>{issue.pages} pages</span>
+        <span>{issue.highlights[0]?.topics[0]}</span>
+      </div>
+      {/* subtle decorative arc */}
+      <div className="pointer-events-none absolute -right-16 -bottom-16 w-64 h-64 rounded-full border-[14px] border-white/10" />
+    </div>
+  );
+}
+
+
 function Page() {
   const [query, setQuery] = useState("");
   const [topic, setTopic] = useState<Topic | "All">("All");
@@ -178,11 +206,12 @@ function Page() {
               <button
                 onClick={() => setModalIssue(latest)}
                 className="md:hidden group relative w-full rounded-2xl overflow-hidden border border-slate-200 shadow-lg block"
-                style={{ aspectRatio: "3 / 4", background: `#${latest.bg}` }}
+                style={{ aspectRatio: "3 / 4" }}
               >
-                <img src={coverUrl(latest.issuuId)} alt={`${latest.season} cover`} className="w-full h-full object-cover" loading="lazy" />
+                <CoverTile issue={latest} />
                 <span className="absolute inset-0 flex items-center justify-center bg-black/30 text-white font-bold text-lg">▶ Read issue</span>
               </button>
+
 
               {/* Highlights for latest */}
               <div className="grid sm:grid-cols-2 gap-3 mt-6">
@@ -238,12 +267,13 @@ function Page() {
                   <button
                     onClick={() => setModalIssue(iss)}
                     className="relative block w-full overflow-hidden"
-                    style={{ aspectRatio: "3 / 4", background: `#${iss.bg}` }}
+                    style={{ aspectRatio: "3 / 4" }}
                     aria-label={`Read ${iss.season}`}
                   >
-                    <img src={coverUrl(iss.issuuId)} alt={`${iss.season} cover`} loading="lazy" className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform" />
+                    <CoverTile issue={iss} className="group-hover:scale-[1.02] transition-transform" />
                     <span className="absolute bottom-3 left-3 right-3 text-center text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full bg-black/50 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity">▶ Read issue</span>
                   </button>
+
                   <div className="p-4 flex-1 flex flex-col">
                     <div className="font-bold text-slate-900 leading-snug">{iss.season}</div>
                     <div className="text-xs text-slate-500 mb-3">{iss.published} · {iss.pages} pages</div>
