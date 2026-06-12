@@ -200,7 +200,7 @@ export default function ApplicationForm({ config: rawConfig }: Props) {
   const errors = form.formState.errors;
 
   return (
-    <form onSubmit={form.handleSubmit(onSubmit)} className="max-w-4xl mx-auto px-6 py-10 space-y-8">
+    <form onSubmit={form.handleSubmit(onSubmit, onInvalid)} className="max-w-4xl mx-auto px-6 py-10 space-y-8">
       {rawConfig.intlVariants && (
         <div className={sectionCls}>
           <h2 className={sectionTitleCls}>Which best describes you?</h2>
