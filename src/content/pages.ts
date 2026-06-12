@@ -478,10 +478,10 @@ const C: Record<string, PageContent> = {
       { value: "1,200+", label: "Landscape News copies per quarter" },
     ],
     highlights: [
-      { title: "National Landscape Awards", description: "Europe's largest landscape awards — 1,000+ industry professionals attend annually." },
-      { title: "Landscape News magazine", description: "Quarterly print and digital edition reaching 2,000+ subscribers and key trade shows." },
-      { title: "BALI website", description: "Over half a million page views a year from clients, members and specifiers." },
-      { title: "Weekly e-newsletter", description: "Direct to 1,800+ inboxes with industry news, jobs and member updates." },
+      { title: "National Landscape Awards", body: "Europe's largest landscape awards — 1,000+ industry professionals attend annually." },
+      { title: "Landscape News magazine", body: "Quarterly print and digital edition reaching 2,000+ subscribers and key trade shows." },
+      { title: "BALI website", body: "Over half a million page views a year from clients, members and specifiers." },
+      { title: "Weekly e-newsletter", body: "Direct to 1,800+ inboxes with industry news, jobs and member updates." },
     ],
     sections: [
       {
