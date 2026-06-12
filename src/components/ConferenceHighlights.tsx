@@ -15,6 +15,12 @@ const PHOTOS: { url: string; alt: string }[] = [
   { url: "/__l5e/assets-v1/28b30177-9694-4532-8fef-16352b16c9cd/bali-conf-2025-055.jpg", alt: "Plant health breakout panel in the Royal Society library" },
   { url: "/__l5e/assets-v1/6ce72585-5e2d-43b7-a691-e6aa39a69c87/bali-conf-2025-067.jpg", alt: "Breakout session panel discussion with delegates" },
   { url: "/__l5e/assets-v1/a5b435eb-7b68-42c0-a103-438c7ac63c7e/bali-conf-2025-074.jpg", alt: "Closing panel reflecting on insights from the breakouts" },
+  { url: "/__l5e/assets-v1/3b48068a-0fbe-4745-b2c0-146d2070c286/P1011242.MOV.03_14_16_12.Still001.png", alt: "Delegates networking over coffee before the conference sessions" },
+  { url: "/__l5e/assets-v1/f7e3bf75-03d3-488d-aa75-5e316f154730/P1011248.MOV.03_15_12_14.Still001.png", alt: "A conference partner representative speaking with attendees in the networking area" },
+  { url: "/__l5e/assets-v1/c5bf13f6-afc3-4f68-a5ab-508c43267bb0/P1011257.MOV.03_16_06_14.Still001.png", alt: "Attendees gathering and talking during the conference break" },
+  { url: "/__l5e/assets-v1/5370f3e9-0fa9-407a-a587-6eba66aa83c2/P1011290.MOV.03_20_34_19.Still001.png", alt: "Delegates seated and listening during a keynote session" },
+  { url: "/__l5e/assets-v1/745f701b-4d45-4ad7-96d1-39a85d9d1a76/P1011314.MOV.03_30_35_05.Still001.png", alt: "A keynote speaker addressing the audience at the National Landscape Conference" },
+  { url: "/__l5e/assets-v1/76938189-5e15-4305-8524-438626bc0291/P1011331.MOV.03_55_32_18.Still001.png", alt: "National Landscape Conference 2026 event branding displayed in the venue" },
 ];
 
 export default function ConferenceHighlights() {
