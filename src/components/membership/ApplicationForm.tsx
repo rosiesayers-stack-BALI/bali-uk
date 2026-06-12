@@ -76,6 +76,7 @@ export default function ApplicationForm({ config: rawConfig }: Props) {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [serverError, setServerError] = useState<string | null>(null);
+  const [showErrorSummary, setShowErrorSummary] = useState(false);
   const [files, setFiles] = useState<Record<string, File | null>>({});
   const [intlVariant, setIntlVariant] = useState<"contractor" | "supplier">("contractor");
 
