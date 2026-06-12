@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import CookieBanner from "../components/CookieBanner";
 import Link from "../components/SmartLink";
 import ConferenceInterestForm from "../components/ConferenceInterestForm";
+import ConferenceHighlights from "../components/ConferenceHighlights";
 import { getPageContent, type PageContent } from "../content/pages";
 
 export const Route = createFileRoute("/$")({
