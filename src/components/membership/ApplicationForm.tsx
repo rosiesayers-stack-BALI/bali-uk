@@ -144,6 +144,7 @@ export default function ApplicationForm({ config: rawConfig }: Props) {
   const onSubmit: SubmitHandler<FormValues> = async (values) => {
     setSubmitting(true);
     setServerError(null);
+    setShowErrorSummary(false);
     try {
       const fd = new FormData();
       fd.append("category", config.slug);
@@ -166,6 +167,15 @@ export default function ApplicationForm({ config: rawConfig }: Props) {
     } finally {
       setSubmitting(false);
     }
+  };
+
+  const onInvalid = () => {
+    setShowErrorSummary(true);
+    // Scroll to the first error field
+    requestAnimationFrame(() => {
+      const el = document.querySelector('[aria-invalid="true"], .text-red-600');
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
   };
 
   if (submitted) {
