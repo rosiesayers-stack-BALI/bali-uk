@@ -50,7 +50,7 @@ export default function HelpPage({
 
         <section className="max-w-5xl mx-auto px-6 py-12 lg:py-16">
           {body && (
-            <div className="prose prose-slate max-w-none mb-10 prose-headings:text-bali-blue prose-headings:font-bold prose-a:text-bali-green prose-strong:text-slate-900">
+            <div className="help-content max-w-none mb-10 text-slate-700 leading-relaxed [&_h3]:text-bali-blue [&_h3]:font-bold [&_h3]:text-xl [&_h3]:mt-8 [&_h3]:mb-3 [&_h4]:font-bold [&_h4]:text-lg [&_h4]:mt-6 [&_h4]:mb-2 [&_p]:mb-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-5 [&_ul]:space-y-2 [&_li]:text-slate-700 [&_a]:text-bali-green [&_a]:font-semibold [&_a:hover]:underline [&_strong]:text-slate-900">
               {body}
             </div>
           )}
