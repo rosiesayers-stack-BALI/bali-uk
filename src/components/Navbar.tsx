@@ -13,7 +13,7 @@ const nav = [
       { label: 'Landscaping Careers', href: '/about/careers' },
       { label: 'Advertise With Us', href: '/about/advertise' },
       { label: 'Supported Charities', href: '/about/charities' },
-      { label: 'RHS Chelsea Flower Show 2025', href: '/about/rhs-chelsea' },
+      
       { label: 'National Conference 2026', href: '/about/conference', highlight: true },
     ],
   },
