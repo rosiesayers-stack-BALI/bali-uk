@@ -34,6 +34,7 @@ import { Route as HelpEquipmentRouteImport } from './routes/help.equipment'
 import { Route as HelpDomesticLandscapeContractRouteImport } from './routes/help.domestic-landscape-contract'
 import { Route as HelpDisputeRouteImport } from './routes/help.dispute'
 import { Route as HelpContractRouteImport } from './routes/help.contract'
+import { Route as EventsTrainingRouteImport } from './routes/events.training'
 import { Route as EventsSlugRouteImport } from './routes/events.$slug'
 import { Route as DirectoryWhyRouteImport } from './routes/directory.why'
 import { Route as DirectoryTrainingRouteImport } from './routes/directory.training'
@@ -172,6 +173,11 @@ const HelpContractRoute = HelpContractRouteImport.update({
   path: '/help/contract',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EventsTrainingRoute = EventsTrainingRouteImport.update({
+  id: '/events/training',
+  path: '/events/training',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EventsSlugRoute = EventsSlugRouteImport.update({
   id: '/events/$slug',
   path: '/events/$slug',
@@ -245,6 +251,7 @@ export interface FileRoutesByFullPath {
   '/directory/training': typeof DirectoryTrainingRoute
   '/directory/why': typeof DirectoryWhyRoute
   '/events/$slug': typeof EventsSlugRoute
+  '/events/training': typeof EventsTrainingRoute
   '/help/contract': typeof HelpContractRoute
   '/help/dispute': typeof HelpDisputeRoute
   '/help/domestic-landscape-contract': typeof HelpDomesticLandscapeContractRoute
@@ -283,6 +290,7 @@ export interface FileRoutesByTo {
   '/directory/training': typeof DirectoryTrainingRoute
   '/directory/why': typeof DirectoryWhyRoute
   '/events/$slug': typeof EventsSlugRoute
+  '/events/training': typeof EventsTrainingRoute
   '/help/contract': typeof HelpContractRoute
   '/help/dispute': typeof HelpDisputeRoute
   '/help/domestic-landscape-contract': typeof HelpDomesticLandscapeContractRoute
@@ -322,6 +330,7 @@ export interface FileRoutesById {
   '/directory/training': typeof DirectoryTrainingRoute
   '/directory/why': typeof DirectoryWhyRoute
   '/events/$slug': typeof EventsSlugRoute
+  '/events/training': typeof EventsTrainingRoute
   '/help/contract': typeof HelpContractRoute
   '/help/dispute': typeof HelpDisputeRoute
   '/help/domestic-landscape-contract': typeof HelpDomesticLandscapeContractRoute
@@ -362,6 +371,7 @@ export interface FileRouteTypes {
     | '/directory/training'
     | '/directory/why'
     | '/events/$slug'
+    | '/events/training'
     | '/help/contract'
     | '/help/dispute'
     | '/help/domestic-landscape-contract'
@@ -400,6 +410,7 @@ export interface FileRouteTypes {
     | '/directory/training'
     | '/directory/why'
     | '/events/$slug'
+    | '/events/training'
     | '/help/contract'
     | '/help/dispute'
     | '/help/domestic-landscape-contract'
@@ -438,6 +449,7 @@ export interface FileRouteTypes {
     | '/directory/training'
     | '/directory/why'
     | '/events/$slug'
+    | '/events/training'
     | '/help/contract'
     | '/help/dispute'
     | '/help/domestic-landscape-contract'
@@ -477,6 +489,7 @@ export interface RootRouteChildren {
   DirectoryTrainingRoute: typeof DirectoryTrainingRoute
   DirectoryWhyRoute: typeof DirectoryWhyRoute
   EventsSlugRoute: typeof EventsSlugRoute
+  EventsTrainingRoute: typeof EventsTrainingRoute
   HelpContractRoute: typeof HelpContractRoute
   HelpDisputeRoute: typeof HelpDisputeRoute
   HelpDomesticLandscapeContractRoute: typeof HelpDomesticLandscapeContractRoute
@@ -677,6 +690,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HelpContractRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/events/training': {
+      id: '/events/training'
+      path: '/events/training'
+      fullPath: '/events/training'
+      preLoaderRoute: typeof EventsTrainingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/events/$slug': {
       id: '/events/$slug'
       path: '/events/$slug'
@@ -782,6 +802,7 @@ const rootRouteChildren: RootRouteChildren = {
   DirectoryTrainingRoute: DirectoryTrainingRoute,
   DirectoryWhyRoute: DirectoryWhyRoute,
   EventsSlugRoute: EventsSlugRoute,
+  EventsTrainingRoute: EventsTrainingRoute,
   HelpContractRoute: HelpContractRoute,
   HelpDisputeRoute: HelpDisputeRoute,
   HelpDomesticLandscapeContractRoute: HelpDomesticLandscapeContractRoute,
