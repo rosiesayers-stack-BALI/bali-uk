@@ -59,7 +59,7 @@ export default function ConferenceHighlights() {
 
         <div className="mb-6 flex items-end justify-between flex-wrap gap-3">
           <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">In pictures</h3>
-          <p className="text-sm text-gray-500">More photos coming soon.</p>
+          <p className="text-sm text-gray-500">More conference moments from 2025.</p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[160px] sm:auto-rows-[200px] gap-3 sm:gap-4">
