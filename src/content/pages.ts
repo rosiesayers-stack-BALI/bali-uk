@@ -543,8 +543,6 @@ const C: Record<string, PageContent> = {
         body: "For bookings, bespoke packages or to request the full Media Pack, contact Joanna Pieprzak, Media Sales & Sponsorship Officer, at joanna.pieprzak@bali.org.uk or call +44 (0)24 7518 5614. For editorial enquiries about Landscape News, email our editor Luke Garner at luke.garner@bali.org.uk.",
       },
     ],
-    ctaPrimary: { label: "Email Joanna for the Media Pack", href: "mailto:joanna.pieprzak@bali.org.uk?subject=BALI%20Media%20Pack%20request" },
-    ctaSecondary: { label: "Call +44 (0)24 7518 5614", href: "tel:+442475185614" },
   },
   "/contact": {
     eyebrow: "Contact",
