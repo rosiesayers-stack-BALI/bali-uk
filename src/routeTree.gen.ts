@@ -16,6 +16,7 @@ import { Route as JoinRouteImport } from './routes/join'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as SplatRouteImport } from './routes/$'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PolicyIndexRouteImport } from './routes/policy.index'
 import { Route as NewsIndexRouteImport } from './routes/news.index'
 import { Route as MembershipIndexRouteImport } from './routes/membership.index'
 import { Route as LissCscsIndexRouteImport } from './routes/liss-cscs.index'
@@ -23,6 +24,7 @@ import { Route as HelpIndexRouteImport } from './routes/help.index'
 import { Route as EventsIndexRouteImport } from './routes/events.index'
 import { Route as DirectoryIndexRouteImport } from './routes/directory.index'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
+import { Route as PolicySlugRouteImport } from './routes/policy.$slug'
 import { Route as NewsMagazineRouteImport } from './routes/news.magazine'
 import { Route as NewsSlugRouteImport } from './routes/news.$slug'
 import { Route as MembershipTermsRouteImport } from './routes/membership.terms'
@@ -101,6 +103,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PolicyIndexRoute = PolicyIndexRouteImport.update({
+  id: '/policy/',
+  path: '/policy/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NewsIndexRoute = NewsIndexRouteImport.update({
   id: '/news/',
   path: '/news/',
@@ -134,6 +141,11 @@ const DirectoryIndexRoute = DirectoryIndexRouteImport.update({
 const AboutIndexRoute = AboutIndexRouteImport.update({
   id: '/about/',
   path: '/about/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PolicySlugRoute = PolicySlugRouteImport.update({
+  id: '/policy/$slug',
+  path: '/policy/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NewsMagazineRoute = NewsMagazineRouteImport.update({
@@ -397,6 +409,7 @@ export interface FileRoutesByFullPath {
   '/membership/terms': typeof MembershipTermsRoute
   '/news/$slug': typeof NewsSlugRoute
   '/news/magazine': typeof NewsMagazineRoute
+  '/policy/$slug': typeof PolicySlugRoute
   '/about/': typeof AboutIndexRoute
   '/directory/': typeof DirectoryIndexRoute
   '/events/': typeof EventsIndexRoute
@@ -404,6 +417,7 @@ export interface FileRoutesByFullPath {
   '/liss-cscs/': typeof LissCscsIndexRoute
   '/membership/': typeof MembershipIndexRoute
   '/news/': typeof NewsIndexRoute
+  '/policy/': typeof PolicyIndexRoute
   '/api/public/conference-interest': typeof ApiPublicConferenceInterestRoute
   '/api/public/membership-application': typeof ApiPublicMembershipApplicationRoute
   '/join/$category/apply': typeof JoinCategoryApplyRoute
@@ -455,6 +469,7 @@ export interface FileRoutesByTo {
   '/membership/terms': typeof MembershipTermsRoute
   '/news/$slug': typeof NewsSlugRoute
   '/news/magazine': typeof NewsMagazineRoute
+  '/policy/$slug': typeof PolicySlugRoute
   '/about': typeof AboutIndexRoute
   '/directory': typeof DirectoryIndexRoute
   '/events': typeof EventsIndexRoute
@@ -462,6 +477,7 @@ export interface FileRoutesByTo {
   '/liss-cscs': typeof LissCscsIndexRoute
   '/membership': typeof MembershipIndexRoute
   '/news': typeof NewsIndexRoute
+  '/policy': typeof PolicyIndexRoute
   '/api/public/conference-interest': typeof ApiPublicConferenceInterestRoute
   '/api/public/membership-application': typeof ApiPublicMembershipApplicationRoute
   '/join/$category/apply': typeof JoinCategoryApplyRoute
@@ -514,6 +530,7 @@ export interface FileRoutesById {
   '/membership/terms': typeof MembershipTermsRoute
   '/news/$slug': typeof NewsSlugRoute
   '/news/magazine': typeof NewsMagazineRoute
+  '/policy/$slug': typeof PolicySlugRoute
   '/about/': typeof AboutIndexRoute
   '/directory/': typeof DirectoryIndexRoute
   '/events/': typeof EventsIndexRoute
@@ -521,6 +538,7 @@ export interface FileRoutesById {
   '/liss-cscs/': typeof LissCscsIndexRoute
   '/membership/': typeof MembershipIndexRoute
   '/news/': typeof NewsIndexRoute
+  '/policy/': typeof PolicyIndexRoute
   '/api/public/conference-interest': typeof ApiPublicConferenceInterestRoute
   '/api/public/membership-application': typeof ApiPublicMembershipApplicationRoute
   '/join/$category/apply': typeof JoinCategoryApplyRoute
@@ -574,6 +592,7 @@ export interface FileRouteTypes {
     | '/membership/terms'
     | '/news/$slug'
     | '/news/magazine'
+    | '/policy/$slug'
     | '/about/'
     | '/directory/'
     | '/events/'
@@ -581,6 +600,7 @@ export interface FileRouteTypes {
     | '/liss-cscs/'
     | '/membership/'
     | '/news/'
+    | '/policy/'
     | '/api/public/conference-interest'
     | '/api/public/membership-application'
     | '/join/$category/apply'
@@ -632,6 +652,7 @@ export interface FileRouteTypes {
     | '/membership/terms'
     | '/news/$slug'
     | '/news/magazine'
+    | '/policy/$slug'
     | '/about'
     | '/directory'
     | '/events'
@@ -639,6 +660,7 @@ export interface FileRouteTypes {
     | '/liss-cscs'
     | '/membership'
     | '/news'
+    | '/policy'
     | '/api/public/conference-interest'
     | '/api/public/membership-application'
     | '/join/$category/apply'
@@ -690,6 +712,7 @@ export interface FileRouteTypes {
     | '/membership/terms'
     | '/news/$slug'
     | '/news/magazine'
+    | '/policy/$slug'
     | '/about/'
     | '/directory/'
     | '/events/'
@@ -697,6 +720,7 @@ export interface FileRouteTypes {
     | '/liss-cscs/'
     | '/membership/'
     | '/news/'
+    | '/policy/'
     | '/api/public/conference-interest'
     | '/api/public/membership-application'
     | '/join/$category/apply'
@@ -749,6 +773,7 @@ export interface RootRouteChildren {
   MembershipTermsRoute: typeof MembershipTermsRoute
   NewsSlugRoute: typeof NewsSlugRoute
   NewsMagazineRoute: typeof NewsMagazineRoute
+  PolicySlugRoute: typeof PolicySlugRoute
   AboutIndexRoute: typeof AboutIndexRoute
   DirectoryIndexRoute: typeof DirectoryIndexRoute
   EventsIndexRoute: typeof EventsIndexRoute
@@ -756,6 +781,7 @@ export interface RootRouteChildren {
   LissCscsIndexRoute: typeof LissCscsIndexRoute
   MembershipIndexRoute: typeof MembershipIndexRoute
   NewsIndexRoute: typeof NewsIndexRoute
+  PolicyIndexRoute: typeof PolicyIndexRoute
   ApiPublicConferenceInterestRoute: typeof ApiPublicConferenceInterestRoute
   ApiPublicMembershipApplicationRoute: typeof ApiPublicMembershipApplicationRoute
 }
@@ -811,6 +837,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/policy/': {
+      id: '/policy/'
+      path: '/policy'
+      fullPath: '/policy/'
+      preLoaderRoute: typeof PolicyIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/news/': {
       id: '/news/'
       path: '/news'
@@ -858,6 +891,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about/'
       preLoaderRoute: typeof AboutIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/policy/$slug': {
+      id: '/policy/$slug'
+      path: '/policy/$slug'
+      fullPath: '/policy/$slug'
+      preLoaderRoute: typeof PolicySlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/news/magazine': {
@@ -1214,6 +1254,7 @@ const rootRouteChildren: RootRouteChildren = {
   MembershipTermsRoute: MembershipTermsRoute,
   NewsSlugRoute: NewsSlugRoute,
   NewsMagazineRoute: NewsMagazineRoute,
+  PolicySlugRoute: PolicySlugRoute,
   AboutIndexRoute: AboutIndexRoute,
   DirectoryIndexRoute: DirectoryIndexRoute,
   EventsIndexRoute: EventsIndexRoute,
@@ -1221,6 +1262,7 @@ const rootRouteChildren: RootRouteChildren = {
   LissCscsIndexRoute: LissCscsIndexRoute,
   MembershipIndexRoute: MembershipIndexRoute,
   NewsIndexRoute: NewsIndexRoute,
+  PolicyIndexRoute: PolicyIndexRoute,
   ApiPublicConferenceInterestRoute: ApiPublicConferenceInterestRoute,
   ApiPublicMembershipApplicationRoute: ApiPublicMembershipApplicationRoute,
 }
