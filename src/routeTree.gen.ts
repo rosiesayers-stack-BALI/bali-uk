@@ -22,6 +22,7 @@ import { Route as EventsSlugRouteImport } from './routes/events.$slug'
 import { Route as AboutAwardsRouteImport } from './routes/about.awards'
 import { Route as JoinCategoryApplyRouteImport } from './routes/join.$category.apply'
 import { Route as ApiPublicMembershipApplicationRouteImport } from './routes/api/public/membership-application'
+import { Route as ApiPublicConferenceInterestRouteImport } from './routes/api/public/conference-interest'
 
 const PortalRoute = PortalRouteImport.update({
   id: '/portal',
@@ -89,6 +90,12 @@ const ApiPublicMembershipApplicationRoute =
     path: '/api/public/membership-application',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiPublicConferenceInterestRoute =
+  ApiPublicConferenceInterestRouteImport.update({
+    id: '/api/public/conference-interest',
+    path: '/api/public/conference-interest',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -102,6 +109,7 @@ export interface FileRoutesByFullPath {
   '/news/$slug': typeof NewsSlugRoute
   '/events/': typeof EventsIndexRoute
   '/news/': typeof NewsIndexRoute
+  '/api/public/conference-interest': typeof ApiPublicConferenceInterestRoute
   '/api/public/membership-application': typeof ApiPublicMembershipApplicationRoute
   '/join/$category/apply': typeof JoinCategoryApplyRoute
 }
@@ -117,6 +125,7 @@ export interface FileRoutesByTo {
   '/news/$slug': typeof NewsSlugRoute
   '/events': typeof EventsIndexRoute
   '/news': typeof NewsIndexRoute
+  '/api/public/conference-interest': typeof ApiPublicConferenceInterestRoute
   '/api/public/membership-application': typeof ApiPublicMembershipApplicationRoute
   '/join/$category/apply': typeof JoinCategoryApplyRoute
 }
@@ -133,6 +142,7 @@ export interface FileRoutesById {
   '/news/$slug': typeof NewsSlugRoute
   '/events/': typeof EventsIndexRoute
   '/news/': typeof NewsIndexRoute
+  '/api/public/conference-interest': typeof ApiPublicConferenceInterestRoute
   '/api/public/membership-application': typeof ApiPublicMembershipApplicationRoute
   '/join/$category/apply': typeof JoinCategoryApplyRoute
 }
@@ -150,6 +160,7 @@ export interface FileRouteTypes {
     | '/news/$slug'
     | '/events/'
     | '/news/'
+    | '/api/public/conference-interest'
     | '/api/public/membership-application'
     | '/join/$category/apply'
   fileRoutesByTo: FileRoutesByTo
@@ -165,6 +176,7 @@ export interface FileRouteTypes {
     | '/news/$slug'
     | '/events'
     | '/news'
+    | '/api/public/conference-interest'
     | '/api/public/membership-application'
     | '/join/$category/apply'
   id:
@@ -180,6 +192,7 @@ export interface FileRouteTypes {
     | '/news/$slug'
     | '/events/'
     | '/news/'
+    | '/api/public/conference-interest'
     | '/api/public/membership-application'
     | '/join/$category/apply'
   fileRoutesById: FileRoutesById
@@ -196,6 +209,7 @@ export interface RootRouteChildren {
   NewsSlugRoute: typeof NewsSlugRoute
   EventsIndexRoute: typeof EventsIndexRoute
   NewsIndexRoute: typeof NewsIndexRoute
+  ApiPublicConferenceInterestRoute: typeof ApiPublicConferenceInterestRoute
   ApiPublicMembershipApplicationRoute: typeof ApiPublicMembershipApplicationRoute
 }
 
@@ -292,6 +306,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPublicMembershipApplicationRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/conference-interest': {
+      id: '/api/public/conference-interest'
+      path: '/api/public/conference-interest'
+      fullPath: '/api/public/conference-interest'
+      preLoaderRoute: typeof ApiPublicConferenceInterestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -317,6 +338,7 @@ const rootRouteChildren: RootRouteChildren = {
   NewsSlugRoute: NewsSlugRoute,
   EventsIndexRoute: EventsIndexRoute,
   NewsIndexRoute: NewsIndexRoute,
+  ApiPublicConferenceInterestRoute: ApiPublicConferenceInterestRoute,
   ApiPublicMembershipApplicationRoute: ApiPublicMembershipApplicationRoute,
 }
 export const routeTree = rootRouteImport

@@ -302,7 +302,7 @@ const C: Record<string, PageContent> = {
     eventInfo: {
       venue: "Venue: TBC",
       date: "Date: TBC",
-      tickets: { label: "Book tickets (TBC)", href: "/contact" },
+      tickets: { label: "Register interest for tickets", href: "/about/conference#register-interest" },
     },
     sections: [
       {
@@ -384,8 +384,8 @@ const C: Record<string, PageContent> = {
         body: "Continue the conversation and connect with peers, speakers and industry leaders. Please note: breakout content and panellists may be subject to change.",
       },
     ],
-    ctaPrimary: { label: "Book your place", href: "/contact" },
-    ctaSecondary: { label: "Contact the team", href: "/contact" },
+    ctaPrimary: { label: "Register your interest", href: "/about/conference#register-interest" },
+    ctaSecondary: { label: "Sponsorship opportunities", href: "/about/advertise" },
   },
   "/about/ncf": {
     eyebrow: "About BALI",
