@@ -332,6 +332,8 @@ function JoinPage() {
                   "associate-designer": "associate-designer",
                   "associate-supplier": "associate-supplier",
                   "associate-individual": "associate-individual",
+                  "training-provider": "training-provider",
+                  "student": "student",
                 };
                 const applySlug = applySlugMap[c.slug];
                 const hasForm = Boolean(applySlug);

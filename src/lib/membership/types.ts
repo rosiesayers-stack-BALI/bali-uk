@@ -66,6 +66,8 @@ export type CategoryConfig = {
   documents: string[];
   // associate-individual: very different form (no company / refs / disciplines / docs)
   isIndividual?: boolean;
+  // student: dedicated form with college / course details
+  isStudent?: boolean;
   // accredited-international: applicant picks contractor or supplier at the top of the form
   intlVariants?: { contractor: IntlVariant; supplier: IntlVariant };
 };
@@ -152,12 +154,13 @@ export const CATEGORIES: Record<string, CategoryConfig> = {
     turnoverLabel: "Company turnover",
     disciplines: contractorDisciplines(),
     tradeRefs: 2,
-    clientRefs: 5,
+    clientRefs: 10,
+    clientRefsHelp: "References should be provided for ten clients you have carried out work for.",
     documents: [
       "Company letterhead",
       "Proof of turnover (latest set of accounts)",
       "Public liability insurance certificate",
-      "Employer's liability insurance certificate",
+      "Employer's liability insurance certificate (unless sole trader)",
       "Health and safety policy (for companies with 5+ employees)",
     ],
   },
@@ -304,6 +307,40 @@ export const CATEGORIES: Record<string, CategoryConfig> = {
     clientRefs: 0,
     documents: [],
     isIndividual: true,
+  },
+  "training-provider": {
+    slug: "training-provider",
+    title: "Training Provider",
+    summary:
+      "For individual trainers, commercial training organisations, FE/HE colleges and universities delivering land-based training, trading 2+ years.",
+    showVat: true,
+    showCompanyEmail: false,
+    showTurnoverBand: false,
+    showIncorporationDate: false,
+    showParentCompany: false,
+    turnoverLabel: "Company turnover",
+    tradeRefs: 0,
+    clientRefs: 0,
+    documents: [
+      "Company letterhead",
+      "Public liability insurance certificate",
+    ],
+  },
+  "student": {
+    slug: "student",
+    title: "Student",
+    summary:
+      "For students at FE/HE colleges, universities and commercial training organisations — connect to GoLandscape and the wider industry.",
+    showVat: false,
+    showCompanyEmail: false,
+    showTurnoverBand: false,
+    showIncorporationDate: false,
+    showParentCompany: false,
+    turnoverLabel: "",
+    tradeRefs: 0,
+    clientRefs: 0,
+    documents: ["Proof of enrolment"],
+    isStudent: true,
   },
 };
 
