@@ -766,49 +766,6 @@ const C: Record<string, PageContent> = {
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
-  "/events/training": {
-    eyebrow: "Events",
-    title: "BALI Training Courses",
-    theme: "warm",
-    intro: "ROLO H&S Environmental Awareness Course for Operatives - 1 Day Online",
-    image: { url: "/__l5e/assets-v1/9a43f90a-4a3a-4a31-80cb-fd5e1c43f0c0/jdrgroup-factlogo-iq-19-01-2026-v3-2-.jpg", alt: "BALI Training Courses" },
-    sections: [
-      {
-        heading: "ROLO Health, Safety and Environmental Awareness Course for Operatives - Online",
-        body: "Mandatory course for most LISS/CSCS SmartCards. This course is hosted by Landscape Training Group.",
-      },
-      {
-        heading: "ROLO Health, Safety and Environmental Awareness Course for Operatives - 1 day",
-        body: "ROLO Operatives Certification with Assessment",
-      },
-      {
-        heading: "ROLO Health, Safety and Environmental Awareness Course for Operatives - 1 Day online",
-        body: "ROLO H&S Environmental Awareness Course for Operatives - 1 Day Online",
-      },
-      {
-        heading: "ROLO Health, Safety and Environmental Awareness Course for Operatives - 1 Day online",
-        body: "ROLO H&S Environmental Awareness Course for Operatives - 1 Day Online",
-      },
-      {
-        heading: "ROLO Health, Safety and Environmental Awareness Course for Operatives - 1 day",
-        body: "ROLO Operatives Certification with Assessment",
-      },
-      {
-        heading: "ROLO Health, Safety and Environmental Awareness Course for Operatives - 1 Day online",
-        body: "ROLO H&S Environmental Awareness Course for Operatives - 1 Day Online",
-      },
-      {
-        heading: "ROLO Health, Safety and Environmental Awareness Course for Operatives - 1 Day Online",
-        body: "ROLO Operative - 1 day online, hosted by Orchard Learning.",
-      },
-      {
-        heading: "ROLO Health, Safety and Environmental Awareness for Operatives - 1 Day Online",
-        body: "Remote online training course for CITB HS&E test for most LISS/CSCS Smart Cards. Page 1 of 15",
-      },
-    ],
-    ctaPrimary: { label: "See upcoming events", href: "/events" },
-    ctaSecondary: { label: "Training courses", href: "/events/training" },
-  },
   "/help": {
     eyebrow: "Help & Advice",
     title: "BALI Help & Advice",
