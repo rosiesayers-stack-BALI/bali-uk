@@ -312,8 +312,8 @@ function JoinPage() {
                   Find your membership
                 </h2>
                 <p className="text-slate-600">
-                  Nine specialised paths to suit every industry role. Pick the one that fits — our team
-                  will confirm eligibility, fees and next steps.
+                  Specialised paths to suit every role — accredited, international, associate and education.
+                  Pick the one that fits and our team
                 </p>
               </div>
             </div>
