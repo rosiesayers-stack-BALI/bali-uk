@@ -21,6 +21,7 @@ import { Route as MembershipIndexRouteImport } from './routes/membership.index'
 import { Route as LissCscsIndexRouteImport } from './routes/liss-cscs.index'
 import { Route as HelpIndexRouteImport } from './routes/help.index'
 import { Route as EventsIndexRouteImport } from './routes/events.index'
+import { Route as DirectoryIndexRouteImport } from './routes/directory.index'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
 import { Route as NewsMagazineRouteImport } from './routes/news.magazine'
 import { Route as NewsSlugRouteImport } from './routes/news.$slug'
@@ -117,6 +118,11 @@ const HelpIndexRoute = HelpIndexRouteImport.update({
 const EventsIndexRoute = EventsIndexRouteImport.update({
   id: '/events/',
   path: '/events/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DirectoryIndexRoute = DirectoryIndexRouteImport.update({
+  id: '/directory/',
+  path: '/directory/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutIndexRoute = AboutIndexRouteImport.update({
@@ -350,6 +356,7 @@ export interface FileRoutesByFullPath {
   '/news/$slug': typeof NewsSlugRoute
   '/news/magazine': typeof NewsMagazineRoute
   '/about/': typeof AboutIndexRoute
+  '/directory/': typeof DirectoryIndexRoute
   '/events/': typeof EventsIndexRoute
   '/help/': typeof HelpIndexRoute
   '/liss-cscs/': typeof LissCscsIndexRoute
@@ -401,6 +408,7 @@ export interface FileRoutesByTo {
   '/news/$slug': typeof NewsSlugRoute
   '/news/magazine': typeof NewsMagazineRoute
   '/about': typeof AboutIndexRoute
+  '/directory': typeof DirectoryIndexRoute
   '/events': typeof EventsIndexRoute
   '/help': typeof HelpIndexRoute
   '/liss-cscs': typeof LissCscsIndexRoute
@@ -453,6 +461,7 @@ export interface FileRoutesById {
   '/news/$slug': typeof NewsSlugRoute
   '/news/magazine': typeof NewsMagazineRoute
   '/about/': typeof AboutIndexRoute
+  '/directory/': typeof DirectoryIndexRoute
   '/events/': typeof EventsIndexRoute
   '/help/': typeof HelpIndexRoute
   '/liss-cscs/': typeof LissCscsIndexRoute
@@ -506,6 +515,7 @@ export interface FileRouteTypes {
     | '/news/$slug'
     | '/news/magazine'
     | '/about/'
+    | '/directory/'
     | '/events/'
     | '/help/'
     | '/liss-cscs/'
@@ -557,6 +567,7 @@ export interface FileRouteTypes {
     | '/news/$slug'
     | '/news/magazine'
     | '/about'
+    | '/directory'
     | '/events'
     | '/help'
     | '/liss-cscs'
@@ -608,6 +619,7 @@ export interface FileRouteTypes {
     | '/news/$slug'
     | '/news/magazine'
     | '/about/'
+    | '/directory/'
     | '/events/'
     | '/help/'
     | '/liss-cscs/'
@@ -660,6 +672,7 @@ export interface RootRouteChildren {
   NewsSlugRoute: typeof NewsSlugRoute
   NewsMagazineRoute: typeof NewsMagazineRoute
   AboutIndexRoute: typeof AboutIndexRoute
+  DirectoryIndexRoute: typeof DirectoryIndexRoute
   EventsIndexRoute: typeof EventsIndexRoute
   HelpIndexRoute: typeof HelpIndexRoute
   LissCscsIndexRoute: typeof LissCscsIndexRoute
@@ -753,6 +766,13 @@ declare module '@tanstack/react-router' {
       path: '/events'
       fullPath: '/events/'
       preLoaderRoute: typeof EventsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/directory/': {
+      id: '/directory/'
+      path: '/directory'
+      fullPath: '/directory/'
+      preLoaderRoute: typeof DirectoryIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about/': {
@@ -1069,6 +1089,7 @@ const rootRouteChildren: RootRouteChildren = {
   NewsSlugRoute: NewsSlugRoute,
   NewsMagazineRoute: NewsMagazineRoute,
   AboutIndexRoute: AboutIndexRoute,
+  DirectoryIndexRoute: DirectoryIndexRoute,
   EventsIndexRoute: EventsIndexRoute,
   HelpIndexRoute: HelpIndexRoute,
   LissCscsIndexRoute: LissCscsIndexRoute,
@@ -1080,13 +1101,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
