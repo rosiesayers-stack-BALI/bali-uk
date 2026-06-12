@@ -21,7 +21,7 @@ const nav: NavItem[] = [
     label: 'About', href: '/about',
     items: [
       { label: 'What We Do', href: '/about' },
-      { label: 'How We Represent the Industry', href: 'https://bali-policy.org.uk', external: true },
+      { label: 'How We Represent the Industry', href: '/policy' },
       { label: 'Board of Directors', href: '/about/board' },
       { label: 'Meet Our Team', href: '/our-team' },
       { label: 'BALI-NCF', href: '/about/ncf' },
@@ -95,10 +95,14 @@ const nav: NavItem[] = [
     ],
   },
   {
-    label: 'Policy & Campaigns', href: 'https://bali-policy.org.uk', external: true,
+    label: 'Policy & Campaigns', href: '/policy',
     items: [
-      { label: 'Policy News', href: 'https://bali-policy.org.uk/news', external: true },
-      { label: 'Industry Campaigns', href: 'https://bali-policy.org.uk', external: true },
+      { label: 'All Policy Updates', href: '/policy' },
+      { label: 'Budget & Tax', href: '/policy' },
+      { label: 'Consultations', href: '/policy' },
+      { label: 'Environment', href: '/policy' },
+      { label: 'Business & Trade', href: '/policy' },
+      { label: 'bali-policy.org.uk ↗', href: 'https://bali-policy.org.uk', external: true },
     ],
   },
 ]
