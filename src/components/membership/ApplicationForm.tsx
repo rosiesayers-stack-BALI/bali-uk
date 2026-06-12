@@ -107,7 +107,7 @@ export default function ApplicationForm({ config: rawConfig }: Props) {
         town: "",
         county: "",
         postcode: "",
-        country: config.slug.startsWith("international") ? "" : "United Kingdom",
+        country: config.slug.includes("international") ? "" : "United Kingdom",
         regions: [],
         registrationNumber: "",
         vatNumber: "",
