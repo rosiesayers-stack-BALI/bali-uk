@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CookieBanner from "../components/CookieBanner";
 
-export const Route = createFileRoute("/join")({
+export const Route = createFileRoute("/join/")({
   head: () => ({
     meta: [
       { title: "Join BALI — Membership for Landscape Professionals" },
