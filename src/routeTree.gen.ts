@@ -11,13 +11,13 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PortalRouteImport } from './routes/portal'
 import { Route as LoginRouteImport } from './routes/login'
-import { Route as JoinRouteImport } from './routes/join'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as SplatRouteImport } from './routes/$'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PolicyIndexRouteImport } from './routes/policy.index'
 import { Route as NewsIndexRouteImport } from './routes/news.index'
+import { Route as JoinIndexRouteImport } from './routes/join.index'
 import { Route as HelpIndexRouteImport } from './routes/help.index'
 import { Route as EventsIndexRouteImport } from './routes/events.index'
 import { Route as DirectoryIndexRouteImport } from './routes/directory.index'
@@ -126,11 +126,6 @@ const LoginRoute = LoginRouteImport.update({
   path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
-const JoinRoute = JoinRouteImport.update({
-  id: '/join',
-  path: '/join',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -159,6 +154,11 @@ const PolicyIndexRoute = PolicyIndexRouteImport.update({
 const NewsIndexRoute = NewsIndexRouteImport.update({
   id: '/news/',
   path: '/news/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JoinIndexRoute = JoinIndexRouteImport.update({
+  id: '/join/',
+  path: '/join/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HelpIndexRoute = HelpIndexRouteImport.update({
@@ -353,9 +353,9 @@ const AdminEventsIndexRoute = AdminEventsIndexRouteImport.update({
   getParentRoute: () => AdminRoute,
 } as any)
 const JoinCategoryApplyRoute = JoinCategoryApplyRouteImport.update({
-  id: '/$category/apply',
-  path: '/$category/apply',
-  getParentRoute: () => JoinRoute,
+  id: '/join/$category/apply',
+  path: '/join/$category/apply',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const HelpPlantHealthPostBrexitPlantHealthArrangementsRoute =
   HelpPlantHealthPostBrexitPlantHealthArrangementsRouteImport.update({
@@ -689,7 +689,6 @@ export interface FileRoutesByFullPath {
   '/$': typeof SplatRoute
   '/admin': typeof AdminRouteWithChildren
   '/contact': typeof ContactRoute
-  '/join': typeof JoinRouteWithChildren
   '/login': typeof LoginRoute
   '/portal': typeof PortalRoute
   '/about/awards': typeof AboutAwardsRoute
@@ -726,6 +725,7 @@ export interface FileRoutesByFullPath {
   '/directory/': typeof DirectoryIndexRoute
   '/events/': typeof EventsIndexRoute
   '/help/': typeof HelpIndexRoute
+  '/join/': typeof JoinIndexRoute
   '/news/': typeof NewsIndexRoute
   '/policy/': typeof PolicyIndexRoute
   '/admin/events/$id': typeof AdminEventsIdRoute
@@ -796,7 +796,6 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/contact': typeof ContactRoute
-  '/join': typeof JoinRouteWithChildren
   '/login': typeof LoginRoute
   '/portal': typeof PortalRoute
   '/about/awards': typeof AboutAwardsRoute
@@ -833,6 +832,7 @@ export interface FileRoutesByTo {
   '/directory': typeof DirectoryIndexRoute
   '/events': typeof EventsIndexRoute
   '/help': typeof HelpIndexRoute
+  '/join': typeof JoinIndexRoute
   '/news': typeof NewsIndexRoute
   '/policy': typeof PolicyIndexRoute
   '/admin/events/$id': typeof AdminEventsIdRoute
@@ -905,7 +905,6 @@ export interface FileRoutesById {
   '/$': typeof SplatRoute
   '/admin': typeof AdminRouteWithChildren
   '/contact': typeof ContactRoute
-  '/join': typeof JoinRouteWithChildren
   '/login': typeof LoginRoute
   '/portal': typeof PortalRoute
   '/about/awards': typeof AboutAwardsRoute
@@ -942,6 +941,7 @@ export interface FileRoutesById {
   '/directory/': typeof DirectoryIndexRoute
   '/events/': typeof EventsIndexRoute
   '/help/': typeof HelpIndexRoute
+  '/join/': typeof JoinIndexRoute
   '/news/': typeof NewsIndexRoute
   '/policy/': typeof PolicyIndexRoute
   '/admin/events/$id': typeof AdminEventsIdRoute
@@ -1015,7 +1015,6 @@ export interface FileRouteTypes {
     | '/$'
     | '/admin'
     | '/contact'
-    | '/join'
     | '/login'
     | '/portal'
     | '/about/awards'
@@ -1052,6 +1051,7 @@ export interface FileRouteTypes {
     | '/directory/'
     | '/events/'
     | '/help/'
+    | '/join/'
     | '/news/'
     | '/policy/'
     | '/admin/events/$id'
@@ -1122,7 +1122,6 @@ export interface FileRouteTypes {
     | '/'
     | '/$'
     | '/contact'
-    | '/join'
     | '/login'
     | '/portal'
     | '/about/awards'
@@ -1159,6 +1158,7 @@ export interface FileRouteTypes {
     | '/directory'
     | '/events'
     | '/help'
+    | '/join'
     | '/news'
     | '/policy'
     | '/admin/events/$id'
@@ -1230,7 +1230,6 @@ export interface FileRouteTypes {
     | '/$'
     | '/admin'
     | '/contact'
-    | '/join'
     | '/login'
     | '/portal'
     | '/about/awards'
@@ -1267,6 +1266,7 @@ export interface FileRouteTypes {
     | '/directory/'
     | '/events/'
     | '/help/'
+    | '/join/'
     | '/news/'
     | '/policy/'
     | '/admin/events/$id'
@@ -1339,7 +1339,6 @@ export interface RootRouteChildren {
   SplatRoute: typeof SplatRoute
   AdminRoute: typeof AdminRouteWithChildren
   ContactRoute: typeof ContactRoute
-  JoinRoute: typeof JoinRouteWithChildren
   LoginRoute: typeof LoginRoute
   PortalRoute: typeof PortalRoute
   AboutAwardsRoute: typeof AboutAwardsRoute
@@ -1374,11 +1373,13 @@ export interface RootRouteChildren {
   DirectoryIndexRoute: typeof DirectoryIndexRoute
   EventsIndexRoute: typeof EventsIndexRoute
   HelpIndexRoute: typeof HelpIndexRoute
+  JoinIndexRoute: typeof JoinIndexRoute
   NewsIndexRoute: typeof NewsIndexRoute
   PolicyIndexRoute: typeof PolicyIndexRoute
   ApiPublicConferenceInterestRoute: typeof ApiPublicConferenceInterestRoute
   ApiPublicMembershipApplicationRoute: typeof ApiPublicMembershipApplicationRoute
   ApiPublicMembershipEnquiryRoute: typeof ApiPublicMembershipEnquiryRoute
+  JoinCategoryApplyRoute: typeof JoinCategoryApplyRoute
   ApiPublicHooksWorkbooksSyncRoute: typeof ApiPublicHooksWorkbooksSyncRoute
 }
 
@@ -1396,13 +1397,6 @@ declare module '@tanstack/react-router' {
       path: '/login'
       fullPath: '/login'
       preLoaderRoute: typeof LoginRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/join': {
-      id: '/join'
-      path: '/join'
-      fullPath: '/join'
-      preLoaderRoute: typeof JoinRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -1445,6 +1439,13 @@ declare module '@tanstack/react-router' {
       path: '/news'
       fullPath: '/news/'
       preLoaderRoute: typeof NewsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/join/': {
+      id: '/join/'
+      path: '/join'
+      fullPath: '/join/'
+      preLoaderRoute: typeof JoinIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/help/': {
@@ -1715,10 +1716,10 @@ declare module '@tanstack/react-router' {
     }
     '/join/$category/apply': {
       id: '/join/$category/apply'
-      path: '/$category/apply'
+      path: '/join/$category/apply'
       fullPath: '/join/$category/apply'
       preLoaderRoute: typeof JoinCategoryApplyRouteImport
-      parentRoute: typeof JoinRoute
+      parentRoute: typeof rootRouteImport
     }
     '/help/plant-health/post-brexit-plant-health-arrangements': {
       id: '/help/plant-health/post-brexit-plant-health-arrangements'
@@ -2157,16 +2158,6 @@ const AdminRouteChildren: AdminRouteChildren = {
 
 const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
 
-interface JoinRouteChildren {
-  JoinCategoryApplyRoute: typeof JoinCategoryApplyRoute
-}
-
-const JoinRouteChildren: JoinRouteChildren = {
-  JoinCategoryApplyRoute: JoinCategoryApplyRoute,
-}
-
-const JoinRouteWithChildren = JoinRoute._addFileChildren(JoinRouteChildren)
-
 interface HelpDisputeRouteChildren {
   HelpDisputeClientInformationRoute: typeof HelpDisputeClientInformationRoute
   HelpDisputeFrequentlyAskedQuestionsRoute: typeof HelpDisputeFrequentlyAskedQuestionsRoute
@@ -2350,7 +2341,6 @@ const rootRouteChildren: RootRouteChildren = {
   SplatRoute: SplatRoute,
   AdminRoute: AdminRouteWithChildren,
   ContactRoute: ContactRoute,
-  JoinRoute: JoinRouteWithChildren,
   LoginRoute: LoginRoute,
   PortalRoute: PortalRoute,
   AboutAwardsRoute: AboutAwardsRoute,
@@ -2385,11 +2375,13 @@ const rootRouteChildren: RootRouteChildren = {
   DirectoryIndexRoute: DirectoryIndexRoute,
   EventsIndexRoute: EventsIndexRoute,
   HelpIndexRoute: HelpIndexRoute,
+  JoinIndexRoute: JoinIndexRoute,
   NewsIndexRoute: NewsIndexRoute,
   PolicyIndexRoute: PolicyIndexRoute,
   ApiPublicConferenceInterestRoute: ApiPublicConferenceInterestRoute,
   ApiPublicMembershipApplicationRoute: ApiPublicMembershipApplicationRoute,
   ApiPublicMembershipEnquiryRoute: ApiPublicMembershipEnquiryRoute,
+  JoinCategoryApplyRoute: JoinCategoryApplyRoute,
   ApiPublicHooksWorkbooksSyncRoute: ApiPublicHooksWorkbooksSyncRoute,
 }
 export const routeTree = rootRouteImport
