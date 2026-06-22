@@ -334,10 +334,10 @@ export default function HomePage() {
             <RevealDiv delay={0.2}>
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80', caption: 'Award-winning garden design', mt: '' },
-                  { src: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80', caption: 'Professional landscaping', mt: 'mt-6' },
-                  { src: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=600&q=80', caption: 'Precision maintenance', mt: '-mt-2' },
-                  { src: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&q=80', caption: 'Quality materials & supply', mt: 'mt-4' },
+                  { src: bannerHome1.url, caption: 'Award-winning garden design', mt: '' },
+                  { src: bannerWeb.url, caption: 'Professional landscaping', mt: 'mt-6' },
+                  { src: bannerHome3.url, caption: 'Precision maintenance', mt: '-mt-2' },
+                  { src: bannerMountbatten.url, caption: 'Quality materials & supply', mt: 'mt-4' },
                 ].map((img) => (
                   <div key={img.src} className={`bg-white rounded-2xl overflow-hidden shadow-md ${img.mt}`}>
                     <img src={img.src} alt={img.caption} className="w-full h-40 object-cover" />
