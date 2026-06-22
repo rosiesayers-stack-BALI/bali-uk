@@ -95,7 +95,7 @@ function NewsArticlePage() {
             <p className="text-xl text-gray-700 leading-relaxed mb-8 font-medium">{article.description}</p>
           )}
           <div className="prose prose-lg max-w-none space-y-5 text-gray-700 leading-relaxed">
-            {article.body_paragraphs.map((p, i) => <p key={i}>{p}</p>)}
+            {article.body_paragraphs.map((p: string, i: number) => <p key={i}>{p}</p>)}
           </div>
 
           <div className="mt-16 pt-8 border-t border-gray-200 grid sm:grid-cols-2 gap-4">

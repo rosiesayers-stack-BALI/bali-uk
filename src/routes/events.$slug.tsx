@@ -80,7 +80,7 @@ function EventPage() {
         <div className="max-w-3xl mx-auto px-6 py-12">
           {event.description && (<p className="text-xl text-gray-700 leading-relaxed mb-8 font-medium">{event.description}</p>)}
           <div className="prose prose-lg max-w-none space-y-5 text-gray-700 leading-relaxed">
-            {event.body_paragraphs.map((p, i) => <p key={i}>{p}</p>)}
+            {event.body_paragraphs.map((p: string, i: number) => <p key={i}>{p}</p>)}
           </div>
           <div className="mt-10 p-6 rounded-2xl bg-gradient-to-br from-bali-blue/5 to-bali-purple/5 border border-bali-blue/10">
             <h3 className="font-bold text-bali-blue mb-2">Book your place</h3>

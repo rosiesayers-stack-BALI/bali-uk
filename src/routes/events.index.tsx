@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CookieBanner from "../components/CookieBanner";
 import Link from "../components/SmartLink";
-import { fetchEventsList } from "../lib/content/db";
+import { fetchEventsList, type EventRow } from "../lib/content/db";
 
 export const Route = createFileRoute("/events/")({
   head: () => ({
@@ -35,7 +35,7 @@ function EventsIndex() {
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {events.map((e) => {
+            {events.map((e: EventRow) => {
               const parts = e.date_text.split(" ");
               const day = parts[0] ?? e.date_text;
               const month = (parts[1] ?? "").toUpperCase();

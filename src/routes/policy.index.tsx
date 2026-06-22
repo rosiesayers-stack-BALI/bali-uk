@@ -33,12 +33,12 @@ function PolicyIndex() {
 
   const counts = useMemo(() => {
     const c = {} as Record<PolicyTheme, number>;
-    POLICY_THEMES.forEach((t) => (c[t] = posts.filter((p) => p.themes.includes(t)).length));
+    POLICY_THEMES.forEach((t) => (c[t] = posts.filter((p: PolicyRow) => p.themes.includes(t)).length));
     return c;
   }, [posts]);
 
   const visible = useMemo(
-    () => (filter === "All" ? posts : posts.filter((p) => p.themes.includes(filter))),
+    () => (filter === "All" ? posts : posts.filter((p: PolicyRow) => p.themes.includes(filter))),
     [filter, posts],
   );
 
@@ -84,7 +84,7 @@ function PolicyIndex() {
               )}
               <div className="p-8 flex flex-col justify-center">
                 <div className="flex flex-wrap gap-2 mb-3">
-                  {featured.themes.map((t) => <ThemePill key={t} theme={t as PolicyTheme} />)}
+                  {featured.themes.map((t: string) => <ThemePill key={t} theme={t as PolicyTheme} />)}
                 </div>
                 <span className="text-xs uppercase tracking-widest text-bali-purple font-semibold">
                   Featured · {featured.date_text} · {featured.read_minutes} min read
