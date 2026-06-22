@@ -86,15 +86,19 @@ export const fetchNewsBySlug = async (slug: string): Promise<NewsRow | null> => 
   return data;
 };
 
-export const fetchEventsList = async (): Promise<EventRow[]> =>
-  handle(
+export const fetchEventsList = async (): Promise<EventRow[]> => {
+  const today = new Date().toISOString().slice(0, 10);
+  return handle(
     await supabase
       .from("events")
       .select("*")
       .eq("published", true)
+      .or(`iso_date.gte.${today},iso_date.is.null`)
       .order("iso_date", { ascending: true, nullsFirst: false })
       .order("sort_order", { ascending: false }),
   );
+};
+
 
 export const fetchEventBySlug = async (slug: string): Promise<EventRow | null> => {
   const { data, error } = await supabase
