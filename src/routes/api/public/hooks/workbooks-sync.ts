@@ -5,42 +5,40 @@ import { createFileRoute } from "@tanstack/react-router";
  *
  * Called by pg_cron every hour with the Supabase anon key as `apikey`.
  *
- * Requires the following runtime secrets to actually pull data:
- *   - WORKBOOKS_API_KEY     (the per-user API key from Workbooks)
- *   - WORKBOOKS_BASE_URL    (e.g. https://secure.workbooks.com)
+ * Requires:
+ *   - WORKBOOKS_API_KEY    (per-user API key)
+ *   - WORKBOOKS_BASE_URL   (e.g. https://secure.workbooks.com)
  *
- * Until those are set the route is a safe no-op that records a run.
- *
- * Endpoints we'll pull from (Workbooks JSON API):
- *   GET  /crm/organisations.api
- *   GET  /crm/people.api
- *   GET  /accounting/customer_invoices.api
- *   GET  /event/event_bookings.api
- *   GET  /crm/sales_leads.api
- *   GET  /crm/opportunities.api
- *
- * Endpoints we'll push to:
- *   POST /crm/sales_leads.api           (membership applications)
- *   POST /event/event_bookings.api      (paid event bookings)
- *   PUT  /crm/people.api                (profile / address / password changes)
+ * Pulls from Workbooks and upserts into workbooks_* tables. The full record
+ * is always stored in the `raw` jsonb column so we can refine field mapping
+ * later without re-fetching. Unknown / missing fields are left null.
  */
 
-const RESOURCES = [
-  "organisations",
-  "people",
-  "customer_invoices",
-  "event_bookings",
-  "sales_leads",
-  "opportunities",
-] as const;
+const PAGE_SIZE = 100;
+const MAX_PAGES_PER_RESOURCE = 50; // 5000 records max per resource per run
 
-type Resource = (typeof RESOURCES)[number];
+type Resource =
+  | "organisations"
+  | "people"
+  | "customer_invoices"
+  | "event_bookings"
+  | "sales_leads"
+  | "opportunities";
+
+const RESOURCE_PATHS: Record<Resource, string> = {
+  organisations: "/crm/organisations.api",
+  people: "/crm/people.api",
+  customer_invoices: "/accounting/customer_invoices.api",
+  event_bookings: "/event/event_bookings.api",
+  sales_leads: "/crm/sales_leads.api",
+  opportunities: "/crm/opportunities.api",
+};
 
 export const Route = createFileRoute("/api/public/hooks/workbooks-sync")({
   server: {
     handlers: {
       POST: async () => handle(),
-      GET: async () => handle(), // GET allowed for easy manual testing
+      GET: async () => handle(),
     },
   },
 });
@@ -48,7 +46,6 @@ export const Route = createFileRoute("/api/public/hooks/workbooks-sync")({
 async function handle(): Promise<Response> {
   const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
 
-  // open a run row
   const { data: run, error: runErr } = await supabaseAdmin
     .from("workbooks_sync_runs")
     .insert({ status: "running" })
@@ -64,7 +61,7 @@ async function handle(): Promise<Response> {
   const baseUrl = process.env.WORKBOOKS_BASE_URL;
 
   if (!apiKey || !baseUrl) {
-    const msg = "Workbooks credentials not configured — skipping (set WORKBOOKS_API_KEY and WORKBOOKS_BASE_URL)";
+    const msg = "Workbooks credentials not configured — set WORKBOOKS_API_KEY and WORKBOOKS_BASE_URL";
     console.warn("workbooks-sync:", msg);
     await supabaseAdmin
       .from("workbooks_sync_runs")
@@ -81,34 +78,206 @@ async function handle(): Promise<Response> {
     sales_leads: 0,
     opportunities: 0,
   };
+  const errors: Record<string, string> = {};
 
-  try {
-    // TODO: implement per-resource pull → upsert into workbooks_* tables.
-    // Stubbed out until the Workbooks API key + base URL are provided
-    // and we have a sample JSON shape from Workbooks support to map fields from.
+  for (const resource of Object.keys(RESOURCE_PATHS) as Resource[]) {
+    try {
+      const rows = await fetchAll(baseUrl, apiKey, RESOURCE_PATHS[resource]);
+      pulled[resource] = rows.length;
+      if (rows.length) await upsertResource(supabaseAdmin, resource, rows);
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      console.error(`workbooks-sync: ${resource} failed`, err);
+      errors[resource] = msg;
+    }
+  }
 
-    await supabaseAdmin
-      .from("workbooks_sync_runs")
-      .update({
-        status: "ok",
-        finished_at: new Date().toISOString(),
-        pulled,
-      })
-      .eq("id", run.id);
+  const hasErrors = Object.keys(errors).length > 0;
+  await supabaseAdmin
+    .from("workbooks_sync_runs")
+    .update({
+      status: hasErrors ? "error" : "ok",
+      finished_at: new Date().toISOString(),
+      pulled,
+      error_message: hasErrors ? JSON.stringify(errors) : null,
+    })
+    .eq("id", run.id);
 
-    return json({ ok: true, pulled });
-  } catch (err) {
-    const message = err instanceof Error ? err.message : String(err);
-    console.error("workbooks-sync: error", err);
-    await supabaseAdmin
-      .from("workbooks_sync_runs")
-      .update({
-        status: "error",
-        finished_at: new Date().toISOString(),
-        error_message: message,
-      })
-      .eq("id", run.id);
-    return json({ ok: false, error: message }, 500);
+  return json({ ok: !hasErrors, pulled, errors: hasErrors ? errors : undefined });
+}
+
+// ---------- Workbooks API ----------
+
+type WbRow = Record<string, unknown>;
+
+async function fetchAll(baseUrl: string, apiKey: string, path: string): Promise<WbRow[]> {
+  const all: WbRow[] = [];
+  for (let page = 0; page < MAX_PAGES_PER_RESOURCE; page++) {
+    const url = new URL(path, baseUrl);
+    url.searchParams.set("api_key", apiKey);
+    url.searchParams.set("_start", String(page * PAGE_SIZE));
+    url.searchParams.set("_limit", String(PAGE_SIZE));
+    url.searchParams.set("_sortorder", "asc");
+
+    const res = await fetch(url.toString(), {
+      headers: { Accept: "application/json" },
+    });
+    if (!res.ok) {
+      throw new Error(`${path} HTTP ${res.status}: ${(await res.text()).slice(0, 300)}`);
+    }
+    const body = (await res.json()) as { data?: WbRow[]; total?: number };
+    const data = Array.isArray(body.data) ? body.data : [];
+    all.push(...data);
+    if (data.length < PAGE_SIZE) break;
+  }
+  return all;
+}
+
+// ---------- Mapping ----------
+
+function pick(row: WbRow, ...keys: string[]): string | null {
+  for (const k of keys) {
+    const v = row[k];
+    if (v != null && v !== "") return String(v);
+  }
+  return null;
+}
+
+function pickNum(row: WbRow, ...keys: string[]): number | null {
+  for (const k of keys) {
+    const v = row[k];
+    if (v != null && v !== "" && !Number.isNaN(Number(v))) return Number(v);
+  }
+  return null;
+}
+
+function pickDate(row: WbRow, ...keys: string[]): string | null {
+  const v = pick(row, ...keys);
+  if (!v) return null;
+  const d = new Date(v);
+  return Number.isNaN(d.getTime()) ? null : d.toISOString();
+}
+
+async function upsertResource(
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  db: any,
+  resource: Resource,
+  rows: WbRow[],
+): Promise<void> {
+  const now = new Date().toISOString();
+
+  switch (resource) {
+    case "organisations": {
+      const mapped = rows
+        .filter((r) => r.id != null)
+        .map((r) => ({
+          wb_id: String(r.id),
+          name: pick(r, "name", "organisation_name"),
+          category: pick(r, "industry", "organisation_category"),
+          status: pick(r, "status"),
+          vat_number: pick(r, "vat_number"),
+          reg_number: pick(r, "registration_number", "company_registration_number"),
+          address_line1: pick(r, "main_location[street_address]", "main_location[address_1]"),
+          address_line2: pick(r, "main_location[address_2]"),
+          town: pick(r, "main_location[town]"),
+          county: pick(r, "main_location[county_province_state]", "main_location[county]"),
+          postcode: pick(r, "main_location[postcode]"),
+          country: pick(r, "main_location[country]"),
+          region: pick(r, "main_location[region]"),
+          phone: pick(r, "main_location[telephone]", "telephone"),
+          public_email: pick(r, "main_location[email]", "email"),
+          website: pick(r, "website"),
+          raw: r,
+          synced_at: now,
+        }));
+      if (mapped.length) await db.from("workbooks_orgs").upsert(mapped, { onConflict: "wb_id" });
+      return;
+    }
+    case "people": {
+      const mapped = rows
+        .filter((r) => r.id != null)
+        .map((r) => ({
+          wb_id: String(r.id),
+          wb_org_id: pick(r, "employer_link", "main_employer[id]", "employer_id"),
+          name: pick(r, "name", "person_personal_title") ?? "(unknown)",
+          email: pick(r, "main_location[email]", "email"),
+          phone: pick(r, "main_location[telephone]", "telephone"),
+          raw: r,
+          synced_at: now,
+        }));
+      if (mapped.length) await db.from("workbooks_people").upsert(mapped, { onConflict: "wb_id" });
+      return;
+    }
+    case "customer_invoices": {
+      const mapped = rows
+        .filter((r) => r.id != null)
+        .map((r) => ({
+          wb_id: String(r.id),
+          wb_org_id: pick(r, "customer_organisation_id", "customer[id]", "customer_party_id"),
+          reference: pick(r, "document_reference", "reference"),
+          amount: pickNum(r, "gross_amount", "net_amount", "total_amount"),
+          status: pick(r, "status", "document_status"),
+          smartcard_ref: pick(r, "created_through_reference", "external_reference"),
+          issued_at: pickDate(r, "document_date", "created_at"),
+          raw: r,
+          synced_at: now,
+        }));
+      if (mapped.length) await db.from("workbooks_invoices").upsert(mapped, { onConflict: "wb_id" });
+      return;
+    }
+    case "event_bookings": {
+      const mapped = rows
+        .filter((r) => r.id != null)
+        .map((r) => ({
+          wb_id: String(r.id),
+          wb_person_id: pick(r, "person_id", "delegate_person_id", "attendee[id]"),
+          wb_org_id: pick(r, "organisation_id", "delegate_organisation_id"),
+          attendee_name: pick(r, "name", "delegate_name", "attendee_name"),
+          attendee_email: pick(r, "email", "delegate_email"),
+          status: pick(r, "status", "booking_status"),
+          amount: pickNum(r, "total_price", "price", "amount"),
+          paid_at: pickDate(r, "paid_at", "payment_received_at"),
+          payment_ref: pick(r, "payment_reference", "external_reference"),
+          payment_provider: pick(r, "payment_provider"),
+          notes: pick(r, "notes", "description"),
+          raw: r,
+          synced_at: now,
+        }));
+      if (mapped.length) await db.from("workbooks_bookings").upsert(mapped, { onConflict: "wb_id" });
+      return;
+    }
+    case "sales_leads": {
+      const mapped = rows
+        .filter((r) => r.id != null)
+        .map((r) => ({
+          wb_id: String(r.id),
+          wb_org_id: pick(r, "org_lead_party[id]", "organisation_id"),
+          title: pick(r, "name", "description"),
+          stage: pick(r, "status", "stage"),
+          amount: pickNum(r, "amount", "value"),
+          raw: r,
+          synced_at: now,
+        }));
+      if (mapped.length)
+        await db.from("workbooks_opportunities").upsert(mapped, { onConflict: "wb_id" });
+      return;
+    }
+    case "opportunities": {
+      const mapped = rows
+        .filter((r) => r.id != null)
+        .map((r) => ({
+          wb_id: String(r.id),
+          wb_org_id: pick(r, "customer[id]", "organisation_id", "primary_contact[employer_id]"),
+          title: pick(r, "description", "name"),
+          stage: pick(r, "stage", "sales_stage"),
+          amount: pickNum(r, "amount", "estimated_close_amount", "value"),
+          raw: r,
+          synced_at: now,
+        }));
+      if (mapped.length)
+        await db.from("workbooks_opportunities").upsert(mapped, { onConflict: "wb_id" });
+      return;
+    }
   }
 }
 
