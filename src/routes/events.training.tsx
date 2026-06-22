@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CookieBanner from "../components/CookieBanner";
 import Link from "../components/SmartLink";
-import courses from "../content/training-courses.json";
+import { fetchTrainingList, type TrainingRow } from "../lib/content/db";
 
 const TITLE = "Training Courses — BALI";
 const DESC = "Browse upcoming ROLO Health, Safety and Environmental Awareness courses and other training delivered by BALI's approved training providers.";
@@ -18,6 +18,18 @@ export const Route = createFileRoute("/events/training")({
       { property: "og:description", content: DESC },
     ],
   }),
+  loader: async () => {
+    const rows = await fetchTrainingList();
+    const courses: Course[] = rows.map((r: TrainingRow) => ({
+      url: r.source_url ?? "#",
+      img: r.image_url ?? "",
+      title: r.title,
+      desc: r.description,
+      date: r.date_text,
+      venue: r.venue,
+    }));
+    return { courses };
+  },
   component: TrainingPage,
 });
 
@@ -50,7 +62,8 @@ function venueType(c: Course): "Online" | "In person" {
 const PAGE_SIZE = 24;
 
 function TrainingPage() {
-  const all = courses as Course[];
+  const { courses } = Route.useLoaderData();
+  const all: Course[] = courses;
   const [query, setQuery] = useState("");
   const [cat, setCat] = useState<"All" | "Operative" | "Supervisor" | "Manager" | "Member">("All");
   const [mode, setMode] = useState<"All" | "Online" | "In person">("All");

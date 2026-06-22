@@ -50,15 +50,260 @@ export type Database = {
         }
         Relationships: []
       }
+      events: {
+        Row: {
+          body_paragraphs: string[]
+          booking_url: string | null
+          category: string
+          created_at: string
+          date_text: string
+          description: string
+          id: string
+          image_alt: string | null
+          image_url: string | null
+          iso_date: string | null
+          published: boolean
+          slug: string
+          sort_order: number
+          title: string
+          updated_at: string
+          venue: string
+        }
+        Insert: {
+          body_paragraphs?: string[]
+          booking_url?: string | null
+          category?: string
+          created_at?: string
+          date_text?: string
+          description?: string
+          id?: string
+          image_alt?: string | null
+          image_url?: string | null
+          iso_date?: string | null
+          published?: boolean
+          slug: string
+          sort_order?: number
+          title: string
+          updated_at?: string
+          venue?: string
+        }
+        Update: {
+          body_paragraphs?: string[]
+          booking_url?: string | null
+          category?: string
+          created_at?: string
+          date_text?: string
+          description?: string
+          id?: string
+          image_alt?: string | null
+          image_url?: string | null
+          iso_date?: string | null
+          published?: boolean
+          slug?: string
+          sort_order?: number
+          title?: string
+          updated_at?: string
+          venue?: string
+        }
+        Relationships: []
+      }
+      news_articles: {
+        Row: {
+          body_paragraphs: string[]
+          created_at: string
+          date_text: string
+          description: string
+          id: string
+          image_alt: string | null
+          image_url: string | null
+          iso_date: string | null
+          published: boolean
+          slug: string
+          sort_order: number
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          body_paragraphs?: string[]
+          created_at?: string
+          date_text?: string
+          description?: string
+          id?: string
+          image_alt?: string | null
+          image_url?: string | null
+          iso_date?: string | null
+          published?: boolean
+          slug: string
+          sort_order?: number
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          body_paragraphs?: string[]
+          created_at?: string
+          date_text?: string
+          description?: string
+          id?: string
+          image_alt?: string | null
+          image_url?: string | null
+          iso_date?: string | null
+          published?: boolean
+          slug?: string
+          sort_order?: number
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      policy_posts: {
+        Row: {
+          author: string
+          body_paragraphs: string[]
+          created_at: string
+          date_text: string
+          description: string
+          external_links: Json
+          id: string
+          image_alt: string | null
+          image_url: string | null
+          iso_date: string | null
+          published: boolean
+          pullquote_attribution: string | null
+          pullquote_text: string | null
+          read_minutes: number
+          slug: string
+          source_url: string | null
+          themes: string[]
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          author?: string
+          body_paragraphs?: string[]
+          created_at?: string
+          date_text?: string
+          description?: string
+          external_links?: Json
+          id?: string
+          image_alt?: string | null
+          image_url?: string | null
+          iso_date?: string | null
+          published?: boolean
+          pullquote_attribution?: string | null
+          pullquote_text?: string | null
+          read_minutes?: number
+          slug: string
+          source_url?: string | null
+          themes?: string[]
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          author?: string
+          body_paragraphs?: string[]
+          created_at?: string
+          date_text?: string
+          description?: string
+          external_links?: Json
+          id?: string
+          image_alt?: string | null
+          image_url?: string | null
+          iso_date?: string | null
+          published?: boolean
+          pullquote_attribution?: string | null
+          pullquote_text?: string | null
+          read_minutes?: number
+          slug?: string
+          source_url?: string | null
+          themes?: string[]
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      training_courses: {
+        Row: {
+          created_at: string
+          date_text: string
+          description: string
+          id: string
+          image_url: string | null
+          iso_date: string | null
+          published: boolean
+          sort_order: number
+          source_url: string | null
+          title: string
+          updated_at: string
+          venue: string
+        }
+        Insert: {
+          created_at?: string
+          date_text?: string
+          description?: string
+          id?: string
+          image_url?: string | null
+          iso_date?: string | null
+          published?: boolean
+          sort_order?: number
+          source_url?: string | null
+          title: string
+          updated_at?: string
+          venue?: string
+        }
+        Update: {
+          created_at?: string
+          date_text?: string
+          description?: string
+          id?: string
+          image_url?: string | null
+          iso_date?: string | null
+          published?: boolean
+          sort_order?: number
+          source_url?: string | null
+          title?: string
+          updated_at?: string
+          venue?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      claim_first_admin: { Args: never; Returns: boolean }
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
+      is_admin: { Args: { _user_id: string }; Returns: boolean }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "editor"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -185,6 +430,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "editor"],
+    },
   },
 } as const

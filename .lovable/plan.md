@@ -1,65 +1,63 @@
-## What I'll build
+# BALI Admin Portal — Build Plan
 
-Nine online application forms — one per membership category — replacing the PDF downloads. Each form sits at `/join/<category>/apply`, with file uploads stored in Lovable Cloud and the completed application emailed to `membership@bali.org.uk`.
+## What you'll get
 
-## Pages
+A password-protected `/admin` area where staff can sign in (shared BALI account) and add/edit/delete:
+- **News articles**
+- **Events**
+- **Policy updates**
+- **Training courses**
 
-- `/join/accredited-contractor/apply`
-- `/join/accredited-designer/apply`
-- `/join/accredited-supplier/apply`
-- `/join/accredited-group/apply`
-- `/join/accredited-dso/apply`
-- `/join/international-contractor/apply` (was "International" — there are actually two: Contractor + Supplier)
-- `/join/international-supplier/apply`
-- `/join/associate-contractor/apply`
-- `/join/associate-designer/apply`
+The public site keeps working exactly as it does now, but the content comes from the database instead of code files.
 
-The `/join` page category cards will link to these instead of `/contact`. (Student & Training Provider PDFs weren't uploaded — I'll keep those as mailto for now.)
+## How it will work for staff
 
-## Form structure (shared)
+1. Visit `bali.org.uk/admin` (or `/login`)
+2. Sign in with the shared BALI email + password, **or** click "Sign in with Google" with the BALI Google Workspace account
+3. Land on a dashboard with four sections: News, Events, Policy, Training
+4. Each section shows a list of items with **+ New**, **Edit**, **Delete**, and a **Draft / Published** toggle
+5. Forms include image upload, rich-text body, date picker, category dropdowns, etc.
+6. "Save" updates the live site immediately — no publishing step needed for content changes
 
-All forms reuse the same building blocks, configured per category:
+## Build steps
 
-1. **Company information** — name, address, postcode, country, regions (multi-check), reg/VAT no., employees, turnover, telephone, public email, website. Associate forms also include "Date of incorporation".
-2. **Company description** — textarea (200-word limit, live counter).
-3. **Disciplines** *(Contractor/Designer/Supplier categories only)* — multi-check list specific to category.
-4. **Three contacts** — Applicant / Main / Invoice, each with name, email, phone, job title + 8 communication preferences. "Same as above" toggle copies values.
-5. **References** *(Accredited only)* — Trade refs (2) + Client refs (varies: 10 for Contractor, fewer/different for others).
-6. **Supporting documents** — file upload (PDF/JPG/PNG, max 10MB each) for each required doc: company letterhead, PL insurance, EL insurance, latest accounts, H&S policy, etc. (per category).
-7. **Terms & code of conduct** — two required checkboxes + typed name/job title/date as e-signature.
+### 1. Database (Lovable Cloud)
+Create four tables: `news_articles`, `events`, `policies`, `training_courses`, plus a `media_assets` table for uploaded images. All public-readable (so the site shows them), but only signed-in admins can write.
 
-Built with `react-hook-form` + `zod` validation. Progress saved to `sessionStorage` so a refresh doesn't lose work.
+### 2. Image storage
+Set up a storage bucket for uploaded hero images / cover photos, with admin-only upload.
 
-## File uploads
+### 3. Migrate existing content
+One-off import script pulls everything from `src/content/news.ts`, `src/content/events.ts`, `src/content/policy.ts`, and `src/content/training-courses.json` into the database. The existing pages (`/news`, `/events`, `/policy`, `/events/training`) are switched to read from the database.
 
-- Private Lovable Cloud storage bucket `membership-applications`.
-- On submit, files upload first; signed URLs (7-day expiry) are included in the email so the membership team can download.
-- Server-side validation: file type whitelist, 10MB per file, max 8 files per application.
+### 4. Authentication
+- Email/password + Google sign-in (Google managed by Lovable — no setup needed from you)
+- One shared admin account; I'll send you instructions to set the password on first launch
+- Protected `/admin` routes (signed-out users get bounced to login)
 
-## Submission
+### 5. Admin UI
+- `/admin` dashboard
+- `/admin/news`, `/admin/events`, `/admin/policy`, `/admin/training` list pages
+- `/admin/news/new`, `/admin/news/:id/edit` (and same pattern for the others)
+- Forms with validation, image upload, draft/publish toggle, rich-text editor for body content
+- Confirmation dialogs on delete
 
-Public TanStack server route `/api/public/membership-application` (rate-limited by IP, simple in-memory token bucket):
-- Validates payload with zod.
-- Uploads files to storage via service role.
-- Sends one email to `membership@bali.org.uk` via Lovable Emails using a `membership-application` React Email template — applicant info in body, all answers in a styled summary table, signed links to uploaded docs.
-- Sends a confirmation email to the applicant ("We've received your application").
-- Returns success → applicant sees a thank-you screen.
+### 6. Public site updates
+Switch the four public pages to fetch from the database, with the same look and feel as today.
 
-No data is stored in the DB beyond the upload itself (per your "email only" choice).
+## What I'll need from you after I build
 
-## Email infrastructure
+- A password for the shared BALI admin account (you'll set it on first login via password reset email — I won't see it)
+- A confirmation that the migrated content looks right before we go live
 
-Requires Lovable Emails domain. If not yet configured, I'll prompt you to set one up — emails won't send until DNS is verified, but the rest of the build proceeds.
+## Out of scope for v1 (can be added later)
+- Multiple staff accounts with audit log of "who edited what"
+- Scheduled publishing (post goes live at a future date)
+- Magazine editions admin
+- Member directory admin
+- Conference page admin
 
-## Out of scope (for this pass)
+## Rough size
+Substantial — this is the biggest change since you started. I'll build it in this order so you can review as we go: database & migration → admin auth & shell → News admin → Events admin → Policy admin → Training admin → switch public pages over.
 
-- Admin portal (you chose email-only).
-- Payment (you chose fees-later).
-- Saving drafts across devices / accounts.
-- Student & Training Provider forms (no PDFs supplied).
-
-## Technical notes
-
-- Shared form schema lives in `src/lib/membership/forms.ts` — one config object per category drives the UI, validation, and email rendering.
-- Shared `<ApplicationForm config={...} />` component renders any category from its config — keeps the 9 routes thin.
-- Storage bucket created via migration with RLS (service-role write, no public read; signed URLs only).
+Shall I proceed?
