@@ -1,5 +1,5 @@
 import { type ReactNode } from "react";
-import { Link, useRouter } from "@tanstack/react-router";
+import { Link, useRouter, useRouterState } from "@tanstack/react-router";
 import { LogOut, Newspaper, Calendar, FileText, GraduationCap, LayoutDashboard } from "lucide-react";
 import { signOut } from "@/lib/admin/auth";
 
@@ -13,7 +13,7 @@ const NAV: { to: string; label: string; icon: typeof LayoutDashboard; exact?: bo
 
 export function AdminShell({ children, email }: { children: ReactNode; email?: string | null }) {
   const router = useRouter();
-  const current = router.state.location.pathname;
+  const current = useRouterState({ select: (s) => s.location.pathname });
 
   return (
     <div className="min-h-screen bg-gray-50 font-sans flex">
