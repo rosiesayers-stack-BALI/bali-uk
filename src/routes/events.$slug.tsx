@@ -50,7 +50,7 @@ export const Route = createFileRoute("/events/$slug")({
 });
 
 function EventPage() {
-  const { event, prev, next } = useLoaderData({ from: '/events/$slug' });
+  const { event, prev, next } = Route.useLoaderData();
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Navbar />

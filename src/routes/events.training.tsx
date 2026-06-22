@@ -62,7 +62,7 @@ function venueType(c: Course): "Online" | "In person" {
 const PAGE_SIZE = 24;
 
 function TrainingPage() {
-  const { courses } = useLoaderData({ from: '/events/training' });
+  const { courses } = Route.useLoaderData();
   const all: Course[] = courses;
   const [query, setQuery] = useState("");
   const [cat, setCat] = useState<"All" | "Operative" | "Supervisor" | "Manager" | "Member">("All");
