@@ -3,12 +3,17 @@ import Link from '../components/SmartLink'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import CookieBanner from '../components/CookieBanner'
+import bannerMountbatten from '../assets/bali/large_mountbatten-house-min.jpeg.asset.json'
+import bannerWeb from '../assets/bali/large_web-banner.png.asset.json'
+import bannerHome3 from '../assets/bali/large_homepage-banner-3.jpeg.asset.json'
+import bannerHome1 from '../assets/bali/large_homepage-banner-1.jpeg.asset.json'
 
 // ── Hero slides data ──────────────────────────────────────────────────────────
+// Matches the four banners used on bali.org.uk
 const slides = [
   {
     bg: 'linear-gradient(135deg, #1D4D59 0%, #21509A 60%, #0E8B61 100%)',
-    image: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1600&q=80',
+    image: bannerMountbatten.url,
     eyebrow: 'Celebrating over 50 Years',
     eyebrowColor: 'text-bali-grass',
     title: 'The Gold Standard\nin Landscaping',
@@ -20,7 +25,7 @@ const slides = [
   },
   {
     bg: 'linear-gradient(135deg, #0E8B61 0%, #1D4D59 100%)',
-    image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1600&q=80',
+    image: bannerWeb.url,
     eyebrow: 'Now Available',
     eyebrowColor: 'text-bali-grass',
     title: 'Landscape News\nSpring Edition',
@@ -31,13 +36,24 @@ const slides = [
   },
   {
     bg: 'linear-gradient(135deg, #21509A 0%, #6D4276 100%)',
-    image: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1600&q=80',
+    image: bannerHome3.url,
     eyebrow: 'Free Member Benefit',
     eyebrowColor: 'text-yellow-300',
     title: 'Free HR &\nHealth Checks',
     body: 'Access free HR reviews, employment law advice, and health & safety health checks as a BALI member — saving your business thousands per year.',
     ctas: [
       { label: 'Explore Member Benefits', href: '/join', style: 'bg-bali-grass hover:bg-green-600 text-white' },
+    ],
+  },
+  {
+    bg: 'linear-gradient(135deg, #1D4D59 0%, #0E8B61 100%)',
+    image: bannerHome1.url,
+    eyebrow: 'Find a Professional',
+    eyebrowColor: 'text-bali-grass',
+    title: "Designers, Contractors\n& Suppliers",
+    body: "Know you're hiring the best — search our online directory of accredited BALI members across the UK.",
+    ctas: [
+      { label: 'Search the Directory', href: '/directory', style: 'bg-white text-bali-blue hover:bg-gray-100' },
     ],
   },
 ]
