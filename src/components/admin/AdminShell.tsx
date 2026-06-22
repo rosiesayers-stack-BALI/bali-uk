@@ -1,5 +1,5 @@
 import { type ReactNode } from "react";
-import { Link, useRouter } from "@tanstack/react-router";
+import { Link, useRouter, useRouterState } from "@tanstack/react-router";
 import { LogOut, Newspaper, Calendar, FileText, GraduationCap, LayoutDashboard } from "lucide-react";
 import { signOut } from "@/lib/admin/auth";
 
