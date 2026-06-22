@@ -33,7 +33,7 @@ export default function HelpPage({
     <div className="min-h-screen bg-white text-slate-900 flex flex-col">
       <Navbar />
       <main className="flex-1">
-        <section className="text-white" style={{ background: "linear-gradient(135deg, #1D4D59 0%, #0E8B61 100%)" }}>
+        <section className="text-white relative" style={{ backgroundImage: `linear-gradient(135deg, rgba(29,77,89,0.85) 0%, rgba(14,139,97,0.78) 100%), url('${rebrandBanner.url}')`, backgroundSize: "cover", backgroundPosition: "center" }}>
           <div className="max-w-5xl mx-auto px-6 py-16 lg:py-24">
             <nav className="text-emerald-200/80 text-sm mb-6">
               <Link to="/help" className="hover:text-white">Help &amp; Advice</Link>
