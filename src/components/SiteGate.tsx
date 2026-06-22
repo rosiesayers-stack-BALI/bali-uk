@@ -1,10 +1,10 @@
 import { useState, type FormEvent } from "react";
-import { useRouter } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { unlockSite } from "@/lib/site-gate.functions";
 
-export function SiteGate() {
-  const router = useRouter();
+const GATE_STORAGE_KEY = "bali_site_gate_unlocked";
+
+export function SiteGate({ onUnlock }: { onUnlock: () => void }) {
   const unlock = useServerFn(unlockSite);
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -17,7 +17,8 @@ export function SiteGate() {
     try {
       const result = await unlock({ data: { password } });
       if (result.ok) {
-        await router.invalidate();
+        try { localStorage.setItem(GATE_STORAGE_KEY, "1"); } catch {}
+        onUnlock();
       } else {
         setError(result.error ?? "Incorrect password");
       }
