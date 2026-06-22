@@ -1,16 +1,11 @@
-import { useState, type ReactNode } from "react";
-import { useServerFn } from "@tanstack/react-start";
+import { type ReactNode } from "react";
 import { useAdminAuth } from "@/lib/admin/auth";
-import { claimFirstAdmin } from "@/lib/admin/functions";
 import { AdminLogin } from "./AdminLogin";
 import { AdminShell } from "./AdminShell";
 import { supabase } from "@/integrations/supabase/client";
 
 export function AdminGate({ children }: { children: ReactNode }) {
   const auth = useAdminAuth();
-  const claimFirstAdminFn = useServerFn(claimFirstAdmin);
-  const [claiming, setClaiming] = useState(false);
-  const [claimError, setClaimError] = useState<string | null>(null);
 
   if (auth.loading) {
     return (
@@ -30,26 +25,8 @@ export function AdminGate({ children }: { children: ReactNode }) {
           <p className="text-sm text-gray-600 mt-2">
             You're signed in as <strong>{auth.user.email}</strong>, but this account does not yet have admin access.
           </p>
-          <button
-            onClick={async () => {
-              setClaiming(true);
-              setClaimError(null);
-              try {
-                await claimFirstAdminFn();
-                window.location.reload();
-              } catch (error) {
-                setClaimError(error instanceof Error ? error.message : "Unable to claim admin access");
-              }
-              setClaiming(false);
-            }}
-            disabled={claiming}
-            className="mt-5 w-full bg-bali-blue text-white font-semibold py-2.5 rounded-lg hover:bg-bali-blue/90 disabled:opacity-50"
-          >
-            {claiming ? "Claiming…" : "Claim admin (first-time setup)"}
-          </button>
-          {claimError && <p className="mt-3 text-sm text-red-600">{claimError}</p>}
           <p className="mt-4 text-xs text-gray-500">
-            This only works for the very first admin. After that, an existing admin must grant access.
+            Ask an existing admin to grant access to this account.
           </p>
           <button
             onClick={() => supabase.auth.signOut()}
