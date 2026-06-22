@@ -28,11 +28,15 @@ type Resource =
 const RESOURCE_PATHS: Record<Resource, string> = {
   organisations: "/crm/organisations.api",
   people: "/crm/people.api",
-  customer_invoices: "/accounting/customer_invoices.api",
-  event_bookings: "/event/event_bookings.api",
+  customer_invoices: "/accounting/sales_invoices.api",
+  event_bookings: "/crm/event_bookings.api",
   sales_leads: "/crm/sales_leads.api",
   opportunities: "/crm/opportunities.api",
 };
+
+// Columns we want from each resource. Workbooks' JSON API returns only `id`
+// + `lock_version` unless _select_columns[] is sent. Use `*` to get everything.
+const SELECT_ALL = ["*"];
 
 export const Route = createFileRoute("/api/public/hooks/workbooks-sync")({
   server: {
