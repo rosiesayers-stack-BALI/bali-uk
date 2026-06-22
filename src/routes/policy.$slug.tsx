@@ -65,7 +65,7 @@ export const Route = createFileRoute("/policy/$slug")({
 });
 
 function PolicyPostPage() {
-  const { post, prev, next, related } = useLoaderData({ from: '/policy/$slug' });
+  const { post, prev, next, related } = Route.useLoaderData();
   const externalLinks = Array.isArray(post.external_links)
     ? (post.external_links as Array<{ label: string; url: string }>)
     : [];

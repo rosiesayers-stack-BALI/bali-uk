@@ -26,7 +26,7 @@ export const Route = createFileRoute("/news/")({
 });
 
 function NewsIndex() {
-  const { articles } = useLoaderData({ from: '/news/' });
+  const { articles } = Route.useLoaderData();
   const [featured, ...rest] = articles;
 
   return (
