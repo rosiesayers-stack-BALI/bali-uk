@@ -33,14 +33,13 @@ const nav: NavItem[] = [
     label: 'Membership', href: '/membership',
     items: [
       { label: 'Why Join BALI', href: '/membership' },
-      { label: 'Membership Categories', href: '/join' },
-      { label: 'Become a Member (apply)', href: '/membership/become-a-member', highlight: true },
-      { label: 'Membership Enquiry', href: '/membership/enquiry' },
-      { label: 'Renew Membership', href: '/login' },
+      { label: 'Categories & how to apply', href: '/join', highlight: true },
+      { label: 'Fees', href: '/membership/fees' },
+      { label: 'Not sure? Make an enquiry', href: '/membership/enquiry' },
       { label: 'Code of Conduct', href: '/membership/code' },
       { label: 'Quality Standard', href: '/membership/quality' },
       { label: 'Terms of Membership', href: '/membership/terms' },
-      { label: 'Member Login', href: '/login' },
+      { label: 'Renew / Member Login', href: '/login' },
     ],
   },
   {
