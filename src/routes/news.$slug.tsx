@@ -55,7 +55,7 @@ export const Route = createFileRoute("/news/$slug")({
 });
 
 function NewsArticlePage() {
-  const { article, prev, next } = Route.useLoaderData();
+  const { article, prev, next } = useLoaderData({ from: '/news/$slug' });
 
   return (
     <div className="min-h-screen flex flex-col bg-white">

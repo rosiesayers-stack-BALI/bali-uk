@@ -28,7 +28,7 @@ export const Route = createFileRoute("/policy/")({
 });
 
 function PolicyIndex() {
-  const { posts } = Route.useLoaderData();
+  const { posts } = useLoaderData({ from: '/policy/' });
   const [filter, setFilter] = useState<Filter>("All");
 
   const counts = useMemo(() => {

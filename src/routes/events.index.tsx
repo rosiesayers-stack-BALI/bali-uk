@@ -19,7 +19,7 @@ export const Route = createFileRoute("/events/")({
 });
 
 function EventsIndex() {
-  const { events } = Route.useLoaderData();
+  const { events } = useLoaderData({ from: '/events/' });
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Navbar />

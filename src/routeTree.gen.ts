@@ -13,6 +13,7 @@ import { Route as PortalRouteImport } from './routes/portal'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as JoinRouteImport } from './routes/join'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as SplatRouteImport } from './routes/$'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PolicyIndexRouteImport } from './routes/policy.index'
@@ -20,6 +21,7 @@ import { Route as NewsIndexRouteImport } from './routes/news.index'
 import { Route as HelpIndexRouteImport } from './routes/help.index'
 import { Route as EventsIndexRouteImport } from './routes/events.index'
 import { Route as DirectoryIndexRouteImport } from './routes/directory.index'
+import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as PolicySlugRouteImport } from './routes/policy.$slug'
 import { Route as NewsMagazineRouteImport } from './routes/news.magazine'
 import { Route as NewsSlugRouteImport } from './routes/news.$slug'
@@ -42,10 +44,19 @@ import { Route as DirectorySupplierRouteImport } from './routes/directory.suppli
 import { Route as DirectorySearchRouteImport } from './routes/directory.search'
 import { Route as DirectoryDesignerRouteImport } from './routes/directory.designer'
 import { Route as DirectoryContractorRouteImport } from './routes/directory.contractor'
+import { Route as AdminResetPasswordRouteImport } from './routes/admin.reset-password'
 import { Route as AboutAwardsRouteImport } from './routes/about.awards'
+import { Route as AdminTrainingIndexRouteImport } from './routes/admin.training.index'
+import { Route as AdminPolicyIndexRouteImport } from './routes/admin.policy.index'
+import { Route as AdminNewsIndexRouteImport } from './routes/admin.news.index'
+import { Route as AdminEventsIndexRouteImport } from './routes/admin.events.index'
 import { Route as JoinCategoryApplyRouteImport } from './routes/join.$category.apply'
 import { Route as ApiPublicMembershipApplicationRouteImport } from './routes/api/public/membership-application'
 import { Route as ApiPublicConferenceInterestRouteImport } from './routes/api/public/conference-interest'
+import { Route as AdminTrainingIdRouteImport } from './routes/admin.training.$id'
+import { Route as AdminPolicyIdRouteImport } from './routes/admin.policy.$id'
+import { Route as AdminNewsIdRouteImport } from './routes/admin.news.$id'
+import { Route as AdminEventsIdRouteImport } from './routes/admin.events.$id'
 
 const PortalRoute = PortalRouteImport.update({
   id: '/portal',
@@ -65,6 +76,11 @@ const JoinRoute = JoinRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SplatRoute = SplatRouteImport.update({
@@ -101,6 +117,11 @@ const DirectoryIndexRoute = DirectoryIndexRouteImport.update({
   id: '/directory/',
   path: '/directory/',
   getParentRoute: () => rootRouteImport,
+} as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AdminRoute,
 } as any)
 const PolicySlugRoute = PolicySlugRouteImport.update({
   id: '/policy/$slug',
@@ -213,10 +234,35 @@ const DirectoryContractorRoute = DirectoryContractorRouteImport.update({
   path: '/directory/contractor',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminResetPasswordRoute = AdminResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => AdminRoute,
+} as any)
 const AboutAwardsRoute = AboutAwardsRouteImport.update({
   id: '/about/awards',
   path: '/about/awards',
   getParentRoute: () => rootRouteImport,
+} as any)
+const AdminTrainingIndexRoute = AdminTrainingIndexRouteImport.update({
+  id: '/training/',
+  path: '/training/',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminPolicyIndexRoute = AdminPolicyIndexRouteImport.update({
+  id: '/policy/',
+  path: '/policy/',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminNewsIndexRoute = AdminNewsIndexRouteImport.update({
+  id: '/news/',
+  path: '/news/',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminEventsIndexRoute = AdminEventsIndexRouteImport.update({
+  id: '/events/',
+  path: '/events/',
+  getParentRoute: () => AdminRoute,
 } as any)
 const JoinCategoryApplyRoute = JoinCategoryApplyRouteImport.update({
   id: '/$category/apply',
@@ -235,15 +281,37 @@ const ApiPublicConferenceInterestRoute =
     path: '/api/public/conference-interest',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AdminTrainingIdRoute = AdminTrainingIdRouteImport.update({
+  id: '/training/$id',
+  path: '/training/$id',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminPolicyIdRoute = AdminPolicyIdRouteImport.update({
+  id: '/policy/$id',
+  path: '/policy/$id',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminNewsIdRoute = AdminNewsIdRouteImport.update({
+  id: '/news/$id',
+  path: '/news/$id',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminEventsIdRoute = AdminEventsIdRouteImport.update({
+  id: '/events/$id',
+  path: '/events/$id',
+  getParentRoute: () => AdminRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
+  '/admin': typeof AdminRouteWithChildren
   '/contact': typeof ContactRoute
   '/join': typeof JoinRouteWithChildren
   '/login': typeof LoginRoute
   '/portal': typeof PortalRoute
   '/about/awards': typeof AboutAwardsRoute
+  '/admin/reset-password': typeof AdminResetPasswordRoute
   '/directory/contractor': typeof DirectoryContractorRoute
   '/directory/designer': typeof DirectoryDesignerRoute
   '/directory/search': typeof DirectorySearchRoute
@@ -266,14 +334,23 @@ export interface FileRoutesByFullPath {
   '/news/$slug': typeof NewsSlugRoute
   '/news/magazine': typeof NewsMagazineRoute
   '/policy/$slug': typeof PolicySlugRoute
+  '/admin/': typeof AdminIndexRoute
   '/directory/': typeof DirectoryIndexRoute
   '/events/': typeof EventsIndexRoute
   '/help/': typeof HelpIndexRoute
   '/news/': typeof NewsIndexRoute
   '/policy/': typeof PolicyIndexRoute
+  '/admin/events/$id': typeof AdminEventsIdRoute
+  '/admin/news/$id': typeof AdminNewsIdRoute
+  '/admin/policy/$id': typeof AdminPolicyIdRoute
+  '/admin/training/$id': typeof AdminTrainingIdRoute
   '/api/public/conference-interest': typeof ApiPublicConferenceInterestRoute
   '/api/public/membership-application': typeof ApiPublicMembershipApplicationRoute
   '/join/$category/apply': typeof JoinCategoryApplyRoute
+  '/admin/events/': typeof AdminEventsIndexRoute
+  '/admin/news/': typeof AdminNewsIndexRoute
+  '/admin/policy/': typeof AdminPolicyIndexRoute
+  '/admin/training/': typeof AdminTrainingIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -283,6 +360,7 @@ export interface FileRoutesByTo {
   '/login': typeof LoginRoute
   '/portal': typeof PortalRoute
   '/about/awards': typeof AboutAwardsRoute
+  '/admin/reset-password': typeof AdminResetPasswordRoute
   '/directory/contractor': typeof DirectoryContractorRoute
   '/directory/designer': typeof DirectoryDesignerRoute
   '/directory/search': typeof DirectorySearchRoute
@@ -305,24 +383,35 @@ export interface FileRoutesByTo {
   '/news/$slug': typeof NewsSlugRoute
   '/news/magazine': typeof NewsMagazineRoute
   '/policy/$slug': typeof PolicySlugRoute
+  '/admin': typeof AdminIndexRoute
   '/directory': typeof DirectoryIndexRoute
   '/events': typeof EventsIndexRoute
   '/help': typeof HelpIndexRoute
   '/news': typeof NewsIndexRoute
   '/policy': typeof PolicyIndexRoute
+  '/admin/events/$id': typeof AdminEventsIdRoute
+  '/admin/news/$id': typeof AdminNewsIdRoute
+  '/admin/policy/$id': typeof AdminPolicyIdRoute
+  '/admin/training/$id': typeof AdminTrainingIdRoute
   '/api/public/conference-interest': typeof ApiPublicConferenceInterestRoute
   '/api/public/membership-application': typeof ApiPublicMembershipApplicationRoute
   '/join/$category/apply': typeof JoinCategoryApplyRoute
+  '/admin/events': typeof AdminEventsIndexRoute
+  '/admin/news': typeof AdminNewsIndexRoute
+  '/admin/policy': typeof AdminPolicyIndexRoute
+  '/admin/training': typeof AdminTrainingIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
+  '/admin': typeof AdminRouteWithChildren
   '/contact': typeof ContactRoute
   '/join': typeof JoinRouteWithChildren
   '/login': typeof LoginRoute
   '/portal': typeof PortalRoute
   '/about/awards': typeof AboutAwardsRoute
+  '/admin/reset-password': typeof AdminResetPasswordRoute
   '/directory/contractor': typeof DirectoryContractorRoute
   '/directory/designer': typeof DirectoryDesignerRoute
   '/directory/search': typeof DirectorySearchRoute
@@ -345,25 +434,36 @@ export interface FileRoutesById {
   '/news/$slug': typeof NewsSlugRoute
   '/news/magazine': typeof NewsMagazineRoute
   '/policy/$slug': typeof PolicySlugRoute
+  '/admin/': typeof AdminIndexRoute
   '/directory/': typeof DirectoryIndexRoute
   '/events/': typeof EventsIndexRoute
   '/help/': typeof HelpIndexRoute
   '/news/': typeof NewsIndexRoute
   '/policy/': typeof PolicyIndexRoute
+  '/admin/events/$id': typeof AdminEventsIdRoute
+  '/admin/news/$id': typeof AdminNewsIdRoute
+  '/admin/policy/$id': typeof AdminPolicyIdRoute
+  '/admin/training/$id': typeof AdminTrainingIdRoute
   '/api/public/conference-interest': typeof ApiPublicConferenceInterestRoute
   '/api/public/membership-application': typeof ApiPublicMembershipApplicationRoute
   '/join/$category/apply': typeof JoinCategoryApplyRoute
+  '/admin/events/': typeof AdminEventsIndexRoute
+  '/admin/news/': typeof AdminNewsIndexRoute
+  '/admin/policy/': typeof AdminPolicyIndexRoute
+  '/admin/training/': typeof AdminTrainingIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/$'
+    | '/admin'
     | '/contact'
     | '/join'
     | '/login'
     | '/portal'
     | '/about/awards'
+    | '/admin/reset-password'
     | '/directory/contractor'
     | '/directory/designer'
     | '/directory/search'
@@ -386,14 +486,23 @@ export interface FileRouteTypes {
     | '/news/$slug'
     | '/news/magazine'
     | '/policy/$slug'
+    | '/admin/'
     | '/directory/'
     | '/events/'
     | '/help/'
     | '/news/'
     | '/policy/'
+    | '/admin/events/$id'
+    | '/admin/news/$id'
+    | '/admin/policy/$id'
+    | '/admin/training/$id'
     | '/api/public/conference-interest'
     | '/api/public/membership-application'
     | '/join/$category/apply'
+    | '/admin/events/'
+    | '/admin/news/'
+    | '/admin/policy/'
+    | '/admin/training/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -403,6 +512,7 @@ export interface FileRouteTypes {
     | '/login'
     | '/portal'
     | '/about/awards'
+    | '/admin/reset-password'
     | '/directory/contractor'
     | '/directory/designer'
     | '/directory/search'
@@ -425,23 +535,34 @@ export interface FileRouteTypes {
     | '/news/$slug'
     | '/news/magazine'
     | '/policy/$slug'
+    | '/admin'
     | '/directory'
     | '/events'
     | '/help'
     | '/news'
     | '/policy'
+    | '/admin/events/$id'
+    | '/admin/news/$id'
+    | '/admin/policy/$id'
+    | '/admin/training/$id'
     | '/api/public/conference-interest'
     | '/api/public/membership-application'
     | '/join/$category/apply'
+    | '/admin/events'
+    | '/admin/news'
+    | '/admin/policy'
+    | '/admin/training'
   id:
     | '__root__'
     | '/'
     | '/$'
+    | '/admin'
     | '/contact'
     | '/join'
     | '/login'
     | '/portal'
     | '/about/awards'
+    | '/admin/reset-password'
     | '/directory/contractor'
     | '/directory/designer'
     | '/directory/search'
@@ -464,19 +585,29 @@ export interface FileRouteTypes {
     | '/news/$slug'
     | '/news/magazine'
     | '/policy/$slug'
+    | '/admin/'
     | '/directory/'
     | '/events/'
     | '/help/'
     | '/news/'
     | '/policy/'
+    | '/admin/events/$id'
+    | '/admin/news/$id'
+    | '/admin/policy/$id'
+    | '/admin/training/$id'
     | '/api/public/conference-interest'
     | '/api/public/membership-application'
     | '/join/$category/apply'
+    | '/admin/events/'
+    | '/admin/news/'
+    | '/admin/policy/'
+    | '/admin/training/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SplatRoute: typeof SplatRoute
+  AdminRoute: typeof AdminRouteWithChildren
   ContactRoute: typeof ContactRoute
   JoinRoute: typeof JoinRouteWithChildren
   LoginRoute: typeof LoginRoute
@@ -543,6 +674,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/$': {
       id: '/$'
       path: '/$'
@@ -591,6 +729,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/directory/'
       preLoaderRoute: typeof DirectoryIndexRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/admin/': {
+      id: '/admin/'
+      path: '/'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof AdminRoute
     }
     '/policy/$slug': {
       id: '/policy/$slug'
@@ -746,12 +891,47 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DirectoryContractorRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/reset-password': {
+      id: '/admin/reset-password'
+      path: '/reset-password'
+      fullPath: '/admin/reset-password'
+      preLoaderRoute: typeof AdminResetPasswordRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/about/awards': {
       id: '/about/awards'
       path: '/about/awards'
       fullPath: '/about/awards'
       preLoaderRoute: typeof AboutAwardsRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/admin/training/': {
+      id: '/admin/training/'
+      path: '/training'
+      fullPath: '/admin/training/'
+      preLoaderRoute: typeof AdminTrainingIndexRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/policy/': {
+      id: '/admin/policy/'
+      path: '/policy'
+      fullPath: '/admin/policy/'
+      preLoaderRoute: typeof AdminPolicyIndexRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/news/': {
+      id: '/admin/news/'
+      path: '/news'
+      fullPath: '/admin/news/'
+      preLoaderRoute: typeof AdminNewsIndexRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/events/': {
+      id: '/admin/events/'
+      path: '/events'
+      fullPath: '/admin/events/'
+      preLoaderRoute: typeof AdminEventsIndexRouteImport
+      parentRoute: typeof AdminRoute
     }
     '/join/$category/apply': {
       id: '/join/$category/apply'
@@ -774,8 +954,64 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPublicConferenceInterestRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/training/$id': {
+      id: '/admin/training/$id'
+      path: '/training/$id'
+      fullPath: '/admin/training/$id'
+      preLoaderRoute: typeof AdminTrainingIdRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/policy/$id': {
+      id: '/admin/policy/$id'
+      path: '/policy/$id'
+      fullPath: '/admin/policy/$id'
+      preLoaderRoute: typeof AdminPolicyIdRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/news/$id': {
+      id: '/admin/news/$id'
+      path: '/news/$id'
+      fullPath: '/admin/news/$id'
+      preLoaderRoute: typeof AdminNewsIdRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/events/$id': {
+      id: '/admin/events/$id'
+      path: '/events/$id'
+      fullPath: '/admin/events/$id'
+      preLoaderRoute: typeof AdminEventsIdRouteImport
+      parentRoute: typeof AdminRoute
+    }
   }
 }
+
+interface AdminRouteChildren {
+  AdminResetPasswordRoute: typeof AdminResetPasswordRoute
+  AdminIndexRoute: typeof AdminIndexRoute
+  AdminEventsIdRoute: typeof AdminEventsIdRoute
+  AdminNewsIdRoute: typeof AdminNewsIdRoute
+  AdminPolicyIdRoute: typeof AdminPolicyIdRoute
+  AdminTrainingIdRoute: typeof AdminTrainingIdRoute
+  AdminEventsIndexRoute: typeof AdminEventsIndexRoute
+  AdminNewsIndexRoute: typeof AdminNewsIndexRoute
+  AdminPolicyIndexRoute: typeof AdminPolicyIndexRoute
+  AdminTrainingIndexRoute: typeof AdminTrainingIndexRoute
+}
+
+const AdminRouteChildren: AdminRouteChildren = {
+  AdminResetPasswordRoute: AdminResetPasswordRoute,
+  AdminIndexRoute: AdminIndexRoute,
+  AdminEventsIdRoute: AdminEventsIdRoute,
+  AdminNewsIdRoute: AdminNewsIdRoute,
+  AdminPolicyIdRoute: AdminPolicyIdRoute,
+  AdminTrainingIdRoute: AdminTrainingIdRoute,
+  AdminEventsIndexRoute: AdminEventsIndexRoute,
+  AdminNewsIndexRoute: AdminNewsIndexRoute,
+  AdminPolicyIndexRoute: AdminPolicyIndexRoute,
+  AdminTrainingIndexRoute: AdminTrainingIndexRoute,
+}
+
+const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
 
 interface JoinRouteChildren {
   JoinCategoryApplyRoute: typeof JoinCategoryApplyRoute
@@ -790,6 +1026,7 @@ const JoinRouteWithChildren = JoinRoute._addFileChildren(JoinRouteChildren)
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SplatRoute: SplatRoute,
+  AdminRoute: AdminRouteWithChildren,
   ContactRoute: ContactRoute,
   JoinRoute: JoinRouteWithChildren,
   LoginRoute: LoginRoute,
