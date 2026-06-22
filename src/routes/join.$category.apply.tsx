@@ -2,10 +2,9 @@ import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CookieBanner from "../components/CookieBanner";
-import ApplicationForm from "../components/membership/ApplicationForm";
-import IndividualApplicationForm from "../components/membership/IndividualApplicationForm";
-import StudentApplicationForm from "../components/membership/StudentApplicationForm";
+import ShortApplyForm from "../components/membership/ShortApplyForm";
 import { CATEGORIES } from "../lib/membership/types";
+
 
 export const Route = createFileRoute("/join/$category/apply")({
   beforeLoad: ({ params }) => {
@@ -121,13 +120,8 @@ function ApplyPage() {
           </section>
         )}
 
-        {config.isStudent ? (
-          <StudentApplicationForm config={config} />
-        ) : config.isIndividual ? (
-          <IndividualApplicationForm config={config} />
-        ) : (
-          <ApplicationForm config={config} />
-        )}
+        <ShortApplyForm config={config} />
+
       </main>
       <Footer />
       <CookieBanner />
