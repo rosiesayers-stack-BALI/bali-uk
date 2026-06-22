@@ -17,21 +17,21 @@ export const Route = createFileRoute("/help/health-safety")({
 });
 
 const SUB = [
-  { title: "Risk assessment", description: "The law requires employers to identify the hazards that could cause injury or illness to staff.", href: "https://www.bali.org.uk/help-and-advice/health-and-safety/risk-assessments/" },
-  { title: "Alcohol in the workplace", href: "https://www.bali.org.uk/help-and-advice/health-and-safety/alcohol-in-the-workplace/" },
-  { title: "Allergic reactions to insect stings", href: "https://www.bali.org.uk/help-and-advice/health-and-safety/allergic-reactions-to-insect-stings/" },
-  { title: "Bats and rabies", href: "https://www.bali.org.uk/help-and-advice/health-and-safety/bats-and-rabies/" },
-  { title: "Hand arm vibration", href: "https://www.bali.org.uk/help-and-advice/health-and-safety/hand-arm-vibration/" },
-  { title: "Interior landscaping", href: "https://www.bali.org.uk/help-and-advice/health-and-safety/interior-landscaping/" },
-  { title: "Latex allergies", href: "https://www.bali.org.uk/help-and-advice/health-and-safety/latex-allergies/" },
-  { title: "Lone working", description: "Employers have a responsibility to manage the risk employees face when working alone.", href: "https://www.bali.org.uk/help-and-advice/health-and-safety/lone-working/" },
-  { title: "Mental health", href: "https://www.bali.org.uk/help-and-advice/health-and-safety/mental-health/" },
-  { title: "Outdoor safety", href: "https://www.bali.org.uk/help-and-advice/health-and-safety/outdoor-safety/" },
-  { title: "Safe digging", href: "https://www.bali.org.uk/help-and-advice/health-and-safety/safe-digging/" },
-  { title: "Silica dust", href: "https://www.bali.org.uk/help-and-advice/health-and-safety/silica-dust/" },
-  { title: "Slopes", href: "https://www.bali.org.uk/help-and-advice/health-and-safety/slopes/" },
-  { title: "Whole body vibration", href: "https://www.bali.org.uk/help-and-advice/health-and-safety/whole-body-vibration/" },
-  { title: "Winter care", href: "https://www.bali.org.uk/help-and-advice/health-and-safety/winter-care/" },
+  { title: "Risk assessment", description: "The law requires employers to identify the hazards that could cause injury or illness to staff.", href: "/help/health-safety/risk-assessments" },
+  { title: "Alcohol in the workplace", href: "/help/health-safety/alcohol-in-the-workplace" },
+  { title: "Allergic reactions to insect stings", href: "/help/health-safety/allergic-reactions-to-insect-stings" },
+  { title: "Bats and rabies", href: "/help/health-safety/bats-and-rabies" },
+  { title: "Hand arm vibration", href: "/help/health-safety/hand-arm-vibration" },
+  { title: "Interior landscaping", href: "/help/health-safety/interior-landscaping" },
+  { title: "Latex allergies", href: "/help/health-safety/latex-allergies" },
+  { title: "Lone working", description: "Employers have a responsibility to manage the risk employees face when working alone.", href: "/help/health-safety/lone-working" },
+  { title: "Mental health", href: "/help/health-safety/mental-health" },
+  { title: "Outdoor safety", href: "/help/health-safety/outdoor-safety" },
+  { title: "Safe digging", href: "/help/health-safety/safe-digging" },
+  { title: "Silica dust", href: "/help/health-safety/silica-dust" },
+  { title: "Slopes", href: "/help/health-safety/slopes" },
+  { title: "Whole body vibration", href: "/help/health-safety/whole-body-vibration" },
+  { title: "Winter care", href: "/help/health-safety/winter-care" },
 ];
 
 function Page() {

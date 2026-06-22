@@ -17,11 +17,11 @@ export const Route = createFileRoute("/help/plant-health")({
 });
 
 const SUB = [
-  { title: "Moving plants and plant products within GB", description: "UK Plant Passports — what they are, when you need one, and how to issue them.", href: "https://www.bali.org.uk/help-and-advice/plant-health/plant-passports/" },
-  { title: "Importing plants and plant products from the EU to GB", description: "Post-Brexit plant health arrangements and phytosanitary certificate requirements.", href: "https://www.bali.org.uk/help-and-advice/plant-health/post-brexit-plant-health-arrangements/" },
-  { title: "Exporting plants and plant products", description: "What landscape businesses exporting from GB need to do.", href: "https://www.bali.org.uk/help-and-advice/plant-health/exporting-plants-and-plant-products/" },
-  { title: "Glossary", description: "Key terms used across the UK plant health regime.", href: "https://www.bali.org.uk/help-and-advice/plant-health/glossary/" },
-  { title: "FAQ", description: "Common questions on plant passports, imports and biosecurity.", href: "https://www.bali.org.uk/help-and-advice/plant-health/faq/" },
+  { title: "Moving plants and plant products within GB", description: "UK Plant Passports — what they are, when you need one, and how to issue them.", href: "/help/plant-health/plant-passports" },
+  { title: "Importing plants and plant products from the EU to GB", description: "Post-Brexit plant health arrangements and phytosanitary certificate requirements.", href: "/help/plant-health/post-brexit-plant-health-arrangements" },
+  { title: "Exporting plants and plant products", description: "What landscape businesses exporting from GB need to do.", href: "/help/plant-health/exporting-plants-and-plant-products" },
+  { title: "Glossary", description: "Key terms used across the UK plant health regime.", href: "/help/plant-health/glossary" },
+  { title: "FAQ", description: "Common questions on plant passports, imports and biosecurity.", href: "/help/plant-health/faq" },
 ];
 
 function Page() {

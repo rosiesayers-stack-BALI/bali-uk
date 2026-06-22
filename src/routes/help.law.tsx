@@ -17,14 +17,14 @@ export const Route = createFileRoute("/help/law")({
 });
 
 const SUB = [
-  { title: "CDM regulations", description: "How CDM applies to the landscape industry.", href: "https://www.bali.org.uk/help-and-advice/contracts-law-and-regulations/construction-design-management-cdm/" },
-  { title: "Evolution of employment", href: "https://www.bali.org.uk/help-and-advice/contracts-law-and-regulations/evolution-of-employment/" },
-  { title: "GDPR", href: "https://www.bali.org.uk/help-and-advice/contracts-law-and-regulations/gdpr/" },
-  { title: "IR35", href: "https://www.bali.org.uk/help-and-advice/contracts-law-and-regulations/ir35/" },
-  { title: "JCLI Contracts", href: "https://www.bali.org.uk/help-and-advice/contracts-law-and-regulations/jcli-contracts/" },
-  { title: "Water abstraction", description: "Taking water from rivers, lakes, groundwater aquifers and other sources for irrigation, treatment and industrial use.", href: "https://www.bali.org.uk/help-and-advice/contracts-law-and-regulations/water-abstraction/" },
-  { title: "VAT reverse charge", description: "The domestic VAT reverse charge for building and construction services that affects nearly all landscape contractors.", href: "https://www.bali.org.uk/help-and-advice/contracts-law-and-regulations/vat-reverse-charge/" },
-  { title: "The Good Work Plan", description: "Important employment law changes affecting landscape employers — what you need to know.", href: "https://www.bali.org.uk/help-and-advice/contracts-law-and-regulations/the-good-work-plan/" },
+  { title: "CDM regulations", description: "How CDM applies to the landscape industry.", href: "/help/law/cdm" },
+  { title: "Evolution of employment", href: "/help/law/evolution-of-employment" },
+  { title: "GDPR", href: "/help/law/gdpr" },
+  { title: "IR35", href: "/help/law/ir35" },
+  { title: "JCLI Contracts", href: "/help/law/jcli-contracts" },
+  { title: "Water abstraction", description: "Taking water from rivers, lakes, groundwater aquifers and other sources for irrigation, treatment and industrial use.", href: "/help/law/water-abstraction" },
+  { title: "VAT reverse charge", description: "The domestic VAT reverse charge for building and construction services that affects nearly all landscape contractors.", href: "/help/law/vat-reverse-charge" },
+  { title: "The Good Work Plan", description: "Important employment law changes affecting landscape employers — what you need to know.", href: "/help/law/good-work-plan" },
 ];
 
 function Page() {

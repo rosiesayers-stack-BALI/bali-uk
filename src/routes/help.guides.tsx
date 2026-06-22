@@ -22,7 +22,7 @@ const SUB = [
   { title: "Email Marketing Best Practice Guide", description: "Nurture client relationships, showcase your expertise, and stand out in crowded inboxes.", href: "https://issuu.com/balilandscapeuk/docs/email_marketing_best_practice_guide_" },
   { title: "Hillier Nurseries case study", description: "How just one week inspired a student into landscaping — and why he believes the future starts with BALI.", href: "https://issuu.com/balilandscapeuk/docs/hillier_nurseries_case_study" },
   { title: "The Garden Room Studio case study", description: "How landscaping unleashed a dormant design dream.", href: "https://issuu.com/balilandscapeuk/docs/the_garden_room_studio_case_study" },
-  { title: "Lay of the Land Report 2025", description: "The highly anticipated industry benchmark report — available to read now.", href: "https://www.bali.org.uk/help-and-advice/lay-of-the-land-2025/" },
+  { title: "Lay of the Land Report 2025", description: "The highly anticipated industry benchmark report — available to read now.", href: "/help/guides/lay-of-the-land-2025" },
 ];
 
 function Page() {

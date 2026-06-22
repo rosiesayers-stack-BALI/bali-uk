@@ -17,12 +17,12 @@ export const Route = createFileRoute("/help/equipment")({
 });
 
 const SUB = [
-  { title: "Towing", description: "Towing a trailer — licences, weights and the law.", href: "https://www.bali.org.uk/help-and-advice/equipment/towing-a-trailer/" },
-  { title: "Tachographs", description: "When tachographs are required and how to stay compliant.", href: "https://www.bali.org.uk/help-and-advice/equipment/tachographs/" },
-  { title: "Rebated (red) fuel", description: "Rules around using rebated diesel on the road and on site.", href: "https://www.bali.org.uk/help-and-advice/equipment/red-diesel-v2/" },
-  { title: "E10 fuel", description: "What E10 means for landscape machinery and older equipment.", href: "https://www.bali.org.uk/help-and-advice/equipment/e10-fuel/" },
-  { title: "Tractor licences", description: "Categories, age requirements and what you can drive.", href: "https://www.bali.org.uk/help-and-advice/equipment/tractors/" },
-  { title: "Driving for better business", description: "Industry programme helping employers manage work-related road risk.", href: "https://www.bali.org.uk/help-and-advice/equipment/driving-for-better-business/" },
+  { title: "Towing", description: "Towing a trailer — licences, weights and the law.", href: "/help/equipment/towing" },
+  { title: "Tachographs", description: "When tachographs are required and how to stay compliant.", href: "/help/equipment/tachographs" },
+  { title: "Rebated (red) fuel", description: "Rules around using rebated diesel on the road and on site.", href: "/help/equipment/red-diesel" },
+  { title: "E10 fuel", description: "What E10 means for landscape machinery and older equipment.", href: "/help/equipment/e10-fuel" },
+  { title: "Tractor licences", description: "Categories, age requirements and what you can drive.", href: "/help/equipment/tractors" },
+  { title: "Driving for better business", description: "Industry programme helping employers manage work-related road risk.", href: "/help/equipment/driving-for-better-business" },
 ];
 
 function Page() {
