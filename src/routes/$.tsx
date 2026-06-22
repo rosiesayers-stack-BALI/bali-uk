@@ -101,9 +101,75 @@ function SplatPage() {
       {content ? <RichPage path={path} content={content} /> : <ComingSoon path={path} />}
       {path === "/about/conference" && <ConferenceHighlights />}
       {path === "/about/conference" && <ConferenceInterestForm />}
+      {path === "/membership" && <MembershipCTA />}
       <Footer />
       <CookieBanner />
     </div>
+  );
+}
+
+function MembershipCTA() {
+  return (
+    <section className="relative overflow-hidden text-white py-20" style={{ background: "linear-gradient(135deg, #0E8B61 0%, #1D4D59 60%, #21509A 100%)" }}>
+      <div
+        className="absolute inset-0 opacity-10 pointer-events-none"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 15% 20%, rgba(255,255,255,0.5), transparent 40%), radial-gradient(circle at 85% 80%, rgba(255,255,255,0.35), transparent 50%)",
+        }}
+      />
+      <div className="max-w-5xl mx-auto px-6 relative">
+        <div className="grid md:grid-cols-5 gap-10 items-center">
+          <div className="md:col-span-3">
+            <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass">Join the Association</p>
+            <h2 className="text-3xl sm:text-4xl font-bold leading-tight mb-4">
+              Ready to grow your business with BALI?
+            </h2>
+            <p className="text-blue-100 text-lg leading-relaxed mb-8 max-w-2xl">
+              Choose your category, send a short enquiry, or talk to the membership team — we respond
+              within 48 working hours.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                to="/join"
+                className="bg-white text-bali-green hover:bg-gray-100 px-7 py-3.5 rounded-lg font-bold transition-all hover:scale-105 shadow-xl"
+              >
+                Apply now →
+              </Link>
+              <Link
+                to="/membership/enquiry"
+                className="bg-bali-green hover:bg-green-700 text-white px-7 py-3.5 rounded-lg font-bold transition-all hover:scale-105 shadow-lg"
+              >
+                Make an enquiry
+              </Link>
+              <Link
+                to="/membership/fees"
+                className="bg-white/10 hover:bg-white/20 border border-white/40 text-white backdrop-blur-sm px-7 py-3.5 rounded-lg font-bold transition-all"
+              >
+                See fees
+              </Link>
+            </div>
+          </div>
+          <div className="md:col-span-2">
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 space-y-4">
+              <div>
+                <div className="text-xs uppercase tracking-wider text-blue-100/80 font-semibold mb-1">Phone</div>
+                <a href="tel:+442476690333" className="text-white font-bold text-lg hover:underline">+44 (0)24 7669 0333</a>
+              </div>
+              <div className="h-px bg-white/20" />
+              <div>
+                <div className="text-xs uppercase tracking-wider text-blue-100/80 font-semibold mb-1">Email</div>
+                <a href="mailto:membership@bali.org.uk" className="text-white font-bold hover:underline break-all">membership@bali.org.uk</a>
+              </div>
+              <div className="h-px bg-white/20" />
+              <div className="text-sm text-blue-100">
+                <span className="font-semibold text-white">Response within 48 hrs</span> — every enquiry handled by a named team member.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 
