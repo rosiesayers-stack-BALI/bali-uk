@@ -3,12 +3,17 @@ import Link from '../components/SmartLink'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import CookieBanner from '../components/CookieBanner'
+import bannerMountbatten from '../assets/bali/large_mountbatten-house-min.jpeg.asset.json'
+import bannerWeb from '../assets/bali/large_web-banner.png.asset.json'
+import bannerHome3 from '../assets/bali/large_homepage-banner-3.jpeg.asset.json'
+import bannerHome1 from '../assets/bali/large_homepage-banner-1.jpeg.asset.json'
 
 // ── Hero slides data ──────────────────────────────────────────────────────────
+// Matches the four banners used on bali.org.uk
 const slides = [
   {
     bg: 'linear-gradient(135deg, #1D4D59 0%, #21509A 60%, #0E8B61 100%)',
-    image: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1600&q=80',
+    image: bannerMountbatten.url,
     eyebrow: 'Celebrating over 50 Years',
     eyebrowColor: 'text-bali-grass',
     title: 'The Gold Standard\nin Landscaping',
@@ -20,7 +25,7 @@ const slides = [
   },
   {
     bg: 'linear-gradient(135deg, #0E8B61 0%, #1D4D59 100%)',
-    image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1600&q=80',
+    image: bannerWeb.url,
     eyebrow: 'Now Available',
     eyebrowColor: 'text-bali-grass',
     title: 'Landscape News\nSpring Edition',
@@ -31,13 +36,24 @@ const slides = [
   },
   {
     bg: 'linear-gradient(135deg, #21509A 0%, #6D4276 100%)',
-    image: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1600&q=80',
+    image: bannerHome3.url,
     eyebrow: 'Free Member Benefit',
     eyebrowColor: 'text-yellow-300',
     title: 'Free HR &\nHealth Checks',
     body: 'Access free HR reviews, employment law advice, and health & safety health checks as a BALI member — saving your business thousands per year.',
     ctas: [
       { label: 'Explore Member Benefits', href: '/join', style: 'bg-bali-grass hover:bg-green-600 text-white' },
+    ],
+  },
+  {
+    bg: 'linear-gradient(135deg, #1D4D59 0%, #0E8B61 100%)',
+    image: bannerHome1.url,
+    eyebrow: 'Find a Professional',
+    eyebrowColor: 'text-bali-grass',
+    title: "Designers, Contractors\n& Suppliers",
+    body: "Know you're hiring the best — search our online directory of accredited BALI members across the UK.",
+    ctas: [
+      { label: 'Search the Directory', href: '/directory', style: 'bg-white text-bali-blue hover:bg-gray-100' },
     ],
   },
 ]
@@ -142,9 +158,9 @@ export default function HomePage() {
             style={{ opacity: i === current ? 1 : 0, background: slide.bg }}
           >
             <div
-              className="absolute inset-0 opacity-20"
+              className="absolute inset-0"
               style={{
-                backgroundImage: `url('${slide.image}')`,
+                backgroundImage: `linear-gradient(rgba(15, 30, 50, 0.55), rgba(15, 30, 50, 0.55)), url('${slide.image}')`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}
@@ -318,10 +334,10 @@ export default function HomePage() {
             <RevealDiv delay={0.2}>
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80', caption: 'Award-winning garden design', mt: '' },
-                  { src: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80', caption: 'Professional landscaping', mt: 'mt-6' },
-                  { src: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=600&q=80', caption: 'Precision maintenance', mt: '-mt-2' },
-                  { src: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&q=80', caption: 'Quality materials & supply', mt: 'mt-4' },
+                  { src: bannerHome1.url, caption: 'Award-winning garden design', mt: '' },
+                  { src: bannerWeb.url, caption: 'Professional landscaping', mt: 'mt-6' },
+                  { src: bannerHome3.url, caption: 'Precision maintenance', mt: '-mt-2' },
+                  { src: bannerMountbatten.url, caption: 'Quality materials & supply', mt: 'mt-4' },
                 ].map((img) => (
                   <div key={img.src} className={`bg-white rounded-2xl overflow-hidden shadow-md ${img.mt}`}>
                     <img src={img.src} alt={img.caption} className="w-full h-40 object-cover" />
