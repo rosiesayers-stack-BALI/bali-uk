@@ -484,6 +484,45 @@ export type Database = {
         }
         Relationships: []
       }
+      membership_enquiries: {
+        Row: {
+          category_interest: string | null
+          company: string | null
+          created_at: string
+          email: string
+          id: string
+          message: string
+          name: string
+          phone: string | null
+          source: string | null
+          status: string
+        }
+        Insert: {
+          category_interest?: string | null
+          company?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          message: string
+          name: string
+          phone?: string | null
+          source?: string | null
+          status?: string
+        }
+        Update: {
+          category_interest?: string | null
+          company?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string
+          name?: string
+          phone?: string | null
+          source?: string | null
+          status?: string
+        }
+        Relationships: []
+      }
       news_articles: {
         Row: {
           body_paragraphs: string[]

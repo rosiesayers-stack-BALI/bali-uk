@@ -26,6 +26,10 @@ import { Route as PolicySlugRouteImport } from './routes/policy.$slug'
 import { Route as NewsMagazineRouteImport } from './routes/news.magazine'
 import { Route as NewsSlugRouteImport } from './routes/news.$slug'
 import { Route as MembershipHardshipFundRouteImport } from './routes/membership.hardship-fund'
+import { Route as MembershipFeesRouteImport } from './routes/membership.fees'
+import { Route as MembershipEnquiryRouteImport } from './routes/membership.enquiry'
+import { Route as MembershipCategoriesRouteImport } from './routes/membership.categories'
+import { Route as MembershipBecomeAMemberRouteImport } from './routes/membership.become-a-member'
 import { Route as HelpPodcastRouteImport } from './routes/help.podcast'
 import { Route as HelpPlantHealthRouteImport } from './routes/help.plant-health'
 import { Route as HelpPestsRouteImport } from './routes/help.pests'
@@ -103,6 +107,7 @@ import { Route as HelpEquipmentDrivingForBetterBusinessRouteImport } from './rou
 import { Route as HelpDisputeMemberInformationRouteImport } from './routes/help.dispute.member-information'
 import { Route as HelpDisputeFrequentlyAskedQuestionsRouteImport } from './routes/help.dispute.frequently-asked-questions'
 import { Route as HelpDisputeClientInformationRouteImport } from './routes/help.dispute.client-information'
+import { Route as ApiPublicMembershipEnquiryRouteImport } from './routes/api/public/membership-enquiry'
 import { Route as ApiPublicMembershipApplicationRouteImport } from './routes/api/public/membership-application'
 import { Route as ApiPublicConferenceInterestRouteImport } from './routes/api/public/conference-interest'
 import { Route as AdminTrainingIdRouteImport } from './routes/admin.training.$id'
@@ -194,6 +199,26 @@ const NewsSlugRoute = NewsSlugRouteImport.update({
 const MembershipHardshipFundRoute = MembershipHardshipFundRouteImport.update({
   id: '/membership/hardship-fund',
   path: '/membership/hardship-fund',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MembershipFeesRoute = MembershipFeesRouteImport.update({
+  id: '/membership/fees',
+  path: '/membership/fees',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MembershipEnquiryRoute = MembershipEnquiryRouteImport.update({
+  id: '/membership/enquiry',
+  path: '/membership/enquiry',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MembershipCategoriesRoute = MembershipCategoriesRouteImport.update({
+  id: '/membership/categories',
+  path: '/membership/categories',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MembershipBecomeAMemberRoute = MembershipBecomeAMemberRouteImport.update({
+  id: '/membership/become-a-member',
+  path: '/membership/become-a-member',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HelpPodcastRoute = HelpPodcastRouteImport.update({
@@ -614,6 +639,12 @@ const HelpDisputeClientInformationRoute =
     path: '/client-information',
     getParentRoute: () => HelpDisputeRoute,
   } as any)
+const ApiPublicMembershipEnquiryRoute =
+  ApiPublicMembershipEnquiryRouteImport.update({
+    id: '/api/public/membership-enquiry',
+    path: '/api/public/membership-enquiry',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiPublicMembershipApplicationRoute =
   ApiPublicMembershipApplicationRouteImport.update({
     id: '/api/public/membership-application',
@@ -683,6 +714,10 @@ export interface FileRoutesByFullPath {
   '/help/pests': typeof HelpPestsRouteWithChildren
   '/help/plant-health': typeof HelpPlantHealthRouteWithChildren
   '/help/podcast': typeof HelpPodcastRoute
+  '/membership/become-a-member': typeof MembershipBecomeAMemberRoute
+  '/membership/categories': typeof MembershipCategoriesRoute
+  '/membership/enquiry': typeof MembershipEnquiryRoute
+  '/membership/fees': typeof MembershipFeesRoute
   '/membership/hardship-fund': typeof MembershipHardshipFundRoute
   '/news/$slug': typeof NewsSlugRoute
   '/news/magazine': typeof NewsMagazineRoute
@@ -699,6 +734,7 @@ export interface FileRoutesByFullPath {
   '/admin/training/$id': typeof AdminTrainingIdRoute
   '/api/public/conference-interest': typeof ApiPublicConferenceInterestRoute
   '/api/public/membership-application': typeof ApiPublicMembershipApplicationRoute
+  '/api/public/membership-enquiry': typeof ApiPublicMembershipEnquiryRoute
   '/help/dispute/client-information': typeof HelpDisputeClientInformationRoute
   '/help/dispute/frequently-asked-questions': typeof HelpDisputeFrequentlyAskedQuestionsRoute
   '/help/dispute/member-information': typeof HelpDisputeMemberInformationRoute
@@ -785,6 +821,10 @@ export interface FileRoutesByTo {
   '/help/pests': typeof HelpPestsRouteWithChildren
   '/help/plant-health': typeof HelpPlantHealthRouteWithChildren
   '/help/podcast': typeof HelpPodcastRoute
+  '/membership/become-a-member': typeof MembershipBecomeAMemberRoute
+  '/membership/categories': typeof MembershipCategoriesRoute
+  '/membership/enquiry': typeof MembershipEnquiryRoute
+  '/membership/fees': typeof MembershipFeesRoute
   '/membership/hardship-fund': typeof MembershipHardshipFundRoute
   '/news/$slug': typeof NewsSlugRoute
   '/news/magazine': typeof NewsMagazineRoute
@@ -801,6 +841,7 @@ export interface FileRoutesByTo {
   '/admin/training/$id': typeof AdminTrainingIdRoute
   '/api/public/conference-interest': typeof ApiPublicConferenceInterestRoute
   '/api/public/membership-application': typeof ApiPublicMembershipApplicationRoute
+  '/api/public/membership-enquiry': typeof ApiPublicMembershipEnquiryRoute
   '/help/dispute/client-information': typeof HelpDisputeClientInformationRoute
   '/help/dispute/frequently-asked-questions': typeof HelpDisputeFrequentlyAskedQuestionsRoute
   '/help/dispute/member-information': typeof HelpDisputeMemberInformationRoute
@@ -889,6 +930,10 @@ export interface FileRoutesById {
   '/help/pests': typeof HelpPestsRouteWithChildren
   '/help/plant-health': typeof HelpPlantHealthRouteWithChildren
   '/help/podcast': typeof HelpPodcastRoute
+  '/membership/become-a-member': typeof MembershipBecomeAMemberRoute
+  '/membership/categories': typeof MembershipCategoriesRoute
+  '/membership/enquiry': typeof MembershipEnquiryRoute
+  '/membership/fees': typeof MembershipFeesRoute
   '/membership/hardship-fund': typeof MembershipHardshipFundRoute
   '/news/$slug': typeof NewsSlugRoute
   '/news/magazine': typeof NewsMagazineRoute
@@ -905,6 +950,7 @@ export interface FileRoutesById {
   '/admin/training/$id': typeof AdminTrainingIdRoute
   '/api/public/conference-interest': typeof ApiPublicConferenceInterestRoute
   '/api/public/membership-application': typeof ApiPublicMembershipApplicationRoute
+  '/api/public/membership-enquiry': typeof ApiPublicMembershipEnquiryRoute
   '/help/dispute/client-information': typeof HelpDisputeClientInformationRoute
   '/help/dispute/frequently-asked-questions': typeof HelpDisputeFrequentlyAskedQuestionsRoute
   '/help/dispute/member-information': typeof HelpDisputeMemberInformationRoute
@@ -994,6 +1040,10 @@ export interface FileRouteTypes {
     | '/help/pests'
     | '/help/plant-health'
     | '/help/podcast'
+    | '/membership/become-a-member'
+    | '/membership/categories'
+    | '/membership/enquiry'
+    | '/membership/fees'
     | '/membership/hardship-fund'
     | '/news/$slug'
     | '/news/magazine'
@@ -1010,6 +1060,7 @@ export interface FileRouteTypes {
     | '/admin/training/$id'
     | '/api/public/conference-interest'
     | '/api/public/membership-application'
+    | '/api/public/membership-enquiry'
     | '/help/dispute/client-information'
     | '/help/dispute/frequently-asked-questions'
     | '/help/dispute/member-information'
@@ -1096,6 +1147,10 @@ export interface FileRouteTypes {
     | '/help/pests'
     | '/help/plant-health'
     | '/help/podcast'
+    | '/membership/become-a-member'
+    | '/membership/categories'
+    | '/membership/enquiry'
+    | '/membership/fees'
     | '/membership/hardship-fund'
     | '/news/$slug'
     | '/news/magazine'
@@ -1112,6 +1167,7 @@ export interface FileRouteTypes {
     | '/admin/training/$id'
     | '/api/public/conference-interest'
     | '/api/public/membership-application'
+    | '/api/public/membership-enquiry'
     | '/help/dispute/client-information'
     | '/help/dispute/frequently-asked-questions'
     | '/help/dispute/member-information'
@@ -1199,6 +1255,10 @@ export interface FileRouteTypes {
     | '/help/pests'
     | '/help/plant-health'
     | '/help/podcast'
+    | '/membership/become-a-member'
+    | '/membership/categories'
+    | '/membership/enquiry'
+    | '/membership/fees'
     | '/membership/hardship-fund'
     | '/news/$slug'
     | '/news/magazine'
@@ -1215,6 +1275,7 @@ export interface FileRouteTypes {
     | '/admin/training/$id'
     | '/api/public/conference-interest'
     | '/api/public/membership-application'
+    | '/api/public/membership-enquiry'
     | '/help/dispute/client-information'
     | '/help/dispute/frequently-asked-questions'
     | '/help/dispute/member-information'
@@ -1302,6 +1363,10 @@ export interface RootRouteChildren {
   HelpPestsRoute: typeof HelpPestsRouteWithChildren
   HelpPlantHealthRoute: typeof HelpPlantHealthRouteWithChildren
   HelpPodcastRoute: typeof HelpPodcastRoute
+  MembershipBecomeAMemberRoute: typeof MembershipBecomeAMemberRoute
+  MembershipCategoriesRoute: typeof MembershipCategoriesRoute
+  MembershipEnquiryRoute: typeof MembershipEnquiryRoute
+  MembershipFeesRoute: typeof MembershipFeesRoute
   MembershipHardshipFundRoute: typeof MembershipHardshipFundRoute
   NewsSlugRoute: typeof NewsSlugRoute
   NewsMagazineRoute: typeof NewsMagazineRoute
@@ -1313,6 +1378,7 @@ export interface RootRouteChildren {
   PolicyIndexRoute: typeof PolicyIndexRoute
   ApiPublicConferenceInterestRoute: typeof ApiPublicConferenceInterestRoute
   ApiPublicMembershipApplicationRoute: typeof ApiPublicMembershipApplicationRoute
+  ApiPublicMembershipEnquiryRoute: typeof ApiPublicMembershipEnquiryRoute
   ApiPublicHooksWorkbooksSyncRoute: typeof ApiPublicHooksWorkbooksSyncRoute
 }
 
@@ -1435,6 +1501,34 @@ declare module '@tanstack/react-router' {
       path: '/membership/hardship-fund'
       fullPath: '/membership/hardship-fund'
       preLoaderRoute: typeof MembershipHardshipFundRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/membership/fees': {
+      id: '/membership/fees'
+      path: '/membership/fees'
+      fullPath: '/membership/fees'
+      preLoaderRoute: typeof MembershipFeesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/membership/enquiry': {
+      id: '/membership/enquiry'
+      path: '/membership/enquiry'
+      fullPath: '/membership/enquiry'
+      preLoaderRoute: typeof MembershipEnquiryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/membership/categories': {
+      id: '/membership/categories'
+      path: '/membership/categories'
+      fullPath: '/membership/categories'
+      preLoaderRoute: typeof MembershipCategoriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/membership/become-a-member': {
+      id: '/membership/become-a-member'
+      path: '/membership/become-a-member'
+      fullPath: '/membership/become-a-member'
+      preLoaderRoute: typeof MembershipBecomeAMemberRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/help/podcast': {
@@ -1976,6 +2070,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HelpDisputeClientInformationRouteImport
       parentRoute: typeof HelpDisputeRoute
     }
+    '/api/public/membership-enquiry': {
+      id: '/api/public/membership-enquiry'
+      path: '/api/public/membership-enquiry'
+      fullPath: '/api/public/membership-enquiry'
+      preLoaderRoute: typeof ApiPublicMembershipEnquiryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/public/membership-application': {
       id: '/api/public/membership-application'
       path: '/api/public/membership-application'
@@ -2273,6 +2374,10 @@ const rootRouteChildren: RootRouteChildren = {
   HelpPestsRoute: HelpPestsRouteWithChildren,
   HelpPlantHealthRoute: HelpPlantHealthRouteWithChildren,
   HelpPodcastRoute: HelpPodcastRoute,
+  MembershipBecomeAMemberRoute: MembershipBecomeAMemberRoute,
+  MembershipCategoriesRoute: MembershipCategoriesRoute,
+  MembershipEnquiryRoute: MembershipEnquiryRoute,
+  MembershipFeesRoute: MembershipFeesRoute,
   MembershipHardshipFundRoute: MembershipHardshipFundRoute,
   NewsSlugRoute: NewsSlugRoute,
   NewsMagazineRoute: NewsMagazineRoute,
@@ -2284,18 +2389,9 @@ const rootRouteChildren: RootRouteChildren = {
   PolicyIndexRoute: PolicyIndexRoute,
   ApiPublicConferenceInterestRoute: ApiPublicConferenceInterestRoute,
   ApiPublicMembershipApplicationRoute: ApiPublicMembershipApplicationRoute,
+  ApiPublicMembershipEnquiryRoute: ApiPublicMembershipEnquiryRoute,
   ApiPublicHooksWorkbooksSyncRoute: ApiPublicHooksWorkbooksSyncRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
