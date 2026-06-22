@@ -30,7 +30,28 @@ function Page() {
     <HelpPage
       eyebrow="Resources"
       title="Guides & Downloads"
-      intro="Unlock your marketing potential with our exclusive collection of best-practice guides, created just for BALI members. Start with our Social Media, PR & Media and Email Marketing guides — packed with practical tips to grow your business."
+      intro="Unlock your marketing potential with our exclusive collection of best-practice guides, created just for BALI members."
+      body={
+        <>
+          <h3>What's in this library</h3>
+          <p>
+            We have built a growing library of practical, member-only guides covering the areas where small landscape businesses most often need a steer — social media, PR and email marketing — alongside case studies showing how BALI membership has helped real businesses grow.
+          </p>
+
+          <h3>How to get the most from these guides</h3>
+          <ul>
+            <li><strong>Pick one channel and commit.</strong> A consistent quarterly newsletter beats sporadic activity across five platforms.</li>
+            <li><strong>Show the work.</strong> Before-and-after shots, planting plans and on-site videos consistently out-perform stock imagery.</li>
+            <li><strong>Use the BALI badge.</strong> Featuring your membership on proposals, vehicles and signage builds trust before you've even quoted.</li>
+            <li><strong>Recycle good content.</strong> A single project can be a case study, a social post, a press release and a newsletter feature.</li>
+          </ul>
+
+          <h3>Industry insight: Lay of the Land</h3>
+          <p>
+            BALI's flagship industry report — <em>Lay of the Land</em> — benchmarks the state of the UK landscape sector each year, drawing on member data, market trends and economic indicators. Use it to set targets, brief funders and stakeholders, and inform pricing decisions.
+          </p>
+        </>
+      }
       subTopicsHeading="Guides & case studies"
       subTopics={SUB}
     />
