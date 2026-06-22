@@ -1,11 +1,14 @@
 import { useState, type ReactNode } from "react";
+import { useServerFn } from "@tanstack/react-start";
 import { useAdminAuth } from "@/lib/admin/auth";
+import { claimFirstAdmin } from "@/lib/admin/functions";
 import { AdminLogin } from "./AdminLogin";
 import { AdminShell } from "./AdminShell";
 import { supabase } from "@/integrations/supabase/client";
 
 export function AdminGate({ children }: { children: ReactNode }) {
   const auth = useAdminAuth();
+  const claimFirstAdminFn = useServerFn(claimFirstAdmin);
   const [claiming, setClaiming] = useState(false);
   const [claimError, setClaimError] = useState<string | null>(null);
 
@@ -31,9 +34,12 @@ export function AdminGate({ children }: { children: ReactNode }) {
             onClick={async () => {
               setClaiming(true);
               setClaimError(null);
-              const { error } = await supabase.rpc("claim_first_admin");
-              if (error) setClaimError(error.message);
-              else window.location.reload();
+              try {
+                await claimFirstAdminFn();
+                window.location.reload();
+              } catch (error) {
+                setClaimError(error instanceof Error ? error.message : "Unable to claim admin access");
+              }
               setClaiming(false);
             }}
             disabled={claiming}
