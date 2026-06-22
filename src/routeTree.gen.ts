@@ -25,6 +25,7 @@ import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as PolicySlugRouteImport } from './routes/policy.$slug'
 import { Route as NewsMagazineRouteImport } from './routes/news.magazine'
 import { Route as NewsSlugRouteImport } from './routes/news.$slug'
+import { Route as MembershipHardshipFundRouteImport } from './routes/membership.hardship-fund'
 import { Route as HelpPodcastRouteImport } from './routes/help.podcast'
 import { Route as HelpPlantHealthRouteImport } from './routes/help.plant-health'
 import { Route as HelpPestsRouteImport } from './routes/help.pests'
@@ -35,6 +36,7 @@ import { Route as HelpGuidesRouteImport } from './routes/help.guides'
 import { Route as HelpEquipmentRouteImport } from './routes/help.equipment'
 import { Route as HelpDomesticLandscapeContractRouteImport } from './routes/help.domestic-landscape-contract'
 import { Route as HelpDisputeRouteImport } from './routes/help.dispute'
+import { Route as HelpContractsRouteImport } from './routes/help.contracts'
 import { Route as HelpContractRouteImport } from './routes/help.contract'
 import { Route as EventsTrainingRouteImport } from './routes/events.training'
 import { Route as EventsSlugRouteImport } from './routes/events.$slug'
@@ -188,6 +190,11 @@ const NewsSlugRoute = NewsSlugRouteImport.update({
   path: '/news/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MembershipHardshipFundRoute = MembershipHardshipFundRouteImport.update({
+  id: '/membership/hardship-fund',
+  path: '/membership/hardship-fund',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HelpPodcastRoute = HelpPodcastRouteImport.update({
   id: '/help/podcast',
   path: '/help/podcast',
@@ -237,6 +244,11 @@ const HelpDomesticLandscapeContractRoute =
 const HelpDisputeRoute = HelpDisputeRouteImport.update({
   id: '/help/dispute',
   path: '/help/dispute',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpContractsRoute = HelpContractsRouteImport.update({
+  id: '/help/contracts',
+  path: '/help/contracts',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HelpContractRoute = HelpContractRouteImport.update({
@@ -653,6 +665,7 @@ export interface FileRoutesByFullPath {
   '/events/$slug': typeof EventsSlugRoute
   '/events/training': typeof EventsTrainingRoute
   '/help/contract': typeof HelpContractRoute
+  '/help/contracts': typeof HelpContractsRoute
   '/help/dispute': typeof HelpDisputeRouteWithChildren
   '/help/domestic-landscape-contract': typeof HelpDomesticLandscapeContractRoute
   '/help/equipment': typeof HelpEquipmentRouteWithChildren
@@ -663,6 +676,7 @@ export interface FileRoutesByFullPath {
   '/help/pests': typeof HelpPestsRouteWithChildren
   '/help/plant-health': typeof HelpPlantHealthRouteWithChildren
   '/help/podcast': typeof HelpPodcastRoute
+  '/membership/hardship-fund': typeof MembershipHardshipFundRoute
   '/news/$slug': typeof NewsSlugRoute
   '/news/magazine': typeof NewsMagazineRoute
   '/policy/$slug': typeof PolicySlugRoute
@@ -752,6 +766,7 @@ export interface FileRoutesByTo {
   '/events/$slug': typeof EventsSlugRoute
   '/events/training': typeof EventsTrainingRoute
   '/help/contract': typeof HelpContractRoute
+  '/help/contracts': typeof HelpContractsRoute
   '/help/dispute': typeof HelpDisputeRouteWithChildren
   '/help/domestic-landscape-contract': typeof HelpDomesticLandscapeContractRoute
   '/help/equipment': typeof HelpEquipmentRouteWithChildren
@@ -762,6 +777,7 @@ export interface FileRoutesByTo {
   '/help/pests': typeof HelpPestsRouteWithChildren
   '/help/plant-health': typeof HelpPlantHealthRouteWithChildren
   '/help/podcast': typeof HelpPodcastRoute
+  '/membership/hardship-fund': typeof MembershipHardshipFundRoute
   '/news/$slug': typeof NewsSlugRoute
   '/news/magazine': typeof NewsMagazineRoute
   '/policy/$slug': typeof PolicySlugRoute
@@ -853,6 +869,7 @@ export interface FileRoutesById {
   '/events/$slug': typeof EventsSlugRoute
   '/events/training': typeof EventsTrainingRoute
   '/help/contract': typeof HelpContractRoute
+  '/help/contracts': typeof HelpContractsRoute
   '/help/dispute': typeof HelpDisputeRouteWithChildren
   '/help/domestic-landscape-contract': typeof HelpDomesticLandscapeContractRoute
   '/help/equipment': typeof HelpEquipmentRouteWithChildren
@@ -863,6 +880,7 @@ export interface FileRoutesById {
   '/help/pests': typeof HelpPestsRouteWithChildren
   '/help/plant-health': typeof HelpPlantHealthRouteWithChildren
   '/help/podcast': typeof HelpPodcastRoute
+  '/membership/hardship-fund': typeof MembershipHardshipFundRoute
   '/news/$slug': typeof NewsSlugRoute
   '/news/magazine': typeof NewsMagazineRoute
   '/policy/$slug': typeof PolicySlugRoute
@@ -955,6 +973,7 @@ export interface FileRouteTypes {
     | '/events/$slug'
     | '/events/training'
     | '/help/contract'
+    | '/help/contracts'
     | '/help/dispute'
     | '/help/domestic-landscape-contract'
     | '/help/equipment'
@@ -965,6 +984,7 @@ export interface FileRouteTypes {
     | '/help/pests'
     | '/help/plant-health'
     | '/help/podcast'
+    | '/membership/hardship-fund'
     | '/news/$slug'
     | '/news/magazine'
     | '/policy/$slug'
@@ -1054,6 +1074,7 @@ export interface FileRouteTypes {
     | '/events/$slug'
     | '/events/training'
     | '/help/contract'
+    | '/help/contracts'
     | '/help/dispute'
     | '/help/domestic-landscape-contract'
     | '/help/equipment'
@@ -1064,6 +1085,7 @@ export interface FileRouteTypes {
     | '/help/pests'
     | '/help/plant-health'
     | '/help/podcast'
+    | '/membership/hardship-fund'
     | '/news/$slug'
     | '/news/magazine'
     | '/policy/$slug'
@@ -1154,6 +1176,7 @@ export interface FileRouteTypes {
     | '/events/$slug'
     | '/events/training'
     | '/help/contract'
+    | '/help/contracts'
     | '/help/dispute'
     | '/help/domestic-landscape-contract'
     | '/help/equipment'
@@ -1164,6 +1187,7 @@ export interface FileRouteTypes {
     | '/help/pests'
     | '/help/plant-health'
     | '/help/podcast'
+    | '/membership/hardship-fund'
     | '/news/$slug'
     | '/news/magazine'
     | '/policy/$slug'
@@ -1254,6 +1278,7 @@ export interface RootRouteChildren {
   EventsSlugRoute: typeof EventsSlugRoute
   EventsTrainingRoute: typeof EventsTrainingRoute
   HelpContractRoute: typeof HelpContractRoute
+  HelpContractsRoute: typeof HelpContractsRoute
   HelpDisputeRoute: typeof HelpDisputeRouteWithChildren
   HelpDomesticLandscapeContractRoute: typeof HelpDomesticLandscapeContractRoute
   HelpEquipmentRoute: typeof HelpEquipmentRouteWithChildren
@@ -1264,6 +1289,7 @@ export interface RootRouteChildren {
   HelpPestsRoute: typeof HelpPestsRouteWithChildren
   HelpPlantHealthRoute: typeof HelpPlantHealthRouteWithChildren
   HelpPodcastRoute: typeof HelpPodcastRoute
+  MembershipHardshipFundRoute: typeof MembershipHardshipFundRoute
   NewsSlugRoute: typeof NewsSlugRoute
   NewsMagazineRoute: typeof NewsMagazineRoute
   PolicySlugRoute: typeof PolicySlugRoute
@@ -1390,6 +1416,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NewsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/membership/hardship-fund': {
+      id: '/membership/hardship-fund'
+      path: '/membership/hardship-fund'
+      fullPath: '/membership/hardship-fund'
+      preLoaderRoute: typeof MembershipHardshipFundRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/help/podcast': {
       id: '/help/podcast'
       path: '/help/podcast'
@@ -1458,6 +1491,13 @@ declare module '@tanstack/react-router' {
       path: '/help/dispute'
       fullPath: '/help/dispute'
       preLoaderRoute: typeof HelpDisputeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help/contracts': {
+      id: '/help/contracts'
+      path: '/help/contracts'
+      fullPath: '/help/contracts'
+      preLoaderRoute: typeof HelpContractsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/help/contract': {
@@ -2201,6 +2241,7 @@ const rootRouteChildren: RootRouteChildren = {
   EventsSlugRoute: EventsSlugRoute,
   EventsTrainingRoute: EventsTrainingRoute,
   HelpContractRoute: HelpContractRoute,
+  HelpContractsRoute: HelpContractsRoute,
   HelpDisputeRoute: HelpDisputeRouteWithChildren,
   HelpDomesticLandscapeContractRoute: HelpDomesticLandscapeContractRoute,
   HelpEquipmentRoute: HelpEquipmentRouteWithChildren,
@@ -2211,6 +2252,7 @@ const rootRouteChildren: RootRouteChildren = {
   HelpPestsRoute: HelpPestsRouteWithChildren,
   HelpPlantHealthRoute: HelpPlantHealthRouteWithChildren,
   HelpPodcastRoute: HelpPodcastRoute,
+  MembershipHardshipFundRoute: MembershipHardshipFundRoute,
   NewsSlugRoute: NewsSlugRoute,
   NewsMagazineRoute: NewsMagazineRoute,
   PolicySlugRoute: PolicySlugRoute,
