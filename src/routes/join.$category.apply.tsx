@@ -120,13 +120,8 @@ function ApplyPage() {
           </section>
         )}
 
-        {config.isStudent ? (
-          <StudentApplicationForm config={config} />
-        ) : config.isIndividual ? (
-          <IndividualApplicationForm config={config} />
-        ) : (
-          <ApplicationForm config={config} />
-        )}
+        <ShortApplyForm config={config} />
+
       </main>
       <Footer />
       <CookieBanner />
