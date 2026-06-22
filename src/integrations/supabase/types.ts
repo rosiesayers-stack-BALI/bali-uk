@@ -14,6 +14,39 @@ export type Database = {
   }
   public: {
     Tables: {
+      benefits: {
+        Row: {
+          allowed_member_types: string[] | null
+          body: string | null
+          category: string | null
+          created_at: string
+          id: string
+          published: boolean | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          allowed_member_types?: string[] | null
+          body?: string | null
+          category?: string | null
+          created_at?: string
+          id?: string
+          published?: boolean | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          allowed_member_types?: string[] | null
+          body?: string | null
+          category?: string | null
+          created_at?: string
+          id?: string
+          published?: boolean | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       conference_interest: {
         Row: {
           company: string | null
@@ -47,6 +80,233 @@ export type Database = {
           notes?: string | null
           role?: string | null
           sponsor_interest?: boolean
+        }
+        Relationships: []
+      }
+      directory_accreditations: {
+        Row: {
+          created_at: string
+          id: string
+          logo_url: string | null
+          name: string
+          profile_id: string
+          sort_order: number | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          logo_url?: string | null
+          name: string
+          profile_id: string
+          sort_order?: number | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          logo_url?: string | null
+          name?: string
+          profile_id?: string
+          sort_order?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "directory_accreditations_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "directory_profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      directory_profiles: {
+        Row: {
+          about: string | null
+          banner_url: string | null
+          created_at: string
+          id: string
+          logo_url: string | null
+          slug: string
+          updated_at: string
+          wb_org_id: string
+          whos_who: string | null
+        }
+        Insert: {
+          about?: string | null
+          banner_url?: string | null
+          created_at?: string
+          id?: string
+          logo_url?: string | null
+          slug: string
+          updated_at?: string
+          wb_org_id: string
+          whos_who?: string | null
+        }
+        Update: {
+          about?: string | null
+          banner_url?: string | null
+          created_at?: string
+          id?: string
+          logo_url?: string | null
+          slug?: string
+          updated_at?: string
+          wb_org_id?: string
+          whos_who?: string | null
+        }
+        Relationships: []
+      }
+      directory_projects: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          images: Json | null
+          profile_id: string
+          sort_order: number | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          images?: Json | null
+          profile_id: string
+          sort_order?: number | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          images?: Json | null
+          profile_id?: string
+          sort_order?: number | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "directory_projects_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "directory_profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      directory_team: {
+        Row: {
+          created_at: string
+          id: string
+          name: string
+          photo_url: string | null
+          profile_id: string
+          role: string | null
+          sort_order: number | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          name: string
+          photo_url?: string | null
+          profile_id: string
+          role?: string | null
+          sort_order?: number | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          name?: string
+          photo_url?: string | null
+          profile_id?: string
+          role?: string | null
+          sort_order?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "directory_team_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "directory_profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      directory_testimonials: {
+        Row: {
+          author: string | null
+          created_at: string
+          id: string
+          images: Json | null
+          profile_id: string
+          quote: string
+          sort_order: number | null
+        }
+        Insert: {
+          author?: string | null
+          created_at?: string
+          id?: string
+          images?: Json | null
+          profile_id: string
+          quote: string
+          sort_order?: number | null
+        }
+        Update: {
+          author?: string | null
+          created_at?: string
+          id?: string
+          images?: Json | null
+          profile_id?: string
+          quote?: string
+          sort_order?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "directory_testimonials_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "directory_profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      documents: {
+        Row: {
+          allowed_member_types: string[] | null
+          category: string | null
+          created_at: string
+          description: string | null
+          file_path: string
+          id: string
+          public: boolean | null
+          published: boolean | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          allowed_member_types?: string[] | null
+          category?: string | null
+          created_at?: string
+          description?: string | null
+          file_path: string
+          id?: string
+          public?: boolean | null
+          published?: boolean | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          allowed_member_types?: string[] | null
+          category?: string | null
+          created_at?: string
+          description?: string | null
+          file_path?: string
+          id?: string
+          public?: boolean | null
+          published?: boolean | null
+          title?: string
+          updated_at?: string
         }
         Relationships: []
       }
@@ -104,6 +364,123 @@ export type Database = {
           title?: string
           updated_at?: string
           venue?: string
+        }
+        Relationships: []
+      }
+      member_links: {
+        Row: {
+          created_at: string
+          member_category: string | null
+          updated_at: string
+          user_id: string
+          wb_org_id: string | null
+          wb_person_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          member_category?: string | null
+          updated_at?: string
+          user_id: string
+          wb_org_id?: string | null
+          wb_person_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          member_category?: string | null
+          updated_at?: string
+          user_id?: string
+          wb_org_id?: string | null
+          wb_person_id?: string | null
+        }
+        Relationships: []
+      }
+      member_submissions: {
+        Row: {
+          created_at: string
+          id: string
+          kind: string
+          payload: Json
+          published_id: string | null
+          reviewer_notes: string | null
+          status: string
+          submitted_by: string | null
+          title: string
+          updated_at: string
+          wb_org_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          kind: string
+          payload: Json
+          published_id?: string | null
+          reviewer_notes?: string | null
+          status?: string
+          submitted_by?: string | null
+          title: string
+          updated_at?: string
+          wb_org_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          kind?: string
+          payload?: Json
+          published_id?: string | null
+          reviewer_notes?: string | null
+          status?: string
+          submitted_by?: string | null
+          title?: string
+          updated_at?: string
+          wb_org_id?: string
+        }
+        Relationships: []
+      }
+      membership_applications: {
+        Row: {
+          applicant_email: string
+          applicant_name: string | null
+          category: string
+          company_name: string | null
+          created_at: string
+          file_uploads: Json | null
+          id: string
+          notes: string | null
+          payload: Json
+          pushed_at: string | null
+          status: string
+          updated_at: string
+          workbooks_lead_id: string | null
+        }
+        Insert: {
+          applicant_email: string
+          applicant_name?: string | null
+          category: string
+          company_name?: string | null
+          created_at?: string
+          file_uploads?: Json | null
+          id?: string
+          notes?: string | null
+          payload: Json
+          pushed_at?: string | null
+          status?: string
+          updated_at?: string
+          workbooks_lead_id?: string | null
+        }
+        Update: {
+          applicant_email?: string
+          applicant_name?: string | null
+          category?: string
+          company_name?: string | null
+          created_at?: string
+          file_uploads?: Json | null
+          id?: string
+          notes?: string | null
+          payload?: Json
+          pushed_at?: string | null
+          status?: string
+          updated_at?: string
+          workbooks_lead_id?: string | null
         }
         Relationships: []
       }
@@ -221,6 +598,30 @@ export type Database = {
         }
         Relationships: []
       }
+      profile_stats_events: {
+        Row: {
+          event_type: string
+          id: string
+          meta: Json | null
+          occurred_at: string
+          wb_org_id: string
+        }
+        Insert: {
+          event_type: string
+          id?: string
+          meta?: Json | null
+          occurred_at?: string
+          wb_org_id: string
+        }
+        Update: {
+          event_type?: string
+          id?: string
+          meta?: Json | null
+          occurred_at?: string
+          wb_org_id?: string
+        }
+        Relationships: []
+      }
       training_courses: {
         Row: {
           created_at: string
@@ -287,6 +688,308 @@ export type Database = {
         }
         Relationships: []
       }
+      workbooks_bookings: {
+        Row: {
+          amount: number | null
+          attendee_email: string | null
+          attendee_name: string | null
+          created_at: string
+          event_id: string | null
+          event_slug: string | null
+          id: string
+          notes: string | null
+          paid_at: string | null
+          payment_provider: string | null
+          payment_ref: string | null
+          raw: Json | null
+          status: string
+          synced_at: string | null
+          updated_at: string
+          wb_id: string | null
+          wb_org_id: string | null
+          wb_person_id: string | null
+        }
+        Insert: {
+          amount?: number | null
+          attendee_email?: string | null
+          attendee_name?: string | null
+          created_at?: string
+          event_id?: string | null
+          event_slug?: string | null
+          id?: string
+          notes?: string | null
+          paid_at?: string | null
+          payment_provider?: string | null
+          payment_ref?: string | null
+          raw?: Json | null
+          status?: string
+          synced_at?: string | null
+          updated_at?: string
+          wb_id?: string | null
+          wb_org_id?: string | null
+          wb_person_id?: string | null
+        }
+        Update: {
+          amount?: number | null
+          attendee_email?: string | null
+          attendee_name?: string | null
+          created_at?: string
+          event_id?: string | null
+          event_slug?: string | null
+          id?: string
+          notes?: string | null
+          paid_at?: string | null
+          payment_provider?: string | null
+          payment_ref?: string | null
+          raw?: Json | null
+          status?: string
+          synced_at?: string | null
+          updated_at?: string
+          wb_id?: string | null
+          wb_org_id?: string | null
+          wb_person_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "workbooks_bookings_event_id_fkey"
+            columns: ["event_id"]
+            isOneToOne: false
+            referencedRelation: "events"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      workbooks_invoices: {
+        Row: {
+          amount: number | null
+          created_at: string
+          id: string
+          issued_at: string | null
+          raw: Json | null
+          reference: string | null
+          smartcard_ref: string | null
+          status: string | null
+          synced_at: string
+          wb_id: string
+          wb_org_id: string | null
+        }
+        Insert: {
+          amount?: number | null
+          created_at?: string
+          id?: string
+          issued_at?: string | null
+          raw?: Json | null
+          reference?: string | null
+          smartcard_ref?: string | null
+          status?: string | null
+          synced_at?: string
+          wb_id: string
+          wb_org_id?: string | null
+        }
+        Update: {
+          amount?: number | null
+          created_at?: string
+          id?: string
+          issued_at?: string | null
+          raw?: Json | null
+          reference?: string | null
+          smartcard_ref?: string | null
+          status?: string | null
+          synced_at?: string
+          wb_id?: string
+          wb_org_id?: string | null
+        }
+        Relationships: []
+      }
+      workbooks_opportunities: {
+        Row: {
+          amount: number | null
+          created_at: string
+          id: string
+          raw: Json | null
+          stage: string | null
+          synced_at: string
+          title: string | null
+          wb_id: string
+          wb_org_id: string | null
+        }
+        Insert: {
+          amount?: number | null
+          created_at?: string
+          id?: string
+          raw?: Json | null
+          stage?: string | null
+          synced_at?: string
+          title?: string | null
+          wb_id: string
+          wb_org_id?: string | null
+        }
+        Update: {
+          amount?: number | null
+          created_at?: string
+          id?: string
+          raw?: Json | null
+          stage?: string | null
+          synced_at?: string
+          title?: string | null
+          wb_id?: string
+          wb_org_id?: string | null
+        }
+        Relationships: []
+      }
+      workbooks_orgs: {
+        Row: {
+          address_line1: string | null
+          address_line2: string | null
+          category: string | null
+          country: string | null
+          county: string | null
+          created_at: string
+          disciplines: Json | null
+          exclude_from_promotion: boolean | null
+          id: string
+          name: string
+          phone: string | null
+          postcode: string | null
+          public_email: string | null
+          raw: Json | null
+          reg_number: string | null
+          region: string | null
+          status: string | null
+          synced_at: string
+          town: string | null
+          updated_at: string
+          vat_number: string | null
+          wb_id: string
+          website: string | null
+        }
+        Insert: {
+          address_line1?: string | null
+          address_line2?: string | null
+          category?: string | null
+          country?: string | null
+          county?: string | null
+          created_at?: string
+          disciplines?: Json | null
+          exclude_from_promotion?: boolean | null
+          id?: string
+          name: string
+          phone?: string | null
+          postcode?: string | null
+          public_email?: string | null
+          raw?: Json | null
+          reg_number?: string | null
+          region?: string | null
+          status?: string | null
+          synced_at?: string
+          town?: string | null
+          updated_at?: string
+          vat_number?: string | null
+          wb_id: string
+          website?: string | null
+        }
+        Update: {
+          address_line1?: string | null
+          address_line2?: string | null
+          category?: string | null
+          country?: string | null
+          county?: string | null
+          created_at?: string
+          disciplines?: Json | null
+          exclude_from_promotion?: boolean | null
+          id?: string
+          name?: string
+          phone?: string | null
+          postcode?: string | null
+          public_email?: string | null
+          raw?: Json | null
+          reg_number?: string | null
+          region?: string | null
+          status?: string | null
+          synced_at?: string
+          town?: string | null
+          updated_at?: string
+          vat_number?: string | null
+          wb_id?: string
+          website?: string | null
+        }
+        Relationships: []
+      }
+      workbooks_people: {
+        Row: {
+          created_at: string
+          email: string | null
+          id: string
+          is_main_contact: boolean | null
+          login_email: string | null
+          name: string | null
+          phone: string | null
+          raw: Json | null
+          synced_at: string
+          updated_at: string
+          wb_id: string
+          wb_org_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          id?: string
+          is_main_contact?: boolean | null
+          login_email?: string | null
+          name?: string | null
+          phone?: string | null
+          raw?: Json | null
+          synced_at?: string
+          updated_at?: string
+          wb_id: string
+          wb_org_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          id?: string
+          is_main_contact?: boolean | null
+          login_email?: string | null
+          name?: string | null
+          phone?: string | null
+          raw?: Json | null
+          synced_at?: string
+          updated_at?: string
+          wb_id?: string
+          wb_org_id?: string | null
+        }
+        Relationships: []
+      }
+      workbooks_sync_runs: {
+        Row: {
+          error_message: string | null
+          finished_at: string | null
+          id: string
+          pulled: Json | null
+          pushed: Json | null
+          started_at: string
+          status: string
+        }
+        Insert: {
+          error_message?: string | null
+          finished_at?: string | null
+          id?: string
+          pulled?: Json | null
+          pushed?: Json | null
+          started_at?: string
+          status?: string
+        }
+        Update: {
+          error_message?: string | null
+          finished_at?: string | null
+          id?: string
+          pulled?: Json | null
+          pushed?: Json | null
+          started_at?: string
+          status?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -301,6 +1004,7 @@ export type Database = {
         Returns: boolean
       }
       is_admin: { Args: { _user_id: string }; Returns: boolean }
+      user_owns_org: { Args: { _org_id: string }; Returns: boolean }
     }
     Enums: {
       app_role: "admin" | "editor"
