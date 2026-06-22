@@ -109,6 +109,7 @@ import { Route as AdminTrainingIdRouteImport } from './routes/admin.training.$id
 import { Route as AdminPolicyIdRouteImport } from './routes/admin.policy.$id'
 import { Route as AdminNewsIdRouteImport } from './routes/admin.news.$id'
 import { Route as AdminEventsIdRouteImport } from './routes/admin.events.$id'
+import { Route as ApiPublicHooksWorkbooksSyncRouteImport } from './routes/api/public/hooks/workbooks-sync'
 
 const PortalRoute = PortalRouteImport.update({
   id: '/portal',
@@ -645,6 +646,12 @@ const AdminEventsIdRoute = AdminEventsIdRouteImport.update({
   path: '/events/$id',
   getParentRoute: () => AdminRoute,
 } as any)
+const ApiPublicHooksWorkbooksSyncRoute =
+  ApiPublicHooksWorkbooksSyncRouteImport.update({
+    id: '/api/public/hooks/workbooks-sync',
+    path: '/api/public/hooks/workbooks-sync',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -747,6 +754,7 @@ export interface FileRoutesByFullPath {
   '/admin/news/': typeof AdminNewsIndexRoute
   '/admin/policy/': typeof AdminPolicyIndexRoute
   '/admin/training/': typeof AdminTrainingIndexRoute
+  '/api/public/hooks/workbooks-sync': typeof ApiPublicHooksWorkbooksSyncRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -848,6 +856,7 @@ export interface FileRoutesByTo {
   '/admin/news': typeof AdminNewsIndexRoute
   '/admin/policy': typeof AdminPolicyIndexRoute
   '/admin/training': typeof AdminTrainingIndexRoute
+  '/api/public/hooks/workbooks-sync': typeof ApiPublicHooksWorkbooksSyncRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -951,6 +960,7 @@ export interface FileRoutesById {
   '/admin/news/': typeof AdminNewsIndexRoute
   '/admin/policy/': typeof AdminPolicyIndexRoute
   '/admin/training/': typeof AdminTrainingIndexRoute
+  '/api/public/hooks/workbooks-sync': typeof ApiPublicHooksWorkbooksSyncRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -1055,6 +1065,7 @@ export interface FileRouteTypes {
     | '/admin/news/'
     | '/admin/policy/'
     | '/admin/training/'
+    | '/api/public/hooks/workbooks-sync'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -1156,6 +1167,7 @@ export interface FileRouteTypes {
     | '/admin/news'
     | '/admin/policy'
     | '/admin/training'
+    | '/api/public/hooks/workbooks-sync'
   id:
     | '__root__'
     | '/'
@@ -1258,6 +1270,7 @@ export interface FileRouteTypes {
     | '/admin/news/'
     | '/admin/policy/'
     | '/admin/training/'
+    | '/api/public/hooks/workbooks-sync'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -1300,6 +1313,7 @@ export interface RootRouteChildren {
   PolicyIndexRoute: typeof PolicyIndexRoute
   ApiPublicConferenceInterestRoute: typeof ApiPublicConferenceInterestRoute
   ApiPublicMembershipApplicationRoute: typeof ApiPublicMembershipApplicationRoute
+  ApiPublicHooksWorkbooksSyncRoute: typeof ApiPublicHooksWorkbooksSyncRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -2004,6 +2018,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminEventsIdRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/api/public/hooks/workbooks-sync': {
+      id: '/api/public/hooks/workbooks-sync'
+      path: '/api/public/hooks/workbooks-sync'
+      fullPath: '/api/public/hooks/workbooks-sync'
+      preLoaderRoute: typeof ApiPublicHooksWorkbooksSyncRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -2263,6 +2284,7 @@ const rootRouteChildren: RootRouteChildren = {
   PolicyIndexRoute: PolicyIndexRoute,
   ApiPublicConferenceInterestRoute: ApiPublicConferenceInterestRoute,
   ApiPublicMembershipApplicationRoute: ApiPublicMembershipApplicationRoute,
+  ApiPublicHooksWorkbooksSyncRoute: ApiPublicHooksWorkbooksSyncRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
