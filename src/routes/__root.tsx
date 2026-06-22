@@ -8,11 +8,10 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { checkSiteGate } from "../lib/site-gate.functions";
 import { SiteGate } from "../components/SiteGate";
 
 
@@ -98,7 +97,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: appCss },
     ],
   }),
-  loader: () => checkSiteGate(),
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
@@ -119,20 +117,31 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
-// Paths that bypass the site-wide password gate (admins must still log in
-// via Supabase auth on these routes).
+// Paths that bypass the site-wide password gate.
 const GATE_EXEMPT_PREFIXES = ["/admin"];
+const GATE_STORAGE_KEY = "bali_site_gate_unlocked";
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-  const { unlocked } = Route.useLoaderData();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const exempt = GATE_EXEMPT_PREFIXES.some((p) => pathname === p || pathname.startsWith(p + "/"));
 
+  // null = SSR/initial; resolved client-side to avoid hydration mismatch.
+  const [unlocked, setUnlocked] = useState<boolean | null>(null);
+  useEffect(() => {
+    try {
+      setUnlocked(localStorage.getItem(GATE_STORAGE_KEY) === "1");
+    } catch {
+      setUnlocked(false);
+    }
+  }, []);
+
+  const showContent = exempt || unlocked === true;
+  const showGate = !exempt && unlocked === false;
+
   return (
     <QueryClientProvider client={queryClient}>
-      {unlocked || exempt ? <Outlet /> : <SiteGate />}
+      {showContent ? <Outlet /> : showGate ? <SiteGate onUnlock={() => setUnlocked(true)} /> : null}
     </QueryClientProvider>
   );
 }
-
