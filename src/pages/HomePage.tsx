@@ -158,9 +158,9 @@ export default function HomePage() {
             style={{ opacity: i === current ? 1 : 0, background: slide.bg }}
           >
             <div
-              className="absolute inset-0 opacity-20"
+              className="absolute inset-0"
               style={{
-                backgroundImage: `url('${slide.image}')`,
+                backgroundImage: `linear-gradient(rgba(15, 30, 50, 0.55), rgba(15, 30, 50, 0.55)), url('${slide.image}')`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}
