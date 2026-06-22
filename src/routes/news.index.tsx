@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CookieBanner from "../components/CookieBanner";
 import Link from "../components/SmartLink";
-import { newsArticles } from "../content/news";
+import { fetchNewsList } from "../lib/content/db";
 
 export const Route = createFileRoute("/news/")({
   head: () => ({
@@ -21,17 +21,18 @@ export const Route = createFileRoute("/news/")({
       },
     ],
   }),
+  loader: async () => ({ articles: await fetchNewsList() }),
   component: NewsIndex,
 });
 
 function NewsIndex() {
-  const [featured, ...rest] = newsArticles;
+  const { articles } = useLoaderData({ from: '/news/' });
+  const [featured, ...rest] = articles;
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Navbar />
 
-      {/* Hero */}
       <section
         className="py-16 text-white relative overflow-hidden"
         style={{ background: "linear-gradient(135deg, #6D4276 0%, #21509A 100%)" }}
@@ -47,7 +48,6 @@ function NewsIndex() {
         </div>
       </section>
 
-      {/* Featured */}
       {featured && (
         <section className="py-12 bg-gray-50 border-b border-gray-200">
           <div className="max-w-6xl mx-auto px-6">
@@ -56,23 +56,21 @@ function NewsIndex() {
               params={{ slug: featured.slug }}
               className="group grid md:grid-cols-2 gap-8 items-center bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
             >
-              {featured.image && (
+              {featured.image_url && (
                 <img
-                  src={featured.image.url}
-                  alt={featured.image.alt}
+                  src={featured.image_url}
+                  alt={featured.image_alt ?? featured.title}
                   className="w-full h-64 md:h-full object-cover"
                 />
               )}
               <div className="p-8">
                 <span className="text-xs uppercase tracking-widest text-bali-purple font-semibold">
-                  Featured · {featured.date || "Latest"}
+                  Featured · {featured.date_text || "Latest"}
                 </span>
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-3 mb-3 group-hover:text-bali-blue transition-colors">
                   {featured.title}
                 </h2>
-                <p className="text-gray-600 leading-relaxed line-clamp-4">
-                  {featured.description}
-                </p>
+                <p className="text-gray-600 leading-relaxed line-clamp-4">{featured.description}</p>
                 <span className="inline-block mt-5 text-bali-blue font-semibold group-hover:underline">
                   Read article →
                 </span>
@@ -82,7 +80,6 @@ function NewsIndex() {
         </section>
       )}
 
-      {/* Grid */}
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -93,26 +90,22 @@ function NewsIndex() {
                 params={{ slug: a.slug }}
                 className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-bali-blue hover:shadow-lg hover:-translate-y-1 transition-all"
               >
-                {a.image && (
+                {a.image_url && (
                   <img
-                    src={a.image.url}
-                    alt={a.image.alt}
+                    src={a.image_url}
+                    alt={a.image_alt ?? a.title}
                     loading="lazy"
                     className="w-full h-44 object-cover"
                   />
                 )}
                 <div className="p-5">
-                  {a.date && (
-                    <p className="text-xs text-gray-500 uppercase tracking-widest mb-2">
-                      {a.date}
-                    </p>
+                  {a.date_text && (
+                    <p className="text-xs text-gray-500 uppercase tracking-widest mb-2">{a.date_text}</p>
                   )}
                   <h3 className="font-bold text-gray-900 leading-snug group-hover:text-bali-blue transition-colors line-clamp-3">
                     {a.title}
                   </h3>
-                  <p className="text-sm text-gray-600 mt-2 line-clamp-3">
-                    {a.description}
-                  </p>
+                  <p className="text-sm text-gray-600 mt-2 line-clamp-3">{a.description}</p>
                 </div>
               </Link>
             ))}
