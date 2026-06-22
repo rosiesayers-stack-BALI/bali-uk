@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "slopes — BALI";
+const TITLE = "Slopes — BALI";
 const DESC = "The Association’s own accident statistics, as well as those of the Health and Safety Executive (HSE), report landscape operatives suffer a disproportionate…";
 
 export const Route = createFileRoute("/help/health-safety/slopes")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Health & safety"
-      title={`slopes`}
+      title={`Slopes`}
       intro={`The Association’s own accident statistics, as well as those of the Health and Safety Executive (HSE), report landscape operatives suffer a disproportionately high number of accidents whilst completing tasks on slopes.`}
       body={
         <>

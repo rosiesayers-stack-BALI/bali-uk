@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "xylella fastidiosa — BALI";
+const TITLE = "Xylella Fastidiosa — BALI";
 const DESC = "Contents - Introduction - Geographic distribution of Xylella - How the trade and public can help - New measures in 2021";
 
 export const Route = createFileRoute("/help/pests/xylella-fastidiosa")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Pests & diseases"
-      title={`xylella fastidiosa`}
+      title={`Xylella Fastidiosa`}
       intro={`Contents - Introduction - Geographic distribution of Xylella - How the trade and public can help - New measures in 2021`}
       body={
         <>

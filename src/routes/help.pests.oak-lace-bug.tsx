@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "oak lace bug — BALI";
+const TITLE = "Oak Lace Bug — BALI";
 const DESC = "Oak lace bug (Corythucha arcuata) is not yet in the UK, but is widespread in Europe.  It has been highlighted as a potential future risk to broad-leaved tr…";
 
 export const Route = createFileRoute("/help/pests/oak-lace-bug")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Pests & diseases"
-      title={`oak lace bug`}
+      title={`Oak Lace Bug`}
       intro={`Oak lace bug (Corythucha arcuata) is not yet in the UK, but is widespread in Europe.  It has been highlighted as a potential future risk to broad-leaved trees in the UK, and particularly oak.  The adult lace bug feeds on the underside of leaves, and whilst is not a significant threat in isolation, large numbers of the pest can cause stress, premature leaf drop and result in hosts more susceptible to pests and diseases.  As with many other pests and diseases, the primary source of transmission is within traded materials.`}
       body={
         <>

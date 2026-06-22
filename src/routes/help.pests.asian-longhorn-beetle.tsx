@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "asian longhorn beetle — BALI";
+const TITLE = "Asian Longhorn Beetle — BALI";
 const DESC = "The Asian Longhorn Beetle, which was first discovered in Kent in 2012 and likely imported by accident through infested imported wood packaging material, ha…";
 
 export const Route = createFileRoute("/help/pests/asian-longhorn-beetle")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Pests & diseases"
-      title={`asian longhorn beetle`}
+      title={`Asian Longhorn Beetle`}
       intro={`The Asian Longhorn Beetle, which was first discovered in Kent in 2012 and likely imported by accident through infested imported wood packaging material, has been eradicated in the UK as a result of six years of trapping and surveillance work by the Forestry Commission and the Animal and Plant Health Agency.`}
       body={
         <>

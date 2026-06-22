@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "eight-toothed spruce bark beetle — BALI";
+const TITLE = "Eight Toothed Spruce Bark Beetle — BALI";
 const DESC = "Ips typographus, also known as European spruce bark beetle, eight-toothed spruce bark beetle, bark beetle, eight-dentate beetle, engraver beetle, eight-spi…";
 
 export const Route = createFileRoute("/help/pests/eight-toothed-spruce-bark-beetle")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Pests & diseases"
-      title={`eight-toothed spruce bark beetle`}
+      title={`Eight Toothed Spruce Bark Beetle`}
       intro={`Ips typographus, also known as European spruce bark beetle, eight-toothed spruce bark beetle, bark beetle, eight-dentate beetle, engraver beetle, eight-spined beetle and spruce bark beetle, is considered a serious pest of spruce ( Picea ) as well as some species in other conifer genera in Europe.`}
       body={
         <>

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "tachographs — BALI";
+const TITLE = "Tachographs — BALI";
 const DESC = "Are your vehicles fitted with a tachograph? Do you know when to use a tachograph? Do you know when a tachograph is not needed?";
 
 export const Route = createFileRoute("/help/equipment/tachographs")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Machinery & driving"
-      title={`tachographs`}
+      title={`Tachographs`}
       intro={`Are your vehicles fitted with a tachograph? Do you know when to use a tachograph? Do you know when a tachograph is not needed?`}
       body={
         <>

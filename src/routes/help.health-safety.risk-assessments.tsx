@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "risk assessment — BALI";
+const TITLE = "Risk Assessments — BALI";
 const DESC = "The Management of Health and Safety at Work Regulations 1999 requires the following measures as a minimum:";
 
 export const Route = createFileRoute("/help/health-safety/risk-assessments")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Health & safety"
-      title={`risk assessment`}
+      title={`Risk Assessments`}
       intro={`The Management of Health and Safety at Work Regulations 1999 requires the following measures as a minimum:`}
       body={
         <>

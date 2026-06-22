@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "hand arm vibration — BALI";
+const TITLE = "Hand Arm Vibration — BALI";
 const DESC = "Landscape tools which fit into this category include chainsaws, brush cutters, hedge trimmers, blowers and disc cutters. Using this equipment on a regular …";
 
 export const Route = createFileRoute("/help/health-safety/hand-arm-vibration")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Health & safety"
-      title={`hand arm vibration`}
+      title={`Hand Arm Vibration`}
       intro={`Landscape tools which fit into this category include chainsaws, brush cutters, hedge trimmers, blowers and disc cutters. Using this equipment on a regular basis for several hours each day can cause damage to nerves, blood vessels and joints of the hand, wrist and arm. The damage is irreversible, and can result in tingling and numbness in the fingers, loss of dexterity and even loss of strength.`}
       body={
         <>

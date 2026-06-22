@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "ticks and encephalitis virus — BALI";
+const TITLE = "Ticks And Encephalitis Virus — BALI";
 const DESC = "An infectious disease, discovered in the UK for the first time and carried by ticks, has the potential to damage the brain and can also affect humans throu…";
 
 export const Route = createFileRoute("/help/pests/ticks-and-encephalitis-virus")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Pests & diseases"
-      title={`ticks and encephalitis virus`}
+      title={`Ticks And Encephalitis Virus`}
       intro={`An infectious disease, discovered in the UK for the first time and carried by ticks, has the potential to damage the brain and can also affect humans through the tick's bite. Public Health England (PHE) has confirmed the presence of the encephalitis virus , which originates from the tick, in Thetford Forest Norfolk and on the Hampshire-Dorset border. While the PHE says the risk is “very low”, it is investigating how common the infected ticks might be.`}
       body={
         <>

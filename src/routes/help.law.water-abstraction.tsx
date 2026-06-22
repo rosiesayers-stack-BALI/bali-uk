@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "water abstraction — BALI";
+const TITLE = "Water Abstraction — BALI";
 const DESC = "The abstraction of water is managed by the government. Most businesses taking more than 20,000 litres of water a day directly from rivers or groundwater re…";
 
 export const Route = createFileRoute("/help/law/water-abstraction")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Law & legislation"
-      title={`water abstraction`}
+      title={`Water Abstraction`}
       intro={`The abstraction of water is managed by the government. Most businesses taking more than 20,000 litres of water a day directly from rivers or groundwater require an abstraction license. Following review and consultation, shortcomings were identified in the existing system of abstraction, which led to the government introducing a series of new measures in 2016. Over the next few years, rules concerning abstraction are likely to change and may affect Association members.`}
       body={
         <>

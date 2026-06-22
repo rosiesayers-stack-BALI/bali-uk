@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "biosecurity toolkit — BALI";
+const TITLE = "Biosecurity Toolkit — BALI";
 const DESC = "The Landscape Institute has published a new plant health and biosecurity toolkit to help built environment professionals combat Britain’s biggest pests and…";
 
 export const Route = createFileRoute("/help/pests/biosecurity-toolkit")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Pests & diseases"
-      title={`biosecurity toolkit`}
+      title={`Biosecurity Toolkit`}
       intro={`The Landscape Institute has published a new plant health and biosecurity toolkit to help built environment professionals combat Britain’s biggest pests and diseases.`}
       body={
         <>

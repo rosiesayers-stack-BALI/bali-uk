@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "frequently asked questions — BALI";
+const TITLE = "Frequently Asked Questions — BALI";
 const DESC = "What are the benefits of the dispute resolution service?";
 
 export const Route = createFileRoute("/help/dispute/frequently-asked-questions")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Dispute resolution"
-      title={`frequently asked questions`}
+      title={`Frequently Asked Questions`}
       intro={`What are the benefits of the dispute resolution service?`}
       body={
         <>

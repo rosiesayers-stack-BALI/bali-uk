@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "tractors and licencing — BALI";
+const TITLE = "Tractors — BALI";
 const DESC = "Following requests from members, the Association has worked with a specialist transport solicitor to clarify what driving licence entitlement is required w…";
 
 export const Route = createFileRoute("/help/equipment/tractors")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Machinery & driving"
-      title={`tractors and licencing`}
+      title={`Tractors`}
       intro={`Following requests from members, the Association has worked with a specialist transport solicitor to clarify what driving licence entitlement is required when driving a tractor as part of a landscape or horticultural activity.`}
       body={
         <>

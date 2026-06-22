@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "outdoor sun safety — BALI";
+const TITLE = "Outdoor Safety — BALI";
 const DESC = "This page will be regularly updated with helpful guidance designed to mitigate the risks of working outdoors. A recent enquiry from an Association member p…";
 
 export const Route = createFileRoute("/help/health-safety/outdoor-safety")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Health & safety"
-      title={`outdoor sun safety`}
+      title={`Outdoor Safety`}
       intro={`This page will be regularly updated with helpful guidance designed to mitigate the risks of working outdoors. A recent enquiry from an Association member prompted a specific technical report to be written, which concerns the use of sunscreen in the workplace. The member asked whether it is the responsibility of an employer to supply sunscreen when the employee spends most of his/her working day outside. You can find this document, and many more, available to download on this page.`}
       body={
         <>

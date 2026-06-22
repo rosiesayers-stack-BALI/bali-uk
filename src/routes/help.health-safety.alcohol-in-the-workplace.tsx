@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "alcohol in the workplace — BALI";
+const TITLE = "Alcohol In The Workplace — BALI";
 const DESC = "Whilst The Health and Safety at Work etc Act 1974 states employers have a duty to ensure the health, safety and welfare of employees in relation to alcohol…";
 
 export const Route = createFileRoute("/help/health-safety/alcohol-in-the-workplace")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Health & safety"
-      title={`alcohol in the workplace`}
+      title={`Alcohol In The Workplace`}
       intro={`Whilst The Health and Safety at Work etc Act 1974 states employers have a duty to ensure the health, safety and welfare of employees in relation to alcohol at work, there is no legislation in the UK which requires a company to implement alcohol policies in the workplace.  Furthermore, the management of any company can set its own alcohol limit, which may be enforceable according to site or job role.`}
       body={
         <>

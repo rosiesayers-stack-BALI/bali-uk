@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "emerald ash borer beetle — BALI";
+const TITLE = "Emerald Ash Borer Beetle — BALI";
 const DESC = "Whilst there have been no discoveries in the United Kingdom to date, the ability of the beetle to fly means it has now spread across USA, Canada and Russia…";
 
 export const Route = createFileRoute("/help/pests/emerald-ash-borer-beetle")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Pests & diseases"
-      title={`emerald ash borer beetle`}
+      title={`Emerald Ash Borer Beetle`}
       intro={`Whilst there have been no discoveries in the United Kingdom to date, the ability of the beetle to fly means it has now spread across USA, Canada and Russia, and is now within 10km of the Russian borders with Ukraine and Belarus.`}
       body={
         <>

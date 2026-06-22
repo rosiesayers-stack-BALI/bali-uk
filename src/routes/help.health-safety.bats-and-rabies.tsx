@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "bats and rabies — BALI";
+const TITLE = "Bats And Rabies — BALI";
 const DESC = "Whilst bats in the UK can carry the disease, rabies, it is not the classical rabies associated with dogs and horror movies. Some bats in the UK carry a typ…";
 
 export const Route = createFileRoute("/help/health-safety/bats-and-rabies")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Health & safety"
-      title={`bats and rabies`}
+      title={`Bats And Rabies`}
       intro={`Whilst bats in the UK can carry the disease, rabies, it is not the classical rabies associated with dogs and horror movies. Some bats in the UK carry a type of rabies virus called European Bat Lyssaviruses (EBLV).`}
       body={
         <>

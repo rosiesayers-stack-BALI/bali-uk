@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "oak processionary moth — BALI";
+const TITLE = "Oak Processionary Moth — BALI";
 const DESC = "Introduction Identification Guidance for landscape professionals Reporting OPM Resources";
 
 export const Route = createFileRoute("/help/pests/oak-processionary-moth")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Pests & diseases"
-      title={`oak processionary moth`}
+      title={`Oak Processionary Moth`}
       intro={`Introduction Identification Guidance for landscape professionals Reporting OPM Resources`}
       body={
         <>

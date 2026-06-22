@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "latex allergies — BALI";
+const TITLE = "Latex Allergies — BALI";
 const DESC = "With the increase of personal protective equipment (PPE) use, the Health and Safety Executive (HSE) has warned of the potential for workers to develop alle…";
 
 export const Route = createFileRoute("/help/health-safety/latex-allergies")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Health & safety"
-      title={`latex allergies`}
+      title={`Latex Allergies`}
       intro={`With the increase of personal protective equipment (PPE) use, the Health and Safety Executive (HSE) has warned of the potential for workers to develop allergic reactions to items containing latex.`}
       body={
         <>

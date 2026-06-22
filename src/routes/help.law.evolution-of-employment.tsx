@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "evolution of employment — BALI";
+const TITLE = "Evolution Of Employment — BALI";
 const DESC = "Whilst new working arrangements have the potential to enable short-term or highly flexible demands for labour to be fulfilled, the existing legislative fra…";
 
 export const Route = createFileRoute("/help/law/evolution-of-employment")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Law & legislation"
-      title={`evolution of employment`}
+      title={`Evolution Of Employment`}
       intro={`Whilst new working arrangements have the potential to enable short-term or highly flexible demands for labour to be fulfilled, the existing legislative framework – which has evolved to cater for traditional ‘employees’ – often does not afford sufficient protection to the rights of a new position labelled ‘workers’. Workers are a half-way house between employees and self-employed individuals, often at risk from losing basic employment rights as a result of unscrupulous employers.`}
       body={
         <>

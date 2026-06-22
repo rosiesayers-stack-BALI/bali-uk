@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "ash dieback — BALI";
+const TITLE = "Ash Dieback — BALI";
 const DESC = "Ash dieback was first identified in the UK in 2012. The disease is well established throughout mainland Europe, where it is responsible for losses of comme…";
 
 export const Route = createFileRoute("/help/pests/ash-dieback")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Pests & diseases"
-      title={`ash dieback`}
+      title={`Ash Dieback`}
       intro={`Ash dieback was first identified in the UK in 2012. The disease is well established throughout mainland Europe, where it is responsible for losses of commercial and amenity tree planting.`}
       body={
         <>

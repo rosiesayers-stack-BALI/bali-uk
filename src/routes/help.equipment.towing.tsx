@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "towing — BALI";
+const TITLE = "Towing — BALI";
 const DESC = "What weight can I tow with a car licence? *UPDATED 16/12/2021* How much weight can my vehicle tow? How much weight can my trailer carry? What size trailer …";
 
 export const Route = createFileRoute("/help/equipment/towing")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Machinery & driving"
-      title={`towing`}
+      title={`Towing`}
       intro={`What weight can I tow with a car licence? *UPDATED 16/12/2021* How much weight can my vehicle tow? How much weight can my trailer carry? What size trailer can I tow? How can I avoid exceeding the towing capacity of my trailer or vehicle?`}
       body={
         <>

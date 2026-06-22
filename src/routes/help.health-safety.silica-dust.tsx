@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "silica dust — BALI";
+const TITLE = "Silica Dust — BALI";
 const DESC = "The risks associated with asbestos are widely publicised nowadays and, hopefully, the number of fatalities associated with this material will be reduced du…";
 
 export const Route = createFileRoute("/help/health-safety/silica-dust")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Health & safety"
-      title={`silica dust`}
+      title={`Silica Dust`}
       intro={`The risks associated with asbestos are widely publicised nowadays and, hopefully, the number of fatalities associated with this material will be reduced due to the increased awareness. However, another material – silica dust – is equally damaging to the human respiratory system and found in many of the materials landscape operatives are likely to encounter on a daily basis.`}
       body={
         <>

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "the good work plan — BALI";
+const TITLE = "Good Work Plan — BALI";
 const DESC = "In 2017 Matthew Taylor, the Chief Executive of the Royal Society for the Encouragement of Arts, Manufacturers and Commerce , published the Good Work report…";
 
 export const Route = createFileRoute("/help/law/good-work-plan")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Law & legislation"
-      title={`the good work plan`}
+      title={`Good Work Plan`}
       intro={`In 2017 Matthew Taylor, the Chief Executive of the Royal Society for the Encouragement of Arts, Manufacturers and Commerce , published the Good Work report.  This document outlined 53 proposals to the government, aimed at improving modern working practices. Specifically, the report considered how employment practices needed to change in order to keep pace with modern business models, and discussed the developing nature of self-employed and contracted workers, and how the existing labour laws must change to accommodate these individuals and the businesses that employ them.`}
       body={
         <>

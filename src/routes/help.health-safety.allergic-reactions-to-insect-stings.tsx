@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "allergic reactions to insect stings — BALI";
+const TITLE = "Allergic Reactions To Insect Stings — BALI";
 const DESC = "Regardless of age or geographic location, whether you work in an office or out on site, spend your free time worshipping the sun or hiding in the shade, wa…";
 
 export const Route = createFileRoute("/help/health-safety/allergic-reactions-to-insect-stings")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Health & safety"
-      title={`allergic reactions to insect stings`}
+      title={`Allergic Reactions To Insect Stings`}
       intro={`Regardless of age or geographic location, whether you work in an office or out on site, spend your free time worshipping the sun or hiding in the shade, wasps and bees are one of the few invertebrates we encounter in Europe which pose a risk of harm.`}
       body={
         <>

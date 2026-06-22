@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "mental health — BALI";
+const TITLE = "Mental Health — BALI";
 const DESC = "► How common are mental health issues in the UK? ► How many people in the UK get treatment for mental health issues? ► Employees: Looking after your mental…";
 
 export const Route = createFileRoute("/help/health-safety/mental-health")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Health & safety"
-      title={`mental health`}
+      title={`Mental Health`}
       intro={`► How common are mental health issues in the UK? ► How many people in the UK get treatment for mental health issues? ► Employees: Looking after your mental health at work ► Employers: Advice and resources for line managers ► Contacts`}
       body={
         <>

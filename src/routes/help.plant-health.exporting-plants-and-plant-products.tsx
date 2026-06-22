@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "exporting plants and plant products — BALI";
+const TITLE = "Exporting Plants And Plant Products — BALI";
 const DESC = "On 1st January 2021 new rules were placed on the movement of goods between the United Kingdom (UK) and European Union (EU) - but also between the UK and No…";
 
 export const Route = createFileRoute("/help/plant-health/exporting-plants-and-plant-products")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Plant health"
-      title={`exporting plants and plant products`}
+      title={`Exporting Plants And Plant Products`}
       intro={`On 1st January 2021 new rules were placed on the movement of goods between the United Kingdom (UK) and European Union (EU) - but also between the UK and Northern Ireland.  Businesses involved in the export of plants, plant material and machinery need to adapt their working practices accordingly.`}
       body={
         <>

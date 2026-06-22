@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "glossary — BALI";
+const TITLE = "Glossary — BALI";
 const DESC = "Authorised operator Competent authority Phytosanitary certificate Place of destination Plant passport Professional operator Registered operator Trade Unit";
 
 export const Route = createFileRoute("/help/plant-health/glossary")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Plant health"
-      title={`glossary`}
+      title={`Glossary`}
       intro={`Authorised operator Competent authority Phytosanitary certificate Place of destination Plant passport Professional operator Registered operator Trade Unit`}
       body={
         <>

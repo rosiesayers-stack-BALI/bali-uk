@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "lone working — BALI";
+const TITLE = "Lone Working — BALI";
 const DESC = "Managing the risks associated with lone working involves considering which employees are likely to work alone, and which areas of their work pose a hazard.…";
 
 export const Route = createFileRoute("/help/health-safety/lone-working")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Health & safety"
-      title={`lone working`}
+      title={`Lone Working`}
       intro={`Managing the risks associated with lone working involves considering which employees are likely to work alone, and which areas of their work pose a hazard. Employers have a responsibility to ensure they train, supervise, and monitor lone workers, as well as keep in touch with them.`}
       body={
         <>

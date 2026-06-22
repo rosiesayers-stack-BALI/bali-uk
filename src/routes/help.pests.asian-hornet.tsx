@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "asian hornet — BALI";
+const TITLE = "Asian Hornet — BALI";
 const DESC = "Introduction Identification Sightings Reporting The Asian hornet is a highly effective predator of insects, including honey bees, flies, caterpillars, aphi…";
 
 export const Route = createFileRoute("/help/pests/asian-hornet")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Pests & diseases"
-      title={`asian hornet`}
+      title={`Asian Hornet`}
       intro={`Introduction Identification Sightings Reporting The Asian hornet is a highly effective predator of insects, including honey bees, flies, caterpillars, aphids and bugs.  Evidence suggests Asian hornets systematically attack bee colonies and have the potential to cause significant loses.`}
       body={
         <>

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "e10 fuel — BALI";
+const TITLE = "E10 Fuel — BALI";
 const DESC = "The proportion of ethanol in standard unleaded petrol has now increased to 10% and is labelled ‘E10’ to reflect this change.";
 
 export const Route = createFileRoute("/help/equipment/e10-fuel")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Machinery & driving"
-      title={`e10 fuel`}
+      title={`E10 Fuel`}
       intro={`The proportion of ethanol in standard unleaded petrol has now increased to 10% and is labelled ‘E10’ to reflect this change.`}
       body={
         <>

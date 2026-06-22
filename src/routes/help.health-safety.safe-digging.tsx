@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "safe digging — BALI";
+const TITLE = "Safe Digging — BALI";
 const DESC = "Earlier this month a groundworks contractor was fined £32,400 and ordered to pay costs of £2657,18 for breaching Construction (Design and Management) Regul…";
 
 export const Route = createFileRoute("/help/health-safety/safe-digging")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Health & safety"
-      title={`safe digging`}
+      title={`Safe Digging`}
       intro={`Earlier this month a groundworks contractor was fined £32,400 and ordered to pay costs of £2657,18 for breaching Construction (Design and Management) Regulations (CDM) which resulted in one of its employees sustaining serious burns to his face, chest, abdomen, groin, both arms and legs, amounting to roughly 50% of his total body.`}
       body={
         <>

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "whole body vibration — BALI";
+const TITLE = "Whole Body Vibration — BALI";
 const DESC = "Whole body vibration (WBV) is a health issue caused by prolonged exposure to vibration, shocks or jolts, transmitted from mobile machinery to the operator …";
 
 export const Route = createFileRoute("/help/health-safety/whole-body-vibration")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Health & safety"
-      title={`whole body vibration`}
+      title={`Whole Body Vibration`}
       intro={`Whole body vibration (WBV) is a health issue caused by prolonged exposure to vibration, shocks or jolts, transmitted from mobile machinery to the operator through the seat or feet.  Whilst research on landscape-specific equipment is limited, prolonged periods spent on ride-on machinery such as tractors, mowers and quads over uneven ground are believed to result in symptoms associated with WBV.  Symptoms commonly include lower back pain, WBV may also cause musculoskeletal disorders.`}
       body={
         <>

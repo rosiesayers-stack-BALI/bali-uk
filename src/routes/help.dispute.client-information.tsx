@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "client information — BALI";
+const TITLE = "Client Information — BALI";
 const DESC = "Historically, the last resort for disagreements between clients and tradespeople was the courts. Options for relatively low value civil claims such as smal…";
 
 export const Route = createFileRoute("/help/dispute/client-information")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Dispute resolution"
-      title={`client information`}
+      title={`Client Information`}
       intro={`Historically, the last resort for disagreements between clients and tradespeople was the courts. Options for relatively low value civil claims such as small claims, fast track and multi-track simplified the process and proved popular amongst tradespeople and clients.`}
       body={
         <>

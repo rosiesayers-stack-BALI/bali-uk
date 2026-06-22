@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import HelpPage from "../components/HelpPage";
 
-const TITLE = "winter care — BALI";
+const TITLE = "Winter Care — BALI";
 const DESC = "The location of outdoor spaces means most are used throughout the year regardless of weather.  Plant growth cycles mean that autumn and winter are a great …";
 
 export const Route = createFileRoute("/help/health-safety/winter-care")({
@@ -20,7 +20,7 @@ function Page() {
   return (
     <HelpPage
       eyebrow="Health & safety"
-      title={`winter care`}
+      title={`Winter Care`}
       intro={`The location of outdoor spaces means most are used throughout the year regardless of weather.  Plant growth cycles mean that autumn and winter are a great opportunity to undertake maintenance of a wide range of plant specimens, particularly trees.`}
       body={
         <>
