@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import CookieBanner from "./CookieBanner";
+import rebrandBanner from "../assets/bali/rebrand-banner-5.jpg.asset.json";
 
 export type StubPageProps = {
   eyebrow?: string;
