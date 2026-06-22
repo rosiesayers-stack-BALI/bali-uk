@@ -51,6 +51,56 @@ import { Route as AdminPolicyIndexRouteImport } from './routes/admin.policy.inde
 import { Route as AdminNewsIndexRouteImport } from './routes/admin.news.index'
 import { Route as AdminEventsIndexRouteImport } from './routes/admin.events.index'
 import { Route as JoinCategoryApplyRouteImport } from './routes/join.$category.apply'
+import { Route as HelpPlantHealthPostBrexitPlantHealthArrangementsRouteImport } from './routes/help.plant-health.post-brexit-plant-health-arrangements'
+import { Route as HelpPlantHealthPlantPassportsRouteImport } from './routes/help.plant-health.plant-passports'
+import { Route as HelpPlantHealthGlossaryRouteImport } from './routes/help.plant-health.glossary'
+import { Route as HelpPlantHealthFaqRouteImport } from './routes/help.plant-health.faq'
+import { Route as HelpPlantHealthExportingPlantsAndPlantProductsRouteImport } from './routes/help.plant-health.exporting-plants-and-plant-products'
+import { Route as HelpPestsXylellaFastidiosaRouteImport } from './routes/help.pests.xylella-fastidiosa'
+import { Route as HelpPestsTicksAndEncephalitisVirusRouteImport } from './routes/help.pests.ticks-and-encephalitis-virus'
+import { Route as HelpPestsOakProcessionaryMothRouteImport } from './routes/help.pests.oak-processionary-moth'
+import { Route as HelpPestsOakLaceBugRouteImport } from './routes/help.pests.oak-lace-bug'
+import { Route as HelpPestsEmeraldAshBorerBeetleRouteImport } from './routes/help.pests.emerald-ash-borer-beetle'
+import { Route as HelpPestsEightToothedSpruceBarkBeetleRouteImport } from './routes/help.pests.eight-toothed-spruce-bark-beetle'
+import { Route as HelpPestsCankerStainOfPlaneRouteImport } from './routes/help.pests.canker-stain-of-plane'
+import { Route as HelpPestsBrownTailMothRouteImport } from './routes/help.pests.brown-tail-moth'
+import { Route as HelpPestsBiosecurityToolkitRouteImport } from './routes/help.pests.biosecurity-toolkit'
+import { Route as HelpPestsAsianLonghornBeetleRouteImport } from './routes/help.pests.asian-longhorn-beetle'
+import { Route as HelpPestsAsianHornetRouteImport } from './routes/help.pests.asian-hornet'
+import { Route as HelpPestsAshDiebackRouteImport } from './routes/help.pests.ash-dieback'
+import { Route as HelpLawWaterAbstractionRouteImport } from './routes/help.law.water-abstraction'
+import { Route as HelpLawVatReverseChargeRouteImport } from './routes/help.law.vat-reverse-charge'
+import { Route as HelpLawJcliContractsRouteImport } from './routes/help.law.jcli-contracts'
+import { Route as HelpLawIr35RouteImport } from './routes/help.law.ir35'
+import { Route as HelpLawGoodWorkPlanRouteImport } from './routes/help.law.good-work-plan'
+import { Route as HelpLawGdprRouteImport } from './routes/help.law.gdpr'
+import { Route as HelpLawEvolutionOfEmploymentRouteImport } from './routes/help.law.evolution-of-employment'
+import { Route as HelpLawCdmRouteImport } from './routes/help.law.cdm'
+import { Route as HelpHealthSafetyWinterCareRouteImport } from './routes/help.health-safety.winter-care'
+import { Route as HelpHealthSafetyWholeBodyVibrationRouteImport } from './routes/help.health-safety.whole-body-vibration'
+import { Route as HelpHealthSafetySlopesRouteImport } from './routes/help.health-safety.slopes'
+import { Route as HelpHealthSafetySilicaDustRouteImport } from './routes/help.health-safety.silica-dust'
+import { Route as HelpHealthSafetySafeDiggingRouteImport } from './routes/help.health-safety.safe-digging'
+import { Route as HelpHealthSafetyRiskAssessmentsRouteImport } from './routes/help.health-safety.risk-assessments'
+import { Route as HelpHealthSafetyOutdoorSafetyRouteImport } from './routes/help.health-safety.outdoor-safety'
+import { Route as HelpHealthSafetyMentalHealthRouteImport } from './routes/help.health-safety.mental-health'
+import { Route as HelpHealthSafetyLoneWorkingRouteImport } from './routes/help.health-safety.lone-working'
+import { Route as HelpHealthSafetyLatexAllergiesRouteImport } from './routes/help.health-safety.latex-allergies'
+import { Route as HelpHealthSafetyInteriorLandscapingRouteImport } from './routes/help.health-safety.interior-landscaping'
+import { Route as HelpHealthSafetyHandArmVibrationRouteImport } from './routes/help.health-safety.hand-arm-vibration'
+import { Route as HelpHealthSafetyBatsAndRabiesRouteImport } from './routes/help.health-safety.bats-and-rabies'
+import { Route as HelpHealthSafetyAllergicReactionsToInsectStingsRouteImport } from './routes/help.health-safety.allergic-reactions-to-insect-stings'
+import { Route as HelpHealthSafetyAlcoholInTheWorkplaceRouteImport } from './routes/help.health-safety.alcohol-in-the-workplace'
+import { Route as HelpGuidesLayOfTheLand2025RouteImport } from './routes/help.guides.lay-of-the-land-2025'
+import { Route as HelpEquipmentTractorsRouteImport } from './routes/help.equipment.tractors'
+import { Route as HelpEquipmentTowingRouteImport } from './routes/help.equipment.towing'
+import { Route as HelpEquipmentTachographsRouteImport } from './routes/help.equipment.tachographs'
+import { Route as HelpEquipmentRedDieselRouteImport } from './routes/help.equipment.red-diesel'
+import { Route as HelpEquipmentE10FuelRouteImport } from './routes/help.equipment.e10-fuel'
+import { Route as HelpEquipmentDrivingForBetterBusinessRouteImport } from './routes/help.equipment.driving-for-better-business'
+import { Route as HelpDisputeMemberInformationRouteImport } from './routes/help.dispute.member-information'
+import { Route as HelpDisputeFrequentlyAskedQuestionsRouteImport } from './routes/help.dispute.frequently-asked-questions'
+import { Route as HelpDisputeClientInformationRouteImport } from './routes/help.dispute.client-information'
 import { Route as ApiPublicMembershipApplicationRouteImport } from './routes/api/public/membership-application'
 import { Route as ApiPublicConferenceInterestRouteImport } from './routes/api/public/conference-interest'
 import { Route as AdminTrainingIdRouteImport } from './routes/admin.training.$id'
@@ -269,6 +319,288 @@ const JoinCategoryApplyRoute = JoinCategoryApplyRouteImport.update({
   path: '/$category/apply',
   getParentRoute: () => JoinRoute,
 } as any)
+const HelpPlantHealthPostBrexitPlantHealthArrangementsRoute =
+  HelpPlantHealthPostBrexitPlantHealthArrangementsRouteImport.update({
+    id: '/post-brexit-plant-health-arrangements',
+    path: '/post-brexit-plant-health-arrangements',
+    getParentRoute: () => HelpPlantHealthRoute,
+  } as any)
+const HelpPlantHealthPlantPassportsRoute =
+  HelpPlantHealthPlantPassportsRouteImport.update({
+    id: '/plant-passports',
+    path: '/plant-passports',
+    getParentRoute: () => HelpPlantHealthRoute,
+  } as any)
+const HelpPlantHealthGlossaryRoute = HelpPlantHealthGlossaryRouteImport.update({
+  id: '/glossary',
+  path: '/glossary',
+  getParentRoute: () => HelpPlantHealthRoute,
+} as any)
+const HelpPlantHealthFaqRoute = HelpPlantHealthFaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => HelpPlantHealthRoute,
+} as any)
+const HelpPlantHealthExportingPlantsAndPlantProductsRoute =
+  HelpPlantHealthExportingPlantsAndPlantProductsRouteImport.update({
+    id: '/exporting-plants-and-plant-products',
+    path: '/exporting-plants-and-plant-products',
+    getParentRoute: () => HelpPlantHealthRoute,
+  } as any)
+const HelpPestsXylellaFastidiosaRoute =
+  HelpPestsXylellaFastidiosaRouteImport.update({
+    id: '/xylella-fastidiosa',
+    path: '/xylella-fastidiosa',
+    getParentRoute: () => HelpPestsRoute,
+  } as any)
+const HelpPestsTicksAndEncephalitisVirusRoute =
+  HelpPestsTicksAndEncephalitisVirusRouteImport.update({
+    id: '/ticks-and-encephalitis-virus',
+    path: '/ticks-and-encephalitis-virus',
+    getParentRoute: () => HelpPestsRoute,
+  } as any)
+const HelpPestsOakProcessionaryMothRoute =
+  HelpPestsOakProcessionaryMothRouteImport.update({
+    id: '/oak-processionary-moth',
+    path: '/oak-processionary-moth',
+    getParentRoute: () => HelpPestsRoute,
+  } as any)
+const HelpPestsOakLaceBugRoute = HelpPestsOakLaceBugRouteImport.update({
+  id: '/oak-lace-bug',
+  path: '/oak-lace-bug',
+  getParentRoute: () => HelpPestsRoute,
+} as any)
+const HelpPestsEmeraldAshBorerBeetleRoute =
+  HelpPestsEmeraldAshBorerBeetleRouteImport.update({
+    id: '/emerald-ash-borer-beetle',
+    path: '/emerald-ash-borer-beetle',
+    getParentRoute: () => HelpPestsRoute,
+  } as any)
+const HelpPestsEightToothedSpruceBarkBeetleRoute =
+  HelpPestsEightToothedSpruceBarkBeetleRouteImport.update({
+    id: '/eight-toothed-spruce-bark-beetle',
+    path: '/eight-toothed-spruce-bark-beetle',
+    getParentRoute: () => HelpPestsRoute,
+  } as any)
+const HelpPestsCankerStainOfPlaneRoute =
+  HelpPestsCankerStainOfPlaneRouteImport.update({
+    id: '/canker-stain-of-plane',
+    path: '/canker-stain-of-plane',
+    getParentRoute: () => HelpPestsRoute,
+  } as any)
+const HelpPestsBrownTailMothRoute = HelpPestsBrownTailMothRouteImport.update({
+  id: '/brown-tail-moth',
+  path: '/brown-tail-moth',
+  getParentRoute: () => HelpPestsRoute,
+} as any)
+const HelpPestsBiosecurityToolkitRoute =
+  HelpPestsBiosecurityToolkitRouteImport.update({
+    id: '/biosecurity-toolkit',
+    path: '/biosecurity-toolkit',
+    getParentRoute: () => HelpPestsRoute,
+  } as any)
+const HelpPestsAsianLonghornBeetleRoute =
+  HelpPestsAsianLonghornBeetleRouteImport.update({
+    id: '/asian-longhorn-beetle',
+    path: '/asian-longhorn-beetle',
+    getParentRoute: () => HelpPestsRoute,
+  } as any)
+const HelpPestsAsianHornetRoute = HelpPestsAsianHornetRouteImport.update({
+  id: '/asian-hornet',
+  path: '/asian-hornet',
+  getParentRoute: () => HelpPestsRoute,
+} as any)
+const HelpPestsAshDiebackRoute = HelpPestsAshDiebackRouteImport.update({
+  id: '/ash-dieback',
+  path: '/ash-dieback',
+  getParentRoute: () => HelpPestsRoute,
+} as any)
+const HelpLawWaterAbstractionRoute = HelpLawWaterAbstractionRouteImport.update({
+  id: '/water-abstraction',
+  path: '/water-abstraction',
+  getParentRoute: () => HelpLawRoute,
+} as any)
+const HelpLawVatReverseChargeRoute = HelpLawVatReverseChargeRouteImport.update({
+  id: '/vat-reverse-charge',
+  path: '/vat-reverse-charge',
+  getParentRoute: () => HelpLawRoute,
+} as any)
+const HelpLawJcliContractsRoute = HelpLawJcliContractsRouteImport.update({
+  id: '/jcli-contracts',
+  path: '/jcli-contracts',
+  getParentRoute: () => HelpLawRoute,
+} as any)
+const HelpLawIr35Route = HelpLawIr35RouteImport.update({
+  id: '/ir35',
+  path: '/ir35',
+  getParentRoute: () => HelpLawRoute,
+} as any)
+const HelpLawGoodWorkPlanRoute = HelpLawGoodWorkPlanRouteImport.update({
+  id: '/good-work-plan',
+  path: '/good-work-plan',
+  getParentRoute: () => HelpLawRoute,
+} as any)
+const HelpLawGdprRoute = HelpLawGdprRouteImport.update({
+  id: '/gdpr',
+  path: '/gdpr',
+  getParentRoute: () => HelpLawRoute,
+} as any)
+const HelpLawEvolutionOfEmploymentRoute =
+  HelpLawEvolutionOfEmploymentRouteImport.update({
+    id: '/evolution-of-employment',
+    path: '/evolution-of-employment',
+    getParentRoute: () => HelpLawRoute,
+  } as any)
+const HelpLawCdmRoute = HelpLawCdmRouteImport.update({
+  id: '/cdm',
+  path: '/cdm',
+  getParentRoute: () => HelpLawRoute,
+} as any)
+const HelpHealthSafetyWinterCareRoute =
+  HelpHealthSafetyWinterCareRouteImport.update({
+    id: '/winter-care',
+    path: '/winter-care',
+    getParentRoute: () => HelpHealthSafetyRoute,
+  } as any)
+const HelpHealthSafetyWholeBodyVibrationRoute =
+  HelpHealthSafetyWholeBodyVibrationRouteImport.update({
+    id: '/whole-body-vibration',
+    path: '/whole-body-vibration',
+    getParentRoute: () => HelpHealthSafetyRoute,
+  } as any)
+const HelpHealthSafetySlopesRoute = HelpHealthSafetySlopesRouteImport.update({
+  id: '/slopes',
+  path: '/slopes',
+  getParentRoute: () => HelpHealthSafetyRoute,
+} as any)
+const HelpHealthSafetySilicaDustRoute =
+  HelpHealthSafetySilicaDustRouteImport.update({
+    id: '/silica-dust',
+    path: '/silica-dust',
+    getParentRoute: () => HelpHealthSafetyRoute,
+  } as any)
+const HelpHealthSafetySafeDiggingRoute =
+  HelpHealthSafetySafeDiggingRouteImport.update({
+    id: '/safe-digging',
+    path: '/safe-digging',
+    getParentRoute: () => HelpHealthSafetyRoute,
+  } as any)
+const HelpHealthSafetyRiskAssessmentsRoute =
+  HelpHealthSafetyRiskAssessmentsRouteImport.update({
+    id: '/risk-assessments',
+    path: '/risk-assessments',
+    getParentRoute: () => HelpHealthSafetyRoute,
+  } as any)
+const HelpHealthSafetyOutdoorSafetyRoute =
+  HelpHealthSafetyOutdoorSafetyRouteImport.update({
+    id: '/outdoor-safety',
+    path: '/outdoor-safety',
+    getParentRoute: () => HelpHealthSafetyRoute,
+  } as any)
+const HelpHealthSafetyMentalHealthRoute =
+  HelpHealthSafetyMentalHealthRouteImport.update({
+    id: '/mental-health',
+    path: '/mental-health',
+    getParentRoute: () => HelpHealthSafetyRoute,
+  } as any)
+const HelpHealthSafetyLoneWorkingRoute =
+  HelpHealthSafetyLoneWorkingRouteImport.update({
+    id: '/lone-working',
+    path: '/lone-working',
+    getParentRoute: () => HelpHealthSafetyRoute,
+  } as any)
+const HelpHealthSafetyLatexAllergiesRoute =
+  HelpHealthSafetyLatexAllergiesRouteImport.update({
+    id: '/latex-allergies',
+    path: '/latex-allergies',
+    getParentRoute: () => HelpHealthSafetyRoute,
+  } as any)
+const HelpHealthSafetyInteriorLandscapingRoute =
+  HelpHealthSafetyInteriorLandscapingRouteImport.update({
+    id: '/interior-landscaping',
+    path: '/interior-landscaping',
+    getParentRoute: () => HelpHealthSafetyRoute,
+  } as any)
+const HelpHealthSafetyHandArmVibrationRoute =
+  HelpHealthSafetyHandArmVibrationRouteImport.update({
+    id: '/hand-arm-vibration',
+    path: '/hand-arm-vibration',
+    getParentRoute: () => HelpHealthSafetyRoute,
+  } as any)
+const HelpHealthSafetyBatsAndRabiesRoute =
+  HelpHealthSafetyBatsAndRabiesRouteImport.update({
+    id: '/bats-and-rabies',
+    path: '/bats-and-rabies',
+    getParentRoute: () => HelpHealthSafetyRoute,
+  } as any)
+const HelpHealthSafetyAllergicReactionsToInsectStingsRoute =
+  HelpHealthSafetyAllergicReactionsToInsectStingsRouteImport.update({
+    id: '/allergic-reactions-to-insect-stings',
+    path: '/allergic-reactions-to-insect-stings',
+    getParentRoute: () => HelpHealthSafetyRoute,
+  } as any)
+const HelpHealthSafetyAlcoholInTheWorkplaceRoute =
+  HelpHealthSafetyAlcoholInTheWorkplaceRouteImport.update({
+    id: '/alcohol-in-the-workplace',
+    path: '/alcohol-in-the-workplace',
+    getParentRoute: () => HelpHealthSafetyRoute,
+  } as any)
+const HelpGuidesLayOfTheLand2025Route =
+  HelpGuidesLayOfTheLand2025RouteImport.update({
+    id: '/lay-of-the-land-2025',
+    path: '/lay-of-the-land-2025',
+    getParentRoute: () => HelpGuidesRoute,
+  } as any)
+const HelpEquipmentTractorsRoute = HelpEquipmentTractorsRouteImport.update({
+  id: '/tractors',
+  path: '/tractors',
+  getParentRoute: () => HelpEquipmentRoute,
+} as any)
+const HelpEquipmentTowingRoute = HelpEquipmentTowingRouteImport.update({
+  id: '/towing',
+  path: '/towing',
+  getParentRoute: () => HelpEquipmentRoute,
+} as any)
+const HelpEquipmentTachographsRoute =
+  HelpEquipmentTachographsRouteImport.update({
+    id: '/tachographs',
+    path: '/tachographs',
+    getParentRoute: () => HelpEquipmentRoute,
+  } as any)
+const HelpEquipmentRedDieselRoute = HelpEquipmentRedDieselRouteImport.update({
+  id: '/red-diesel',
+  path: '/red-diesel',
+  getParentRoute: () => HelpEquipmentRoute,
+} as any)
+const HelpEquipmentE10FuelRoute = HelpEquipmentE10FuelRouteImport.update({
+  id: '/e10-fuel',
+  path: '/e10-fuel',
+  getParentRoute: () => HelpEquipmentRoute,
+} as any)
+const HelpEquipmentDrivingForBetterBusinessRoute =
+  HelpEquipmentDrivingForBetterBusinessRouteImport.update({
+    id: '/driving-for-better-business',
+    path: '/driving-for-better-business',
+    getParentRoute: () => HelpEquipmentRoute,
+  } as any)
+const HelpDisputeMemberInformationRoute =
+  HelpDisputeMemberInformationRouteImport.update({
+    id: '/member-information',
+    path: '/member-information',
+    getParentRoute: () => HelpDisputeRoute,
+  } as any)
+const HelpDisputeFrequentlyAskedQuestionsRoute =
+  HelpDisputeFrequentlyAskedQuestionsRouteImport.update({
+    id: '/frequently-asked-questions',
+    path: '/frequently-asked-questions',
+    getParentRoute: () => HelpDisputeRoute,
+  } as any)
+const HelpDisputeClientInformationRoute =
+  HelpDisputeClientInformationRouteImport.update({
+    id: '/client-information',
+    path: '/client-information',
+    getParentRoute: () => HelpDisputeRoute,
+  } as any)
 const ApiPublicMembershipApplicationRoute =
   ApiPublicMembershipApplicationRouteImport.update({
     id: '/api/public/membership-application',
@@ -321,15 +653,15 @@ export interface FileRoutesByFullPath {
   '/events/$slug': typeof EventsSlugRoute
   '/events/training': typeof EventsTrainingRoute
   '/help/contract': typeof HelpContractRoute
-  '/help/dispute': typeof HelpDisputeRoute
+  '/help/dispute': typeof HelpDisputeRouteWithChildren
   '/help/domestic-landscape-contract': typeof HelpDomesticLandscapeContractRoute
-  '/help/equipment': typeof HelpEquipmentRoute
-  '/help/guides': typeof HelpGuidesRoute
+  '/help/equipment': typeof HelpEquipmentRouteWithChildren
+  '/help/guides': typeof HelpGuidesRouteWithChildren
   '/help/hardship': typeof HelpHardshipRoute
-  '/help/health-safety': typeof HelpHealthSafetyRoute
-  '/help/law': typeof HelpLawRoute
-  '/help/pests': typeof HelpPestsRoute
-  '/help/plant-health': typeof HelpPlantHealthRoute
+  '/help/health-safety': typeof HelpHealthSafetyRouteWithChildren
+  '/help/law': typeof HelpLawRouteWithChildren
+  '/help/pests': typeof HelpPestsRouteWithChildren
+  '/help/plant-health': typeof HelpPlantHealthRouteWithChildren
   '/help/podcast': typeof HelpPodcastRoute
   '/news/$slug': typeof NewsSlugRoute
   '/news/magazine': typeof NewsMagazineRoute
@@ -346,6 +678,56 @@ export interface FileRoutesByFullPath {
   '/admin/training/$id': typeof AdminTrainingIdRoute
   '/api/public/conference-interest': typeof ApiPublicConferenceInterestRoute
   '/api/public/membership-application': typeof ApiPublicMembershipApplicationRoute
+  '/help/dispute/client-information': typeof HelpDisputeClientInformationRoute
+  '/help/dispute/frequently-asked-questions': typeof HelpDisputeFrequentlyAskedQuestionsRoute
+  '/help/dispute/member-information': typeof HelpDisputeMemberInformationRoute
+  '/help/equipment/driving-for-better-business': typeof HelpEquipmentDrivingForBetterBusinessRoute
+  '/help/equipment/e10-fuel': typeof HelpEquipmentE10FuelRoute
+  '/help/equipment/red-diesel': typeof HelpEquipmentRedDieselRoute
+  '/help/equipment/tachographs': typeof HelpEquipmentTachographsRoute
+  '/help/equipment/towing': typeof HelpEquipmentTowingRoute
+  '/help/equipment/tractors': typeof HelpEquipmentTractorsRoute
+  '/help/guides/lay-of-the-land-2025': typeof HelpGuidesLayOfTheLand2025Route
+  '/help/health-safety/alcohol-in-the-workplace': typeof HelpHealthSafetyAlcoholInTheWorkplaceRoute
+  '/help/health-safety/allergic-reactions-to-insect-stings': typeof HelpHealthSafetyAllergicReactionsToInsectStingsRoute
+  '/help/health-safety/bats-and-rabies': typeof HelpHealthSafetyBatsAndRabiesRoute
+  '/help/health-safety/hand-arm-vibration': typeof HelpHealthSafetyHandArmVibrationRoute
+  '/help/health-safety/interior-landscaping': typeof HelpHealthSafetyInteriorLandscapingRoute
+  '/help/health-safety/latex-allergies': typeof HelpHealthSafetyLatexAllergiesRoute
+  '/help/health-safety/lone-working': typeof HelpHealthSafetyLoneWorkingRoute
+  '/help/health-safety/mental-health': typeof HelpHealthSafetyMentalHealthRoute
+  '/help/health-safety/outdoor-safety': typeof HelpHealthSafetyOutdoorSafetyRoute
+  '/help/health-safety/risk-assessments': typeof HelpHealthSafetyRiskAssessmentsRoute
+  '/help/health-safety/safe-digging': typeof HelpHealthSafetySafeDiggingRoute
+  '/help/health-safety/silica-dust': typeof HelpHealthSafetySilicaDustRoute
+  '/help/health-safety/slopes': typeof HelpHealthSafetySlopesRoute
+  '/help/health-safety/whole-body-vibration': typeof HelpHealthSafetyWholeBodyVibrationRoute
+  '/help/health-safety/winter-care': typeof HelpHealthSafetyWinterCareRoute
+  '/help/law/cdm': typeof HelpLawCdmRoute
+  '/help/law/evolution-of-employment': typeof HelpLawEvolutionOfEmploymentRoute
+  '/help/law/gdpr': typeof HelpLawGdprRoute
+  '/help/law/good-work-plan': typeof HelpLawGoodWorkPlanRoute
+  '/help/law/ir35': typeof HelpLawIr35Route
+  '/help/law/jcli-contracts': typeof HelpLawJcliContractsRoute
+  '/help/law/vat-reverse-charge': typeof HelpLawVatReverseChargeRoute
+  '/help/law/water-abstraction': typeof HelpLawWaterAbstractionRoute
+  '/help/pests/ash-dieback': typeof HelpPestsAshDiebackRoute
+  '/help/pests/asian-hornet': typeof HelpPestsAsianHornetRoute
+  '/help/pests/asian-longhorn-beetle': typeof HelpPestsAsianLonghornBeetleRoute
+  '/help/pests/biosecurity-toolkit': typeof HelpPestsBiosecurityToolkitRoute
+  '/help/pests/brown-tail-moth': typeof HelpPestsBrownTailMothRoute
+  '/help/pests/canker-stain-of-plane': typeof HelpPestsCankerStainOfPlaneRoute
+  '/help/pests/eight-toothed-spruce-bark-beetle': typeof HelpPestsEightToothedSpruceBarkBeetleRoute
+  '/help/pests/emerald-ash-borer-beetle': typeof HelpPestsEmeraldAshBorerBeetleRoute
+  '/help/pests/oak-lace-bug': typeof HelpPestsOakLaceBugRoute
+  '/help/pests/oak-processionary-moth': typeof HelpPestsOakProcessionaryMothRoute
+  '/help/pests/ticks-and-encephalitis-virus': typeof HelpPestsTicksAndEncephalitisVirusRoute
+  '/help/pests/xylella-fastidiosa': typeof HelpPestsXylellaFastidiosaRoute
+  '/help/plant-health/exporting-plants-and-plant-products': typeof HelpPlantHealthExportingPlantsAndPlantProductsRoute
+  '/help/plant-health/faq': typeof HelpPlantHealthFaqRoute
+  '/help/plant-health/glossary': typeof HelpPlantHealthGlossaryRoute
+  '/help/plant-health/plant-passports': typeof HelpPlantHealthPlantPassportsRoute
+  '/help/plant-health/post-brexit-plant-health-arrangements': typeof HelpPlantHealthPostBrexitPlantHealthArrangementsRoute
   '/join/$category/apply': typeof JoinCategoryApplyRoute
   '/admin/events/': typeof AdminEventsIndexRoute
   '/admin/news/': typeof AdminNewsIndexRoute
@@ -370,15 +752,15 @@ export interface FileRoutesByTo {
   '/events/$slug': typeof EventsSlugRoute
   '/events/training': typeof EventsTrainingRoute
   '/help/contract': typeof HelpContractRoute
-  '/help/dispute': typeof HelpDisputeRoute
+  '/help/dispute': typeof HelpDisputeRouteWithChildren
   '/help/domestic-landscape-contract': typeof HelpDomesticLandscapeContractRoute
-  '/help/equipment': typeof HelpEquipmentRoute
-  '/help/guides': typeof HelpGuidesRoute
+  '/help/equipment': typeof HelpEquipmentRouteWithChildren
+  '/help/guides': typeof HelpGuidesRouteWithChildren
   '/help/hardship': typeof HelpHardshipRoute
-  '/help/health-safety': typeof HelpHealthSafetyRoute
-  '/help/law': typeof HelpLawRoute
-  '/help/pests': typeof HelpPestsRoute
-  '/help/plant-health': typeof HelpPlantHealthRoute
+  '/help/health-safety': typeof HelpHealthSafetyRouteWithChildren
+  '/help/law': typeof HelpLawRouteWithChildren
+  '/help/pests': typeof HelpPestsRouteWithChildren
+  '/help/plant-health': typeof HelpPlantHealthRouteWithChildren
   '/help/podcast': typeof HelpPodcastRoute
   '/news/$slug': typeof NewsSlugRoute
   '/news/magazine': typeof NewsMagazineRoute
@@ -395,6 +777,56 @@ export interface FileRoutesByTo {
   '/admin/training/$id': typeof AdminTrainingIdRoute
   '/api/public/conference-interest': typeof ApiPublicConferenceInterestRoute
   '/api/public/membership-application': typeof ApiPublicMembershipApplicationRoute
+  '/help/dispute/client-information': typeof HelpDisputeClientInformationRoute
+  '/help/dispute/frequently-asked-questions': typeof HelpDisputeFrequentlyAskedQuestionsRoute
+  '/help/dispute/member-information': typeof HelpDisputeMemberInformationRoute
+  '/help/equipment/driving-for-better-business': typeof HelpEquipmentDrivingForBetterBusinessRoute
+  '/help/equipment/e10-fuel': typeof HelpEquipmentE10FuelRoute
+  '/help/equipment/red-diesel': typeof HelpEquipmentRedDieselRoute
+  '/help/equipment/tachographs': typeof HelpEquipmentTachographsRoute
+  '/help/equipment/towing': typeof HelpEquipmentTowingRoute
+  '/help/equipment/tractors': typeof HelpEquipmentTractorsRoute
+  '/help/guides/lay-of-the-land-2025': typeof HelpGuidesLayOfTheLand2025Route
+  '/help/health-safety/alcohol-in-the-workplace': typeof HelpHealthSafetyAlcoholInTheWorkplaceRoute
+  '/help/health-safety/allergic-reactions-to-insect-stings': typeof HelpHealthSafetyAllergicReactionsToInsectStingsRoute
+  '/help/health-safety/bats-and-rabies': typeof HelpHealthSafetyBatsAndRabiesRoute
+  '/help/health-safety/hand-arm-vibration': typeof HelpHealthSafetyHandArmVibrationRoute
+  '/help/health-safety/interior-landscaping': typeof HelpHealthSafetyInteriorLandscapingRoute
+  '/help/health-safety/latex-allergies': typeof HelpHealthSafetyLatexAllergiesRoute
+  '/help/health-safety/lone-working': typeof HelpHealthSafetyLoneWorkingRoute
+  '/help/health-safety/mental-health': typeof HelpHealthSafetyMentalHealthRoute
+  '/help/health-safety/outdoor-safety': typeof HelpHealthSafetyOutdoorSafetyRoute
+  '/help/health-safety/risk-assessments': typeof HelpHealthSafetyRiskAssessmentsRoute
+  '/help/health-safety/safe-digging': typeof HelpHealthSafetySafeDiggingRoute
+  '/help/health-safety/silica-dust': typeof HelpHealthSafetySilicaDustRoute
+  '/help/health-safety/slopes': typeof HelpHealthSafetySlopesRoute
+  '/help/health-safety/whole-body-vibration': typeof HelpHealthSafetyWholeBodyVibrationRoute
+  '/help/health-safety/winter-care': typeof HelpHealthSafetyWinterCareRoute
+  '/help/law/cdm': typeof HelpLawCdmRoute
+  '/help/law/evolution-of-employment': typeof HelpLawEvolutionOfEmploymentRoute
+  '/help/law/gdpr': typeof HelpLawGdprRoute
+  '/help/law/good-work-plan': typeof HelpLawGoodWorkPlanRoute
+  '/help/law/ir35': typeof HelpLawIr35Route
+  '/help/law/jcli-contracts': typeof HelpLawJcliContractsRoute
+  '/help/law/vat-reverse-charge': typeof HelpLawVatReverseChargeRoute
+  '/help/law/water-abstraction': typeof HelpLawWaterAbstractionRoute
+  '/help/pests/ash-dieback': typeof HelpPestsAshDiebackRoute
+  '/help/pests/asian-hornet': typeof HelpPestsAsianHornetRoute
+  '/help/pests/asian-longhorn-beetle': typeof HelpPestsAsianLonghornBeetleRoute
+  '/help/pests/biosecurity-toolkit': typeof HelpPestsBiosecurityToolkitRoute
+  '/help/pests/brown-tail-moth': typeof HelpPestsBrownTailMothRoute
+  '/help/pests/canker-stain-of-plane': typeof HelpPestsCankerStainOfPlaneRoute
+  '/help/pests/eight-toothed-spruce-bark-beetle': typeof HelpPestsEightToothedSpruceBarkBeetleRoute
+  '/help/pests/emerald-ash-borer-beetle': typeof HelpPestsEmeraldAshBorerBeetleRoute
+  '/help/pests/oak-lace-bug': typeof HelpPestsOakLaceBugRoute
+  '/help/pests/oak-processionary-moth': typeof HelpPestsOakProcessionaryMothRoute
+  '/help/pests/ticks-and-encephalitis-virus': typeof HelpPestsTicksAndEncephalitisVirusRoute
+  '/help/pests/xylella-fastidiosa': typeof HelpPestsXylellaFastidiosaRoute
+  '/help/plant-health/exporting-plants-and-plant-products': typeof HelpPlantHealthExportingPlantsAndPlantProductsRoute
+  '/help/plant-health/faq': typeof HelpPlantHealthFaqRoute
+  '/help/plant-health/glossary': typeof HelpPlantHealthGlossaryRoute
+  '/help/plant-health/plant-passports': typeof HelpPlantHealthPlantPassportsRoute
+  '/help/plant-health/post-brexit-plant-health-arrangements': typeof HelpPlantHealthPostBrexitPlantHealthArrangementsRoute
   '/join/$category/apply': typeof JoinCategoryApplyRoute
   '/admin/events': typeof AdminEventsIndexRoute
   '/admin/news': typeof AdminNewsIndexRoute
@@ -421,15 +853,15 @@ export interface FileRoutesById {
   '/events/$slug': typeof EventsSlugRoute
   '/events/training': typeof EventsTrainingRoute
   '/help/contract': typeof HelpContractRoute
-  '/help/dispute': typeof HelpDisputeRoute
+  '/help/dispute': typeof HelpDisputeRouteWithChildren
   '/help/domestic-landscape-contract': typeof HelpDomesticLandscapeContractRoute
-  '/help/equipment': typeof HelpEquipmentRoute
-  '/help/guides': typeof HelpGuidesRoute
+  '/help/equipment': typeof HelpEquipmentRouteWithChildren
+  '/help/guides': typeof HelpGuidesRouteWithChildren
   '/help/hardship': typeof HelpHardshipRoute
-  '/help/health-safety': typeof HelpHealthSafetyRoute
-  '/help/law': typeof HelpLawRoute
-  '/help/pests': typeof HelpPestsRoute
-  '/help/plant-health': typeof HelpPlantHealthRoute
+  '/help/health-safety': typeof HelpHealthSafetyRouteWithChildren
+  '/help/law': typeof HelpLawRouteWithChildren
+  '/help/pests': typeof HelpPestsRouteWithChildren
+  '/help/plant-health': typeof HelpPlantHealthRouteWithChildren
   '/help/podcast': typeof HelpPodcastRoute
   '/news/$slug': typeof NewsSlugRoute
   '/news/magazine': typeof NewsMagazineRoute
@@ -446,6 +878,56 @@ export interface FileRoutesById {
   '/admin/training/$id': typeof AdminTrainingIdRoute
   '/api/public/conference-interest': typeof ApiPublicConferenceInterestRoute
   '/api/public/membership-application': typeof ApiPublicMembershipApplicationRoute
+  '/help/dispute/client-information': typeof HelpDisputeClientInformationRoute
+  '/help/dispute/frequently-asked-questions': typeof HelpDisputeFrequentlyAskedQuestionsRoute
+  '/help/dispute/member-information': typeof HelpDisputeMemberInformationRoute
+  '/help/equipment/driving-for-better-business': typeof HelpEquipmentDrivingForBetterBusinessRoute
+  '/help/equipment/e10-fuel': typeof HelpEquipmentE10FuelRoute
+  '/help/equipment/red-diesel': typeof HelpEquipmentRedDieselRoute
+  '/help/equipment/tachographs': typeof HelpEquipmentTachographsRoute
+  '/help/equipment/towing': typeof HelpEquipmentTowingRoute
+  '/help/equipment/tractors': typeof HelpEquipmentTractorsRoute
+  '/help/guides/lay-of-the-land-2025': typeof HelpGuidesLayOfTheLand2025Route
+  '/help/health-safety/alcohol-in-the-workplace': typeof HelpHealthSafetyAlcoholInTheWorkplaceRoute
+  '/help/health-safety/allergic-reactions-to-insect-stings': typeof HelpHealthSafetyAllergicReactionsToInsectStingsRoute
+  '/help/health-safety/bats-and-rabies': typeof HelpHealthSafetyBatsAndRabiesRoute
+  '/help/health-safety/hand-arm-vibration': typeof HelpHealthSafetyHandArmVibrationRoute
+  '/help/health-safety/interior-landscaping': typeof HelpHealthSafetyInteriorLandscapingRoute
+  '/help/health-safety/latex-allergies': typeof HelpHealthSafetyLatexAllergiesRoute
+  '/help/health-safety/lone-working': typeof HelpHealthSafetyLoneWorkingRoute
+  '/help/health-safety/mental-health': typeof HelpHealthSafetyMentalHealthRoute
+  '/help/health-safety/outdoor-safety': typeof HelpHealthSafetyOutdoorSafetyRoute
+  '/help/health-safety/risk-assessments': typeof HelpHealthSafetyRiskAssessmentsRoute
+  '/help/health-safety/safe-digging': typeof HelpHealthSafetySafeDiggingRoute
+  '/help/health-safety/silica-dust': typeof HelpHealthSafetySilicaDustRoute
+  '/help/health-safety/slopes': typeof HelpHealthSafetySlopesRoute
+  '/help/health-safety/whole-body-vibration': typeof HelpHealthSafetyWholeBodyVibrationRoute
+  '/help/health-safety/winter-care': typeof HelpHealthSafetyWinterCareRoute
+  '/help/law/cdm': typeof HelpLawCdmRoute
+  '/help/law/evolution-of-employment': typeof HelpLawEvolutionOfEmploymentRoute
+  '/help/law/gdpr': typeof HelpLawGdprRoute
+  '/help/law/good-work-plan': typeof HelpLawGoodWorkPlanRoute
+  '/help/law/ir35': typeof HelpLawIr35Route
+  '/help/law/jcli-contracts': typeof HelpLawJcliContractsRoute
+  '/help/law/vat-reverse-charge': typeof HelpLawVatReverseChargeRoute
+  '/help/law/water-abstraction': typeof HelpLawWaterAbstractionRoute
+  '/help/pests/ash-dieback': typeof HelpPestsAshDiebackRoute
+  '/help/pests/asian-hornet': typeof HelpPestsAsianHornetRoute
+  '/help/pests/asian-longhorn-beetle': typeof HelpPestsAsianLonghornBeetleRoute
+  '/help/pests/biosecurity-toolkit': typeof HelpPestsBiosecurityToolkitRoute
+  '/help/pests/brown-tail-moth': typeof HelpPestsBrownTailMothRoute
+  '/help/pests/canker-stain-of-plane': typeof HelpPestsCankerStainOfPlaneRoute
+  '/help/pests/eight-toothed-spruce-bark-beetle': typeof HelpPestsEightToothedSpruceBarkBeetleRoute
+  '/help/pests/emerald-ash-borer-beetle': typeof HelpPestsEmeraldAshBorerBeetleRoute
+  '/help/pests/oak-lace-bug': typeof HelpPestsOakLaceBugRoute
+  '/help/pests/oak-processionary-moth': typeof HelpPestsOakProcessionaryMothRoute
+  '/help/pests/ticks-and-encephalitis-virus': typeof HelpPestsTicksAndEncephalitisVirusRoute
+  '/help/pests/xylella-fastidiosa': typeof HelpPestsXylellaFastidiosaRoute
+  '/help/plant-health/exporting-plants-and-plant-products': typeof HelpPlantHealthExportingPlantsAndPlantProductsRoute
+  '/help/plant-health/faq': typeof HelpPlantHealthFaqRoute
+  '/help/plant-health/glossary': typeof HelpPlantHealthGlossaryRoute
+  '/help/plant-health/plant-passports': typeof HelpPlantHealthPlantPassportsRoute
+  '/help/plant-health/post-brexit-plant-health-arrangements': typeof HelpPlantHealthPostBrexitPlantHealthArrangementsRoute
   '/join/$category/apply': typeof JoinCategoryApplyRoute
   '/admin/events/': typeof AdminEventsIndexRoute
   '/admin/news/': typeof AdminNewsIndexRoute
@@ -498,6 +980,56 @@ export interface FileRouteTypes {
     | '/admin/training/$id'
     | '/api/public/conference-interest'
     | '/api/public/membership-application'
+    | '/help/dispute/client-information'
+    | '/help/dispute/frequently-asked-questions'
+    | '/help/dispute/member-information'
+    | '/help/equipment/driving-for-better-business'
+    | '/help/equipment/e10-fuel'
+    | '/help/equipment/red-diesel'
+    | '/help/equipment/tachographs'
+    | '/help/equipment/towing'
+    | '/help/equipment/tractors'
+    | '/help/guides/lay-of-the-land-2025'
+    | '/help/health-safety/alcohol-in-the-workplace'
+    | '/help/health-safety/allergic-reactions-to-insect-stings'
+    | '/help/health-safety/bats-and-rabies'
+    | '/help/health-safety/hand-arm-vibration'
+    | '/help/health-safety/interior-landscaping'
+    | '/help/health-safety/latex-allergies'
+    | '/help/health-safety/lone-working'
+    | '/help/health-safety/mental-health'
+    | '/help/health-safety/outdoor-safety'
+    | '/help/health-safety/risk-assessments'
+    | '/help/health-safety/safe-digging'
+    | '/help/health-safety/silica-dust'
+    | '/help/health-safety/slopes'
+    | '/help/health-safety/whole-body-vibration'
+    | '/help/health-safety/winter-care'
+    | '/help/law/cdm'
+    | '/help/law/evolution-of-employment'
+    | '/help/law/gdpr'
+    | '/help/law/good-work-plan'
+    | '/help/law/ir35'
+    | '/help/law/jcli-contracts'
+    | '/help/law/vat-reverse-charge'
+    | '/help/law/water-abstraction'
+    | '/help/pests/ash-dieback'
+    | '/help/pests/asian-hornet'
+    | '/help/pests/asian-longhorn-beetle'
+    | '/help/pests/biosecurity-toolkit'
+    | '/help/pests/brown-tail-moth'
+    | '/help/pests/canker-stain-of-plane'
+    | '/help/pests/eight-toothed-spruce-bark-beetle'
+    | '/help/pests/emerald-ash-borer-beetle'
+    | '/help/pests/oak-lace-bug'
+    | '/help/pests/oak-processionary-moth'
+    | '/help/pests/ticks-and-encephalitis-virus'
+    | '/help/pests/xylella-fastidiosa'
+    | '/help/plant-health/exporting-plants-and-plant-products'
+    | '/help/plant-health/faq'
+    | '/help/plant-health/glossary'
+    | '/help/plant-health/plant-passports'
+    | '/help/plant-health/post-brexit-plant-health-arrangements'
     | '/join/$category/apply'
     | '/admin/events/'
     | '/admin/news/'
@@ -547,6 +1079,56 @@ export interface FileRouteTypes {
     | '/admin/training/$id'
     | '/api/public/conference-interest'
     | '/api/public/membership-application'
+    | '/help/dispute/client-information'
+    | '/help/dispute/frequently-asked-questions'
+    | '/help/dispute/member-information'
+    | '/help/equipment/driving-for-better-business'
+    | '/help/equipment/e10-fuel'
+    | '/help/equipment/red-diesel'
+    | '/help/equipment/tachographs'
+    | '/help/equipment/towing'
+    | '/help/equipment/tractors'
+    | '/help/guides/lay-of-the-land-2025'
+    | '/help/health-safety/alcohol-in-the-workplace'
+    | '/help/health-safety/allergic-reactions-to-insect-stings'
+    | '/help/health-safety/bats-and-rabies'
+    | '/help/health-safety/hand-arm-vibration'
+    | '/help/health-safety/interior-landscaping'
+    | '/help/health-safety/latex-allergies'
+    | '/help/health-safety/lone-working'
+    | '/help/health-safety/mental-health'
+    | '/help/health-safety/outdoor-safety'
+    | '/help/health-safety/risk-assessments'
+    | '/help/health-safety/safe-digging'
+    | '/help/health-safety/silica-dust'
+    | '/help/health-safety/slopes'
+    | '/help/health-safety/whole-body-vibration'
+    | '/help/health-safety/winter-care'
+    | '/help/law/cdm'
+    | '/help/law/evolution-of-employment'
+    | '/help/law/gdpr'
+    | '/help/law/good-work-plan'
+    | '/help/law/ir35'
+    | '/help/law/jcli-contracts'
+    | '/help/law/vat-reverse-charge'
+    | '/help/law/water-abstraction'
+    | '/help/pests/ash-dieback'
+    | '/help/pests/asian-hornet'
+    | '/help/pests/asian-longhorn-beetle'
+    | '/help/pests/biosecurity-toolkit'
+    | '/help/pests/brown-tail-moth'
+    | '/help/pests/canker-stain-of-plane'
+    | '/help/pests/eight-toothed-spruce-bark-beetle'
+    | '/help/pests/emerald-ash-borer-beetle'
+    | '/help/pests/oak-lace-bug'
+    | '/help/pests/oak-processionary-moth'
+    | '/help/pests/ticks-and-encephalitis-virus'
+    | '/help/pests/xylella-fastidiosa'
+    | '/help/plant-health/exporting-plants-and-plant-products'
+    | '/help/plant-health/faq'
+    | '/help/plant-health/glossary'
+    | '/help/plant-health/plant-passports'
+    | '/help/plant-health/post-brexit-plant-health-arrangements'
     | '/join/$category/apply'
     | '/admin/events'
     | '/admin/news'
@@ -597,6 +1179,56 @@ export interface FileRouteTypes {
     | '/admin/training/$id'
     | '/api/public/conference-interest'
     | '/api/public/membership-application'
+    | '/help/dispute/client-information'
+    | '/help/dispute/frequently-asked-questions'
+    | '/help/dispute/member-information'
+    | '/help/equipment/driving-for-better-business'
+    | '/help/equipment/e10-fuel'
+    | '/help/equipment/red-diesel'
+    | '/help/equipment/tachographs'
+    | '/help/equipment/towing'
+    | '/help/equipment/tractors'
+    | '/help/guides/lay-of-the-land-2025'
+    | '/help/health-safety/alcohol-in-the-workplace'
+    | '/help/health-safety/allergic-reactions-to-insect-stings'
+    | '/help/health-safety/bats-and-rabies'
+    | '/help/health-safety/hand-arm-vibration'
+    | '/help/health-safety/interior-landscaping'
+    | '/help/health-safety/latex-allergies'
+    | '/help/health-safety/lone-working'
+    | '/help/health-safety/mental-health'
+    | '/help/health-safety/outdoor-safety'
+    | '/help/health-safety/risk-assessments'
+    | '/help/health-safety/safe-digging'
+    | '/help/health-safety/silica-dust'
+    | '/help/health-safety/slopes'
+    | '/help/health-safety/whole-body-vibration'
+    | '/help/health-safety/winter-care'
+    | '/help/law/cdm'
+    | '/help/law/evolution-of-employment'
+    | '/help/law/gdpr'
+    | '/help/law/good-work-plan'
+    | '/help/law/ir35'
+    | '/help/law/jcli-contracts'
+    | '/help/law/vat-reverse-charge'
+    | '/help/law/water-abstraction'
+    | '/help/pests/ash-dieback'
+    | '/help/pests/asian-hornet'
+    | '/help/pests/asian-longhorn-beetle'
+    | '/help/pests/biosecurity-toolkit'
+    | '/help/pests/brown-tail-moth'
+    | '/help/pests/canker-stain-of-plane'
+    | '/help/pests/eight-toothed-spruce-bark-beetle'
+    | '/help/pests/emerald-ash-borer-beetle'
+    | '/help/pests/oak-lace-bug'
+    | '/help/pests/oak-processionary-moth'
+    | '/help/pests/ticks-and-encephalitis-virus'
+    | '/help/pests/xylella-fastidiosa'
+    | '/help/plant-health/exporting-plants-and-plant-products'
+    | '/help/plant-health/faq'
+    | '/help/plant-health/glossary'
+    | '/help/plant-health/plant-passports'
+    | '/help/plant-health/post-brexit-plant-health-arrangements'
     | '/join/$category/apply'
     | '/admin/events/'
     | '/admin/news/'
@@ -622,15 +1254,15 @@ export interface RootRouteChildren {
   EventsSlugRoute: typeof EventsSlugRoute
   EventsTrainingRoute: typeof EventsTrainingRoute
   HelpContractRoute: typeof HelpContractRoute
-  HelpDisputeRoute: typeof HelpDisputeRoute
+  HelpDisputeRoute: typeof HelpDisputeRouteWithChildren
   HelpDomesticLandscapeContractRoute: typeof HelpDomesticLandscapeContractRoute
-  HelpEquipmentRoute: typeof HelpEquipmentRoute
-  HelpGuidesRoute: typeof HelpGuidesRoute
+  HelpEquipmentRoute: typeof HelpEquipmentRouteWithChildren
+  HelpGuidesRoute: typeof HelpGuidesRouteWithChildren
   HelpHardshipRoute: typeof HelpHardshipRoute
-  HelpHealthSafetyRoute: typeof HelpHealthSafetyRoute
-  HelpLawRoute: typeof HelpLawRoute
-  HelpPestsRoute: typeof HelpPestsRoute
-  HelpPlantHealthRoute: typeof HelpPlantHealthRoute
+  HelpHealthSafetyRoute: typeof HelpHealthSafetyRouteWithChildren
+  HelpLawRoute: typeof HelpLawRouteWithChildren
+  HelpPestsRoute: typeof HelpPestsRouteWithChildren
+  HelpPlantHealthRoute: typeof HelpPlantHealthRouteWithChildren
   HelpPodcastRoute: typeof HelpPodcastRoute
   NewsSlugRoute: typeof NewsSlugRoute
   NewsMagazineRoute: typeof NewsMagazineRoute
@@ -940,6 +1572,356 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof JoinCategoryApplyRouteImport
       parentRoute: typeof JoinRoute
     }
+    '/help/plant-health/post-brexit-plant-health-arrangements': {
+      id: '/help/plant-health/post-brexit-plant-health-arrangements'
+      path: '/post-brexit-plant-health-arrangements'
+      fullPath: '/help/plant-health/post-brexit-plant-health-arrangements'
+      preLoaderRoute: typeof HelpPlantHealthPostBrexitPlantHealthArrangementsRouteImport
+      parentRoute: typeof HelpPlantHealthRoute
+    }
+    '/help/plant-health/plant-passports': {
+      id: '/help/plant-health/plant-passports'
+      path: '/plant-passports'
+      fullPath: '/help/plant-health/plant-passports'
+      preLoaderRoute: typeof HelpPlantHealthPlantPassportsRouteImport
+      parentRoute: typeof HelpPlantHealthRoute
+    }
+    '/help/plant-health/glossary': {
+      id: '/help/plant-health/glossary'
+      path: '/glossary'
+      fullPath: '/help/plant-health/glossary'
+      preLoaderRoute: typeof HelpPlantHealthGlossaryRouteImport
+      parentRoute: typeof HelpPlantHealthRoute
+    }
+    '/help/plant-health/faq': {
+      id: '/help/plant-health/faq'
+      path: '/faq'
+      fullPath: '/help/plant-health/faq'
+      preLoaderRoute: typeof HelpPlantHealthFaqRouteImport
+      parentRoute: typeof HelpPlantHealthRoute
+    }
+    '/help/plant-health/exporting-plants-and-plant-products': {
+      id: '/help/plant-health/exporting-plants-and-plant-products'
+      path: '/exporting-plants-and-plant-products'
+      fullPath: '/help/plant-health/exporting-plants-and-plant-products'
+      preLoaderRoute: typeof HelpPlantHealthExportingPlantsAndPlantProductsRouteImport
+      parentRoute: typeof HelpPlantHealthRoute
+    }
+    '/help/pests/xylella-fastidiosa': {
+      id: '/help/pests/xylella-fastidiosa'
+      path: '/xylella-fastidiosa'
+      fullPath: '/help/pests/xylella-fastidiosa'
+      preLoaderRoute: typeof HelpPestsXylellaFastidiosaRouteImport
+      parentRoute: typeof HelpPestsRoute
+    }
+    '/help/pests/ticks-and-encephalitis-virus': {
+      id: '/help/pests/ticks-and-encephalitis-virus'
+      path: '/ticks-and-encephalitis-virus'
+      fullPath: '/help/pests/ticks-and-encephalitis-virus'
+      preLoaderRoute: typeof HelpPestsTicksAndEncephalitisVirusRouteImport
+      parentRoute: typeof HelpPestsRoute
+    }
+    '/help/pests/oak-processionary-moth': {
+      id: '/help/pests/oak-processionary-moth'
+      path: '/oak-processionary-moth'
+      fullPath: '/help/pests/oak-processionary-moth'
+      preLoaderRoute: typeof HelpPestsOakProcessionaryMothRouteImport
+      parentRoute: typeof HelpPestsRoute
+    }
+    '/help/pests/oak-lace-bug': {
+      id: '/help/pests/oak-lace-bug'
+      path: '/oak-lace-bug'
+      fullPath: '/help/pests/oak-lace-bug'
+      preLoaderRoute: typeof HelpPestsOakLaceBugRouteImport
+      parentRoute: typeof HelpPestsRoute
+    }
+    '/help/pests/emerald-ash-borer-beetle': {
+      id: '/help/pests/emerald-ash-borer-beetle'
+      path: '/emerald-ash-borer-beetle'
+      fullPath: '/help/pests/emerald-ash-borer-beetle'
+      preLoaderRoute: typeof HelpPestsEmeraldAshBorerBeetleRouteImport
+      parentRoute: typeof HelpPestsRoute
+    }
+    '/help/pests/eight-toothed-spruce-bark-beetle': {
+      id: '/help/pests/eight-toothed-spruce-bark-beetle'
+      path: '/eight-toothed-spruce-bark-beetle'
+      fullPath: '/help/pests/eight-toothed-spruce-bark-beetle'
+      preLoaderRoute: typeof HelpPestsEightToothedSpruceBarkBeetleRouteImport
+      parentRoute: typeof HelpPestsRoute
+    }
+    '/help/pests/canker-stain-of-plane': {
+      id: '/help/pests/canker-stain-of-plane'
+      path: '/canker-stain-of-plane'
+      fullPath: '/help/pests/canker-stain-of-plane'
+      preLoaderRoute: typeof HelpPestsCankerStainOfPlaneRouteImport
+      parentRoute: typeof HelpPestsRoute
+    }
+    '/help/pests/brown-tail-moth': {
+      id: '/help/pests/brown-tail-moth'
+      path: '/brown-tail-moth'
+      fullPath: '/help/pests/brown-tail-moth'
+      preLoaderRoute: typeof HelpPestsBrownTailMothRouteImport
+      parentRoute: typeof HelpPestsRoute
+    }
+    '/help/pests/biosecurity-toolkit': {
+      id: '/help/pests/biosecurity-toolkit'
+      path: '/biosecurity-toolkit'
+      fullPath: '/help/pests/biosecurity-toolkit'
+      preLoaderRoute: typeof HelpPestsBiosecurityToolkitRouteImport
+      parentRoute: typeof HelpPestsRoute
+    }
+    '/help/pests/asian-longhorn-beetle': {
+      id: '/help/pests/asian-longhorn-beetle'
+      path: '/asian-longhorn-beetle'
+      fullPath: '/help/pests/asian-longhorn-beetle'
+      preLoaderRoute: typeof HelpPestsAsianLonghornBeetleRouteImport
+      parentRoute: typeof HelpPestsRoute
+    }
+    '/help/pests/asian-hornet': {
+      id: '/help/pests/asian-hornet'
+      path: '/asian-hornet'
+      fullPath: '/help/pests/asian-hornet'
+      preLoaderRoute: typeof HelpPestsAsianHornetRouteImport
+      parentRoute: typeof HelpPestsRoute
+    }
+    '/help/pests/ash-dieback': {
+      id: '/help/pests/ash-dieback'
+      path: '/ash-dieback'
+      fullPath: '/help/pests/ash-dieback'
+      preLoaderRoute: typeof HelpPestsAshDiebackRouteImport
+      parentRoute: typeof HelpPestsRoute
+    }
+    '/help/law/water-abstraction': {
+      id: '/help/law/water-abstraction'
+      path: '/water-abstraction'
+      fullPath: '/help/law/water-abstraction'
+      preLoaderRoute: typeof HelpLawWaterAbstractionRouteImport
+      parentRoute: typeof HelpLawRoute
+    }
+    '/help/law/vat-reverse-charge': {
+      id: '/help/law/vat-reverse-charge'
+      path: '/vat-reverse-charge'
+      fullPath: '/help/law/vat-reverse-charge'
+      preLoaderRoute: typeof HelpLawVatReverseChargeRouteImport
+      parentRoute: typeof HelpLawRoute
+    }
+    '/help/law/jcli-contracts': {
+      id: '/help/law/jcli-contracts'
+      path: '/jcli-contracts'
+      fullPath: '/help/law/jcli-contracts'
+      preLoaderRoute: typeof HelpLawJcliContractsRouteImport
+      parentRoute: typeof HelpLawRoute
+    }
+    '/help/law/ir35': {
+      id: '/help/law/ir35'
+      path: '/ir35'
+      fullPath: '/help/law/ir35'
+      preLoaderRoute: typeof HelpLawIr35RouteImport
+      parentRoute: typeof HelpLawRoute
+    }
+    '/help/law/good-work-plan': {
+      id: '/help/law/good-work-plan'
+      path: '/good-work-plan'
+      fullPath: '/help/law/good-work-plan'
+      preLoaderRoute: typeof HelpLawGoodWorkPlanRouteImport
+      parentRoute: typeof HelpLawRoute
+    }
+    '/help/law/gdpr': {
+      id: '/help/law/gdpr'
+      path: '/gdpr'
+      fullPath: '/help/law/gdpr'
+      preLoaderRoute: typeof HelpLawGdprRouteImport
+      parentRoute: typeof HelpLawRoute
+    }
+    '/help/law/evolution-of-employment': {
+      id: '/help/law/evolution-of-employment'
+      path: '/evolution-of-employment'
+      fullPath: '/help/law/evolution-of-employment'
+      preLoaderRoute: typeof HelpLawEvolutionOfEmploymentRouteImport
+      parentRoute: typeof HelpLawRoute
+    }
+    '/help/law/cdm': {
+      id: '/help/law/cdm'
+      path: '/cdm'
+      fullPath: '/help/law/cdm'
+      preLoaderRoute: typeof HelpLawCdmRouteImport
+      parentRoute: typeof HelpLawRoute
+    }
+    '/help/health-safety/winter-care': {
+      id: '/help/health-safety/winter-care'
+      path: '/winter-care'
+      fullPath: '/help/health-safety/winter-care'
+      preLoaderRoute: typeof HelpHealthSafetyWinterCareRouteImport
+      parentRoute: typeof HelpHealthSafetyRoute
+    }
+    '/help/health-safety/whole-body-vibration': {
+      id: '/help/health-safety/whole-body-vibration'
+      path: '/whole-body-vibration'
+      fullPath: '/help/health-safety/whole-body-vibration'
+      preLoaderRoute: typeof HelpHealthSafetyWholeBodyVibrationRouteImport
+      parentRoute: typeof HelpHealthSafetyRoute
+    }
+    '/help/health-safety/slopes': {
+      id: '/help/health-safety/slopes'
+      path: '/slopes'
+      fullPath: '/help/health-safety/slopes'
+      preLoaderRoute: typeof HelpHealthSafetySlopesRouteImport
+      parentRoute: typeof HelpHealthSafetyRoute
+    }
+    '/help/health-safety/silica-dust': {
+      id: '/help/health-safety/silica-dust'
+      path: '/silica-dust'
+      fullPath: '/help/health-safety/silica-dust'
+      preLoaderRoute: typeof HelpHealthSafetySilicaDustRouteImport
+      parentRoute: typeof HelpHealthSafetyRoute
+    }
+    '/help/health-safety/safe-digging': {
+      id: '/help/health-safety/safe-digging'
+      path: '/safe-digging'
+      fullPath: '/help/health-safety/safe-digging'
+      preLoaderRoute: typeof HelpHealthSafetySafeDiggingRouteImport
+      parentRoute: typeof HelpHealthSafetyRoute
+    }
+    '/help/health-safety/risk-assessments': {
+      id: '/help/health-safety/risk-assessments'
+      path: '/risk-assessments'
+      fullPath: '/help/health-safety/risk-assessments'
+      preLoaderRoute: typeof HelpHealthSafetyRiskAssessmentsRouteImport
+      parentRoute: typeof HelpHealthSafetyRoute
+    }
+    '/help/health-safety/outdoor-safety': {
+      id: '/help/health-safety/outdoor-safety'
+      path: '/outdoor-safety'
+      fullPath: '/help/health-safety/outdoor-safety'
+      preLoaderRoute: typeof HelpHealthSafetyOutdoorSafetyRouteImport
+      parentRoute: typeof HelpHealthSafetyRoute
+    }
+    '/help/health-safety/mental-health': {
+      id: '/help/health-safety/mental-health'
+      path: '/mental-health'
+      fullPath: '/help/health-safety/mental-health'
+      preLoaderRoute: typeof HelpHealthSafetyMentalHealthRouteImport
+      parentRoute: typeof HelpHealthSafetyRoute
+    }
+    '/help/health-safety/lone-working': {
+      id: '/help/health-safety/lone-working'
+      path: '/lone-working'
+      fullPath: '/help/health-safety/lone-working'
+      preLoaderRoute: typeof HelpHealthSafetyLoneWorkingRouteImport
+      parentRoute: typeof HelpHealthSafetyRoute
+    }
+    '/help/health-safety/latex-allergies': {
+      id: '/help/health-safety/latex-allergies'
+      path: '/latex-allergies'
+      fullPath: '/help/health-safety/latex-allergies'
+      preLoaderRoute: typeof HelpHealthSafetyLatexAllergiesRouteImport
+      parentRoute: typeof HelpHealthSafetyRoute
+    }
+    '/help/health-safety/interior-landscaping': {
+      id: '/help/health-safety/interior-landscaping'
+      path: '/interior-landscaping'
+      fullPath: '/help/health-safety/interior-landscaping'
+      preLoaderRoute: typeof HelpHealthSafetyInteriorLandscapingRouteImport
+      parentRoute: typeof HelpHealthSafetyRoute
+    }
+    '/help/health-safety/hand-arm-vibration': {
+      id: '/help/health-safety/hand-arm-vibration'
+      path: '/hand-arm-vibration'
+      fullPath: '/help/health-safety/hand-arm-vibration'
+      preLoaderRoute: typeof HelpHealthSafetyHandArmVibrationRouteImport
+      parentRoute: typeof HelpHealthSafetyRoute
+    }
+    '/help/health-safety/bats-and-rabies': {
+      id: '/help/health-safety/bats-and-rabies'
+      path: '/bats-and-rabies'
+      fullPath: '/help/health-safety/bats-and-rabies'
+      preLoaderRoute: typeof HelpHealthSafetyBatsAndRabiesRouteImport
+      parentRoute: typeof HelpHealthSafetyRoute
+    }
+    '/help/health-safety/allergic-reactions-to-insect-stings': {
+      id: '/help/health-safety/allergic-reactions-to-insect-stings'
+      path: '/allergic-reactions-to-insect-stings'
+      fullPath: '/help/health-safety/allergic-reactions-to-insect-stings'
+      preLoaderRoute: typeof HelpHealthSafetyAllergicReactionsToInsectStingsRouteImport
+      parentRoute: typeof HelpHealthSafetyRoute
+    }
+    '/help/health-safety/alcohol-in-the-workplace': {
+      id: '/help/health-safety/alcohol-in-the-workplace'
+      path: '/alcohol-in-the-workplace'
+      fullPath: '/help/health-safety/alcohol-in-the-workplace'
+      preLoaderRoute: typeof HelpHealthSafetyAlcoholInTheWorkplaceRouteImport
+      parentRoute: typeof HelpHealthSafetyRoute
+    }
+    '/help/guides/lay-of-the-land-2025': {
+      id: '/help/guides/lay-of-the-land-2025'
+      path: '/lay-of-the-land-2025'
+      fullPath: '/help/guides/lay-of-the-land-2025'
+      preLoaderRoute: typeof HelpGuidesLayOfTheLand2025RouteImport
+      parentRoute: typeof HelpGuidesRoute
+    }
+    '/help/equipment/tractors': {
+      id: '/help/equipment/tractors'
+      path: '/tractors'
+      fullPath: '/help/equipment/tractors'
+      preLoaderRoute: typeof HelpEquipmentTractorsRouteImport
+      parentRoute: typeof HelpEquipmentRoute
+    }
+    '/help/equipment/towing': {
+      id: '/help/equipment/towing'
+      path: '/towing'
+      fullPath: '/help/equipment/towing'
+      preLoaderRoute: typeof HelpEquipmentTowingRouteImport
+      parentRoute: typeof HelpEquipmentRoute
+    }
+    '/help/equipment/tachographs': {
+      id: '/help/equipment/tachographs'
+      path: '/tachographs'
+      fullPath: '/help/equipment/tachographs'
+      preLoaderRoute: typeof HelpEquipmentTachographsRouteImport
+      parentRoute: typeof HelpEquipmentRoute
+    }
+    '/help/equipment/red-diesel': {
+      id: '/help/equipment/red-diesel'
+      path: '/red-diesel'
+      fullPath: '/help/equipment/red-diesel'
+      preLoaderRoute: typeof HelpEquipmentRedDieselRouteImport
+      parentRoute: typeof HelpEquipmentRoute
+    }
+    '/help/equipment/e10-fuel': {
+      id: '/help/equipment/e10-fuel'
+      path: '/e10-fuel'
+      fullPath: '/help/equipment/e10-fuel'
+      preLoaderRoute: typeof HelpEquipmentE10FuelRouteImport
+      parentRoute: typeof HelpEquipmentRoute
+    }
+    '/help/equipment/driving-for-better-business': {
+      id: '/help/equipment/driving-for-better-business'
+      path: '/driving-for-better-business'
+      fullPath: '/help/equipment/driving-for-better-business'
+      preLoaderRoute: typeof HelpEquipmentDrivingForBetterBusinessRouteImport
+      parentRoute: typeof HelpEquipmentRoute
+    }
+    '/help/dispute/member-information': {
+      id: '/help/dispute/member-information'
+      path: '/member-information'
+      fullPath: '/help/dispute/member-information'
+      preLoaderRoute: typeof HelpDisputeMemberInformationRouteImport
+      parentRoute: typeof HelpDisputeRoute
+    }
+    '/help/dispute/frequently-asked-questions': {
+      id: '/help/dispute/frequently-asked-questions'
+      path: '/frequently-asked-questions'
+      fullPath: '/help/dispute/frequently-asked-questions'
+      preLoaderRoute: typeof HelpDisputeFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof HelpDisputeRoute
+    }
+    '/help/dispute/client-information': {
+      id: '/help/dispute/client-information'
+      path: '/client-information'
+      fullPath: '/help/dispute/client-information'
+      preLoaderRoute: typeof HelpDisputeClientInformationRouteImport
+      parentRoute: typeof HelpDisputeRoute
+    }
     '/api/public/membership-application': {
       id: '/api/public/membership-application'
       path: '/api/public/membership-application'
@@ -1023,6 +2005,184 @@ const JoinRouteChildren: JoinRouteChildren = {
 
 const JoinRouteWithChildren = JoinRoute._addFileChildren(JoinRouteChildren)
 
+interface HelpDisputeRouteChildren {
+  HelpDisputeClientInformationRoute: typeof HelpDisputeClientInformationRoute
+  HelpDisputeFrequentlyAskedQuestionsRoute: typeof HelpDisputeFrequentlyAskedQuestionsRoute
+  HelpDisputeMemberInformationRoute: typeof HelpDisputeMemberInformationRoute
+}
+
+const HelpDisputeRouteChildren: HelpDisputeRouteChildren = {
+  HelpDisputeClientInformationRoute: HelpDisputeClientInformationRoute,
+  HelpDisputeFrequentlyAskedQuestionsRoute:
+    HelpDisputeFrequentlyAskedQuestionsRoute,
+  HelpDisputeMemberInformationRoute: HelpDisputeMemberInformationRoute,
+}
+
+const HelpDisputeRouteWithChildren = HelpDisputeRoute._addFileChildren(
+  HelpDisputeRouteChildren,
+)
+
+interface HelpEquipmentRouteChildren {
+  HelpEquipmentDrivingForBetterBusinessRoute: typeof HelpEquipmentDrivingForBetterBusinessRoute
+  HelpEquipmentE10FuelRoute: typeof HelpEquipmentE10FuelRoute
+  HelpEquipmentRedDieselRoute: typeof HelpEquipmentRedDieselRoute
+  HelpEquipmentTachographsRoute: typeof HelpEquipmentTachographsRoute
+  HelpEquipmentTowingRoute: typeof HelpEquipmentTowingRoute
+  HelpEquipmentTractorsRoute: typeof HelpEquipmentTractorsRoute
+}
+
+const HelpEquipmentRouteChildren: HelpEquipmentRouteChildren = {
+  HelpEquipmentDrivingForBetterBusinessRoute:
+    HelpEquipmentDrivingForBetterBusinessRoute,
+  HelpEquipmentE10FuelRoute: HelpEquipmentE10FuelRoute,
+  HelpEquipmentRedDieselRoute: HelpEquipmentRedDieselRoute,
+  HelpEquipmentTachographsRoute: HelpEquipmentTachographsRoute,
+  HelpEquipmentTowingRoute: HelpEquipmentTowingRoute,
+  HelpEquipmentTractorsRoute: HelpEquipmentTractorsRoute,
+}
+
+const HelpEquipmentRouteWithChildren = HelpEquipmentRoute._addFileChildren(
+  HelpEquipmentRouteChildren,
+)
+
+interface HelpGuidesRouteChildren {
+  HelpGuidesLayOfTheLand2025Route: typeof HelpGuidesLayOfTheLand2025Route
+}
+
+const HelpGuidesRouteChildren: HelpGuidesRouteChildren = {
+  HelpGuidesLayOfTheLand2025Route: HelpGuidesLayOfTheLand2025Route,
+}
+
+const HelpGuidesRouteWithChildren = HelpGuidesRoute._addFileChildren(
+  HelpGuidesRouteChildren,
+)
+
+interface HelpHealthSafetyRouteChildren {
+  HelpHealthSafetyAlcoholInTheWorkplaceRoute: typeof HelpHealthSafetyAlcoholInTheWorkplaceRoute
+  HelpHealthSafetyAllergicReactionsToInsectStingsRoute: typeof HelpHealthSafetyAllergicReactionsToInsectStingsRoute
+  HelpHealthSafetyBatsAndRabiesRoute: typeof HelpHealthSafetyBatsAndRabiesRoute
+  HelpHealthSafetyHandArmVibrationRoute: typeof HelpHealthSafetyHandArmVibrationRoute
+  HelpHealthSafetyInteriorLandscapingRoute: typeof HelpHealthSafetyInteriorLandscapingRoute
+  HelpHealthSafetyLatexAllergiesRoute: typeof HelpHealthSafetyLatexAllergiesRoute
+  HelpHealthSafetyLoneWorkingRoute: typeof HelpHealthSafetyLoneWorkingRoute
+  HelpHealthSafetyMentalHealthRoute: typeof HelpHealthSafetyMentalHealthRoute
+  HelpHealthSafetyOutdoorSafetyRoute: typeof HelpHealthSafetyOutdoorSafetyRoute
+  HelpHealthSafetyRiskAssessmentsRoute: typeof HelpHealthSafetyRiskAssessmentsRoute
+  HelpHealthSafetySafeDiggingRoute: typeof HelpHealthSafetySafeDiggingRoute
+  HelpHealthSafetySilicaDustRoute: typeof HelpHealthSafetySilicaDustRoute
+  HelpHealthSafetySlopesRoute: typeof HelpHealthSafetySlopesRoute
+  HelpHealthSafetyWholeBodyVibrationRoute: typeof HelpHealthSafetyWholeBodyVibrationRoute
+  HelpHealthSafetyWinterCareRoute: typeof HelpHealthSafetyWinterCareRoute
+}
+
+const HelpHealthSafetyRouteChildren: HelpHealthSafetyRouteChildren = {
+  HelpHealthSafetyAlcoholInTheWorkplaceRoute:
+    HelpHealthSafetyAlcoholInTheWorkplaceRoute,
+  HelpHealthSafetyAllergicReactionsToInsectStingsRoute:
+    HelpHealthSafetyAllergicReactionsToInsectStingsRoute,
+  HelpHealthSafetyBatsAndRabiesRoute: HelpHealthSafetyBatsAndRabiesRoute,
+  HelpHealthSafetyHandArmVibrationRoute: HelpHealthSafetyHandArmVibrationRoute,
+  HelpHealthSafetyInteriorLandscapingRoute:
+    HelpHealthSafetyInteriorLandscapingRoute,
+  HelpHealthSafetyLatexAllergiesRoute: HelpHealthSafetyLatexAllergiesRoute,
+  HelpHealthSafetyLoneWorkingRoute: HelpHealthSafetyLoneWorkingRoute,
+  HelpHealthSafetyMentalHealthRoute: HelpHealthSafetyMentalHealthRoute,
+  HelpHealthSafetyOutdoorSafetyRoute: HelpHealthSafetyOutdoorSafetyRoute,
+  HelpHealthSafetyRiskAssessmentsRoute: HelpHealthSafetyRiskAssessmentsRoute,
+  HelpHealthSafetySafeDiggingRoute: HelpHealthSafetySafeDiggingRoute,
+  HelpHealthSafetySilicaDustRoute: HelpHealthSafetySilicaDustRoute,
+  HelpHealthSafetySlopesRoute: HelpHealthSafetySlopesRoute,
+  HelpHealthSafetyWholeBodyVibrationRoute:
+    HelpHealthSafetyWholeBodyVibrationRoute,
+  HelpHealthSafetyWinterCareRoute: HelpHealthSafetyWinterCareRoute,
+}
+
+const HelpHealthSafetyRouteWithChildren =
+  HelpHealthSafetyRoute._addFileChildren(HelpHealthSafetyRouteChildren)
+
+interface HelpLawRouteChildren {
+  HelpLawCdmRoute: typeof HelpLawCdmRoute
+  HelpLawEvolutionOfEmploymentRoute: typeof HelpLawEvolutionOfEmploymentRoute
+  HelpLawGdprRoute: typeof HelpLawGdprRoute
+  HelpLawGoodWorkPlanRoute: typeof HelpLawGoodWorkPlanRoute
+  HelpLawIr35Route: typeof HelpLawIr35Route
+  HelpLawJcliContractsRoute: typeof HelpLawJcliContractsRoute
+  HelpLawVatReverseChargeRoute: typeof HelpLawVatReverseChargeRoute
+  HelpLawWaterAbstractionRoute: typeof HelpLawWaterAbstractionRoute
+}
+
+const HelpLawRouteChildren: HelpLawRouteChildren = {
+  HelpLawCdmRoute: HelpLawCdmRoute,
+  HelpLawEvolutionOfEmploymentRoute: HelpLawEvolutionOfEmploymentRoute,
+  HelpLawGdprRoute: HelpLawGdprRoute,
+  HelpLawGoodWorkPlanRoute: HelpLawGoodWorkPlanRoute,
+  HelpLawIr35Route: HelpLawIr35Route,
+  HelpLawJcliContractsRoute: HelpLawJcliContractsRoute,
+  HelpLawVatReverseChargeRoute: HelpLawVatReverseChargeRoute,
+  HelpLawWaterAbstractionRoute: HelpLawWaterAbstractionRoute,
+}
+
+const HelpLawRouteWithChildren =
+  HelpLawRoute._addFileChildren(HelpLawRouteChildren)
+
+interface HelpPestsRouteChildren {
+  HelpPestsAshDiebackRoute: typeof HelpPestsAshDiebackRoute
+  HelpPestsAsianHornetRoute: typeof HelpPestsAsianHornetRoute
+  HelpPestsAsianLonghornBeetleRoute: typeof HelpPestsAsianLonghornBeetleRoute
+  HelpPestsBiosecurityToolkitRoute: typeof HelpPestsBiosecurityToolkitRoute
+  HelpPestsBrownTailMothRoute: typeof HelpPestsBrownTailMothRoute
+  HelpPestsCankerStainOfPlaneRoute: typeof HelpPestsCankerStainOfPlaneRoute
+  HelpPestsEightToothedSpruceBarkBeetleRoute: typeof HelpPestsEightToothedSpruceBarkBeetleRoute
+  HelpPestsEmeraldAshBorerBeetleRoute: typeof HelpPestsEmeraldAshBorerBeetleRoute
+  HelpPestsOakLaceBugRoute: typeof HelpPestsOakLaceBugRoute
+  HelpPestsOakProcessionaryMothRoute: typeof HelpPestsOakProcessionaryMothRoute
+  HelpPestsTicksAndEncephalitisVirusRoute: typeof HelpPestsTicksAndEncephalitisVirusRoute
+  HelpPestsXylellaFastidiosaRoute: typeof HelpPestsXylellaFastidiosaRoute
+}
+
+const HelpPestsRouteChildren: HelpPestsRouteChildren = {
+  HelpPestsAshDiebackRoute: HelpPestsAshDiebackRoute,
+  HelpPestsAsianHornetRoute: HelpPestsAsianHornetRoute,
+  HelpPestsAsianLonghornBeetleRoute: HelpPestsAsianLonghornBeetleRoute,
+  HelpPestsBiosecurityToolkitRoute: HelpPestsBiosecurityToolkitRoute,
+  HelpPestsBrownTailMothRoute: HelpPestsBrownTailMothRoute,
+  HelpPestsCankerStainOfPlaneRoute: HelpPestsCankerStainOfPlaneRoute,
+  HelpPestsEightToothedSpruceBarkBeetleRoute:
+    HelpPestsEightToothedSpruceBarkBeetleRoute,
+  HelpPestsEmeraldAshBorerBeetleRoute: HelpPestsEmeraldAshBorerBeetleRoute,
+  HelpPestsOakLaceBugRoute: HelpPestsOakLaceBugRoute,
+  HelpPestsOakProcessionaryMothRoute: HelpPestsOakProcessionaryMothRoute,
+  HelpPestsTicksAndEncephalitisVirusRoute:
+    HelpPestsTicksAndEncephalitisVirusRoute,
+  HelpPestsXylellaFastidiosaRoute: HelpPestsXylellaFastidiosaRoute,
+}
+
+const HelpPestsRouteWithChildren = HelpPestsRoute._addFileChildren(
+  HelpPestsRouteChildren,
+)
+
+interface HelpPlantHealthRouteChildren {
+  HelpPlantHealthExportingPlantsAndPlantProductsRoute: typeof HelpPlantHealthExportingPlantsAndPlantProductsRoute
+  HelpPlantHealthFaqRoute: typeof HelpPlantHealthFaqRoute
+  HelpPlantHealthGlossaryRoute: typeof HelpPlantHealthGlossaryRoute
+  HelpPlantHealthPlantPassportsRoute: typeof HelpPlantHealthPlantPassportsRoute
+  HelpPlantHealthPostBrexitPlantHealthArrangementsRoute: typeof HelpPlantHealthPostBrexitPlantHealthArrangementsRoute
+}
+
+const HelpPlantHealthRouteChildren: HelpPlantHealthRouteChildren = {
+  HelpPlantHealthExportingPlantsAndPlantProductsRoute:
+    HelpPlantHealthExportingPlantsAndPlantProductsRoute,
+  HelpPlantHealthFaqRoute: HelpPlantHealthFaqRoute,
+  HelpPlantHealthGlossaryRoute: HelpPlantHealthGlossaryRoute,
+  HelpPlantHealthPlantPassportsRoute: HelpPlantHealthPlantPassportsRoute,
+  HelpPlantHealthPostBrexitPlantHealthArrangementsRoute:
+    HelpPlantHealthPostBrexitPlantHealthArrangementsRoute,
+}
+
+const HelpPlantHealthRouteWithChildren = HelpPlantHealthRoute._addFileChildren(
+  HelpPlantHealthRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SplatRoute: SplatRoute,
@@ -1041,15 +2201,15 @@ const rootRouteChildren: RootRouteChildren = {
   EventsSlugRoute: EventsSlugRoute,
   EventsTrainingRoute: EventsTrainingRoute,
   HelpContractRoute: HelpContractRoute,
-  HelpDisputeRoute: HelpDisputeRoute,
+  HelpDisputeRoute: HelpDisputeRouteWithChildren,
   HelpDomesticLandscapeContractRoute: HelpDomesticLandscapeContractRoute,
-  HelpEquipmentRoute: HelpEquipmentRoute,
-  HelpGuidesRoute: HelpGuidesRoute,
+  HelpEquipmentRoute: HelpEquipmentRouteWithChildren,
+  HelpGuidesRoute: HelpGuidesRouteWithChildren,
   HelpHardshipRoute: HelpHardshipRoute,
-  HelpHealthSafetyRoute: HelpHealthSafetyRoute,
-  HelpLawRoute: HelpLawRoute,
-  HelpPestsRoute: HelpPestsRoute,
-  HelpPlantHealthRoute: HelpPlantHealthRoute,
+  HelpHealthSafetyRoute: HelpHealthSafetyRouteWithChildren,
+  HelpLawRoute: HelpLawRouteWithChildren,
+  HelpPestsRoute: HelpPestsRouteWithChildren,
+  HelpPlantHealthRoute: HelpPlantHealthRouteWithChildren,
   HelpPodcastRoute: HelpPodcastRoute,
   NewsSlugRoute: NewsSlugRoute,
   NewsMagazineRoute: NewsMagazineRoute,

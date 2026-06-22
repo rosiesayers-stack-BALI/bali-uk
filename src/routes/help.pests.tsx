@@ -17,18 +17,18 @@ export const Route = createFileRoute("/help/pests")({
 });
 
 const SUB = [
-  { title: "Ash dieback", href: "https://www.bali.org.uk/help-and-advice/pests-and-diseases/ash-dieback/" },
-  { title: "Asian hornet", href: "https://www.bali.org.uk/help-and-advice/pests-and-diseases/asian-hornet/" },
-  { title: "Asian longhorn beetle", href: "https://www.bali.org.uk/help-and-advice/pests-and-diseases/asian-longhorn-beetle/" },
-  { title: "Biosecurity toolkit", href: "https://www.bali.org.uk/help-and-advice/pests-and-diseases/biosecurity-toolkit/" },
-  { title: "Brown-tail moth", href: "https://www.bali.org.uk/help-and-advice/pests-and-diseases/brown-tail-moth/" },
-  { title: "Canker stain of plane", href: "https://www.bali.org.uk/help-and-advice/pests-and-diseases/canker-stain-of-plane/" },
-  { title: "Eight-toothed spruce bark beetle", href: "https://www.bali.org.uk/help-and-advice/pests-and-diseases/eight-toothed-spruce-bark-beetle/" },
-  { title: "Emerald ash borer beetle", href: "https://www.bali.org.uk/help-and-advice/pests-and-diseases/emerald-ash-borer-beetle/" },
-  { title: "Oak lace bug", href: "https://www.bali.org.uk/help-and-advice/pests-and-diseases/oak-lace-bug/" },
-  { title: "Oak processionary moth", href: "https://www.bali.org.uk/help-and-advice/pests-and-diseases/oak-processionary-moth-v2/" },
-  { title: "Ticks and encephalitis virus", href: "https://www.bali.org.uk/help-and-advice/pests-and-diseases/ticks-and-encephalitis-virus/" },
-  { title: "Xylella fastidiosa", href: "https://www.bali.org.uk/help-and-advice/pests-and-diseases/xylella-fastidiosa/" },
+  { title: "Ash dieback", href: "/help/pests/ash-dieback" },
+  { title: "Asian hornet", href: "/help/pests/asian-hornet" },
+  { title: "Asian longhorn beetle", href: "/help/pests/asian-longhorn-beetle" },
+  { title: "Biosecurity toolkit", href: "/help/pests/biosecurity-toolkit" },
+  { title: "Brown-tail moth", href: "/help/pests/brown-tail-moth" },
+  { title: "Canker stain of plane", href: "/help/pests/canker-stain-of-plane" },
+  { title: "Eight-toothed spruce bark beetle", href: "/help/pests/eight-toothed-spruce-bark-beetle" },
+  { title: "Emerald ash borer beetle", href: "/help/pests/emerald-ash-borer-beetle" },
+  { title: "Oak lace bug", href: "/help/pests/oak-lace-bug" },
+  { title: "Oak processionary moth", href: "/help/pests/oak-processionary-moth" },
+  { title: "Ticks and encephalitis virus", href: "/help/pests/ticks-and-encephalitis-virus" },
+  { title: "Xylella fastidiosa", href: "/help/pests/xylella-fastidiosa" },
 ];
 
 function Page() {

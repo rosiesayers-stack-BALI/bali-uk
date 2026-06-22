@@ -17,9 +17,9 @@ export const Route = createFileRoute("/help/dispute")({
 });
 
 const SUB = [
-  { title: "Client information", description: "How the service works if you are a client of a BALI member and want to raise a dispute.", href: "https://www.bali.org.uk/help-and-advice/dispute-resolution-service/client-information/" },
-  { title: "Member information", description: "What to do as a BALI member if a client raises a dispute with you.", href: "https://www.bali.org.uk/help-and-advice/dispute-resolution-service/member-information/" },
-  { title: "Frequently asked questions", description: "Common questions about the BALI dispute resolution service answered.", href: "https://www.bali.org.uk/help-and-advice/dispute-resolution-service/frequently-asked-questions/" },
+  { title: "Client information", description: "How the service works if you are a client of a BALI member and want to raise a dispute.", href: "/help/dispute/client-information" },
+  { title: "Member information", description: "What to do as a BALI member if a client raises a dispute with you.", href: "/help/dispute/member-information" },
+  { title: "Frequently asked questions", description: "Common questions about the BALI dispute resolution service answered.", href: "/help/dispute/frequently-asked-questions" },
 ];
 
 function Page() {
