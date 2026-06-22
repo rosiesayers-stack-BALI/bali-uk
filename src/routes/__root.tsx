@@ -85,6 +85,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "The UK's leading Trade Association for landscape professionals." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "robots", content: "noindex, nofollow" },
     ],
     links: [
       { rel: "icon", type: "image/png", href: "https://www.bali.org.uk/themes/bali/gfx/logos/social-logo.png" },
@@ -97,6 +98,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: appCss },
     ],
   }),
+  loader: () => checkSiteGate(),
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
@@ -117,13 +119,20 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+// Paths that bypass the site-wide password gate (admins must still log in
+// via Supabase auth on these routes).
+const GATE_EXEMPT_PREFIXES = ["/admin"];
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const { unlocked } = Route.useLoaderData();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const exempt = GATE_EXEMPT_PREFIXES.some((p) => pathname === p || pathname.startsWith(p + "/"));
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      {unlocked || exempt ? <Outlet /> : <SiteGate />}
     </QueryClientProvider>
   );
 }
+
