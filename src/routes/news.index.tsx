@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CookieBanner from "../components/CookieBanner";
 import Link from "../components/SmartLink";
-import { fetchNewsList } from "../lib/content/db";
+import { fetchNewsList, type NewsRow } from "../lib/content/db";
 
 export const Route = createFileRoute("/news/")({
   head: () => ({
@@ -83,7 +83,7 @@ function NewsIndex() {
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {rest.map((a) => (
+            {rest.map((a: NewsRow) => (
               <Link
                 key={a.slug}
                 to="/news/$slug"
