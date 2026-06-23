@@ -14,7 +14,7 @@ const schema = z.object({
   businessType: z.string().trim().min(1, "Please choose one"),
   revenueBand: z.string().trim().min(1, "Please choose one"),
   notes: z.string().trim().max(1000).optional().or(z.literal("")),
-  consent: z.literal(true, { errorMap: () => ({ message: "Please tick to continue" }) }),
+  consent: z.literal(true, { message: "Please tick to continue" }),
 });
 
 type FormValues = z.infer<typeof schema>;
