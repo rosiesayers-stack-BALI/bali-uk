@@ -15,7 +15,7 @@ type Card = {
 type Category = { label: string; cards: Card[] };
 const data = cards as unknown as Record<string, Category>;
 
-export const Route = createFileRoute("/liss-cscs/apply/$category")({
+export const Route = createFileRoute("/liss-cscs/apply/$category/")({
   loader: ({ params }) => {
     const cat = data[params.category];
     if (!cat) throw notFound();
@@ -91,13 +91,11 @@ function CategoryPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {category.cards.map((card: Card) => {
               const c = colorStyles[card.color];
-              const subject = encodeURIComponent(`SmartCard application — ${card.name}`);
-              const body = encodeURIComponent(
-                `Hello LISS team,\n\nI would like to apply for the following LISS/CSCS SmartCard:\n\nCategory: ${category.label}\nCard: ${card.name}\n\nPlease send me the application form and let me know what supporting evidence you need (ROLO certificate, CITB Touch Screen Test, qualifications, photo ID).\n\nThank you.`,
-              );
               return (
-                <article
+                <Link
                   key={card.slug}
+                  to="/liss-cscs/apply/$category/$card"
+                  params={{ category: slug, card: card.slug }}
                   className={`group flex flex-col bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all ring-1 ring-transparent hover:${c.ring}`}
                 >
                   <div className="aspect-[16/10] bg-gray-100 overflow-hidden">
@@ -116,18 +114,16 @@ function CategoryPage() {
                     <span className={`inline-block self-start text-xs font-semibold px-2 py-1 rounded mb-3 ${c.badge}`}>
                       {c.label}
                     </span>
-                    <h2 className="text-lg font-bold text-gray-900 mb-2 leading-snug">{card.name}</h2>
+                    <h2 className="text-lg font-bold text-gray-900 mb-2 leading-snug group-hover:text-bali-blue">{card.name}</h2>
                     <p className="text-sm text-gray-600 leading-relaxed flex-1">{card.desc}</p>
-                    <div className="mt-5 flex gap-2">
-                      <a
-                        href={`mailto:liss@bali.org.uk?subject=${subject}&body=${body}`}
-                        className="flex-1 inline-flex items-center justify-center bg-bali-blue hover:bg-blue-800 text-white font-semibold px-4 py-2.5 rounded-lg text-sm transition-colors"
-                      >
-                        Apply for this card
-                      </a>
+                    <div className="mt-5 inline-flex items-center text-bali-blue font-semibold text-sm">
+                      View card & apply
+                      <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
                     </div>
                   </div>
-                </article>
+                </Link>
               );
             })}
           </div>

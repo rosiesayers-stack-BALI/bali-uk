@@ -5,7 +5,7 @@ import CookieBanner from "../components/CookieBanner";
 import Link from "../components/SmartLink";
 import cards from "../content/liss-cscs-cards.json";
 
-export const Route = createFileRoute("/liss-cscs/apply")({
+export const Route = createFileRoute("/liss-cscs/apply/")({
   head: () => ({
     meta: [
       { title: "Apply for a LISS/CSCS SmartCard — BALI" },
