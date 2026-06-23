@@ -759,12 +759,67 @@ const C: Record<string, PageContent> = {
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
   "/events/sponsor": {
-    eyebrow: "Events",
-    title: "Sponsor National Conference 2026",
+    eyebrow: "Events · Sponsorship",
+    title: "Sponsor the BALI National Landscape Conference 2026",
     theme: "warm",
-    intro: "Sponsor National Conference 2026",
-    ctaPrimary: { label: "Join Our Association", href: "/join" },
-    ctaSecondary: { label: "Contact the team", href: "/contact" },
+    intro:
+      "Put your brand in front of the most senior audience in UK landscaping. On 26 March 2026 at The Royal Society in London, BALI's flagship conference brings together contractors, designers, suppliers, clients and policy voices to tackle climate resilience, skills and the future of the sector. Sponsorship places your business at the centre of that conversation.",
+    eventInfo: {
+      venue: "The Royal Society, 6–9 Carlton House Terrace, London SW1Y 5AG",
+      date: "Thursday 26 March 2026 · 9:30am – 6:30pm",
+      tickets: { label: "Talk to the sponsorship team", href: "/contact" },
+    },
+    stats: [
+      { value: "300+", label: "Senior delegates" },
+      { value: "70%", label: "Decision-makers & owners" },
+      { value: "1", label: "Day, Royal Society London" },
+      { value: "12 months", label: "Of brand exposure" },
+    ],
+    sections: [
+      {
+        heading: "Why sponsor the National Landscape Conference",
+        body: "The conference is BALI's headline thought-leadership event of the year. Sponsoring gives your brand sustained visibility across our member channels in the run-up to and following 26 March 2026 — not just on the day. You sit alongside the names shaping the future of UK landscaping, in a venue that signals seriousness of purpose: The Royal Society.",
+        bullets: [
+          "Direct access to senior decision-makers across contracting, design, supply and client organisations",
+          "Brand presence across BALI's website, member emails, social channels and on-the-day collateral",
+          "Speaking, panel and hosted-session opportunities at headline tiers",
+          "Stand and exhibition space to demo product and meet delegates one-to-one",
+          "Editorial coverage in Landscape News before and after the event",
+        ],
+      },
+      {
+        heading: "Sponsorship packages",
+        body: "We offer a tiered set of packages so you can match investment to objectives — from headline partner through to category, drinks reception, lanyard and delegate-bag sponsors. Bespoke packages are available on request. All prices exclude VAT and full package details are in our sponsorship prospectus.",
+        bullets: [
+          "Headline Partner — top-tier branding, keynote introduction, premium stand, full delegate list access",
+          "Session Sponsor — host a conference session or panel with on-stage credit and pre-event promotion",
+          "Drinks Reception Sponsor — own the networking moment that closes the day",
+          "Exhibitor — stand space in the networking area with delegate footfall throughout breaks",
+          "Collateral Sponsor — lanyards, delegate bags, notepads and digital programme branding",
+        ],
+      },
+      {
+        heading: "What's included as standard",
+        body: "Every sponsor benefits from a core package of brand exposure and delegate access designed to deliver value well beyond the day itself.",
+        bullets: [
+          "Logo and link on the official conference page at bali.org.uk",
+          "Inclusion in member emails to BALI's 900+ Accredited member companies",
+          "Recognition across BALI's LinkedIn, Instagram and X channels",
+          "Complimentary delegate tickets (tier-dependent)",
+          "Post-event report and delegate insights",
+        ],
+      },
+      {
+        heading: "Who attends",
+        body: "The conference draws a senior, commercial audience: managing directors, owners, contracts and operations directors, principal designers and landscape architects, suppliers, training providers and client-side estate and development teams. If your buyers are in UK landscaping, they are in the room.",
+      },
+      {
+        heading: "Request the prospectus",
+        body: "Email Joanna Pieprzak, Media Sales & Sponsorship Officer, at joanna.pieprzak@bali.org.uk or call +44 (0)24 7518 5614 to receive the full prospectus, discuss bespoke packages and check current availability. Packages sell on a first-come basis and headline tiers go early.",
+      },
+    ],
+    ctaPrimary: { label: "Email the sponsorship team", href: "mailto:joanna.pieprzak@bali.org.uk?subject=National%20Conference%202026%20sponsorship" },
+    ctaSecondary: { label: "About the conference", href: "/about/conference" },
   },
   "/help": {
     eyebrow: "Help & Advice",
