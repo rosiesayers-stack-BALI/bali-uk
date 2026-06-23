@@ -33,7 +33,6 @@ import { Route as MembershipBecomeAMemberRouteImport } from './routes/membership
 import { Route as HelpPodcastRouteImport } from './routes/help.podcast'
 import { Route as HelpPlantHealthRouteImport } from './routes/help.plant-health'
 import { Route as HelpPestsRouteImport } from './routes/help.pests'
-import { Route as HelpMediaRouteImport } from './routes/help.media'
 import { Route as HelpLawRouteImport } from './routes/help.law'
 import { Route as HelpHealthSafetyRouteImport } from './routes/help.health-safety'
 import { Route as HelpHardshipRouteImport } from './routes/help.hardship'
@@ -54,6 +53,7 @@ import { Route as DirectoryContractorRouteImport } from './routes/directory.cont
 import { Route as AdminResetPasswordRouteImport } from './routes/admin.reset-password'
 import { Route as AboutAwardsRouteImport } from './routes/about.awards'
 import { Route as LissCscsApplyIndexRouteImport } from './routes/liss-cscs.apply.index'
+import { Route as HelpMediaIndexRouteImport } from './routes/help.media.index'
 import { Route as AdminTrainingIndexRouteImport } from './routes/admin.training.index'
 import { Route as AdminPolicyIndexRouteImport } from './routes/admin.policy.index'
 import { Route as AdminNewsIndexRouteImport } from './routes/admin.news.index'
@@ -244,11 +244,6 @@ const HelpPestsRoute = HelpPestsRouteImport.update({
   path: '/help/pests',
   getParentRoute: () => rootRouteImport,
 } as any)
-const HelpMediaRoute = HelpMediaRouteImport.update({
-  id: '/help/media',
-  path: '/help/media',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const HelpLawRoute = HelpLawRouteImport.update({
   id: '/help/law',
   path: '/help/law',
@@ -348,6 +343,11 @@ const AboutAwardsRoute = AboutAwardsRouteImport.update({
 const LissCscsApplyIndexRoute = LissCscsApplyIndexRouteImport.update({
   id: '/liss-cscs/apply/',
   path: '/liss-cscs/apply/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpMediaIndexRoute = HelpMediaIndexRouteImport.update({
+  id: '/help/media/',
+  path: '/help/media/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminTrainingIndexRoute = AdminTrainingIndexRouteImport.update({
@@ -477,9 +477,9 @@ const HelpPestsAshDiebackRoute = HelpPestsAshDiebackRouteImport.update({
   getParentRoute: () => HelpPestsRoute,
 } as any)
 const HelpMediaSlugRoute = HelpMediaSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => HelpMediaRoute,
+  id: '/help/media/$slug',
+  path: '/help/media/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const HelpLawWaterAbstractionRoute = HelpLawWaterAbstractionRouteImport.update({
   id: '/water-abstraction',
@@ -761,7 +761,6 @@ export interface FileRoutesByFullPath {
   '/help/hardship': typeof HelpHardshipRoute
   '/help/health-safety': typeof HelpHealthSafetyRouteWithChildren
   '/help/law': typeof HelpLawRouteWithChildren
-  '/help/media': typeof HelpMediaRouteWithChildren
   '/help/pests': typeof HelpPestsRouteWithChildren
   '/help/plant-health': typeof HelpPlantHealthRouteWithChildren
   '/help/podcast': typeof HelpPodcastRoute
@@ -845,6 +844,7 @@ export interface FileRoutesByFullPath {
   '/admin/news/': typeof AdminNewsIndexRoute
   '/admin/policy/': typeof AdminPolicyIndexRoute
   '/admin/training/': typeof AdminTrainingIndexRoute
+  '/help/media/': typeof HelpMediaIndexRoute
   '/liss-cscs/apply/': typeof LissCscsApplyIndexRoute
   '/api/public/hooks/workbooks-sync': typeof ApiPublicHooksWorkbooksSyncRoute
   '/liss-cscs/apply/$category/': typeof LissCscsApplyCategoryIndexRoute
@@ -876,7 +876,6 @@ export interface FileRoutesByTo {
   '/help/hardship': typeof HelpHardshipRoute
   '/help/health-safety': typeof HelpHealthSafetyRouteWithChildren
   '/help/law': typeof HelpLawRouteWithChildren
-  '/help/media': typeof HelpMediaRouteWithChildren
   '/help/pests': typeof HelpPestsRouteWithChildren
   '/help/plant-health': typeof HelpPlantHealthRouteWithChildren
   '/help/podcast': typeof HelpPodcastRoute
@@ -960,6 +959,7 @@ export interface FileRoutesByTo {
   '/admin/news': typeof AdminNewsIndexRoute
   '/admin/policy': typeof AdminPolicyIndexRoute
   '/admin/training': typeof AdminTrainingIndexRoute
+  '/help/media': typeof HelpMediaIndexRoute
   '/liss-cscs/apply': typeof LissCscsApplyIndexRoute
   '/api/public/hooks/workbooks-sync': typeof ApiPublicHooksWorkbooksSyncRoute
   '/liss-cscs/apply/$category': typeof LissCscsApplyCategoryIndexRoute
@@ -993,7 +993,6 @@ export interface FileRoutesById {
   '/help/hardship': typeof HelpHardshipRoute
   '/help/health-safety': typeof HelpHealthSafetyRouteWithChildren
   '/help/law': typeof HelpLawRouteWithChildren
-  '/help/media': typeof HelpMediaRouteWithChildren
   '/help/pests': typeof HelpPestsRouteWithChildren
   '/help/plant-health': typeof HelpPlantHealthRouteWithChildren
   '/help/podcast': typeof HelpPodcastRoute
@@ -1077,6 +1076,7 @@ export interface FileRoutesById {
   '/admin/news/': typeof AdminNewsIndexRoute
   '/admin/policy/': typeof AdminPolicyIndexRoute
   '/admin/training/': typeof AdminTrainingIndexRoute
+  '/help/media/': typeof HelpMediaIndexRoute
   '/liss-cscs/apply/': typeof LissCscsApplyIndexRoute
   '/api/public/hooks/workbooks-sync': typeof ApiPublicHooksWorkbooksSyncRoute
   '/liss-cscs/apply/$category/': typeof LissCscsApplyCategoryIndexRoute
@@ -1111,7 +1111,6 @@ export interface FileRouteTypes {
     | '/help/hardship'
     | '/help/health-safety'
     | '/help/law'
-    | '/help/media'
     | '/help/pests'
     | '/help/plant-health'
     | '/help/podcast'
@@ -1195,6 +1194,7 @@ export interface FileRouteTypes {
     | '/admin/news/'
     | '/admin/policy/'
     | '/admin/training/'
+    | '/help/media/'
     | '/liss-cscs/apply/'
     | '/api/public/hooks/workbooks-sync'
     | '/liss-cscs/apply/$category/'
@@ -1226,7 +1226,6 @@ export interface FileRouteTypes {
     | '/help/hardship'
     | '/help/health-safety'
     | '/help/law'
-    | '/help/media'
     | '/help/pests'
     | '/help/plant-health'
     | '/help/podcast'
@@ -1310,6 +1309,7 @@ export interface FileRouteTypes {
     | '/admin/news'
     | '/admin/policy'
     | '/admin/training'
+    | '/help/media'
     | '/liss-cscs/apply'
     | '/api/public/hooks/workbooks-sync'
     | '/liss-cscs/apply/$category'
@@ -1342,7 +1342,6 @@ export interface FileRouteTypes {
     | '/help/hardship'
     | '/help/health-safety'
     | '/help/law'
-    | '/help/media'
     | '/help/pests'
     | '/help/plant-health'
     | '/help/podcast'
@@ -1426,6 +1425,7 @@ export interface FileRouteTypes {
     | '/admin/news/'
     | '/admin/policy/'
     | '/admin/training/'
+    | '/help/media/'
     | '/liss-cscs/apply/'
     | '/api/public/hooks/workbooks-sync'
     | '/liss-cscs/apply/$category/'
@@ -1458,7 +1458,6 @@ export interface RootRouteChildren {
   HelpHardshipRoute: typeof HelpHardshipRoute
   HelpHealthSafetyRoute: typeof HelpHealthSafetyRouteWithChildren
   HelpLawRoute: typeof HelpLawRouteWithChildren
-  HelpMediaRoute: typeof HelpMediaRouteWithChildren
   HelpPestsRoute: typeof HelpPestsRouteWithChildren
   HelpPlantHealthRoute: typeof HelpPlantHealthRouteWithChildren
   HelpPodcastRoute: typeof HelpPodcastRoute
@@ -1479,7 +1478,9 @@ export interface RootRouteChildren {
   ApiPublicConferenceInterestRoute: typeof ApiPublicConferenceInterestRoute
   ApiPublicMembershipApplicationRoute: typeof ApiPublicMembershipApplicationRoute
   ApiPublicMembershipEnquiryRoute: typeof ApiPublicMembershipEnquiryRoute
+  HelpMediaSlugRoute: typeof HelpMediaSlugRoute
   JoinCategoryApplyRoute: typeof JoinCategoryApplyRoute
+  HelpMediaIndexRoute: typeof HelpMediaIndexRoute
   LissCscsApplyIndexRoute: typeof LissCscsApplyIndexRoute
   ApiPublicHooksWorkbooksSyncRoute: typeof ApiPublicHooksWorkbooksSyncRoute
   LissCscsApplyCategoryIndexRoute: typeof LissCscsApplyCategoryIndexRoute
@@ -1657,13 +1658,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HelpPestsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/help/media': {
-      id: '/help/media'
-      path: '/help/media'
-      fullPath: '/help/media'
-      preLoaderRoute: typeof HelpMediaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/help/law': {
       id: '/help/law'
       path: '/help/law'
@@ -1802,6 +1796,13 @@ declare module '@tanstack/react-router' {
       path: '/liss-cscs/apply'
       fullPath: '/liss-cscs/apply/'
       preLoaderRoute: typeof LissCscsApplyIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help/media/': {
+      id: '/help/media/'
+      path: '/help/media'
+      fullPath: '/help/media/'
+      preLoaderRoute: typeof HelpMediaIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/training/': {
@@ -1967,10 +1968,10 @@ declare module '@tanstack/react-router' {
     }
     '/help/media/$slug': {
       id: '/help/media/$slug'
-      path: '/$slug'
+      path: '/help/media/$slug'
       fullPath: '/help/media/$slug'
       preLoaderRoute: typeof HelpMediaSlugRouteImport
-      parentRoute: typeof HelpMediaRoute
+      parentRoute: typeof rootRouteImport
     }
     '/help/law/water-abstraction': {
       id: '/help/law/water-abstraction'
@@ -2442,18 +2443,6 @@ const HelpLawRouteChildren: HelpLawRouteChildren = {
 const HelpLawRouteWithChildren =
   HelpLawRoute._addFileChildren(HelpLawRouteChildren)
 
-interface HelpMediaRouteChildren {
-  HelpMediaSlugRoute: typeof HelpMediaSlugRoute
-}
-
-const HelpMediaRouteChildren: HelpMediaRouteChildren = {
-  HelpMediaSlugRoute: HelpMediaSlugRoute,
-}
-
-const HelpMediaRouteWithChildren = HelpMediaRoute._addFileChildren(
-  HelpMediaRouteChildren,
-)
-
 interface HelpPestsRouteChildren {
   HelpPestsAshDiebackRoute: typeof HelpPestsAshDiebackRoute
   HelpPestsAsianHornetRoute: typeof HelpPestsAsianHornetRoute
@@ -2537,7 +2526,6 @@ const rootRouteChildren: RootRouteChildren = {
   HelpHardshipRoute: HelpHardshipRoute,
   HelpHealthSafetyRoute: HelpHealthSafetyRouteWithChildren,
   HelpLawRoute: HelpLawRouteWithChildren,
-  HelpMediaRoute: HelpMediaRouteWithChildren,
   HelpPestsRoute: HelpPestsRouteWithChildren,
   HelpPlantHealthRoute: HelpPlantHealthRouteWithChildren,
   HelpPodcastRoute: HelpPodcastRoute,
@@ -2558,7 +2546,9 @@ const rootRouteChildren: RootRouteChildren = {
   ApiPublicConferenceInterestRoute: ApiPublicConferenceInterestRoute,
   ApiPublicMembershipApplicationRoute: ApiPublicMembershipApplicationRoute,
   ApiPublicMembershipEnquiryRoute: ApiPublicMembershipEnquiryRoute,
+  HelpMediaSlugRoute: HelpMediaSlugRoute,
   JoinCategoryApplyRoute: JoinCategoryApplyRoute,
+  HelpMediaIndexRoute: HelpMediaIndexRoute,
   LissCscsApplyIndexRoute: LissCscsApplyIndexRoute,
   ApiPublicHooksWorkbooksSyncRoute: ApiPublicHooksWorkbooksSyncRoute,
   LissCscsApplyCategoryIndexRoute: LissCscsApplyCategoryIndexRoute,
