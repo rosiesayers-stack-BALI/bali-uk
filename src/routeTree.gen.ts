@@ -30,7 +30,6 @@ import { Route as MembershipFeesRouteImport } from './routes/membership.fees'
 import { Route as MembershipEnquiryRouteImport } from './routes/membership.enquiry'
 import { Route as MembershipCategoriesRouteImport } from './routes/membership.categories'
 import { Route as MembershipBecomeAMemberRouteImport } from './routes/membership.become-a-member'
-import { Route as LissCscsApplyRouteImport } from './routes/liss-cscs.apply'
 import { Route as HelpPodcastRouteImport } from './routes/help.podcast'
 import { Route as HelpPlantHealthRouteImport } from './routes/help.plant-health'
 import { Route as HelpPestsRouteImport } from './routes/help.pests'
@@ -53,6 +52,7 @@ import { Route as DirectoryDesignerRouteImport } from './routes/directory.design
 import { Route as DirectoryContractorRouteImport } from './routes/directory.contractor'
 import { Route as AdminResetPasswordRouteImport } from './routes/admin.reset-password'
 import { Route as AboutAwardsRouteImport } from './routes/about.awards'
+import { Route as LissCscsApplyIndexRouteImport } from './routes/liss-cscs.apply.index'
 import { Route as AdminTrainingIndexRouteImport } from './routes/admin.training.index'
 import { Route as AdminPolicyIndexRouteImport } from './routes/admin.policy.index'
 import { Route as AdminNewsIndexRouteImport } from './routes/admin.news.index'
@@ -225,11 +225,6 @@ const MembershipBecomeAMemberRoute = MembershipBecomeAMemberRouteImport.update({
   path: '/membership/become-a-member',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LissCscsApplyRoute = LissCscsApplyRouteImport.update({
-  id: '/liss-cscs/apply',
-  path: '/liss-cscs/apply',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const HelpPodcastRoute = HelpPodcastRouteImport.update({
   id: '/help/podcast',
   path: '/help/podcast',
@@ -341,6 +336,11 @@ const AboutAwardsRoute = AboutAwardsRouteImport.update({
   path: '/about/awards',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LissCscsApplyIndexRoute = LissCscsApplyIndexRouteImport.update({
+  id: '/liss-cscs/apply/',
+  path: '/liss-cscs/apply/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminTrainingIndexRoute = AdminTrainingIndexRouteImport.update({
   id: '/training/',
   path: '/training/',
@@ -362,9 +362,9 @@ const AdminEventsIndexRoute = AdminEventsIndexRouteImport.update({
   getParentRoute: () => AdminRoute,
 } as any)
 const LissCscsApplyCategoryRoute = LissCscsApplyCategoryRouteImport.update({
-  id: '/$category',
-  path: '/$category',
-  getParentRoute: () => LissCscsApplyRoute,
+  id: '/liss-cscs/apply/$category',
+  path: '/liss-cscs/apply/$category',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const JoinCategoryApplyRoute = JoinCategoryApplyRouteImport.update({
   id: '/join/$category/apply',
@@ -739,7 +739,6 @@ export interface FileRoutesByFullPath {
   '/help/pests': typeof HelpPestsRouteWithChildren
   '/help/plant-health': typeof HelpPlantHealthRouteWithChildren
   '/help/podcast': typeof HelpPodcastRoute
-  '/liss-cscs/apply': typeof LissCscsApplyRouteWithChildren
   '/membership/become-a-member': typeof MembershipBecomeAMemberRoute
   '/membership/categories': typeof MembershipCategoriesRoute
   '/membership/enquiry': typeof MembershipEnquiryRoute
@@ -818,6 +817,7 @@ export interface FileRoutesByFullPath {
   '/admin/news/': typeof AdminNewsIndexRoute
   '/admin/policy/': typeof AdminPolicyIndexRoute
   '/admin/training/': typeof AdminTrainingIndexRoute
+  '/liss-cscs/apply/': typeof LissCscsApplyIndexRoute
   '/api/public/hooks/workbooks-sync': typeof ApiPublicHooksWorkbooksSyncRoute
   '/liss-cscs/apply/$category/$card': typeof LissCscsApplyCategoryCardRouteWithChildren
   '/liss-cscs/apply/$category/$card/form': typeof LissCscsApplyCategoryCardFormRoute
@@ -850,7 +850,6 @@ export interface FileRoutesByTo {
   '/help/pests': typeof HelpPestsRouteWithChildren
   '/help/plant-health': typeof HelpPlantHealthRouteWithChildren
   '/help/podcast': typeof HelpPodcastRoute
-  '/liss-cscs/apply': typeof LissCscsApplyRouteWithChildren
   '/membership/become-a-member': typeof MembershipBecomeAMemberRoute
   '/membership/categories': typeof MembershipCategoriesRoute
   '/membership/enquiry': typeof MembershipEnquiryRoute
@@ -929,6 +928,7 @@ export interface FileRoutesByTo {
   '/admin/news': typeof AdminNewsIndexRoute
   '/admin/policy': typeof AdminPolicyIndexRoute
   '/admin/training': typeof AdminTrainingIndexRoute
+  '/liss-cscs/apply': typeof LissCscsApplyIndexRoute
   '/api/public/hooks/workbooks-sync': typeof ApiPublicHooksWorkbooksSyncRoute
   '/liss-cscs/apply/$category/$card': typeof LissCscsApplyCategoryCardRouteWithChildren
   '/liss-cscs/apply/$category/$card/form': typeof LissCscsApplyCategoryCardFormRoute
@@ -963,7 +963,6 @@ export interface FileRoutesById {
   '/help/pests': typeof HelpPestsRouteWithChildren
   '/help/plant-health': typeof HelpPlantHealthRouteWithChildren
   '/help/podcast': typeof HelpPodcastRoute
-  '/liss-cscs/apply': typeof LissCscsApplyRouteWithChildren
   '/membership/become-a-member': typeof MembershipBecomeAMemberRoute
   '/membership/categories': typeof MembershipCategoriesRoute
   '/membership/enquiry': typeof MembershipEnquiryRoute
@@ -1042,6 +1041,7 @@ export interface FileRoutesById {
   '/admin/news/': typeof AdminNewsIndexRoute
   '/admin/policy/': typeof AdminPolicyIndexRoute
   '/admin/training/': typeof AdminTrainingIndexRoute
+  '/liss-cscs/apply/': typeof LissCscsApplyIndexRoute
   '/api/public/hooks/workbooks-sync': typeof ApiPublicHooksWorkbooksSyncRoute
   '/liss-cscs/apply/$category/$card': typeof LissCscsApplyCategoryCardRouteWithChildren
   '/liss-cscs/apply/$category/$card/form': typeof LissCscsApplyCategoryCardFormRoute
@@ -1077,7 +1077,6 @@ export interface FileRouteTypes {
     | '/help/pests'
     | '/help/plant-health'
     | '/help/podcast'
-    | '/liss-cscs/apply'
     | '/membership/become-a-member'
     | '/membership/categories'
     | '/membership/enquiry'
@@ -1156,6 +1155,7 @@ export interface FileRouteTypes {
     | '/admin/news/'
     | '/admin/policy/'
     | '/admin/training/'
+    | '/liss-cscs/apply/'
     | '/api/public/hooks/workbooks-sync'
     | '/liss-cscs/apply/$category/$card'
     | '/liss-cscs/apply/$category/$card/form'
@@ -1188,7 +1188,6 @@ export interface FileRouteTypes {
     | '/help/pests'
     | '/help/plant-health'
     | '/help/podcast'
-    | '/liss-cscs/apply'
     | '/membership/become-a-member'
     | '/membership/categories'
     | '/membership/enquiry'
@@ -1267,6 +1266,7 @@ export interface FileRouteTypes {
     | '/admin/news'
     | '/admin/policy'
     | '/admin/training'
+    | '/liss-cscs/apply'
     | '/api/public/hooks/workbooks-sync'
     | '/liss-cscs/apply/$category/$card'
     | '/liss-cscs/apply/$category/$card/form'
@@ -1300,7 +1300,6 @@ export interface FileRouteTypes {
     | '/help/pests'
     | '/help/plant-health'
     | '/help/podcast'
-    | '/liss-cscs/apply'
     | '/membership/become-a-member'
     | '/membership/categories'
     | '/membership/enquiry'
@@ -1379,6 +1378,7 @@ export interface FileRouteTypes {
     | '/admin/news/'
     | '/admin/policy/'
     | '/admin/training/'
+    | '/liss-cscs/apply/'
     | '/api/public/hooks/workbooks-sync'
     | '/liss-cscs/apply/$category/$card'
     | '/liss-cscs/apply/$category/$card/form'
@@ -1412,7 +1412,6 @@ export interface RootRouteChildren {
   HelpPestsRoute: typeof HelpPestsRouteWithChildren
   HelpPlantHealthRoute: typeof HelpPlantHealthRouteWithChildren
   HelpPodcastRoute: typeof HelpPodcastRoute
-  LissCscsApplyRoute: typeof LissCscsApplyRouteWithChildren
   MembershipBecomeAMemberRoute: typeof MembershipBecomeAMemberRoute
   MembershipCategoriesRoute: typeof MembershipCategoriesRoute
   MembershipEnquiryRoute: typeof MembershipEnquiryRoute
@@ -1431,6 +1430,8 @@ export interface RootRouteChildren {
   ApiPublicMembershipApplicationRoute: typeof ApiPublicMembershipApplicationRoute
   ApiPublicMembershipEnquiryRoute: typeof ApiPublicMembershipEnquiryRoute
   JoinCategoryApplyRoute: typeof JoinCategoryApplyRoute
+  LissCscsApplyCategoryRoute: typeof LissCscsApplyCategoryRouteWithChildren
+  LissCscsApplyIndexRoute: typeof LissCscsApplyIndexRoute
   ApiPublicHooksWorkbooksSyncRoute: typeof ApiPublicHooksWorkbooksSyncRoute
 }
 
@@ -1581,13 +1582,6 @@ declare module '@tanstack/react-router' {
       path: '/membership/become-a-member'
       fullPath: '/membership/become-a-member'
       preLoaderRoute: typeof MembershipBecomeAMemberRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/liss-cscs/apply': {
-      id: '/liss-cscs/apply'
-      path: '/liss-cscs/apply'
-      fullPath: '/liss-cscs/apply'
-      preLoaderRoute: typeof LissCscsApplyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/help/podcast': {
@@ -1744,6 +1738,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutAwardsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/liss-cscs/apply/': {
+      id: '/liss-cscs/apply/'
+      path: '/liss-cscs/apply'
+      fullPath: '/liss-cscs/apply/'
+      preLoaderRoute: typeof LissCscsApplyIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin/training/': {
       id: '/admin/training/'
       path: '/training'
@@ -1774,10 +1775,10 @@ declare module '@tanstack/react-router' {
     }
     '/liss-cscs/apply/$category': {
       id: '/liss-cscs/apply/$category'
-      path: '/$category'
+      path: '/liss-cscs/apply/$category'
       fullPath: '/liss-cscs/apply/$category'
       preLoaderRoute: typeof LissCscsApplyCategoryRouteImport
-      parentRoute: typeof LissCscsApplyRoute
+      parentRoute: typeof rootRouteImport
     }
     '/join/$category/apply': {
       id: '/join/$category/apply'
@@ -2442,18 +2443,6 @@ const LissCscsApplyCategoryRouteWithChildren =
     LissCscsApplyCategoryRouteChildren,
   )
 
-interface LissCscsApplyRouteChildren {
-  LissCscsApplyCategoryRoute: typeof LissCscsApplyCategoryRouteWithChildren
-}
-
-const LissCscsApplyRouteChildren: LissCscsApplyRouteChildren = {
-  LissCscsApplyCategoryRoute: LissCscsApplyCategoryRouteWithChildren,
-}
-
-const LissCscsApplyRouteWithChildren = LissCscsApplyRoute._addFileChildren(
-  LissCscsApplyRouteChildren,
-)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SplatRoute: SplatRoute,
@@ -2482,7 +2471,6 @@ const rootRouteChildren: RootRouteChildren = {
   HelpPestsRoute: HelpPestsRouteWithChildren,
   HelpPlantHealthRoute: HelpPlantHealthRouteWithChildren,
   HelpPodcastRoute: HelpPodcastRoute,
-  LissCscsApplyRoute: LissCscsApplyRouteWithChildren,
   MembershipBecomeAMemberRoute: MembershipBecomeAMemberRoute,
   MembershipCategoriesRoute: MembershipCategoriesRoute,
   MembershipEnquiryRoute: MembershipEnquiryRoute,
@@ -2501,6 +2489,8 @@ const rootRouteChildren: RootRouteChildren = {
   ApiPublicMembershipApplicationRoute: ApiPublicMembershipApplicationRoute,
   ApiPublicMembershipEnquiryRoute: ApiPublicMembershipEnquiryRoute,
   JoinCategoryApplyRoute: JoinCategoryApplyRoute,
+  LissCscsApplyCategoryRoute: LissCscsApplyCategoryRouteWithChildren,
+  LissCscsApplyIndexRoute: LissCscsApplyIndexRoute,
   ApiPublicHooksWorkbooksSyncRoute: ApiPublicHooksWorkbooksSyncRoute,
 }
 export const routeTree = rootRouteImport
