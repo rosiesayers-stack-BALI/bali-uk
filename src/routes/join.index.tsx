@@ -207,7 +207,7 @@ function JoinPage() {
                   View categories
                 </a>
                 <Link
-                  to="/contact"
+                  to="/membership/enquiry"
                   className="border border-white/40 hover:bg-white/10 px-8 py-4 rounded-full font-bold transition-all"
                 >
                   Talk to membership
@@ -451,10 +451,10 @@ function JoinPage() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                to="/contact"
+                to="/membership/enquiry"
                 className="w-full sm:w-auto bg-white text-bali-green px-10 py-4 rounded-full font-bold hover:bg-emerald-50 transition-colors shadow-xl"
               >
-                Contact the team
+                Send an enquiry
               </Link>
               <a
                 href="mailto:membership@bali.org.uk"
