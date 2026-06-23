@@ -367,6 +367,87 @@ export type Database = {
         }
         Relationships: []
       }
+      liss_applications: {
+        Row: {
+          application_type: string
+          card_name: string
+          card_slug: string
+          category_slug: string
+          citb_completed_on: string | null
+          consent_marketing: boolean
+          consent_terms: boolean
+          created_at: string
+          date_of_birth: string | null
+          email: string
+          employer_address: string | null
+          employer_name: string | null
+          full_name: string
+          home_address: string
+          id: string
+          ip_address: string | null
+          job_title: string | null
+          notes: string | null
+          phone: string | null
+          qualification_summary: string | null
+          rolo_completed_on: string | null
+          status: string
+          updated_at: string
+          uploaded_files: Json
+        }
+        Insert: {
+          application_type: string
+          card_name: string
+          card_slug: string
+          category_slug: string
+          citb_completed_on?: string | null
+          consent_marketing?: boolean
+          consent_terms: boolean
+          created_at?: string
+          date_of_birth?: string | null
+          email: string
+          employer_address?: string | null
+          employer_name?: string | null
+          full_name: string
+          home_address: string
+          id?: string
+          ip_address?: string | null
+          job_title?: string | null
+          notes?: string | null
+          phone?: string | null
+          qualification_summary?: string | null
+          rolo_completed_on?: string | null
+          status?: string
+          updated_at?: string
+          uploaded_files?: Json
+        }
+        Update: {
+          application_type?: string
+          card_name?: string
+          card_slug?: string
+          category_slug?: string
+          citb_completed_on?: string | null
+          consent_marketing?: boolean
+          consent_terms?: boolean
+          created_at?: string
+          date_of_birth?: string | null
+          email?: string
+          employer_address?: string | null
+          employer_name?: string | null
+          full_name?: string
+          home_address?: string
+          id?: string
+          ip_address?: string | null
+          job_title?: string | null
+          notes?: string | null
+          phone?: string | null
+          qualification_summary?: string | null
+          rolo_completed_on?: string | null
+          status?: string
+          updated_at?: string
+          uploaded_files?: Json
+        }
+        Relationships: []
+      }
       member_links: {
         Row: {
           created_at: string
