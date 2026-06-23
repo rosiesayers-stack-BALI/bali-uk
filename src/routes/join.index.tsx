@@ -10,7 +10,7 @@ export const Route = createFileRoute("/join/")({
       {
         name: "description",
         content:
-          "Join the British Association of Landscape Industries. Nine membership categories, professional accreditation, HR & H&S support, and a UK-wide network.",
+          "Join the British Association of Landscape Industries. Twelve membership categories, professional accreditation, HR & H&S support, and a UK-wide network.",
       },
       { property: "og:title", content: "Join BALI — Membership for Landscape Professionals" },
       {
@@ -151,8 +151,8 @@ const benefits = [
 
 const steps = [
   { n: "01", title: "Choose a category", body: "Pick the membership that matches your business or role." },
-  { n: "02", title: "Talk to the team", body: "Email or call us — we'll confirm fit, fees and next steps." },
-  { n: "03", title: "Apply & be assessed", body: "Submit your application. Accredited categories include vetting." },
+  { n: "02", title: "Send a short enquiry", body: "Apply online or send an enquiry — we reply within 48 working hours." },
+  { n: "03", title: "Apply & be assessed", body: "Complete the full application. Accredited categories include vetting." },
   { n: "04", title: "Join & promote", body: "Receive your welcome pack and start using the BALI Accredited badge." },
 ];
 
@@ -207,7 +207,7 @@ function JoinPage() {
                   View categories
                 </a>
                 <Link
-                  to="/contact"
+                  to="/membership/enquiry"
                   className="border border-white/40 hover:bg-white/10 px-8 py-4 rounded-full font-bold transition-all"
                 >
                   Talk to membership
@@ -245,7 +245,7 @@ function JoinPage() {
           <div className="max-w-7xl mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
               { v: "50+", l: "Years representing the industry" },
-              { v: "9", l: "Membership categories" },
+              { v: "12", l: "Membership categories" },
               { v: "100s", l: "Accredited members UK-wide" },
               { v: "48hr", l: "Enquiry response time" },
             ].map((s) => (
@@ -312,7 +312,7 @@ function JoinPage() {
                 </h2>
                 <p className="text-slate-600">
                   Specialised paths to suit every role — accredited, international, associate and education.
-                  Pick the one that fits and our team
+                  Pick the one that fits and our team will guide you through fees, vetting and next steps.
                 </p>
               </div>
             </div>
@@ -451,10 +451,10 @@ function JoinPage() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                to="/contact"
+                to="/membership/enquiry"
                 className="w-full sm:w-auto bg-white text-bali-green px-10 py-4 rounded-full font-bold hover:bg-emerald-50 transition-colors shadow-xl"
               >
-                Contact the team
+                Send an enquiry
               </Link>
               <a
                 href="mailto:membership@bali.org.uk"
