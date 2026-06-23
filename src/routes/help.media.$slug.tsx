@@ -108,7 +108,7 @@ function VideoPage() {
           <p className="text-slate-500 text-sm mb-8">Published {new Date(video.published).toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" })}</p>
 
           <div className="prose prose-slate max-w-none mb-10">
-            {paragraphs.map((p, i) => (
+            {paragraphs.map((p: string, i: number) => (
               <p key={i} className="leading-relaxed">{p}</p>
             ))}
           </div>

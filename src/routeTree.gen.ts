@@ -33,6 +33,7 @@ import { Route as MembershipBecomeAMemberRouteImport } from './routes/membership
 import { Route as HelpPodcastRouteImport } from './routes/help.podcast'
 import { Route as HelpPlantHealthRouteImport } from './routes/help.plant-health'
 import { Route as HelpPestsRouteImport } from './routes/help.pests'
+import { Route as HelpMediaRouteImport } from './routes/help.media'
 import { Route as HelpLawRouteImport } from './routes/help.law'
 import { Route as HelpHealthSafetyRouteImport } from './routes/help.health-safety'
 import { Route as HelpHardshipRouteImport } from './routes/help.hardship'
@@ -76,6 +77,7 @@ import { Route as HelpPestsBiosecurityToolkitRouteImport } from './routes/help.p
 import { Route as HelpPestsAsianLonghornBeetleRouteImport } from './routes/help.pests.asian-longhorn-beetle'
 import { Route as HelpPestsAsianHornetRouteImport } from './routes/help.pests.asian-hornet'
 import { Route as HelpPestsAshDiebackRouteImport } from './routes/help.pests.ash-dieback'
+import { Route as HelpMediaSlugRouteImport } from './routes/help.media.$slug'
 import { Route as HelpLawWaterAbstractionRouteImport } from './routes/help.law.water-abstraction'
 import { Route as HelpLawVatReverseChargeRouteImport } from './routes/help.law.vat-reverse-charge'
 import { Route as HelpLawJcliContractsRouteImport } from './routes/help.law.jcli-contracts'
@@ -240,6 +242,11 @@ const HelpPlantHealthRoute = HelpPlantHealthRouteImport.update({
 const HelpPestsRoute = HelpPestsRouteImport.update({
   id: '/help/pests',
   path: '/help/pests',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpMediaRoute = HelpMediaRouteImport.update({
+  id: '/help/media',
+  path: '/help/media',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HelpLawRoute = HelpLawRouteImport.update({
@@ -468,6 +475,11 @@ const HelpPestsAshDiebackRoute = HelpPestsAshDiebackRouteImport.update({
   id: '/ash-dieback',
   path: '/ash-dieback',
   getParentRoute: () => HelpPestsRoute,
+} as any)
+const HelpMediaSlugRoute = HelpMediaSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => HelpMediaRoute,
 } as any)
 const HelpLawWaterAbstractionRoute = HelpLawWaterAbstractionRouteImport.update({
   id: '/water-abstraction',
@@ -749,6 +761,7 @@ export interface FileRoutesByFullPath {
   '/help/hardship': typeof HelpHardshipRoute
   '/help/health-safety': typeof HelpHealthSafetyRouteWithChildren
   '/help/law': typeof HelpLawRouteWithChildren
+  '/help/media': typeof HelpMediaRouteWithChildren
   '/help/pests': typeof HelpPestsRouteWithChildren
   '/help/plant-health': typeof HelpPlantHealthRouteWithChildren
   '/help/podcast': typeof HelpPodcastRoute
@@ -808,6 +821,7 @@ export interface FileRoutesByFullPath {
   '/help/law/jcli-contracts': typeof HelpLawJcliContractsRoute
   '/help/law/vat-reverse-charge': typeof HelpLawVatReverseChargeRoute
   '/help/law/water-abstraction': typeof HelpLawWaterAbstractionRoute
+  '/help/media/$slug': typeof HelpMediaSlugRoute
   '/help/pests/ash-dieback': typeof HelpPestsAshDiebackRoute
   '/help/pests/asian-hornet': typeof HelpPestsAsianHornetRoute
   '/help/pests/asian-longhorn-beetle': typeof HelpPestsAsianLonghornBeetleRoute
@@ -862,6 +876,7 @@ export interface FileRoutesByTo {
   '/help/hardship': typeof HelpHardshipRoute
   '/help/health-safety': typeof HelpHealthSafetyRouteWithChildren
   '/help/law': typeof HelpLawRouteWithChildren
+  '/help/media': typeof HelpMediaRouteWithChildren
   '/help/pests': typeof HelpPestsRouteWithChildren
   '/help/plant-health': typeof HelpPlantHealthRouteWithChildren
   '/help/podcast': typeof HelpPodcastRoute
@@ -921,6 +936,7 @@ export interface FileRoutesByTo {
   '/help/law/jcli-contracts': typeof HelpLawJcliContractsRoute
   '/help/law/vat-reverse-charge': typeof HelpLawVatReverseChargeRoute
   '/help/law/water-abstraction': typeof HelpLawWaterAbstractionRoute
+  '/help/media/$slug': typeof HelpMediaSlugRoute
   '/help/pests/ash-dieback': typeof HelpPestsAshDiebackRoute
   '/help/pests/asian-hornet': typeof HelpPestsAsianHornetRoute
   '/help/pests/asian-longhorn-beetle': typeof HelpPestsAsianLonghornBeetleRoute
@@ -977,6 +993,7 @@ export interface FileRoutesById {
   '/help/hardship': typeof HelpHardshipRoute
   '/help/health-safety': typeof HelpHealthSafetyRouteWithChildren
   '/help/law': typeof HelpLawRouteWithChildren
+  '/help/media': typeof HelpMediaRouteWithChildren
   '/help/pests': typeof HelpPestsRouteWithChildren
   '/help/plant-health': typeof HelpPlantHealthRouteWithChildren
   '/help/podcast': typeof HelpPodcastRoute
@@ -1036,6 +1053,7 @@ export interface FileRoutesById {
   '/help/law/jcli-contracts': typeof HelpLawJcliContractsRoute
   '/help/law/vat-reverse-charge': typeof HelpLawVatReverseChargeRoute
   '/help/law/water-abstraction': typeof HelpLawWaterAbstractionRoute
+  '/help/media/$slug': typeof HelpMediaSlugRoute
   '/help/pests/ash-dieback': typeof HelpPestsAshDiebackRoute
   '/help/pests/asian-hornet': typeof HelpPestsAsianHornetRoute
   '/help/pests/asian-longhorn-beetle': typeof HelpPestsAsianLonghornBeetleRoute
@@ -1093,6 +1111,7 @@ export interface FileRouteTypes {
     | '/help/hardship'
     | '/help/health-safety'
     | '/help/law'
+    | '/help/media'
     | '/help/pests'
     | '/help/plant-health'
     | '/help/podcast'
@@ -1152,6 +1171,7 @@ export interface FileRouteTypes {
     | '/help/law/jcli-contracts'
     | '/help/law/vat-reverse-charge'
     | '/help/law/water-abstraction'
+    | '/help/media/$slug'
     | '/help/pests/ash-dieback'
     | '/help/pests/asian-hornet'
     | '/help/pests/asian-longhorn-beetle'
@@ -1206,6 +1226,7 @@ export interface FileRouteTypes {
     | '/help/hardship'
     | '/help/health-safety'
     | '/help/law'
+    | '/help/media'
     | '/help/pests'
     | '/help/plant-health'
     | '/help/podcast'
@@ -1265,6 +1286,7 @@ export interface FileRouteTypes {
     | '/help/law/jcli-contracts'
     | '/help/law/vat-reverse-charge'
     | '/help/law/water-abstraction'
+    | '/help/media/$slug'
     | '/help/pests/ash-dieback'
     | '/help/pests/asian-hornet'
     | '/help/pests/asian-longhorn-beetle'
@@ -1320,6 +1342,7 @@ export interface FileRouteTypes {
     | '/help/hardship'
     | '/help/health-safety'
     | '/help/law'
+    | '/help/media'
     | '/help/pests'
     | '/help/plant-health'
     | '/help/podcast'
@@ -1379,6 +1402,7 @@ export interface FileRouteTypes {
     | '/help/law/jcli-contracts'
     | '/help/law/vat-reverse-charge'
     | '/help/law/water-abstraction'
+    | '/help/media/$slug'
     | '/help/pests/ash-dieback'
     | '/help/pests/asian-hornet'
     | '/help/pests/asian-longhorn-beetle'
@@ -1434,6 +1458,7 @@ export interface RootRouteChildren {
   HelpHardshipRoute: typeof HelpHardshipRoute
   HelpHealthSafetyRoute: typeof HelpHealthSafetyRouteWithChildren
   HelpLawRoute: typeof HelpLawRouteWithChildren
+  HelpMediaRoute: typeof HelpMediaRouteWithChildren
   HelpPestsRoute: typeof HelpPestsRouteWithChildren
   HelpPlantHealthRoute: typeof HelpPlantHealthRouteWithChildren
   HelpPodcastRoute: typeof HelpPodcastRoute
@@ -1630,6 +1655,13 @@ declare module '@tanstack/react-router' {
       path: '/help/pests'
       fullPath: '/help/pests'
       preLoaderRoute: typeof HelpPestsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help/media': {
+      id: '/help/media'
+      path: '/help/media'
+      fullPath: '/help/media'
+      preLoaderRoute: typeof HelpMediaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/help/law': {
@@ -1932,6 +1964,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/help/pests/ash-dieback'
       preLoaderRoute: typeof HelpPestsAshDiebackRouteImport
       parentRoute: typeof HelpPestsRoute
+    }
+    '/help/media/$slug': {
+      id: '/help/media/$slug'
+      path: '/$slug'
+      fullPath: '/help/media/$slug'
+      preLoaderRoute: typeof HelpMediaSlugRouteImport
+      parentRoute: typeof HelpMediaRoute
     }
     '/help/law/water-abstraction': {
       id: '/help/law/water-abstraction'
@@ -2403,6 +2442,18 @@ const HelpLawRouteChildren: HelpLawRouteChildren = {
 const HelpLawRouteWithChildren =
   HelpLawRoute._addFileChildren(HelpLawRouteChildren)
 
+interface HelpMediaRouteChildren {
+  HelpMediaSlugRoute: typeof HelpMediaSlugRoute
+}
+
+const HelpMediaRouteChildren: HelpMediaRouteChildren = {
+  HelpMediaSlugRoute: HelpMediaSlugRoute,
+}
+
+const HelpMediaRouteWithChildren = HelpMediaRoute._addFileChildren(
+  HelpMediaRouteChildren,
+)
+
 interface HelpPestsRouteChildren {
   HelpPestsAshDiebackRoute: typeof HelpPestsAshDiebackRoute
   HelpPestsAsianHornetRoute: typeof HelpPestsAsianHornetRoute
@@ -2486,6 +2537,7 @@ const rootRouteChildren: RootRouteChildren = {
   HelpHardshipRoute: HelpHardshipRoute,
   HelpHealthSafetyRoute: HelpHealthSafetyRouteWithChildren,
   HelpLawRoute: HelpLawRouteWithChildren,
+  HelpMediaRoute: HelpMediaRouteWithChildren,
   HelpPestsRoute: HelpPestsRouteWithChildren,
   HelpPlantHealthRoute: HelpPlantHealthRouteWithChildren,
   HelpPodcastRoute: HelpPodcastRoute,
