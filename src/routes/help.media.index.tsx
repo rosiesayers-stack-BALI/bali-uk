@@ -7,7 +7,7 @@ import mediaJson from "../content/media.json";
 const TITLE = "Media — BALI";
 const DESC = "Watch films from the BALI National Conference, RHS Chelsea Flower Show, the National Landscape Awards and our learning programme — with full video, transcripts and accompanying articles.";
 
-export const Route = createFileRoute("/help/media")({
+export const Route = createFileRoute("/help/media/")({
   head: () => ({
     meta: [
       { title: TITLE },
