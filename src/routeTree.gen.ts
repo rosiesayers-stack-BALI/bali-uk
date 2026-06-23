@@ -43,6 +43,7 @@ import { Route as HelpDisputeRouteImport } from './routes/help.dispute'
 import { Route as HelpContractsRouteImport } from './routes/help.contracts'
 import { Route as HelpContractRouteImport } from './routes/help.contract'
 import { Route as EventsTrainingRouteImport } from './routes/events.training'
+import { Route as EventsSponsorRouteImport } from './routes/events.sponsor'
 import { Route as EventsSlugRouteImport } from './routes/events.$slug'
 import { Route as DirectoryWhyRouteImport } from './routes/directory.why'
 import { Route as DirectoryTrainingRouteImport } from './routes/directory.training'
@@ -293,6 +294,11 @@ const HelpContractRoute = HelpContractRouteImport.update({
 const EventsTrainingRoute = EventsTrainingRouteImport.update({
   id: '/events/training',
   path: '/events/training',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventsSponsorRoute = EventsSponsorRouteImport.update({
+  id: '/events/sponsor',
+  path: '/events/sponsor',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EventsSlugRoute = EventsSlugRouteImport.update({
@@ -751,6 +757,7 @@ export interface FileRoutesByFullPath {
   '/directory/training': typeof DirectoryTrainingRoute
   '/directory/why': typeof DirectoryWhyRoute
   '/events/$slug': typeof EventsSlugRoute
+  '/events/sponsor': typeof EventsSponsorRoute
   '/events/training': typeof EventsTrainingRoute
   '/help/contract': typeof HelpContractRoute
   '/help/contracts': typeof HelpContractsRoute
@@ -866,6 +873,7 @@ export interface FileRoutesByTo {
   '/directory/training': typeof DirectoryTrainingRoute
   '/directory/why': typeof DirectoryWhyRoute
   '/events/$slug': typeof EventsSlugRoute
+  '/events/sponsor': typeof EventsSponsorRoute
   '/events/training': typeof EventsTrainingRoute
   '/help/contract': typeof HelpContractRoute
   '/help/contracts': typeof HelpContractsRoute
@@ -983,6 +991,7 @@ export interface FileRoutesById {
   '/directory/training': typeof DirectoryTrainingRoute
   '/directory/why': typeof DirectoryWhyRoute
   '/events/$slug': typeof EventsSlugRoute
+  '/events/sponsor': typeof EventsSponsorRoute
   '/events/training': typeof EventsTrainingRoute
   '/help/contract': typeof HelpContractRoute
   '/help/contracts': typeof HelpContractsRoute
@@ -1101,6 +1110,7 @@ export interface FileRouteTypes {
     | '/directory/training'
     | '/directory/why'
     | '/events/$slug'
+    | '/events/sponsor'
     | '/events/training'
     | '/help/contract'
     | '/help/contracts'
@@ -1216,6 +1226,7 @@ export interface FileRouteTypes {
     | '/directory/training'
     | '/directory/why'
     | '/events/$slug'
+    | '/events/sponsor'
     | '/events/training'
     | '/help/contract'
     | '/help/contracts'
@@ -1332,6 +1343,7 @@ export interface FileRouteTypes {
     | '/directory/training'
     | '/directory/why'
     | '/events/$slug'
+    | '/events/sponsor'
     | '/events/training'
     | '/help/contract'
     | '/help/contracts'
@@ -1448,6 +1460,7 @@ export interface RootRouteChildren {
   DirectoryTrainingRoute: typeof DirectoryTrainingRoute
   DirectoryWhyRoute: typeof DirectoryWhyRoute
   EventsSlugRoute: typeof EventsSlugRoute
+  EventsSponsorRoute: typeof EventsSponsorRoute
   EventsTrainingRoute: typeof EventsTrainingRoute
   HelpContractRoute: typeof HelpContractRoute
   HelpContractsRoute: typeof HelpContractsRoute
@@ -1726,6 +1739,13 @@ declare module '@tanstack/react-router' {
       path: '/events/training'
       fullPath: '/events/training'
       preLoaderRoute: typeof EventsTrainingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/events/sponsor': {
+      id: '/events/sponsor'
+      path: '/events/sponsor'
+      fullPath: '/events/sponsor'
+      preLoaderRoute: typeof EventsSponsorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/events/$slug': {
@@ -2516,6 +2536,7 @@ const rootRouteChildren: RootRouteChildren = {
   DirectoryTrainingRoute: DirectoryTrainingRoute,
   DirectoryWhyRoute: DirectoryWhyRoute,
   EventsSlugRoute: EventsSlugRoute,
+  EventsSponsorRoute: EventsSponsorRoute,
   EventsTrainingRoute: EventsTrainingRoute,
   HelpContractRoute: HelpContractRoute,
   HelpContractsRoute: HelpContractsRoute,
