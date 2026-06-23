@@ -108,3 +108,19 @@
     transform: translateY(0);
   }
 }
+
+/* LISS/CSCS card body content (scraped HTML rendering) */
+.liss-prose p { margin: 0 0 1rem; }
+.liss-prose ul { list-style: disc; padding-left: 1.5rem; margin: 0 0 1rem; }
+.liss-prose ol { list-style: decimal; padding-left: 1.5rem; margin: 0 0 1rem; }
+.liss-prose li { margin: 0.25rem 0; }
+.liss-prose h2 { font-size: 1.5rem; font-weight: 700; margin: 1.75rem 0 0.75rem; color: #1D4D59; }
+.liss-prose h3 { font-size: 1.25rem; font-weight: 700; margin: 1.5rem 0 0.5rem; color: #1D4D59; }
+.liss-prose h4 { font-size: 1rem; font-weight: 700; margin: 1rem 0 0.5rem; }
+.liss-prose strong { font-weight: 600; color: #111827; }
+.liss-prose a { color: #21509A; text-decoration: underline; }
+.liss-prose a:hover { color: #1D4D59; }
+.liss-prose table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.875rem; display: block; overflow-x: auto; }
+.liss-prose table td, .liss-prose table th { border: 1px solid #e5e7eb; padding: 0.5rem 0.75rem; vertical-align: top; }
+.liss-prose table th, .liss-prose table h4 { background: #f9fafb; }
+.liss-prose hr { margin: 1.5rem 0; border-top: 1px solid #e5e7eb; }
