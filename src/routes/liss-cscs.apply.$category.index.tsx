@@ -15,7 +15,7 @@ type Card = {
 type Category = { label: string; cards: Card[] };
 const data = cards as unknown as Record<string, Category>;
 
-export const Route = createFileRoute("/liss-cscs/apply/$category")({
+export const Route = createFileRoute("/liss-cscs/apply/$category/")({
   loader: ({ params }) => {
     const cat = data[params.category];
     if (!cat) throw notFound();
