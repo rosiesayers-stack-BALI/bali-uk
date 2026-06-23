@@ -147,7 +147,7 @@ function EnquiryPage() {
                       If it's urgent, call <a className="text-bali-green font-semibold" href="tel:+442476690333">+44 (0)24 7669 0333</a>.
                     </p>
                     <div className="mt-8 flex flex-wrap justify-center gap-3">
-                      <Link to="/membership/categories" className="bg-bali-green text-white px-5 py-3 rounded-lg font-semibold hover:bg-green-700">
+                      <Link to="/join" className="bg-bali-green text-white px-5 py-3 rounded-lg font-semibold hover:bg-green-700">
                         Browse categories
                       </Link>
                       <Link to="/membership" className="border border-slate-300 px-5 py-3 rounded-lg font-semibold hover:bg-slate-50">
@@ -218,7 +218,7 @@ function EnquiryPage() {
                       </button>
                       <span className="text-sm text-slate-500">
                         Or already know which category fits?{" "}
-                        <Link to="/membership/categories" className="text-bali-green font-semibold hover:underline">
+                        <Link to="/join" className="text-bali-green font-semibold hover:underline">
                           Apply directly
                         </Link>
                       </span>
@@ -258,7 +258,7 @@ function EnquiryPage() {
                   If you already know your category, start the online application — it takes around 10 minutes.
                 </p>
                 <Link
-                  to="/membership/categories"
+                  to="/join"
                   className="inline-flex items-center gap-2 bg-bali-green text-white px-4 py-2.5 rounded-lg font-semibold hover:bg-green-700"
                 >
                   Browse categories
