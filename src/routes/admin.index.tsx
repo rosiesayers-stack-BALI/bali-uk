@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { PageHeader } from "@/components/admin/PageHeader";
-import { Newspaper, Calendar, FileText, GraduationCap } from "lucide-react";
+import { Newspaper, Calendar, FileText, GraduationCap, IdCard } from "lucide-react";
 
 export const Route = createFileRoute("/admin/")({
   component: AdminDashboard,
@@ -12,13 +12,20 @@ function AdminDashboard() {
   const counts = useQuery({
     queryKey: ["admin", "counts"],
     queryFn: async () => {
-      const [n, e, p, t] = await Promise.all([
+      const [n, e, p, t, l] = await Promise.all([
         supabase.from("news_articles").select("id", { count: "exact", head: true }),
         supabase.from("events").select("id", { count: "exact", head: true }),
         supabase.from("policy_posts").select("id", { count: "exact", head: true }),
         supabase.from("training_courses").select("id", { count: "exact", head: true }),
+        supabase.from("liss_applications").select("id", { count: "exact", head: true }),
       ]);
-      return { news: n.count ?? 0, events: e.count ?? 0, policy: p.count ?? 0, training: t.count ?? 0 };
+      return {
+        news: n.count ?? 0,
+        events: e.count ?? 0,
+        policy: p.count ?? 0,
+        training: t.count ?? 0,
+        liss: l.count ?? 0,
+      };
     },
   });
 
@@ -27,6 +34,7 @@ function AdminDashboard() {
     { to: "/admin/events", label: "Events", icon: Calendar, count: counts.data?.events, colour: "bg-green-50 text-green-700" },
     { to: "/admin/policy", label: "Policy updates", icon: FileText, count: counts.data?.policy, colour: "bg-purple-50 text-purple-700" },
     { to: "/admin/training", label: "Training courses", icon: GraduationCap, count: counts.data?.training, colour: "bg-amber-50 text-amber-700" },
+    { to: "/admin/liss", label: "LISS applications", icon: IdCard, count: counts.data?.liss, colour: "bg-rose-50 text-rose-700" },
   ];
 
   return (

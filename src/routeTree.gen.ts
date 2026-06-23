@@ -56,6 +56,7 @@ import { Route as LissCscsApplyIndexRouteImport } from './routes/liss-cscs.apply
 import { Route as AdminTrainingIndexRouteImport } from './routes/admin.training.index'
 import { Route as AdminPolicyIndexRouteImport } from './routes/admin.policy.index'
 import { Route as AdminNewsIndexRouteImport } from './routes/admin.news.index'
+import { Route as AdminLissIndexRouteImport } from './routes/admin.liss.index'
 import { Route as AdminEventsIndexRouteImport } from './routes/admin.events.index'
 import { Route as JoinCategoryApplyRouteImport } from './routes/join.$category.apply'
 import { Route as HelpPlantHealthPostBrexitPlantHealthArrangementsRouteImport } from './routes/help.plant-health.post-brexit-plant-health-arrangements'
@@ -114,6 +115,7 @@ import { Route as ApiPublicConferenceInterestRouteImport } from './routes/api/pu
 import { Route as AdminTrainingIdRouteImport } from './routes/admin.training.$id'
 import { Route as AdminPolicyIdRouteImport } from './routes/admin.policy.$id'
 import { Route as AdminNewsIdRouteImport } from './routes/admin.news.$id'
+import { Route as AdminLissIdRouteImport } from './routes/admin.liss.$id'
 import { Route as AdminEventsIdRouteImport } from './routes/admin.events.$id'
 import { Route as LissCscsApplyCategoryIndexRouteImport } from './routes/liss-cscs.apply.$category.index'
 import { Route as ApiPublicHooksWorkbooksSyncRouteImport } from './routes/api/public/hooks/workbooks-sync'
@@ -354,6 +356,11 @@ const AdminPolicyIndexRoute = AdminPolicyIndexRouteImport.update({
 const AdminNewsIndexRoute = AdminNewsIndexRouteImport.update({
   id: '/news/',
   path: '/news/',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminLissIndexRoute = AdminLissIndexRouteImport.update({
+  id: '/liss/',
+  path: '/liss/',
   getParentRoute: () => AdminRoute,
 } as any)
 const AdminEventsIndexRoute = AdminEventsIndexRouteImport.update({
@@ -681,6 +688,11 @@ const AdminNewsIdRoute = AdminNewsIdRouteImport.update({
   path: '/news/$id',
   getParentRoute: () => AdminRoute,
 } as any)
+const AdminLissIdRoute = AdminLissIdRouteImport.update({
+  id: '/liss/$id',
+  path: '/liss/$id',
+  getParentRoute: () => AdminRoute,
+} as any)
 const AdminEventsIdRoute = AdminEventsIdRouteImport.update({
   id: '/events/$id',
   path: '/events/$id',
@@ -756,6 +768,7 @@ export interface FileRoutesByFullPath {
   '/news/': typeof NewsIndexRoute
   '/policy/': typeof PolicyIndexRoute
   '/admin/events/$id': typeof AdminEventsIdRoute
+  '/admin/liss/$id': typeof AdminLissIdRoute
   '/admin/news/$id': typeof AdminNewsIdRoute
   '/admin/policy/$id': typeof AdminPolicyIdRoute
   '/admin/training/$id': typeof AdminTrainingIdRoute
@@ -814,6 +827,7 @@ export interface FileRoutesByFullPath {
   '/help/plant-health/post-brexit-plant-health-arrangements': typeof HelpPlantHealthPostBrexitPlantHealthArrangementsRoute
   '/join/$category/apply': typeof JoinCategoryApplyRoute
   '/admin/events/': typeof AdminEventsIndexRoute
+  '/admin/liss/': typeof AdminLissIndexRoute
   '/admin/news/': typeof AdminNewsIndexRoute
   '/admin/policy/': typeof AdminPolicyIndexRoute
   '/admin/training/': typeof AdminTrainingIndexRoute
@@ -867,6 +881,7 @@ export interface FileRoutesByTo {
   '/news': typeof NewsIndexRoute
   '/policy': typeof PolicyIndexRoute
   '/admin/events/$id': typeof AdminEventsIdRoute
+  '/admin/liss/$id': typeof AdminLissIdRoute
   '/admin/news/$id': typeof AdminNewsIdRoute
   '/admin/policy/$id': typeof AdminPolicyIdRoute
   '/admin/training/$id': typeof AdminTrainingIdRoute
@@ -925,6 +940,7 @@ export interface FileRoutesByTo {
   '/help/plant-health/post-brexit-plant-health-arrangements': typeof HelpPlantHealthPostBrexitPlantHealthArrangementsRoute
   '/join/$category/apply': typeof JoinCategoryApplyRoute
   '/admin/events': typeof AdminEventsIndexRoute
+  '/admin/liss': typeof AdminLissIndexRoute
   '/admin/news': typeof AdminNewsIndexRoute
   '/admin/policy': typeof AdminPolicyIndexRoute
   '/admin/training': typeof AdminTrainingIndexRoute
@@ -980,6 +996,7 @@ export interface FileRoutesById {
   '/news/': typeof NewsIndexRoute
   '/policy/': typeof PolicyIndexRoute
   '/admin/events/$id': typeof AdminEventsIdRoute
+  '/admin/liss/$id': typeof AdminLissIdRoute
   '/admin/news/$id': typeof AdminNewsIdRoute
   '/admin/policy/$id': typeof AdminPolicyIdRoute
   '/admin/training/$id': typeof AdminTrainingIdRoute
@@ -1038,6 +1055,7 @@ export interface FileRoutesById {
   '/help/plant-health/post-brexit-plant-health-arrangements': typeof HelpPlantHealthPostBrexitPlantHealthArrangementsRoute
   '/join/$category/apply': typeof JoinCategoryApplyRoute
   '/admin/events/': typeof AdminEventsIndexRoute
+  '/admin/liss/': typeof AdminLissIndexRoute
   '/admin/news/': typeof AdminNewsIndexRoute
   '/admin/policy/': typeof AdminPolicyIndexRoute
   '/admin/training/': typeof AdminTrainingIndexRoute
@@ -1094,6 +1112,7 @@ export interface FileRouteTypes {
     | '/news/'
     | '/policy/'
     | '/admin/events/$id'
+    | '/admin/liss/$id'
     | '/admin/news/$id'
     | '/admin/policy/$id'
     | '/admin/training/$id'
@@ -1152,6 +1171,7 @@ export interface FileRouteTypes {
     | '/help/plant-health/post-brexit-plant-health-arrangements'
     | '/join/$category/apply'
     | '/admin/events/'
+    | '/admin/liss/'
     | '/admin/news/'
     | '/admin/policy/'
     | '/admin/training/'
@@ -1205,6 +1225,7 @@ export interface FileRouteTypes {
     | '/news'
     | '/policy'
     | '/admin/events/$id'
+    | '/admin/liss/$id'
     | '/admin/news/$id'
     | '/admin/policy/$id'
     | '/admin/training/$id'
@@ -1263,6 +1284,7 @@ export interface FileRouteTypes {
     | '/help/plant-health/post-brexit-plant-health-arrangements'
     | '/join/$category/apply'
     | '/admin/events'
+    | '/admin/liss'
     | '/admin/news'
     | '/admin/policy'
     | '/admin/training'
@@ -1317,6 +1339,7 @@ export interface FileRouteTypes {
     | '/news/'
     | '/policy/'
     | '/admin/events/$id'
+    | '/admin/liss/$id'
     | '/admin/news/$id'
     | '/admin/policy/$id'
     | '/admin/training/$id'
@@ -1375,6 +1398,7 @@ export interface FileRouteTypes {
     | '/help/plant-health/post-brexit-plant-health-arrangements'
     | '/join/$category/apply'
     | '/admin/events/'
+    | '/admin/liss/'
     | '/admin/news/'
     | '/admin/policy/'
     | '/admin/training/'
@@ -1767,6 +1791,13 @@ declare module '@tanstack/react-router' {
       path: '/news'
       fullPath: '/admin/news/'
       preLoaderRoute: typeof AdminNewsIndexRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/liss/': {
+      id: '/admin/liss/'
+      path: '/liss'
+      fullPath: '/admin/liss/'
+      preLoaderRoute: typeof AdminLissIndexRouteImport
       parentRoute: typeof AdminRoute
     }
     '/admin/events/': {
@@ -2175,6 +2206,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminNewsIdRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/admin/liss/$id': {
+      id: '/admin/liss/$id'
+      path: '/liss/$id'
+      fullPath: '/admin/liss/$id'
+      preLoaderRoute: typeof AdminLissIdRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/admin/events/$id': {
       id: '/admin/events/$id'
       path: '/events/$id'
@@ -2217,10 +2255,12 @@ interface AdminRouteChildren {
   AdminResetPasswordRoute: typeof AdminResetPasswordRoute
   AdminIndexRoute: typeof AdminIndexRoute
   AdminEventsIdRoute: typeof AdminEventsIdRoute
+  AdminLissIdRoute: typeof AdminLissIdRoute
   AdminNewsIdRoute: typeof AdminNewsIdRoute
   AdminPolicyIdRoute: typeof AdminPolicyIdRoute
   AdminTrainingIdRoute: typeof AdminTrainingIdRoute
   AdminEventsIndexRoute: typeof AdminEventsIndexRoute
+  AdminLissIndexRoute: typeof AdminLissIndexRoute
   AdminNewsIndexRoute: typeof AdminNewsIndexRoute
   AdminPolicyIndexRoute: typeof AdminPolicyIndexRoute
   AdminTrainingIndexRoute: typeof AdminTrainingIndexRoute
@@ -2230,10 +2270,12 @@ const AdminRouteChildren: AdminRouteChildren = {
   AdminResetPasswordRoute: AdminResetPasswordRoute,
   AdminIndexRoute: AdminIndexRoute,
   AdminEventsIdRoute: AdminEventsIdRoute,
+  AdminLissIdRoute: AdminLissIdRoute,
   AdminNewsIdRoute: AdminNewsIdRoute,
   AdminPolicyIdRoute: AdminPolicyIdRoute,
   AdminTrainingIdRoute: AdminTrainingIdRoute,
   AdminEventsIndexRoute: AdminEventsIndexRoute,
+  AdminLissIndexRoute: AdminLissIndexRoute,
   AdminNewsIndexRoute: AdminNewsIndexRoute,
   AdminPolicyIndexRoute: AdminPolicyIndexRoute,
   AdminTrainingIndexRoute: AdminTrainingIndexRoute,
