@@ -30,6 +30,7 @@ import { Route as MembershipFeesRouteImport } from './routes/membership.fees'
 import { Route as MembershipEnquiryRouteImport } from './routes/membership.enquiry'
 import { Route as MembershipCategoriesRouteImport } from './routes/membership.categories'
 import { Route as MembershipBecomeAMemberRouteImport } from './routes/membership.become-a-member'
+import { Route as LissCscsApplyRouteImport } from './routes/liss-cscs.apply'
 import { Route as HelpPodcastRouteImport } from './routes/help.podcast'
 import { Route as HelpPlantHealthRouteImport } from './routes/help.plant-health'
 import { Route as HelpPestsRouteImport } from './routes/help.pests'
@@ -219,6 +220,11 @@ const MembershipCategoriesRoute = MembershipCategoriesRouteImport.update({
 const MembershipBecomeAMemberRoute = MembershipBecomeAMemberRouteImport.update({
   id: '/membership/become-a-member',
   path: '/membership/become-a-member',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LissCscsApplyRoute = LissCscsApplyRouteImport.update({
+  id: '/liss-cscs/apply',
+  path: '/liss-cscs/apply',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HelpPodcastRoute = HelpPodcastRouteImport.update({
@@ -713,6 +719,7 @@ export interface FileRoutesByFullPath {
   '/help/pests': typeof HelpPestsRouteWithChildren
   '/help/plant-health': typeof HelpPlantHealthRouteWithChildren
   '/help/podcast': typeof HelpPodcastRoute
+  '/liss-cscs/apply': typeof LissCscsApplyRoute
   '/membership/become-a-member': typeof MembershipBecomeAMemberRoute
   '/membership/categories': typeof MembershipCategoriesRoute
   '/membership/enquiry': typeof MembershipEnquiryRoute
@@ -820,6 +827,7 @@ export interface FileRoutesByTo {
   '/help/pests': typeof HelpPestsRouteWithChildren
   '/help/plant-health': typeof HelpPlantHealthRouteWithChildren
   '/help/podcast': typeof HelpPodcastRoute
+  '/liss-cscs/apply': typeof LissCscsApplyRoute
   '/membership/become-a-member': typeof MembershipBecomeAMemberRoute
   '/membership/categories': typeof MembershipCategoriesRoute
   '/membership/enquiry': typeof MembershipEnquiryRoute
@@ -929,6 +937,7 @@ export interface FileRoutesById {
   '/help/pests': typeof HelpPestsRouteWithChildren
   '/help/plant-health': typeof HelpPlantHealthRouteWithChildren
   '/help/podcast': typeof HelpPodcastRoute
+  '/liss-cscs/apply': typeof LissCscsApplyRoute
   '/membership/become-a-member': typeof MembershipBecomeAMemberRoute
   '/membership/categories': typeof MembershipCategoriesRoute
   '/membership/enquiry': typeof MembershipEnquiryRoute
@@ -1039,6 +1048,7 @@ export interface FileRouteTypes {
     | '/help/pests'
     | '/help/plant-health'
     | '/help/podcast'
+    | '/liss-cscs/apply'
     | '/membership/become-a-member'
     | '/membership/categories'
     | '/membership/enquiry'
@@ -1146,6 +1156,7 @@ export interface FileRouteTypes {
     | '/help/pests'
     | '/help/plant-health'
     | '/help/podcast'
+    | '/liss-cscs/apply'
     | '/membership/become-a-member'
     | '/membership/categories'
     | '/membership/enquiry'
@@ -1254,6 +1265,7 @@ export interface FileRouteTypes {
     | '/help/pests'
     | '/help/plant-health'
     | '/help/podcast'
+    | '/liss-cscs/apply'
     | '/membership/become-a-member'
     | '/membership/categories'
     | '/membership/enquiry'
@@ -1362,6 +1374,7 @@ export interface RootRouteChildren {
   HelpPestsRoute: typeof HelpPestsRouteWithChildren
   HelpPlantHealthRoute: typeof HelpPlantHealthRouteWithChildren
   HelpPodcastRoute: typeof HelpPodcastRoute
+  LissCscsApplyRoute: typeof LissCscsApplyRoute
   MembershipBecomeAMemberRoute: typeof MembershipBecomeAMemberRoute
   MembershipCategoriesRoute: typeof MembershipCategoriesRoute
   MembershipEnquiryRoute: typeof MembershipEnquiryRoute
@@ -1530,6 +1543,13 @@ declare module '@tanstack/react-router' {
       path: '/membership/become-a-member'
       fullPath: '/membership/become-a-member'
       preLoaderRoute: typeof MembershipBecomeAMemberRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/liss-cscs/apply': {
+      id: '/liss-cscs/apply'
+      path: '/liss-cscs/apply'
+      fullPath: '/liss-cscs/apply'
+      preLoaderRoute: typeof LissCscsApplyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/help/podcast': {
@@ -2364,6 +2384,7 @@ const rootRouteChildren: RootRouteChildren = {
   HelpPestsRoute: HelpPestsRouteWithChildren,
   HelpPlantHealthRoute: HelpPlantHealthRouteWithChildren,
   HelpPodcastRoute: HelpPodcastRoute,
+  LissCscsApplyRoute: LissCscsApplyRoute,
   MembershipBecomeAMemberRoute: MembershipBecomeAMemberRoute,
   MembershipCategoriesRoute: MembershipCategoriesRoute,
   MembershipEnquiryRoute: MembershipEnquiryRoute,
