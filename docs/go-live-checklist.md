@@ -41,9 +41,18 @@ Legend: `[ ]` to do · `[~]` in progress / waiting on third party · `[x]` done
   currently save submissions to the database only. Once the email domain is
   verified, add an email notification to `membership@bali.org.uk` (and an
   acknowledgement to the applicant) on every submission.
+- [ ] **Push enquiries into Workbooks as Sales Leads** — currently Workbooks
+  sync is one-way (Workbooks → site). To close the loop, add an outbound
+  step that creates a Sales Lead (or Person + Opportunity) in Workbooks
+  whenever an enquiry/application is submitted. Decisions needed before
+  build: record type (Lead vs Person+Opportunity), field mapping
+  (name, email, company, category interest, revenue band → Workbooks
+  custom fields), duplicate-handling rule for existing members, and a
+  Workbooks API user with create-lead permission.
 - [ ] **Confirm `membership@bali.org.uk` mailbox exists** and is monitored by
   the membership team (this is a separate mailbox on the agency's mail
   platform — not something Lovable provisions).
+
 
 
 ## 3. Membership application forms
