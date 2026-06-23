@@ -57,6 +57,7 @@ import { Route as AdminTrainingIndexRouteImport } from './routes/admin.training.
 import { Route as AdminPolicyIndexRouteImport } from './routes/admin.policy.index'
 import { Route as AdminNewsIndexRouteImport } from './routes/admin.news.index'
 import { Route as AdminEventsIndexRouteImport } from './routes/admin.events.index'
+import { Route as LissCscsApplyCategoryRouteImport } from './routes/liss-cscs.apply.$category'
 import { Route as JoinCategoryApplyRouteImport } from './routes/join.$category.apply'
 import { Route as HelpPlantHealthPostBrexitPlantHealthArrangementsRouteImport } from './routes/help.plant-health.post-brexit-plant-health-arrangements'
 import { Route as HelpPlantHealthPlantPassportsRouteImport } from './routes/help.plant-health.plant-passports'
@@ -357,6 +358,11 @@ const AdminEventsIndexRoute = AdminEventsIndexRouteImport.update({
   id: '/events/',
   path: '/events/',
   getParentRoute: () => AdminRoute,
+} as any)
+const LissCscsApplyCategoryRoute = LissCscsApplyCategoryRouteImport.update({
+  id: '/$category',
+  path: '/$category',
+  getParentRoute: () => LissCscsApplyRoute,
 } as any)
 const JoinCategoryApplyRoute = JoinCategoryApplyRouteImport.update({
   id: '/join/$category/apply',
@@ -719,7 +725,7 @@ export interface FileRoutesByFullPath {
   '/help/pests': typeof HelpPestsRouteWithChildren
   '/help/plant-health': typeof HelpPlantHealthRouteWithChildren
   '/help/podcast': typeof HelpPodcastRoute
-  '/liss-cscs/apply': typeof LissCscsApplyRoute
+  '/liss-cscs/apply': typeof LissCscsApplyRouteWithChildren
   '/membership/become-a-member': typeof MembershipBecomeAMemberRoute
   '/membership/categories': typeof MembershipCategoriesRoute
   '/membership/enquiry': typeof MembershipEnquiryRoute
@@ -793,6 +799,7 @@ export interface FileRoutesByFullPath {
   '/help/plant-health/plant-passports': typeof HelpPlantHealthPlantPassportsRoute
   '/help/plant-health/post-brexit-plant-health-arrangements': typeof HelpPlantHealthPostBrexitPlantHealthArrangementsRoute
   '/join/$category/apply': typeof JoinCategoryApplyRoute
+  '/liss-cscs/apply/$category': typeof LissCscsApplyCategoryRoute
   '/admin/events/': typeof AdminEventsIndexRoute
   '/admin/news/': typeof AdminNewsIndexRoute
   '/admin/policy/': typeof AdminPolicyIndexRoute
@@ -827,7 +834,7 @@ export interface FileRoutesByTo {
   '/help/pests': typeof HelpPestsRouteWithChildren
   '/help/plant-health': typeof HelpPlantHealthRouteWithChildren
   '/help/podcast': typeof HelpPodcastRoute
-  '/liss-cscs/apply': typeof LissCscsApplyRoute
+  '/liss-cscs/apply': typeof LissCscsApplyRouteWithChildren
   '/membership/become-a-member': typeof MembershipBecomeAMemberRoute
   '/membership/categories': typeof MembershipCategoriesRoute
   '/membership/enquiry': typeof MembershipEnquiryRoute
@@ -901,6 +908,7 @@ export interface FileRoutesByTo {
   '/help/plant-health/plant-passports': typeof HelpPlantHealthPlantPassportsRoute
   '/help/plant-health/post-brexit-plant-health-arrangements': typeof HelpPlantHealthPostBrexitPlantHealthArrangementsRoute
   '/join/$category/apply': typeof JoinCategoryApplyRoute
+  '/liss-cscs/apply/$category': typeof LissCscsApplyCategoryRoute
   '/admin/events': typeof AdminEventsIndexRoute
   '/admin/news': typeof AdminNewsIndexRoute
   '/admin/policy': typeof AdminPolicyIndexRoute
@@ -937,7 +945,7 @@ export interface FileRoutesById {
   '/help/pests': typeof HelpPestsRouteWithChildren
   '/help/plant-health': typeof HelpPlantHealthRouteWithChildren
   '/help/podcast': typeof HelpPodcastRoute
-  '/liss-cscs/apply': typeof LissCscsApplyRoute
+  '/liss-cscs/apply': typeof LissCscsApplyRouteWithChildren
   '/membership/become-a-member': typeof MembershipBecomeAMemberRoute
   '/membership/categories': typeof MembershipCategoriesRoute
   '/membership/enquiry': typeof MembershipEnquiryRoute
@@ -1011,6 +1019,7 @@ export interface FileRoutesById {
   '/help/plant-health/plant-passports': typeof HelpPlantHealthPlantPassportsRoute
   '/help/plant-health/post-brexit-plant-health-arrangements': typeof HelpPlantHealthPostBrexitPlantHealthArrangementsRoute
   '/join/$category/apply': typeof JoinCategoryApplyRoute
+  '/liss-cscs/apply/$category': typeof LissCscsApplyCategoryRoute
   '/admin/events/': typeof AdminEventsIndexRoute
   '/admin/news/': typeof AdminNewsIndexRoute
   '/admin/policy/': typeof AdminPolicyIndexRoute
@@ -1122,6 +1131,7 @@ export interface FileRouteTypes {
     | '/help/plant-health/plant-passports'
     | '/help/plant-health/post-brexit-plant-health-arrangements'
     | '/join/$category/apply'
+    | '/liss-cscs/apply/$category'
     | '/admin/events/'
     | '/admin/news/'
     | '/admin/policy/'
@@ -1230,6 +1240,7 @@ export interface FileRouteTypes {
     | '/help/plant-health/plant-passports'
     | '/help/plant-health/post-brexit-plant-health-arrangements'
     | '/join/$category/apply'
+    | '/liss-cscs/apply/$category'
     | '/admin/events'
     | '/admin/news'
     | '/admin/policy'
@@ -1339,6 +1350,7 @@ export interface FileRouteTypes {
     | '/help/plant-health/plant-passports'
     | '/help/plant-health/post-brexit-plant-health-arrangements'
     | '/join/$category/apply'
+    | '/liss-cscs/apply/$category'
     | '/admin/events/'
     | '/admin/news/'
     | '/admin/policy/'
@@ -1374,7 +1386,7 @@ export interface RootRouteChildren {
   HelpPestsRoute: typeof HelpPestsRouteWithChildren
   HelpPlantHealthRoute: typeof HelpPlantHealthRouteWithChildren
   HelpPodcastRoute: typeof HelpPodcastRoute
-  LissCscsApplyRoute: typeof LissCscsApplyRoute
+  LissCscsApplyRoute: typeof LissCscsApplyRouteWithChildren
   MembershipBecomeAMemberRoute: typeof MembershipBecomeAMemberRoute
   MembershipCategoriesRoute: typeof MembershipCategoriesRoute
   MembershipEnquiryRoute: typeof MembershipEnquiryRoute
@@ -1733,6 +1745,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/admin/events/'
       preLoaderRoute: typeof AdminEventsIndexRouteImport
       parentRoute: typeof AdminRoute
+    }
+    '/liss-cscs/apply/$category': {
+      id: '/liss-cscs/apply/$category'
+      path: '/$category'
+      fullPath: '/liss-cscs/apply/$category'
+      preLoaderRoute: typeof LissCscsApplyCategoryRouteImport
+      parentRoute: typeof LissCscsApplyRoute
     }
     '/join/$category/apply': {
       id: '/join/$category/apply'
@@ -2356,6 +2375,18 @@ const HelpPlantHealthRouteWithChildren = HelpPlantHealthRoute._addFileChildren(
   HelpPlantHealthRouteChildren,
 )
 
+interface LissCscsApplyRouteChildren {
+  LissCscsApplyCategoryRoute: typeof LissCscsApplyCategoryRoute
+}
+
+const LissCscsApplyRouteChildren: LissCscsApplyRouteChildren = {
+  LissCscsApplyCategoryRoute: LissCscsApplyCategoryRoute,
+}
+
+const LissCscsApplyRouteWithChildren = LissCscsApplyRoute._addFileChildren(
+  LissCscsApplyRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SplatRoute: SplatRoute,
@@ -2384,7 +2415,7 @@ const rootRouteChildren: RootRouteChildren = {
   HelpPestsRoute: HelpPestsRouteWithChildren,
   HelpPlantHealthRoute: HelpPlantHealthRouteWithChildren,
   HelpPodcastRoute: HelpPodcastRoute,
-  LissCscsApplyRoute: LissCscsApplyRoute,
+  LissCscsApplyRoute: LissCscsApplyRouteWithChildren,
   MembershipBecomeAMemberRoute: MembershipBecomeAMemberRoute,
   MembershipCategoriesRoute: MembershipCategoriesRoute,
   MembershipEnquiryRoute: MembershipEnquiryRoute,

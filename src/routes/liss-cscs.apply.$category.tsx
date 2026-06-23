@@ -13,7 +13,7 @@ type Card = {
   slug: string;
 };
 type Category = { label: string; cards: Card[] };
-const data = cards as Record<string, Category>;
+const data = cards as unknown as Record<string, Category>;
 
 export const Route = createFileRoute("/liss-cscs/apply/$category")({
   loader: ({ params }) => {
