@@ -52,7 +52,7 @@ const ALLOWED_TYPES = [
 
 function FormPage() {
   const { category, categorySlug, card } = Route.useLoaderData();
-  const navigate = useNavigate();
+  
 
   // Generate application id once per session
   const [appId] = useState(() =>
