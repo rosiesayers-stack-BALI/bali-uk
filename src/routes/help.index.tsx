@@ -57,6 +57,7 @@ const GROUPS: Group[] = [
     tiles: [
       { href: "/help/guides", title: "Guides & reports", desc: "BALI Lay of the Land report, marketing best-practice guides, member case studies." },
       { href: "/help/podcast", title: "Dig Deep podcast", desc: "Honest conversations from across the UK landscape industry — Spotify, Apple Podcasts and Podbean." },
+      { href: "/help/media", title: "Media", desc: "Films from the BALI National Conference, RHS Chelsea Flower Show and the National Landscape Awards — with transcripts and articles." },
     ],
   },
   {

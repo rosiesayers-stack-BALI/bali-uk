@@ -72,6 +72,7 @@ const nav: NavItem[] = [
       { label: 'Latest News', href: '/news' },
       { label: 'Landscape News Magazine', href: '/news/magazine' },
       { label: 'Dig Deep Podcast', href: '/help/podcast' },
+      { label: 'Media (video)', href: '/help/media' },
       { label: 'Guides & Reports', href: '/help/guides' },
       { label: 'Plant Health', href: '/help/plant-health' },
       { label: 'Pests & Diseases', href: '/help/pests' },
