@@ -376,24 +376,40 @@ function FormSection({ title, desc, children }: { title: string; desc?: string; 
   );
 }
 
+let fieldUid = 0;
+function nextId() { return `liss-fld-${++fieldUid}`; }
+
 function Field({
   label, hint, required, error, children, className,
 }: {
   label: string; hint?: string; required?: boolean; error?: string;
-  children: React.ReactNode; className?: string;
+  children: React.ReactElement; className?: string;
 }) {
+  const [id] = useState(nextId);
+  const child = children as React.ReactElement<{ id?: string; "aria-invalid"?: boolean; "aria-describedby"?: string }>;
+  const errId = error ? `${id}-err` : undefined;
+  const fieldChild = {
+    ...child,
+    props: {
+      ...child.props,
+      id,
+      "aria-invalid": !!error,
+      "aria-describedby": errId,
+    },
+  } as React.ReactElement;
   return (
     <div className={className}>
-      <label className="block text-sm font-semibold text-gray-800 mb-1.5">
+      <label htmlFor={id} className="block text-sm font-semibold text-gray-800 mb-1.5">
         {label}
         {required && <span className="text-red-600 ml-1">*</span>}
         {hint && !required && <span className="text-gray-500 font-normal text-xs ml-2">({hint})</span>}
       </label>
-      {children}
-      {error && <p className="text-xs text-red-600 mt-1">{error}</p>}
+      {fieldChild}
+      {error && <p id={errId} className="text-xs text-red-600 mt-1">{error}</p>}
     </div>
   );
 }
+
 
 function UploadSlot({
   kind, label, uploads, onUpload, onRemove, uploading,
