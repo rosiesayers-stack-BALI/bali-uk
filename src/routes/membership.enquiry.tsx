@@ -202,6 +202,22 @@ function EnquiryPage() {
                       />
                     </div>
 
+                    <label className="flex items-start gap-3 text-sm text-slate-600">
+                      <input
+                        type="checkbox"
+                        name="consent"
+                        required
+                        className="mt-1 h-4 w-4 rounded border-slate-300 text-bali-green focus:ring-bali-green/30"
+                      />
+                      <span>
+                        I agree to BALI storing my details and contacting me about membership. See our{" "}
+                        <Link to="/privacy" className="text-bali-green font-semibold hover:underline">
+                          privacy notice
+                        </Link>
+                        . We never share your details with third parties.
+                      </span>
+                    </label>
+
                     {status === "error" && (
                       <div className="rounded-lg border border-red-200 bg-red-50 text-red-800 px-4 py-3 text-sm">
                         {error}
