@@ -1,6 +1,7 @@
 import { useState, FormEvent } from 'react'
 import { useNavigate } from '@tanstack/react-router'
 import Link from '../components/SmartLink'
+import { supabase } from '@/integrations/supabase/client'
 
 export default function LoginPage() {
   const navigate = useNavigate()
@@ -25,12 +26,15 @@ export default function LoginPage() {
     setErrors({})
     setLoading(true)
 
-    // TODO: Replace with real API call
-    // const res = await fetch('/api/auth/login', { method: 'POST', body: JSON.stringify({ email, password }) })
-    await new Promise((r) => setTimeout(r, 1200))
+    const { error } = await supabase.auth.signInWithPassword({ email, password })
     setLoading(false)
+    if (error) {
+      setErrors({ form: error.message || 'Sign in failed. Please check your details and try again.' })
+      return
+    }
     navigate({ to: '/portal' })
   }
+
 
   return (
     <div className="font-sans bg-gray-50 min-h-screen flex flex-col">

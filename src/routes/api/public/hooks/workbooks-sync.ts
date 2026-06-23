@@ -41,11 +41,33 @@ const SELECT_ALL = ["*"];
 export const Route = createFileRoute("/api/public/hooks/workbooks-sync")({
   server: {
     handlers: {
-      POST: async () => handle(),
-      GET: async () => handle(),
+      POST: async ({ request }) => guard(request) ?? handle(),
+      GET: async ({ request }) => guard(request) ?? handle(),
     },
   },
 });
+
+function guard(request: Request): Response | null {
+  const expected = process.env.WORKBOOKS_SYNC_SECRET;
+  if (!expected) {
+    console.error("workbooks-sync: WORKBOOKS_SYNC_SECRET not configured — refusing to run");
+    return new Response("Server misconfigured", { status: 503 });
+  }
+  const provided =
+    request.headers.get("x-webhook-secret") ??
+    request.headers.get("x-sync-secret") ??
+    new URL(request.url).searchParams.get("secret");
+  if (!provided || provided.length !== expected.length) {
+    return new Response("Unauthorized", { status: 401 });
+  }
+  // constant-time compare
+  let mismatch = 0;
+  for (let i = 0; i < expected.length; i++) {
+    mismatch |= provided.charCodeAt(i) ^ expected.charCodeAt(i);
+  }
+  if (mismatch !== 0) return new Response("Unauthorized", { status: 401 });
+  return null;
+}
 
 async function handle(): Promise<Response> {
   const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
