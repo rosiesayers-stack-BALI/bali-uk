@@ -63,7 +63,7 @@ const colorStyles: Record<Card["color"], { badge: string; label: string }> = {
 
 function CardDetail() {
   const { category, categorySlug, card, body } = Route.useLoaderData();
-  const color = colorStyles[card.color];
+  const color = colorStyles[(card.color as Card["color"]) ?? "gray"];
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
