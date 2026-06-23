@@ -1,0 +1,422 @@
+{
+  "amenity": {
+    "label": "Amenity",
+    "cards": [
+      {
+        "name": "Amenity Labourer Green",
+        "desc": "This SmartCard is for a labourer who is supervised by a competent skilled person.",
+        "img": "https://www.bali.org.uk/public/smart-cards/labourer-hi-res-rgb.jpg",
+        "color": "green",
+        "slug": "amenity-labourer-green"
+      },
+      {
+        "name": "Amenity Trainee Red",
+        "desc": "This SmartCard is for a trainee who is registered to complete a relevant qualification, technical award/professional membership.",
+        "img": "https://www.bali.org.uk/public/smart-cards/labourer-hi-res-rgb.jpg",
+        "color": "red",
+        "slug": "amenity-trainee-red"
+      },
+      {
+        "name": "Amenity Experienced Worker (Temporary) Red",
+        "desc": "This temporary card is available specifically for workers with on the job experience (at least one year in the last three) who are registered to complete a relevant NVQ/SVQ/Diploma at Level 2.",
+        "img": "https://www.bali.org.uk/public/smart-cards/experienced-worker-red-temporary.jpg",
+        "color": "red",
+        "slug": "amenity-experienced-worker-temporary-red"
+      },
+      {
+        "name": "Amenity Skilled Worker Blue",
+        "desc": "This SmartCard is for a skilled worker who has achieved a relevant NVQ/SVQ/Diploma at Level 2 appropriate to amenity or relevant training for an Artificial Grass Installer.",
+        "img": "https://www.bali.org.uk/public/smart-cards/skilled-worker-hi-res-rgb.jpg",
+        "color": "blue",
+        "slug": "amenity-skilled-worker-blue"
+      },
+      {
+        "name": "Amenity Experienced Technical, Supervisor or Manager Red",
+        "desc": "This SmartCard is available specifically to Supervisors/Managers with on the job experience (at least one year in the last three) who are registered to complete a relevant NVQ/SVQ/Diploma.",
+        "img": "https://www.bali.org.uk/public/smart-cards/experienced-worker-red.jpg",
+        "color": "red",
+        "slug": "amenity-experienced-technical-supervisor-or-manager-red"
+      },
+      {
+        "name": "Amenity Supervisor Gold",
+        "desc": "This SmartCard is for a supervisor who has achieved a relevant NVQ/SVQ/Diploma at Level 3.",
+        "img": "https://www.bali.org.uk/public/smart-cards/supervisory-hi-re-rgb.jpg",
+        "color": "gold",
+        "slug": "amenity-supervisor-gold"
+      },
+      {
+        "name": "Amenity Manager Black",
+        "desc": "This SmartCard is for a manager who has achieved a relevant NVQ/SVQ/Diploma at Level 4 or above.",
+        "img": "https://www.bali.org.uk/public/smart-cards/supervisory-hi-re-rgb.jpg",
+        "color": "black",
+        "slug": "amenity-manager-black"
+      },
+      {
+        "name": "Amenity Academically Qualified Person (AQP) White/Yellow",
+        "desc": "This SmartCard is available for an applicant who has achieved a related Degree/HND/HNC.",
+        "img": "https://www.bali.org.uk/public/smart-cards/aqp-female-hi-res-rgb.jpg",
+        "color": "whiteyellow",
+        "slug": "amenity-academically-qualified-person-aqp-white-yellow"
+      },
+      {
+        "name": "Amenity Provisional Red",
+        "desc": "This SmartCard is for an individual who is over 16 and is either on a probationary period or supervised work experience. This SmartCard is valid for six months and is not renewable.",
+        "img": "https://www.bali.org.uk/public/smart-cards/provisional-temp-hi-res-rgb.jpg",
+        "color": "red",
+        "slug": "amenity-provisional-red"
+      }
+    ]
+  },
+  "arboriculture": {
+    "label": "Arboriculture",
+    "cards": [
+      {
+        "name": "Arborist Labourer Green",
+        "desc": "This SmartCard is for labourers who are supervised by a competent skilled person.",
+        "img": "https://www.bali.org.uk/public/smart-cards/small-labourer-hi-res-rgb.jpeg",
+        "color": "green",
+        "slug": "arborist-labourer-green"
+      },
+      {
+        "name": "Arborist Skilled Worker Blue",
+        "desc": "This SmartCard is for skilled worker who has achieved a relevant chainsaw qualification.",
+        "img": "https://www.bali.org.uk/public/smart-cards/1skilled-worker-hi-res-rgb.jpg",
+        "color": "blue",
+        "slug": "arborist-skilled-worker-blue"
+      },
+      {
+        "name": "Arborist Trainee Red",
+        "desc": "This SmartCard is for a trainee who is registered to complete a relevant qualification or professional membership.",
+        "img": "https://www.bali.org.uk/public/smart-cards/13trainee-hi-res-rgb.jpeg",
+        "color": "red",
+        "slug": "arborist-trainee-red"
+      },
+      {
+        "name": "Arborist Experienced Technical, Supervisor or Manager Red",
+        "desc": "This SmartCard is available specifically to Supervisors/Managers with on the job experience (at least one year in the last three) who are registered to complete a relevant Diploma/NVQ/SVQ.",
+        "img": "https://www.bali.org.uk/public/smart-cards/1experienced-worker-red.jpg",
+        "color": "red",
+        "slug": "arborist-experienced-technical-supervisor-or-manager-red"
+      },
+      {
+        "name": "Arborist Supervisor Gold",
+        "desc": "This SmartCard is for a supervisor who has achieved a relevant NVQ/SVQ/Diploma at Level 3.",
+        "img": "https://www.bali.org.uk/public/smart-cards/small-supervisory-hi-re-rgb.jpeg",
+        "color": "gold",
+        "slug": "arborist-supervisor-gold"
+      },
+      {
+        "name": "Arborist Manager Black",
+        "desc": "This SmartCard is for a manager who has achieved a relevant NVQ/SVQ/Diploma at Level 4 or above.",
+        "img": "https://www.bali.org.uk/public/smart-cards/small-manager-hi-res-rgb.jpeg",
+        "color": "black",
+        "slug": "arborist-manager-black"
+      },
+      {
+        "name": "Arborist Academically Qualified Person (AQP) White/Yellow",
+        "desc": "This SmartCard is available for an applicant who has achieved a related Degree/HND/HNC.",
+        "img": "https://www.bali.org.uk/public/smart-cards/1small-aqp-female-hi-res-rgb.jpeg",
+        "color": "whiteyellow",
+        "slug": "arborist-academically-qualified-person-aqp-white-yellow"
+      },
+      {
+        "name": "Arborist Professionally Qualified Person (PQP) White/Yellow",
+        "desc": "This SmartCard is available for an applicant who is a current Full/Fellow Member of the Arboricultural Association (AA) or current Chartered/Fellow Member of the Institute of Chartered Foresters (ICF).",
+        "img": "https://www.bali.org.uk/public/smart-cards/pqp-hi-res.jpg",
+        "color": "whiteyellow",
+        "slug": "arborist-professionally-qualified-person-pqp-white-yellow"
+      },
+      {
+        "name": "Arborist Provisional Red",
+        "desc": "This SmartCard is for an individual who is over 16 and is either on a probationary period or supervised work experience. This SmartCard is valid for six months and is not renewable.",
+        "img": "https://www.bali.org.uk/public/smart-cards/1provisional-temp-hi-res-rgb.jpg",
+        "color": "red",
+        "slug": "arborist-provisional-red"
+      }
+    ]
+  },
+  "countryside-management": {
+    "label": "Countryside Management",
+    "cards": [
+      {
+        "name": "Countryside Management Labourer Green",
+        "desc": "This SmartCard is for labourers who are supervised by a competent skilled person.",
+        "img": "https://www.bali.org.uk/public/smart-cards/2labourer-hi-res-rgb.jpg",
+        "color": "green",
+        "slug": "countryside-management-labourer-green"
+      },
+      {
+        "name": "Countryside Management Trainee Red",
+        "desc": "This SmartCard is for a trainee who is registered to complete a relevant qualification, technical award/professional membership.",
+        "img": "https://www.bali.org.uk/public/smart-cards/4trainee-hi-res-rgb.jpg",
+        "color": "red",
+        "slug": "countryside-management-trainee-red"
+      },
+      {
+        "name": "Countryside Management Apprentice Red",
+        "desc": "This SmartCard is for an apprentice who has commenced on a recognised apprenticeship framework but has yet to achieve it.",
+        "img": "https://www.bali.org.uk/public/smart-cards/1apprentice-red.jpg",
+        "color": "red",
+        "slug": "countryside-management-apprentice-red"
+      },
+      {
+        "name": "Countryside Management Experienced Worker (Temporary) Red",
+        "desc": "This temporary card is available specifically for workers with on the job experience (at least one year in the last three) who are registered to complete a relevant NVQ/SVQ/Diploma at Level 2.",
+        "img": "https://www.bali.org.uk/public/smart-cards/1experienced-worker-red-temporary.jpg",
+        "color": "red",
+        "slug": "countryside-management-experienced-worker-temporary-red"
+      },
+      {
+        "name": "Countryside Management Skilled Worker Blue",
+        "desc": "This SmartCard is for a skilled worker who has achieved a relevant NVQ/SVQ/Diploma at Level 2.",
+        "img": "https://www.bali.org.uk/public/smart-cards/3skilled-worker-hi-res-rgb.jpg",
+        "color": "blue",
+        "slug": "countryside-management-skilled-worker-blue"
+      },
+      {
+        "name": "Countryside Management Experienced Technical, Supervisor or Manager Red",
+        "desc": "This SmartCard is available specifically to Supervisors/Managers with on the job experience (at least one year in the last three) who are registered to complete a relevant Diploma/NVQ/SVQ.",
+        "img": "https://www.bali.org.uk/public/smart-cards/2experienced-worker-red.jpg",
+        "color": "red",
+        "slug": "countryside-management-experienced-technical-supervisor-or-manager-red"
+      },
+      {
+        "name": "Countryside Management Supervisor Gold",
+        "desc": "This SmartCard is for a supervisor who has achieved a relevant NVQ/SVQ/Diploma at Level 3.",
+        "img": "https://www.bali.org.uk/public/smart-cards/1supervisory-hi-re-rgb.jpg",
+        "color": "gold",
+        "slug": "countryside-management-supervisor-gold"
+      },
+      {
+        "name": "Countryside Management Manager Black",
+        "desc": "This SmartCard is for a manager who has achieved a relevant NVQ/SVQ/Diploma at Level 4 or above.",
+        "img": "https://www.bali.org.uk/public/smart-cards/1manager-hi-res-rgb.jpg",
+        "color": "black",
+        "slug": "countryside-management-manager-black"
+      },
+      {
+        "name": "Countryside Management Academically Qualified Person (AQP) White/Yellow",
+        "desc": "This SmartCard is available for an applicant who has achieved a related Degree/HND/HNC.",
+        "img": "https://www.bali.org.uk/public/smart-cards/1aqp-female-hi-res-rgb.jpg",
+        "color": "whiteyellow",
+        "slug": "countryside-management-academically-qualified-person-aqp-white-yellow"
+      },
+      {
+        "name": "Countryside Management Professionally Qualified Person (PQP) White/Yellow",
+        "desc": "This SmartCard is available for a current Full/Chartered/Fellow Member of the British Society of Soil Science (BSSS).",
+        "img": "https://www.bali.org.uk/public/smart-cards/1pqp-hi-res.jpg",
+        "color": "whiteyellow",
+        "slug": "countryside-management-professionally-qualified-person-pqp-white-yellow"
+      },
+      {
+        "name": "Countryside Management Provisional Red",
+        "desc": "This SmartCard is for an individual who is over 16 and is either on a probationary period or supervised work experience. This SmartCard is valid for six months and is not renewable.",
+        "img": "https://www.bali.org.uk/public/smart-cards/3provisional-temp-hi-res-rgb.jpg",
+        "color": "red",
+        "slug": "countryside-management-provisional-red"
+      }
+    ]
+  },
+  "ecology-and-environmental-management": {
+    "label": "Ecology and Environmental Management",
+    "cards": [
+      {
+        "name": "Ecology and Environmental Management Skilled Worker Blue",
+        "desc": "This SmartCard is for a skilled worker who is approved and licensed with the appropriate licensing authorities in England, Scotland, Wales and Northern Ireland.",
+        "img": "https://www.bali.org.uk/public/smart-cards/4skilled-worker-hi-res-rgb.jpg",
+        "color": "blue",
+        "slug": "ecology-and-environmental-management-skilled-worker-blue"
+      },
+      {
+        "name": "Ecology and Environmental Management Trainee Red",
+        "desc": "This SmartCard is for a trainee who is registered to complete a relevant qualification/professional membership.",
+        "img": "https://www.bali.org.uk/public/smart-cards/9trainee-hi-res-rgb.jpg",
+        "color": "red",
+        "slug": "ecology-and-environmental-management-trainee-red"
+      },
+      {
+        "name": "Ecology and Environmental Management Academically Qualified Person (AQP) White/Yellow",
+        "desc": "This SmartCard is available for an applicant who has achieved a related Degree/HND/HNC.",
+        "img": "https://www.bali.org.uk/public/smart-cards/2aqp-female-hi-res-rgb.jpg",
+        "color": "whiteyellow",
+        "slug": "ecology-and-environmental-management-academically-qualified-person-aqp-white-yellow"
+      },
+      {
+        "name": "Ecology and Environmental Management Professionally Qualified Person (PQP) White/Yellow",
+        "desc": "This SmartCard is available for applicants who are Full Members of the Chartered Institute of Ecology and Environmental Management (CIEEM) or a Member Grade/Chartered/Fellow Membership of the Chartered Institution of Water and Environmental Management (CIWEM).",
+        "img": "https://www.bali.org.uk/public/smart-cards/2pqp-hi-res.jpg",
+        "color": "whiteyellow",
+        "slug": "ecology-and-environmental-management-professionally-qualified-person-pqp-white-yellow"
+      },
+      {
+        "name": "Ecology and Environmental Management Provisional Red",
+        "desc": "This SmartCard is for an individual who is over 16 and is either on a probationary period or supervised work experience. This SmartCard is valid for six months and is not renewable.",
+        "img": "https://www.bali.org.uk/public/smart-cards/4provisional-temp-hi-res-rgb.jpg",
+        "color": "red",
+        "slug": "ecology-and-environmental-management-provisional-red"
+      }
+    ]
+  },
+  "landscape-and-maintenance": {
+    "label": "Landscape and Maintenance",
+    "cards": [
+      {
+        "name": "Landscape and Maintenance Labourer Green",
+        "desc": "This SmartCard is for labourers who are supervised by a competent skilled person.",
+        "img": "https://www.bali.org.uk/public/smart-cards/3labourer-hi-res-rgb.jpg",
+        "color": "green",
+        "slug": "landscape-and-maintenance-labourer-green"
+      },
+      {
+        "name": "Landscape and Maintenance Trainee Red",
+        "desc": "This SmartCard is for a trainee who is registered to complete a relevant qualification, technical award/professional membership.",
+        "img": "https://www.bali.org.uk/public/smart-cards/11trainee-hi-res-rgb.jpg",
+        "color": "red",
+        "slug": "landscape-and-maintenance-trainee-red"
+      },
+      {
+        "name": "Landscape and Maintenance Apprentice Red",
+        "desc": "This SmartCard is for an apprentice who has commenced on a recognised apprenticeship framework but has yet to achieve it.",
+        "img": "https://www.bali.org.uk/public/smart-cards/apprentice-red.jpg",
+        "color": "red",
+        "slug": "landscape-and-maintenance-apprentice-red"
+      },
+      {
+        "name": "Landscape and Maintenance Experienced Worker (Temporary) Red",
+        "desc": "This temporary card is available specifically for workers with on the job experience (at least one year in the last three) who are registered to complete a relevant NVQ/SVQ/Diploma at Level 2.",
+        "img": "https://www.bali.org.uk/public/smart-cards/2experienced-worker-red-temporary.jpg",
+        "color": "red",
+        "slug": "landscape-and-maintenance-experienced-worker-temporary-red"
+      },
+      {
+        "name": "Landscape and Maintenance Skilled Worker Blue",
+        "desc": "This SmartCard is for a skilled worker who has achieved a relevant NVQ/SVQ/Diploma at Level 2 appropriate to landscaping or relevant training for an environmental maintenance operative/green roof installer.",
+        "img": "https://www.bali.org.uk/public/smart-cards/5skilled-worker-hi-res-rgb.jpg",
+        "color": "blue",
+        "slug": "landscape-and-maintenance-skilled-worker-blue"
+      },
+      {
+        "name": "Landscape and Maintenance Experienced Technical, Supervisor or Manager Red",
+        "desc": "This SmartCard is available specifically to Supervisors/Managers with on the job experience (at least one year in the last three) who are registered to complete a relevant Diploma/NVQ/SVQ.",
+        "img": "https://www.bali.org.uk/public/smart-cards/3experienced-worker-red.jpg",
+        "color": "red",
+        "slug": "landscape-and-maintenance-experienced-technical-supervisor-or-manager-red"
+      },
+      {
+        "name": "Landscape and Maintenance Supervisor Gold",
+        "desc": "This SmartCard is for a supervisor who has achieved a relevant NVQ/SVQ/Diploma at Level 3.",
+        "img": "https://www.bali.org.uk/public/smart-cards/2supervisory-hi-re-rgb.jpg",
+        "color": "gold",
+        "slug": "landscape-and-maintenance-supervisor-gold"
+      },
+      {
+        "name": "Landscape and Maintenance Manager Black",
+        "desc": "This SmartCard is for a manager who has achieved a relevant NVQ/SVQ/Diploma at Level 4 or above.",
+        "img": "https://www.bali.org.uk/public/smart-cards/2manager-hi-res-rgb.jpg",
+        "color": "black",
+        "slug": "landscape-and-maintenance-manager-black"
+      },
+      {
+        "name": "Landscape and Maintenance Academically Qualified Person (AQP) White/Yellow",
+        "desc": "This SmartCard is available for an applicant who has achieved a related Degree/HND/HNC.",
+        "img": "https://www.bali.org.uk/public/smart-cards/3aqp-female-hi-res-rgb.jpg",
+        "color": "whiteyellow",
+        "slug": "landscape-and-maintenance-academically-qualified-person-aqp-white-yellow"
+      },
+      {
+        "name": "Landscape and Maintenance Professionally Qualified Person (PQP) White/Yellow",
+        "desc": "This SmartCard is available for an applicant who is a member of a recognised LISS/CSCS professional body. For Landscape Institute Members only there are two routes to obtaining a SmartCard; via BALI or CSCS Core Scheme Route.",
+        "img": "https://www.bali.org.uk/public/smart-cards/3pqp-hi-res.jpg",
+        "color": "whiteyellow",
+        "slug": "landscape-and-maintenance-professionally-qualified-person-pqp-white-yellow"
+      },
+      {
+        "name": "Landscape and Maintenance Provisional Red",
+        "desc": "This SmartCard is for an individual who is over 16 and is either on a probationary period or supervised work experience. This SmartCard is valid for six months and is not renewable.",
+        "img": "https://www.bali.org.uk/public/smart-cards/5provisional-temp-hi-res-rgb.jpg",
+        "color": "red",
+        "slug": "landscape-and-maintenance-provisional-red"
+      }
+    ]
+  },
+  "modular-paving": {
+    "label": "Modular Paving",
+    "cards": [
+      {
+        "name": "Modular Paving Trainee Red",
+        "desc": "This SmartCard is for a trainee who is registered to complete a relevant NVQ/SVQ/Diploma at Level 2.",
+        "img": "https://www.bali.org.uk/public/smart-cards/52trainee-hi-res-rgb.jpg",
+        "color": "red",
+        "slug": "modular-paving-trainee-red"
+      },
+      {
+        "name": "Modular Paving Skilled Worker Blue",
+        "desc": "This SmartCard is for a skilled worker who has achieved a relevant NVQ/SVQ/Diploma at Level 2.",
+        "img": "https://www.bali.org.uk/public/smart-cards/2skilled-worker-hi-res-rgb.jpg",
+        "color": "blue",
+        "slug": "modular-paving-skilled-worker-blue"
+      },
+      {
+        "name": "Modular Paving Provisional Red",
+        "desc": "This SmartCard is for an individual who is over 16 and is either on a probationary period or supervised work experience. This SmartCard is valid for six months and is not renewable.",
+        "img": "https://www.bali.org.uk/public/smart-cards/2provisional-temp-hi-res-rgb.jpg",
+        "color": "red",
+        "slug": "modular-paving-provisional-red"
+      }
+    ]
+  },
+  "pesticides-and-pest-control": {
+    "label": "Pesticides and Pest Control",
+    "cards": [
+      {
+        "name": "Pesticides Trainee Red",
+        "desc": "This SmartCard is for a trainee who is registered to complete a relevant qualification.",
+        "img": "https://www.bali.org.uk/public/smart-cards/3trainee-hi-res-rgb.jpeg",
+        "color": "red",
+        "slug": "pesticides-trainee-red"
+      },
+      {
+        "name": "Pest Control Apprentice Red",
+        "desc": "This SmartCard is for an apprentice who has commenced on a recognised apprenticeship framework but has yet to achieve it.",
+        "img": "https://www.bali.org.uk/public/smart-cards/3trainee-hi-res-rgb.jpeg",
+        "color": "red",
+        "slug": "pest-control-apprentice-red"
+      },
+      {
+        "name": "Pesticide Experienced Technical, Supervisor or Manager Red",
+        "desc": "This SmartCard is available specifically to Managers with on the job experience (at least one year in the last three) who are registered to complete a relevant Diploma/NVQ/SVQ.",
+        "img": "https://www.bali.org.uk/public/smart-cards/4experienced-worker-red.jpg",
+        "color": "red",
+        "slug": "pesticide-experienced-technical-supervisor-or-manager-red"
+      },
+      {
+        "name": "Pesticide or Pest Control Blue Skilled Worker",
+        "desc": "This SmartCard is for a skilled worker who has achieved a relevant pesticide or pest control qualification.",
+        "img": "https://www.bali.org.uk/public/smart-cards/6skilled-worker-hi-res-rgb.jpg",
+        "color": "blue",
+        "slug": "pesticide-or-pest-control-blue-skilled-worker"
+      },
+      {
+        "name": "Pesticide Manager Black",
+        "desc": "This SmartCard is for a manager who has achieved a relevant pesticides qualification.",
+        "img": "https://www.bali.org.uk/public/smart-cards/3manager-hi-res-rgb.jpg",
+        "color": "black",
+        "slug": "pesticide-manager-black"
+      },
+      {
+        "name": "Pesticide Academically Qualified Person (AQP) White/Yellow",
+        "desc": "This SmartCard is available for applicants who has achieved a related Degree/HND/HNC.",
+        "img": "https://www.bali.org.uk/public/smart-cards/4aqp-female-hi-res-rgb.jpg",
+        "color": "whiteyellow",
+        "slug": "pesticide-academically-qualified-person-aqp-white-yellow"
+      },
+      {
+        "name": "Pesticides and Pest Control Provisional Red",
+        "desc": "This SmartCard is for an individual who is over 16 and is either on a probationary period or supervised work experience. This SmartCard is valid for six months and is not renewable.",
+        "img": "https://www.bali.org.uk/public/smart-cards/6provisional-temp-hi-res-rgb.jpg",
+        "color": "red",
+        "slug": "pesticides-and-pest-control-provisional-red"
+      }
+    ]
+  }
+}
