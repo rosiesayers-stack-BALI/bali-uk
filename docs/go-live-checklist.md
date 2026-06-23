@@ -36,9 +36,15 @@ Legend: `[ ]` to do · `[~]` in progress / waiting on third party · `[x]` done
 - [ ] **Send a test application end-to-end** and confirm `membership@bali.org.uk`
   receives the summary + signed document links, and the applicant gets the
   confirmation email.
+- [ ] **Wire enquiry-form notifications** — the short "Apply online" form on
+  `/join/<category>/apply` and the general `/membership/enquiry` form
+  currently save submissions to the database only. Once the email domain is
+  verified, add an email notification to `membership@bali.org.uk` (and an
+  acknowledgement to the applicant) on every submission.
 - [ ] **Confirm `membership@bali.org.uk` mailbox exists** and is monitored by
   the membership team (this is a separate mailbox on the agency's mail
   platform — not something Lovable provisions).
+
 
 ## 3. Membership application forms
 
