@@ -89,7 +89,7 @@ function CategoryPage() {
       <section className="py-12 sm:py-16 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {category.cards.map((card) => {
+            {category.cards.map((card: Card) => {
               const c = colorStyles[card.color];
               const subject = encodeURIComponent(`SmartCard application — ${card.name}`);
               const body = encodeURIComponent(
