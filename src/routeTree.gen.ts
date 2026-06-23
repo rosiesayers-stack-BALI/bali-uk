@@ -118,6 +118,7 @@ import { Route as AdminNewsIdRouteImport } from './routes/admin.news.$id'
 import { Route as AdminEventsIdRouteImport } from './routes/admin.events.$id'
 import { Route as LissCscsApplyCategoryCardRouteImport } from './routes/liss-cscs.apply.$category.$card'
 import { Route as ApiPublicHooksWorkbooksSyncRouteImport } from './routes/api/public/hooks/workbooks-sync'
+import { Route as LissCscsApplyCategoryCardFormRouteImport } from './routes/liss-cscs.apply.$category.$card.form'
 
 const PortalRoute = PortalRouteImport.update({
   id: '/portal',
@@ -702,6 +703,12 @@ const ApiPublicHooksWorkbooksSyncRoute =
     path: '/api/public/hooks/workbooks-sync',
     getParentRoute: () => rootRouteImport,
   } as any)
+const LissCscsApplyCategoryCardFormRoute =
+  LissCscsApplyCategoryCardFormRouteImport.update({
+    id: '/form',
+    path: '/form',
+    getParentRoute: () => LissCscsApplyCategoryCardRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -812,7 +819,8 @@ export interface FileRoutesByFullPath {
   '/admin/policy/': typeof AdminPolicyIndexRoute
   '/admin/training/': typeof AdminTrainingIndexRoute
   '/api/public/hooks/workbooks-sync': typeof ApiPublicHooksWorkbooksSyncRoute
-  '/liss-cscs/apply/$category/$card': typeof LissCscsApplyCategoryCardRoute
+  '/liss-cscs/apply/$category/$card': typeof LissCscsApplyCategoryCardRouteWithChildren
+  '/liss-cscs/apply/$category/$card/form': typeof LissCscsApplyCategoryCardFormRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -922,7 +930,8 @@ export interface FileRoutesByTo {
   '/admin/policy': typeof AdminPolicyIndexRoute
   '/admin/training': typeof AdminTrainingIndexRoute
   '/api/public/hooks/workbooks-sync': typeof ApiPublicHooksWorkbooksSyncRoute
-  '/liss-cscs/apply/$category/$card': typeof LissCscsApplyCategoryCardRoute
+  '/liss-cscs/apply/$category/$card': typeof LissCscsApplyCategoryCardRouteWithChildren
+  '/liss-cscs/apply/$category/$card/form': typeof LissCscsApplyCategoryCardFormRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -1034,7 +1043,8 @@ export interface FileRoutesById {
   '/admin/policy/': typeof AdminPolicyIndexRoute
   '/admin/training/': typeof AdminTrainingIndexRoute
   '/api/public/hooks/workbooks-sync': typeof ApiPublicHooksWorkbooksSyncRoute
-  '/liss-cscs/apply/$category/$card': typeof LissCscsApplyCategoryCardRoute
+  '/liss-cscs/apply/$category/$card': typeof LissCscsApplyCategoryCardRouteWithChildren
+  '/liss-cscs/apply/$category/$card/form': typeof LissCscsApplyCategoryCardFormRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -1148,6 +1158,7 @@ export interface FileRouteTypes {
     | '/admin/training/'
     | '/api/public/hooks/workbooks-sync'
     | '/liss-cscs/apply/$category/$card'
+    | '/liss-cscs/apply/$category/$card/form'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -1258,6 +1269,7 @@ export interface FileRouteTypes {
     | '/admin/training'
     | '/api/public/hooks/workbooks-sync'
     | '/liss-cscs/apply/$category/$card'
+    | '/liss-cscs/apply/$category/$card/form'
   id:
     | '__root__'
     | '/'
@@ -1369,6 +1381,7 @@ export interface FileRouteTypes {
     | '/admin/training/'
     | '/api/public/hooks/workbooks-sync'
     | '/liss-cscs/apply/$category/$card'
+    | '/liss-cscs/apply/$category/$card/form'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -2186,6 +2199,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPublicHooksWorkbooksSyncRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/liss-cscs/apply/$category/$card/form': {
+      id: '/liss-cscs/apply/$category/$card/form'
+      path: '/form'
+      fullPath: '/liss-cscs/apply/$category/$card/form'
+      preLoaderRoute: typeof LissCscsApplyCategoryCardFormRouteImport
+      parentRoute: typeof LissCscsApplyCategoryCardRoute
+    }
   }
 }
 
@@ -2395,12 +2415,26 @@ const HelpPlantHealthRouteWithChildren = HelpPlantHealthRoute._addFileChildren(
   HelpPlantHealthRouteChildren,
 )
 
+interface LissCscsApplyCategoryCardRouteChildren {
+  LissCscsApplyCategoryCardFormRoute: typeof LissCscsApplyCategoryCardFormRoute
+}
+
+const LissCscsApplyCategoryCardRouteChildren: LissCscsApplyCategoryCardRouteChildren =
+  {
+    LissCscsApplyCategoryCardFormRoute: LissCscsApplyCategoryCardFormRoute,
+  }
+
+const LissCscsApplyCategoryCardRouteWithChildren =
+  LissCscsApplyCategoryCardRoute._addFileChildren(
+    LissCscsApplyCategoryCardRouteChildren,
+  )
+
 interface LissCscsApplyCategoryRouteChildren {
-  LissCscsApplyCategoryCardRoute: typeof LissCscsApplyCategoryCardRoute
+  LissCscsApplyCategoryCardRoute: typeof LissCscsApplyCategoryCardRouteWithChildren
 }
 
 const LissCscsApplyCategoryRouteChildren: LissCscsApplyCategoryRouteChildren = {
-  LissCscsApplyCategoryCardRoute: LissCscsApplyCategoryCardRoute,
+  LissCscsApplyCategoryCardRoute: LissCscsApplyCategoryCardRouteWithChildren,
 }
 
 const LissCscsApplyCategoryRouteWithChildren =
