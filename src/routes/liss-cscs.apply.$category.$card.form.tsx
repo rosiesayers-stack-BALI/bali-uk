@@ -167,13 +167,6 @@ function FormPage() {
           consent_terms: true as const,
         },
       });
-      navigate({
-        to: "/liss-cscs/apply/$category/$card/form",
-        params: { category: categorySlug, card: card.slug },
-        search: { submitted: "1" },
-        replace: true,
-      }).catch(() => undefined);
-      // Show success screen by state too
       setSubmitted(true);
     } catch (err) {
       console.error("[liss] submit failed", err);
