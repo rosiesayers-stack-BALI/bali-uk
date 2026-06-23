@@ -210,11 +210,8 @@ function EnquiryPage() {
                         className="mt-1 h-4 w-4 rounded border-slate-300 text-bali-green focus:ring-bali-green/30"
                       />
                       <span>
-                        I agree to BALI storing my details and contacting me about membership. See our{" "}
-                        <Link to="/privacy" className="text-bali-green font-semibold hover:underline">
-                          privacy notice
-                        </Link>
-                        . We never share your details with third parties.
+                        I agree to BALI storing my details and contacting me about membership.
+                        We never share your details with third parties.
                       </span>
                     </label>
 

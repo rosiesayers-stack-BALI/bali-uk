@@ -14,6 +14,7 @@ const schema = z.object({
   businessType: z.string().trim().min(1, "Please choose one"),
   revenueBand: z.string().trim().min(1, "Please choose one"),
   notes: z.string().trim().max(1000).optional().or(z.literal("")),
+  consent: z.literal(true, { errorMap: () => ({ message: "Please tick to continue" }) }),
 });
 
 type FormValues = z.infer<typeof schema>;
@@ -137,6 +138,7 @@ export default function ShortApplyForm({ config }: Props) {
       businessType: "",
       revenueBand: "",
       notes: "",
+      consent: false as unknown as true,
     },
   });
 
@@ -295,6 +297,23 @@ export default function ShortApplyForm({ config }: Props) {
             />
           </div>
 
+          <div>
+            <label className="flex items-start gap-3 text-sm text-slate-600">
+              <input
+                type="checkbox"
+                className="mt-1 h-4 w-4 rounded border-slate-300 text-bali-green focus:ring-bali-green/30"
+                {...form.register("consent")}
+              />
+              <span>
+                I agree to BALI storing my details and contacting me about membership.
+                We never share your details with third parties. *
+              </span>
+            </label>
+            {form.formState.errors.consent && (
+              <p className={errCls}>{form.formState.errors.consent.message as string}</p>
+            )}
+          </div>
+
           <div className="pt-2 flex flex-col sm:flex-row sm:items-center gap-4">
             <button
               type="submit"
@@ -304,7 +323,7 @@ export default function ShortApplyForm({ config }: Props) {
               {submitting ? "Sending…" : "Send to membership team"}
             </button>
             <p className="text-xs text-slate-500">
-              By submitting you agree we'll contact you about BALI membership. We never share your details.
+              The membership team will reply within 48 working hours.
             </p>
           </div>
         </form>
