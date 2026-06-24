@@ -58,7 +58,6 @@ function PolicyIndex() {
           </p>
           <div className="mt-6 flex flex-wrap gap-3 text-sm">
             <a href="mailto:policy@bali.org.uk" className="bg-white text-bali-blue px-5 py-2.5 rounded-lg font-semibold hover:bg-blue-50 transition-colors">Contact the policy team</a>
-            <a href="https://bali-policy.org.uk" target="_blank" rel="noopener noreferrer" className="border border-white/40 px-5 py-2.5 rounded-lg font-semibold hover:bg-white/10 transition-colors">Visit bali-policy.org.uk ↗</a>
           </div>
         </div>
       </section>
