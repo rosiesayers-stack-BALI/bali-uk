@@ -273,9 +273,9 @@ const C: Record<string, PageContent> = {
   },
   "/about/conference": {
     eyebrow: "About BALI",
-    title: "BALI National Landscape Conference 2026",
+    title: "BALI National Landscape Conference 2027",
     theme: "blue",
-    intro: "BALI's flagship one-day gathering for the UK landscape industry returns in 2026. Each year the National Landscape Conference brings together accredited contractors, designers, suppliers and industry leaders for a day of keynote thinking, practical breakouts, exhibitor showcases and high-quality networking. The 2026 theme, programme and ticket details will be confirmed here as soon as they're released — register your interest below to be the first to hear.",
+    intro: "BALI's flagship one-day gathering for the UK landscape industry returns in 2027. Each year the National Landscape Conference brings together accredited contractors, designers, suppliers and industry leaders for a day of keynote thinking, practical breakouts, exhibitor showcases and high-quality networking. The 2027 theme, programme and ticket details will be confirmed here as soon as they're released — register your interest below to be the first to hear.",
     image: { url: "/__l5e/assets-v1/70dd36b4-d96e-4ab6-977a-bf5f14295333/bali-conf-2025-011.jpg", alt: "BALI National Landscape Conference 2025 — packed audience at The Royal Society, London" },
     highlights: [
       { title: "Headline keynotes", body: "Leading voices from inside and outside the landscape industry sharing fresh thinking on the issues shaping our sector." },
@@ -314,7 +314,7 @@ const C: Record<string, PageContent> = {
       },
       {
         heading: "Call for speakers and topics",
-        body: "We're shaping the 2026 programme now. If there's a topic you'd like to see on the agenda, or a speaker you think the industry needs to hear from, let the team know via the register-interest form below or email joanna.pieprzak@bali.org.uk.",
+        body: "We're shaping the 2027 programme now. If there's a topic you'd like to see on the agenda, or a speaker you think the industry needs to hear from, let the team know via the register-interest form below or email joanna.pieprzak@bali.org.uk.",
       },
     ],
     ctaPrimary: { label: "Register your interest", href: "/about/conference#register-interest" },
