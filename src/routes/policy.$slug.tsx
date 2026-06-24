@@ -126,11 +126,6 @@ function PolicyPostPage() {
               </ul>
             </div>
           )}
-          {post.source_url && (
-            <p className="mt-10 text-sm text-gray-500">
-              Originally published at <a href={post.source_url} target="_blank" rel="noopener noreferrer" className="text-bali-blue hover:underline">bali-policy.org.uk</a>.
-            </p>
-          )}
 
           <div className="mt-16 pt-8 border-t border-gray-200 grid sm:grid-cols-2 gap-4">
             {prev ? (
