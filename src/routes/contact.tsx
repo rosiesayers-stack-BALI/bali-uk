@@ -73,7 +73,7 @@ const routes = [
   {
     title: "Policy & government affairs",
     body: "Policy positions, consultations and political engagement.",
-    cta: { label: "View Policy & Campaigns", href: "/policy" },
+    cta: { label: "View Policy & Campaigns", href: "/policy", external: false },
     icon: "🏛️",
   },
 ];
