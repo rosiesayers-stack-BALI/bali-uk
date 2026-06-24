@@ -73,7 +73,7 @@ const routes = [
   {
     title: "Policy & government affairs",
     body: "Policy positions, consultations and political engagement.",
-    cta: { label: "Visit BALI Policy", href: "https://bali-policy.org.uk/news", external: true },
+    cta: { label: "View Policy & Campaigns", href: "/policy" },
     icon: "🏛️",
   },
 ];
