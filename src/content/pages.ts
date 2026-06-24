@@ -314,7 +314,7 @@ const C: Record<string, PageContent> = {
       },
       {
         heading: "Call for speakers and topics",
-        body: "We're shaping the 2026 programme now. If there's a topic you'd like to see on the agenda, or a speaker you think the industry needs to hear from, let the team know via the register-interest form below or email joanna.pieprzak@bali.org.uk.",
+        body: "We're shaping the 2027 programme now. If there's a topic you'd like to see on the agenda, or a speaker you think the industry needs to hear from, let the team know via the register-interest form below or email joanna.pieprzak@bali.org.uk.",
       },
     ],
     ctaPrimary: { label: "Register your interest", href: "/about/conference#register-interest" },
