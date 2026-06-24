@@ -105,7 +105,7 @@ const nav: NavItem[] = [
   },
 ]
 
-// placeholder removed below
+
 
 interface NavbarProps {
   transparent?: boolean
