@@ -101,10 +101,11 @@ const nav: NavItem[] = [
       { label: 'Consultations', href: '/policy' },
       { label: 'Environment', href: '/policy' },
       { label: 'Business & Trade', href: '/policy' },
-      { label: 'bali-policy.org.uk ↗', href: 'https://bali-policy.org.uk', external: true },
     ],
   },
 ]
+
+// placeholder removed below
 
 interface NavbarProps {
   transparent?: boolean
