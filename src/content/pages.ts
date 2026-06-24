@@ -309,8 +309,8 @@ const C: Record<string, PageContent> = {
         body: "Conference is for everyone working across the UK landscape industry — Accredited Contractors, Designers, Affiliates, Registered Suppliers, training providers and industry partners. It's especially valuable for owners, directors and senior managers looking to take a strategic view of where the industry is going next.",
       },
       {
-        heading: "A look back at 2025",
-        body: "Conference 2025 brought the industry together at The Royal Society in London under the theme Climate Resilience: How to Future-Proof Your Business. Delegates heard keynotes from Sir Tim Smit (co-founder of the Eden Project), Helen Nyul on Biodiversity Net Gain, and economist Trevor Williams on the global forces shaping the sector — followed by breakouts on workplace culture, data-driven biodiversity, plant health, future talent, supply chain and economic resilience. Watch the keynotes and browse highlights below.",
+        heading: "A look back at 2026",
+        body: "Conference 2026 brought the industry together at The Royal Society in London under the theme Climate Resilience: How to Future-Proof Your Business. Delegates heard keynotes from Sir Tim Smit (co-founder of the Eden Project), Helen Nyul on Biodiversity Net Gain, and economist Trevor Williams on the global forces shaping the sector — followed by breakouts on workplace culture, data-driven biodiversity, plant health, future talent, supply chain and economic resilience. Watch the keynotes and browse highlights below.",
       },
       {
         heading: "Call for speakers and topics",
