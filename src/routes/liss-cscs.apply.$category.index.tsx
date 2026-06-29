@@ -25,12 +25,12 @@ export const Route = createFileRoute("/liss-cscs/apply/$category/")({
     const label = loaderData?.category?.label ?? "Apply for a SmartCard";
     return {
       meta: [
-        { title: `${label} SmartCards — Apply | BALI LISS/CSCS` },
+        { title: `${label} SmartCards — Apply | BALI LISS` },
         {
           name: "description",
-          content: `Apply for a ${label} LISS/CSCS SmartCard. Choose from the available card levels and start your application.`,
+          content: `Apply for a ${label} LISS SmartCard. Choose from the available card levels and start your application.`,
         },
-        { property: "og:title", content: `${label} SmartCards — Apply | BALI LISS/CSCS` },
+        { property: "og:title", content: `${label} SmartCards — Apply | BALI LISS` },
       ],
     };
   },
@@ -61,13 +61,13 @@ function CategoryPage() {
           <nav className="text-sm text-blue-100/80 mb-4 flex flex-wrap items-center gap-2">
             <Link to="/" className="hover:text-white">Home</Link>
             <span className="opacity-60">/</span>
-            <Link to="/liss-cscs" className="hover:text-white">LISS/CSCS</Link>
+            <Link to="/liss-cscs" className="hover:text-white">LISS</Link>
             <span className="opacity-60">/</span>
             <Link to="/liss-cscs/apply" className="hover:text-white">Apply for a SmartCard</Link>
             <span className="opacity-60">/</span>
             <span className="text-white">{category.label}</span>
           </nav>
-          <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass">LISS/CSCS — Apply</p>
+          <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass">LISS — Apply</p>
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-3">{category.label}</h1>
           <p className="text-blue-100 text-lg">Please select the appropriate SmartCard below.</p>
         </div>
@@ -167,7 +167,7 @@ function NotFound() {
       <section className="flex-1 py-20">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h1 className="text-3xl font-bold mb-3">Category not found</h1>
-          <p className="text-gray-600 mb-6">That LISS/CSCS category doesn't exist.</p>
+          <p className="text-gray-600 mb-6">That LISS category doesn't exist.</p>
           <Link to="/liss-cscs/apply" className="inline-block bg-bali-blue text-white px-6 py-3 rounded-lg font-semibold">
             View all categories
           </Link>

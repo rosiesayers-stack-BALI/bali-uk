@@ -45,7 +45,7 @@ function AdminLissList() {
   return (
     <div>
       <PageHeader
-        title="LISS/CSCS applications"
+        title="LISS applications"
         subtitle="Review SmartCard applications submitted via the website."
       />
 

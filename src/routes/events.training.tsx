@@ -240,11 +240,11 @@ function TrainingPage() {
             <div>
               <h2 className="font-bold text-xl text-slate-900 mb-2">About ROLO training</h2>
               <p className="text-slate-700 leading-relaxed text-sm">
-                The ROLO Health, Safety & Environmental Awareness Course is the mandatory course for most LISS/CSCS SmartCards. Delivered as a one-day course (online or in person) by BALI's approved network of training providers — including Landscape Training Group, Orchard Learning, ITS Training, Prime Training and others.
+                The ROLO Health, Safety & Environmental Awareness Course is the mandatory course for most LISS SmartCards. Delivered as a one-day course (online or in person) by BALI's approved network of training providers — including Landscape Training Group, Orchard Learning, ITS Training, Prime Training and others.
               </p>
             </div>
             <div className="flex flex-col gap-3">
-              <a href="https://www.bali.org.uk/liss-cscs/" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-full bg-bali-warm text-white font-bold text-sm text-center hover:bg-bali-purple transition-colors">LISS/CSCS smartcards →</a>
+              <a href="https://www.bali.org.uk/liss-cscs/" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-full bg-bali-warm text-white font-bold text-sm text-center hover:bg-bali-purple transition-colors">LISS smartcards →</a>
               <Link to="/contact" className="px-6 py-3 rounded-full border-2 border-bali-warm text-bali-warm font-bold text-sm text-center hover:bg-bali-warm hover:text-white transition-colors">Become a training provider</Link>
             </div>
           </div>

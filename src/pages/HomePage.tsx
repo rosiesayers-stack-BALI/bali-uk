@@ -64,7 +64,7 @@ const stats = [
   { value: '1,800+', label: 'Total Members' },
   { value: '45', label: 'National Landscape Awards' },
   { value: '36k', label: 'Passed ROLO Operatives' },
-  { value: '20k', label: 'LISS/CSCS SmartCards' },
+  { value: '20k', label: 'LISS SmartCards' },
 ]
 
 // ── Quick actions ─────────────────────────────────────────────────────────────
@@ -108,7 +108,7 @@ const actions = [
     iconBg: 'bg-bali-flow/10 group-hover:bg-bali-flow',
     iconColor: 'text-bali-flow group-hover:text-white',
     ctaColor: 'text-bali-flow',
-    title: 'LISS/CSCS SmartCards',
+    title: 'LISS SmartCards',
     body: 'Apply online to gain access to live commercial land-based sites across the UK.',
     cta: 'Apply Now',
     icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2" />,

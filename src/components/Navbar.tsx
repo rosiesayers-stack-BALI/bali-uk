@@ -56,7 +56,7 @@ const nav: NavItem[] = [
   {
     label: 'Standards & Training', href: '/liss-cscs',
     items: [
-      { label: 'LISS/CSCS SmartCard', href: '/liss-cscs' },
+      { label: 'LISS SmartCard', href: '/liss-cscs' },
       { label: 'Apply for a SmartCard', href: '/liss-cscs/apply' },
       { label: 'Check a SmartCard', href: '/liss-cscs/check', highlight: true },
       { label: 'ROLO', href: '/liss-cscs/rolo' },
