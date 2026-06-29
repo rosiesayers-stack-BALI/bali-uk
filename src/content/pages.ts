@@ -1396,29 +1396,29 @@ const C: Record<string, PageContent> = {
     ctaSecondary: { label: "Contact us", href: "/contact" },
   },
   "/liss-cscs": {
-    eyebrow: "LISS/CSCS",
-    title: "What is LISS/CSCS?",
+    eyebrow: "LISS",
+    title: "What is LISS?",
     theme: "blue",
-    intro: "LISS/CSCS is both a standalone scheme and a mandatory requirement of the National Highways Sector Scheme 18 (Land-based) recognised by Build UK. It is designed to support the development of an industry framework for skills development and progression in the workplace alongside CSCS.",
-    image: { url: "/__l5e/assets-v1/7d357e1d-8b62-4bc6-bfb8-a4f86c403651/screenshot-2020-10-16-at-10.08.26.png", alt: "LISS/CSCS SmartCards" },
+    intro: "LISS is both a standalone scheme and a mandatory requirement of the National Highways Sector Scheme 18 (Land-based) recognised by Build UK. It is designed to support the development of an industry framework for skills development and progression in the workplace alongside CSCS.",
+    image: { url: "/__l5e/assets-v1/7d357e1d-8b62-4bc6-bfb8-a4f86c403651/screenshot-2020-10-16-at-10.08.26.png", alt: "LISS SmartCards" },
     sections: [
       {
-        heading: "Introducing LISS/CSCS",
-        body: "This is achieved through a SmartCard scheme. To apply for any fully operational SmartCard you must successfully pass the ROLO Health, Safety and Environmental Awareness Course and CITB Touch Screen Test, appropriate to the SmartCard level. Only the CITB Touch Screen Test is required for the Modular Paving industry. For more information on LISS/CSCS, download our free advice leaflet which provides an additional explanation.",
+        heading: "Introducing LISS",
+        body: "This is achieved through a SmartCard scheme. To apply for any fully operational SmartCard you must successfully pass the ROLO Health, Safety and Environmental Awareness Course and CITB Touch Screen Test, appropriate to the SmartCard level. Only the CITB Touch Screen Test is required for the Modular Paving industry. For more information on LISS, download our free advice leaflet which provides an additional explanation.",
       },
       {
-        heading: "How to obtain a LISS/CSCS SmartCard",
-        body: "LISS/CSCS SmartCards are only issued once certain requirements are met. Our SmartCards are categorised by industry type and you can view all categories here . The quickest way to apply for a SmartCard is online, however, if you have an urgent query you can contact the team who will reply within 48 hours. apply for a smartcard",
+        heading: "How to obtain a LISS SmartCard",
+        body: "LISS SmartCards are only issued once certain requirements are met. Our SmartCards are categorised by industry type and you can view all categories here . The quickest way to apply for a SmartCard is online, however, if you have an urgent query you can contact the team who will reply within 48 hours. apply for a smartcard",
       },
       {
         heading: "documents",
         body: "",
         bullets: [
-          "LISS/CSCS Scheme Booklet 6 May 2025 514kb PDF",
-          "Privacy Notice for ROLO Certification & LISS/CSCS 15 Jun 2021 276kb DOCX",
-          "LISS/CSCS SmartCards have been redesigned 20 Aug 2020 291kb PDF",
-          "Introduction to LISS/CSCS 28 Feb 2019 1901kb PDF",
-          "Construction Support Line LISS/CSCS applicants notice 23 Apr 2019 62kb DOCX",
+          "LISS Scheme Booklet 6 May 2025 514kb PDF",
+          "Privacy Notice for ROLO Certification & LISS 15 Jun 2021 276kb DOCX",
+          "LISS SmartCards have been redesigned 20 Aug 2020 291kb PDF",
+          "Introduction to LISS 28 Feb 2019 1901kb PDF",
+          "Construction Support Line LISS applicants notice 23 Apr 2019 62kb DOCX",
         ],
       },
     ],
@@ -1426,37 +1426,37 @@ const C: Record<string, PageContent> = {
     ctaSecondary: { label: "Check qualifications", href: "/liss-cscs/check" },
   },
   "/liss-cscs/accreditation": {
-    eyebrow: "LISS/CSCS",
+    eyebrow: "LISS",
     title: "Industry Accreditation",
     theme: "slate",
-    intro: "To meet the requirements of the Construction Leadership Council (CLC) LISS/CSCS develop plans to move all Industry Accreditation (IA) cardholders to a recognised qualification.",
+    intro: "To meet the requirements of the Construction Leadership Council (CLC) LISS develop plans to move all Industry Accreditation (IA) cardholders to a recognised qualification.",
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
   "/liss-cscs/apply": {
-    eyebrow: "LISS/CSCS",
-    title: "Apply for a LISS/CSCS SmartCard",
+    eyebrow: "LISS",
+    title: "Apply for a LISS SmartCard",
     theme: "slate",
     intro: "Depending on the type of work you or your employee(s) carry out, choose from one of seven industry categories below. This includes New, Update, Renewal or Duplicate SmartCards.",
     sections: [
       {
-        heading: "Apply for a LISS/CSCS SmartCard to gain access to commercial land-based sites. Upskill your workforce and develop your own personal career by demonstrating your qualifications, skills and knowledge.",
-        body: "Important – before applying please ensure you have passed your ROLO Health, Safety and Environmental Awareness Course and relevant CITB Touch Screen Test (these must have been completed within the last 2 years on application). Please ensure you have checked your land-based qualification(s), if applicable, to help you map your certification to the appropriate LISS/CSCS SmartCard. It's your responsibility to ensure you meet all the criteria for the specific card you’re applying for. If you apply and are later found to be ineligible (e.g., wrong qualifications, missing documents), BALI is under no obligation to refund the application fee. If you're unsure whether you meet the criteria for a specific card, please contact the LISS team, who will be happy to help guide you through the process. Contact by telephone 024 7669 0333 or email. The photo taken at the CITB test centre will be used as a default for the card. If a different photo is preferred, please state this in a supporting document attached to your application. We may request further proof of ID to reflect the different photo to confirm it is a true image of the applicant. ** CARDS CAN TAKE UP TO 28 WORKING DAYS TO PROCESS FROM THE DATE OF SUBMISSION **",
+        heading: "Apply for a LISS SmartCard to gain access to commercial land-based sites. Upskill your workforce and develop your own personal career by demonstrating your qualifications, skills and knowledge.",
+        body: "Important – before applying please ensure you have passed your ROLO Health, Safety and Environmental Awareness Course and relevant CITB Touch Screen Test (these must have been completed within the last 2 years on application). Please ensure you have checked your land-based qualification(s), if applicable, to help you map your certification to the appropriate LISS SmartCard. It's your responsibility to ensure you meet all the criteria for the specific card you’re applying for. If you apply and are later found to be ineligible (e.g., wrong qualifications, missing documents), BALI is under no obligation to refund the application fee. If you're unsure whether you meet the criteria for a specific card, please contact the LISS team, who will be happy to help guide you through the process. Contact by telephone 024 7669 0333 or email. The photo taken at the CITB test centre will be used as a default for the card. If a different photo is preferred, please state this in a supporting document attached to your application. We may request further proof of ID to reflect the different photo to confirm it is a true image of the applicant. ** CARDS CAN TAKE UP TO 28 WORKING DAYS TO PROCESS FROM THE DATE OF SUBMISSION **",
       },
     ],
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
   "/liss-cscs/check": {
-    eyebrow: "LISS/CSCS",
+    eyebrow: "LISS",
     title: "Check qualification(s)",
     theme: "slate",
-    intro: "It is advisable to map your qualification(s) to the relevant LISS/CSCS SmartCard before making your application. Find out which SmartCard is suited to you based on whether you hold a UK or overseas qualification. By using the Construction Industry App - Smart Check, a free-to-download application for handheld devices and PCs, your LISS/CSCS SmartCard can be read electronically.",
+    intro: "It is advisable to map your qualification(s) to the relevant LISS SmartCard before making your application. Find out which SmartCard is suited to you based on whether you hold a UK or overseas qualification. By using the Construction Industry App - Smart Check, a free-to-download application for handheld devices and PCs, your LISS SmartCard can be read electronically.",
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
   "/liss-cscs/nhss18": {
-    eyebrow: "LISS/CSCS",
+    eyebrow: "LISS",
     title: "NHSS 18 Highway Sector Scheme",
     theme: "blue",
     intro: "The National Highways Sector Scheme 18 (NHSS18) is the customised management system for landscaping and the environment (including ecology) and is a mandatory requirement for all contractors working for Highways England and other infrastructure providers.",
@@ -1478,7 +1478,7 @@ const C: Record<string, PageContent> = {
     ctaSecondary: { label: "Check qualifications", href: "/liss-cscs/check" },
   },
   "/liss-cscs/rolo": {
-    eyebrow: "LISS/CSCS",
+    eyebrow: "LISS",
     title: "ROLO Health, Safety & Environmental Awareness",
     theme: "blue",
     intro: "ROLO (Register of Land-based Operations) is recognised by Build UK as one of the leading Health, Safety and Environmental Awareness Courses in the UK, designed exclusively for the Land-based industries by landscaping professionals. ROLO was developed and is owned by the British Association of Landscape Industries to raise the standard of health and safety, environmental awareness, and reduce the risk of accidents in the workplace. It also encourages employers to keep a record of workers in the Land-based sector who have achieved a recognised level of competence.",
@@ -1490,15 +1490,15 @@ const C: Record<string, PageContent> = {
       },
       {
         heading: "How long are ROLO certificates valid for?",
-        body: "ROLO is a prerequisite for anyone applying for a LISS/CSCS SmartCard. Certificates are valid for five years, but applicants must ensure the course has been completed within the last two years when applying for a LISS/CSCS SmartCard. Before the five years runs out, the relevant refresher course can be completed.",
+        body: "ROLO is a prerequisite for anyone applying for a LISS SmartCard. Certificates are valid for five years, but applicants must ensure the course has been completed within the last two years when applying for a LISS SmartCard. Before the five years runs out, the relevant refresher course can be completed.",
       },
       {
         heading: "ROLO Operative courses",
-        body: "The ROLO Operative courses are an introductory health and safety qualification and a precursor to obtaining a LISS/CSCS card. The training covers the basics of Health & Safety law, regulations, risk assessment, hazard awareness, protective equipment, electrical awareness, excavations, work at height, PUWER, LOLER and more. ROLO Operative courses can now be taken online through a limited number of BALI-approved Training Providers. Alternatively, you can view the complete directory of Training Providers offering face-to-face courses below.",
+        body: "The ROLO Operative courses are an introductory health and safety qualification and a precursor to obtaining a LISS card. The training covers the basics of Health & Safety law, regulations, risk assessment, hazard awareness, protective equipment, electrical awareness, excavations, work at height, PUWER, LOLER and more. ROLO Operative courses can now be taken online through a limited number of BALI-approved Training Providers. Alternatively, you can view the complete directory of Training Providers offering face-to-face courses below.",
       },
       {
         heading: "ROLO Supervisor and Manager courses",
-        body: "The ROLO Supervisor and Manager courses have been developed by the British Association of Landscape Industries and offer an alternative route in achieving the Land-based industry skills scheme (LISS) and/or the Construction skills certification scheme (CSCS). Both these courses have been approved fully by the CSCS and Build UK as being equivalent to the CITB SSSTS and SMSTS courses and will provide the only route for practicing Supervisors and Managers in the land-based industry to achieve their LISS/CSCS cards. Please note: The correct level ROLO course will be a requirement for all Supervisor and Manager level cards.",
+        body: "The ROLO Supervisor and Manager courses have been developed by the British Association of Landscape Industries and offer an alternative route in achieving the Land-based industry skills scheme (LISS) and/or the Construction skills certification scheme (CSCS). Both these courses have been approved fully by the CSCS and Build UK as being equivalent to the CITB SSSTS and SMSTS courses and will provide the only route for practicing Supervisors and Managers in the land-based industry to achieve their LISS cards. Please note: The correct level ROLO course will be a requirement for all Supervisor and Manager level cards.",
       },
       {
         heading: "How are the ROLO courses delivered?",
@@ -1793,7 +1793,7 @@ const C: Record<string, PageContent> = {
       },
       {
         heading: "Information you give us",
-        body: "This is information about you that you provide to us by filling in forms on our site www.bali.org.uk OR www.baliawards.co.uk OR www.golandscape.co.uk or by corresponding with us by phone, email or otherwise. It includes information you provide when you contact us using our general enquiry form, enquire for membership, enquire about our LISS/CSCS or ROLO services, subscribe to one or more of our marketing communications including publications and e-communications, entering a competition, promotion or survey, enquiring about member services and reporting a problem with our site. The information you provide to us may include your full name, private and/or business address, email address and phone number, as well as financial and credit card information, personal description and photographs.",
+        body: "This is information about you that you provide to us by filling in forms on our site www.bali.org.uk OR www.baliawards.co.uk OR www.golandscape.co.uk or by corresponding with us by phone, email or otherwise. It includes information you provide when you contact us using our general enquiry form, enquire for membership, enquire about our LISS or ROLO services, subscribe to one or more of our marketing communications including publications and e-communications, entering a competition, promotion or survey, enquiring about member services and reporting a problem with our site. The information you provide to us may include your full name, private and/or business address, email address and phone number, as well as financial and credit card information, personal description and photographs.",
       },
       {
         heading: "Information we collect about you",
@@ -1846,11 +1846,11 @@ const C: Record<string, PageContent> = {
         body: "You have the right to ask us not to process your personal data for marketing purposes. We will usually inform you (before collecting your data) if we intend to use your data for such purposes or if we intend to disclose your information to any third party for such purposes. You can exercise your right to prevent such processing by unchecking certain boxes in our preference centre. You can also exercise the right at any time by contacting us at BALI, Landscape House, Stoneleigh Park, Nr Kenilworth, CV8 2LG or contact@bali.org.uk . Our site may, from time to time, contain links to and from the websites of our partner networks, advertisers and affiliates. If you follow a link to any of these websites, please note that these websites have their own privacy policies and that we do not accept any responsibility or liability for these policies. Please check these policies before you submit any personal data to these websites.",
       },
       {
-        heading: "Privacy Notice for ROLO Certification and LISS/CSCS SmartCards",
-        body: "Your data is controlled and processed in accordance with the General Data Protection Regulation (GDPR). Any personal data is processed manually and electronically for the purposes of fulfilling our contractual obligations to provide the following products and services: The Association will not pass your personal data to any other parties, without your consent, other than where mentioned within this notice, or where required to by law. To fulfil our requirements to you we will pass on personal details to the following for the purpose of producing and providing your LISS/CSCS SmartCard: The technical production of LISS/CSCS SmartCards is carried out by Teleperformance Limited in association with the Construction Skills Certification Scheme. You may receive automated emails to notify you of the status of your application directly from CSCS. For LISS/CSCS SmartCard applicants this will be referred to as the Construction Skills Certification Scheme (CSCS) in some correspondence. Your personal information, including your consent status, is recorded on to our client management systems, Workbooks CRM. The latest date of consent is recorded against each individual person. This is a hosted platform provided by ISO27001 accredited organisation, Workbooks Online Limited, Reading, UK. Data is held in Tier 1 data centres in the UK with 24x7 manned security. We use industry-standard software applications to manage schedules and communicate electronically. Any personal information, including your consent status, is held within client folders on electronic systems and is secured by password, PIN, pattern on biometric security as a minimum. Electronic Communications for the reasons stated above are generally made through Microsoft Outlook, or Mail for iOS. If you believe any data we hold is incorrect, personal information has changed, or you wish to remove personal information please contact any member of the team on liss@bali.org.uk .",
+        heading: "Privacy Notice for ROLO Certification and LISS SmartCards",
+        body: "Your data is controlled and processed in accordance with the General Data Protection Regulation (GDPR). Any personal data is processed manually and electronically for the purposes of fulfilling our contractual obligations to provide the following products and services: The Association will not pass your personal data to any other parties, without your consent, other than where mentioned within this notice, or where required to by law. To fulfil our requirements to you we will pass on personal details to the following for the purpose of producing and providing your LISS SmartCard: The technical production of LISS SmartCards is carried out by Teleperformance Limited in association with the Construction Skills Certification Scheme. You may receive automated emails to notify you of the status of your application directly from CSCS. For LISS SmartCard applicants this will be referred to as the Construction Skills Certification Scheme (CSCS) in some correspondence. Your personal information, including your consent status, is recorded on to our client management systems, Workbooks CRM. The latest date of consent is recorded against each individual person. This is a hosted platform provided by ISO27001 accredited organisation, Workbooks Online Limited, Reading, UK. Data is held in Tier 1 data centres in the UK with 24x7 manned security. We use industry-standard software applications to manage schedules and communicate electronically. Any personal information, including your consent status, is held within client folders on electronic systems and is secured by password, PIN, pattern on biometric security as a minimum. Electronic Communications for the reasons stated above are generally made through Microsoft Outlook, or Mail for iOS. If you believe any data we hold is incorrect, personal information has changed, or you wish to remove personal information please contact any member of the team on liss@bali.org.uk .",
         bullets: [
           "The administration of the Register of Land-based Operations (ROLO) Certification",
-          "The application for a Land-based Industry Skills Scheme/Construction Skills Certification Scheme (LISS/CSCS) SmartCard",
+          "The application for a Land-based Industry Skills Scheme/Construction Skills Certification Scheme (LISS) SmartCard",
           "The production of a physical card",
           "Managing and administering your account",
           "Construction Skills Certification Scheme",
@@ -3382,7 +3382,7 @@ const C: Record<string, PageContent> = {
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
   "/liss-cscs/apply/amenity": {
-    eyebrow: "LISS/CSCS",
+    eyebrow: "LISS",
     title: "Amenity",
     theme: "green",
     intro: "The application form can be completed using Google Chrome, Safari, Mozilla Firefox, Microsoft Edge, IE11, IE10 and IE9. IE8 or earlier is not supported. The form can be completed on mobile browsers but we recommend using a desktop browser for the best experience.",
@@ -3433,7 +3433,7 @@ const C: Record<string, PageContent> = {
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
   "/liss-cscs/apply/arboriculture": {
-    eyebrow: "LISS/CSCS",
+    eyebrow: "LISS",
     title: "Arboriculture",
     theme: "green",
     intro: "The application form can be completed using Google Chrome, Safari, Mozilla Firefox, Microsoft Edge, IE11, IE10 and IE9. IE8 or earlier is not supported. The form can be completed on mobile browsers but we recommend using a desktop browser for the best experience.",
@@ -3484,7 +3484,7 @@ const C: Record<string, PageContent> = {
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
   "/liss-cscs/apply/countryside-management": {
-    eyebrow: "LISS/CSCS",
+    eyebrow: "LISS",
     title: "Countryside management",
     theme: "green",
     intro: "The application form can be completed using Google Chrome, Safari, Mozilla Firefox, Microsoft Edge, IE11, IE10 and IE9. IE8 or earlier is not supported. The form can be completed on mobile browsers but we recommend using a desktop browser for the best experience.",
@@ -3535,7 +3535,7 @@ const C: Record<string, PageContent> = {
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
   "/liss-cscs/apply/ecology": {
-    eyebrow: "LISS/CSCS",
+    eyebrow: "LISS",
     title: "Ecology and environmental management",
     theme: "green",
     intro: "The application form can be completed using Google Chrome, Safari, Mozilla Firefox, Microsoft Edge, IE11, IE10 and IE9. IE8 or earlier is not supported. The form can be completed on mobile browsers but we recommend using a desktop browser for the best experience.",
@@ -3570,7 +3570,7 @@ const C: Record<string, PageContent> = {
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
   "/liss-cscs/apply/landscape-maintenance": {
-    eyebrow: "LISS/CSCS",
+    eyebrow: "LISS",
     title: "Landscape and maintenance",
     theme: "green",
     intro: "The application form can be completed using Google Chrome, Safari, Mozilla Firefox, Microsoft Edge, IE11, IE10 and IE9. IE8 or earlier is not supported. The form can be completed on mobile browsers but we recommend using a desktop browser for the best experience.",
@@ -3621,7 +3621,7 @@ const C: Record<string, PageContent> = {
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
   "/liss-cscs/apply/modular-paving": {
-    eyebrow: "LISS/CSCS",
+    eyebrow: "LISS",
     title: "Modular paving",
     theme: "green",
     intro: "The application form can be completed using Google Chrome, Safari, Mozilla Firefox, Microsoft Edge, IE11, IE10 and IE9. IE8 or earlier is not supported. The form can be completed on mobile browsers but we recommend using a desktop browser for the best experience.",
@@ -3648,7 +3648,7 @@ const C: Record<string, PageContent> = {
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
   "/liss-cscs/apply/pesticides": {
-    eyebrow: "LISS/CSCS",
+    eyebrow: "LISS",
     title: "Pesticides and pest control",
     theme: "green",
     intro: "The application form can be completed using Google Chrome, Safari, Mozilla Firefox, Microsoft Edge, IE11, IE10 and IE9. IE8 or earlier is not supported. The form can be completed on mobile browsers but we recommend using a desktop browser for the best experience.",
@@ -3691,15 +3691,15 @@ const C: Record<string, PageContent> = {
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
   "/liss-cscs/check/qualification": {
-    eyebrow: "LISS/CSCS",
+    eyebrow: "LISS",
     title: "Check your qualification(s)",
     theme: "green",
-    intro: "This should relate to the role that you carry out on site. If you hold more than one qualification and they map to different Land-based sectors but link to the same level of LISS/CSCS card then you may be eligible to obtain more than one title on the reverse of your LISS/CSCS card.",
+    intro: "This should relate to the role that you carry out on site. If you hold more than one qualification and they map to different Land-based sectors but link to the same level of LISS card then you may be eligible to obtain more than one title on the reverse of your LISS card.",
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
   "/liss-cscs/check/qualification/amenity": {
-    eyebrow: "LISS/CSCS",
+    eyebrow: "LISS",
     title: "Amenity qualifications",
     theme: "green",
     intro: "If your qualification is relevant to this sector and it is not listed, please contact BALI for review of this qualification.",
@@ -3812,14 +3812,14 @@ const C: Record<string, PageContent> = {
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
   "/liss-cscs/check/qualification/arboriculture": {
-    eyebrow: "LISS/CSCS",
+    eyebrow: "LISS",
     title: "Arboriculture qualifications",
     theme: "green",
-    intro: "Refresher Training for Arborist Blue Skilled Worker LISS/CSCS Cards",
+    intro: "Refresher Training for Arborist Blue Skilled Worker LISS Cards",
     sections: [
       {
         heading: "Level 2 - Skilled Worker (Blue)",
-        body: "Any Chainsaw qualifications that are applicable to the blue skilled LISS/CSCS card category and are more than 5 years old will require either, evidence of refresher training, or evidence of upskilling to a higher level chainsaw qualification. Any refresher training must be supported by certification from Lantra or a City and Guild Digital Certificate at a grade 3 or above (full access to the digital certificate must be given so we can validate the grade). It is the employers’ responsibility to ensure the individual is adequately trained and competent in all related areas of their job role. This will also be applicable on renewal of all cards. LISS/CSCS Refresher Chainsaw Guidance Chainsaw Maintenance and Cross-Cutting ONLY or Tree Climbing & Aerial Rescue ONLY or Stump Grinder ONLY or Groundsman (Blue) or Ground-based Chainsaw User (Blue) or Advanced Ground-based Chainsaw User (Blue) or Arborist Chainsaw User (Off Ground) (Blue) or Advanced Arborist Chainsaw User (Off Ground) (Blue Card) or Utility Arborist Surveyor (Electrical Networks) Or Utility Arborist Surveyor (Railway Networks) Professional Tree Inspector Forest Machine Operator - (The applicant must be trained, qualified...",
+        body: "Any Chainsaw qualifications that are applicable to the blue skilled LISS card category and are more than 5 years old will require either, evidence of refresher training, or evidence of upskilling to a higher level chainsaw qualification. Any refresher training must be supported by certification from Lantra or a City and Guild Digital Certificate at a grade 3 or above (full access to the digital certificate must be given so we can validate the grade). It is the employers’ responsibility to ensure the individual is adequately trained and competent in all related areas of their job role. This will also be applicable on renewal of all cards. LISS Refresher Chainsaw Guidance Chainsaw Maintenance and Cross-Cutting ONLY or Tree Climbing & Aerial Rescue ONLY or Stump Grinder ONLY or Groundsman (Blue) or Ground-based Chainsaw User (Blue) or Advanced Ground-based Chainsaw User (Blue) or Arborist Chainsaw User (Off Ground) (Blue) or Advanced Arborist Chainsaw User (Off Ground) (Blue Card) or Utility Arborist Surveyor (Electrical Networks) Or Utility Arborist Surveyor (Railway Networks) Professional Tree Inspector Forest Machine Operator - (The applicant must be trained, qualified...",
         bullets: [
           "Level 2 Award in Chainsaw Maintenance",
           "Level 2 Award in Cross-cut Timber Using a Chainsaw",
@@ -3929,14 +3929,14 @@ const C: Record<string, PageContent> = {
       },
       {
         heading: "NOTE: OVERSEAS QUALIFICATIONS",
-        body: "If you have a land-based related qualification that was awarded outside the UK and is not currently recognised by LISS/CSCS you should contact Ecctis so that they can review your qualification and determine whether it is comparable to an NVQ, SVQ or other qualification appropriate to your occupation and the LISS/CSCS SmartCard you wish to apply for. To find out further information please click here.",
+        body: "If you have a land-based related qualification that was awarded outside the UK and is not currently recognised by LISS you should contact Ecctis so that they can review your qualification and determine whether it is comparable to an NVQ, SVQ or other qualification appropriate to your occupation and the LISS SmartCard you wish to apply for. To find out further information please click here.",
       },
     ],
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
   "/liss-cscs/check/qualification/countryside": {
-    eyebrow: "LISS/CSCS",
+    eyebrow: "LISS",
     title: "Countryside management qualifications",
     theme: "green",
     intro: "If your qualification is relevant to this sector and it is not listed, please contact BALI for review of this qualification.",
@@ -4069,7 +4069,7 @@ const C: Record<string, PageContent> = {
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
   "/liss-cscs/check/qualification/ecology": {
-    eyebrow: "LISS/CSCS",
+    eyebrow: "LISS",
     title: "Ecology and environmental qualifications",
     theme: "green",
     intro: "If your qualification is relevant to this sector and it is not listed, please contact BALI for review of this qualification.",
@@ -4124,14 +4124,14 @@ const C: Record<string, PageContent> = {
       },
       {
         heading: "NOTE: OVERSEAS QUALIFICATIONS",
-        body: "If you have a land-based related qualification that was awarded outside the UK and is not currently recognised by LISS/CSCS you should contact Ecctis so that they can review your qualification and determine whether it is comparable to an NVQ, SVQ or other qualification appropriate to your occupation and the LISS/CSCS SmartCard you wish to apply for. To find out further information please click here.",
+        body: "If you have a land-based related qualification that was awarded outside the UK and is not currently recognised by LISS you should contact Ecctis so that they can review your qualification and determine whether it is comparable to an NVQ, SVQ or other qualification appropriate to your occupation and the LISS SmartCard you wish to apply for. To find out further information please click here.",
       },
     ],
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
   "/liss-cscs/check/qualification/landscape": {
-    eyebrow: "LISS/CSCS",
+    eyebrow: "LISS",
     title: "Landscape & maintenance qualifications",
     theme: "green",
     intro: "If your qualification is relevant to this sector and it is not listed, please contact BALI for review of this qualification.",
@@ -4190,7 +4190,7 @@ const C: Record<string, PageContent> = {
         heading: "Level 2 - Skilled Worker (Blue) - Environmental Maintenance Operative",
         body: "",
         bullets: [
-          "LISS/CSCS Litter Picking and Environmental Maintenance (Lantra e-learning link)",
+          "LISS Litter Picking and Environmental Maintenance (Lantra e-learning link)",
           "Please refer to Appendix ‘Q’ of the NHSS18 ISO2001:2015 on this link and scroll down to find the 2015 version for NHSS18.",
         ],
       },
@@ -4258,7 +4258,7 @@ const C: Record<string, PageContent> = {
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
   "/liss-cscs/check/qualification/modular-paving": {
-    eyebrow: "LISS/CSCS",
+    eyebrow: "LISS",
     title: "Modular paving qualifications",
     theme: "green",
     intro: "Highways Maintenance Modular Pavement – acceptable qualifications",
@@ -4285,54 +4285,54 @@ const C: Record<string, PageContent> = {
         heading: "Trainee Supervisor (Red) Working toward Level 3",
         body: "",
         bullets: [
-          "Contact CSCS through the Core Scheme as this card is not available through LISS/CSCS",
+          "Contact CSCS through the Core Scheme as this card is not available through LISS",
         ],
       },
       {
         heading: "Level 3 - Supervisor (Gold)",
         body: "",
         bullets: [
-          "Contact CSCS through the Core Scheme as this card is not available through LISS/CSCS",
+          "Contact CSCS through the Core Scheme as this card is not available through LISS",
         ],
       },
       {
         heading: "Trainee Manager (Red) Working toward Level 4",
         body: "",
         bullets: [
-          "Contact CSCS through the Core Scheme as this card is not available through LISS/CSCS",
+          "Contact CSCS through the Core Scheme as this card is not available through LISS",
         ],
       },
       {
         heading: "Level 4 - Manager (Black)",
         body: "",
         bullets: [
-          "Contact CSCS through the Core Scheme as this card is not available through LISS/CSCS",
+          "Contact CSCS through the Core Scheme as this card is not available through LISS",
         ],
       },
       {
         heading: "(AQP) Academically Qualified Person (White/Yellow)",
         body: "",
         bullets: [
-          "Contact CSCS through the Core Scheme as this card is not available through LISS/CSCS",
+          "Contact CSCS through the Core Scheme as this card is not available through LISS",
         ],
       },
       {
         heading: "(PQP) Professionally Qualified Person (White/Yellow)",
         body: "If your qualification is relevant to this sector and it is not listed, please contact BALI for review of this qualification.",
         bullets: [
-          "Contact CSCS through the Core Scheme as this card is not available through LISS/CSCS",
+          "Contact CSCS through the Core Scheme as this card is not available through LISS",
         ],
       },
       {
         heading: "NOTE: OVERSEAS QUALIFICATIONS",
-        body: "If you have a land-based related qualification that was awarded outside the UK and is not currently recognised by LISS/CSCS you should contact Ecctis so that they can review your qualification and determine whether it is comparable to an NVQ, SVQ or other qualification appropriate to your occupation and the LISS/CSCS SmartCard you wish to apply for. To find out further information please click here.",
+        body: "If you have a land-based related qualification that was awarded outside the UK and is not currently recognised by LISS you should contact Ecctis so that they can review your qualification and determine whether it is comparable to an NVQ, SVQ or other qualification appropriate to your occupation and the LISS SmartCard you wish to apply for. To find out further information please click here.",
       },
     ],
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
   "/liss-cscs/check/qualification/pesticides": {
-    eyebrow: "LISS/CSCS",
+    eyebrow: "LISS",
     title: "Pesticides and pest control qualifications",
     theme: "green",
     intro: "Institute for Apprenticeships and Technical Education - Pest Control Technician - Click here",
@@ -4403,45 +4403,45 @@ const C: Record<string, PageContent> = {
       },
       {
         heading: "NOTE: OVERSEAS QUALIFICATIONS",
-        body: "If you have a land-based related qualification that was awarded outside the UK and is not currently recognised by LISS/CSCS you should contact Ecctis so that they can review your qualification and determine whether it is comparable to an NVQ, SVQ or other qualification appropriate to your occupation and the LISS/CSCS SmartCard you wish to apply for. To find out further information please click here.",
+        body: "If you have a land-based related qualification that was awarded outside the UK and is not currently recognised by LISS you should contact Ecctis so that they can review your qualification and determine whether it is comparable to an NVQ, SVQ or other qualification appropriate to your occupation and the LISS SmartCard you wish to apply for. To find out further information please click here.",
       },
     ],
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
   "/liss-cscs/check/overseas": {
-    eyebrow: "LISS/CSCS",
+    eyebrow: "LISS",
     title: "Overseas Qualifications",
     theme: "green",
     intro: "Ecctis is the parent company that previously looked after the UK NARIC brand and will now be the external facing name.",
     sections: [
       {
         heading: "",
-        body: "Historically, LISS/CSCS requested that applicants with overseas qualifications apply to the UK’s international qualifications agency UK NARIC for a Statement of Comparability to compare their awards to UK levels. From 1 October 2019, applicants will be required to obtain an Industry Skills Statement. This Ecctis service maps the skills of overseas qualification holders to UK National Occupational Standards, and also use Primary Source Verification (PSV) to verify that the overseas qualification is genuine. This assists industry bodies in maintaining standards of work and health & safety on construction and land-based industry sites, and in preventing fraudulent applications for cards using fake or altered qualification and training certificates. -------------------------------------------------------------------------------------------------------------------------------------------- Industry Skills Statement for Academically Qualified Persons – relevant for overseas applicants applying for the Academically Qualified Person (AQP) LISS/CSCS SmartCard. As part of the wider strategy for combatting fraud, LISS/CSCS worked with Ecctis to introduce “Primary Source Verification” (PSV) ...",
+        body: "Historically, LISS requested that applicants with overseas qualifications apply to the UK’s international qualifications agency UK NARIC for a Statement of Comparability to compare their awards to UK levels. From 1 October 2019, applicants will be required to obtain an Industry Skills Statement. This Ecctis service maps the skills of overseas qualification holders to UK National Occupational Standards, and also use Primary Source Verification (PSV) to verify that the overseas qualification is genuine. This assists industry bodies in maintaining standards of work and health & safety on construction and land-based industry sites, and in preventing fraudulent applications for cards using fake or altered qualification and training certificates. -------------------------------------------------------------------------------------------------------------------------------------------- Industry Skills Statement for Academically Qualified Persons – relevant for overseas applicants applying for the Academically Qualified Person (AQP) LISS SmartCard. As part of the wider strategy for combatting fraud, LISS worked with Ecctis to introduce “Primary Source Verification” (PSV) ...",
       },
       {
-        heading: "Applying for a LISS/CSCS SmartCard",
-        body: "Applicants whose qualifications pass the PSV process are required to provide the following when applying for a LISS/CSCS SmartCard: -------------------------------------------------------------------------------------------------------------------------------------------- Industry Skills Statement with Skills Mapping – relevant for overseas applicants applying for a skilled LISS/CSCS SmartCard: Overseas land-based industry workers wishing to work in the UK must now have the technical content of their overseas vocational qualification mapped against the relevant UK National Occupational Standard for that occupation. This provides an in-depth record of each individual’s skills and capabilities, mapped against units in the National Occupational Standard for their trade. This will improve understanding of the relationship between the UK and overseas land-based industry qualifications at a unit-by-unit level. The mapping to National Occupational Standards will help to ensure that workers have the training they require for their job and will pinpoint areas for additional training if required. The mapping will be verified by Lantra (acting as the Standard Setting Body for the Land-base...",
+        heading: "Applying for a LISS SmartCard",
+        body: "Applicants whose qualifications pass the PSV process are required to provide the following when applying for a LISS SmartCard: -------------------------------------------------------------------------------------------------------------------------------------------- Industry Skills Statement with Skills Mapping – relevant for overseas applicants applying for a skilled LISS SmartCard: Overseas land-based industry workers wishing to work in the UK must now have the technical content of their overseas vocational qualification mapped against the relevant UK National Occupational Standard for that occupation. This provides an in-depth record of each individual’s skills and capabilities, mapped against units in the National Occupational Standard for their trade. This will improve understanding of the relationship between the UK and overseas land-based industry qualifications at a unit-by-unit level. The mapping to National Occupational Standards will help to ensure that workers have the training they require for their job and will pinpoint areas for additional training if required. The mapping will be verified by Lantra (acting as the Standard Setting Body for the Land-base...",
         bullets: [
           "An Ecctis Industry Skills Statement, AQP option",
           "A Primary Source Verification Report (issued with the above)",
           "A copy of the original qualification (translated)",
-          "Once this information is received LISS/CSCS will review and confirm if the qualification is suitable for a LISS/CSCS card",
+          "Once this information is received LISS will review and confirm if the qualification is suitable for a LISS card",
         ],
       },
       {
-        heading: "Applying for a LISS/CSCS SmartCard",
-        body: "Applicants whose qualifications pass the enhanced verification process are required to provide the following when applying for a LISS/CSCS SmartCard: --------------------------------------------------------------------------------------------------------------------------------------------",
+        heading: "Applying for a LISS SmartCard",
+        body: "Applicants whose qualifications pass the enhanced verification process are required to provide the following when applying for a LISS SmartCard: --------------------------------------------------------------------------------------------------------------------------------------------",
         bullets: [
           "An Ecctis Industry Skills Statement, trades option",
           "A Primary Source Verification Report (issued with the above)",
           "A copy of the original qualification (translated)",
-          "Once this information is received LISS/CSCS will review and confirm if the qualification is suitable for a LISS/CSCS SmartCard",
+          "Once this information is received LISS will review and confirm if the qualification is suitable for a LISS SmartCard",
         ],
       },
       {
         heading: "Benefits",
-        body: "The introduction of the new verification process and the mapping of overseas qualifications against the appropriate UK NOS is a positive step that provides the industry with a robust level of scrutiny, similar to that already in place for UK based card applications. By certifying that overseas land-based industry workers have the correct training and qualifications Ecctis and LISS/CSCS are improving standards and safety in the UK land-based industry.",
+        body: "The introduction of the new verification process and the mapping of overseas qualifications against the appropriate UK NOS is a positive step that provides the industry with a robust level of scrutiny, similar to that already in place for UK based card applications. By certifying that overseas land-based industry workers have the correct training and qualifications Ecctis and LISS are improving standards and safety in the UK land-based industry.",
       },
       {
         heading: "documents",
@@ -4456,39 +4456,39 @@ const C: Record<string, PageContent> = {
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
   "/liss-cscs/check/smart-check-app": {
-    eyebrow: "LISS/CSCS",
+    eyebrow: "LISS",
     title: "Smart Check App",
     theme: "green",
     intro: "Site managers can read this information using a smartphone, tablet or PC with the Smart Check app installed, allowing them to instantly record the cardholder’s information, and be secure in the knowledge that the cardholder is qualified for the job they do on-site.",
     sections: [
       {
-        heading: "All CSCS cards are Smart (including LISS/CSCS) – they contain a chip that stores information on the cardholder's identity, qualifications and training.",
-        body: "Find out how to use CSCS SmartCards (including LISS/CSCS) and the Smart Check app here. There are three ways to check a card using CSCS Smart Check: via Contactless (NFC), using QR codes or by performing a manual check. The explainer videos are below, including what a successful and failed verification attempt looks like on the app.",
+        heading: "All CSCS cards are Smart (including LISS) – they contain a chip that stores information on the cardholder's identity, qualifications and training.",
+        body: "Find out how to use CSCS SmartCards (including LISS) and the Smart Check app here. There are three ways to check a card using CSCS Smart Check: via Contactless (NFC), using QR codes or by performing a manual check. The explainer videos are below, including what a successful and failed verification attempt looks like on the app.",
       },
     ],
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
   "/liss-cscs/accreditation/cardholders": {
-    eyebrow: "LISS/CSCS",
+    eyebrow: "LISS",
     title: "Industry accreditation cardholders",
     theme: "green",
-    intro: "The process of certifying training and qualifications ensures LISS/CSCS can play its part in improving standards and safety on UK construction sites. LISS/CSCS’s principle objective is focused on the achievement of industry recognised qualifications, achieved through strong support from many industry stakeholders.",
+    intro: "The process of certifying training and qualifications ensures LISS can play its part in improving standards and safety on UK construction sites. LISS’s principle objective is focused on the achievement of industry recognised qualifications, achieved through strong support from many industry stakeholders.",
     sections: [
       {
-        heading: "LISS/CSCS cards available to individuals working in the landbased sectors.",
-        body: "LISS/CSCS commitment to a fully qualified workforce is underpinned by the Industrial Strategy for Construction. The Construction Leadership Council (CLC), responsible for delivering the Strategy, announced in 2015 that all card schemes should carry the CSCS logo and must operate with nationally recognised qualifications in place for all occupations relevant to their sector. Since the announcement LISS/CSCS developed a number of plans to meet the CLC’s requirements, including agreement on appropriate qualifications for each occupation, with the minimum standard for skilled occupations established by the CLC at Level 2 or equivalent. To meet the requirements of the CLC, previous Industry Accreditation (IA) cardholders can be moved to a recognised qualification. The withdrawal of Industry Accreditation is the final step towards achieving the CLC’s requirement of ensuring nationally recognised qualifications are in place for all occupations. What Happens Next? From 1 January 2020, all Land-based Industry Skills Scheme (LISS)/Construction Skills Certification Scheme (CSCS) cards renewed under Industry Accreditation expired on 31 December 2024 and CSCS stopped issuing the card from 30...",
+        heading: "LISS cards available to individuals working in the landbased sectors.",
+        body: "LISS commitment to a fully qualified workforce is underpinned by the Industrial Strategy for Construction. The Construction Leadership Council (CLC), responsible for delivering the Strategy, announced in 2015 that all card schemes should carry the CSCS logo and must operate with nationally recognised qualifications in place for all occupations relevant to their sector. Since the announcement LISS developed a number of plans to meet the CLC’s requirements, including agreement on appropriate qualifications for each occupation, with the minimum standard for skilled occupations established by the CLC at Level 2 or equivalent. To meet the requirements of the CLC, previous Industry Accreditation (IA) cardholders can be moved to a recognised qualification. The withdrawal of Industry Accreditation is the final step towards achieving the CLC’s requirement of ensuring nationally recognised qualifications are in place for all occupations. What Happens Next? From 1 January 2020, all Land-based Industry Skills Scheme (LISS)/Construction Skills Certification Scheme (CSCS) cards renewed under Industry Accreditation expired on 31 December 2024 and CSCS stopped issuing the card from 30...",
       },
       {
-        heading: "I would like to renew my LISS/CSCS Black Managers Card, what are my options?",
+        heading: "I would like to renew my LISS Black Managers Card, what are my options?",
         body: "Lantra has supported BALI by developing the Level 5 Diploma in Principles of Leadership & Management in Landbased Settings (require relevant field unit breakdown) qualification. Please follow the link above to learn more about the course and identify a suitable training provider. This course is available online. Alternatively visit the check your qualifications page for further qualifications. You must ensure that your managers ROLO Health and Safety and managers CITB Touch Screen Test have been completed within the last 2 years when renewing your card.",
       },
       {
-        heading: "I would like to renew my LISS/CSCS Gold Supervisors Card, what are my options?",
+        heading: "I would like to renew my LISS Gold Supervisors Card, what are my options?",
         body: "Lantra has supported BALI by developing the Lantra Awards Level 3 NVQ Diploma in Occupational Work Supervision (Landscape and Maintenance) qualification. Please follow the link above to learn more about the course and identify a suitable training provider. This course is available online. Alternatively visit the check your qualifications page for further qualifications. You must ensure that your supervisors ROLO Health and Safety and supervisors CITB Touch Screen Test have been completed within the last 2 years when renewing your card.",
       },
       {
-        heading: "I would like to renew my LISS/CSCS Blue Skilled Workers Card, what are my options?",
+        heading: "I would like to renew my LISS Blue Skilled Workers Card, what are my options?",
         body: "Please visit the check your qualifications page for all qualifications which we would accept for the blue card. You must ensure that your operatives ROLO Health and Safety and operatives CITB Touch Screen Test have been completed within the last 2 years when renewing your card.",
       },
     ],
@@ -4496,29 +4496,29 @@ const C: Record<string, PageContent> = {
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
   "/liss-cscs/accreditation/withdrawal-2024": {
-    eyebrow: "LISS/CSCS",
+    eyebrow: "LISS",
     title: "Industry Accreditation SmartCards withdrawal in 2024",
     theme: "green",
-    intro: "Do you work in the commercial land-based industry? Looking to upskill your own workforce? Trouble accessing certain live commercial sites? The Land-based Industry Skills Scheme (LISS) and Construction Skills Certification Scheme (CSCS) is a jointly managed scheme (LISS/CSCS) administered by the British Association of Landscape Industries (BALI) and enables you to work on live commercial landbased/construction sites.",
+    intro: "Do you work in the commercial land-based industry? Looking to upskill your own workforce? Trouble accessing certain live commercial sites? The Land-based Industry Skills Scheme (LISS) and Construction Skills Certification Scheme (CSCS) is a jointly managed scheme (LISS) administered by the British Association of Landscape Industries (BALI) and enables you to work on live commercial landbased/construction sites.",
     sections: [
       {
-        heading: "BALI’s LISS/CSCS SmartCard scheme announces the withdrawal of all Industry Accreditation cards by 2024",
-        body: "The scheme recognises qualifications and training experience, in turn improving employment prospects and enabling the ability to tender for commercial work that requires a LISS/CSCS SmartCard. LISS/CSCS is administered by the British Association of Landscape Industries (BALI). It is a standalone scheme but is also a requirement of the National Highways Sector Scheme 18 (Land-based). For all full operational SmartCard levels, the minimum requirement is the ROLO Health, Safety and Environmental Awareness Course and the CITB Touch Screen Test appropriate to the SmartCard level. Please note for the Modular Paving industry only, the CITB Touch Screen Test appropriate to your SmartCard level is required. For several years the strategic direction of the Construction Skills Certification Scheme (CSCS) has focused on ensuring that all applicants can demonstrate the achievement of a nationally recognised construction related qualification. With the withdrawal of the Construction Related Occupation card and the planned removal of the Site Visitor card, the next step was the withdrawal of cards issued under Industry Accreditation. Industry Accreditation allowed workers to obtain LISS/CSCS c...",
+        heading: "BALI’s LISS SmartCard scheme announces the withdrawal of all Industry Accreditation cards by 2024",
+        body: "The scheme recognises qualifications and training experience, in turn improving employment prospects and enabling the ability to tender for commercial work that requires a LISS SmartCard. LISS is administered by the British Association of Landscape Industries (BALI). It is a standalone scheme but is also a requirement of the National Highways Sector Scheme 18 (Land-based). For all full operational SmartCard levels, the minimum requirement is the ROLO Health, Safety and Environmental Awareness Course and the CITB Touch Screen Test appropriate to the SmartCard level. Please note for the Modular Paving industry only, the CITB Touch Screen Test appropriate to your SmartCard level is required. For several years the strategic direction of the Construction Skills Certification Scheme (CSCS) has focused on ensuring that all applicants can demonstrate the achievement of a nationally recognised construction related qualification. With the withdrawal of the Construction Related Occupation card and the planned removal of the Site Visitor card, the next step was the withdrawal of cards issued under Industry Accreditation. Industry Accreditation allowed workers to obtain LISS c...",
       },
     ],
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
   "/liss-cscs/accreditation/latest-developments": {
-    eyebrow: "LISS/CSCS",
+    eyebrow: "LISS",
     title: "Latest Developments",
     theme: "green",
-    intro: "Following a recent communication from CSCS we felt it was time to update our members and LISS/CSCS customers on the current situation with the withdrawal of Industry Accreditation (IA), We will continue to monitor the situation and update our members should any further changes be made.",
+    intro: "Following a recent communication from CSCS we felt it was time to update our members and LISS customers on the current situation with the withdrawal of Industry Accreditation (IA), We will continue to monitor the situation and update our members should any further changes be made.",
     ctaPrimary: { label: "Join Our Association", href: "/join" },
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
   "/liss-cscs/rolo/find-provider": {
-    eyebrow: "LISS/CSCS",
+    eyebrow: "LISS",
     title: "ROLO",
     theme: "green",
     intro: "Traditionally ROLO courses are based on-site at training provider venues around the UK, as seen in our directory below, and often see multiple people from different organisations in attendance. As an alternative many Training Providers are offering the ROLO course online.",
@@ -4569,7 +4569,7 @@ const C: Record<string, PageContent> = {
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
   "/liss-cscs/rolo/find-course": {
-    eyebrow: "LISS/CSCS",
+    eyebrow: "LISS",
     title: "Training courses",
     theme: "green",
     intro: "ROLO H&S Environmental Awareness Course for Operatives - 1 Day Online",
@@ -4589,7 +4589,7 @@ const C: Record<string, PageContent> = {
       },
       {
         heading: "ROLO Health, Safety and Environmental Awareness for Operatives - 1 Day Online",
-        body: "Remote online training course for CITB HS&E test for most LISS/CSCS Smart Cards.",
+        body: "Remote online training course for CITB HS&E test for most LISS Smart Cards.",
       },
       {
         heading: "ROLO Health, Safety and Environmental Awareness Course for Operatives - 1 Day Online",
@@ -4604,7 +4604,7 @@ const C: Record<string, PageContent> = {
     ctaSecondary: { label: "Contact the team", href: "/contact" },
   },
   "/liss-cscs/faqs": {
-    eyebrow: "LISS/CSCS",
+    eyebrow: "LISS",
     title: "FAQ's",
     theme: "green",
     intro: "Below are some commonly asked questions. If you are unable to find the answer to your questions below, please email liss@bali.org.uk.",

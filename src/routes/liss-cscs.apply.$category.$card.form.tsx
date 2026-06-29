@@ -25,8 +25,8 @@ export const Route = createFileRoute("/liss-cscs/apply/$category/$card/form")({
   },
   head: ({ loaderData }) => ({
     meta: [
-      { title: `Apply — ${loaderData?.card?.name ?? "SmartCard"} | BALI LISS/CSCS` },
-      { name: "description", content: `Submit your LISS/CSCS SmartCard application for ${loaderData?.card?.name ?? ""}.` },
+      { title: `Apply — ${loaderData?.card?.name ?? "SmartCard"} | BALI LISS` },
+      { name: "description", content: `Submit your LISS SmartCard application for ${loaderData?.card?.name ?? ""}.` },
       { name: "robots", content: "noindex" },
     ],
   }),
@@ -328,7 +328,7 @@ function FormPage() {
                 className="mt-1"
               />
               <span className="text-sm text-gray-700">
-                BALI may contact me about LISS/CSCS updates, training, and renewal reminders.
+                BALI may contact me about LISS updates, training, and renewal reminders.
               </span>
             </label>
           </FormSection>
@@ -481,7 +481,7 @@ function SuccessScreen({ card, category, categorySlug }: { card: Card; category:
                 Back to {category.label} cards
               </Link>
               <Link to="/liss-cscs" className="bg-white border border-gray-300 text-gray-700 px-5 py-2.5 rounded-lg font-semibold hover:bg-gray-100">
-                Back to LISS/CSCS
+                Back to LISS
               </Link>
             </div>
           </div>

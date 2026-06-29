@@ -6,7 +6,7 @@ const quickLinks = [
   { label: 'Landscape Directory', href: '/directory' },
   { label: 'Latest News', href: '/news' },
   { label: 'Events & Training', href: '/events' },
-  { label: 'LISS/CSCS', href: '/liss-cscs' },
+  { label: 'LISS', href: '/liss-cscs' },
   { label: 'BALI Podcast: Dig Deep', href: '/help/podcast' },
   { label: 'Lay of the Land Report 2025', href: '/lay-of-the-land-2025' },
 ]

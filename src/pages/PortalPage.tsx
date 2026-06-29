@@ -12,7 +12,7 @@ const sectionTitles: Record<Section, string> = {
   directory: 'Directory Listing',
   events: 'Events & Training',
   documents: 'Documents & Guides',
-  liss: 'LISS/CSCS Cards',
+  liss: 'LISS Cards',
   invoices: 'Invoices & Payments',
   support: 'HR & H&S Support',
   settings: 'Settings',
@@ -37,7 +37,7 @@ const navGroups = [
     items: [
       { id: 'events' as Section, label: 'Events & Training', icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' },
       { id: 'documents' as Section, label: 'Documents & Guides', icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' },
-      { id: 'liss' as Section, label: 'LISS/CSCS Cards', icon: 'M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0' },
+      { id: 'liss' as Section, label: 'LISS Cards', icon: 'M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0' },
       { id: 'invoices' as Section, label: 'Invoices & Payments', icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2' },
       { id: 'support' as Section, label: 'HR & H&S Support', icon: 'M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z' },
     ],
@@ -190,7 +190,7 @@ export default function PortalPage() {
                   { icon: 'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z', bg: 'bg-bali-blue/10', color: 'text-bali-blue', value: 'Accredited', sub: 'Contractor · Member since 2019', badge: { text: 'Active', cls: 'bg-green-100 text-green-700' } },
                   { icon: 'M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z', bg: 'bg-bali-green/10', color: 'text-bali-green', value: '47', sub: 'Directory profile views', badge: { text: 'This month', cls: 'text-gray-400 text-xs' } },
                   { icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z', bg: 'bg-bali-flow/10', color: 'text-bali-flow', value: '2', sub: 'Events booked', badge: { text: 'Upcoming', cls: 'text-gray-400 text-xs' } },
-                  { icon: 'M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0', bg: 'bg-bali-warm/10', color: 'text-bali-warm', value: '5', sub: 'LISS/CSCS SmartCards', badge: { text: 'Valid cards', cls: 'text-gray-400 text-xs' } },
+                  { icon: 'M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0', bg: 'bg-bali-warm/10', color: 'text-bali-warm', value: '5', sub: 'LISS SmartCards', badge: { text: 'Valid cards', cls: 'text-gray-400 text-xs' } },
                 ].map((card) => (
                   <div key={card.value} className="bg-white rounded-xl p-5 border border-gray-200 hover:shadow-md transition-all">
                     <div className="flex items-center justify-between mb-3">
@@ -458,7 +458,7 @@ export default function PortalPage() {
           {section === 'liss' && (
             <div className="max-w-3xl">
               <div className="bg-white rounded-xl border border-gray-200 p-6">
-                <h3 className="font-bold text-gray-900 text-lg mb-5">LISS/CSCS SmartCards</h3>
+                <h3 className="font-bold text-gray-900 text-lg mb-5">LISS SmartCards</h3>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>

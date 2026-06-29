@@ -8,17 +8,17 @@ import cards from "../content/liss-cscs-cards.json";
 export const Route = createFileRoute("/liss-cscs/apply/")({
   head: () => ({
     meta: [
-      { title: "Apply for a LISS/CSCS SmartCard — BALI" },
+      { title: "Apply for a LISS SmartCard — BALI" },
       {
         name: "description",
         content:
-          "Apply for a LISS/CSCS SmartCard. Choose from seven industry categories — amenity, arboriculture, countryside management, ecology, landscape & maintenance, modular paving, and pesticides.",
+          "Apply for a LISS SmartCard. Choose from seven industry categories — amenity, arboriculture, countryside management, ecology, landscape & maintenance, modular paving, and pesticides.",
       },
-      { property: "og:title", content: "Apply for a LISS/CSCS SmartCard — BALI" },
+      { property: "og:title", content: "Apply for a LISS SmartCard — BALI" },
       {
         property: "og:description",
         content:
-          "Choose your industry category and apply for a LISS/CSCS SmartCard administered by BALI.",
+          "Choose your industry category and apply for a LISS SmartCard administered by BALI.",
       },
     ],
   }),
@@ -47,16 +47,16 @@ function ApplyLanding() {
           <nav className="text-sm text-blue-100/80 mb-4 flex flex-wrap items-center gap-2">
             <Link to="/" className="hover:text-white">Home</Link>
             <span className="opacity-60">/</span>
-            <Link to="/liss-cscs" className="hover:text-white">LISS/CSCS</Link>
+            <Link to="/liss-cscs" className="hover:text-white">LISS</Link>
             <span className="opacity-60">/</span>
             <span className="text-white">Apply for a SmartCard</span>
           </nav>
-          <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass">LISS/CSCS</p>
+          <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass">LISS</p>
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-5 max-w-4xl">
-            Apply for a LISS/CSCS SmartCard
+            Apply for a LISS SmartCard
           </h1>
           <p className="text-blue-100 text-lg leading-relaxed max-w-3xl">
-            Apply for a LISS/CSCS SmartCard to gain access to commercial land-based sites. Upskill
+            Apply for a LISS SmartCard to gain access to commercial land-based sites. Upskill
             your workforce and develop your own personal career by demonstrating your qualifications,
             skills and knowledge.
           </p>
@@ -81,7 +81,7 @@ function ApplyLanding() {
             Health, Safety and Environmental Awareness Course and relevant CITB Touch Screen Test{" "}
             <strong>(these must have been completed within the last 2 years on application)</strong>.
             Please ensure you have checked your land-based qualification(s), if applicable, to help
-            you map your certification to the appropriate LISS/CSCS SmartCard.
+            you map your certification to the appropriate LISS SmartCard.
           </p>
           <p>
             It's your responsibility to ensure you meet all the criteria for the specific card

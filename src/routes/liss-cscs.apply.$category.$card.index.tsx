@@ -30,12 +30,12 @@ export const Route = createFileRoute("/liss-cscs/apply/$category/$card/")({
     const name = loaderData?.card?.name ?? "SmartCard";
     return {
       meta: [
-        { title: `${name} — Apply | BALI LISS/CSCS` },
+        { title: `${name} — Apply | BALI LISS` },
         {
           name: "description",
-          content: loaderData?.card?.desc?.slice(0, 155) ?? `Apply for the ${name} LISS/CSCS SmartCard.`,
+          content: loaderData?.card?.desc?.slice(0, 155) ?? `Apply for the ${name} LISS SmartCard.`,
         },
-        { property: "og:title", content: `${name} — Apply | BALI LISS/CSCS` },
+        { property: "og:title", content: `${name} — Apply | BALI LISS` },
         ...(loaderData?.card?.img
           ? [
               { property: "og:image", content: loaderData.card.img },
@@ -75,7 +75,7 @@ function CardDetail() {
           <nav className="text-sm text-blue-100/80 mb-4 flex flex-wrap items-center gap-2">
             <Link to="/" className="hover:text-white">Home</Link>
             <span className="opacity-60">/</span>
-            <Link to="/liss-cscs" className="hover:text-white">LISS/CSCS</Link>
+            <Link to="/liss-cscs" className="hover:text-white">LISS</Link>
             <span className="opacity-60">/</span>
             <Link to="/liss-cscs/apply" className="hover:text-white">Apply</Link>
             <span className="opacity-60">/</span>
