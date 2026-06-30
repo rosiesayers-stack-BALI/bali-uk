@@ -19,6 +19,8 @@ export const Route = createFileRoute("/help/podcast")({
 
 type Theme = "Chelsea" | "Awards" | "Skills & Careers" | "Sustainability" | "Business" | "Events";
 
+type Guest = { name: string; role: string; bio: string };
+
 type Episode = {
   n: number;
   title: string;
@@ -27,6 +29,8 @@ type Episode = {
   desc: string;
   themes: Theme[];
   embedId?: string; // Podbean i= parameter for player-v2 embed
+  guests: Guest[];
+  guide: string[];
 };
 
 const EPISODES: Episode[] = [
@@ -38,17 +42,185 @@ const EPISODES: Episode[] = [
     desc: "Recorded live from the BALI Hive Garden at RHS Chelsea Flower Show 2026. Rosie Sayers speaks to designers, suppliers, innovators and one of the Chelsea Pensioners about collaboration, biodiversity, wellbeing and the spirit of Chelsea.",
     themes: ["Chelsea", "Sustainability"],
     embedId: "5venq-1ae30bb-pb",
+    guests: [
+      { name: "Catherine Barrett", role: "Managing Director, Furnitubes", bio: "Leads the public-realm furniture specialist behind the new Hive range, designing benches, planters and seating that bring communities together in shared outdoor spaces." },
+      { name: "Kate Miller", role: "Managing Director, Natural Swimming Pools Ltd", bio: "Designs chemical-free swimming environments that work with nature rather than against it, blending horticulture, ecology and engineering into private and public pools." },
+      { name: "Roger Moore", role: "Contracts Manager, Lindum Turf", bio: "40 years in turf production and one of the people who quietly makes Chelsea happen — coordinating cultivation, harvest and overnight logistics for show gardens across the country." },
+      { name: "Barry", role: "Chelsea Pensioner", bio: "A resident of the Royal Hospital Chelsea whose home becomes the backdrop to the world's most famous flower show. Reflects on nature, community and the simple value of getting your hands dirty." },
+    ],
+    guide: [
+      "Why the BALI Hive Garden became a meeting point for the industry at Chelsea 2026",
+      "Designing public spaces that create connection — not just seating",
+      "Chemical-free pools and the case for water that supports wildlife",
+      "Forty years of turf innovation and the logistics behind a Chelsea build",
+      "A Chelsea Pensioner on nature, wellbeing and why outdoor spaces matter",
+      "The themes shaping modern landscaping: collaboration, biodiversity, craftsmanship",
+    ],
   },
-  { n: 14, title: "Inside Chelsea Build Week with Mark Gregory", date: "20 May 2026", length: "22:57", desc: "Landform Consultants' Mark Gregory on the realities of building a show garden at Chelsea — logistics, weather, plant care and the team craft behind the medals.", themes: ["Chelsea", "Business"] },
-  { n: 13, title: "The Final 5% — What Makes an Award-Winning Landscape?", date: "7 May 2026", length: "19:47", desc: "Judges and past winners on the details that separate a strong scheme from a National Landscape Award — finish, planting, client care and storytelling.", themes: ["Awards"] },
-  { n: 12, title: "Building a Landscaping Business on People, Standards and Apprenticeships", date: "14 April 2026", length: "21:35", desc: "How a fast-growing contractor put people, training pathways and BALI standards at the centre of the business — and what it took to scale.", themes: ["Business", "Skills & Careers"] },
-  { n: 11, title: "Making Biodiversity Net Gain Simple — BNG, Design and the Future of Landscaping", date: "14 April 2026", length: "13:19", desc: "A plain-English guide to BNG for designers and contractors: what it means on site, how to price it, and where the opportunity sits.", themes: ["Sustainability"] },
-  { n: 10, title: "What Excellence Looks Like in Landscaping — BALI Awards, Collaboration and the Future", date: "16 March 2026", length: "21:50", desc: "A roundtable on what 'excellence' means today — and how collaboration between designers, contractors and clients drives award-winning work.", themes: ["Awards", "Business"] },
-  { n: 9, title: "Roots, Robots & Revolution — How GroundsFest Is Reshaping the Industry", date: "3 March 2026", length: "19:39", desc: "Inside GroundsFest: the machinery, the innovation and what the trade show tells us about where commercial landscaping is heading.", themes: ["Events", "Business"] },
-  { n: 8, title: "Two Journeys, One Industry — Young Landscapers on Finding Their Way", date: "18 December 2025", length: "22:16", desc: "Two young landscapers share very different routes into the trade — and what employers can do to keep the next generation engaged.", themes: ["Skills & Careers"] },
-  { n: 7, title: "Closing the Skills Gap — Apprenticeships, Bootcamps and the Future of Landscaping", date: "18 December 2025", length: "12:29", desc: "Where the skills gap actually is, what's working (apprenticeships, bootcamps, GoLandscape) and what isn't.", themes: ["Skills & Careers"] },
-  { n: 6, title: "Building Skills and Careers in Landscaping with Jonathan Petit from GoLandscape", date: "11 November 2025", length: "16:37", desc: "GoLandscape's Jonathan Petit on careers outreach, school visits and helping young people see landscaping as a serious career choice.", themes: ["Skills & Careers"] },
+  {
+    n: 14,
+    title: "Inside Chelsea Build Week with Mark Gregory",
+    date: "20 May 2026",
+    length: "22:57",
+    desc: "Landform Consultants' Mark Gregory on the realities of building a show garden at Chelsea — logistics, weather, plant care and the team craft behind the medals.",
+    themes: ["Chelsea", "Business"],
+    guests: [
+      { name: "Mark Gregory", role: "Founder, Landform Consultants & The Glasshouse Collective", bio: "Legendary landscape contractor with 36 years at RHS Chelsea and more than 100 show gardens to his name. Now leading The Glasshouse Collective — a shared space bringing landscapers, designers, architects and suppliers together to support the next generation." },
+    ],
+    guide: [
+      "What really happens during Chelsea Build Week",
+      "Why attention to detail matters at the highest level",
+      "How landscaping is evolving towards more sustainable practices",
+      "The role of planning, collaboration and innovation in future gardens",
+      "Why attracting young people into horticulture matters more than ever",
+    ],
+  },
+  {
+    n: 13,
+    title: "The Final 5% — What Makes an Award-Winning Landscape?",
+    date: "7 May 2026",
+    length: "19:47",
+    desc: "Head Judge John Malmo on the details that separate a strong scheme from a National Landscape Award — finish, planting, client care and storytelling.",
+    themes: ["Awards"],
+    guests: [
+      { name: "John Malmo", role: "Head Judge, BALI National Landscape Awards", bio: "Has judged some of the country's best landscape schemes across five decades, from the transformation of Canary Wharf to today's rising standards in public realm and private gardens. Known for championing the 'final 5%' — the discipline and detail that lift a project from good to outstanding." },
+    ],
+    guide: [
+      "What judges really look for in award-winning projects",
+      "Why the 'final 5%' matters so much",
+      "Common mistakes contractors make before judging",
+      "How teamwork influences project success",
+      "How the landscaping industry has evolved over the decades",
+      "Why entering awards can transform a business",
+    ],
+  },
+  {
+    n: 12,
+    title: "Building a Landscaping Business on People, Standards and Apprenticeships",
+    date: "14 April 2026",
+    length: "21:35",
+    desc: "Charles Blumlein of Location Landscapes on the people behind a successful landscaping business — hiring for attitude, mentoring apprentices and the value of BALI standards.",
+    themes: ["Business", "Skills & Careers"],
+    guests: [
+      { name: "Charles Blumlein", role: "Founder, Location Landscapes", bio: "Long-standing BALI member who built a business around soft-landscaping expertise on high-end private gardens. A vocal advocate for apprenticeships, mentoring and the trust that comes from referrals and accreditation." },
+    ],
+    guide: [
+      "How Charles got started in horticulture and landscaping",
+      "Why Location Landscapes was built around soft-landscaping expertise",
+      "Hiring for character and attitude — not just technical skill",
+      "The biggest lessons from mentoring apprentices",
+      "The real value of BALI membership and accreditation",
+      "How collaboration and trusted referrals strengthen the industry",
+    ],
+  },
+  {
+    n: 11,
+    title: "Making Biodiversity Net Gain Simple — BNG, Design and the Future of Landscaping",
+    date: "14 April 2026",
+    length: "13:19",
+    desc: "Oliver Lewis CBE of Joe's Blooms with a plain-English guide to BNG for designers and contractors — what it means on site, how to price it, and where the opportunity sits.",
+    themes: ["Sustainability"],
+    guests: [
+      { name: "Oliver Lewis CBE", role: "Founder & CEO, Joe's Blooms", bio: "Built Joe's Blooms to make Biodiversity Net Gain genuinely usable for designers and contractors. A former senior government adviser, now focused on turning a complex policy into intuitive design tools the industry can actually use." },
+    ],
+    guide: [
+      "What Biodiversity Net Gain actually means in practice",
+      "Why BNG can feel complex — and how to cut through it",
+      "How digital tools simplify biodiversity calculations",
+      "Real-world examples of BNG applied to live projects",
+      "The role of landscapers in delivering biodiversity outcomes",
+      "Why biodiversity should be seen as opportunity, not barrier",
+    ],
+  },
+  {
+    n: 10,
+    title: "What Excellence Looks Like in Landscaping — BALI Awards, Collaboration and the Future",
+    date: "16 March 2026",
+    length: "21:50",
+    desc: "Nick Coslett — BALI Awards judge and Chair of the BALI Chalk Fund — on what 'excellence' means today, and how collaboration between designers, contractors and clients drives award-winning work.",
+    themes: ["Awards", "Business"],
+    guests: [
+      { name: "Nick Coslett", role: "BALI Awards Judge & Chair, BALI Chalk Fund", bio: "A long-time industry figure and trusted voice in the awards process. As Chair of the BALI Chalk Fund he leads the association's charitable arm, supporting members and families across the landscape sector." },
+    ],
+    guide: [
+      "Behind the scenes of BALI Awards judging",
+      "Why visiting projects on site changes everything",
+      "How collaboration is reshaping the industry",
+      "Why reflection on completed work matters in a fast-moving sector",
+      "How quality and leadership raise standards for everyone",
+    ],
+  },
+  {
+    n: 9,
+    title: "Roots, Robots & Revolution — How GroundsFest Is Reshaping the Industry",
+    date: "3 March 2026",
+    length: "19:39",
+    desc: "Recorded live at the BALI Awards: Chris from GroundsFest on community, collaboration and what the show tells us about where commercial landscaping is heading.",
+    themes: ["Events", "Business"],
+    guests: [
+      { name: "Chris Bassett", role: "Co-founder, GroundsFest", bio: "One of the team behind GroundsFest — the deliberately community-first trade show built around machinery, innovation and the people running landscaping businesses. Works closely with BALI to support and grow the sector." },
+    ],
+    guide: [
+      "What makes the BALI Awards a standout moment in the industry calendar",
+      "Inside the BALI × GroundsFest partnership",
+      "Why GroundsFest is deliberately community-first",
+      "How trade shows are changing for a modern commercial sector",
+    ],
+  },
+  {
+    n: 8,
+    title: "Two Journeys, One Industry — Young Landscapers on Finding Their Way",
+    date: "18 December 2025",
+    length: "22:16",
+    desc: "Recorded live at FutureScape with Archie Matthews and Ollie French on the very different routes into a successful landscaping career — and what employers can do to keep the next generation engaged.",
+    themes: ["Skills & Careers"],
+    guests: [
+      { name: "Archie Matthews", role: "BALI Student of the Year 2025", bio: "Came up through an apprenticeship and college training, now recognised as the BALI Student of the Year. A grounded voice on what young people need from employers, colleges and the wider industry." },
+      { name: "Ollie French", role: "Young landscaper, Warwickshire", bio: "A self-taught young landscaper building a career on the ground in Warwickshire. Speaks honestly about the realities of starting out, finding mentors and the day-to-day craft of the trade." },
+    ],
+    guide: [
+      "Apprenticeship vs self-taught — two very different routes in",
+      "What colleges, employers and the industry get right (and wrong)",
+      "How to keep the next generation in the trade once they arrive",
+      "Practical advice for young people considering landscaping",
+    ],
+  },
+  {
+    n: 7,
+    title: "Closing the Skills Gap — Apprenticeships, Bootcamps and the Future of Landscaping",
+    date: "18 December 2025",
+    length: "12:29",
+    desc: "Recorded live at GroundsFest with Pauline Clark of Capel Manor College: how education providers and employers can work together to attract, train and retain the next generation.",
+    themes: ["Skills & Careers"],
+    guests: [
+      { name: "Pauline Clark", role: "Business Relationship Manager, Capel Manor College", bio: "Bridges London's leading environmental college and the employers who need its graduates. Works hands-on with apprenticeship providers, bootcamp organisers and landscape businesses to shape pathways into the industry." },
+    ],
+    guide: [
+      "Where the skills gap actually is",
+      "What works: apprenticeships, bootcamps and short courses",
+      "How colleges and employers can genuinely partner",
+      "Attracting, training and — crucially — retaining new talent",
+    ],
+  },
+  {
+    n: 6,
+    title: "Building Skills and Careers in Landscaping with Jonathan Petit from GoLandscape",
+    date: "11 November 2025",
+    length: "16:37",
+    desc: "GoLandscape's Jonathan Petit on careers outreach, school visits and helping young people see landscaping as a serious career choice.",
+    themes: ["Skills & Careers"],
+    guests: [
+      { name: "Jonathan Petit", role: "Head of Skills, Careers & Certification, GoLandscape", bio: "Leads BALI's GoLandscape initiative — the industry's national push to promote landscaping as a career. Engages with 22,000+ young people a year through schools, colleges, careers events and certification pathways." },
+    ],
+    guide: [
+      "How GoLandscape is reaching 22,000+ young people a year",
+      "What works in school and college careers outreach",
+      "The role of certification in raising the trade's profile",
+      "How employers can get involved in closing the skills gap",
+    ],
+  },
 ];
+
 
 const ALL_THEMES: Theme[] = ["Chelsea", "Awards", "Skills & Careers", "Sustainability", "Business", "Events"];
 
