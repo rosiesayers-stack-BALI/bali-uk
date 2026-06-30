@@ -303,7 +303,29 @@ function Page() {
                 className="block w-full"
               />
             </div>
+            {/* Guests + guide for the latest episode */}
+            <div className="grid md:grid-cols-2 gap-6 mt-6">
+              <div className="p-5 rounded-2xl bg-white border border-slate-200">
+                <div className="text-xs font-bold uppercase tracking-wider text-bali-green mb-3">In this episode</div>
+                <ul className="space-y-1.5 text-sm text-slate-700 list-disc pl-5">
+                  {latest.guide.map((g) => <li key={g}>{g}</li>)}
+                </ul>
+              </div>
+              <div className="p-5 rounded-2xl bg-white border border-slate-200">
+                <div className="text-xs font-bold uppercase tracking-wider text-bali-green mb-3">Guests</div>
+                <ul className="space-y-4">
+                  {latest.guests.map((g) => (
+                    <li key={g.name}>
+                      <div className="font-bold text-slate-900 text-sm leading-tight">{g.name}</div>
+                      <div className="text-xs text-bali-green font-semibold mb-1">{g.role}</div>
+                      <p className="text-sm text-slate-600 leading-relaxed">{g.bio}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
+
 
           {/* SUBSCRIBE */}
           <h3>Follow Dig Deep</h3>
