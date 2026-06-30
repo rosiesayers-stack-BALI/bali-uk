@@ -408,12 +408,39 @@ function Page() {
                     <div className="text-xs font-bold uppercase tracking-wider text-bali-green mb-1">Ep. {e.n} · {e.date} · {e.length}</div>
                     <div className="font-bold text-slate-900 mb-1.5 leading-snug">{e.title}</div>
                     <p className="text-sm text-slate-600 leading-relaxed mb-2.5">{e.desc}</p>
-                    <div className="flex flex-wrap gap-1.5">
+                    <div className="flex flex-wrap gap-1.5 mb-3">
                       {e.themes.map((t) => (
                         <span key={t} className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 uppercase tracking-wider">{t}</span>
                       ))}
                     </div>
+                    <details className="group/details mt-2 border-t border-slate-100 pt-3">
+                      <summary className="cursor-pointer list-none flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-bali-green hover:text-bali-slate select-none">
+                        <svg className="w-3.5 h-3.5 transition-transform group-open/details:rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
+                        Guests &amp; episode guide
+                      </summary>
+                      <div className="grid md:grid-cols-2 gap-5 mt-4">
+                        <div>
+                          <div className="text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-2">In this episode</div>
+                          <ul className="space-y-1 text-sm text-slate-700 list-disc pl-5">
+                            {e.guide.map((g) => <li key={g}>{g}</li>)}
+                          </ul>
+                        </div>
+                        <div>
+                          <div className="text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-2">{e.guests.length > 1 ? "Guests" : "Guest"}</div>
+                          <ul className="space-y-3">
+                            {e.guests.map((g) => (
+                              <li key={g.name}>
+                                <div className="font-bold text-slate-900 text-sm leading-tight">{g.name}</div>
+                                <div className="text-xs text-bali-green font-semibold mb-1">{g.role}</div>
+                                <p className="text-sm text-slate-600 leading-relaxed">{g.bio}</p>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </details>
                   </div>
+
                 </div>
               </li>
             ))}
