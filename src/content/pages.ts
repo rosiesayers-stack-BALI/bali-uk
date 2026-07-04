@@ -2187,7 +2187,7 @@ const C: Record<string, PageContent> = {
       {
         heading: "Rosie Sayers, Head of Marketing & Communications",
         body: "Shaping the way the Association connects with its members and the wider industry is at the heart of my role. I focus on creating impactful campaigns and clear communication strategies that highlight the value of our work and celebrate the achievements of our members. Through strong relationships and impactful engagement, I amplify the voice of the landscaping sector.",
-        image: { url: "/__l5e/assets-v1/14da6245-98ae-4180-9800-5d5540b2c010/rosie-sayers.png", alt: "Rosie Sayers" },
+        image: { url: "/__l5e/assets-v1/b102e8a1-14d8-4050-bb29-72f9216b0031/rosie-sayers.jpeg", alt: "Rosie Sayers" },
         role: "Head of Marketing & Communications",
         group: "Leadership Team",
       },
