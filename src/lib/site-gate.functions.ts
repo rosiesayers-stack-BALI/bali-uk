@@ -9,6 +9,8 @@ export const unlockSite = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     const expected = process.env.SITE_PASSWORD;
     if (!expected) return { ok: true, configured: false };
-    if (data.password !== expected) return { ok: false, configured: true, error: "Incorrect password" };
+    const submitted = (data.password ?? "").trim();
+    const target = expected.trim();
+    if (submitted !== target) return { ok: false, configured: true, error: "Incorrect password" };
     return { ok: true, configured: true };
   });
