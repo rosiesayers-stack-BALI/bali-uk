@@ -231,9 +231,9 @@ function MemberTestimonials() {
                 <div className="w-12 h-12 rounded-full bg-bali-green/10 text-bali-green flex items-center justify-center font-bold text-sm flex-shrink-0">
                   {tst.initials}
                 </div>
-                <div className="min-w-0">
-                  <div className="font-bold text-gray-900 whitespace-nowrap">{tst.name}</div>
-                  <div className="text-sm text-gray-500">{tst.role}</div>
+                <div className="min-w-0 flex-1">
+                  <div className="font-bold text-gray-900 break-words">{tst.name}</div>
+                  <div className="text-sm text-gray-500 break-words">{tst.role}</div>
                 </div>
               </figcaption>
             </figure>
