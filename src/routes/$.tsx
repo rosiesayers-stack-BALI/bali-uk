@@ -243,7 +243,7 @@ function MemberTestimonials() {
     </section>
   );
 }
-
+function Breadcrumbs({ path }: { path: string }) {
   const crumbs = path.split("/").filter(Boolean);
   return (
     <nav className="text-sm text-blue-100/80 mb-4 flex flex-wrap items-center gap-2 animate-fade-in">
