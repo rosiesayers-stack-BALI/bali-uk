@@ -395,40 +395,45 @@ function RichPage({ path, content }: { path: string; content: PageContent }) {
           <div className="max-w-3xl mx-auto px-6">
             <article className="divide-y divide-gray-200">
               {content.sections.map((s) => (
-                <section key={s.heading} className="py-10 first:pt-0 last:pb-0">
-                  {s.image && (
-                    <img
-                      src={s.image.url}
-                      alt={s.image.alt}
-                      loading="lazy"
-                      className="float-right ml-6 mb-4 w-32 sm:w-40 h-auto rounded-lg shadow-md ring-1 ring-gray-200 object-cover"
-                    />
+                <Fragment key={s.heading}>
+                  <section className="py-10 first:pt-0 last:pb-0">
+                    {s.image && (
+                      <img
+                        src={s.image.url}
+                        alt={s.image.alt}
+                        loading="lazy"
+                        className="float-right ml-6 mb-4 w-32 sm:w-40 h-auto rounded-lg shadow-md ring-1 ring-gray-200 object-cover"
+                      />
+                    )}
+                    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-4">
+                      {s.heading}
+                    </h2>
+                    <p className="text-gray-700 leading-relaxed text-lg">
+                      {s.body}
+                    </p>
+                    {s.bullets && s.bullets.length > 0 && (
+                      <ul className="mt-6 space-y-3">
+                        {s.bullets.map((b) => (
+                          <li key={b} className="flex items-start gap-3 text-gray-700 leading-relaxed">
+                            <svg
+                              className={`w-5 h-5 ${t.iconColor} flex-shrink-0 mt-1`}
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                              aria-hidden="true"
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </section>
+                  {path === "/membership" && s.heading === "Why join BALI?" && (
+                    <MemberTestimonials />
                   )}
-                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-4">
-                    {s.heading}
-                  </h2>
-                  <p className="text-gray-700 leading-relaxed text-lg">
-                    {s.body}
-                  </p>
-                  {s.bullets && s.bullets.length > 0 && (
-                    <ul className="mt-6 space-y-3">
-                      {s.bullets.map((b) => (
-                        <li key={b} className="flex items-start gap-3 text-gray-700 leading-relaxed">
-                          <svg
-                            className={`w-5 h-5 ${t.iconColor} flex-shrink-0 mt-1`}
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                            aria-hidden="true"
-                          >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span>{b}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </section>
+                </Fragment>
               ))}
             </article>
           </div>
