@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -173,6 +174,75 @@ function MembershipCTA() {
   );
 }
 
+const testimonials = [
+  {
+    quote:
+      "Winning our first major contract came down to the BALI Accredited badge on our tender. The client told us it was the deciding factor — proof that we're vetted, insured and held to a real standard.",
+    name: "Sarah Whitmore",
+    role: "Accredited Contractor, Whitmore Landscapes",
+    initials: "SW",
+  },
+  {
+    quote:
+      "The free HR and health & safety support has saved us thousands. Having Quest on the end of the phone for employment questions and policy templates makes running the business genuinely easier.",
+    name: "James Turner",
+    role: "Accredited Contractor, Turner Grounds Ltd",
+    initials: "JT",
+  },
+  {
+    quote:
+      "The network is what keeps us here. Regional meetings, the conference, GoLandscape — you leave every event with new contacts, new ideas and often new work. It's a community, not just a badge.",
+    name: "Priya Malik",
+    role: "Accredited Designer, Malik Garden Studio",
+    initials: "PM",
+  },
+];
+
+function MemberTestimonials() {
+  return (
+    <section className="py-16 sm:py-20 bg-white">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-4">
+            What our members say
+          </h2>
+          <p className="text-gray-600 text-lg leading-relaxed">
+            Hear from landscaping professionals who've grown their business with BALI accreditation.
+          </p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-md:grid-cols-1 max-md:flex max-md:overflow-x-auto max-md:snap-x max-md:snap-mandatory max-md:-mx-6 max-md:px-6 max-md:pb-4">
+          {testimonials.map((tst) => (
+            <figure
+              key={tst.name}
+              className="bg-white border border-gray-200 rounded-2xl shadow-md p-7 flex flex-col max-md:min-w-[85%] max-md:snap-center"
+            >
+              <svg
+                className="w-9 h-9 text-bali-green mb-4"
+                fill="currentColor"
+                viewBox="0 0 32 32"
+                aria-hidden="true"
+              >
+                <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36 1 24.832 4.32 28 8.032 28c3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.472 3.328 8.64 7.04 8.64 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+              </svg>
+              <blockquote className="text-gray-700 leading-relaxed text-base flex-1">
+                "{tst.quote}"
+              </blockquote>
+              <figcaption className="mt-6 flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-bali-green/10 text-bali-green flex items-center justify-center font-bold text-sm flex-shrink-0">
+                  {tst.initials}
+                </div>
+                <div>
+                  <div className="font-bold text-gray-900">{tst.name}</div>
+                  <div className="text-sm text-gray-500">{tst.role}</div>
+                </div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 function Breadcrumbs({ path }: { path: string }) {
   const crumbs = path.split("/").filter(Boolean);
   return (
@@ -395,40 +465,45 @@ function RichPage({ path, content }: { path: string; content: PageContent }) {
           <div className="max-w-3xl mx-auto px-6">
             <article className="divide-y divide-gray-200">
               {content.sections.map((s) => (
-                <section key={s.heading} className="py-10 first:pt-0 last:pb-0">
-                  {s.image && (
-                    <img
-                      src={s.image.url}
-                      alt={s.image.alt}
-                      loading="lazy"
-                      className="float-right ml-6 mb-4 w-32 sm:w-40 h-auto rounded-lg shadow-md ring-1 ring-gray-200 object-cover"
-                    />
+                <Fragment key={s.heading}>
+                  <section className="py-10 first:pt-0 last:pb-0">
+                    {s.image && (
+                      <img
+                        src={s.image.url}
+                        alt={s.image.alt}
+                        loading="lazy"
+                        className="float-right ml-6 mb-4 w-32 sm:w-40 h-auto rounded-lg shadow-md ring-1 ring-gray-200 object-cover"
+                      />
+                    )}
+                    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-4">
+                      {s.heading}
+                    </h2>
+                    <p className="text-gray-700 leading-relaxed text-lg">
+                      {s.body}
+                    </p>
+                    {s.bullets && s.bullets.length > 0 && (
+                      <ul className="mt-6 space-y-3">
+                        {s.bullets.map((b) => (
+                          <li key={b} className="flex items-start gap-3 text-gray-700 leading-relaxed">
+                            <svg
+                              className={`w-5 h-5 ${t.iconColor} flex-shrink-0 mt-1`}
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                              aria-hidden="true"
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </section>
+                  {path === "/membership" && s.heading === "Why join BALI?" && (
+                    <MemberTestimonials />
                   )}
-                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-4">
-                    {s.heading}
-                  </h2>
-                  <p className="text-gray-700 leading-relaxed text-lg">
-                    {s.body}
-                  </p>
-                  {s.bullets && s.bullets.length > 0 && (
-                    <ul className="mt-6 space-y-3">
-                      {s.bullets.map((b) => (
-                        <li key={b} className="flex items-start gap-3 text-gray-700 leading-relaxed">
-                          <svg
-                            className={`w-5 h-5 ${t.iconColor} flex-shrink-0 mt-1`}
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                            aria-hidden="true"
-                          >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span>{b}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </section>
+                </Fragment>
               ))}
             </article>
           </div>
