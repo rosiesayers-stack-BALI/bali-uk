@@ -201,7 +201,7 @@ const testimonials = [
 function MemberTestimonials() {
   return (
     <section className="py-16 sm:py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-4">
             What our members say
@@ -210,7 +210,7 @@ function MemberTestimonials() {
             Hear from landscaping professionals who've grown their business with BALI accreditation.
           </p>
         </div>
-        <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-md:grid-cols-1 max-md:flex max-md:overflow-x-auto max-md:snap-x max-md:snap-mandatory max-md:-mx-6 max-md:px-6 max-md:pb-4">
+        <div className="grid md:grid-cols-3 gap-5 md:gap-6 max-md:grid-cols-1 max-md:flex max-md:overflow-x-auto max-md:snap-x max-md:snap-mandatory max-md:-mx-6 max-md:px-6 max-md:pb-4">
           {testimonials.map((tst) => (
             <figure
               key={tst.name}
