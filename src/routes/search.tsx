@@ -1,6 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { zodValidator, fallback } from "@tanstack/zod-adapter";
-import { z } from "zod";
 import { useMemo } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -8,12 +6,8 @@ import CookieBanner from "../components/CookieBanner";
 import { runSearch } from "../lib/search";
 import { PROJECT_TYPES, CATEGORY_LABEL } from "../lib/directory/members";
 
-const searchSchema = z.object({
-  q: fallback(z.string(), "").default(""),
-  postcode: fallback(z.string(), "").default(""),
-  projectType: fallback(z.string(), "").default(""),
-  category: fallback(z.string(), "").default(""),
-});
+type SearchParams = { q: string; postcode: string; projectType: string; category: string };
+const asStr = (v: unknown) => (typeof v === "string" ? v : "");
 
 const TITLE = "Search — BALI";
 const DESC = "Search accredited BALI members, news, projects and events across the UK.";
