@@ -21,19 +21,30 @@ export const Route = createFileRoute("/events/training")({
   loader: async () => {
     const rows = await fetchTrainingList();
     const courses: Course[] = rows.map((r: TrainingRow) => ({
-      url: r.source_url ?? "#",
-      img: r.image_url ?? "",
+      url: r.booking_url || r.source_url || (r.provider ? `/directory/company/${r.provider.slug}` : "#"),
+      img: r.image_url ?? r.provider?.logo_url ?? "",
       title: r.title,
       desc: r.description,
       date: r.date_text,
-      venue: r.venue,
+      venue: r.venue || r.location || r.format || "",
+      providerSlug: r.provider?.slug ?? null,
+      providerLogo: r.provider?.logo_url ?? null,
     }));
     return { courses };
   },
   component: TrainingPage,
 });
 
-type Course = { url: string; img: string; title: string; desc: string; date: string; venue: string };
+type Course = {
+  url: string;
+  img: string;
+  title: string;
+  desc: string;
+  date: string;
+  venue: string;
+  providerSlug: string | null;
+  providerLogo: string | null;
+};
 
 const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
