@@ -82,35 +82,46 @@ function NewsIndex() {
         </section>
       )}
 
-      <section className="py-16">
+      <section className="py-12">
         <div className="max-w-6xl mx-auto px-6">
+          <AdBanner placement="news-inline" className="mb-10" />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {rest.map((a: NewsRow) => (
-              <Link
-                key={a.slug}
-                to="/news/$slug"
-                params={{ slug: a.slug }}
-                className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-bali-blue hover:shadow-lg hover:-translate-y-1 transition-all"
-              >
-                {a.image_url && (
-                  <img
-                    src={a.image_url}
-                    alt={a.image_alt ?? a.title}
-                    loading="lazy"
-                    className="w-full h-44 object-cover"
-                  />
-                )}
-                <div className="p-5">
-                  {a.date_text && (
-                    <p className="text-xs text-gray-500 uppercase tracking-widest mb-2">{a.date_text}</p>
+            {rest.map((a: NewsRow, i: number) => {
+              const card = (
+                <Link
+                  key={a.slug}
+                  to="/news/$slug"
+                  params={{ slug: a.slug }}
+                  className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-bali-blue hover:shadow-lg hover:-translate-y-1 transition-all"
+                >
+                  {a.image_url && (
+                    <img
+                      src={a.image_url}
+                      alt={a.image_alt ?? a.title}
+                      loading="lazy"
+                      className="w-full h-44 object-cover"
+                    />
                   )}
-                  <h3 className="font-bold text-gray-900 leading-snug group-hover:text-bali-blue transition-colors line-clamp-3">
-                    {a.title}
-                  </h3>
-                  <p className="text-sm text-gray-600 mt-2 line-clamp-3">{a.description}</p>
-                </div>
-              </Link>
-            ))}
+                  <div className="p-5">
+                    {a.date_text && (
+                      <p className="text-xs text-gray-500 uppercase tracking-widest mb-2">{a.date_text}</p>
+                    )}
+                    <h3 className="font-bold text-gray-900 leading-snug group-hover:text-bali-blue transition-colors line-clamp-3">
+                      {a.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 mt-2 line-clamp-3">{a.description}</p>
+                  </div>
+                </Link>
+              );
+              // Insert a sponsored member spotlight after every 5th article.
+              if ((i + 1) % 5 === 0) {
+                return [
+                  card,
+                  <SponsoredCard key={`sp-${i}`} placement="news-feed" seed={Math.floor(i / 5)} />,
+                ];
+              }
+              return card;
+            })}
           </div>
         </div>
       </section>
