@@ -87,7 +87,7 @@ export default function PortalPage() {
             <div className="w-10 h-10 rounded-full bg-bali-green flex items-center justify-center font-bold text-sm flex-shrink-0">JD</div>
             <div className="min-w-0">
               <p className="font-semibold text-sm truncate">John's Landscaping Ltd</p>
-              <span className="text-xs bg-bali-grass/30 text-bali-grass px-2 py-0.5 rounded-full">Accredited Contractor</span>
+              <span className="text-xs bg-bali-grass/30 text-bali-grass px-2 py-0.5 rounded-full">{memberTypeLabel}</span>
             </div>
           </div>
         </div>
