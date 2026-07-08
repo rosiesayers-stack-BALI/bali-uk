@@ -1,5 +1,12 @@
 import { useState } from 'react'
 import Link from '../components/SmartLink'
+import {
+  MemberBenefits,
+  MemberTypeSwitcher,
+  filterQuickActions,
+  useMemberType,
+} from '../components/portal/MemberBenefits'
+
 
 type Section =
   | 'dashboard' | 'profile' | 'membership' | 'directory'
@@ -48,8 +55,12 @@ export default function PortalPage() {
   const [section, setSection] = useState<Section>('dashboard')
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [alertVisible, setAlertVisible] = useState(true)
+  const [memberType, setMemberType] = useMemberType()
+
+  const memberTypeLabel = memberType ?? 'Unclassified'
 
   const go = (s: Section) => { setSection(s); setSidebarOpen(false) }
+
 
   return (
     <div className="font-sans bg-gray-100 min-h-screen flex h-screen overflow-hidden">
@@ -76,7 +87,7 @@ export default function PortalPage() {
             <div className="w-10 h-10 rounded-full bg-bali-green flex items-center justify-center font-bold text-sm flex-shrink-0">JD</div>
             <div className="min-w-0">
               <p className="font-semibold text-sm truncate">John's Landscaping Ltd</p>
-              <span className="text-xs bg-bali-grass/30 text-bali-grass px-2 py-0.5 rounded-full">Accredited Contractor</span>
+              <span className="text-xs bg-bali-grass/30 text-bali-grass px-2 py-0.5 rounded-full">{memberTypeLabel}</span>
             </div>
           </div>
         </div>
@@ -167,6 +178,9 @@ export default function PortalPage() {
           {/* ── DASHBOARD ──────────────────────────────────────────── */}
           {section === 'dashboard' && (
             <div>
+              <MemberTypeSwitcher value={memberType} onChange={setMemberType} />
+              <MemberBenefits memberType={memberType} />
+
               {alertVisible && (
                 <div className="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 flex items-center gap-3 mb-6">
                   <svg className="w-5 h-5 text-amber-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -213,13 +227,14 @@ export default function PortalPage() {
                 <div className="bg-white rounded-xl border border-gray-200 p-5">
                   <h3 className="font-bold text-gray-900 mb-4">Quick Actions</h3>
                   <div className="space-y-2">
-                    {[
+                    {filterQuickActions([
                       { label: 'Renew Membership', color: 'hover:border-bali-blue', textColor: 'group-hover:text-bali-blue', action: 'membership' as Section },
-                      { label: 'Update Directory Listing', color: 'hover:border-bali-green', textColor: 'group-hover:text-bali-green', action: 'directory' as Section },
+                      { label: 'Update Directory Listing', color: 'hover:border-bali-green', textColor: 'group-hover:text-bali-green', action: 'directory' as Section, benefitId: 'directory-listing' },
                       { label: 'Apply for SmartCard', color: 'hover:border-bali-flow', textColor: 'group-hover:text-bali-flow', action: 'liss' as Section },
-                      { label: 'Book HR Health Check', color: 'hover:border-bali-warm', textColor: 'group-hover:text-bali-warm', action: 'support' as Section },
-                      { label: 'Download Accredited Logo', color: 'hover:border-gray-300', textColor: '', action: 'documents' as Section },
-                    ].map((qa) => (
+                      { label: 'Book HR Health Check', color: 'hover:border-bali-warm', textColor: 'group-hover:text-bali-warm', action: 'support' as Section, benefitId: 'technical-support' },
+                      { label: 'Download Accredited Logo', color: 'hover:border-gray-300', textColor: '', action: 'documents' as Section, benefitId: 'accredited-logo' },
+                    ], memberType).map((qa) => (
+
                       <button
                         key={qa.label}
                         onClick={() => go(qa.action)}
@@ -300,7 +315,7 @@ export default function PortalPage() {
                   <div className="w-16 h-16 rounded-full bg-bali-blue flex items-center justify-center text-white text-xl font-bold">JD</div>
                   <div>
                     <h3 className="font-bold text-gray-900 text-lg">John's Landscaping Ltd</h3>
-                    <p className="text-gray-500 text-sm">Accredited Contractor · Member #BALI-2019-4827</p>
+                    <p className="text-gray-500 text-sm">{memberTypeLabel} · Member #BALI-2019-4827</p>
                     <button className="mt-1 text-xs text-bali-blue hover:underline">Change photo</button>
                   </div>
                 </div>
@@ -341,7 +356,7 @@ export default function PortalPage() {
               <div className="bg-white rounded-xl border border-gray-200 p-6">
                 <div className="flex items-start justify-between mb-5">
                   <div>
-                    <h3 className="font-bold text-gray-900 text-lg">Accredited Contractor</h3>
+                    <h3 className="font-bold text-gray-900 text-lg">{memberTypeLabel}</h3>
                     <p className="text-gray-500 text-sm">Member since January 2019</p>
                   </div>
                   <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">Active</span>
