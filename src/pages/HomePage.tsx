@@ -300,8 +300,16 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Advertiser banner (rotates daily) ─────────────────────── */}
+      <section className="bg-white pt-10">
+        <div className="max-w-7xl mx-auto px-4">
+          <AdBanner placement="homepage-mid" />
+        </div>
+      </section>
+
       {/* ── Quick action cards ────────────────────────────────────── */}
       <section className="py-16 bg-white">
+
         <div className="max-w-7xl mx-auto px-4">
           <RevealDiv className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900">What are you looking for?</h2>
