@@ -391,6 +391,8 @@ export default function PortalPage() {
 
           {section === 'news_submit' && <NewsSubmit />}
 
+          {section === 'training_hub' && <TrainingProviderHub onEditListing={() => go('directory')} />}
+
           {/* ── EVENTS ───────────────────────────────────────────── */}
           {section === 'events' && (
             <div className="bg-white rounded-xl border border-gray-200 p-6">
