@@ -42,12 +42,120 @@ export type SearchResult = {
 export type GroupedResults = {
   groups: { label: string; type: ResultType; items: SearchResult[] }[];
   total: number;
+  /** If the query was auto-corrected via fuzzy matching, the corrected string used to produce these results. */
+  didYouMean?: string;
+  /** The original query the user typed, if it differed from what was searched. */
+  originalQuery?: string;
   // Backwards-compat accessors used by SmartSearch etc.
   members: { item: Member }[];
   news: { slug: string; title: string; description: string; image?: string }[];
   events: { slug: string; title: string; date: string; venue: string; description: string; image?: string }[];
   pages: SearchResult[];
 };
+
+// ---------- Fuzzy matching (Levenshtein + vocabulary) ----------
+
+/** Iterative Levenshtein distance with early-exit when it exceeds `max`. */
+function levenshtein(a: string, b: string, max: number): number {
+  if (a === b) return 0;
+  const al = a.length, bl = b.length;
+  if (Math.abs(al - bl) > max) return max + 1;
+  if (al === 0) return bl;
+  if (bl === 0) return al;
+  let prev = new Array(bl + 1);
+  let curr = new Array(bl + 1);
+  for (let j = 0; j <= bl; j++) prev[j] = j;
+  for (let i = 1; i <= al; i++) {
+    curr[0] = i;
+    let rowMin = curr[0];
+    const ac = a.charCodeAt(i - 1);
+    for (let j = 1; j <= bl; j++) {
+      const cost = ac === b.charCodeAt(j - 1) ? 0 : 1;
+      curr[j] = Math.min(curr[j - 1] + 1, prev[j] + 1, prev[j - 1] + cost);
+      if (curr[j] < rowMin) rowMin = curr[j];
+    }
+    if (rowMin > max) return max + 1;
+    [prev, curr] = [curr, prev];
+  }
+  return prev[bl];
+}
+
+/** Distance tolerance: strict on short words, more lenient on long ones. */
+function distanceBudget(len: number): number {
+  if (len <= 3) return 0;   // no fuzzy match on very short tokens
+  if (len <= 4) return 1;
+  if (len <= 7) return 2;
+  return 3;
+}
+
+let vocabCache: { list: string[]; set: Set<string> } | null = null;
+
+function buildVocab(): { list: string[]; set: Set<string> } {
+  if (vocabCache) return vocabCache;
+  const set = new Set<string>();
+  const add = (text: string | undefined) => {
+    if (!text) return;
+    for (const token of text.toLowerCase().split(/[^a-z0-9]+/)) {
+      if (token.length >= 3) set.add(token);
+    }
+  };
+  for (const p of ALL_PAGES) {
+    add(p.content.title);
+    add(p.content.intro);
+    add(p.content.eyebrow);
+    if (p.content.sections) for (const s of p.content.sections) { add(s.heading); add(s.body); if (s.bullets) add(s.bullets.join(" ")); }
+    if (p.content.highlights) for (const h of p.content.highlights) { add(h.title); add(h.body); }
+  }
+  for (const p of SITE_PAGES) { add(p.title); add(p.description); add(p.eyebrow); }
+  for (const n of newsArticles) { add(n.title); add(n.description); add(n.body.join(" ")); }
+  for (const e of events) { add(e.title); add(e.description); add(e.venue); add(e.category); add(e.body.join(" ")); }
+  for (const p of policyPosts) { add(p.title); add(p.description); add(p.body.join(" ")); add(p.themes.join(" ")); }
+  for (const m of MEMBERS) { add(m.name); add(m.specialism); add(m.description); add(m.projectTypes.join(" ")); }
+  vocabCache = { list: [...set], set };
+  return vocabCache;
+}
+
+/** Find the closest vocab token to `term` within its distance budget. Returns undefined if no acceptable match. */
+function nearestVocabWord(term: string): string | undefined {
+  const vocab = buildVocab();
+  if (vocab.set.has(term)) return term;
+  const budget = distanceBudget(term.length);
+  if (budget === 0) return undefined;
+  let best: string | undefined;
+  let bestDist = budget + 1;
+  const first = term.charCodeAt(0);
+  for (const w of vocab.list) {
+    // Cheap prefilter: length + first-letter proximity (allow ±1 for typos on first char).
+    if (Math.abs(w.length - term.length) > budget) continue;
+    const wFirst = w.charCodeAt(0);
+    if (wFirst !== first && budget < 2) continue;
+    const d = levenshtein(term, w, bestDist - 1);
+    if (d < bestDist) {
+      bestDist = d;
+      best = w;
+      if (d === 0) break;
+    }
+  }
+  return best;
+}
+
+/**
+ * Produce a corrected query where each unrecognised token is swapped for its
+ * nearest vocab word. Returns undefined if nothing needed correcting.
+ */
+function fuzzyCorrectQuery(terms: string[]): string | undefined {
+  const vocab = buildVocab();
+  let anyChanged = false;
+  const corrected: string[] = [];
+  for (const t of terms) {
+    if (vocab.set.has(t)) { corrected.push(t); continue; }
+    const near = nearestVocabWord(t);
+    if (near && near !== t) { corrected.push(near); anyChanged = true; }
+    else { corrected.push(t); }
+  }
+  return anyChanged ? corrected.join(" ") : undefined;
+}
+
 
 // ---------- Scoring ----------
 
@@ -179,6 +287,28 @@ export function runSearch(filters: SearchFilters): GroupedResults {
   const qRaw = (filters.q ?? "").trim();
   const q = norm(qRaw);
   const terms = q.split(/\s+/).filter(Boolean);
+
+  // First pass: exact search as typed.
+  const exact = runSearchInternal(filters, q, terms);
+
+  // Only try fuzzy correction when:
+  //  - the user actually typed a query, and
+  //  - the exact pass returned nothing.
+  // This preserves accuracy: exact matches are never displaced by fuzzy ones.
+  if (terms.length === 0 || exact.total > 0) return exact;
+
+  const corrected = fuzzyCorrectQuery(terms);
+  if (!corrected || corrected === q) return exact;
+
+  const correctedTerms = corrected.split(/\s+/).filter(Boolean);
+  const fuzzy = runSearchInternal(filters, corrected, correctedTerms);
+  if (fuzzy.total === 0) return exact;
+
+  return { ...fuzzy, didYouMean: corrected, originalQuery: qRaw };
+}
+
+function runSearchInternal(filters: SearchFilters, q: string, terms: string[]): GroupedResults {
+  
   const postcode = (filters.postcode ?? "").trim();
   const projectType = filters.projectType || "";
   const category = filters.category || "";

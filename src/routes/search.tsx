@@ -116,6 +116,20 @@ function SearchPage() {
         </section>
 
         <section className="max-w-6xl mx-auto px-6 py-10">
+          {results.didYouMean && (
+            <div className="mb-6 p-4 rounded-xl bg-amber-50 border border-amber-200 text-sm">
+              <span className="text-slate-700">
+                No exact matches for <span className="font-semibold">"{results.originalQuery ?? q}"</span>. Showing results for{" "}
+              </span>
+              <button
+                onClick={() => update("q", results.didYouMean!)}
+                className="font-semibold text-bali-green hover:underline"
+              >
+                {results.didYouMean}
+              </button>
+              <span className="text-slate-700"> instead.</span>
+            </div>
+          )}
           <div className="flex items-center justify-between mb-6">
             <p className="text-sm text-slate-600">
               <span className="font-semibold text-slate-900">{results.total}</span> {results.total === 1 ? "result" : "results"}
@@ -127,6 +141,7 @@ function SearchPage() {
               )}
             </p>
           </div>
+
 
           {results.total === 0 ? (
             <div className="text-center py-20 bg-slate-50 rounded-2xl border border-dashed border-slate-200">
