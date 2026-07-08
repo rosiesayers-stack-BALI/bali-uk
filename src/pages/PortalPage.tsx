@@ -178,8 +178,6 @@ export default function PortalPage() {
           {/* ── DASHBOARD ──────────────────────────────────────────── */}
           {section === 'dashboard' && (
             <div>
-              <MemberTypeSwitcher value={memberType} onChange={setMemberType} />
-              <MemberBenefits memberType={memberType} />
 
               {alertVisible && (
                 <div className="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 flex items-center gap-3 mb-6">
@@ -304,6 +302,9 @@ export default function PortalPage() {
                   </div>
                 </div>
               </div>
+
+              <MemberTypeSwitcher value={memberType} onChange={setMemberType} />
+              <MemberBenefits memberType={memberType} />
             </div>
           )}
 
