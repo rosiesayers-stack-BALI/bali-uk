@@ -302,6 +302,9 @@ export default function PortalPage() {
                   </div>
                 </div>
               </div>
+
+              <MemberTypeSwitcher value={memberType} onChange={setMemberType} />
+              <MemberBenefits memberType={memberType} />
             </div>
           )}
 
