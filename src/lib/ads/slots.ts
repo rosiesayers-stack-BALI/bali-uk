@@ -147,7 +147,7 @@ export function rotate<T>(items: T[], seed = 0, now: Date = new Date()): T | nul
 }
 
 export function bannersFor(placement: BannerPlacement): BannerAd[] {
-  return BANNER_ADS.filter((a) => a.placements.length === 0 || a.placements.includes(placement) || a.placements.length === undefined);
+  return BANNER_ADS.filter((a) => !a.placements?.length || a.placements.includes(placement));
 }
 
 export function pickBanner(placement: BannerPlacement, seed = 0): BannerAd | null {
