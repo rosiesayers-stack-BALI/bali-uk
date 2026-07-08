@@ -352,7 +352,7 @@ export default function PortalPage() {
               <div className="bg-white rounded-xl border border-gray-200 p-6">
                 <div className="flex items-start justify-between mb-5">
                   <div>
-                    <h3 className="font-bold text-gray-900 text-lg">Accredited Contractor</h3>
+                    <h3 className="font-bold text-gray-900 text-lg">{memberTypeLabel}</h3>
                     <p className="text-gray-500 text-sm">Member since January 2019</p>
                   </div>
                   <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">Active</span>
