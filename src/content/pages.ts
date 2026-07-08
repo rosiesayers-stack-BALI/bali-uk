@@ -5713,3 +5713,7 @@ export function getPageContent(path: string): PageContent | undefined {
   const key = path.replace(/\/+$/, "") || "/";
   return C[key];
 }
+
+export const ALL_PAGES: Array<{ path: string; content: PageContent }> = Object.entries(C).map(
+  ([path, content]) => ({ path, content }),
+);

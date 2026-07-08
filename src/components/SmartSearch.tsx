@@ -6,7 +6,7 @@ type Suggestion = {
   key: string;
   label: string;
   sub: string;
-  type: "Member" | "News" | "Event" | "Directory";
+  type: "Page" | "Membership" | "Help" | "Member" | "News" | "Event" | "Policy" | "Directory";
   to: string;
   search?: Record<string, string>;
   params?: Record<string, string>;
@@ -31,14 +31,21 @@ export default function SmartSearch({ onNavigate }: { onNavigate?: () => void })
     const q = query.trim();
     if (q.length < 2) return [];
     const res = runSearch({ q });
-    const members: Suggestion[] = res.members.slice(0, 4).map(({ item }) => ({
+    const pages: Suggestion[] = res.pages.slice(0, 5).map((p) => ({
+      key: p.id,
+      label: p.title,
+      sub: p.description?.slice(0, 90) ?? "",
+      type: (p.type === "Directory" ? "Directory" : p.type) as Suggestion["type"],
+      to: p.to,
+    }));
+    const members: Suggestion[] = res.members.slice(0, 3).map(({ item }) => ({
       key: `m-${item.id}`,
       label: item.name,
       sub: `${item.region} · ${item.specialism}`,
       type: "Member",
       to: "/directory",
     }));
-    const news: Suggestion[] = res.news.slice(0, 3).map((n) => ({
+    const news: Suggestion[] = res.news.slice(0, 2).map((n) => ({
       key: `n-${n.slug}`,
       label: n.title,
       sub: n.description.slice(0, 80),
@@ -46,7 +53,7 @@ export default function SmartSearch({ onNavigate }: { onNavigate?: () => void })
       to: "/news/$slug",
       params: { slug: n.slug },
     }));
-    const events: Suggestion[] = res.events.slice(0, 3).map((e) => ({
+    const events: Suggestion[] = res.events.slice(0, 2).map((e) => ({
       key: `e-${e.slug}`,
       label: e.title,
       sub: `${e.date} · ${e.venue}`,
@@ -54,7 +61,7 @@ export default function SmartSearch({ onNavigate }: { onNavigate?: () => void })
       to: "/events/$slug",
       params: { slug: e.slug },
     }));
-    const all: Suggestion[] = [...members, ...news, ...events];
+    const all: Suggestion[] = [...pages, ...members, ...news, ...events];
     all.push({
       key: "all",
       label: `See all results for "${q}"`,
@@ -147,6 +154,10 @@ export default function SmartSearch({ onNavigate }: { onNavigate?: () => void })
                     s.type === "Member" ? "bg-emerald-100 text-bali-green" :
                     s.type === "News" ? "bg-blue-100 text-bali-blue" :
                     s.type === "Event" ? "bg-amber-100 text-amber-700" :
+                    s.type === "Membership" ? "bg-emerald-100 text-bali-green" :
+                    s.type === "Help" ? "bg-purple-100 text-purple-700" :
+                    s.type === "Policy" ? "bg-rose-100 text-rose-700" :
+                    s.type === "Page" ? "bg-slate-200 text-slate-700" :
                     "bg-gray-100 text-gray-600"
                   }`}>{s.type}</span>
                   <span className="min-w-0 flex-1">
