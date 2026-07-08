@@ -22,6 +22,7 @@ const sectionTitles: Record<Section, string> = {
   membership: 'Membership & Renewal',
   directory: 'Directory Listing',
   news_submit: 'Submit News',
+  training_hub: 'Training Provider Hub',
   events: 'Events & Training',
   documents: 'Documents & Guides',
   liss: 'LISS Cards',
