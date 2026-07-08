@@ -140,64 +140,40 @@ function SearchPage() {
             </div>
           ) : (
             <div className="space-y-12">
-              {results.members.length > 0 && (
-                <Group label="Members" count={results.members.length}>
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-                    {results.members.map(({ item: m }) => (
-                      <article key={m.id} className="bg-white border border-slate-200 rounded-2xl p-6 hover:border-bali-green hover:shadow-lg transition-all flex flex-col">
-                        <div className="flex items-start justify-between gap-3 mb-3">
-                          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 text-bali-green text-[10px] font-bold uppercase tracking-wider">Accredited</span>
-                          <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">{CATEGORY_LABEL[m.category]}</span>
-                        </div>
-                        <h3 className="font-bold text-lg text-slate-900 mb-1">{m.name}</h3>
-                        <p className="text-xs text-slate-500 mb-3">{m.region} · {m.postcode}</p>
-                        <p className="text-sm text-slate-600 leading-relaxed mb-4 flex-1">{m.description}</p>
-                        <div className="flex flex-wrap gap-1.5 mb-4">
-                          {m.projectTypes.slice(0, 3).map((p) => (
-                            <span key={p} className="text-[10px] font-semibold uppercase tracking-wider text-slate-500 bg-slate-100 px-2 py-1 rounded-full">{p}</span>
-                          ))}
-                        </div>
-                        <Link to="/contact" className="text-bali-green text-sm font-bold hover:underline">Enquire →</Link>
-                      </article>
-                    ))}
-                  </div>
+              {results.groups.map((group) => (
+                <Group key={group.type} label={group.label} count={group.items.length}>
+                  {group.type === "Member" ? (
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                      {group.items.map((r) => {
+                        const m = r.member!;
+                        return (
+                          <article key={r.id} className="bg-white border border-slate-200 rounded-2xl p-6 hover:border-bali-green hover:shadow-lg transition-all flex flex-col">
+                            <div className="flex items-start justify-between gap-3 mb-3">
+                              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 text-bali-green text-[10px] font-bold uppercase tracking-wider">Accredited</span>
+                              <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">{CATEGORY_LABEL[m.category]}</span>
+                            </div>
+                            <h3 className="font-bold text-lg text-slate-900 mb-1">{m.name}</h3>
+                            <p className="text-xs text-slate-500 mb-3">{m.region} · {m.postcode}</p>
+                            <p className="text-sm text-slate-600 leading-relaxed mb-4 flex-1">{m.description}</p>
+                            <div className="flex flex-wrap gap-1.5 mb-4">
+                              {m.projectTypes.slice(0, 3).map((p) => (
+                                <span key={p} className="text-[10px] font-semibold uppercase tracking-wider text-slate-500 bg-slate-100 px-2 py-1 rounded-full">{p}</span>
+                              ))}
+                            </div>
+                            <Link to="/contact" className="text-bali-green text-sm font-bold hover:underline">Enquire →</Link>
+                          </article>
+                        );
+                      })}
+                    </div>
+                  ) : (
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                      {group.items.map((r) => (
+                        <ResultCard key={r.id} result={r} groupLabel={group.label} />
+                      ))}
+                    </div>
+                  )}
                 </Group>
-              )}
-
-              {results.news.length > 0 && (
-                <Group label="News" count={results.news.length}>
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-                    {results.news.map((n) => (
-                      <Link key={n.slug} to="/news/$slug" params={{ slug: n.slug }} className="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-bali-green hover:shadow-lg transition-all flex flex-col">
-                        {n.image && <div className="h-40 bg-slate-100 overflow-hidden"><img src={n.image} alt="" className="w-full h-full object-cover" loading="lazy" /></div>}
-                        <div className="p-5 flex-1 flex flex-col">
-                          <span className="text-[10px] font-bold uppercase tracking-wider text-bali-green mb-2">News</span>
-                          <h3 className="font-bold text-slate-900 mb-2 line-clamp-2">{n.title}</h3>
-                          <p className="text-sm text-slate-600 line-clamp-3 flex-1">{n.description}</p>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </Group>
-              )}
-
-              {results.events.length > 0 && (
-                <Group label="Events" count={results.events.length}>
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-                    {results.events.map((e) => (
-                      <Link key={e.slug} to="/events/$slug" params={{ slug: e.slug }} className="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-bali-green hover:shadow-lg transition-all flex flex-col">
-                        {e.image && <div className="h-40 bg-slate-100 overflow-hidden"><img src={e.image} alt="" className="w-full h-full object-cover" loading="lazy" /></div>}
-                        <div className="p-5 flex-1 flex flex-col">
-                          <span className="text-[10px] font-bold uppercase tracking-wider text-bali-green mb-2">Event</span>
-                          <h3 className="font-bold text-slate-900 mb-2 line-clamp-2">{e.title}</h3>
-                          <p className="text-xs text-slate-500 mb-2">{e.date} · {e.venue}</p>
-                          <p className="text-sm text-slate-600 line-clamp-2 flex-1">{e.description}</p>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </Group>
-              )}
+              ))}
             </div>
           )}
         </section>
@@ -205,6 +181,40 @@ function SearchPage() {
       <Footer />
       <CookieBanner />
     </div>
+  );
+}
+
+type ResultCardResult = {
+  id: string;
+  title: string;
+  description: string;
+  to: string;
+  params?: Record<string, string>;
+  image?: string;
+  meta?: string;
+};
+
+function ResultCard({ result, groupLabel }: { result: ResultCardResult; groupLabel: string }) {
+  const linkProps = result.params
+    ? { to: result.to, params: result.params as never }
+    : { to: result.to };
+  return (
+    <Link
+      {...(linkProps as { to: string })}
+      className="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-bali-green hover:shadow-lg transition-all flex flex-col"
+    >
+      {result.image && (
+        <div className="h-40 bg-slate-100 overflow-hidden">
+          <img src={result.image} alt="" className="w-full h-full object-cover" loading="lazy" />
+        </div>
+      )}
+      <div className="p-5 flex-1 flex flex-col">
+        <span className="text-[10px] font-bold uppercase tracking-wider text-bali-green mb-2">{groupLabel}</span>
+        <h3 className="font-bold text-slate-900 mb-2 line-clamp-2">{result.title}</h3>
+        {result.meta && <p className="text-xs text-slate-500 mb-2">{result.meta}</p>}
+        {result.description && <p className="text-sm text-slate-600 line-clamp-3 flex-1">{result.description}</p>}
+      </div>
+    </Link>
   );
 }
 
