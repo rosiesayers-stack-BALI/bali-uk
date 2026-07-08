@@ -6,10 +6,13 @@ import {
   filterQuickActions,
   useMemberType,
 } from '../components/portal/MemberBenefits'
+import { DirectoryEditor } from '../components/portal/DirectoryEditor'
+import { NewsSubmit } from '../components/portal/NewsSubmit'
+import { NotificationsBell } from '../components/portal/NotificationsBell'
 
 
 type Section =
-  | 'dashboard' | 'profile' | 'membership' | 'directory'
+  | 'dashboard' | 'profile' | 'membership' | 'directory' | 'news_submit'
   | 'events' | 'documents' | 'liss' | 'invoices' | 'support' | 'settings'
 
 const sectionTitles: Record<Section, string> = {
@@ -17,6 +20,7 @@ const sectionTitles: Record<Section, string> = {
   profile: 'My Profile',
   membership: 'Membership & Renewal',
   directory: 'Directory Listing',
+  news_submit: 'Submit News',
   events: 'Events & Training',
   documents: 'Documents & Guides',
   liss: 'LISS Cards',
