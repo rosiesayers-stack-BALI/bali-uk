@@ -109,7 +109,7 @@ export default function PortalPage() {
                   <p className="text-white/40 text-xs uppercase tracking-widest font-medium">{group.label}</p>
                 </div>
               )}
-              {group.items.map((item) => (
+              {group.items.filter((it) => !(it as { trainingOnly?: boolean }).trainingOnly || memberType === 'Training Provider').map((item) => (
                 <button
                   key={item.id}
                   onClick={() => go(item.id)}
