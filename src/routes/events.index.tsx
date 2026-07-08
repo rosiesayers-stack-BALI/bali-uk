@@ -43,7 +43,7 @@ function EventsIndex() {
               const day = parts[0] ?? e.date_text;
               const month = (parts[1] ?? "").toUpperCase();
               const year = parts[2] ?? "";
-              return (
+              const card = (
                 <Link
                   key={e.slug}
                   to="/events/$slug"
@@ -74,6 +74,10 @@ function EventsIndex() {
                   </div>
                 </Link>
               );
+              if ((i + 1) % 5 === 0) {
+                return [card, <SponsoredCard key={`sp-${i}`} placement="events-feed" seed={Math.floor(i / 5)} />];
+              }
+              return card;
             })}
           </div>
         </div>
