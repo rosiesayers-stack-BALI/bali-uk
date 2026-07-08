@@ -454,6 +454,13 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Advertiser banner (footer, second seed for variety) ───── */}
+      <section className="bg-white py-10 border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-4">
+          <AdBanner placement="homepage-footer" seed={2} variant="compact" />
+        </div>
+      </section>
+
       {/* ── Membership CTA ────────────────────────────────────────── */}
       <section className="py-16 bg-bali-green">
         <RevealDiv className="max-w-5xl mx-auto px-4 text-center">
