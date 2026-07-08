@@ -9,10 +9,11 @@ import {
 import { DirectoryEditor } from '../components/portal/DirectoryEditor'
 import { NewsSubmit } from '../components/portal/NewsSubmit'
 import { NotificationsBell } from '../components/portal/NotificationsBell'
+import { TrainingProviderHub } from '../components/portal/TrainingProviderHub'
 
 
 type Section =
-  | 'dashboard' | 'profile' | 'membership' | 'directory' | 'news_submit'
+  | 'dashboard' | 'profile' | 'membership' | 'directory' | 'news_submit' | 'training_hub'
   | 'events' | 'documents' | 'liss' | 'invoices' | 'support' | 'settings'
 
 const sectionTitles: Record<Section, string> = {
