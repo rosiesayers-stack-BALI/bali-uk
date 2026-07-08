@@ -3,6 +3,7 @@ import Link from '../components/SmartLink'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import CookieBanner from '../components/CookieBanner'
+import AdBanner from '../components/ads/AdBanner'
 import bannerMountbatten from '../assets/bali/large_mountbatten-house-min.jpeg.asset.json'
 import bannerWeb from '../assets/bali/large_web-banner.png.asset.json'
 import bannerHome3 from '../assets/bali/large_homepage-banner-3.jpeg.asset.json'
@@ -299,8 +300,16 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Advertiser banner (rotates daily) ─────────────────────── */}
+      <section className="bg-white pt-10">
+        <div className="max-w-7xl mx-auto px-4">
+          <AdBanner placement="homepage-mid" />
+        </div>
+      </section>
+
       {/* ── Quick action cards ────────────────────────────────────── */}
       <section className="py-16 bg-white">
+
         <div className="max-w-7xl mx-auto px-4">
           <RevealDiv className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900">What are you looking for?</h2>
@@ -442,6 +451,13 @@ export default function HomePage() {
               </RevealDiv>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── Advertiser banner (footer, second seed for variety) ───── */}
+      <section className="bg-white py-10 border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-4">
+          <AdBanner placement="homepage-footer" seed={2} variant="compact" />
         </div>
       </section>
 

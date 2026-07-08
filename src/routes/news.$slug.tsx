@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CookieBanner from "../components/CookieBanner";
 import Link from "../components/SmartLink";
+import AdBanner from "../components/ads/AdBanner";
 import { fetchNewsBySlug, fetchNewsList } from "../lib/content/db";
 
 export const Route = createFileRoute("/news/$slug")({
@@ -98,7 +99,11 @@ function NewsArticlePage() {
             {article.body_paragraphs.map((p: string, i: number) => <p key={i}>{p}</p>)}
           </div>
 
-          <div className="mt-16 pt-8 border-t border-gray-200 grid sm:grid-cols-2 gap-4">
+          <div className="mt-12">
+            <AdBanner placement="article-footer" seed={article.slug.length} variant="compact" />
+          </div>
+
+          <div className="mt-12 pt-8 border-t border-gray-200 grid sm:grid-cols-2 gap-4">
             {prev ? (
               <Link to="/news/$slug" params={{ slug: prev.slug }} className="group p-5 border border-gray-200 rounded-xl hover:border-bali-blue hover:shadow-md transition-all">
                 <div className="text-xs uppercase tracking-widest text-gray-500 mb-1">← Newer</div>

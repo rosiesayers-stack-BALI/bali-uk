@@ -3,6 +3,8 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CookieBanner from "../components/CookieBanner";
 import Link from "../components/SmartLink";
+import AdBanner from "../components/ads/AdBanner";
+import SponsoredCard from "../components/ads/SponsoredCard";
 import { fetchEventsList, type EventRow } from "../lib/content/db";
 
 export const Route = createFileRoute("/events/")({
@@ -32,15 +34,16 @@ function EventsIndex() {
           </p>
         </div>
       </section>
-      <section className="py-16">
+      <section className="py-12">
         <div className="max-w-6xl mx-auto px-6">
+          <AdBanner placement="events-inline" seed={1} className="mb-10" />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {events.map((e: EventRow) => {
+            {events.map((e: EventRow, i: number) => {
               const parts = e.date_text.split(" ");
               const day = parts[0] ?? e.date_text;
               const month = (parts[1] ?? "").toUpperCase();
               const year = parts[2] ?? "";
-              return (
+              const card = (
                 <Link
                   key={e.slug}
                   to="/events/$slug"
@@ -71,6 +74,10 @@ function EventsIndex() {
                   </div>
                 </Link>
               );
+              if ((i + 1) % 5 === 0) {
+                return [card, <SponsoredCard key={`sp-${i}`} placement="events-feed" seed={Math.floor(i / 5)} />];
+              }
+              return card;
             })}
           </div>
         </div>
