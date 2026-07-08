@@ -13,7 +13,12 @@ const TITLE = "Search — BALI";
 const DESC = "Search accredited BALI members, news, projects and events across the UK.";
 
 export const Route = createFileRoute("/search")({
-  validateSearch: zodValidator(searchSchema),
+  validateSearch: (search: Record<string, unknown>): SearchParams => ({
+    q: asStr(search.q),
+    postcode: asStr(search.postcode),
+    projectType: asStr(search.projectType),
+    category: asStr(search.category),
+  }),
   head: () => ({
     meta: [
       { title: TITLE },
@@ -40,8 +45,8 @@ function SearchPage() {
     [q, postcode, projectType, category],
   );
 
-  const update = (key: string, value: string) =>
-    navigate({ search: (prev) => ({ ...prev, [key]: value }) });
+  const update = (key: keyof SearchParams, value: string) =>
+    navigate({ search: (prev: SearchParams) => ({ ...prev, [key]: value }) });
 
   const clearAll = () =>
     navigate({ search: () => ({ q: "", postcode: "", projectType: "", category: "" }) });
