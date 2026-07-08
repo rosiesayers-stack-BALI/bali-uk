@@ -181,6 +181,16 @@ export default function PortalPage() {
           {/* ── DASHBOARD ──────────────────────────────────────────── */}
           {section === 'dashboard' && (
             <div>
+              {memberType === 'Training Provider' && (
+                <div className="mb-6 bg-gradient-to-br from-bali-blue to-blue-800 text-white rounded-2xl p-5 flex flex-wrap items-center justify-between gap-3">
+                  <div>
+                    <p className="text-xs uppercase tracking-widest font-semibold text-blue-100">Training Provider</p>
+                    <h3 className="text-lg font-bold mt-0.5">Your Training Provider Hub is ready</h3>
+                    <p className="text-sm text-blue-100 mt-0.5">Add courses, edit listings and see submission status in one place.</p>
+                  </div>
+                  <button onClick={() => go('training_hub')} className="bg-white text-bali-blue hover:bg-blue-50 font-semibold px-4 py-2.5 rounded-lg text-sm">Open the hub →</button>
+                </div>
+              )}
 
               {alertVisible && (
                 <div className="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 flex items-center gap-3 mb-6">
