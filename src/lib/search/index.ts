@@ -322,16 +322,16 @@ export function runSearch(filters: SearchFilters): GroupedResults {
   }
 
   // Group in the order the user expects (Pages first for informational intent)
-  const groups: GroupedResults["groups"] = [
-    { label: "Pages", type: "Page", items: pageResults.filter((r) => r.type === "Page") },
-    { label: "Membership & Join", type: "Membership", items: pageResults.filter((r) => r.type === "Membership") },
-    { label: "Help & Guides", type: "Help", items: pageResults.filter((r) => r.type === "Help") },
-    { label: "Directory", type: "Directory", items: pageResults.filter((r) => r.type === "Directory") },
-    { label: "Members", type: "Member", items: memberResults },
-    { label: "Events", type: "Event", items: [...pageResults.filter((r) => r.type === "Event"), ...eventResults] },
-    { label: "News", type: "News", items: [...pageResults.filter((r) => r.type === "News"), ...newsResults] },
-    { label: "Policy & Campaigns", type: "Policy", items: policyResults },
-  ].filter((g) => g.items.length > 0);
+  const groups: GroupedResults["groups"] = ([
+    { label: "Pages", type: "Page" as const, items: pageResults.filter((r) => r.type === "Page") },
+    { label: "Membership & Join", type: "Membership" as const, items: pageResults.filter((r) => r.type === "Membership") },
+    { label: "Help & Guides", type: "Help" as const, items: pageResults.filter((r) => r.type === "Help") },
+    { label: "Directory", type: "Directory" as const, items: pageResults.filter((r) => r.type === "Directory") },
+    { label: "Members", type: "Member" as const, items: memberResults },
+    { label: "Events", type: "Event" as const, items: [...pageResults.filter((r) => r.type === "Event"), ...eventResults] },
+    { label: "News", type: "News" as const, items: [...pageResults.filter((r) => r.type === "News"), ...newsResults] },
+    { label: "Policy & Campaigns", type: "Policy" as const, items: policyResults },
+  ]).filter((g) => g.items.length > 0);
 
   const total = groups.reduce((n, g) => n + g.items.length, 0);
 
