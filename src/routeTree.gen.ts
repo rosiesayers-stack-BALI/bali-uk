@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SearchRouteImport } from './routes/search'
 import { Route as PortalRouteImport } from './routes/portal'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -125,6 +126,11 @@ import { Route as ApiPublicHooksWorkbooksSyncRouteImport } from './routes/api/pu
 import { Route as LissCscsApplyCategoryCardIndexRouteImport } from './routes/liss-cscs.apply.$category.$card.index'
 import { Route as LissCscsApplyCategoryCardFormRouteImport } from './routes/liss-cscs.apply.$category.$card.form'
 
+const SearchRoute = SearchRouteImport.update({
+  id: '/search',
+  path: '/search',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PortalRoute = PortalRouteImport.update({
   id: '/portal',
   path: '/portal',
@@ -748,6 +754,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/login': typeof LoginRoute
   '/portal': typeof PortalRoute
+  '/search': typeof SearchRoute
   '/about/awards': typeof AboutAwardsRoute
   '/admin/reset-password': typeof AdminResetPasswordRoute
   '/directory/contractor': typeof DirectoryContractorRoute
@@ -864,6 +871,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/login': typeof LoginRoute
   '/portal': typeof PortalRoute
+  '/search': typeof SearchRoute
   '/about/awards': typeof AboutAwardsRoute
   '/admin/reset-password': typeof AdminResetPasswordRoute
   '/directory/contractor': typeof DirectoryContractorRoute
@@ -982,6 +990,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/login': typeof LoginRoute
   '/portal': typeof PortalRoute
+  '/search': typeof SearchRoute
   '/about/awards': typeof AboutAwardsRoute
   '/admin/reset-password': typeof AdminResetPasswordRoute
   '/directory/contractor': typeof DirectoryContractorRoute
@@ -1101,6 +1110,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/login'
     | '/portal'
+    | '/search'
     | '/about/awards'
     | '/admin/reset-password'
     | '/directory/contractor'
@@ -1217,6 +1227,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/login'
     | '/portal'
+    | '/search'
     | '/about/awards'
     | '/admin/reset-password'
     | '/directory/contractor'
@@ -1334,6 +1345,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/login'
     | '/portal'
+    | '/search'
     | '/about/awards'
     | '/admin/reset-password'
     | '/directory/contractor'
@@ -1452,6 +1464,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   LoginRoute: typeof LoginRoute
   PortalRoute: typeof PortalRoute
+  SearchRoute: typeof SearchRoute
   AboutAwardsRoute: typeof AboutAwardsRoute
   DirectoryContractorRoute: typeof DirectoryContractorRoute
   DirectoryDesignerRoute: typeof DirectoryDesignerRoute
@@ -1503,6 +1516,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/portal': {
       id: '/portal'
       path: '/portal'
@@ -2528,6 +2548,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   LoginRoute: LoginRoute,
   PortalRoute: PortalRoute,
+  SearchRoute: SearchRoute,
   AboutAwardsRoute: AboutAwardsRoute,
   DirectoryContractorRoute: DirectoryContractorRoute,
   DirectoryDesignerRoute: DirectoryDesignerRoute,
