@@ -783,48 +783,89 @@ export type Database = {
       }
       training_courses: {
         Row: {
+          booking_url: string | null
+          category: string | null
+          contact_email: string | null
+          cost: string | null
           created_at: string
           date_text: string
           description: string
+          duration: string | null
+          format: string | null
           id: string
           image_url: string | null
           iso_date: string | null
+          location: string | null
+          profile_id: string | null
           published: boolean
+          reviewer_notes: string | null
           sort_order: number
           source_url: string | null
+          status: string
+          submitted_by: string | null
           title: string
           updated_at: string
           venue: string
         }
         Insert: {
+          booking_url?: string | null
+          category?: string | null
+          contact_email?: string | null
+          cost?: string | null
           created_at?: string
           date_text?: string
           description?: string
+          duration?: string | null
+          format?: string | null
           id?: string
           image_url?: string | null
           iso_date?: string | null
+          location?: string | null
+          profile_id?: string | null
           published?: boolean
+          reviewer_notes?: string | null
           sort_order?: number
           source_url?: string | null
+          status?: string
+          submitted_by?: string | null
           title: string
           updated_at?: string
           venue?: string
         }
         Update: {
+          booking_url?: string | null
+          category?: string | null
+          contact_email?: string | null
+          cost?: string | null
           created_at?: string
           date_text?: string
           description?: string
+          duration?: string | null
+          format?: string | null
           id?: string
           image_url?: string | null
           iso_date?: string | null
+          location?: string | null
+          profile_id?: string | null
           published?: boolean
+          reviewer_notes?: string | null
           sort_order?: number
           source_url?: string | null
+          status?: string
+          submitted_by?: string | null
           title?: string
           updated_at?: string
           venue?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "training_courses_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "directory_profiles"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       user_roles: {
         Row: {

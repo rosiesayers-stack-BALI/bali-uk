@@ -21,19 +21,30 @@ export const Route = createFileRoute("/events/training")({
   loader: async () => {
     const rows = await fetchTrainingList();
     const courses: Course[] = rows.map((r: TrainingRow) => ({
-      url: r.source_url ?? "#",
-      img: r.image_url ?? "",
+      url: r.booking_url || r.source_url || (r.provider ? `/directory/company/${r.provider.slug}` : "#"),
+      img: r.image_url ?? r.provider?.logo_url ?? "",
       title: r.title,
       desc: r.description,
       date: r.date_text,
-      venue: r.venue,
+      venue: r.venue || r.location || r.format || "",
+      providerSlug: r.provider?.slug ?? null,
+      providerLogo: r.provider?.logo_url ?? null,
     }));
     return { courses };
   },
   component: TrainingPage,
 });
 
-type Course = { url: string; img: string; title: string; desc: string; date: string; venue: string };
+type Course = {
+  url: string;
+  img: string;
+  title: string;
+  desc: string;
+  date: string;
+  venue: string;
+  providerSlug: string | null;
+  providerLogo: string | null;
+};
 
 const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
@@ -212,6 +223,23 @@ function TrainingPage() {
                       <div className="text-xs font-bold uppercase tracking-wider text-bali-warm mb-1.5">{c.date}</div>
                       <h3 className="font-bold text-slate-900 leading-snug mb-2 line-clamp-3">{c.title}</h3>
                       <p className="text-sm text-slate-600 leading-relaxed mb-3 line-clamp-2 flex-1">{c.desc}</p>
+                      {c.providerSlug && (
+                        <div className="flex items-center gap-2 mb-2 text-xs text-slate-600">
+                          {c.providerLogo && (
+                            <img src={c.providerLogo} alt="" className="w-6 h-6 rounded object-cover border border-slate-200 bg-white" />
+                          )}
+                          <span>
+                            by{" "}
+                            <a
+                              href={`/directory/company/${c.providerSlug}`}
+                              onClick={(e) => e.stopPropagation()}
+                              className="font-semibold text-bali-blue hover:underline"
+                            >
+                              BALI provider
+                            </a>
+                          </span>
+                        </div>
+                      )}
                       <div className="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 text-xs">
                         <span className="text-slate-500 truncate">{c.venue}</span>
                         <span className="font-bold text-bali-warm group-hover:underline shrink-0">Book →</span>
