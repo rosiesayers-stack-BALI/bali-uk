@@ -6,7 +6,7 @@ type Suggestion = {
   key: string;
   label: string;
   sub: string;
-  type: "Member" | "News" | "Event" | "Directory";
+  type: "Page" | "Membership" | "Help" | "Member" | "News" | "Event" | "Policy" | "Directory";
   to: string;
   search?: Record<string, string>;
   params?: Record<string, string>;
