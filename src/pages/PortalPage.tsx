@@ -311,7 +311,7 @@ export default function PortalPage() {
                   <div className="w-16 h-16 rounded-full bg-bali-blue flex items-center justify-center text-white text-xl font-bold">JD</div>
                   <div>
                     <h3 className="font-bold text-gray-900 text-lg">John's Landscaping Ltd</h3>
-                    <p className="text-gray-500 text-sm">Accredited Contractor · Member #BALI-2019-4827</p>
+                    <p className="text-gray-500 text-sm">{memberTypeLabel} · Member #BALI-2019-4827</p>
                     <button className="mt-1 text-xs text-bali-blue hover:underline">Change photo</button>
                   </div>
                 </div>
