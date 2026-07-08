@@ -6,7 +6,7 @@ import CookieBanner from "../components/CookieBanner";
 import Link from "../components/SmartLink";
 import ConferenceInterestForm from "../components/ConferenceInterestForm";
 import ConferenceHighlights from "../components/ConferenceHighlights";
-import { getPageContent, type PageContent } from "../content/pages";
+import { getPageContent, type PageContent, type PageAdvertStat, type PageTestimonial } from "../content/pages";
 
 export const Route = createFileRoute("/$")({
   head: ({ params }) => {
@@ -243,6 +243,147 @@ function MemberTestimonials() {
     </section>
   );
 }
+
+function AdvertImpactSection({
+  stats,
+  themeKey,
+}: {
+  stats: PageAdvertStat[];
+  themeKey: Theme;
+}) {
+  const t = themes[themeKey];
+  const [hero, ...rest] = stats;
+  return (
+    <section className="bg-white border-b border-gray-200 py-14 sm:py-18">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="mb-10">
+          <span className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-3 py-1 text-xs font-semibold uppercase tracking-wide mb-3">
+            Placeholder figures
+          </span>
+          <p className={`${t.accent} font-semibold uppercase tracking-widest text-sm mb-2`}>
+            Advertising impact
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+            Reach the landscape industry where it matters
+          </h2>
+          <p className="text-gray-600 mt-3 max-w-2xl">
+            Placeholder stats for review — digital sponsorship opportunities are highlighted first.
+          </p>
+        </div>
+
+        {hero && (
+          <div className="rounded-2xl border border-gray-200 bg-gray-50 p-8 mb-6">
+            <div className={`text-5xl sm:text-6xl font-bold ${t.accent} mb-2`}>
+              {hero.value}
+            </div>
+            <div className="text-lg text-gray-800 font-medium">{hero.label}</div>
+          </div>
+        )}
+
+        {rest.length > 0 && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {rest.map((s) => (
+              <div
+                key={s.label}
+                className="rounded-2xl border border-gray-200 bg-white p-6"
+              >
+                <div className={`text-3xl sm:text-4xl font-bold ${t.accent} mb-2`}>
+                  {s.value}
+                </div>
+                <div className="text-sm text-gray-700 font-medium">{s.label}</div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+
+function AdvertTestimonials({
+  testimonials,
+  themeKey,
+}: {
+  testimonials: PageTestimonial[];
+  themeKey: Theme;
+}) {
+  const t = themes[themeKey];
+  return (
+    <section className="py-16 sm:py-20 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <span className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-3 py-1 text-xs font-semibold uppercase tracking-wide mb-4">
+            Placeholder testimonials
+          </span>
+          <p className={`${t.accent} font-semibold uppercase tracking-widest text-sm mb-2`}>
+            Advertiser feedback
+          </p>
+          <h2 className="text-3xl font-bold text-gray-900">What our advertisers say</h2>
+          <p className="text-gray-600 mt-3">
+            Placeholder quotes — replace with real advertiser testimonials once available.
+          </p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-6">
+          {testimonials.map((q) => (
+            <figure
+              key={q.name}
+              className="bg-white border border-gray-200 rounded-2xl p-7 h-full flex flex-col relative"
+            >
+              <span className="absolute top-4 right-4 inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide">
+                Placeholder
+              </span>
+              <svg
+                className={`w-8 h-8 ${t.iconColor} opacity-40 mb-4`}
+                fill="currentColor"
+                viewBox="0 0 32 32"
+              >
+                <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+              </svg>
+              <blockquote className="text-gray-700 leading-relaxed flex-1">
+                "{q.quote}"
+              </blockquote>
+              <figcaption className="mt-5 pt-5 border-t border-gray-200">
+                <p className="font-semibold text-gray-900">{q.name}</p>
+                <p className="text-sm text-gray-500">{q.role}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function AdvertCTA({ themeKey }: { themeKey: Theme }) {
+  const t = themes[themeKey];
+  return (
+    <section className="py-16 text-white" style={{ background: t.gradient }}>
+      <div className="max-w-4xl mx-auto px-6 text-center">
+        <h2 className="text-3xl font-bold mb-4">
+          Ready to put your brand in front of BALI's audience?
+        </h2>
+        <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
+          Download the media pack for full rates, or email Joanna to discuss the right package for your business.
+        </p>
+        <div className="flex flex-wrap gap-3 justify-center">
+          <Link
+            to="/__l5e/assets-v1/698abc5b-605d-44a3-972d-3ec0be546abd/bali-media-pack-2025-26.pdf"
+            className="bg-white text-bali-blue hover:bg-gray-100 px-7 py-3 rounded-lg font-bold transition-all hover:scale-105 shadow-lg"
+          >
+            Download media pack
+          </Link>
+          <Link
+            to="mailto:joanna.pieprzak@bali.org.uk?subject=BALI%20advertising%20enquiry"
+            className="bg-bali-green hover:bg-green-700 text-white px-7 py-3 rounded-lg font-bold transition-all hover:scale-105"
+          >
+            Enquire now
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Breadcrumbs({ path }: { path: string }) {
   const crumbs = path.split("/").filter(Boolean);
   return (
@@ -438,6 +579,11 @@ function RichPage({ path, content }: { path: string; content: PageContent }) {
         </section>
       )}
 
+      {/* Advertiser impact stats (placeholder) */}
+      {content.advertStats && content.advertStats.length > 0 && (
+        <AdvertImpactSection stats={content.advertStats} themeKey={themeKey} />
+      )}
+
       {content.embed && (
         <section className="py-12 sm:py-16 bg-white">
           <div className="max-w-3xl mx-auto px-6">
@@ -604,29 +750,38 @@ function RichPage({ path, content }: { path: string; content: PageContent }) {
         </section>
       )}
 
+      {/* Advertiser testimonials (placeholder) */}
+      {content.advertTestimonials && content.advertTestimonials.length > 0 && (
+        <AdvertTestimonials testimonials={content.advertTestimonials} themeKey={themeKey} />
+      )}
+
       {/* Bottom CTA */}
-      <section className="py-16 text-white" style={{ background: t.gradient }}>
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to take the next step?</h2>
-          <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-            Whether you're a landscape professional or a client, BALI is here to help. Get in touch with our team — we respond to every enquiry within 48 hours.
-          </p>
-          <div className="flex flex-wrap gap-3 justify-center">
-            <Link
-              to="/contact"
-              className="bg-white text-bali-blue hover:bg-gray-100 px-7 py-3 rounded-lg font-bold transition-all hover:scale-105 shadow-lg"
-            >
-              Contact BALI
-            </Link>
-            <Link
-              to="/join"
-              className="bg-bali-green hover:bg-green-700 text-white px-7 py-3 rounded-lg font-bold transition-all hover:scale-105"
-            >
-              Join Today
-            </Link>
+      {path === "/about/advertise" ? (
+        <AdvertCTA themeKey={themeKey} />
+      ) : (
+        <section className="py-16 text-white" style={{ background: t.gradient }}>
+          <div className="max-w-4xl mx-auto px-6 text-center">
+            <h2 className="text-3xl font-bold mb-4">Ready to take the next step?</h2>
+            <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
+              Whether you're a landscape professional or a client, BALI is here to help. Get in touch with our team — we respond to every enquiry within 48 hours.
+            </p>
+            <div className="flex flex-wrap gap-3 justify-center">
+              <Link
+                to="/contact"
+                className="bg-white text-bali-blue hover:bg-gray-100 px-7 py-3 rounded-lg font-bold transition-all hover:scale-105 shadow-lg"
+              >
+                Contact BALI
+              </Link>
+              <Link
+                to="/join"
+                className="bg-bali-green hover:bg-green-700 text-white px-7 py-3 rounded-lg font-bold transition-all hover:scale-105"
+              >
+                Join Today
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </>
   );
 }

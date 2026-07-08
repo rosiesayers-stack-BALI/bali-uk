@@ -12,6 +12,7 @@ export type PageEventInfo = {
   tickets: { label: string; href: string };
 };
 export type PageTestimonial = { quote: string; name: string; role: string };
+export type PageAdvertStat = { value: string; label: string; highlight?: boolean };
 export type PageContent = {
   eyebrow: string;
   title: string;
@@ -23,9 +24,11 @@ export type PageContent = {
   ctaPrimary?: PageCTA;
   ctaSecondary?: PageCTA;
   stats?: { value: string; label: string }[];
+  advertStats?: PageAdvertStat[];
   embed?: PageEmbed;
   eventInfo?: PageEventInfo;
   testimonials?: PageTestimonial[];
+  advertTestimonials?: PageTestimonial[];
   gallery?: { images: PageImage[]; heading?: string; caption?: string };
 };
 
@@ -417,6 +420,30 @@ const C: Record<string, PageContent> = {
       { title: "Landscape News magazine", body: "Quarterly print and digital edition reaching 2,000+ subscribers and key trade shows." },
       { title: "BALI website", body: "Over half a million page views a year from clients, members and specifiers." },
       { title: "Weekly e-newsletter", body: "Direct to 1,800+ inboxes with industry news, jobs and member updates." },
+    ],
+    advertStats: [
+      { value: "[X]%", label: "average increase in click-through rate for digital sponsors", highlight: true },
+      { value: "[X,XXX]", label: "monthly impressions on bali.org.uk banner placements" },
+      { value: "[X,XXX]", label: "members reached via newsletter sponsorship each week" },
+      { value: "[X]%", label: "of advertisers renew their package the following year" },
+      { value: "[X]", label: "average qualified leads generated per campaign" },
+    ],
+    advertTestimonials: [
+      {
+        quote: "[Placeholder quote — e.g. 'Our product launch saw a measurable uplift in enquiries after sponsoring the BALI newsletter. The audience is exactly who we want to reach.']",
+        name: "[Placeholder — Company Name]",
+        role: "[Placeholder — Advertiser type, e.g. Supplier]",
+      },
+      {
+        quote: "[Placeholder quote — e.g. 'Being seen alongside the National Landscape Awards gave our brand instant credibility with landscape contractors and specifiers.']",
+        name: "[Placeholder — Company Name]",
+        role: "[Placeholder — Advertiser type, e.g. Product Manufacturer]",
+      },
+      {
+        quote: "[Placeholder quote — e.g. 'The BALI website banner campaign delivered consistent traffic and high-quality leads throughout the year.']",
+        name: "[Placeholder — Company Name]",
+        role: "[Placeholder — Advertiser type, e.g. Service Provider]",
+      },
     ],
     sections: [
       {
