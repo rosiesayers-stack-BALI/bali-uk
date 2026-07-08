@@ -126,8 +126,10 @@ export type Database = {
           id: string
           logo_url: string | null
           slug: string
+          socials: Json
           updated_at: string
           wb_org_id: string
+          website_url: string | null
           whos_who: string | null
         }
         Insert: {
@@ -137,8 +139,10 @@ export type Database = {
           id?: string
           logo_url?: string | null
           slug: string
+          socials?: Json
           updated_at?: string
           wb_org_id: string
+          website_url?: string | null
           whos_who?: string | null
         }
         Update: {
@@ -148,8 +152,10 @@ export type Database = {
           id?: string
           logo_url?: string | null
           slug?: string
+          socials?: Json
           updated_at?: string
           wb_org_id?: string
+          website_url?: string | null
           whos_who?: string | null
         }
         Relationships: []
@@ -649,6 +655,39 @@ export type Database = {
           sort_order?: number
           title?: string
           updated_at?: string
+        }
+        Relationships: []
+      }
+      notifications: {
+        Row: {
+          body: string | null
+          created_at: string
+          id: string
+          kind: string
+          link: string | null
+          read_at: string | null
+          title: string
+          user_id: string
+        }
+        Insert: {
+          body?: string | null
+          created_at?: string
+          id?: string
+          kind: string
+          link?: string | null
+          read_at?: string | null
+          title: string
+          user_id: string
+        }
+        Update: {
+          body?: string | null
+          created_at?: string
+          id?: string
+          kind?: string
+          link?: string | null
+          read_at?: string | null
+          title?: string
+          user_id?: string
         }
         Relationships: []
       }

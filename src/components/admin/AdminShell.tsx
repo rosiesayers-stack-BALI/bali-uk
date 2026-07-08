@@ -1,10 +1,11 @@
 import { type ReactNode } from "react";
 import { Link, useRouter, useRouterState } from "@tanstack/react-router";
-import { LogOut, Newspaper, Calendar, FileText, GraduationCap, LayoutDashboard } from "lucide-react";
+import { LogOut, Newspaper, Calendar, FileText, GraduationCap, LayoutDashboard, Inbox } from "lucide-react";
 import { signOut } from "@/lib/admin/auth";
 
 const NAV: { to: string; label: string; icon: typeof LayoutDashboard; exact?: boolean }[] = [
   { to: "/admin", label: "Dashboard", icon: LayoutDashboard, exact: true },
+  { to: "/admin/submissions", label: "Submissions", icon: Inbox },
   { to: "/admin/news", label: "News", icon: Newspaper },
   { to: "/admin/events", label: "Events", icon: Calendar },
   { to: "/admin/policy", label: "Policy", icon: FileText },
