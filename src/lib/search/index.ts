@@ -308,9 +308,7 @@ export function runSearch(filters: SearchFilters): GroupedResults {
 }
 
 function runSearchInternal(filters: SearchFilters, q: string, terms: string[]): GroupedResults {
-  const qRaw = (filters.q ?? "").trim();
-  const q = norm(qRaw);
-  const terms = q.split(/\s+/).filter(Boolean);
+  const postcode0 = 0; void postcode0;
   const postcode = (filters.postcode ?? "").trim();
   const projectType = filters.projectType || "";
   const category = filters.category || "";
