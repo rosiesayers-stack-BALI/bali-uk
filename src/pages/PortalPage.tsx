@@ -227,13 +227,14 @@ export default function PortalPage() {
                 <div className="bg-white rounded-xl border border-gray-200 p-5">
                   <h3 className="font-bold text-gray-900 mb-4">Quick Actions</h3>
                   <div className="space-y-2">
-                    {[
+                    {filterQuickActions([
                       { label: 'Renew Membership', color: 'hover:border-bali-blue', textColor: 'group-hover:text-bali-blue', action: 'membership' as Section },
-                      { label: 'Update Directory Listing', color: 'hover:border-bali-green', textColor: 'group-hover:text-bali-green', action: 'directory' as Section },
+                      { label: 'Update Directory Listing', color: 'hover:border-bali-green', textColor: 'group-hover:text-bali-green', action: 'directory' as Section, benefitId: 'directory-listing' },
                       { label: 'Apply for SmartCard', color: 'hover:border-bali-flow', textColor: 'group-hover:text-bali-flow', action: 'liss' as Section },
-                      { label: 'Book HR Health Check', color: 'hover:border-bali-warm', textColor: 'group-hover:text-bali-warm', action: 'support' as Section },
-                      { label: 'Download Accredited Logo', color: 'hover:border-gray-300', textColor: '', action: 'documents' as Section },
-                    ].map((qa) => (
+                      { label: 'Book HR Health Check', color: 'hover:border-bali-warm', textColor: 'group-hover:text-bali-warm', action: 'support' as Section, benefitId: 'technical-support' },
+                      { label: 'Download Accredited Logo', color: 'hover:border-gray-300', textColor: '', action: 'documents' as Section, benefitId: 'accredited-logo' },
+                    ], memberType).map((qa) => (
+
                       <button
                         key={qa.label}
                         onClick={() => go(qa.action)}
