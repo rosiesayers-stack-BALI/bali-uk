@@ -55,8 +55,12 @@ export default function PortalPage() {
   const [section, setSection] = useState<Section>('dashboard')
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [alertVisible, setAlertVisible] = useState(true)
+  const [memberType, setMemberType] = useMemberType()
+
+  const memberTypeLabel = memberType ?? 'Unclassified'
 
   const go = (s: Section) => { setSection(s); setSidebarOpen(false) }
+
 
   return (
     <div className="font-sans bg-gray-100 min-h-screen flex h-screen overflow-hidden">
