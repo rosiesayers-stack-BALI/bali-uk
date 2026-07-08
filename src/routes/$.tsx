@@ -6,7 +6,7 @@ import CookieBanner from "../components/CookieBanner";
 import Link from "../components/SmartLink";
 import ConferenceInterestForm from "../components/ConferenceInterestForm";
 import ConferenceHighlights from "../components/ConferenceHighlights";
-import { getPageContent, type PageContent } from "../content/pages";
+import { getPageContent, type PageContent, type PageAdvertStat, type PageTestimonial } from "../content/pages";
 
 export const Route = createFileRoute("/$")({
   head: ({ params }) => {
