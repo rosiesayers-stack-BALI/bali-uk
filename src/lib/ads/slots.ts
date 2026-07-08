@@ -14,7 +14,7 @@ export type BannerAd = {
   href: string;
   image?: string; // optional background/side image url
   accent?: string; // hex/css color for accent bar
-  placements: BannerPlacement[];
+  placements?: BannerPlacement[];
 };
 
 export type BannerPlacement =
@@ -33,7 +33,7 @@ export type SponsoredCardAd = {
   image?: string;
   href: string;
   cta?: string;
-  placements: SponsoredPlacement[];
+  placements?: SponsoredPlacement[];
 };
 
 export type SponsoredPlacement = "news-feed" | "events-feed" | "directory-feed";
