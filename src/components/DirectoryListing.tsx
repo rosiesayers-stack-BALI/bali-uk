@@ -1,12 +1,16 @@
 import { useMemo, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { MEMBERS, REGIONS, CATEGORY_LABEL, type Member, type MemberCategory } from "../lib/directory/members";
+import { FEATURED_MEMBERS } from "../lib/ads/slots";
+import SponsoredCard from "./ads/SponsoredCard";
 
 type Props = {
   initialCategory?: MemberCategory | "all";
   lockCategory?: boolean;
   heading?: string;
 };
+
+const FEATURED_BY_ID = new Map(FEATURED_MEMBERS.map((f) => [f.memberId, f]));
 
 export default function DirectoryListing({ initialCategory = "all", lockCategory = false, heading }: Props) {
   const [query, setQuery] = useState("");
@@ -15,11 +19,17 @@ export default function DirectoryListing({ initialCategory = "all", lockCategory
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return MEMBERS.filter((m: Member) => {
+    const filtered = MEMBERS.filter((m: Member) => {
       if (category !== "all" && m.category !== category) return false;
       if (region !== "all" && m.region !== region) return false;
       if (q && !(`${m.name} ${m.specialism} ${m.description}`.toLowerCase().includes(q))) return false;
       return true;
+    });
+    // Directory boost: featured/paid-boost members surface first.
+    return [...filtered].sort((a, b) => {
+      const af = FEATURED_BY_ID.has(a.id) ? 1 : 0;
+      const bf = FEATURED_BY_ID.has(b.id) ? 1 : 0;
+      return bf - af;
     });
   }, [query, region, category]);
 
