@@ -750,6 +750,11 @@ function RichPage({ path, content }: { path: string; content: PageContent }) {
         </section>
       )}
 
+      {/* Advertiser testimonials (placeholder) */}
+      {content.advertTestimonials && content.advertTestimonials.length > 0 && (
+        <AdvertTestimonials testimonials={content.advertTestimonials} themeKey={themeKey} />
+      )}
+
       {/* Bottom CTA */}
       <section className="py-16 text-white" style={{ background: t.gradient }}>
         <div className="max-w-4xl mx-auto px-6 text-center">
