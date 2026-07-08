@@ -579,6 +579,11 @@ function RichPage({ path, content }: { path: string; content: PageContent }) {
         </section>
       )}
 
+      {/* Advertiser impact stats (placeholder) */}
+      {content.advertStats && content.advertStats.length > 0 && (
+        <AdvertImpactSection stats={content.advertStats} themeKey={themeKey} />
+      )}
+
       {content.embed && (
         <section className="py-12 sm:py-16 bg-white">
           <div className="max-w-3xl mx-auto px-6">
