@@ -287,6 +287,30 @@ export function runSearch(filters: SearchFilters): GroupedResults {
   const qRaw = (filters.q ?? "").trim();
   const q = norm(qRaw);
   const terms = q.split(/\s+/).filter(Boolean);
+
+  // First pass: exact search as typed.
+  const exact = runSearchInternal(filters, q, terms);
+
+  // Only try fuzzy correction when:
+  //  - the user actually typed a query, and
+  //  - the exact pass returned nothing.
+  // This preserves accuracy: exact matches are never displaced by fuzzy ones.
+  if (terms.length === 0 || exact.total > 0) return exact;
+
+  const corrected = fuzzyCorrectQuery(terms);
+  if (!corrected || corrected === q) return exact;
+
+  const correctedTerms = corrected.split(/\s+/).filter(Boolean);
+  const fuzzy = runSearchInternal(filters, corrected, correctedTerms);
+  if (fuzzy.total === 0) return exact;
+
+  return { ...fuzzy, didYouMean: corrected, originalQuery: qRaw };
+}
+
+function runSearchInternal(filters: SearchFilters, q: string, terms: string[]): GroupedResults {
+  const qRaw = (filters.q ?? "").trim();
+  const q = norm(qRaw);
+  const terms = q.split(/\s+/).filter(Boolean);
   const postcode = (filters.postcode ?? "").trim();
   const projectType = filters.projectType || "";
   const category = filters.category || "";
