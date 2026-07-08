@@ -1,5 +1,12 @@
 import { useState } from 'react'
 import Link from '../components/SmartLink'
+import {
+  MemberBenefits,
+  MemberTypeSwitcher,
+  filterQuickActions,
+  useMemberType,
+} from '../components/portal/MemberBenefits'
+
 
 type Section =
   | 'dashboard' | 'profile' | 'membership' | 'directory'
