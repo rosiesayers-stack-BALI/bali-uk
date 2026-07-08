@@ -384,26 +384,9 @@ export default function PortalPage() {
           )}
 
           {/* ── DIRECTORY ────────────────────────────────────────── */}
-          {section === 'directory' && (
-            <div className="max-w-3xl">
-              <div className="bg-white rounded-xl border border-gray-200 p-6">
-                <div className="flex items-center justify-between mb-5">
-                  <h3 className="font-bold text-gray-900 text-lg">Your Directory Listing</h3>
-                  <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">Live</span>
-                </div>
-                <div className="space-y-4">
-                  <div>
-                    <label className="block text-xs font-medium text-gray-500 uppercase tracking-wide mb-1.5">Business Description</label>
-                    <textarea rows={4} defaultValue="Award-winning landscape contractor based in Warwickshire, specialising in high-end residential gardens and commercial grounds maintenance." className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-bali-blue/25 focus:border-bali-blue transition-all resize-none" />
-                  </div>
-                  <div className="flex gap-3">
-                    <button className="bg-bali-blue hover:bg-blue-800 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-all">Save & Publish</button>
-                    <button className="border border-gray-300 text-gray-600 hover:bg-gray-50 px-5 py-2.5 rounded-lg text-sm transition-all">Preview</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
+          {section === 'directory' && <DirectoryEditor />}
+
+          {section === 'news_submit' && <NewsSubmit />}
 
           {/* ── EVENTS ───────────────────────────────────────────── */}
           {section === 'events' && (
