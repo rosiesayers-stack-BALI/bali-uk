@@ -18,11 +18,11 @@ export function useMemberType(): [MemberType | null, (t: MemberType | null) => v
       if (stored && (MEMBER_TYPES as string[]).includes(stored)) {
         setMemberTypeState(stored as MemberType)
       } else {
-        // Default seed for the review account — Accredited Contractor.
-        setMemberTypeState('Accredited Contractor')
+        // Default seed for the review account — Training Provider.
+        setMemberTypeState('Training Provider')
       }
     } catch {
-      setMemberTypeState('Accredited Contractor')
+      setMemberTypeState('Training Provider')
     }
   }, [])
 
