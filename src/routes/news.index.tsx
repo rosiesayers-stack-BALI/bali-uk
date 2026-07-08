@@ -3,6 +3,8 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CookieBanner from "../components/CookieBanner";
 import Link from "../components/SmartLink";
+import AdBanner from "../components/ads/AdBanner";
+import SponsoredCard from "../components/ads/SponsoredCard";
 import { fetchNewsList, type NewsRow } from "../lib/content/db";
 
 export const Route = createFileRoute("/news/")({
