@@ -756,28 +756,32 @@ function RichPage({ path, content }: { path: string; content: PageContent }) {
       )}
 
       {/* Bottom CTA */}
-      <section className="py-16 text-white" style={{ background: t.gradient }}>
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to take the next step?</h2>
-          <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-            Whether you're a landscape professional or a client, BALI is here to help. Get in touch with our team — we respond to every enquiry within 48 hours.
-          </p>
-          <div className="flex flex-wrap gap-3 justify-center">
-            <Link
-              to="/contact"
-              className="bg-white text-bali-blue hover:bg-gray-100 px-7 py-3 rounded-lg font-bold transition-all hover:scale-105 shadow-lg"
-            >
-              Contact BALI
-            </Link>
-            <Link
-              to="/join"
-              className="bg-bali-green hover:bg-green-700 text-white px-7 py-3 rounded-lg font-bold transition-all hover:scale-105"
-            >
-              Join Today
-            </Link>
+      {path === "/about/advertise" ? (
+        <AdvertCTA themeKey={themeKey} />
+      ) : (
+        <section className="py-16 text-white" style={{ background: t.gradient }}>
+          <div className="max-w-4xl mx-auto px-6 text-center">
+            <h2 className="text-3xl font-bold mb-4">Ready to take the next step?</h2>
+            <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
+              Whether you're a landscape professional or a client, BALI is here to help. Get in touch with our team — we respond to every enquiry within 48 hours.
+            </p>
+            <div className="flex flex-wrap gap-3 justify-center">
+              <Link
+                to="/contact"
+                className="bg-white text-bali-blue hover:bg-gray-100 px-7 py-3 rounded-lg font-bold transition-all hover:scale-105 shadow-lg"
+              >
+                Contact BALI
+              </Link>
+              <Link
+                to="/join"
+                className="bg-bali-green hover:bg-green-700 text-white px-7 py-3 rounded-lg font-bold transition-all hover:scale-105"
+              >
+                Join Today
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </>
   );
 }
