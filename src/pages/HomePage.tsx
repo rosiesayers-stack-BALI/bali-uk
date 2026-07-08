@@ -135,7 +135,9 @@ function useReveal() {
 export default function HomePage() {
   const [current, setCurrent] = useState(0)
   const [searchType, setSearchType] = useState('')
-  const [searchLocation, setSearchLocation] = useState('')
+  const [searchPostcode, setSearchPostcode] = useState('')
+  const [searchProjectType, setSearchProjectType] = useState('')
+  const [searchKeyword, setSearchKeyword] = useState('')
 
   // Auto-play slider
   useEffect(() => {
