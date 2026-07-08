@@ -135,7 +135,9 @@ function useReveal() {
 export default function HomePage() {
   const [current, setCurrent] = useState(0)
   const [searchType, setSearchType] = useState('')
-  const [searchLocation, setSearchLocation] = useState('')
+  const [searchPostcode, setSearchPostcode] = useState('')
+  const [searchProjectType, setSearchProjectType] = useState('')
+  const [searchKeyword, setSearchKeyword] = useState('')
 
   // Auto-play slider
   useEffect(() => {
@@ -223,36 +225,60 @@ export default function HomePage() {
 
       {/* ── Directory search bar ───────────────────────────────────── */}
       <section className="bg-bali-blue py-6 shadow-inner">
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="flex flex-col sm:flex-row gap-3 items-center">
-            <p className="text-white font-semibold text-lg flex-shrink-0">Find a Landscape Professional</p>
-            <div className="flex flex-1 gap-2 w-full sm:w-auto">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="flex flex-col gap-3">
+            <p className="text-white font-semibold text-lg">Find a Landscape Professional</p>
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-2">
+              <input
+                type="text"
+                placeholder="Keyword (name, project…)"
+                value={searchKeyword}
+                onChange={(e) => setSearchKeyword(e.target.value)}
+                className="md:col-span-4 rounded-lg border-0 px-4 py-3 text-sm bg-white/10 text-white placeholder-white/60 backdrop-blur-sm focus:bg-white focus:text-gray-800 transition-all focus:outline-none"
+              />
+              <input
+                type="text"
+                placeholder="Postcode (e.g. B91)"
+                value={searchPostcode}
+                onChange={(e) => setSearchPostcode(e.target.value)}
+                className="md:col-span-2 rounded-lg border-0 px-4 py-3 text-sm bg-white/10 text-white placeholder-white/60 backdrop-blur-sm focus:bg-white focus:text-gray-800 transition-all focus:outline-none"
+              />
+              <select
+                value={searchProjectType}
+                onChange={(e) => setSearchProjectType(e.target.value)}
+                className="md:col-span-3 rounded-lg border-0 px-4 py-3 text-sm bg-white/10 text-white backdrop-blur-sm focus:bg-white focus:text-gray-800 transition-all"
+              >
+                <option value="">All project types</option>
+                <option value="Garden Design">Garden Design</option>
+                <option value="Hard Landscaping">Hard Landscaping</option>
+                <option value="Soft Landscaping & Planting">Soft Landscaping & Planting</option>
+                <option value="Grounds Maintenance">Grounds Maintenance</option>
+                <option value="Irrigation">Irrigation</option>
+                <option value="Trees & Arboriculture">Trees & Arboriculture</option>
+                <option value="Materials & Paving">Materials & Paving</option>
+                <option value="Equipment & Tools">Equipment & Tools</option>
+                <option value="Public Realm & Community">Public Realm & Community</option>
+                <option value="Training & Education">Training & Education</option>
+              </select>
               <select
                 value={searchType}
                 onChange={(e) => setSearchType(e.target.value)}
-                className="flex-1 rounded-lg border-0 px-4 py-3 text-sm bg-white/10 text-white backdrop-blur-sm focus:bg-white focus:text-gray-800 transition-all"
+                className="md:col-span-2 rounded-lg border-0 px-4 py-3 text-sm bg-white/10 text-white backdrop-blur-sm focus:bg-white focus:text-gray-800 transition-all"
               >
-                <option value="">All types</option>
+                <option value="">All categories</option>
                 <option value="designer">Designer</option>
                 <option value="contractor">Contractor</option>
                 <option value="supplier">Supplier</option>
                 <option value="training">Training Provider</option>
               </select>
-              <input
-                type="text"
-                placeholder="Town or postcode…"
-                value={searchLocation}
-                onChange={(e) => setSearchLocation(e.target.value)}
-                className="flex-1 rounded-lg border-0 px-4 py-3 text-sm bg-white/10 text-white placeholder-white/60 backdrop-blur-sm focus:bg-white focus:text-gray-800 transition-all focus:outline-none"
-              />
               <Link
-                to={`/directory/search?type=${searchType}&location=${searchLocation}`}
-                className="bg-bali-green hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-all hover:scale-105 flex-shrink-0 flex items-center gap-2"
+                to={`/search?q=${encodeURIComponent(searchKeyword)}&postcode=${encodeURIComponent(searchPostcode)}&projectType=${encodeURIComponent(searchProjectType)}&category=${encodeURIComponent(searchType)}`}
+                className="md:col-span-1 bg-bali-green hover:bg-green-700 text-white px-4 py-3 rounded-lg font-semibold transition-all hover:scale-105 flex items-center justify-center gap-2"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
-                Search
+                <span className="md:hidden">Search</span>
               </Link>
             </div>
           </div>
