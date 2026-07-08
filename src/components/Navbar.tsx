@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Link from './SmartLink'
+import SmartSearch from './SmartSearch'
 
 type NavSubItem = {
   label: string
@@ -218,22 +219,8 @@ export default function Navbar({ transparent = false }: NavbarProps) {
           </div>
         </div>
 
-        {/* Search bar */}
-        {searchOpen && (
-          <div className="border-t border-gray-100 bg-gray-50 px-4 py-3">
-            <div className="max-w-2xl mx-auto flex gap-2">
-              <input
-                type="text"
-                placeholder="Search the BALI website…"
-                autoFocus
-                className="flex-1 rounded-lg border border-gray-300 px-4 py-2 text-sm transition-all focus:outline-none focus:ring-2 focus:ring-bali-blue/25 focus:border-bali-blue"
-              />
-              <button className="bg-bali-blue text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-800 transition-colors">
-                Search
-              </button>
-            </div>
-          </div>
-        )}
+        {/* Smart search bar */}
+        {searchOpen && <SmartSearch onNavigate={() => setSearchOpen(false)} />}
 
         {/* Mobile nav */}
         {mobileOpen && (
