@@ -12,6 +12,7 @@ export type PageEventInfo = {
   tickets: { label: string; href: string };
 };
 export type PageTestimonial = { quote: string; name: string; role: string };
+export type PageAdvertStat = { value: string; label: string; highlight?: boolean };
 export type PageContent = {
   eyebrow: string;
   title: string;
@@ -23,9 +24,11 @@ export type PageContent = {
   ctaPrimary?: PageCTA;
   ctaSecondary?: PageCTA;
   stats?: { value: string; label: string }[];
+  advertStats?: PageAdvertStat[];
   embed?: PageEmbed;
   eventInfo?: PageEventInfo;
   testimonials?: PageTestimonial[];
+  advertTestimonials?: PageTestimonial[];
   gallery?: { images: PageImage[]; heading?: string; caption?: string };
 };
 
