@@ -58,6 +58,14 @@ export type TrainingRow = {
   image_url: string | null;
   source_url: string | null;
   sort_order: number;
+  category?: string | null;
+  duration?: string | null;
+  format?: string | null;
+  location?: string | null;
+  cost?: string | null;
+  booking_url?: string | null;
+  contact_email?: string | null;
+  provider?: { id: string; slug: string; logo_url: string | null } | null;
 };
 
 const handle = <T,>({ data, error }: { data: unknown; error: { message: string } | null }): T => {
