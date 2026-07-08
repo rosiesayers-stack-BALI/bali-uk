@@ -57,6 +57,7 @@ import { Route as AboutAwardsRouteImport } from './routes/about.awards'
 import { Route as LissCscsApplyIndexRouteImport } from './routes/liss-cscs.apply.index'
 import { Route as HelpMediaIndexRouteImport } from './routes/help.media.index'
 import { Route as AdminTrainingIndexRouteImport } from './routes/admin.training.index'
+import { Route as AdminSubmissionsIndexRouteImport } from './routes/admin.submissions.index'
 import { Route as AdminPolicyIndexRouteImport } from './routes/admin.policy.index'
 import { Route as AdminNewsIndexRouteImport } from './routes/admin.news.index'
 import { Route as AdminLissIndexRouteImport } from './routes/admin.liss.index'
@@ -365,6 +366,11 @@ const HelpMediaIndexRoute = HelpMediaIndexRouteImport.update({
 const AdminTrainingIndexRoute = AdminTrainingIndexRouteImport.update({
   id: '/training/',
   path: '/training/',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminSubmissionsIndexRoute = AdminSubmissionsIndexRouteImport.update({
+  id: '/submissions/',
+  path: '/submissions/',
   getParentRoute: () => AdminRoute,
 } as any)
 const AdminPolicyIndexRoute = AdminPolicyIndexRouteImport.update({
@@ -857,6 +863,7 @@ export interface FileRoutesByFullPath {
   '/admin/liss/': typeof AdminLissIndexRoute
   '/admin/news/': typeof AdminNewsIndexRoute
   '/admin/policy/': typeof AdminPolicyIndexRoute
+  '/admin/submissions/': typeof AdminSubmissionsIndexRoute
   '/admin/training/': typeof AdminTrainingIndexRoute
   '/help/media/': typeof HelpMediaIndexRoute
   '/liss-cscs/apply/': typeof LissCscsApplyIndexRoute
@@ -974,6 +981,7 @@ export interface FileRoutesByTo {
   '/admin/liss': typeof AdminLissIndexRoute
   '/admin/news': typeof AdminNewsIndexRoute
   '/admin/policy': typeof AdminPolicyIndexRoute
+  '/admin/submissions': typeof AdminSubmissionsIndexRoute
   '/admin/training': typeof AdminTrainingIndexRoute
   '/help/media': typeof HelpMediaIndexRoute
   '/liss-cscs/apply': typeof LissCscsApplyIndexRoute
@@ -1093,6 +1101,7 @@ export interface FileRoutesById {
   '/admin/liss/': typeof AdminLissIndexRoute
   '/admin/news/': typeof AdminNewsIndexRoute
   '/admin/policy/': typeof AdminPolicyIndexRoute
+  '/admin/submissions/': typeof AdminSubmissionsIndexRoute
   '/admin/training/': typeof AdminTrainingIndexRoute
   '/help/media/': typeof HelpMediaIndexRoute
   '/liss-cscs/apply/': typeof LissCscsApplyIndexRoute
@@ -1213,6 +1222,7 @@ export interface FileRouteTypes {
     | '/admin/liss/'
     | '/admin/news/'
     | '/admin/policy/'
+    | '/admin/submissions/'
     | '/admin/training/'
     | '/help/media/'
     | '/liss-cscs/apply/'
@@ -1330,6 +1340,7 @@ export interface FileRouteTypes {
     | '/admin/liss'
     | '/admin/news'
     | '/admin/policy'
+    | '/admin/submissions'
     | '/admin/training'
     | '/help/media'
     | '/liss-cscs/apply'
@@ -1448,6 +1459,7 @@ export interface FileRouteTypes {
     | '/admin/liss/'
     | '/admin/news/'
     | '/admin/policy/'
+    | '/admin/submissions/'
     | '/admin/training/'
     | '/help/media/'
     | '/liss-cscs/apply/'
@@ -1850,6 +1862,13 @@ declare module '@tanstack/react-router' {
       path: '/training'
       fullPath: '/admin/training/'
       preLoaderRoute: typeof AdminTrainingIndexRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/submissions/': {
+      id: '/admin/submissions/'
+      path: '/submissions'
+      fullPath: '/admin/submissions/'
+      preLoaderRoute: typeof AdminSubmissionsIndexRouteImport
       parentRoute: typeof AdminRoute
     }
     '/admin/policy/': {
@@ -2343,6 +2362,7 @@ interface AdminRouteChildren {
   AdminLissIndexRoute: typeof AdminLissIndexRoute
   AdminNewsIndexRoute: typeof AdminNewsIndexRoute
   AdminPolicyIndexRoute: typeof AdminPolicyIndexRoute
+  AdminSubmissionsIndexRoute: typeof AdminSubmissionsIndexRoute
   AdminTrainingIndexRoute: typeof AdminTrainingIndexRoute
 }
 
@@ -2358,6 +2378,7 @@ const AdminRouteChildren: AdminRouteChildren = {
   AdminLissIndexRoute: AdminLissIndexRoute,
   AdminNewsIndexRoute: AdminNewsIndexRoute,
   AdminPolicyIndexRoute: AdminPolicyIndexRoute,
+  AdminSubmissionsIndexRoute: AdminSubmissionsIndexRoute,
   AdminTrainingIndexRoute: AdminTrainingIndexRoute,
 }
 
