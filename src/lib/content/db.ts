@@ -139,12 +139,13 @@ export const fetchPolicyBySlug = async (slug: string): Promise<PolicyRow | null>
   return data;
 };
 
-export const fetchTrainingList = async (): Promise<TrainingRow[]> =>
-  handle(
-    await supabase
-      .from("training_courses")
-      .select("*")
-      .eq("published", true)
-      .order("iso_date", { ascending: true, nullsFirst: false })
-      .order("sort_order", { ascending: true }),
-  );
+export const fetchTrainingList = async (): Promise<TrainingRow[]> => {
+  const { data, error } = await supabase
+    .from("training_courses")
+    .select("*, provider:directory_profiles(id, slug, logo_url)")
+    .eq("published", true)
+    .order("iso_date", { ascending: true, nullsFirst: false })
+    .order("sort_order", { ascending: true });
+  if (error) throw new Error(error.message);
+  return (data ?? []) as unknown as TrainingRow[];
+};
