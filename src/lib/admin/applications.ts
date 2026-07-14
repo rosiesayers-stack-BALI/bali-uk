@@ -10,6 +10,7 @@
 
 import { useSyncExternalStore } from "react";
 import { supabase } from "@/integrations/supabase/client";
+import { normaliseApplicationType, type ApplicationTypeId } from "@/lib/membership-types";
 
 export type ApplicationStage =
   | "Applied"
