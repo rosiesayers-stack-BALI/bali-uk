@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { PageHeader } from "@/components/admin/PageHeader";
-import { StatusPill } from "@/components/admin/PeopleOrgList";
+import { StatusPill, ApplicationTypeBadge } from "@/components/admin/PeopleOrgList";
 import { useCrm } from "@/lib/admin/mock-crm";
 import { Globe, Phone, MapPin, Briefcase, Users } from "lucide-react";
 
@@ -21,7 +21,7 @@ function OrgDetail() {
         title={org.name}
         subtitle={`${org.discipline} · ${org.town}, ${org.region}`}
         back={{ to: "/admin/organisations", label: "Back to Organisations" }}
-        actions={<StatusPill status={org.status} />}
+        actions={<div className="flex items-center gap-2"><ApplicationTypeBadge id={org.applicationType} /><StatusPill status={org.status} /></div>}
       />
       <div className="p-8 grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl">
         <div className="lg:col-span-2 space-y-6">

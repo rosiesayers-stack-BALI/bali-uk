@@ -2,10 +2,12 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { PageHeader } from "@/components/admin/PageHeader";
+import { ApplicationTypeBadge } from "@/components/admin/PeopleOrgList";
 import {
   fetchApplications, toApplication, updateStage, useAppOverlays,
   PIPELINE_STAGES, SIDE_STAGES, type Application, type ApplicationStage,
 } from "@/lib/admin/applications";
+import { APPLICATION_TYPES, getApplicationType, type ApplicationTypeId } from "@/lib/membership-types";
 import { LayoutGrid, List, Search } from "lucide-react";
 
 export const Route = createFileRoute("/admin/applications/")({
@@ -44,11 +46,17 @@ function ApplicationsIndex() {
   const [view, setView] = useState<"board" | "list">("board");
   const [search, setSearch] = useState("");
   const [stageFilter, setStageFilter] = useState<ApplicationStage | "">("");
+  const [typeFilter, setTypeFilter] = useState<ApplicationTypeId | "">("");
   const [dragId, setDragId] = useState<string | null>(null);
 
   const filtered = applications.filter((a) => {
-    if (search && !(a.applicantName.toLowerCase().includes(search.toLowerCase()) || a.organisation.toLowerCase().includes(search.toLowerCase()))) return false;
+    if (search) {
+      const s = search.toLowerCase();
+      const typeLabel = getApplicationType(a.applicationType)?.label ?? "";
+      if (!(a.applicantName.toLowerCase().includes(s) || a.organisation.toLowerCase().includes(s) || typeLabel.toLowerCase().includes(s))) return false;
+    }
     if (stageFilter && a.stage !== stageFilter) return false;
+    if (typeFilter && a.applicationType !== typeFilter) return false;
     return true;
   });
 
@@ -85,6 +93,11 @@ function ApplicationsIndex() {
             <option value="">All stages</option>
             {ALL_STAGES.map((s) => <option key={s} value={s}>{s}</option>)}
           </select>
+          <select value={typeFilter} onChange={(e) => setTypeFilter(e.target.value as ApplicationTypeId | "")}
+            className="rounded-lg border border-gray-300 px-3 py-2 text-sm bg-white" aria-label="Filter by application type">
+            <option value="">All application types</option>
+            {APPLICATION_TYPES.map((t) => <option key={t.id} value={t.id}>{t.label}</option>)}
+          </select>
           <span className="text-xs text-gray-500 ml-auto">
             <strong className="text-bali-slate">{filtered.length}</strong> application{filtered.length === 1 ? "" : "s"}
           </span>
@@ -118,6 +131,7 @@ function ApplicationsIndex() {
                         <Link to="/admin/applications/$id" params={{ id: a.id }} className="block">
                           <p className="text-sm font-semibold text-bali-slate hover:text-bali-blue">{a.applicantName}</p>
                           <p className="text-xs text-gray-500 truncate">{a.organisation}</p>
+                          <div className="mt-1.5"><ApplicationTypeBadge id={a.applicationType} short /></div>
                           <p className="text-[11px] text-gray-500 mt-1">{a.town || "—"} · {a.discipline}</p>
                           <p className="text-[10px] text-gray-400 mt-1">Applied {new Date(a.dateApplied).toLocaleDateString("en-GB")}</p>
                         </Link>
@@ -141,6 +155,7 @@ function ApplicationsIndex() {
                   <tr>
                     <th className="px-4 py-3">Applicant</th>
                     <th className="px-4 py-3">Organisation</th>
+                    <th className="px-4 py-3">Application type</th>
                     <th className="px-4 py-3">Location</th>
                     <th className="px-4 py-3">Discipline</th>
                     <th className="px-4 py-3">Applied</th>
@@ -155,6 +170,7 @@ function ApplicationsIndex() {
                         <Link to="/admin/applications/$id" params={{ id: a.id }} className="text-bali-slate hover:text-bali-blue">{a.applicantName}</Link>
                       </td>
                       <td className="px-4 py-3 text-gray-600">{a.organisation}</td>
+                      <td className="px-4 py-3"><ApplicationTypeBadge id={a.applicationType} /></td>
                       <td className="px-4 py-3 text-gray-600">{[a.town, a.region].filter(Boolean).join(", ") || "—"}</td>
                       <td className="px-4 py-3 text-gray-600">{a.discipline}</td>
                       <td className="px-4 py-3 text-gray-600 whitespace-nowrap">{new Date(a.dateApplied).toLocaleDateString("en-GB")}</td>

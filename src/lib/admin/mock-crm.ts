@@ -3,6 +3,7 @@
 // TODO: replace this mock CRM layer with real backend API calls.
 
 import { useSyncExternalStore } from "react";
+import { APPLICATION_TYPES, type ApplicationTypeId } from "@/lib/membership-types";
 
 export type Discipline =
   | "Designer"
@@ -39,6 +40,7 @@ export type Person = {
   organisationId: string | null;
   status: MembershipStatus;
   joined: string;
+  applicationType: ApplicationTypeId; // persists after approval
 };
 
 export type Organisation = {
@@ -53,6 +55,7 @@ export type Organisation = {
   status: MembershipStatus;
   memberSince: string;
   size: string;
+  applicationType: ApplicationTypeId; // persists after approval
 };
 
 const REGIONS: Region[] = [
@@ -63,7 +66,7 @@ const DISCIPLINES: Discipline[] = [
   "Designer", "Contractor", "Supplier", "Training Provider", "Consultant", "Maintenance",
 ];
 
-const ORG_SEED: Array<Omit<Organisation, "id">> = [
+const ORG_SEED: Array<Omit<Organisation, "id" | "applicationType">> = [
   { name: "Greenacres Landscapes Ltd", town: "Guildford", county: "Surrey", region: "South East", discipline: "Contractor", website: "greenacres.co.uk", phone: "01483 555 010", status: "Active", memberSince: "2015-04-12", size: "25-50" },
   { name: "Oak & Stone Design Studio", town: "Bath", county: "Somerset", region: "South West", discipline: "Designer", website: "oakandstone.co.uk", phone: "01225 555 021", status: "Active", memberSince: "2018-09-01", size: "1-10" },
   { name: "Chiltern Nurseries", town: "High Wycombe", county: "Buckinghamshire", region: "South East", discipline: "Supplier", website: "chilternnurseries.co.uk", phone: "01494 555 099", status: "Active", memberSince: "2011-06-20", size: "50-100" },
@@ -78,9 +81,27 @@ const ORG_SEED: Array<Omit<Organisation, "id">> = [
   { name: "Tyneside Tree Care", town: "Newcastle", county: "Tyne and Wear", region: "North East", discipline: "Maintenance", website: "tynesidetrees.co.uk", phone: "0191 555 6600", status: "Active", memberSince: "2019-04-22", size: "1-10" },
 ];
 
-function makeOrgs(): Organisation[] {
-  return ORG_SEED.map((o, i) => ({ ...o, id: `org-${i + 1}` }));
+// Assign a placeholder application type per seed row. Accredited variants for
+// long-standing (memberSince <= 2017) members; registered otherwise.
+function deriveOrgType(o: Omit<Organisation, "id" | "applicationType">): ApplicationTypeId {
+  const year = Number(o.memberSince.slice(0, 4));
+  const accredited = year <= 2017;
+  switch (o.discipline) {
+    case "Contractor":       return accredited ? "accredited_contractor" : "registered_contractor";
+    case "Designer":         return accredited ? "accredited_designer" : "registered_designer";
+    case "Supplier":         return "service_supplier";
+    case "Training Provider":return "training_provider";
+    case "Consultant":       return accredited ? "registered_affiliate" : "affiliate";
+    case "Maintenance":      return accredited ? "accredited_contractor" : "registered_contractor";
+    default:                 return "affiliate";
+  }
 }
+
+function makeOrgs(): Organisation[] {
+  return ORG_SEED.map((o, i) => ({ ...o, id: `org-${i + 1}`, applicationType: deriveOrgType(o) }));
+}
+// silence unused warning while making it referenceable for future tooling
+void APPLICATION_TYPES;
 
 const FIRST = ["Amelia","James","Priya","Ollie","Sara","Marcus","Ella","Tom","Harriet","Rhys","Isla","Ben","Chloe","David","Fiona","Grace","Henry","Jack","Kate","Liam","Nadia","Owen","Poppy","Ravi","Sophie","Theo","Ursula","Vince","Wren","Yara"];
 const LAST = ["Bennett","Clarke","Patel","Hughes","O'Neill","Ward","Foster","Reid","Blake","Ellis","Doyle","Ford","Gill","Harper","Ives","Jones","Khan","Lowe","Mills","Nash"];
@@ -107,12 +128,13 @@ function makePeople(orgs: Organisation[]): Person[] {
         organisationId: org.id,
         status: org.status,
         joined: org.memberSince,
+        applicationType: org.applicationType,
       });
     }
     i++;
   }
-  people.push({ id: `p-${people.length + 1}`, name: "Rosa Kingsley", role: "Independent Designer", email: "rosa@kingsleydesign.co.uk", phone: "07700 900123", town: "Oxford", county: "Oxfordshire", region: "South East", discipline: "Designer", organisationId: null, status: "Active", joined: "2022-05-01" });
-  people.push({ id: `p-${people.length + 1}`, name: "Alan Beckworth", role: "Consultant", email: "alan@beckworth.co.uk", phone: "07700 900987", town: "Leeds", county: "West Yorkshire", region: "Yorkshire", discipline: "Consultant", organisationId: null, status: "Active", joined: "2021-11-11" });
+  people.push({ id: `p-${people.length + 1}`, name: "Rosa Kingsley", role: "Independent Designer", email: "rosa@kingsleydesign.co.uk", phone: "07700 900123", town: "Oxford", county: "Oxfordshire", region: "South East", discipline: "Designer", organisationId: null, status: "Active", joined: "2022-05-01", applicationType: "individual_professional" });
+  people.push({ id: `p-${people.length + 1}`, name: "Alan Beckworth", role: "Consultant", email: "alan@beckworth.co.uk", phone: "07700 900987", town: "Leeds", county: "West Yorkshire", region: "Yorkshire", discipline: "Consultant", organisationId: null, status: "Active", joined: "2021-11-11", applicationType: "individual_professional" });
   return people;
 }
 

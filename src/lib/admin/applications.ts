@@ -10,6 +10,7 @@
 
 import { useSyncExternalStore } from "react";
 import { supabase } from "@/integrations/supabase/client";
+import { normaliseApplicationType, type ApplicationTypeId } from "@/lib/membership-types";
 
 export type ApplicationStage =
   | "Applied"
@@ -68,6 +69,7 @@ export type Application = {
   region: string;
   discipline: string;
   category: string;
+  applicationType: ApplicationTypeId;
   dateApplied: string;
   stage: ApplicationStage;
   onboarding: OnboardingStatus;
@@ -148,6 +150,7 @@ export function toApplication(row: MembershipApplicationRow, overlays: Record<st
     region: String(p.region ?? ""),
     discipline: String(p.discipline ?? categoryLabel(row.category)),
     category: row.category,
+    applicationType: normaliseApplicationType(row.category),
     dateApplied: row.created_at,
     stage,
     onboarding: overlay?.onboarding ?? (stage === "Active" ? "Completed" : "Not started"),

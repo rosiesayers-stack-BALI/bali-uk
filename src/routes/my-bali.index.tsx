@@ -3,7 +3,7 @@ import {
   Award, BadgeCheck, Briefcase, Building2, CalendarDays, Clock, Download,
   ExternalLink, Eye, FileText, Gavel, Globe, GraduationCap, Handshake, IdCard,
   LineChart as LineIcon, Mail, MapPin, MousePointerClick, Newspaper, ScrollText, Shield, Sparkles,
-  TrendingUp, TrendingDown, UserRound, Users, Video, ArrowRight,
+  TrendingUp, TrendingDown, UserRound, Video, ArrowRight,
 } from "lucide-react";
 import { ResponsiveContainer, LineChart, Line } from "recharts";
 import { Card, PageHeader } from "../components/mybali/DashboardShell";
@@ -29,7 +29,6 @@ const RESOURCE_ICONS: Record<string, React.ComponentType<{ className?: string }>
 const QUICK_ACTIONS = [
   { label: "Update details", to: "/my-bali/profile/personal", icon: UserRound },
   { label: "Update directory listing", to: "/my-bali/profile/directory", icon: Building2 },
-  { label: "Who's Who entry", to: "/my-bali/profile/whos-who", icon: Users },
   { label: "View directory entry", to: "/directory/search", icon: ExternalLink },
   { label: "Download membership certificate", to: "/my-bali/profile", icon: Download },
 ] as const;

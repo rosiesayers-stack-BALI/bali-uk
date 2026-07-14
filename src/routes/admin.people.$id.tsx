@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { PageHeader } from "@/components/admin/PageHeader";
-import { StatusPill } from "@/components/admin/PeopleOrgList";
+import { StatusPill, ApplicationTypeBadge } from "@/components/admin/PeopleOrgList";
 import { useCrm } from "@/lib/admin/mock-crm";
 import { Mail, Phone, MapPin, Briefcase, Building2 } from "lucide-react";
 
@@ -22,7 +22,7 @@ function PersonDetail() {
         title={person.name}
         subtitle={person.role}
         back={{ to: "/admin/people", label: "Back to People" }}
-        actions={<StatusPill status={person.status} />}
+        actions={<div className="flex items-center gap-2"><ApplicationTypeBadge id={person.applicationType} /><StatusPill status={person.status} /></div>}
       />
       <div className="p-8 grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl">
         <div className="lg:col-span-2 space-y-6">
