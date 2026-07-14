@@ -77,6 +77,7 @@ import { Route as AdminOrganisationsIndexRouteImport } from './routes/admin.orga
 import { Route as AdminNewsIndexRouteImport } from './routes/admin.news.index'
 import { Route as AdminLissIndexRouteImport } from './routes/admin.liss.index'
 import { Route as AdminEventsIndexRouteImport } from './routes/admin.events.index'
+import { Route as AdminApplicationsIndexRouteImport } from './routes/admin.applications.index'
 import { Route as MyBaliProfileWhosWhoRouteImport } from './routes/my-bali.profile.whos-who'
 import { Route as MyBaliProfilePersonalRouteImport } from './routes/my-bali.profile.personal'
 import { Route as MyBaliProfilePasswordRouteImport } from './routes/my-bali.profile.password'
@@ -491,6 +492,11 @@ const AdminLissIndexRoute = AdminLissIndexRouteImport.update({
 const AdminEventsIndexRoute = AdminEventsIndexRouteImport.update({
   id: '/events/',
   path: '/events/',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminApplicationsIndexRoute = AdminApplicationsIndexRouteImport.update({
+  id: '/applications/',
+  path: '/applications/',
   getParentRoute: () => AdminRoute,
 } as any)
 const MyBaliProfileWhosWhoRoute = MyBaliProfileWhosWhoRouteImport.update({
@@ -1027,6 +1033,7 @@ export interface FileRoutesByFullPath {
   '/my-bali/profile/password': typeof MyBaliProfilePasswordRoute
   '/my-bali/profile/personal': typeof MyBaliProfilePersonalRoute
   '/my-bali/profile/whos-who': typeof MyBaliProfileWhosWhoRoute
+  '/admin/applications/': typeof AdminApplicationsIndexRoute
   '/admin/events/': typeof AdminEventsIndexRoute
   '/admin/liss/': typeof AdminLissIndexRoute
   '/admin/news/': typeof AdminNewsIndexRoute
@@ -1167,6 +1174,7 @@ export interface FileRoutesByTo {
   '/my-bali/profile/password': typeof MyBaliProfilePasswordRoute
   '/my-bali/profile/personal': typeof MyBaliProfilePersonalRoute
   '/my-bali/profile/whos-who': typeof MyBaliProfileWhosWhoRoute
+  '/admin/applications': typeof AdminApplicationsIndexRoute
   '/admin/events': typeof AdminEventsIndexRoute
   '/admin/liss': typeof AdminLissIndexRoute
   '/admin/news': typeof AdminNewsIndexRoute
@@ -1311,6 +1319,7 @@ export interface FileRoutesById {
   '/my-bali/profile/password': typeof MyBaliProfilePasswordRoute
   '/my-bali/profile/personal': typeof MyBaliProfilePersonalRoute
   '/my-bali/profile/whos-who': typeof MyBaliProfileWhosWhoRoute
+  '/admin/applications/': typeof AdminApplicationsIndexRoute
   '/admin/events/': typeof AdminEventsIndexRoute
   '/admin/liss/': typeof AdminLissIndexRoute
   '/admin/news/': typeof AdminNewsIndexRoute
@@ -1456,6 +1465,7 @@ export interface FileRouteTypes {
     | '/my-bali/profile/password'
     | '/my-bali/profile/personal'
     | '/my-bali/profile/whos-who'
+    | '/admin/applications/'
     | '/admin/events/'
     | '/admin/liss/'
     | '/admin/news/'
@@ -1596,6 +1606,7 @@ export interface FileRouteTypes {
     | '/my-bali/profile/password'
     | '/my-bali/profile/personal'
     | '/my-bali/profile/whos-who'
+    | '/admin/applications'
     | '/admin/events'
     | '/admin/liss'
     | '/admin/news'
@@ -1739,6 +1750,7 @@ export interface FileRouteTypes {
     | '/my-bali/profile/password'
     | '/my-bali/profile/personal'
     | '/my-bali/profile/whos-who'
+    | '/admin/applications/'
     | '/admin/events/'
     | '/admin/liss/'
     | '/admin/news/'
@@ -2294,6 +2306,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminEventsIndexRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/admin/applications/': {
+      id: '/admin/applications/'
+      path: '/applications'
+      fullPath: '/admin/applications/'
+      preLoaderRoute: typeof AdminApplicationsIndexRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/my-bali/profile/whos-who': {
       id: '/my-bali/profile/whos-who'
       path: '/whos-who'
@@ -2818,6 +2837,7 @@ interface AdminRouteChildren {
   AdminPeopleIdRoute: typeof AdminPeopleIdRoute
   AdminPolicyIdRoute: typeof AdminPolicyIdRoute
   AdminTrainingIdRoute: typeof AdminTrainingIdRoute
+  AdminApplicationsIndexRoute: typeof AdminApplicationsIndexRoute
   AdminEventsIndexRoute: typeof AdminEventsIndexRoute
   AdminLissIndexRoute: typeof AdminLissIndexRoute
   AdminNewsIndexRoute: typeof AdminNewsIndexRoute
@@ -2838,6 +2858,7 @@ const AdminRouteChildren: AdminRouteChildren = {
   AdminPeopleIdRoute: AdminPeopleIdRoute,
   AdminPolicyIdRoute: AdminPolicyIdRoute,
   AdminTrainingIdRoute: AdminTrainingIdRoute,
+  AdminApplicationsIndexRoute: AdminApplicationsIndexRoute,
   AdminEventsIndexRoute: AdminEventsIndexRoute,
   AdminLissIndexRoute: AdminLissIndexRoute,
   AdminNewsIndexRoute: AdminNewsIndexRoute,
