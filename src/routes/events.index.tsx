@@ -382,7 +382,7 @@ function EventCard({ event }: { event: EventRow }) {
   const year = parts[2] ?? "";
   const region = deriveRegion(event);
   const primary = primaryTag(event); // region name for generic regional events, else the type
-  const showSecondaryType = primary !== t && t !== "BALI Regional Event";
+  // primaryTag = region for generic regional events, else the event type.
   const past = isPast(event);
   const booking = event.booking_url;
 
