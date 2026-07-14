@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { PageHeader } from "@/components/admin/PageHeader";
-import { StatusPill } from "@/components/admin/PeopleOrgList";
+import { StatusPill, ApplicationTypeBadge } from "@/components/admin/PeopleOrgList";
 import { useCrm } from "@/lib/admin/mock-crm";
 import { Globe, Phone, MapPin, Briefcase, Users } from "lucide-react";
 
