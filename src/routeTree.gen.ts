@@ -73,6 +73,7 @@ import { Route as AdminTrainingIndexRouteImport } from './routes/admin.training.
 import { Route as AdminSubmissionsIndexRouteImport } from './routes/admin.submissions.index'
 import { Route as AdminPolicyIndexRouteImport } from './routes/admin.policy.index'
 import { Route as AdminPeopleIndexRouteImport } from './routes/admin.people.index'
+import { Route as AdminOrganisationsIndexRouteImport } from './routes/admin.organisations.index'
 import { Route as AdminNewsIndexRouteImport } from './routes/admin.news.index'
 import { Route as AdminLissIndexRouteImport } from './routes/admin.liss.index'
 import { Route as AdminEventsIndexRouteImport } from './routes/admin.events.index'
@@ -468,6 +469,11 @@ const AdminPolicyIndexRoute = AdminPolicyIndexRouteImport.update({
 const AdminPeopleIndexRoute = AdminPeopleIndexRouteImport.update({
   id: '/people/',
   path: '/people/',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminOrganisationsIndexRoute = AdminOrganisationsIndexRouteImport.update({
+  id: '/organisations/',
+  path: '/organisations/',
   getParentRoute: () => AdminRoute,
 } as any)
 const AdminNewsIndexRoute = AdminNewsIndexRouteImport.update({
@@ -1010,6 +1016,7 @@ export interface FileRoutesByFullPath {
   '/admin/events/': typeof AdminEventsIndexRoute
   '/admin/liss/': typeof AdminLissIndexRoute
   '/admin/news/': typeof AdminNewsIndexRoute
+  '/admin/organisations/': typeof AdminOrganisationsIndexRoute
   '/admin/people/': typeof AdminPeopleIndexRoute
   '/admin/policy/': typeof AdminPolicyIndexRoute
   '/admin/submissions/': typeof AdminSubmissionsIndexRoute
@@ -1147,6 +1154,7 @@ export interface FileRoutesByTo {
   '/admin/events': typeof AdminEventsIndexRoute
   '/admin/liss': typeof AdminLissIndexRoute
   '/admin/news': typeof AdminNewsIndexRoute
+  '/admin/organisations': typeof AdminOrganisationsIndexRoute
   '/admin/people': typeof AdminPeopleIndexRoute
   '/admin/policy': typeof AdminPolicyIndexRoute
   '/admin/submissions': typeof AdminSubmissionsIndexRoute
@@ -1288,6 +1296,7 @@ export interface FileRoutesById {
   '/admin/events/': typeof AdminEventsIndexRoute
   '/admin/liss/': typeof AdminLissIndexRoute
   '/admin/news/': typeof AdminNewsIndexRoute
+  '/admin/organisations/': typeof AdminOrganisationsIndexRoute
   '/admin/people/': typeof AdminPeopleIndexRoute
   '/admin/policy/': typeof AdminPolicyIndexRoute
   '/admin/submissions/': typeof AdminSubmissionsIndexRoute
@@ -1430,6 +1439,7 @@ export interface FileRouteTypes {
     | '/admin/events/'
     | '/admin/liss/'
     | '/admin/news/'
+    | '/admin/organisations/'
     | '/admin/people/'
     | '/admin/policy/'
     | '/admin/submissions/'
@@ -1567,6 +1577,7 @@ export interface FileRouteTypes {
     | '/admin/events'
     | '/admin/liss'
     | '/admin/news'
+    | '/admin/organisations'
     | '/admin/people'
     | '/admin/policy'
     | '/admin/submissions'
@@ -1707,6 +1718,7 @@ export interface FileRouteTypes {
     | '/admin/events/'
     | '/admin/liss/'
     | '/admin/news/'
+    | '/admin/organisations/'
     | '/admin/people/'
     | '/admin/policy/'
     | '/admin/submissions/'
@@ -2228,6 +2240,13 @@ declare module '@tanstack/react-router' {
       path: '/people'
       fullPath: '/admin/people/'
       preLoaderRoute: typeof AdminPeopleIndexRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/organisations/': {
+      id: '/admin/organisations/'
+      path: '/organisations'
+      fullPath: '/admin/organisations/'
+      preLoaderRoute: typeof AdminOrganisationsIndexRouteImport
       parentRoute: typeof AdminRoute
     }
     '/admin/news/': {
@@ -2762,6 +2781,7 @@ interface AdminRouteChildren {
   AdminEventsIndexRoute: typeof AdminEventsIndexRoute
   AdminLissIndexRoute: typeof AdminLissIndexRoute
   AdminNewsIndexRoute: typeof AdminNewsIndexRoute
+  AdminOrganisationsIndexRoute: typeof AdminOrganisationsIndexRoute
   AdminPeopleIndexRoute: typeof AdminPeopleIndexRoute
   AdminPolicyIndexRoute: typeof AdminPolicyIndexRoute
   AdminSubmissionsIndexRoute: typeof AdminSubmissionsIndexRoute
@@ -2779,6 +2799,7 @@ const AdminRouteChildren: AdminRouteChildren = {
   AdminEventsIndexRoute: AdminEventsIndexRoute,
   AdminLissIndexRoute: AdminLissIndexRoute,
   AdminNewsIndexRoute: AdminNewsIndexRoute,
+  AdminOrganisationsIndexRoute: AdminOrganisationsIndexRoute,
   AdminPeopleIndexRoute: AdminPeopleIndexRoute,
   AdminPolicyIndexRoute: AdminPolicyIndexRoute,
   AdminSubmissionsIndexRoute: AdminSubmissionsIndexRoute,
