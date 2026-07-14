@@ -24,8 +24,8 @@ export const Route = createFileRoute("/events/")({
 
 // ---- helpers ------------------------------------------------------------
 
-const REGIONS = ["South West", "Midlands", "South Thames", "North Thames", "Yorkshire & North East", "East Anglia", "National", "Online"] as const;
-type Region = (typeof REGIONS)[number];
+const REGIONS = ["South West", "Midlands", "South Thames", "North Thames", "Yorkshire & North East", "East Anglia", "National"] as const;
+type Region = (typeof REGIONS)[number] | "Online";
 
 // TODO: replace with CMS region field once the events taxonomy exposes it.
 function deriveRegion(e: EventRow): Region {
@@ -49,16 +49,34 @@ function effectiveType(e: EventRow): string {
   return isWebinar(e) ? "Webinar" : e.category;
 }
 
-// stable colour per type — kept within existing bali palette
+// For generic "BALI Regional Event" entries, promote the region to the primary tag.
+function primaryTag(e: EventRow): string {
+  const t = effectiveType(e);
+  if (t === "BALI Regional Event") return deriveRegion(e);
+  return t;
+}
+
+// Per-region colour tokens — kept within the existing bali palette.
+const REGION_COLORS: Record<string, string> = {
+  "South West": "bg-bali-grass text-bali-slate",
+  "Midlands": "bg-bali-blue text-white",
+  "South Thames": "bg-bali-purple text-white",
+  "North Thames": "bg-sky-600 text-white",
+  "Yorkshire & North East": "bg-amber-500 text-bali-slate",
+  "East Anglia": "bg-emerald-600 text-white",
+  "National": "bg-bali-slate text-white",
+  "Online": "bg-bali-purple text-white",
+};
+
+// Non-region event types.
 const TYPE_COLORS: Record<string, string> = {
   "Webinar": "bg-bali-purple text-white",
-  "BALI Regional Event": "bg-bali-blue text-white",
   "Supplier Forum": "bg-bali-slate text-white",
   "BALI Chalk Fund": "bg-bali-grass text-bali-slate",
   "Member Event": "bg-bali-grass text-bali-slate",
 };
-function typeBadgeClass(t: string) {
-  return TYPE_COLORS[t] ?? "bg-gray-800 text-white";
+function tagBadgeClass(tag: string) {
+  return REGION_COLORS[tag] ?? TYPE_COLORS[tag] ?? "bg-gray-800 text-white";
 }
 
 function isPast(e: EventRow): boolean {
@@ -97,7 +115,7 @@ function EventsIndex() {
   // derived options
   const allTypes = useMemo(() => {
     const s = new Set<string>();
-    events.forEach((e: EventRow) => s.add(effectiveType(e)));
+    events.forEach((e: EventRow) => { if (!isWebinar(e)) s.add(effectiveType(e)); });
     return Array.from(s).sort();
   }, [events]);
 
@@ -111,6 +129,7 @@ function EventsIndex() {
   const filtered = useMemo(() => {
     const needle = dq.trim().toLowerCase();
     return events.filter((e: EventRow) => {
+      if (isWebinar(e)) return false; // webinars live only in the spotlight section
       if (tense === "future" && isPast(e)) return false;
       if (tense === "past" && !isPast(e)) return false;
       if (type !== "all" && effectiveType(e) !== type) return false;
@@ -135,15 +154,6 @@ function EventsIndex() {
   const activeCount = [type !== "all", region !== "all", month !== "all", q.trim() !== "", tense !== "future"].filter(Boolean).length;
   const clearAll = () => { setQ(""); setType("all"); setRegion("all"); setMonth("all"); setTense("future"); };
 
-  const applyWebinarFilter = () => {
-    setType("Webinar");
-    setRegion("all");
-    setMonth("all");
-    setTense("future");
-    setQ("");
-    const el = document.getElementById("events-grid");
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -170,20 +180,12 @@ function EventsIndex() {
       {webinars.length > 0 && (
         <section aria-labelledby="webinars-heading" className="py-12 bg-gradient-to-b from-bali-purple/5 to-transparent">
           <div className="max-w-6xl mx-auto px-6">
-            <div className="flex items-end justify-between gap-4 mb-6 flex-wrap">
-              <div>
-                <p className="uppercase tracking-widest text-xs font-semibold text-bali-purple mb-2 inline-flex items-center gap-2">
-                  <Monitor className="w-4 h-4" aria-hidden /> Webinars
-                </p>
-                <h2 id="webinars-heading" className="text-2xl sm:text-3xl font-bold text-bali-slate">Upcoming webinars</h2>
-                <p className="text-gray-600 mt-1">Join us online — no travel required.</p>
-              </div>
-              <button
-                onClick={applyWebinarFilter}
-                className="text-sm font-semibold text-bali-blue hover:text-bali-purple underline underline-offset-4"
-              >
-                View all webinars →
-              </button>
+            <div className="mb-6">
+              <p className="uppercase tracking-widest text-xs font-semibold text-bali-purple mb-2 inline-flex items-center gap-2">
+                <Monitor className="w-4 h-4" aria-hidden /> Webinars
+              </p>
+              <h2 id="webinars-heading" className="text-2xl sm:text-3xl font-bold text-bali-slate">Upcoming webinars</h2>
+              <p className="text-gray-600 mt-1">Join us online — no travel required.</p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {webinars.slice(0, 3).map((w: EventRow) => (
@@ -362,6 +364,8 @@ function EventCard({ event }: { event: EventRow }) {
   const month = (parts[1] ?? "").toUpperCase();
   const year = parts[2] ?? "";
   const region = deriveRegion(event);
+  const primary = primaryTag(event); // region name for generic regional events, else the type
+  // primaryTag = region for generic regional events, else the event type.
   const past = isPast(event);
   const booking = event.booking_url;
 
@@ -383,16 +387,19 @@ function EventCard({ event }: { event: EventRow }) {
           </div>
         </div>
         <div className="absolute top-3 right-3 flex flex-col items-end gap-1.5">
-          <span className={`inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full ${typeBadgeClass(t)}`}>
-            {t === "Webinar" && <Monitor className="w-3 h-3" aria-hidden />}
-            {t}
+          <span className={`inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider px-2.5 py-1.5 rounded-full shadow-sm ${tagBadgeClass(primary)}`}>
+            {primary}
           </span>
           {past && <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full bg-gray-800/80 text-white">Past</span>}
         </div>
       </div>
 
       <div className="p-5 flex-1 flex flex-col">
-        <p className="text-xs text-bali-purple uppercase tracking-widest font-semibold mb-2">{region}</p>
+        {t === "BALI Regional Event" ? (
+          <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-2">Regional Connect</p>
+        ) : (
+          <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-2">{region}</p>
+        )}
         <h3 className="font-bold text-gray-900 text-lg leading-snug group-hover:text-bali-blue transition-colors">
           {booking ? (
             <a href={booking} className="focus:outline-none focus:underline">{event.title}</a>
