@@ -2,10 +2,12 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { PageHeader } from "@/components/admin/PageHeader";
+import { ApplicationTypeBadge } from "@/components/admin/PeopleOrgList";
 import {
   fetchApplications, toApplication, updateStage, useAppOverlays,
   PIPELINE_STAGES, SIDE_STAGES, type Application, type ApplicationStage,
 } from "@/lib/admin/applications";
+import { APPLICATION_TYPES, getApplicationType, type ApplicationTypeId } from "@/lib/membership-types";
 import { LayoutGrid, List, Search } from "lucide-react";
 
 export const Route = createFileRoute("/admin/applications/")({
