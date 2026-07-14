@@ -31,6 +31,10 @@ function NewsEditor() {
   });
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [showPreview, setShowPreview] = useState(false);
+  const headline = useHeadline();
+  const isHeadline = !isNew && headline.headlineId === id;
+  const stats = !isNew ? statsFor(id, form.title) : null;
 
   const existing = useQuery({
     queryKey: ["admin", "news_articles", id],
