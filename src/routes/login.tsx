@@ -1,12 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
-import LoginPage from "../pages/LoginPage";
+import { z } from "zod";
+import MyBaliLoginPage from "../pages/MyBaliLoginPage";
 
 export const Route = createFileRoute("/login")({
+  ssr: false,
+  validateSearch: (search) =>
+    z.object({ dest: z.string().optional() }).parse(search),
   head: () => ({
     meta: [
-      { title: "Member Login — BALI" },
-      { name: "description", content: "Sign in to your BALI member portal." },
+      { title: "Sign in — My BALI" },
+      { name: "description", content: "Sign in to your BALI member account." },
     ],
   }),
-  component: LoginPage,
+  component: MyBaliLoginPage,
 });

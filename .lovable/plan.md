@@ -1,128 +1,109 @@
-# BALI Website — Build Plan
 
-## 1. Confirmed decisions
-- **Workbooks** = source of truth for members, opportunities, invoices, bookings.
-- **Sync cadence**: hourly, bidirectional.
-- **Payments**: keep **Global Payments** (HPP/Realex-style hosted iframe — same as the existing site). Money goes directly to BALI.
-- **Event booking**: members can both **book new events** (write to Workbooks) and **view their bookings** (read from Workbooks).
-- **Member-authored news/events**: in scope, with BALI moderation before publish.
-- **Application forms**: 10 of 13 received, covering Accredited (Contractor, Designer, Supplier, DSO, Group, Int'l Contractor, Int'l Supplier) and Associate (Contractor, Designer, Individual). Still needed: Registered Designer, Student, ROLO Training Provider.
+## Current state
 
-## 2. Data model (Lovable Cloud / Postgres)
+**1) Supabase / backend integrations in use (Lovable Cloud = Supabase under the hood)**
 
-```text
-workbooks_orgs        ← pulled hourly      (id, wb_id, name, vat, reg_no, address, region, disciplines[], category, status, exclude_from_promotion, updated_at)
-workbooks_people      ← pulled hourly      (id, wb_id, org_id, name, email, phone, is_main_contact, login_email)
-workbooks_invoices    ← pulled hourly      (id, wb_id, org_id, amount, status, smartcard_ref, issued_at)
-workbooks_bookings    ← pulled + pushed    (id, wb_id, person_id, event_id, status, paid_at, amount)
-workbooks_opportunities ← pulled hourly    (sales leads / enquiries status)
+Yes — Supabase is connected and used extensively. `.env` has `VITE_SUPABASE_URL` / `VITE_SUPABASE_PUBLISHABLE_KEY`, and 33 files reference it, including:
 
-directory_profiles    ← OUR CMS            (org_id FK, about, logo, banner, whos_who_70w, slug)
-directory_projects    ← OUR CMS            (profile_id, title, description, images[])
-directory_team        ← OUR CMS            (profile_id, name, role, photo)
-directory_accreds     ← OUR CMS            (profile_id, name, logo)   -- max 5
-directory_testimonials ← OUR CMS           (profile_id, quote, author, images[])  -- max 6 imgs
+- Client wrappers: `src/integrations/supabase/{client,client.server,auth-middleware,auth-attacher}.ts`, `src/integrations/lovable/index.ts`
+- App bootstrap: `src/start.ts` (registers `attachSupabaseAuth` middleware)
+- Member auth + portal: `src/pages/LoginPage.tsx` (email/password sign-in), `src/routes/portal.tsx` (guarded via `supabase.auth.getUser`), portal features (`src/lib/portal/api.ts`, `src/lib/portal/courses.ts`, `src/components/portal/*`)
+- Admin area: `src/lib/admin/*`, `src/components/admin/*`, all `src/routes/admin.*.tsx` including `admin.reset-password.tsx`
+- Server functions / public API routes: `src/routes/api/public/*` (membership, conference, workbooks webhook), `src/lib/liss-*.functions.ts`
+- Content: `src/lib/content/db.ts`
 
-events                 ← OUR CMS + booking link to workbooks_bookings
-news_articles          ← OUR CMS (member-authored, moderated)
-member_events          ← OUR CMS (member-authored, moderated)
+**2) Existing login / member area**
 
-profile_stats          ← OUR analytics    (org_id, period, views, logins, search_appearances, profile_views)
-
-membership_applications ← write-only      (category, payload jsonb, file_uploads[], status, workbooks_lead_id)
-                                          -- pushed to Workbooks as Sales Lead
-documents              ← gated library    (file, title, category, allowed_member_types[])
-benefits               ← gated content    (same gating pattern)
-
-user_roles             ← already exists   (admin/editor/member)
-```
-
-Members log in with their Workbooks email; their `org_id` links them to everything they can edit.
-
-## 3. Workbooks sync (hourly cron)
-
-- TanStack server route `src/routes/api/public/hooks/workbooks-sync.ts`
-- pg_cron hits it every hour with the anon key
-- Pulls **People, Organisations, Memberships, Disciplines, Categories, Regions, Opportunities, Invoices, Event Bookings**
-- Pushes **enquiries, applications, profile edits, password changes, new event bookings, SmartCard updates**
-- Uses Workbooks REST API + the API key stored in secrets (`WORKBOOKS_API_KEY`, `WORKBOOKS_BASE_URL`)
-- Failure handling: log + retry next cycle; never block site reads
-
-## 4. Authentication
-- Email/password against Workbooks (validated via API on login, then a Lovable Cloud session is minted)
-- **Spoof login** for BALI staff (admin can impersonate any member for support)
-- **Forgot password** with 24h expiring link (validates against Workbooks, updates both sides)
-
-## 5. Members portal (gated under `/portal`)
-- Dashboard: membership status, renewal date, SmartCard
-- **My profile editor** (writes to directory_* tables, not Workbooks)
-  - About (200 words), Who's Who (70 words), logo, banner
-  - Projects with images
-  - Team members with photos
-  - Accreditations (max 5)
-  - Testimonials (max 6 images)
-- **My bookings** (read from Workbooks)
-- **My invoices** (read from Workbooks)
-- **My stats** (views, logins, profile views, search appearances)
-- **Submit news article** / **Submit event** (queued for BALI approval)
-- **Account**: address, phone, password — pushed to Workbooks
-
-## 6. Public directory
-- `/directory` index + category pages (Contractor, Designer, Supplier, Training)
-- **Keyword search** with weighted fields (company name > disciplines > description)
-- **Postcode search** (geocoded radius) — separate from keyword
-- **ROLO training provider** sub-directory (filtered slice)
-- Listing page combines Workbooks data (contact, disciplines, regions) + our CMS data (projects, team, testimonials, who's who)
-- Honours `exclude_from_promotion` flag from Workbooks
-
-## 7. Event booking + Global Payments
-1. Member browses `/events`, clicks an event
-2. Booking form (attendee details, dietary, etc.) — fields mirror Workbooks booking record
-3. Server creates a pending `workbooks_bookings` row, then redirects to **Global Payments HPP** (hosted iframe matching the existing site)
-4. Global Payments posts back to `/api/public/hooks/global-payments-callback` with HMAC signature → verify → mark booking paid → push to Workbooks as confirmed booking
-5. Confirmation email + visible in "My bookings"
-
-Secrets needed: `GLOBAL_PAYMENTS_MERCHANT_ID`, `GLOBAL_PAYMENTS_SHARED_SECRET`, `GLOBAL_PAYMENTS_ACCOUNT_ID` (sandbox + live pair).
-
-## 8. Membership application forms (13 categories)
-
-Single dynamic form engine driven by JSON schemas. One schema per category captures:
-- **Section 1**: org / individual info, address, regions of operation, registration / VAT, employees, turnover band, telephone, email, website, description (200 words), **disciplines with project value bands** (£5K / £10K / £50K / £100K / Unlimited) — Accredited only
-- **Section 2**: applicant contact (name, role, email, phone)
-- **Section 3**: references (where required)
-- **Section 4**: T&Cs + code of conduct checkboxes, signature, date
-- **File uploads** for supporting docs (insurance, accounts) into `membership-applications` bucket
-
-Submission writes to `membership_applications`, then pushes to Workbooks as a **Sales Lead** with the right category tag. BALI processes it inside Workbooks; sync brings the resulting Org/Person back to the site.
-
-## 9. Gated library
-- **Documents**, **Benefits & Resources**, **Help & Advice (members-only sections)**
-- Each item tagged with allowed membership categories
-- Gate enforced server-side (server function checks role + member category before returning content/file URL)
-
-## 10. SEO + content (already partly built)
-- Per-route titles, descriptions, og:image
-- JSON-LD: Organization sitewide, Event on event pages, Article on news, FAQPage on plant-health FAQ
-- Sitemap route generated from DB
-
-## 11. Build order (rough sequencing)
-
-```text
-Week 1  Workbooks sync skeleton + auth against Workbooks + portal shell
-Week 2  My profile editor + directory CMS tables + public directory read
-Week 3  Event booking + Global Payments HPP integration + callbacks
-Week 4  Membership application engine (all 13 categories) + Sales Lead push
-Week 5  Member-authored news/events + moderation queue + gated docs/benefits
-Week 6  Postcode/keyword search, profile stats, spoof login, polish, go-live
-```
-
-## 12. Open items to confirm
-1. **Workbooks API key + base URL** — once you have it from Workbooks support, add via the secret tool.
-2. **Global Payments credentials** — Merchant ID, Shared Secret, Account ID (sandbox first, then live).
-3. **Remaining 3 application forms** — Registered Designer, Student, ROLO Training Provider.
-4. **Email sender domain** — for booking confirmations, application receipts, password reset. Need a verified domain (e.g. `noreply@bali.org.uk`).
-5. **Geocoding provider** — Google Maps, Mapbox, or postcodes.io (free, UK-only — recommend this).
+Yes:
+- `/login` → `src/pages/LoginPage.tsx` — real Supabase email+password login, redirects to `/portal`
+- `/portal` → `src/pages/PortalPage.tsx` — the member dashboard (Directory editor, News submit, Training Provider Hub, notifications), guarded by Supabase `getUser()`
+- `/admin/*` — separate staff admin area with its own Supabase-backed login/reset
+- No `/forgotten-password` or `/reset-password` route exists at the member level (only `/admin/reset-password`)
 
 ---
 
-Approve this and I'll start with Week 1: data model migration + Workbooks sync route + auth wiring, behind a feature flag so it doesn't disrupt the live site.
+## Plan — add a parallel, frontend-only "My BALI" auth
+
+Scope note: The user wants no Supabase for auth **for the new My BALI area**. The existing Supabase-backed `/portal`, `/admin/*`, and public API routes are load-bearing (directory editor, training hub, admin CMS, membership application webhooks). Ripping Supabase out project-wide is a much larger job and would break unrelated features. This plan therefore:
+
+- Builds the new My BALI flow as a standalone, mock-auth area, isolated from Supabase.
+- Leaves `/portal`, `/admin/*`, and API routes untouched.
+- Assumption (flag if wrong): the existing `/login` + `/portal` remain as-is; the new area lives at `/my-bali` with its own `/login`, `/forgotten-password`, `/reset-password`.
+
+If you actually want to **replace** the current member portal entirely (delete `/portal` and its Supabase wiring), say so and I'll extend the plan — that's a bigger change.
+
+### Mock auth service
+
+`src/services/auth.ts` — single module, no React, no network. Exposes:
+
+```
+login(email, password)             -> Promise<User>
+logout()                           -> Promise<void>
+forgotPassword(email)              -> Promise<{ resetToken: string }>  // demo returns token
+resetPassword(token, newPassword)  -> Promise<void>
+changePassword(oldPw, newPw)       -> Promise<void>
+getCurrentUser()                   -> User | null
+subscribe(listener)                -> unsubscribe                       // for context
+```
+
+Details:
+- In-memory demo users seeded at module load (e.g. `demo@bali.org.uk` / `password123`).
+- Session persisted to `localStorage` under `mybali_session_v1` so refresh keeps you signed in; SSR-safe (guard `typeof window`).
+- Reset tokens stored in-memory with short TTL; `forgotPassword` logs the reset URL to the console for demo purposes.
+- Every exported function starts with `// TODO: replace with real backend API call to <endpoint>`.
+- Artificial ~300ms delay so loading states are testable.
+
+### React auth context
+
+`src/services/auth-context.tsx` — `<MyBaliAuthProvider>` + `useMyBaliAuth()` hook. Wraps the service, exposes `{ user, loading, login, logout, ... }`, subscribes to the service so all consumers update together. Mounted inside `__root.tsx` (alongside the existing `QueryClientProvider`) so it's available everywhere but adds zero network traffic.
+
+### Routes (TanStack Start, file-based)
+
+Public:
+- `src/routes/login.tsx` — **already exists and is Supabase-backed**. Options:
+  - (A) Repoint it to the mock service (breaks current members).
+  - (B) Recommended: leave existing `/login` alone; put the new mock login at `/login` only if you confirm you want to replace it. Otherwise use `/my-bali/login`.
+  - Assumption for this plan: **replace `/login` with the mock version** since the brief says "Login (/login)". I'll keep the old Supabase login component around as `LoginPageLegacy.tsx` for reference but unrouted. Confirm if you'd rather keep both.
+- `src/routes/forgotten-password.tsx` — email form → `forgotPassword()` → success message ("If the email exists, we've sent a reset link"); in dev also surface the demo reset link.
+- `src/routes/reset-password.tsx` — reads `?token=` search param, new-password + confirm form → `resetPassword()` → redirect to `/login`.
+
+Protected:
+- `src/routes/_mybali/route.tsx` — pathless layout, `ssr: false`, `beforeLoad` reads `getCurrentUser()`; if null, `throw redirect({ to: '/login', search: { dest: location.href } })`.
+- `src/routes/_mybali/my-bali.tsx` → URL `/my-bali` — dashboard shell: welcome, account summary, "Change password", "Sign out". Styled to match existing portal (Tailwind, `bali-blue`, same card/`rounded-2xl shadow-lg` treatment as `LoginPage.tsx`).
+
+Login redirect-back: `/login` accepts `?dest=` search param (validated same-origin path), and after successful `login()` navigates to `dest` or `/my-bali`.
+
+### Styling / consistency
+
+- Reuse existing Tailwind tokens (`bali-blue`, `bali-grass`, `bali-slate`), the utility bar + split-panel layout already in `LoginPage.tsx`, and the same header/footer treatment for the three new auth pages so they feel like one family.
+- The `/my-bali` dashboard reuses the portal's card patterns but is standalone (does not import Supabase-touching components).
+
+### Non-goals / explicit exclusions
+
+- No changes to `/portal`, `/admin/*`, `src/lib/portal/*`, `src/lib/admin/*`, `src/routes/api/public/*`, or any Supabase integration file.
+- No env-var changes, no migrations.
+- No real email sending; forgotten-password shows the reset token/link in the UI in dev only.
+
+---
+
+## Files to add
+
+- `src/services/auth.ts` — mock auth service
+- `src/services/auth-context.tsx` — provider + hook
+- `src/routes/forgotten-password.tsx`
+- `src/routes/reset-password.tsx`
+- `src/routes/_mybali/route.tsx` — protected pathless layout
+- `src/routes/_mybali/my-bali.tsx` — dashboard (URL `/my-bali`)
+- `src/components/mybali/AuthLayout.tsx` — shared split-panel shell reused by login/forgotten/reset
+
+## Files to change
+
+- `src/routes/__root.tsx` — wrap `<Outlet />` in `<MyBaliAuthProvider>`
+- `src/routes/login.tsx` — swap component to new mock-auth `LoginPage`, accept `?dest=` (only if you confirm replacing the existing member login)
+- `src/pages/LoginPage.tsx` — either rewrite for mock auth, or rename to `LoginPageLegacy.tsx` and add a new `MyBaliLoginPage.tsx` (decision hinges on the question above)
+
+## Open questions before I build
+
+1. **Replace or coexist?** Should the new mock `/login` replace the current Supabase member login, or live at a different path so the existing `/portal` keeps working?
+2. **Delete `/portal`?** If mock auth replaces Supabase auth, do you also want `/portal` (Directory editor, Training Provider Hub, notifications) removed or left dormant? Those features rely on Supabase and will error if the login no longer produces a Supabase session.
+3. Demo credentials to seed (default: `demo@bali.org.uk` / `password123`)?

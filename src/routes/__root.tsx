@@ -13,6 +13,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteGate } from "../components/SiteGate";
+import { MyBaliAuthProvider } from "../services/auth-context";
 
 
 function NotFoundComponent() {
@@ -141,7 +142,9 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {showContent ? <Outlet /> : showGate ? <SiteGate onUnlock={() => setUnlocked(true)} /> : null}
+      <MyBaliAuthProvider>
+        {showContent ? <Outlet /> : showGate ? <SiteGate onUnlock={() => setUnlocked(true)} /> : null}
+      </MyBaliAuthProvider>
     </QueryClientProvider>
   );
 }
