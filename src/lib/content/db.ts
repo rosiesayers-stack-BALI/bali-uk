@@ -107,6 +107,18 @@ export const fetchEventsList = async (): Promise<EventRow[]> => {
   );
 };
 
+// Returns every published event (upcoming + past), for pages that need to
+// offer a future/past toggle. TODO: replace with a CMS/API call when wired up.
+export const fetchAllEventsList = async (): Promise<EventRow[]> =>
+  handle(
+    await supabase
+      .from("events")
+      .select("*")
+      .eq("published", true)
+      .order("iso_date", { ascending: true, nullsFirst: false })
+      .order("sort_order", { ascending: false }),
+  );
+
 
 export const fetchEventBySlug = async (slug: string): Promise<EventRow | null> => {
   const { data, error } = await supabase
