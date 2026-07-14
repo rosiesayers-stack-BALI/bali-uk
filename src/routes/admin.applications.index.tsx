@@ -93,6 +93,11 @@ function ApplicationsIndex() {
             <option value="">All stages</option>
             {ALL_STAGES.map((s) => <option key={s} value={s}>{s}</option>)}
           </select>
+          <select value={typeFilter} onChange={(e) => setTypeFilter(e.target.value as ApplicationTypeId | "")}
+            className="rounded-lg border border-gray-300 px-3 py-2 text-sm bg-white" aria-label="Filter by application type">
+            <option value="">All application types</option>
+            {APPLICATION_TYPES.map((t) => <option key={t.id} value={t.id}>{t.label}</option>)}
+          </select>
           <span className="text-xs text-gray-500 ml-auto">
             <strong className="text-bali-slate">{filtered.length}</strong> application{filtered.length === 1 ? "" : "s"}
           </span>
