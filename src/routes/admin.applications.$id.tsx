@@ -7,7 +7,9 @@ import {
   useAppOverlays, PIPELINE_STAGES, SIDE_STAGES,
   type ApplicationStage,
 } from "@/lib/admin/applications";
-import { Mail, Phone, MapPin, Briefcase, Check, X, Link as LinkIcon, Copy, PauseCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Briefcase, Check, X, Link as LinkIcon, Copy, PauseCircle, Tag } from "lucide-react";
+import { ApplicationTypeBadge } from "@/components/admin/PeopleOrgList";
+import { getApplicationType } from "@/lib/membership-types";
 
 export const Route = createFileRoute("/admin/applications/$id")({
   component: AppDetail,
