@@ -129,6 +129,7 @@ function EventsIndex() {
   const filtered = useMemo(() => {
     const needle = dq.trim().toLowerCase();
     return events.filter((e: EventRow) => {
+      if (isWebinar(e)) return false; // webinars live only in the spotlight section
       if (tense === "future" && isPast(e)) return false;
       if (tense === "past" && !isPast(e)) return false;
       if (type !== "all" && effectiveType(e) !== type) return false;
