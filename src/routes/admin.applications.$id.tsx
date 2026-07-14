@@ -84,7 +84,13 @@ function AppDetailBody({
               <Field icon={Mail} label="Email" value={app.email ? <a href={`mailto:${app.email}`} className="text-bali-blue hover:underline">{app.email}</a> : "—"} />
               <Field icon={Phone} label="Phone" value={app.phone || "—"} />
               <Field icon={MapPin} label="Location" value={[app.town, app.county, app.region].filter(Boolean).join(" · ") || "—"} />
-              <Field icon={Briefcase} label="Discipline / Category" value={app.discipline} />
+              <Field icon={Briefcase} label="Discipline" value={app.discipline} />
+              <Field icon={Tag} label="Application type" value={
+                <span className="inline-flex items-center gap-2">
+                  <ApplicationTypeBadge id={app.applicationType} />
+                  <span className="text-xs text-gray-500">{getApplicationType(app.applicationType)?.label ?? app.category}</span>
+                </span>
+              } />
             </dl>
           </section>
 
