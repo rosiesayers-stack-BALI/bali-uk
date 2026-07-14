@@ -141,6 +141,7 @@ import { Route as ApiPublicMembershipApplicationRouteImport } from './routes/api
 import { Route as ApiPublicConferenceInterestRouteImport } from './routes/api/public/conference-interest'
 import { Route as AdminTrainingIdRouteImport } from './routes/admin.training.$id'
 import { Route as AdminPolicyIdRouteImport } from './routes/admin.policy.$id'
+import { Route as AdminPeopleIdRouteImport } from './routes/admin.people.$id'
 import { Route as AdminNewsIdRouteImport } from './routes/admin.news.$id'
 import { Route as AdminLissIdRouteImport } from './routes/admin.liss.$id'
 import { Route as AdminEventsIdRouteImport } from './routes/admin.events.$id'
@@ -848,6 +849,11 @@ const AdminPolicyIdRoute = AdminPolicyIdRouteImport.update({
   path: '/policy/$id',
   getParentRoute: () => AdminRoute,
 } as any)
+const AdminPeopleIdRoute = AdminPeopleIdRouteImport.update({
+  id: '/people/$id',
+  path: '/people/$id',
+  getParentRoute: () => AdminRoute,
+} as any)
 const AdminNewsIdRoute = AdminNewsIdRouteImport.update({
   id: '/news/$id',
   path: '/news/$id',
@@ -949,6 +955,7 @@ export interface FileRoutesByFullPath {
   '/admin/events/$id': typeof AdminEventsIdRoute
   '/admin/liss/$id': typeof AdminLissIdRoute
   '/admin/news/$id': typeof AdminNewsIdRoute
+  '/admin/people/$id': typeof AdminPeopleIdRoute
   '/admin/policy/$id': typeof AdminPolicyIdRoute
   '/admin/training/$id': typeof AdminTrainingIdRoute
   '/api/public/conference-interest': typeof ApiPublicConferenceInterestRoute
@@ -1087,6 +1094,7 @@ export interface FileRoutesByTo {
   '/admin/events/$id': typeof AdminEventsIdRoute
   '/admin/liss/$id': typeof AdminLissIdRoute
   '/admin/news/$id': typeof AdminNewsIdRoute
+  '/admin/people/$id': typeof AdminPeopleIdRoute
   '/admin/policy/$id': typeof AdminPolicyIdRoute
   '/admin/training/$id': typeof AdminTrainingIdRoute
   '/api/public/conference-interest': typeof ApiPublicConferenceInterestRoute
@@ -1229,6 +1237,7 @@ export interface FileRoutesById {
   '/admin/events/$id': typeof AdminEventsIdRoute
   '/admin/liss/$id': typeof AdminLissIdRoute
   '/admin/news/$id': typeof AdminNewsIdRoute
+  '/admin/people/$id': typeof AdminPeopleIdRoute
   '/admin/policy/$id': typeof AdminPolicyIdRoute
   '/admin/training/$id': typeof AdminTrainingIdRoute
   '/api/public/conference-interest': typeof ApiPublicConferenceInterestRoute
@@ -1372,6 +1381,7 @@ export interface FileRouteTypes {
     | '/admin/events/$id'
     | '/admin/liss/$id'
     | '/admin/news/$id'
+    | '/admin/people/$id'
     | '/admin/policy/$id'
     | '/admin/training/$id'
     | '/api/public/conference-interest'
@@ -1510,6 +1520,7 @@ export interface FileRouteTypes {
     | '/admin/events/$id'
     | '/admin/liss/$id'
     | '/admin/news/$id'
+    | '/admin/people/$id'
     | '/admin/policy/$id'
     | '/admin/training/$id'
     | '/api/public/conference-interest'
@@ -1651,6 +1662,7 @@ export interface FileRouteTypes {
     | '/admin/events/$id'
     | '/admin/liss/$id'
     | '/admin/news/$id'
+    | '/admin/people/$id'
     | '/admin/policy/$id'
     | '/admin/training/$id'
     | '/api/public/conference-interest'
@@ -2718,6 +2730,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminPolicyIdRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/admin/people/$id': {
+      id: '/admin/people/$id'
+      path: '/people/$id'
+      fullPath: '/admin/people/$id'
+      preLoaderRoute: typeof AdminPeopleIdRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/admin/news/$id': {
       id: '/admin/news/$id'
       path: '/news/$id'
@@ -2776,6 +2795,7 @@ interface AdminRouteChildren {
   AdminEventsIdRoute: typeof AdminEventsIdRoute
   AdminLissIdRoute: typeof AdminLissIdRoute
   AdminNewsIdRoute: typeof AdminNewsIdRoute
+  AdminPeopleIdRoute: typeof AdminPeopleIdRoute
   AdminPolicyIdRoute: typeof AdminPolicyIdRoute
   AdminTrainingIdRoute: typeof AdminTrainingIdRoute
   AdminEventsIndexRoute: typeof AdminEventsIndexRoute
@@ -2794,6 +2814,7 @@ const AdminRouteChildren: AdminRouteChildren = {
   AdminEventsIdRoute: AdminEventsIdRoute,
   AdminLissIdRoute: AdminLissIdRoute,
   AdminNewsIdRoute: AdminNewsIdRoute,
+  AdminPeopleIdRoute: AdminPeopleIdRoute,
   AdminPolicyIdRoute: AdminPolicyIdRoute,
   AdminTrainingIdRoute: AdminTrainingIdRoute,
   AdminEventsIndexRoute: AdminEventsIndexRoute,
