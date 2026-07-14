@@ -69,6 +69,7 @@ export type Application = {
   region: string;
   discipline: string;
   category: string;
+  applicationType: ApplicationTypeId;
   dateApplied: string;
   stage: ApplicationStage;
   onboarding: OnboardingStatus;
