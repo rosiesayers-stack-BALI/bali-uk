@@ -412,10 +412,10 @@ function EventCard({ event }: { event: EventRow }) {
       </div>
 
       <div className="p-5 flex-1 flex flex-col">
-        {showSecondaryType ? (
-          <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-2">{t} · {region}</p>
+        {t === "BALI Regional Event" ? (
+          <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-2">Regional Connect</p>
         ) : (
-          <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-2">BALI Regional Event</p>
+          <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-2">{region}</p>
         )}
         <h3 className="font-bold text-gray-900 text-lg leading-snug group-hover:text-bali-blue transition-colors">
           {booking ? (
