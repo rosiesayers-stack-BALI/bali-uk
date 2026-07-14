@@ -5,7 +5,10 @@ import { supabase } from "@/integrations/supabase/client";
 import { PageHeader } from "@/components/admin/PageHeader";
 import { ImageField } from "@/components/admin/ImageField";
 import { ParagraphsField } from "@/components/admin/ParagraphsField";
+import { NewsPreviewDialog } from "@/components/admin/NewsPreview";
+import { setHeadline, clearHeadline, useHeadline, statsFor } from "@/lib/admin/news-stats";
 import { slugify, toIsoDate } from "@/lib/admin/util";
+import { Eye, Sparkles, Star, TrendingUp } from "lucide-react";
 
 export const Route = createFileRoute("/admin/news/$id")({
   component: NewsEditor,
