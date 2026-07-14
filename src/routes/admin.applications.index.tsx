@@ -46,11 +46,17 @@ function ApplicationsIndex() {
   const [view, setView] = useState<"board" | "list">("board");
   const [search, setSearch] = useState("");
   const [stageFilter, setStageFilter] = useState<ApplicationStage | "">("");
+  const [typeFilter, setTypeFilter] = useState<ApplicationTypeId | "">("");
   const [dragId, setDragId] = useState<string | null>(null);
 
   const filtered = applications.filter((a) => {
-    if (search && !(a.applicantName.toLowerCase().includes(search.toLowerCase()) || a.organisation.toLowerCase().includes(search.toLowerCase()))) return false;
+    if (search) {
+      const s = search.toLowerCase();
+      const typeLabel = getApplicationType(a.applicationType)?.label ?? "";
+      if (!(a.applicantName.toLowerCase().includes(s) || a.organisation.toLowerCase().includes(s) || typeLabel.toLowerCase().includes(s))) return false;
+    }
     if (stageFilter && a.stage !== stageFilter) return false;
+    if (typeFilter && a.applicationType !== typeFilter) return false;
     return true;
   });
 
