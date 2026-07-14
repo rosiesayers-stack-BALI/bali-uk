@@ -40,6 +40,7 @@ export type Person = {
   organisationId: string | null;
   status: MembershipStatus;
   joined: string;
+  applicationType: ApplicationTypeId; // persists after approval
 };
 
 export type Organisation = {
@@ -54,6 +55,7 @@ export type Organisation = {
   status: MembershipStatus;
   memberSince: string;
   size: string;
+  applicationType: ApplicationTypeId; // persists after approval
 };
 
 const REGIONS: Region[] = [
