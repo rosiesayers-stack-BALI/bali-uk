@@ -155,6 +155,7 @@ function ApplicationsIndex() {
                   <tr>
                     <th className="px-4 py-3">Applicant</th>
                     <th className="px-4 py-3">Organisation</th>
+                    <th className="px-4 py-3">Application type</th>
                     <th className="px-4 py-3">Location</th>
                     <th className="px-4 py-3">Discipline</th>
                     <th className="px-4 py-3">Applied</th>
@@ -169,6 +170,7 @@ function ApplicationsIndex() {
                         <Link to="/admin/applications/$id" params={{ id: a.id }} className="text-bali-slate hover:text-bali-blue">{a.applicantName}</Link>
                       </td>
                       <td className="px-4 py-3 text-gray-600">{a.organisation}</td>
+                      <td className="px-4 py-3"><ApplicationTypeBadge id={a.applicationType} /></td>
                       <td className="px-4 py-3 text-gray-600">{[a.town, a.region].filter(Boolean).join(", ") || "—"}</td>
                       <td className="px-4 py-3 text-gray-600">{a.discipline}</td>
                       <td className="px-4 py-3 text-gray-600 whitespace-nowrap">{new Date(a.dateApplied).toLocaleDateString("en-GB")}</td>
