@@ -13,7 +13,6 @@ const TABS = [
   { to: "/my-bali/profile/disciplines", label: "Disciplines" },
   { to: "/my-bali/profile/directory", label: "Directory listing" },
   { to: "/my-bali/profile/password", label: "Change password" },
-  { to: "/my-bali/profile/password", label: "Change password" },
   { to: "/my-bali/profile/bookings", label: "Event bookings" },
 ] as const;
 
