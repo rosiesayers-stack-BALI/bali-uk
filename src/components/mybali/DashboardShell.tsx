@@ -8,18 +8,24 @@ import {
   FolderOpen,
   FileText,
   Newspaper,
+  CalendarDays,
   Search,
   LogOut,
+  BadgeCheck,
+  ExternalLink,
 } from "lucide-react";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 import CookieBanner from "../CookieBanner";
 import { useMyBaliAuth } from "../../services/auth-context";
+import { ORGANISATION, MEMBERSHIP } from "../../services/mybali-data";
 
 const NAV = [
   { to: "/my-bali", label: "Dashboard", icon: LayoutDashboard, exact: true },
   { to: "/my-bali/profile", label: "My profile", icon: UserCircle },
   { to: "/my-bali/statistics", label: "Profile statistics", icon: BarChart3 },
+  { to: "/my-bali/news", label: "News", icon: Newspaper },
+  { to: "/my-bali/events", label: "Events", icon: CalendarDays },
   { to: "/my-bali/benefits", label: "My benefits", icon: Gift },
   { to: "/my-bali/resources", label: "My resources", icon: FolderOpen },
   { to: "/my-bali/technical-documents", label: "Technical documents", icon: FileText },
@@ -47,26 +53,66 @@ export default function DashboardShell({ children }: { children: ReactNode }) {
   };
 
   const active = NAV.find((n) => isActive(n.to, "exact" in n ? n.exact : false));
+  const firstName = user?.name?.split(" ")[0] ?? "";
+  const isDashboardHome = pathname === "/my-bali";
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       <Navbar />
 
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-bali-slate via-bali-blue to-bali-green text-white">
-        <div className="max-w-7xl mx-auto px-4 py-10 lg:py-14 grid gap-6 md:grid-cols-[minmax(0,1fr)_auto] md:items-end">
-          <div className="min-w-0">
-            <p className="text-bali-grass text-xs uppercase tracking-[0.2em] font-semibold mb-2">
-              My BALI · Member area
-            </p>
-            <h1 className="text-3xl lg:text-4xl font-bold tracking-tight">
-              Welcome{user?.name ? `, ${user.name}` : ""}
-            </h1>
-            <p className="mt-2 text-white/80 text-sm max-w-2xl">
-              {active?.label ?? "Dashboard"} — manage your BALI membership, profile and content.
-            </p>
+      {/* Personalised hero with member brand accent */}
+      <section
+        className="relative text-white overflow-hidden"
+        style={{
+          background: `linear-gradient(135deg, ${ORGANISATION.brandAccent} 0%, #1e3a5f 55%, #2c5282 100%)`,
+        }}
+      >
+        {/* soft brand-colour band */}
+        <div
+          aria-hidden
+          className="absolute inset-y-0 right-0 w-1/2 opacity-20 pointer-events-none"
+          style={{
+            background: `radial-gradient(circle at 70% 40%, ${ORGANISATION.brandAccentSoft}, transparent 60%)`,
+          }}
+        />
+        <div className="relative max-w-7xl mx-auto px-4 py-8 lg:py-10 grid gap-6 md:grid-cols-[auto_minmax(0,1fr)_auto] md:items-center">
+          {/* Company logo tile */}
+          <div className="hidden sm:flex items-center justify-center bg-white/95 rounded-xl shadow-lg p-3 h-20 w-40 shrink-0">
+            <img
+              src={ORGANISATION.logoUrl}
+              alt={`${ORGANISATION.name} logo`}
+              className="max-h-full max-w-full object-contain"
+            />
           </div>
-          <form onSubmit={onSearch} role="search" className="w-full md:w-80">
+
+          <div className="min-w-0">
+            <p className="text-white/70 text-xs uppercase tracking-[0.2em] font-semibold mb-2">
+              My BALI · {ORGANISATION.name}
+            </p>
+            <h1 className="text-2xl lg:text-3xl font-bold tracking-tight">
+              Welcome back{firstName ? `, ${firstName}` : ""}
+            </h1>
+            <p className="mt-1 text-white/80 text-sm max-w-2xl">
+              {isDashboardHome
+                ? `Here's what's happening across your membership today.`
+                : `${active?.label ?? "Dashboard"} — manage your BALI membership.`}
+            </p>
+
+            {isDashboardHome && (
+              <div className="mt-4 flex flex-wrap gap-2">
+                <HeroChip icon={BadgeCheck} label={`${MEMBERSHIP.category} · ${MEMBERSHIP.status}`} />
+                <HeroChip icon={CalendarDays} label={`Renews ${MEMBERSHIP.expiry}`} />
+                <Link
+                  to={MEMBERSHIP.directoryUrl}
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-white text-bali-slate hover:bg-white/90 transition"
+                >
+                  View directory listing <ExternalLink className="w-3 h-3" aria-hidden />
+                </Link>
+              </div>
+            )}
+          </div>
+
+          <form onSubmit={onSearch} role="search" className="w-full md:w-72">
             <label htmlFor="mybali-search" className="sr-only">Search My BALI</label>
             <div className="flex bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg overflow-hidden focus-within:ring-2 focus-within:ring-white/40">
               <Search className="w-4 h-4 text-white/70 ml-3 self-center shrink-0" aria-hidden />
@@ -136,6 +182,15 @@ export default function DashboardShell({ children }: { children: ReactNode }) {
       <Footer />
       <CookieBanner />
     </div>
+  );
+}
+
+function HeroChip({ icon: Icon, label }: { icon: React.ComponentType<{ className?: string }>; label: string }) {
+  return (
+    <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-white/15 border border-white/25 text-white">
+      <Icon className="w-3.5 h-3.5" aria-hidden />
+      {label}
+    </span>
   );
 }
 

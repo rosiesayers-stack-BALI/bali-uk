@@ -34,6 +34,8 @@ import { Route as MyBaliTechnicalDocumentsRouteImport } from './routes/my-bali.t
 import { Route as MyBaliStatisticsRouteImport } from './routes/my-bali.statistics'
 import { Route as MyBaliResourcesRouteImport } from './routes/my-bali.resources'
 import { Route as MyBaliProfileRouteImport } from './routes/my-bali.profile'
+import { Route as MyBaliNewsRouteImport } from './routes/my-bali.news'
+import { Route as MyBaliEventsRouteImport } from './routes/my-bali.events'
 import { Route as MyBaliContentRouteImport } from './routes/my-bali.content'
 import { Route as MyBaliBenefitsRouteImport } from './routes/my-bali.benefits'
 import { Route as MembershipHardshipFundRouteImport } from './routes/membership.hardship-fund'
@@ -269,6 +271,16 @@ const MyBaliResourcesRoute = MyBaliResourcesRouteImport.update({
 const MyBaliProfileRoute = MyBaliProfileRouteImport.update({
   id: '/profile',
   path: '/profile',
+  getParentRoute: () => MyBaliRoute,
+} as any)
+const MyBaliNewsRoute = MyBaliNewsRouteImport.update({
+  id: '/news',
+  path: '/news',
+  getParentRoute: () => MyBaliRoute,
+} as any)
+const MyBaliEventsRoute = MyBaliEventsRouteImport.update({
+  id: '/events',
+  path: '/events',
   getParentRoute: () => MyBaliRoute,
 } as any)
 const MyBaliContentRoute = MyBaliContentRouteImport.update({
@@ -905,6 +917,8 @@ export interface FileRoutesByFullPath {
   '/membership/hardship-fund': typeof MembershipHardshipFundRoute
   '/my-bali/benefits': typeof MyBaliBenefitsRoute
   '/my-bali/content': typeof MyBaliContentRoute
+  '/my-bali/events': typeof MyBaliEventsRoute
+  '/my-bali/news': typeof MyBaliNewsRoute
   '/my-bali/profile': typeof MyBaliProfileRouteWithChildren
   '/my-bali/resources': typeof MyBaliResourcesRoute
   '/my-bali/statistics': typeof MyBaliStatisticsRoute
@@ -1040,6 +1054,8 @@ export interface FileRoutesByTo {
   '/membership/hardship-fund': typeof MembershipHardshipFundRoute
   '/my-bali/benefits': typeof MyBaliBenefitsRoute
   '/my-bali/content': typeof MyBaliContentRoute
+  '/my-bali/events': typeof MyBaliEventsRoute
+  '/my-bali/news': typeof MyBaliNewsRoute
   '/my-bali/resources': typeof MyBaliResourcesRoute
   '/my-bali/statistics': typeof MyBaliStatisticsRoute
   '/my-bali/technical-documents': typeof MyBaliTechnicalDocumentsRoute
@@ -1177,6 +1193,8 @@ export interface FileRoutesById {
   '/membership/hardship-fund': typeof MembershipHardshipFundRoute
   '/my-bali/benefits': typeof MyBaliBenefitsRoute
   '/my-bali/content': typeof MyBaliContentRoute
+  '/my-bali/events': typeof MyBaliEventsRoute
+  '/my-bali/news': typeof MyBaliNewsRoute
   '/my-bali/profile': typeof MyBaliProfileRouteWithChildren
   '/my-bali/resources': typeof MyBaliResourcesRoute
   '/my-bali/statistics': typeof MyBaliStatisticsRoute
@@ -1316,6 +1334,8 @@ export interface FileRouteTypes {
     | '/membership/hardship-fund'
     | '/my-bali/benefits'
     | '/my-bali/content'
+    | '/my-bali/events'
+    | '/my-bali/news'
     | '/my-bali/profile'
     | '/my-bali/resources'
     | '/my-bali/statistics'
@@ -1451,6 +1471,8 @@ export interface FileRouteTypes {
     | '/membership/hardship-fund'
     | '/my-bali/benefits'
     | '/my-bali/content'
+    | '/my-bali/events'
+    | '/my-bali/news'
     | '/my-bali/resources'
     | '/my-bali/statistics'
     | '/my-bali/technical-documents'
@@ -1587,6 +1609,8 @@ export interface FileRouteTypes {
     | '/membership/hardship-fund'
     | '/my-bali/benefits'
     | '/my-bali/content'
+    | '/my-bali/events'
+    | '/my-bali/news'
     | '/my-bali/profile'
     | '/my-bali/resources'
     | '/my-bali/statistics'
@@ -1919,6 +1943,20 @@ declare module '@tanstack/react-router' {
       path: '/profile'
       fullPath: '/my-bali/profile'
       preLoaderRoute: typeof MyBaliProfileRouteImport
+      parentRoute: typeof MyBaliRoute
+    }
+    '/my-bali/news': {
+      id: '/my-bali/news'
+      path: '/news'
+      fullPath: '/my-bali/news'
+      preLoaderRoute: typeof MyBaliNewsRouteImport
+      parentRoute: typeof MyBaliRoute
+    }
+    '/my-bali/events': {
+      id: '/my-bali/events'
+      path: '/events'
+      fullPath: '/my-bali/events'
+      preLoaderRoute: typeof MyBaliEventsRouteImport
       parentRoute: typeof MyBaliRoute
     }
     '/my-bali/content': {
@@ -2757,6 +2795,8 @@ const MyBaliProfileRouteWithChildren = MyBaliProfileRoute._addFileChildren(
 interface MyBaliRouteChildren {
   MyBaliBenefitsRoute: typeof MyBaliBenefitsRoute
   MyBaliContentRoute: typeof MyBaliContentRoute
+  MyBaliEventsRoute: typeof MyBaliEventsRoute
+  MyBaliNewsRoute: typeof MyBaliNewsRoute
   MyBaliProfileRoute: typeof MyBaliProfileRouteWithChildren
   MyBaliResourcesRoute: typeof MyBaliResourcesRoute
   MyBaliStatisticsRoute: typeof MyBaliStatisticsRoute
@@ -2767,6 +2807,8 @@ interface MyBaliRouteChildren {
 const MyBaliRouteChildren: MyBaliRouteChildren = {
   MyBaliBenefitsRoute: MyBaliBenefitsRoute,
   MyBaliContentRoute: MyBaliContentRoute,
+  MyBaliEventsRoute: MyBaliEventsRoute,
+  MyBaliNewsRoute: MyBaliNewsRoute,
   MyBaliProfileRoute: MyBaliProfileRouteWithChildren,
   MyBaliResourcesRoute: MyBaliResourcesRoute,
   MyBaliStatisticsRoute: MyBaliStatisticsRoute,
