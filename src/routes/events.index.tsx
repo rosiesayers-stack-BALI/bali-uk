@@ -115,7 +115,7 @@ function EventsIndex() {
   // derived options
   const allTypes = useMemo(() => {
     const s = new Set<string>();
-    events.forEach((e: EventRow) => s.add(effectiveType(e)));
+    events.forEach((e: EventRow) => { if (!isWebinar(e)) s.add(effectiveType(e)); });
     return Array.from(s).sort();
   }, [events]);
 
