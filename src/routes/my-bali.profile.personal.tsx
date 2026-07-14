@@ -94,6 +94,6 @@ export function Banner({ children }: { children: React.ReactNode }) {
 
 export function FieldStyles() {
   return (
-    <style>{`.input{width:100%;border:1px solid #d1d5db;border-radius:0.5rem;padding:0.55rem 0.75rem;font-size:0.875rem;background:#fff}.input:focus{outline:none;border-color:#1e3a8a;box-shadow:0 0 0 3px rgba(30,58,138,0.15)}`}</style>
+    <style>{`.input{width:100%;border:1px solid #e5e7eb;border-radius:0.5rem;padding:0.55rem 0.75rem;font-size:0.875rem;background:#fff;color:#111827;transition:border-color .15s,box-shadow .15s}.input:hover{border-color:#d1d5db}.input:focus{outline:none;border-color:#21509A;box-shadow:0 0 0 3px rgba(33,80,154,0.18)}.input:disabled{background:#f9fafb;color:#6b7280}`}</style>
   );
 }
