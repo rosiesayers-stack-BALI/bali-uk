@@ -10,8 +10,11 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SearchRouteImport } from './routes/search'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as PortalRouteImport } from './routes/portal'
+import { Route as MyBaliRouteImport } from './routes/my-bali'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as ForgottenPasswordRouteImport } from './routes/forgotten-password'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as SplatRouteImport } from './routes/$'
@@ -132,14 +135,29 @@ const SearchRoute = SearchRouteImport.update({
   path: '/search',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PortalRoute = PortalRouteImport.update({
   id: '/portal',
   path: '/portal',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MyBaliRoute = MyBaliRouteImport.update({
+  id: '/my-bali',
+  path: '/my-bali',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForgottenPasswordRoute = ForgottenPasswordRouteImport.update({
+  id: '/forgotten-password',
+  path: '/forgotten-password',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -758,8 +776,11 @@ export interface FileRoutesByFullPath {
   '/$': typeof SplatRoute
   '/admin': typeof AdminRouteWithChildren
   '/contact': typeof ContactRoute
+  '/forgotten-password': typeof ForgottenPasswordRoute
   '/login': typeof LoginRoute
+  '/my-bali': typeof MyBaliRoute
   '/portal': typeof PortalRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/search': typeof SearchRoute
   '/about/awards': typeof AboutAwardsRoute
   '/admin/reset-password': typeof AdminResetPasswordRoute
@@ -876,8 +897,11 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/contact': typeof ContactRoute
+  '/forgotten-password': typeof ForgottenPasswordRoute
   '/login': typeof LoginRoute
+  '/my-bali': typeof MyBaliRoute
   '/portal': typeof PortalRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/search': typeof SearchRoute
   '/about/awards': typeof AboutAwardsRoute
   '/admin/reset-password': typeof AdminResetPasswordRoute
@@ -996,8 +1020,11 @@ export interface FileRoutesById {
   '/$': typeof SplatRoute
   '/admin': typeof AdminRouteWithChildren
   '/contact': typeof ContactRoute
+  '/forgotten-password': typeof ForgottenPasswordRoute
   '/login': typeof LoginRoute
+  '/my-bali': typeof MyBaliRoute
   '/portal': typeof PortalRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/search': typeof SearchRoute
   '/about/awards': typeof AboutAwardsRoute
   '/admin/reset-password': typeof AdminResetPasswordRoute
@@ -1117,8 +1144,11 @@ export interface FileRouteTypes {
     | '/$'
     | '/admin'
     | '/contact'
+    | '/forgotten-password'
     | '/login'
+    | '/my-bali'
     | '/portal'
+    | '/reset-password'
     | '/search'
     | '/about/awards'
     | '/admin/reset-password'
@@ -1235,8 +1265,11 @@ export interface FileRouteTypes {
     | '/'
     | '/$'
     | '/contact'
+    | '/forgotten-password'
     | '/login'
+    | '/my-bali'
     | '/portal'
+    | '/reset-password'
     | '/search'
     | '/about/awards'
     | '/admin/reset-password'
@@ -1354,8 +1387,11 @@ export interface FileRouteTypes {
     | '/$'
     | '/admin'
     | '/contact'
+    | '/forgotten-password'
     | '/login'
+    | '/my-bali'
     | '/portal'
+    | '/reset-password'
     | '/search'
     | '/about/awards'
     | '/admin/reset-password'
@@ -1474,8 +1510,11 @@ export interface RootRouteChildren {
   SplatRoute: typeof SplatRoute
   AdminRoute: typeof AdminRouteWithChildren
   ContactRoute: typeof ContactRoute
+  ForgottenPasswordRoute: typeof ForgottenPasswordRoute
   LoginRoute: typeof LoginRoute
+  MyBaliRoute: typeof MyBaliRoute
   PortalRoute: typeof PortalRoute
+  ResetPasswordRoute: typeof ResetPasswordRoute
   SearchRoute: typeof SearchRoute
   AboutAwardsRoute: typeof AboutAwardsRoute
   DirectoryContractorRoute: typeof DirectoryContractorRoute
@@ -1535,6 +1574,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SearchRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/portal': {
       id: '/portal'
       path: '/portal'
@@ -1542,11 +1588,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PortalRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/my-bali': {
+      id: '/my-bali'
+      path: '/my-bali'
+      fullPath: '/my-bali'
+      preLoaderRoute: typeof MyBaliRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/login': {
       id: '/login'
       path: '/login'
       fullPath: '/login'
       preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/forgotten-password': {
+      id: '/forgotten-password'
+      path: '/forgotten-password'
+      fullPath: '/forgotten-password'
+      preLoaderRoute: typeof ForgottenPasswordRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -2567,8 +2627,11 @@ const rootRouteChildren: RootRouteChildren = {
   SplatRoute: SplatRoute,
   AdminRoute: AdminRouteWithChildren,
   ContactRoute: ContactRoute,
+  ForgottenPasswordRoute: ForgottenPasswordRoute,
   LoginRoute: LoginRoute,
+  MyBaliRoute: MyBaliRoute,
   PortalRoute: PortalRoute,
+  ResetPasswordRoute: ResetPasswordRoute,
   SearchRoute: SearchRoute,
   AboutAwardsRoute: AboutAwardsRoute,
   DirectoryContractorRoute: DirectoryContractorRoute,
