@@ -187,13 +187,6 @@ function EventsIndex() {
               <h2 id="webinars-heading" className="text-2xl sm:text-3xl font-bold text-bali-slate">Upcoming webinars</h2>
               <p className="text-gray-600 mt-1">Join us online — no travel required.</p>
             </div>
-              <button
-                onClick={applyWebinarFilter}
-                className="text-sm font-semibold text-bali-blue hover:text-bali-purple underline underline-offset-4"
-              >
-                View all webinars →
-              </button>
-            </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {webinars.slice(0, 3).map((w: EventRow) => (
                 <WebinarCard key={w.id} event={w} />
