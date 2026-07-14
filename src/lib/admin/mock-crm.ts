@@ -1,6 +1,6 @@
-// TODO: Replace this entire mock CRM layer with real backend API calls.
-// This file provides in-memory + localStorage-backed mock data for the
-// People / Organisations / Applications admin features.
+// Mock people + organisations layer for the admin. Applications are NOT
+// in this file — they live in `applications.ts` and read from Supabase.
+// TODO: replace this mock CRM layer with real backend API calls.
 
 import { useSyncExternalStore } from "react";
 
@@ -38,7 +38,7 @@ export type Person = {
   discipline: Discipline;
   organisationId: string | null;
   status: MembershipStatus;
-  joined: string; // ISO date
+  joined: string;
 };
 
 export type Organisation = {
@@ -52,67 +52,8 @@ export type Organisation = {
   phone: string;
   status: MembershipStatus;
   memberSince: string;
-  size: string; // e.g. "1-10"
+  size: string;
 };
-
-export type ApplicationStage =
-  | "Applied"
-  | "Under review"
-  | "Checks/references"
-  | "Approved"
-  | "Onboarding link sent"
-  | "Active"
-  | "Rejected"
-  | "On-hold";
-
-export const PIPELINE_STAGES: ApplicationStage[] = [
-  "Applied",
-  "Under review",
-  "Checks/references",
-  "Approved",
-  "Onboarding link sent",
-  "Active",
-];
-
-export const SIDE_STAGES: ApplicationStage[] = ["Rejected", "On-hold"];
-
-export type OnboardingStatus = "Not started" | "Started" | "Completed";
-
-export type ApplicationNote = {
-  id: string;
-  author: string;
-  createdAt: string;
-  text: string;
-};
-
-export type ApplicationHistory = {
-  id: string;
-  at: string;
-  from: ApplicationStage | null;
-  to: ApplicationStage;
-  by: string;
-  note?: string;
-};
-
-export type Application = {
-  id: string;
-  applicantName: string;
-  organisation: string;
-  town: string;
-  county: string;
-  region: Region;
-  discipline: Discipline;
-  email: string;
-  phone: string;
-  dateApplied: string;
-  stage: ApplicationStage;
-  onboarding: OnboardingStatus;
-  onboardingLink?: string;
-  notes: ApplicationNote[];
-  history: ApplicationHistory[];
-};
-
-// ------------------------- Sample data -------------------------
 
 const REGIONS: Region[] = [
   "South East", "South West", "London", "Midlands",
@@ -170,180 +111,31 @@ function makePeople(orgs: Organisation[]): Person[] {
     }
     i++;
   }
-  // Two individual (no-org) members
   people.push({ id: `p-${people.length + 1}`, name: "Rosa Kingsley", role: "Independent Designer", email: "rosa@kingsleydesign.co.uk", phone: "07700 900123", town: "Oxford", county: "Oxfordshire", region: "South East", discipline: "Designer", organisationId: null, status: "Active", joined: "2022-05-01" });
   people.push({ id: `p-${people.length + 1}`, name: "Alan Beckworth", role: "Consultant", email: "alan@beckworth.co.uk", phone: "07700 900987", town: "Leeds", county: "West Yorkshire", region: "Yorkshire", discipline: "Consultant", organisationId: null, status: "Active", joined: "2021-11-11" });
   return people;
 }
 
-function makeApplications(): Application[] {
-  const rows: Array<[string, string, string, string, Region, Discipline, ApplicationStage, number]> = [
-    ["Nikita Rowe", "Rowe Green Studios", "Brighton", "East Sussex", "South East", "Designer", "Applied", 2],
-    ["Callum Wright", "Wright Grounds", "Sheffield", "South Yorkshire", "Yorkshire", "Maintenance", "Applied", 4],
-    ["Priyanka Shah", "Shah Landscapes", "Reading", "Berkshire", "South East", "Contractor", "Under review", 7],
-    ["Marcus Fielding", "Fielding & Co", "Norwich", "Norfolk", "Midlands", "Supplier", "Under review", 9],
-    ["Iris O'Donnell", "Wildflower Trails", "Galway-on-Thames", "Hampshire", "South East", "Designer", "Checks/references", 12],
-    ["Ben Lockwood", "Lockwood Trees", "Exeter", "Devon", "South West", "Maintenance", "Checks/references", 14],
-    ["Harriet Vale", "Vale Training Ltd", "Chester", "Cheshire", "North West", "Training Provider", "Approved", 18],
-    ["Sanjay Kapoor", "Kapoor Consulting", "Edinburgh", "Midlothian", "Scotland", "Consultant", "Onboarding link sent", 22],
-    ["Ellie Nash", "Nash Nurseries", "Truro", "Cornwall", "South West", "Supplier", "Onboarding link sent", 25],
-    ["Rhys Morgan", "Morgan Landscapes", "Swansea", "Swansea", "Wales", "Contractor", "Active", 40],
-    ["Dara Lynch", "Lynch Garden Design", "Belfast", "Antrim", "Northern Ireland", "Designer", "Rejected", 30],
-    ["Fiona Reid", "Reid & Sons", "Aberdeen", "Aberdeenshire", "Scotland", "Contractor", "On-hold", 20],
-  ];
-  const now = Date.now();
-  return rows.map(([name, org, town, county, region, discipline, stage, daysAgo], idx) => {
-    const applied = new Date(now - daysAgo * 86400000).toISOString();
-    const onboarding: OnboardingStatus =
-      stage === "Active" ? "Completed" :
-      stage === "Onboarding link sent" ? (idx % 2 === 0 ? "Started" : "Not started") :
-      "Not started";
-    return {
-      id: `app-${idx + 1}`,
-      applicantName: name,
-      organisation: org,
-      town, county, region, discipline,
-      email: `${name.split(" ")[0].toLowerCase()}@${org.toLowerCase().replace(/[^a-z]+/g,"")}.co.uk`,
-      phone: "01" + (200 + idx) + " 555 " + (100 + idx),
-      dateApplied: applied,
-      stage,
-      onboarding,
-      onboardingLink: stage === "Onboarding link sent" || stage === "Active" ? `https://bali.org.uk/onboard/${idx}-mock-token` : undefined,
-      notes: idx % 3 === 0 ? [{ id: "n1", author: "Staff", createdAt: applied, text: "Initial screening OK. Awaiting more info." }] : [],
-      history: [{ id: "h1", at: applied, from: null, to: "Applied", by: "System" }],
-    };
-  });
-}
+type State = { organisations: Organisation[]; people: Person[] };
+function initial(): State { const orgs = makeOrgs(); return { organisations: orgs, people: makePeople(orgs) }; }
 
-// ------------------------- Store -------------------------
-
-const LS_KEY = "bali_admin_mockcrm_v1";
-
-type State = {
-  organisations: Organisation[];
-  people: Person[];
-  applications: Application[];
-};
-
-function initial(): State {
-  const orgs = makeOrgs();
-  return { organisations: orgs, people: makePeople(orgs), applications: makeApplications() };
-}
-
-function load(): State {
-  if (typeof window === "undefined") return initial();
-  try {
-    const raw = window.localStorage.getItem(LS_KEY);
-    if (!raw) return initial();
-    const parsed = JSON.parse(raw) as State;
-    if (!parsed.applications || !parsed.people || !parsed.organisations) return initial();
-    return parsed;
-  } catch {
-    return initial();
-  }
-}
-
-let state: State = load();
+const state: State = initial();
 const listeners = new Set<() => void>();
+function subscribe(l: () => void) { listeners.add(l); return () => listeners.delete(l); }
+function getSnapshot() { return state; }
+export function useCrm() { return useSyncExternalStore(subscribe, getSnapshot, getSnapshot); }
 
-function persist() {
-  if (typeof window === "undefined") return;
-  try { window.localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch { /* noop */ }
-}
-function emit() { persist(); listeners.forEach((l) => l()); }
-
-export function subscribe(l: () => void) {
-  listeners.add(l);
-  return () => listeners.delete(l);
-}
-export function getSnapshot(): State { return state; }
-function getServerSnapshot(): State { return state; }
-
-export function useCrm() {
-  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
-}
-
-// ------------------------- Actions -------------------------
-
-// TODO: replace with backend PATCH /applications/:id
-export function moveApplicationStage(id: string, to: ApplicationStage, by = "Staff", note?: string) {
-  state = {
-    ...state,
-    applications: state.applications.map((a) =>
-      a.id === id
-        ? {
-            ...a,
-            stage: to,
-            history: [
-              ...a.history,
-              { id: `h-${Date.now()}`, at: new Date().toISOString(), from: a.stage, to, by, note },
-            ],
-          }
-        : a,
-    ),
-  };
-  emit();
-}
-
-// TODO: replace with backend POST /applications/:id/notes
-export function addApplicationNote(id: string, text: string, author = "Staff") {
-  state = {
-    ...state,
-    applications: state.applications.map((a) =>
-      a.id === id
-        ? { ...a, notes: [...a.notes, { id: `n-${Date.now()}`, author, createdAt: new Date().toISOString(), text }] }
-        : a,
-    ),
-  };
-  emit();
-}
-
-// TODO: replace with backend POST /applications/:id/onboarding-link (emails member)
-export function sendOnboardingLink(id: string) {
-  const token = Math.random().toString(36).slice(2, 10) + Date.now().toString(36);
-  const link = `https://bali.org.uk/onboard/${token}`;
-  state = {
-    ...state,
-    applications: state.applications.map((a) =>
-      a.id === id
-        ? {
-            ...a,
-            stage: "Onboarding link sent",
-            onboardingLink: link,
-            onboarding: a.onboarding === "Not started" ? "Not started" : a.onboarding,
-            history: [
-              ...a.history,
-              { id: `h-${Date.now()}`, at: new Date().toISOString(), from: a.stage, to: "Onboarding link sent", by: "Staff", note: "Onboarding link generated" },
-            ],
-          }
-        : a,
-    ),
-  };
-  emit();
-  return link;
-}
-
-// ------------------------- Selectors -------------------------
-
-export function getPerson(id: string) {
-  return state.people.find((p) => p.id === id);
-}
-export function getOrganisation(id: string) {
-  return state.organisations.find((o) => o.id === id);
-}
-export function getApplication(id: string) {
-  return state.applications.find((a) => a.id === id);
-}
+export function getPerson(id: string) { return state.people.find((p) => p.id === id); }
+export function getOrganisation(id: string) { return state.organisations.find((o) => o.id === id); }
 
 export const ALL_REGIONS = REGIONS;
 export const ALL_DISCIPLINES = DISCIPLINES;
 
-export function globalSearch(q: string) {
+export function searchPeopleOrgs(q: string) {
   const s = q.trim().toLowerCase();
-  if (!s) return { people: [], organisations: [], applications: [] };
+  if (!s) return { people: [], organisations: [] };
   return {
     people: state.people.filter((p) => p.name.toLowerCase().includes(s) || p.email.toLowerCase().includes(s)).slice(0, 8),
     organisations: state.organisations.filter((o) => o.name.toLowerCase().includes(s) || o.town.toLowerCase().includes(s)).slice(0, 8),
-    applications: state.applications.filter((a) => a.applicantName.toLowerCase().includes(s) || a.organisation.toLowerCase().includes(s)).slice(0, 6),
   };
 }
