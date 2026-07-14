@@ -1,6 +1,6 @@
-import { createFileRoute, redirect } from "@tanstack/react-router";
+import { createFileRoute, redirect, Outlet } from "@tanstack/react-router";
 import { z } from "zod";
-import MyBaliDashboardPage from "../pages/MyBaliDashboardPage";
+import DashboardShell from "../components/mybali/DashboardShell";
 import { getCurrentUser } from "../services/auth";
 
 export const Route = createFileRoute("/my-bali")({
@@ -13,9 +13,17 @@ export const Route = createFileRoute("/my-bali")({
   },
   head: () => ({
     meta: [
-      { title: "My BALI — Member dashboard" },
-      { name: "description", content: "Your BALI member dashboard." },
+      { title: "My BALI — Member area" },
+      { name: "description", content: "Your BALI member area." },
     ],
   }),
-  component: MyBaliDashboardPage,
+  component: MyBaliLayout,
 });
+
+function MyBaliLayout() {
+  return (
+    <DashboardShell>
+      <Outlet />
+    </DashboardShell>
+  );
+}
