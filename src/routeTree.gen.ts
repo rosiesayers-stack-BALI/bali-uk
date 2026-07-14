@@ -30,6 +30,12 @@ import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as PolicySlugRouteImport } from './routes/policy.$slug'
 import { Route as NewsMagazineRouteImport } from './routes/news.magazine'
 import { Route as NewsSlugRouteImport } from './routes/news.$slug'
+import { Route as MyBaliTechnicalDocumentsRouteImport } from './routes/my-bali.technical-documents'
+import { Route as MyBaliStatisticsRouteImport } from './routes/my-bali.statistics'
+import { Route as MyBaliResourcesRouteImport } from './routes/my-bali.resources'
+import { Route as MyBaliProfileRouteImport } from './routes/my-bali.profile'
+import { Route as MyBaliContentRouteImport } from './routes/my-bali.content'
+import { Route as MyBaliBenefitsRouteImport } from './routes/my-bali.benefits'
 import { Route as MembershipHardshipFundRouteImport } from './routes/membership.hardship-fund'
 import { Route as MembershipFeesRouteImport } from './routes/membership.fees'
 import { Route as MembershipEnquiryRouteImport } from './routes/membership.enquiry'
@@ -58,6 +64,7 @@ import { Route as DirectoryDesignerRouteImport } from './routes/directory.design
 import { Route as DirectoryContractorRouteImport } from './routes/directory.contractor'
 import { Route as AdminResetPasswordRouteImport } from './routes/admin.reset-password'
 import { Route as AboutAwardsRouteImport } from './routes/about.awards'
+import { Route as MyBaliProfileIndexRouteImport } from './routes/my-bali.profile.index'
 import { Route as LissCscsApplyIndexRouteImport } from './routes/liss-cscs.apply.index'
 import { Route as HelpMediaIndexRouteImport } from './routes/help.media.index'
 import { Route as AdminTrainingIndexRouteImport } from './routes/admin.training.index'
@@ -66,6 +73,13 @@ import { Route as AdminPolicyIndexRouteImport } from './routes/admin.policy.inde
 import { Route as AdminNewsIndexRouteImport } from './routes/admin.news.index'
 import { Route as AdminLissIndexRouteImport } from './routes/admin.liss.index'
 import { Route as AdminEventsIndexRouteImport } from './routes/admin.events.index'
+import { Route as MyBaliProfileWhosWhoRouteImport } from './routes/my-bali.profile.whos-who'
+import { Route as MyBaliProfilePersonalRouteImport } from './routes/my-bali.profile.personal'
+import { Route as MyBaliProfilePasswordRouteImport } from './routes/my-bali.profile.password'
+import { Route as MyBaliProfileOrganisationRouteImport } from './routes/my-bali.profile.organisation'
+import { Route as MyBaliProfileDisciplinesRouteImport } from './routes/my-bali.profile.disciplines'
+import { Route as MyBaliProfileDirectoryRouteImport } from './routes/my-bali.profile.directory'
+import { Route as MyBaliProfileBookingsRouteImport } from './routes/my-bali.profile.bookings'
 import { Route as JoinCategoryApplyRouteImport } from './routes/join.$category.apply'
 import { Route as HelpPlantHealthPostBrexitPlantHealthArrangementsRouteImport } from './routes/help.plant-health.post-brexit-plant-health-arrangements'
 import { Route as HelpPlantHealthPlantPassportsRouteImport } from './routes/help.plant-health.plant-passports'
@@ -236,6 +250,37 @@ const NewsSlugRoute = NewsSlugRouteImport.update({
   path: '/news/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MyBaliTechnicalDocumentsRoute =
+  MyBaliTechnicalDocumentsRouteImport.update({
+    id: '/technical-documents',
+    path: '/technical-documents',
+    getParentRoute: () => MyBaliRoute,
+  } as any)
+const MyBaliStatisticsRoute = MyBaliStatisticsRouteImport.update({
+  id: '/statistics',
+  path: '/statistics',
+  getParentRoute: () => MyBaliRoute,
+} as any)
+const MyBaliResourcesRoute = MyBaliResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
+  getParentRoute: () => MyBaliRoute,
+} as any)
+const MyBaliProfileRoute = MyBaliProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => MyBaliRoute,
+} as any)
+const MyBaliContentRoute = MyBaliContentRouteImport.update({
+  id: '/content',
+  path: '/content',
+  getParentRoute: () => MyBaliRoute,
+} as any)
+const MyBaliBenefitsRoute = MyBaliBenefitsRouteImport.update({
+  id: '/benefits',
+  path: '/benefits',
+  getParentRoute: () => MyBaliRoute,
+} as any)
 const MembershipHardshipFundRoute = MembershipHardshipFundRouteImport.update({
   id: '/membership/hardship-fund',
   path: '/membership/hardship-fund',
@@ -377,6 +422,11 @@ const AboutAwardsRoute = AboutAwardsRouteImport.update({
   path: '/about/awards',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MyBaliProfileIndexRoute = MyBaliProfileIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => MyBaliProfileRoute,
+} as any)
 const LissCscsApplyIndexRoute = LissCscsApplyIndexRouteImport.update({
   id: '/liss-cscs/apply/',
   path: '/liss-cscs/apply/',
@@ -416,6 +466,43 @@ const AdminEventsIndexRoute = AdminEventsIndexRouteImport.update({
   id: '/events/',
   path: '/events/',
   getParentRoute: () => AdminRoute,
+} as any)
+const MyBaliProfileWhosWhoRoute = MyBaliProfileWhosWhoRouteImport.update({
+  id: '/whos-who',
+  path: '/whos-who',
+  getParentRoute: () => MyBaliProfileRoute,
+} as any)
+const MyBaliProfilePersonalRoute = MyBaliProfilePersonalRouteImport.update({
+  id: '/personal',
+  path: '/personal',
+  getParentRoute: () => MyBaliProfileRoute,
+} as any)
+const MyBaliProfilePasswordRoute = MyBaliProfilePasswordRouteImport.update({
+  id: '/password',
+  path: '/password',
+  getParentRoute: () => MyBaliProfileRoute,
+} as any)
+const MyBaliProfileOrganisationRoute =
+  MyBaliProfileOrganisationRouteImport.update({
+    id: '/organisation',
+    path: '/organisation',
+    getParentRoute: () => MyBaliProfileRoute,
+  } as any)
+const MyBaliProfileDisciplinesRoute =
+  MyBaliProfileDisciplinesRouteImport.update({
+    id: '/disciplines',
+    path: '/disciplines',
+    getParentRoute: () => MyBaliProfileRoute,
+  } as any)
+const MyBaliProfileDirectoryRoute = MyBaliProfileDirectoryRouteImport.update({
+  id: '/directory',
+  path: '/directory',
+  getParentRoute: () => MyBaliProfileRoute,
+} as any)
+const MyBaliProfileBookingsRoute = MyBaliProfileBookingsRouteImport.update({
+  id: '/bookings',
+  path: '/bookings',
+  getParentRoute: () => MyBaliProfileRoute,
 } as any)
 const JoinCategoryApplyRoute = JoinCategoryApplyRouteImport.update({
   id: '/join/$category/apply',
@@ -816,6 +903,12 @@ export interface FileRoutesByFullPath {
   '/membership/enquiry': typeof MembershipEnquiryRoute
   '/membership/fees': typeof MembershipFeesRoute
   '/membership/hardship-fund': typeof MembershipHardshipFundRoute
+  '/my-bali/benefits': typeof MyBaliBenefitsRoute
+  '/my-bali/content': typeof MyBaliContentRoute
+  '/my-bali/profile': typeof MyBaliProfileRouteWithChildren
+  '/my-bali/resources': typeof MyBaliResourcesRoute
+  '/my-bali/statistics': typeof MyBaliStatisticsRoute
+  '/my-bali/technical-documents': typeof MyBaliTechnicalDocumentsRoute
   '/news/$slug': typeof NewsSlugRoute
   '/news/magazine': typeof NewsMagazineRoute
   '/policy/$slug': typeof PolicySlugRoute
@@ -887,6 +980,13 @@ export interface FileRoutesByFullPath {
   '/help/plant-health/plant-passports': typeof HelpPlantHealthPlantPassportsRoute
   '/help/plant-health/post-brexit-plant-health-arrangements': typeof HelpPlantHealthPostBrexitPlantHealthArrangementsRoute
   '/join/$category/apply': typeof JoinCategoryApplyRoute
+  '/my-bali/profile/bookings': typeof MyBaliProfileBookingsRoute
+  '/my-bali/profile/directory': typeof MyBaliProfileDirectoryRoute
+  '/my-bali/profile/disciplines': typeof MyBaliProfileDisciplinesRoute
+  '/my-bali/profile/organisation': typeof MyBaliProfileOrganisationRoute
+  '/my-bali/profile/password': typeof MyBaliProfilePasswordRoute
+  '/my-bali/profile/personal': typeof MyBaliProfilePersonalRoute
+  '/my-bali/profile/whos-who': typeof MyBaliProfileWhosWhoRoute
   '/admin/events/': typeof AdminEventsIndexRoute
   '/admin/liss/': typeof AdminLissIndexRoute
   '/admin/news/': typeof AdminNewsIndexRoute
@@ -895,6 +995,7 @@ export interface FileRoutesByFullPath {
   '/admin/training/': typeof AdminTrainingIndexRoute
   '/help/media/': typeof HelpMediaIndexRoute
   '/liss-cscs/apply/': typeof LissCscsApplyIndexRoute
+  '/my-bali/profile/': typeof MyBaliProfileIndexRoute
   '/api/public/hooks/workbooks-sync': typeof ApiPublicHooksWorkbooksSyncRoute
   '/liss-cscs/apply/$category/': typeof LissCscsApplyCategoryIndexRoute
   '/liss-cscs/apply/$category/$card/form': typeof LissCscsApplyCategoryCardFormRoute
@@ -937,6 +1038,11 @@ export interface FileRoutesByTo {
   '/membership/enquiry': typeof MembershipEnquiryRoute
   '/membership/fees': typeof MembershipFeesRoute
   '/membership/hardship-fund': typeof MembershipHardshipFundRoute
+  '/my-bali/benefits': typeof MyBaliBenefitsRoute
+  '/my-bali/content': typeof MyBaliContentRoute
+  '/my-bali/resources': typeof MyBaliResourcesRoute
+  '/my-bali/statistics': typeof MyBaliStatisticsRoute
+  '/my-bali/technical-documents': typeof MyBaliTechnicalDocumentsRoute
   '/news/$slug': typeof NewsSlugRoute
   '/news/magazine': typeof NewsMagazineRoute
   '/policy/$slug': typeof PolicySlugRoute
@@ -1008,6 +1114,13 @@ export interface FileRoutesByTo {
   '/help/plant-health/plant-passports': typeof HelpPlantHealthPlantPassportsRoute
   '/help/plant-health/post-brexit-plant-health-arrangements': typeof HelpPlantHealthPostBrexitPlantHealthArrangementsRoute
   '/join/$category/apply': typeof JoinCategoryApplyRoute
+  '/my-bali/profile/bookings': typeof MyBaliProfileBookingsRoute
+  '/my-bali/profile/directory': typeof MyBaliProfileDirectoryRoute
+  '/my-bali/profile/disciplines': typeof MyBaliProfileDisciplinesRoute
+  '/my-bali/profile/organisation': typeof MyBaliProfileOrganisationRoute
+  '/my-bali/profile/password': typeof MyBaliProfilePasswordRoute
+  '/my-bali/profile/personal': typeof MyBaliProfilePersonalRoute
+  '/my-bali/profile/whos-who': typeof MyBaliProfileWhosWhoRoute
   '/admin/events': typeof AdminEventsIndexRoute
   '/admin/liss': typeof AdminLissIndexRoute
   '/admin/news': typeof AdminNewsIndexRoute
@@ -1016,6 +1129,7 @@ export interface FileRoutesByTo {
   '/admin/training': typeof AdminTrainingIndexRoute
   '/help/media': typeof HelpMediaIndexRoute
   '/liss-cscs/apply': typeof LissCscsApplyIndexRoute
+  '/my-bali/profile': typeof MyBaliProfileIndexRoute
   '/api/public/hooks/workbooks-sync': typeof ApiPublicHooksWorkbooksSyncRoute
   '/liss-cscs/apply/$category': typeof LissCscsApplyCategoryIndexRoute
   '/liss-cscs/apply/$category/$card/form': typeof LissCscsApplyCategoryCardFormRoute
@@ -1061,6 +1175,12 @@ export interface FileRoutesById {
   '/membership/enquiry': typeof MembershipEnquiryRoute
   '/membership/fees': typeof MembershipFeesRoute
   '/membership/hardship-fund': typeof MembershipHardshipFundRoute
+  '/my-bali/benefits': typeof MyBaliBenefitsRoute
+  '/my-bali/content': typeof MyBaliContentRoute
+  '/my-bali/profile': typeof MyBaliProfileRouteWithChildren
+  '/my-bali/resources': typeof MyBaliResourcesRoute
+  '/my-bali/statistics': typeof MyBaliStatisticsRoute
+  '/my-bali/technical-documents': typeof MyBaliTechnicalDocumentsRoute
   '/news/$slug': typeof NewsSlugRoute
   '/news/magazine': typeof NewsMagazineRoute
   '/policy/$slug': typeof PolicySlugRoute
@@ -1132,6 +1252,13 @@ export interface FileRoutesById {
   '/help/plant-health/plant-passports': typeof HelpPlantHealthPlantPassportsRoute
   '/help/plant-health/post-brexit-plant-health-arrangements': typeof HelpPlantHealthPostBrexitPlantHealthArrangementsRoute
   '/join/$category/apply': typeof JoinCategoryApplyRoute
+  '/my-bali/profile/bookings': typeof MyBaliProfileBookingsRoute
+  '/my-bali/profile/directory': typeof MyBaliProfileDirectoryRoute
+  '/my-bali/profile/disciplines': typeof MyBaliProfileDisciplinesRoute
+  '/my-bali/profile/organisation': typeof MyBaliProfileOrganisationRoute
+  '/my-bali/profile/password': typeof MyBaliProfilePasswordRoute
+  '/my-bali/profile/personal': typeof MyBaliProfilePersonalRoute
+  '/my-bali/profile/whos-who': typeof MyBaliProfileWhosWhoRoute
   '/admin/events/': typeof AdminEventsIndexRoute
   '/admin/liss/': typeof AdminLissIndexRoute
   '/admin/news/': typeof AdminNewsIndexRoute
@@ -1140,6 +1267,7 @@ export interface FileRoutesById {
   '/admin/training/': typeof AdminTrainingIndexRoute
   '/help/media/': typeof HelpMediaIndexRoute
   '/liss-cscs/apply/': typeof LissCscsApplyIndexRoute
+  '/my-bali/profile/': typeof MyBaliProfileIndexRoute
   '/api/public/hooks/workbooks-sync': typeof ApiPublicHooksWorkbooksSyncRoute
   '/liss-cscs/apply/$category/': typeof LissCscsApplyCategoryIndexRoute
   '/liss-cscs/apply/$category/$card/form': typeof LissCscsApplyCategoryCardFormRoute
@@ -1186,6 +1314,12 @@ export interface FileRouteTypes {
     | '/membership/enquiry'
     | '/membership/fees'
     | '/membership/hardship-fund'
+    | '/my-bali/benefits'
+    | '/my-bali/content'
+    | '/my-bali/profile'
+    | '/my-bali/resources'
+    | '/my-bali/statistics'
+    | '/my-bali/technical-documents'
     | '/news/$slug'
     | '/news/magazine'
     | '/policy/$slug'
@@ -1257,6 +1391,13 @@ export interface FileRouteTypes {
     | '/help/plant-health/plant-passports'
     | '/help/plant-health/post-brexit-plant-health-arrangements'
     | '/join/$category/apply'
+    | '/my-bali/profile/bookings'
+    | '/my-bali/profile/directory'
+    | '/my-bali/profile/disciplines'
+    | '/my-bali/profile/organisation'
+    | '/my-bali/profile/password'
+    | '/my-bali/profile/personal'
+    | '/my-bali/profile/whos-who'
     | '/admin/events/'
     | '/admin/liss/'
     | '/admin/news/'
@@ -1265,6 +1406,7 @@ export interface FileRouteTypes {
     | '/admin/training/'
     | '/help/media/'
     | '/liss-cscs/apply/'
+    | '/my-bali/profile/'
     | '/api/public/hooks/workbooks-sync'
     | '/liss-cscs/apply/$category/'
     | '/liss-cscs/apply/$category/$card/form'
@@ -1307,6 +1449,11 @@ export interface FileRouteTypes {
     | '/membership/enquiry'
     | '/membership/fees'
     | '/membership/hardship-fund'
+    | '/my-bali/benefits'
+    | '/my-bali/content'
+    | '/my-bali/resources'
+    | '/my-bali/statistics'
+    | '/my-bali/technical-documents'
     | '/news/$slug'
     | '/news/magazine'
     | '/policy/$slug'
@@ -1378,6 +1525,13 @@ export interface FileRouteTypes {
     | '/help/plant-health/plant-passports'
     | '/help/plant-health/post-brexit-plant-health-arrangements'
     | '/join/$category/apply'
+    | '/my-bali/profile/bookings'
+    | '/my-bali/profile/directory'
+    | '/my-bali/profile/disciplines'
+    | '/my-bali/profile/organisation'
+    | '/my-bali/profile/password'
+    | '/my-bali/profile/personal'
+    | '/my-bali/profile/whos-who'
     | '/admin/events'
     | '/admin/liss'
     | '/admin/news'
@@ -1386,6 +1540,7 @@ export interface FileRouteTypes {
     | '/admin/training'
     | '/help/media'
     | '/liss-cscs/apply'
+    | '/my-bali/profile'
     | '/api/public/hooks/workbooks-sync'
     | '/liss-cscs/apply/$category'
     | '/liss-cscs/apply/$category/$card/form'
@@ -1430,6 +1585,12 @@ export interface FileRouteTypes {
     | '/membership/enquiry'
     | '/membership/fees'
     | '/membership/hardship-fund'
+    | '/my-bali/benefits'
+    | '/my-bali/content'
+    | '/my-bali/profile'
+    | '/my-bali/resources'
+    | '/my-bali/statistics'
+    | '/my-bali/technical-documents'
     | '/news/$slug'
     | '/news/magazine'
     | '/policy/$slug'
@@ -1501,6 +1662,13 @@ export interface FileRouteTypes {
     | '/help/plant-health/plant-passports'
     | '/help/plant-health/post-brexit-plant-health-arrangements'
     | '/join/$category/apply'
+    | '/my-bali/profile/bookings'
+    | '/my-bali/profile/directory'
+    | '/my-bali/profile/disciplines'
+    | '/my-bali/profile/organisation'
+    | '/my-bali/profile/password'
+    | '/my-bali/profile/personal'
+    | '/my-bali/profile/whos-who'
     | '/admin/events/'
     | '/admin/liss/'
     | '/admin/news/'
@@ -1509,6 +1677,7 @@ export interface FileRouteTypes {
     | '/admin/training/'
     | '/help/media/'
     | '/liss-cscs/apply/'
+    | '/my-bali/profile/'
     | '/api/public/hooks/workbooks-sync'
     | '/liss-cscs/apply/$category/'
     | '/liss-cscs/apply/$category/$card/form'
@@ -1724,6 +1893,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NewsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/my-bali/technical-documents': {
+      id: '/my-bali/technical-documents'
+      path: '/technical-documents'
+      fullPath: '/my-bali/technical-documents'
+      preLoaderRoute: typeof MyBaliTechnicalDocumentsRouteImport
+      parentRoute: typeof MyBaliRoute
+    }
+    '/my-bali/statistics': {
+      id: '/my-bali/statistics'
+      path: '/statistics'
+      fullPath: '/my-bali/statistics'
+      preLoaderRoute: typeof MyBaliStatisticsRouteImport
+      parentRoute: typeof MyBaliRoute
+    }
+    '/my-bali/resources': {
+      id: '/my-bali/resources'
+      path: '/resources'
+      fullPath: '/my-bali/resources'
+      preLoaderRoute: typeof MyBaliResourcesRouteImport
+      parentRoute: typeof MyBaliRoute
+    }
+    '/my-bali/profile': {
+      id: '/my-bali/profile'
+      path: '/profile'
+      fullPath: '/my-bali/profile'
+      preLoaderRoute: typeof MyBaliProfileRouteImport
+      parentRoute: typeof MyBaliRoute
+    }
+    '/my-bali/content': {
+      id: '/my-bali/content'
+      path: '/content'
+      fullPath: '/my-bali/content'
+      preLoaderRoute: typeof MyBaliContentRouteImport
+      parentRoute: typeof MyBaliRoute
+    }
+    '/my-bali/benefits': {
+      id: '/my-bali/benefits'
+      path: '/benefits'
+      fullPath: '/my-bali/benefits'
+      preLoaderRoute: typeof MyBaliBenefitsRouteImport
+      parentRoute: typeof MyBaliRoute
+    }
     '/membership/hardship-fund': {
       id: '/membership/hardship-fund'
       path: '/membership/hardship-fund'
@@ -1920,6 +2131,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutAwardsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/my-bali/profile/': {
+      id: '/my-bali/profile/'
+      path: '/'
+      fullPath: '/my-bali/profile/'
+      preLoaderRoute: typeof MyBaliProfileIndexRouteImport
+      parentRoute: typeof MyBaliProfileRoute
+    }
     '/liss-cscs/apply/': {
       id: '/liss-cscs/apply/'
       path: '/liss-cscs/apply'
@@ -1975,6 +2193,55 @@ declare module '@tanstack/react-router' {
       fullPath: '/admin/events/'
       preLoaderRoute: typeof AdminEventsIndexRouteImport
       parentRoute: typeof AdminRoute
+    }
+    '/my-bali/profile/whos-who': {
+      id: '/my-bali/profile/whos-who'
+      path: '/whos-who'
+      fullPath: '/my-bali/profile/whos-who'
+      preLoaderRoute: typeof MyBaliProfileWhosWhoRouteImport
+      parentRoute: typeof MyBaliProfileRoute
+    }
+    '/my-bali/profile/personal': {
+      id: '/my-bali/profile/personal'
+      path: '/personal'
+      fullPath: '/my-bali/profile/personal'
+      preLoaderRoute: typeof MyBaliProfilePersonalRouteImport
+      parentRoute: typeof MyBaliProfileRoute
+    }
+    '/my-bali/profile/password': {
+      id: '/my-bali/profile/password'
+      path: '/password'
+      fullPath: '/my-bali/profile/password'
+      preLoaderRoute: typeof MyBaliProfilePasswordRouteImport
+      parentRoute: typeof MyBaliProfileRoute
+    }
+    '/my-bali/profile/organisation': {
+      id: '/my-bali/profile/organisation'
+      path: '/organisation'
+      fullPath: '/my-bali/profile/organisation'
+      preLoaderRoute: typeof MyBaliProfileOrganisationRouteImport
+      parentRoute: typeof MyBaliProfileRoute
+    }
+    '/my-bali/profile/disciplines': {
+      id: '/my-bali/profile/disciplines'
+      path: '/disciplines'
+      fullPath: '/my-bali/profile/disciplines'
+      preLoaderRoute: typeof MyBaliProfileDisciplinesRouteImport
+      parentRoute: typeof MyBaliProfileRoute
+    }
+    '/my-bali/profile/directory': {
+      id: '/my-bali/profile/directory'
+      path: '/directory'
+      fullPath: '/my-bali/profile/directory'
+      preLoaderRoute: typeof MyBaliProfileDirectoryRouteImport
+      parentRoute: typeof MyBaliProfileRoute
+    }
+    '/my-bali/profile/bookings': {
+      id: '/my-bali/profile/bookings'
+      path: '/bookings'
+      fullPath: '/my-bali/profile/bookings'
+      preLoaderRoute: typeof MyBaliProfileBookingsRouteImport
+      parentRoute: typeof MyBaliProfileRoute
     }
     '/join/$category/apply': {
       id: '/join/$category/apply'
@@ -2461,11 +2728,49 @@ const AdminRouteChildren: AdminRouteChildren = {
 
 const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
 
+interface MyBaliProfileRouteChildren {
+  MyBaliProfileBookingsRoute: typeof MyBaliProfileBookingsRoute
+  MyBaliProfileDirectoryRoute: typeof MyBaliProfileDirectoryRoute
+  MyBaliProfileDisciplinesRoute: typeof MyBaliProfileDisciplinesRoute
+  MyBaliProfileOrganisationRoute: typeof MyBaliProfileOrganisationRoute
+  MyBaliProfilePasswordRoute: typeof MyBaliProfilePasswordRoute
+  MyBaliProfilePersonalRoute: typeof MyBaliProfilePersonalRoute
+  MyBaliProfileWhosWhoRoute: typeof MyBaliProfileWhosWhoRoute
+  MyBaliProfileIndexRoute: typeof MyBaliProfileIndexRoute
+}
+
+const MyBaliProfileRouteChildren: MyBaliProfileRouteChildren = {
+  MyBaliProfileBookingsRoute: MyBaliProfileBookingsRoute,
+  MyBaliProfileDirectoryRoute: MyBaliProfileDirectoryRoute,
+  MyBaliProfileDisciplinesRoute: MyBaliProfileDisciplinesRoute,
+  MyBaliProfileOrganisationRoute: MyBaliProfileOrganisationRoute,
+  MyBaliProfilePasswordRoute: MyBaliProfilePasswordRoute,
+  MyBaliProfilePersonalRoute: MyBaliProfilePersonalRoute,
+  MyBaliProfileWhosWhoRoute: MyBaliProfileWhosWhoRoute,
+  MyBaliProfileIndexRoute: MyBaliProfileIndexRoute,
+}
+
+const MyBaliProfileRouteWithChildren = MyBaliProfileRoute._addFileChildren(
+  MyBaliProfileRouteChildren,
+)
+
 interface MyBaliRouteChildren {
+  MyBaliBenefitsRoute: typeof MyBaliBenefitsRoute
+  MyBaliContentRoute: typeof MyBaliContentRoute
+  MyBaliProfileRoute: typeof MyBaliProfileRouteWithChildren
+  MyBaliResourcesRoute: typeof MyBaliResourcesRoute
+  MyBaliStatisticsRoute: typeof MyBaliStatisticsRoute
+  MyBaliTechnicalDocumentsRoute: typeof MyBaliTechnicalDocumentsRoute
   MyBaliIndexRoute: typeof MyBaliIndexRoute
 }
 
 const MyBaliRouteChildren: MyBaliRouteChildren = {
+  MyBaliBenefitsRoute: MyBaliBenefitsRoute,
+  MyBaliContentRoute: MyBaliContentRoute,
+  MyBaliProfileRoute: MyBaliProfileRouteWithChildren,
+  MyBaliResourcesRoute: MyBaliResourcesRoute,
+  MyBaliStatisticsRoute: MyBaliStatisticsRoute,
+  MyBaliTechnicalDocumentsRoute: MyBaliTechnicalDocumentsRoute,
   MyBaliIndexRoute: MyBaliIndexRoute,
 }
 
