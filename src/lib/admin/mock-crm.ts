@@ -3,6 +3,7 @@
 // TODO: replace this mock CRM layer with real backend API calls.
 
 import { useSyncExternalStore } from "react";
+import { APPLICATION_TYPES, type ApplicationTypeId } from "@/lib/membership-types";
 
 export type Discipline =
   | "Designer"
