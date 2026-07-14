@@ -131,6 +131,7 @@ function ApplicationsIndex() {
                         <Link to="/admin/applications/$id" params={{ id: a.id }} className="block">
                           <p className="text-sm font-semibold text-bali-slate hover:text-bali-blue">{a.applicantName}</p>
                           <p className="text-xs text-gray-500 truncate">{a.organisation}</p>
+                          <div className="mt-1.5"><ApplicationTypeBadge id={a.applicationType} short /></div>
                           <p className="text-[11px] text-gray-500 mt-1">{a.town || "—"} · {a.discipline}</p>
                           <p className="text-[10px] text-gray-400 mt-1">Applied {new Date(a.dateApplied).toLocaleDateString("en-GB")}</p>
                         </Link>
