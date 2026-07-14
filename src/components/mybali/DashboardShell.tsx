@@ -1,16 +1,29 @@
 import { useState, type FormEvent, type ReactNode } from "react";
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
-import SmartLink from "../SmartLink";
+import {
+  LayoutDashboard,
+  UserCircle,
+  BarChart3,
+  Gift,
+  FolderOpen,
+  FileText,
+  Newspaper,
+  Search,
+  LogOut,
+} from "lucide-react";
+import Navbar from "../Navbar";
+import Footer from "../Footer";
+import CookieBanner from "../CookieBanner";
 import { useMyBaliAuth } from "../../services/auth-context";
 
 const NAV = [
-  { to: "/my-bali", label: "Dashboard", exact: true },
-  { to: "/my-bali/profile", label: "My profile" },
-  { to: "/my-bali/statistics", label: "Profile statistics" },
-  { to: "/my-bali/benefits", label: "My benefits" },
-  { to: "/my-bali/resources", label: "My resources" },
-  { to: "/my-bali/technical-documents", label: "Technical documents" },
-  { to: "/my-bali/content", label: "My content" },
+  { to: "/my-bali", label: "Dashboard", icon: LayoutDashboard, exact: true },
+  { to: "/my-bali/profile", label: "My profile", icon: UserCircle },
+  { to: "/my-bali/statistics", label: "Profile statistics", icon: BarChart3 },
+  { to: "/my-bali/benefits", label: "My benefits", icon: Gift },
+  { to: "/my-bali/resources", label: "My resources", icon: FolderOpen },
+  { to: "/my-bali/technical-documents", label: "Technical documents", icon: FileText },
+  { to: "/my-bali/content", label: "My content", icon: Newspaper },
 ] as const;
 
 export default function DashboardShell({ children }: { children: ReactNode }) {
@@ -18,7 +31,6 @@ export default function DashboardShell({ children }: { children: ReactNode }) {
   const { user, logout } = useMyBaliAuth();
   const pathname = useRouterState({ select: (r) => r.location.pathname });
   const [q, setQ] = useState("");
-  const [menuOpen, setMenuOpen] = useState(false);
 
   const isActive = (to: string, exact?: boolean) =>
     exact ? pathname === to : pathname === to || pathname.startsWith(to + "/");
@@ -34,101 +46,112 @@ export default function DashboardShell({ children }: { children: ReactNode }) {
     navigate({ to: "/search", search: { q: q.trim() } as never });
   };
 
-  return (
-    <div className="font-sans bg-gray-50 min-h-screen flex flex-col">
-      <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
-          <SmartLink to="/" aria-label="BALI home">
-            <img src="https://www.bali.org.uk/themes/bali/gfx/logo.png" alt="BALI" className="h-10 sm:h-12 w-auto" />
-          </SmartLink>
-          <div className="flex items-center gap-3">
-            <span className="text-sm text-gray-500 hidden md:inline">
-              Signed in as <strong className="text-gray-800">{user?.email}</strong>
-            </span>
-            <button
-              onClick={doLogout}
-              className="text-sm px-3 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-bali-blue/25"
-            >
-              Log out
-            </button>
-          </div>
-        </div>
+  const active = NAV.find((n) => isActive(n.to, "exact" in n ? n.exact : false));
 
-        <div className="border-t border-gray-100 bg-white">
-          <div className="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
-            <form onSubmit={onSearch} className="flex-1 max-w-lg" role="search">
-              <label htmlFor="mybali-search" className="sr-only">Search My BALI</label>
-              <div className="flex">
-                <input
-                  id="mybali-search"
-                  type="search"
-                  value={q}
-                  onChange={(e) => setQ(e.target.value)}
-                  placeholder="Search My BALI"
-                  className="flex-1 border border-gray-300 rounded-l-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-bali-blue/25 focus:border-bali-blue"
-                />
-                <button
-                  type="submit"
-                  className="bg-bali-blue hover:bg-blue-800 text-white text-sm font-semibold px-4 rounded-r-lg focus:outline-none focus:ring-2 focus:ring-bali-blue/40"
-                >
-                  Search
-                </button>
-              </div>
-            </form>
-            <button
-              className="md:hidden text-sm px-3 py-2 border border-gray-300 rounded-lg self-start"
-              onClick={() => setMenuOpen((v) => !v)}
-              aria-expanded={menuOpen}
-              aria-controls="mybali-subnav"
-            >
-              {menuOpen ? "Hide menu" : "Show menu"}
-            </button>
+  return (
+    <div className="min-h-screen flex flex-col bg-gray-50">
+      <Navbar />
+
+      {/* Hero */}
+      <section className="bg-gradient-to-br from-bali-slate via-bali-blue to-bali-green text-white">
+        <div className="max-w-7xl mx-auto px-4 py-10 lg:py-14 grid gap-6 md:grid-cols-[minmax(0,1fr)_auto] md:items-end">
+          <div className="min-w-0">
+            <p className="text-bali-grass text-xs uppercase tracking-[0.2em] font-semibold mb-2">
+              My BALI · Member area
+            </p>
+            <h1 className="text-3xl lg:text-4xl font-bold tracking-tight">
+              Welcome{user?.name ? `, ${user.name}` : ""}
+            </h1>
+            <p className="mt-2 text-white/80 text-sm max-w-2xl">
+              {active?.label ?? "Dashboard"} — manage your BALI membership, profile and content.
+            </p>
           </div>
-          <nav
-            id="mybali-subnav"
-            aria-label="My BALI sections"
-            className={`${menuOpen ? "block" : "hidden"} md:block border-t border-gray-100`}
-          >
-            <div className="max-w-7xl mx-auto px-4 overflow-x-auto">
-              <ul className="flex md:flex-row flex-col gap-1 md:gap-2 py-2">
+          <form onSubmit={onSearch} role="search" className="w-full md:w-80">
+            <label htmlFor="mybali-search" className="sr-only">Search My BALI</label>
+            <div className="flex bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg overflow-hidden focus-within:ring-2 focus-within:ring-white/40">
+              <Search className="w-4 h-4 text-white/70 ml-3 self-center shrink-0" aria-hidden />
+              <input
+                id="mybali-search"
+                type="search"
+                value={q}
+                onChange={(e) => setQ(e.target.value)}
+                placeholder="Search My BALI"
+                className="flex-1 min-w-0 bg-transparent px-3 py-2.5 text-sm text-white placeholder:text-white/60 focus:outline-none"
+              />
+              <button type="submit" className="bg-bali-grass hover:bg-bali-green text-white text-sm font-semibold px-4 transition-colors">
+                Search
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      {/* Body: sidebar + content */}
+      <main className="flex-1">
+        <div className="max-w-7xl mx-auto px-4 py-8 lg:py-10 grid gap-6 lg:grid-cols-[240px_minmax(0,1fr)]">
+          <aside aria-label="My BALI navigation" className="lg:sticky lg:top-24 self-start">
+            <nav className="bg-white rounded-xl border border-gray-100 shadow-sm p-2">
+              <ul className="flex lg:flex-col gap-1 overflow-x-auto lg:overflow-visible">
                 {NAV.map((item) => {
-                  const active = isActive(item.to, "exact" in item ? item.exact : false);
+                  const Icon = item.icon;
+                  const on = isActive(item.to, "exact" in item ? item.exact : false);
                   return (
-                    <li key={item.to}>
+                    <li key={item.to} className="shrink-0 lg:shrink">
                       <Link
                         to={item.to}
-                        onClick={() => setMenuOpen(false)}
-                        className={`block whitespace-nowrap text-sm px-3 py-2 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-bali-blue/25 ${
-                          active
-                            ? "bg-bali-blue text-white"
-                            : "text-gray-700 hover:bg-gray-100"
+                        className={`group flex items-center gap-3 whitespace-nowrap lg:whitespace-normal text-sm px-3 py-2.5 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-bali-blue/30 ${
+                          on
+                            ? "bg-bali-blue text-white shadow-sm"
+                            : "text-gray-700 hover:bg-gray-50 hover:text-bali-blue"
                         }`}
+                        aria-current={on ? "page" : undefined}
                       >
-                        {item.label}
+                        <Icon className={`w-4 h-4 shrink-0 ${on ? "text-white" : "text-gray-400 group-hover:text-bali-blue"}`} aria-hidden />
+                        <span>{item.label}</span>
                       </Link>
                     </li>
                   );
                 })}
               </ul>
+            </nav>
+
+            <div className="hidden lg:block mt-4 bg-white rounded-xl border border-gray-100 shadow-sm p-4 text-sm">
+              <p className="text-gray-500 text-xs uppercase tracking-wide font-semibold mb-2">Signed in as</p>
+              <p className="font-semibold text-gray-900 truncate">{user?.name}</p>
+              <p className="text-gray-500 text-xs truncate">{user?.email}</p>
+              <button
+                onClick={doLogout}
+                className="mt-3 w-full inline-flex items-center justify-center gap-2 border border-gray-200 hover:border-bali-blue hover:text-bali-blue rounded-lg px-3 py-2 text-sm font-medium transition-colors"
+              >
+                <LogOut className="w-4 h-4" aria-hidden />
+                Log out
+              </button>
             </div>
-          </nav>
+          </aside>
+
+          <div className="min-w-0">{children}</div>
         </div>
-      </header>
+      </main>
 
-      <main className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-10">{children}</main>
-
-      <footer className="bg-bali-slate text-gray-400 text-xs py-4 px-4 text-center">
-        <div className="max-w-7xl mx-auto">© 2026 British Association of Landscape Industries</div>
-      </footer>
+      <Footer />
+      <CookieBanner />
     </div>
   );
 }
 
-export function PageHeader({ title, subtitle, action }: { title: string; subtitle?: string; action?: ReactNode }) {
+export function PageHeader({
+  title,
+  subtitle,
+  action,
+}: {
+  title: string;
+  subtitle?: string;
+  action?: ReactNode;
+}) {
   return (
-    <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
-      <div>
-        <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">{title}</h1>
+    <div className="mb-6 grid grid-cols-[minmax(0,1fr)_auto] items-end gap-4">
+      <div className="min-w-0">
+        <h2 className="text-2xl sm:text-3xl font-bold text-bali-slate tracking-tight">{title}</h2>
         {subtitle && <p className="text-gray-500 mt-1 text-sm">{subtitle}</p>}
       </div>
       {action}
@@ -138,7 +161,7 @@ export function PageHeader({ title, subtitle, action }: { title: string; subtitl
 
 export function Card({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
-    <section className={`bg-white rounded-2xl shadow-sm border border-gray-100 p-5 sm:p-6 ${className}`}>
+    <section className={`bg-white rounded-xl shadow-sm border border-gray-100 p-5 sm:p-6 ${className}`}>
       {children}
     </section>
   );
