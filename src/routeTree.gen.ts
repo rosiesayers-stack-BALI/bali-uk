@@ -21,6 +21,7 @@ import { Route as SplatRouteImport } from './routes/$'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PolicyIndexRouteImport } from './routes/policy.index'
 import { Route as NewsIndexRouteImport } from './routes/news.index'
+import { Route as MyBaliIndexRouteImport } from './routes/my-bali.index'
 import { Route as JoinIndexRouteImport } from './routes/join.index'
 import { Route as HelpIndexRouteImport } from './routes/help.index'
 import { Route as EventsIndexRouteImport } from './routes/events.index'
@@ -189,6 +190,11 @@ const NewsIndexRoute = NewsIndexRouteImport.update({
   id: '/news/',
   path: '/news/',
   getParentRoute: () => rootRouteImport,
+} as any)
+const MyBaliIndexRoute = MyBaliIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => MyBaliRoute,
 } as any)
 const JoinIndexRoute = JoinIndexRouteImport.update({
   id: '/join/',
@@ -778,7 +784,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/forgotten-password': typeof ForgottenPasswordRoute
   '/login': typeof LoginRoute
-  '/my-bali': typeof MyBaliRoute
+  '/my-bali': typeof MyBaliRouteWithChildren
   '/portal': typeof PortalRoute
   '/reset-password': typeof ResetPasswordRoute
   '/search': typeof SearchRoute
@@ -818,6 +824,7 @@ export interface FileRoutesByFullPath {
   '/events/': typeof EventsIndexRoute
   '/help/': typeof HelpIndexRoute
   '/join/': typeof JoinIndexRoute
+  '/my-bali/': typeof MyBaliIndexRoute
   '/news/': typeof NewsIndexRoute
   '/policy/': typeof PolicyIndexRoute
   '/admin/events/$id': typeof AdminEventsIdRoute
@@ -899,7 +906,6 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/forgotten-password': typeof ForgottenPasswordRoute
   '/login': typeof LoginRoute
-  '/my-bali': typeof MyBaliRoute
   '/portal': typeof PortalRoute
   '/reset-password': typeof ResetPasswordRoute
   '/search': typeof SearchRoute
@@ -939,6 +945,7 @@ export interface FileRoutesByTo {
   '/events': typeof EventsIndexRoute
   '/help': typeof HelpIndexRoute
   '/join': typeof JoinIndexRoute
+  '/my-bali': typeof MyBaliIndexRoute
   '/news': typeof NewsIndexRoute
   '/policy': typeof PolicyIndexRoute
   '/admin/events/$id': typeof AdminEventsIdRoute
@@ -1022,7 +1029,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/forgotten-password': typeof ForgottenPasswordRoute
   '/login': typeof LoginRoute
-  '/my-bali': typeof MyBaliRoute
+  '/my-bali': typeof MyBaliRouteWithChildren
   '/portal': typeof PortalRoute
   '/reset-password': typeof ResetPasswordRoute
   '/search': typeof SearchRoute
@@ -1062,6 +1069,7 @@ export interface FileRoutesById {
   '/events/': typeof EventsIndexRoute
   '/help/': typeof HelpIndexRoute
   '/join/': typeof JoinIndexRoute
+  '/my-bali/': typeof MyBaliIndexRoute
   '/news/': typeof NewsIndexRoute
   '/policy/': typeof PolicyIndexRoute
   '/admin/events/$id': typeof AdminEventsIdRoute
@@ -1186,6 +1194,7 @@ export interface FileRouteTypes {
     | '/events/'
     | '/help/'
     | '/join/'
+    | '/my-bali/'
     | '/news/'
     | '/policy/'
     | '/admin/events/$id'
@@ -1267,7 +1276,6 @@ export interface FileRouteTypes {
     | '/contact'
     | '/forgotten-password'
     | '/login'
-    | '/my-bali'
     | '/portal'
     | '/reset-password'
     | '/search'
@@ -1307,6 +1315,7 @@ export interface FileRouteTypes {
     | '/events'
     | '/help'
     | '/join'
+    | '/my-bali'
     | '/news'
     | '/policy'
     | '/admin/events/$id'
@@ -1429,6 +1438,7 @@ export interface FileRouteTypes {
     | '/events/'
     | '/help/'
     | '/join/'
+    | '/my-bali/'
     | '/news/'
     | '/policy/'
     | '/admin/events/$id'
@@ -1512,7 +1522,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   ForgottenPasswordRoute: typeof ForgottenPasswordRoute
   LoginRoute: typeof LoginRoute
-  MyBaliRoute: typeof MyBaliRoute
+  MyBaliRoute: typeof MyBaliRouteWithChildren
   PortalRoute: typeof PortalRoute
   ResetPasswordRoute: typeof ResetPasswordRoute
   SearchRoute: typeof SearchRoute
@@ -1650,6 +1660,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/news/'
       preLoaderRoute: typeof NewsIndexRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/my-bali/': {
+      id: '/my-bali/'
+      path: '/'
+      fullPath: '/my-bali/'
+      preLoaderRoute: typeof MyBaliIndexRouteImport
+      parentRoute: typeof MyBaliRoute
     }
     '/join/': {
       id: '/join/'
@@ -2444,6 +2461,17 @@ const AdminRouteChildren: AdminRouteChildren = {
 
 const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
 
+interface MyBaliRouteChildren {
+  MyBaliIndexRoute: typeof MyBaliIndexRoute
+}
+
+const MyBaliRouteChildren: MyBaliRouteChildren = {
+  MyBaliIndexRoute: MyBaliIndexRoute,
+}
+
+const MyBaliRouteWithChildren =
+  MyBaliRoute._addFileChildren(MyBaliRouteChildren)
+
 interface HelpDisputeRouteChildren {
   HelpDisputeClientInformationRoute: typeof HelpDisputeClientInformationRoute
   HelpDisputeFrequentlyAskedQuestionsRoute: typeof HelpDisputeFrequentlyAskedQuestionsRoute
@@ -2629,7 +2657,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   ForgottenPasswordRoute: ForgottenPasswordRoute,
   LoginRoute: LoginRoute,
-  MyBaliRoute: MyBaliRoute,
+  MyBaliRoute: MyBaliRouteWithChildren,
   PortalRoute: PortalRoute,
   ResetPasswordRoute: ResetPasswordRoute,
   SearchRoute: SearchRoute,
