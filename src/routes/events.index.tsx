@@ -381,6 +381,8 @@ function EventCard({ event }: { event: EventRow }) {
   const month = (parts[1] ?? "").toUpperCase();
   const year = parts[2] ?? "";
   const region = deriveRegion(event);
+  const primary = primaryTag(event); // region name for generic regional events, else the type
+  const showSecondaryType = primary !== t && t !== "BALI Regional Event";
   const past = isPast(event);
   const booking = event.booking_url;
 
@@ -402,16 +404,19 @@ function EventCard({ event }: { event: EventRow }) {
           </div>
         </div>
         <div className="absolute top-3 right-3 flex flex-col items-end gap-1.5">
-          <span className={`inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full ${typeBadgeClass(t)}`}>
-            {t === "Webinar" && <Monitor className="w-3 h-3" aria-hidden />}
-            {t}
+          <span className={`inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider px-2.5 py-1.5 rounded-full shadow-sm ${tagBadgeClass(primary)}`}>
+            {primary}
           </span>
           {past && <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full bg-gray-800/80 text-white">Past</span>}
         </div>
       </div>
 
       <div className="p-5 flex-1 flex flex-col">
-        <p className="text-xs text-bali-purple uppercase tracking-widest font-semibold mb-2">{region}</p>
+        {showSecondaryType ? (
+          <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-2">{t} · {region}</p>
+        ) : (
+          <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-2">BALI Regional Event</p>
+        )}
         <h3 className="font-bold text-gray-900 text-lg leading-snug group-hover:text-bali-blue transition-colors">
           {booking ? (
             <a href={booking} className="focus:outline-none focus:underline">{event.title}</a>
