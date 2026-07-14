@@ -180,14 +180,13 @@ function EventsIndex() {
       {webinars.length > 0 && (
         <section aria-labelledby="webinars-heading" className="py-12 bg-gradient-to-b from-bali-purple/5 to-transparent">
           <div className="max-w-6xl mx-auto px-6">
-            <div className="flex items-end justify-between gap-4 mb-6 flex-wrap">
-              <div>
-                <p className="uppercase tracking-widest text-xs font-semibold text-bali-purple mb-2 inline-flex items-center gap-2">
-                  <Monitor className="w-4 h-4" aria-hidden /> Webinars
-                </p>
-                <h2 id="webinars-heading" className="text-2xl sm:text-3xl font-bold text-bali-slate">Upcoming webinars</h2>
-                <p className="text-gray-600 mt-1">Join us online — no travel required.</p>
-              </div>
+            <div className="mb-6">
+              <p className="uppercase tracking-widest text-xs font-semibold text-bali-purple mb-2 inline-flex items-center gap-2">
+                <Monitor className="w-4 h-4" aria-hidden /> Webinars
+              </p>
+              <h2 id="webinars-heading" className="text-2xl sm:text-3xl font-bold text-bali-slate">Upcoming webinars</h2>
+              <p className="text-gray-600 mt-1">Join us online — no travel required.</p>
+            </div>
               <button
                 onClick={applyWebinarFilter}
                 className="text-sm font-semibold text-bali-blue hover:text-bali-purple underline underline-offset-4"
