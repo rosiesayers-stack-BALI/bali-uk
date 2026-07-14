@@ -147,6 +147,7 @@ import { Route as AdminOrganisationsIdRouteImport } from './routes/admin.organis
 import { Route as AdminNewsIdRouteImport } from './routes/admin.news.$id'
 import { Route as AdminLissIdRouteImport } from './routes/admin.liss.$id'
 import { Route as AdminEventsIdRouteImport } from './routes/admin.events.$id'
+import { Route as AdminApplicationsIdRouteImport } from './routes/admin.applications.$id'
 import { Route as LissCscsApplyCategoryIndexRouteImport } from './routes/liss-cscs.apply.$category.index'
 import { Route as ApiPublicHooksWorkbooksSyncRouteImport } from './routes/api/public/hooks/workbooks-sync'
 import { Route as LissCscsApplyCategoryCardIndexRouteImport } from './routes/liss-cscs.apply.$category.$card.index'
@@ -881,6 +882,11 @@ const AdminEventsIdRoute = AdminEventsIdRouteImport.update({
   path: '/events/$id',
   getParentRoute: () => AdminRoute,
 } as any)
+const AdminApplicationsIdRoute = AdminApplicationsIdRouteImport.update({
+  id: '/applications/$id',
+  path: '/applications/$id',
+  getParentRoute: () => AdminRoute,
+} as any)
 const LissCscsApplyCategoryIndexRoute =
   LissCscsApplyCategoryIndexRouteImport.update({
     id: '/liss-cscs/apply/$category/',
@@ -964,6 +970,7 @@ export interface FileRoutesByFullPath {
   '/my-bali/': typeof MyBaliIndexRoute
   '/news/': typeof NewsIndexRoute
   '/policy/': typeof PolicyIndexRoute
+  '/admin/applications/$id': typeof AdminApplicationsIdRoute
   '/admin/events/$id': typeof AdminEventsIdRoute
   '/admin/liss/$id': typeof AdminLissIdRoute
   '/admin/news/$id': typeof AdminNewsIdRoute
@@ -1105,6 +1112,7 @@ export interface FileRoutesByTo {
   '/my-bali': typeof MyBaliIndexRoute
   '/news': typeof NewsIndexRoute
   '/policy': typeof PolicyIndexRoute
+  '/admin/applications/$id': typeof AdminApplicationsIdRoute
   '/admin/events/$id': typeof AdminEventsIdRoute
   '/admin/liss/$id': typeof AdminLissIdRoute
   '/admin/news/$id': typeof AdminNewsIdRoute
@@ -1250,6 +1258,7 @@ export interface FileRoutesById {
   '/my-bali/': typeof MyBaliIndexRoute
   '/news/': typeof NewsIndexRoute
   '/policy/': typeof PolicyIndexRoute
+  '/admin/applications/$id': typeof AdminApplicationsIdRoute
   '/admin/events/$id': typeof AdminEventsIdRoute
   '/admin/liss/$id': typeof AdminLissIdRoute
   '/admin/news/$id': typeof AdminNewsIdRoute
@@ -1396,6 +1405,7 @@ export interface FileRouteTypes {
     | '/my-bali/'
     | '/news/'
     | '/policy/'
+    | '/admin/applications/$id'
     | '/admin/events/$id'
     | '/admin/liss/$id'
     | '/admin/news/$id'
@@ -1537,6 +1547,7 @@ export interface FileRouteTypes {
     | '/my-bali'
     | '/news'
     | '/policy'
+    | '/admin/applications/$id'
     | '/admin/events/$id'
     | '/admin/liss/$id'
     | '/admin/news/$id'
@@ -1681,6 +1692,7 @@ export interface FileRouteTypes {
     | '/my-bali/'
     | '/news/'
     | '/policy/'
+    | '/admin/applications/$id'
     | '/admin/events/$id'
     | '/admin/liss/$id'
     | '/admin/news/$id'
@@ -2796,6 +2808,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminEventsIdRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/admin/applications/$id': {
+      id: '/admin/applications/$id'
+      path: '/applications/$id'
+      fullPath: '/admin/applications/$id'
+      preLoaderRoute: typeof AdminApplicationsIdRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/liss-cscs/apply/$category/': {
       id: '/liss-cscs/apply/$category/'
       path: '/liss-cscs/apply/$category'
@@ -2830,6 +2849,7 @@ declare module '@tanstack/react-router' {
 interface AdminRouteChildren {
   AdminResetPasswordRoute: typeof AdminResetPasswordRoute
   AdminIndexRoute: typeof AdminIndexRoute
+  AdminApplicationsIdRoute: typeof AdminApplicationsIdRoute
   AdminEventsIdRoute: typeof AdminEventsIdRoute
   AdminLissIdRoute: typeof AdminLissIdRoute
   AdminNewsIdRoute: typeof AdminNewsIdRoute
@@ -2851,6 +2871,7 @@ interface AdminRouteChildren {
 const AdminRouteChildren: AdminRouteChildren = {
   AdminResetPasswordRoute: AdminResetPasswordRoute,
   AdminIndexRoute: AdminIndexRoute,
+  AdminApplicationsIdRoute: AdminApplicationsIdRoute,
   AdminEventsIdRoute: AdminEventsIdRoute,
   AdminLissIdRoute: AdminLissIdRoute,
   AdminNewsIdRoute: AdminNewsIdRoute,
