@@ -78,7 +78,6 @@ import { Route as AdminNewsIndexRouteImport } from './routes/admin.news.index'
 import { Route as AdminLissIndexRouteImport } from './routes/admin.liss.index'
 import { Route as AdminEventsIndexRouteImport } from './routes/admin.events.index'
 import { Route as AdminApplicationsIndexRouteImport } from './routes/admin.applications.index'
-import { Route as MyBaliProfileWhosWhoRouteImport } from './routes/my-bali.profile.whos-who'
 import { Route as MyBaliProfilePersonalRouteImport } from './routes/my-bali.profile.personal'
 import { Route as MyBaliProfilePasswordRouteImport } from './routes/my-bali.profile.password'
 import { Route as MyBaliProfileOrganisationRouteImport } from './routes/my-bali.profile.organisation'
@@ -499,11 +498,6 @@ const AdminApplicationsIndexRoute = AdminApplicationsIndexRouteImport.update({
   id: '/applications/',
   path: '/applications/',
   getParentRoute: () => AdminRoute,
-} as any)
-const MyBaliProfileWhosWhoRoute = MyBaliProfileWhosWhoRouteImport.update({
-  id: '/whos-who',
-  path: '/whos-who',
-  getParentRoute: () => MyBaliProfileRoute,
 } as any)
 const MyBaliProfilePersonalRoute = MyBaliProfilePersonalRouteImport.update({
   id: '/personal',
@@ -1039,7 +1033,6 @@ export interface FileRoutesByFullPath {
   '/my-bali/profile/organisation': typeof MyBaliProfileOrganisationRoute
   '/my-bali/profile/password': typeof MyBaliProfilePasswordRoute
   '/my-bali/profile/personal': typeof MyBaliProfilePersonalRoute
-  '/my-bali/profile/whos-who': typeof MyBaliProfileWhosWhoRoute
   '/admin/applications/': typeof AdminApplicationsIndexRoute
   '/admin/events/': typeof AdminEventsIndexRoute
   '/admin/liss/': typeof AdminLissIndexRoute
@@ -1181,7 +1174,6 @@ export interface FileRoutesByTo {
   '/my-bali/profile/organisation': typeof MyBaliProfileOrganisationRoute
   '/my-bali/profile/password': typeof MyBaliProfilePasswordRoute
   '/my-bali/profile/personal': typeof MyBaliProfilePersonalRoute
-  '/my-bali/profile/whos-who': typeof MyBaliProfileWhosWhoRoute
   '/admin/applications': typeof AdminApplicationsIndexRoute
   '/admin/events': typeof AdminEventsIndexRoute
   '/admin/liss': typeof AdminLissIndexRoute
@@ -1327,7 +1319,6 @@ export interface FileRoutesById {
   '/my-bali/profile/organisation': typeof MyBaliProfileOrganisationRoute
   '/my-bali/profile/password': typeof MyBaliProfilePasswordRoute
   '/my-bali/profile/personal': typeof MyBaliProfilePersonalRoute
-  '/my-bali/profile/whos-who': typeof MyBaliProfileWhosWhoRoute
   '/admin/applications/': typeof AdminApplicationsIndexRoute
   '/admin/events/': typeof AdminEventsIndexRoute
   '/admin/liss/': typeof AdminLissIndexRoute
@@ -1474,7 +1465,6 @@ export interface FileRouteTypes {
     | '/my-bali/profile/organisation'
     | '/my-bali/profile/password'
     | '/my-bali/profile/personal'
-    | '/my-bali/profile/whos-who'
     | '/admin/applications/'
     | '/admin/events/'
     | '/admin/liss/'
@@ -1616,7 +1606,6 @@ export interface FileRouteTypes {
     | '/my-bali/profile/organisation'
     | '/my-bali/profile/password'
     | '/my-bali/profile/personal'
-    | '/my-bali/profile/whos-who'
     | '/admin/applications'
     | '/admin/events'
     | '/admin/liss'
@@ -1761,7 +1750,6 @@ export interface FileRouteTypes {
     | '/my-bali/profile/organisation'
     | '/my-bali/profile/password'
     | '/my-bali/profile/personal'
-    | '/my-bali/profile/whos-who'
     | '/admin/applications/'
     | '/admin/events/'
     | '/admin/liss/'
@@ -2324,13 +2312,6 @@ declare module '@tanstack/react-router' {
       fullPath: '/admin/applications/'
       preLoaderRoute: typeof AdminApplicationsIndexRouteImport
       parentRoute: typeof AdminRoute
-    }
-    '/my-bali/profile/whos-who': {
-      id: '/my-bali/profile/whos-who'
-      path: '/whos-who'
-      fullPath: '/my-bali/profile/whos-who'
-      preLoaderRoute: typeof MyBaliProfileWhosWhoRouteImport
-      parentRoute: typeof MyBaliProfileRoute
     }
     '/my-bali/profile/personal': {
       id: '/my-bali/profile/personal'
@@ -2899,7 +2880,6 @@ interface MyBaliProfileRouteChildren {
   MyBaliProfileOrganisationRoute: typeof MyBaliProfileOrganisationRoute
   MyBaliProfilePasswordRoute: typeof MyBaliProfilePasswordRoute
   MyBaliProfilePersonalRoute: typeof MyBaliProfilePersonalRoute
-  MyBaliProfileWhosWhoRoute: typeof MyBaliProfileWhosWhoRoute
   MyBaliProfileIndexRoute: typeof MyBaliProfileIndexRoute
 }
 
@@ -2910,7 +2890,6 @@ const MyBaliProfileRouteChildren: MyBaliProfileRouteChildren = {
   MyBaliProfileOrganisationRoute: MyBaliProfileOrganisationRoute,
   MyBaliProfilePasswordRoute: MyBaliProfilePasswordRoute,
   MyBaliProfilePersonalRoute: MyBaliProfilePersonalRoute,
-  MyBaliProfileWhosWhoRoute: MyBaliProfileWhosWhoRoute,
   MyBaliProfileIndexRoute: MyBaliProfileIndexRoute,
 }
 
