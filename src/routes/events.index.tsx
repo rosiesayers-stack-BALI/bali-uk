@@ -24,8 +24,8 @@ export const Route = createFileRoute("/events/")({
 
 // ---- helpers ------------------------------------------------------------
 
-const REGIONS = ["South West", "Midlands", "South Thames", "North Thames", "Yorkshire & North East", "East Anglia", "National", "Online"] as const;
-type Region = (typeof REGIONS)[number];
+const REGIONS = ["South West", "Midlands", "South Thames", "North Thames", "Yorkshire & North East", "East Anglia", "National"] as const;
+type Region = (typeof REGIONS)[number] | "Online";
 
 // TODO: replace with CMS region field once the events taxonomy exposes it.
 function deriveRegion(e: EventRow): Region {
@@ -49,16 +49,34 @@ function effectiveType(e: EventRow): string {
   return isWebinar(e) ? "Webinar" : e.category;
 }
 
-// stable colour per type — kept within existing bali palette
+// For generic "BALI Regional Event" entries, promote the region to the primary tag.
+function primaryTag(e: EventRow): string {
+  const t = effectiveType(e);
+  if (t === "BALI Regional Event") return deriveRegion(e);
+  return t;
+}
+
+// Per-region colour tokens — kept within the existing bali palette.
+const REGION_COLORS: Record<string, string> = {
+  "South West": "bg-bali-grass text-bali-slate",
+  "Midlands": "bg-bali-blue text-white",
+  "South Thames": "bg-bali-purple text-white",
+  "North Thames": "bg-sky-600 text-white",
+  "Yorkshire & North East": "bg-amber-500 text-bali-slate",
+  "East Anglia": "bg-emerald-600 text-white",
+  "National": "bg-bali-slate text-white",
+  "Online": "bg-bali-purple text-white",
+};
+
+// Non-region event types.
 const TYPE_COLORS: Record<string, string> = {
   "Webinar": "bg-bali-purple text-white",
-  "BALI Regional Event": "bg-bali-blue text-white",
   "Supplier Forum": "bg-bali-slate text-white",
   "BALI Chalk Fund": "bg-bali-grass text-bali-slate",
   "Member Event": "bg-bali-grass text-bali-slate",
 };
-function typeBadgeClass(t: string) {
-  return TYPE_COLORS[t] ?? "bg-gray-800 text-white";
+function tagBadgeClass(tag: string) {
+  return REGION_COLORS[tag] ?? TYPE_COLORS[tag] ?? "bg-gray-800 text-white";
 }
 
 function isPast(e: EventRow): boolean {
