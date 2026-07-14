@@ -154,15 +154,6 @@ function EventsIndex() {
   const activeCount = [type !== "all", region !== "all", month !== "all", q.trim() !== "", tense !== "future"].filter(Boolean).length;
   const clearAll = () => { setQ(""); setType("all"); setRegion("all"); setMonth("all"); setTense("future"); };
 
-  const applyWebinarFilter = () => {
-    setType("Webinar");
-    setRegion("all");
-    setMonth("all");
-    setTense("future");
-    setQ("");
-    const el = document.getElementById("events-grid");
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
