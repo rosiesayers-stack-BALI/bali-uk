@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { useNavigate, useSearch } from "@tanstack/react-router";
+import { useNavigate } from "@tanstack/react-router";
 import SmartLink from "../components/SmartLink";
 import AuthLayout from "../components/mybali/AuthLayout";
 import { useMyBaliAuth } from "../services/auth-context";
