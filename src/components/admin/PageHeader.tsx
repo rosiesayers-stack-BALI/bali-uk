@@ -14,19 +14,17 @@ export function PageHeader({
   actions?: ReactNode;
 }) {
   return (
-    <div className="bg-white border-b border-gray-200 px-8 py-6">
-      <div className="flex items-start justify-between gap-4">
-        <div>
-          {back && (
-            <Link to={back.to} className="inline-flex items-center text-sm text-gray-500 hover:text-bali-blue mb-2">
-              <ChevronLeft className="w-4 h-4" /> {back.label}
-            </Link>
-          )}
-          <h1 className="text-2xl font-bold text-gray-900">{title}</h1>
-          {subtitle && <p className="text-sm text-gray-600 mt-1">{subtitle}</p>}
-        </div>
-        {actions && <div className="flex items-center gap-2">{actions}</div>}
+    <div className="mb-6 flex items-end justify-between gap-4 flex-wrap">
+      <div className="min-w-0">
+        {back && (
+          <Link to={back.to} className="inline-flex items-center text-sm text-gray-500 hover:text-bali-blue mb-2">
+            <ChevronLeft className="w-4 h-4" /> {back.label}
+          </Link>
+        )}
+        <h2 className="text-2xl sm:text-3xl font-bold text-bali-slate tracking-tight">{title}</h2>
+        {subtitle && <p className="text-gray-500 mt-1 text-sm">{subtitle}</p>}
       </div>
+      {actions && <div className="flex items-center gap-2">{actions}</div>}
     </div>
   );
 }

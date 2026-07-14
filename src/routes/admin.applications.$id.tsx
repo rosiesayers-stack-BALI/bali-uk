@@ -1,10 +1,12 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { useState } from "react";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { PageHeader } from "@/components/admin/PageHeader";
 import {
-  useCrm, moveApplicationStage, addApplicationNote, sendOnboardingLink,
-  PIPELINE_STAGES, SIDE_STAGES, type ApplicationStage,
-} from "@/lib/admin/mock-crm";
+  fetchApplication, toApplication, updateStage, addNote, sendOnboardingLink,
+  useAppOverlays, PIPELINE_STAGES, SIDE_STAGES,
+  type ApplicationStage,
+} from "@/lib/admin/applications";
 import { Mail, Phone, MapPin, Briefcase, Check, X, Link as LinkIcon, Copy, PauseCircle } from "lucide-react";
 
 export const Route = createFileRoute("/admin/applications/$id")({
@@ -15,27 +17,49 @@ const ALL_STAGES: ApplicationStage[] = [...PIPELINE_STAGES, ...SIDE_STAGES];
 
 function AppDetail() {
   const { id } = Route.useParams();
-  const crm = useCrm();
-  const app = crm.applications.find((a) => a.id === id);
-  if (!app) throw notFound();
+  const overlays = useAppOverlays();
+  const qc = useQueryClient();
 
+  const q = useQuery({
+    queryKey: ["admin", "application", id],
+    queryFn: () => fetchApplication(id),
+  });
+
+  if (q.isLoading) return <div className="text-sm text-gray-500">Loading…</div>;
+  if (q.error) return <div className="text-sm text-red-600">{(q.error as Error).message}</div>;
+  if (!q.data) throw notFound();
+  const app = toApplication(q.data, overlays);
+
+  const invalidate = () => {
+    qc.invalidateQueries({ queryKey: ["admin", "application", id] });
+    qc.invalidateQueries({ queryKey: ["admin", "applications"] });
+  };
+
+  return <AppDetailBody app={app} allStages={ALL_STAGES} onChange={invalidate} />;
+}
+
+function AppDetailBody({
+  app, allStages, onChange,
+}: {
+  app: ReturnType<typeof toApplication>;
+  allStages: ApplicationStage[];
+  onChange: () => void;
+}) {
   const [note, setNote] = useState("");
   const [toast, setToast] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
 
-  const showToast = (msg: string) => {
-    setToast(msg);
-    setTimeout(() => setToast(null), 2500);
-  };
+  const showToast = (msg: string) => { setToast(msg); setTimeout(() => setToast(null), 2500); };
 
-  const onApprove = () => { moveApplicationStage(app.id, "Approved"); showToast("Application approved."); };
-  const onReject = () => { moveApplicationStage(app.id, "Rejected"); showToast("Application rejected."); };
-  const onHold = () => { moveApplicationStage(app.id, "On-hold"); showToast("Application put on hold."); };
-  const onSendLink = () => {
-    // TODO: Replace with real backend call to email the onboarding link.
-    sendOnboardingLink(app.id);
-    showToast("Onboarding link generated (mock — not emailed).");
-  };
+  const move = useMutation({
+    mutationFn: async (to: ApplicationStage) => { await updateStage(app.id, to, app.stage); },
+    onSuccess: () => onChange(),
+  });
+
+  const linkMut = useMutation({
+    mutationFn: async () => { await sendOnboardingLink(app.id, app.stage); },
+    onSuccess: () => { showToast("Onboarding link generated (mock — not emailed)."); onChange(); },
+  });
 
   return (
     <div>
@@ -44,43 +68,45 @@ function AppDetail() {
         subtitle={`${app.organisation} · Applied ${new Date(app.dateApplied).toLocaleDateString("en-GB")}`}
         back={{ to: "/admin/applications", label: "Back to Applications" }}
         actions={
-          <div className="flex items-center gap-2">
-            <select value={app.stage} onChange={(e) => moveApplicationStage(app.id, e.target.value as ApplicationStage)}
-              className="text-sm rounded-lg border border-gray-300 bg-white px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-bali-blue/25">
-              {ALL_STAGES.map((s) => <option key={s} value={s}>{s}</option>)}
-            </select>
-          </div>
+          <select value={app.stage} onChange={(e) => move.mutate(e.target.value as ApplicationStage)}
+            className="text-sm rounded-lg border border-gray-300 bg-white px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-bali-blue/25">
+            {allStages.map((s) => <option key={s} value={s}>{s}</option>)}
+          </select>
         }
       />
-      <div className="p-8 grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 space-y-6">
-          <div className="bg-white rounded-2xl border border-gray-200 p-6">
-            <h2 className="font-bold text-gray-900 mb-4">Applicant details</h2>
+          <section className="bg-white rounded-xl border border-gray-100 shadow-sm p-6">
+            <h2 className="font-bold text-bali-slate mb-4">Applicant details</h2>
             <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-              <Field icon={Mail} label="Email" value={<a href={`mailto:${app.email}`} className="text-bali-blue hover:underline">{app.email}</a>} />
-              <Field icon={Phone} label="Phone" value={app.phone} />
-              <Field icon={MapPin} label="Location" value={`${app.town}, ${app.county} · ${app.region}`} />
-              <Field icon={Briefcase} label="Discipline" value={app.discipline} />
+              <Field icon={Mail} label="Email" value={app.email ? <a href={`mailto:${app.email}`} className="text-bali-blue hover:underline">{app.email}</a> : "—"} />
+              <Field icon={Phone} label="Phone" value={app.phone || "—"} />
+              <Field icon={MapPin} label="Location" value={[app.town, app.county, app.region].filter(Boolean).join(" · ") || "—"} />
+              <Field icon={Briefcase} label="Discipline / Category" value={app.discipline} />
             </dl>
-          </div>
+          </section>
 
-          <div className="bg-white rounded-2xl border border-gray-200 p-6">
+          <section className="bg-white rounded-xl border border-gray-100 shadow-sm p-6">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="font-bold text-gray-900">Actions</h2>
-              <span className="text-xs text-gray-500">Onboarding: <strong className="text-gray-900">{app.onboarding}</strong></span>
+              <h2 className="font-bold text-bali-slate">Actions</h2>
+              <span className="text-xs text-gray-500">Onboarding: <strong className="text-bali-slate">{app.onboarding}</strong></span>
             </div>
             <div className="flex flex-wrap gap-2">
-              <button onClick={onApprove} className="inline-flex items-center gap-1.5 bg-bali-green text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-emerald-700">
+              <button onClick={() => { move.mutate("Approved"); showToast("Application approved."); }}
+                className="inline-flex items-center gap-1.5 bg-bali-green text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-emerald-700">
                 <Check className="w-4 h-4" /> Approve
               </button>
-              <button onClick={onReject} className="inline-flex items-center gap-1.5 bg-rose-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-rose-700">
+              <button onClick={() => { move.mutate("Rejected"); showToast("Application rejected."); }}
+                className="inline-flex items-center gap-1.5 bg-rose-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-rose-700">
                 <X className="w-4 h-4" /> Reject
               </button>
-              <button onClick={onHold} className="inline-flex items-center gap-1.5 bg-gray-200 text-gray-800 px-3 py-2 rounded-lg text-sm font-semibold hover:bg-gray-300">
+              <button onClick={() => { move.mutate("On-hold"); showToast("Application put on hold."); }}
+                className="inline-flex items-center gap-1.5 bg-gray-200 text-gray-800 px-3 py-2 rounded-lg text-sm font-semibold hover:bg-gray-300">
                 <PauseCircle className="w-4 h-4" /> On-hold
               </button>
               {app.stage === "Approved" && (
-                <button onClick={onSendLink} className="inline-flex items-center gap-1.5 bg-bali-blue text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-bali-blue/90">
+                <button onClick={() => linkMut.mutate()}
+                  className="inline-flex items-center gap-1.5 bg-bali-blue text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-blue-800">
                   <LinkIcon className="w-4 h-4" /> Send onboarding link
                 </button>
               )}
@@ -99,10 +125,10 @@ function AppDetail() {
                 <p className="text-[11px] text-teal-700 mt-2 italic">TODO: email this link to the applicant via our backend.</p>
               </div>
             )}
-          </div>
+          </section>
 
-          <div className="bg-white rounded-2xl border border-gray-200 p-6">
-            <h2 className="font-bold text-gray-900 mb-4">Notes</h2>
+          <section className="bg-white rounded-xl border border-gray-100 shadow-sm p-6">
+            <h2 className="font-bold text-bali-slate mb-4">Notes</h2>
             <div className="space-y-3 mb-4">
               {app.notes.length === 0 && <p className="text-sm text-gray-500">No notes yet.</p>}
               {app.notes.map((n) => (
@@ -116,21 +142,21 @@ function AppDetail() {
               <textarea value={note} onChange={(e) => setNote(e.target.value)} rows={2} placeholder="Add a note…"
                 className="flex-1 rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-bali-blue/25 focus:border-bali-blue" />
               <button
-                onClick={() => { if (note.trim()) { addApplicationNote(app.id, note.trim()); setNote(""); showToast("Note added."); } }}
-                className="bg-bali-blue text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-bali-blue/90 self-start">
+                onClick={() => { if (note.trim()) { addNote(app.id, note.trim()); setNote(""); showToast("Note added."); onChange(); } }}
+                className="bg-bali-blue text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-800 self-start">
                 Add
               </button>
             </div>
-          </div>
+          </section>
         </div>
 
-        <div className="bg-white rounded-2xl border border-gray-200 p-6">
-          <h2 className="font-bold text-gray-900 mb-4">Stage history</h2>
+        <section className="bg-white rounded-xl border border-gray-100 shadow-sm p-6">
+          <h2 className="font-bold text-bali-slate mb-4">Stage history</h2>
           <ol className="space-y-4 border-l-2 border-gray-200 pl-4">
             {app.history.map((h) => (
               <li key={h.id} className="relative">
                 <span className="absolute -left-[21px] top-1 w-3 h-3 rounded-full bg-bali-blue" />
-                <p className="text-sm font-semibold text-gray-900">
+                <p className="text-sm font-semibold text-bali-slate">
                   {h.from ? `${h.from} → ${h.to}` : h.to}
                 </p>
                 <p className="text-xs text-gray-500">{new Date(h.at).toLocaleString("en-GB")} · {h.by}</p>
@@ -138,11 +164,11 @@ function AppDetail() {
               </li>
             ))}
           </ol>
-        </div>
+        </section>
       </div>
 
       {toast && (
-        <div role="status" className="fixed bottom-6 right-6 bg-gray-900 text-white text-sm px-4 py-3 rounded-lg shadow-lg z-50">
+        <div role="status" className="fixed bottom-6 right-6 bg-bali-slate text-white text-sm px-4 py-3 rounded-lg shadow-lg z-50">
           {toast}
         </div>
       )}

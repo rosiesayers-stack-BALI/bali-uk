@@ -1,10 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { PageHeader } from "@/components/admin/PageHeader";
 import {
-  useCrm, moveApplicationStage, PIPELINE_STAGES, SIDE_STAGES,
-  type ApplicationStage, type Application,
-} from "@/lib/admin/mock-crm";
+  fetchApplications, toApplication, updateStage, useAppOverlays,
+  PIPELINE_STAGES, SIDE_STAGES, type Application, type ApplicationStage,
+} from "@/lib/admin/applications";
 import { LayoutGrid, List, Search } from "lucide-react";
 
 export const Route = createFileRoute("/admin/applications/")({
@@ -25,19 +26,31 @@ const STAGE_COLOUR: Record<ApplicationStage, string> = {
 };
 
 function ApplicationsIndex() {
-  const crm = useCrm();
+  const overlays = useAppOverlays();
+  const qc = useQueryClient();
+  const q = useQuery({ queryKey: ["admin", "applications"], queryFn: fetchApplications });
+  const applications: Application[] = useMemo(
+    () => (q.data ?? []).map((r) => toApplication(r, overlays)),
+    [q.data, overlays],
+  );
+
+  const move = useMutation({
+    mutationFn: async ({ id, from, to }: { id: string; from: ApplicationStage; to: ApplicationStage }) => {
+      await updateStage(id, to, from);
+    },
+    onSuccess: () => qc.invalidateQueries({ queryKey: ["admin", "applications"] }),
+  });
+
   const [view, setView] = useState<"board" | "list">("board");
-  const [q, setQ] = useState("");
+  const [search, setSearch] = useState("");
   const [stageFilter, setStageFilter] = useState<ApplicationStage | "">("");
   const [dragId, setDragId] = useState<string | null>(null);
 
-  const filtered = useMemo(() => {
-    return crm.applications.filter((a) => {
-      if (q && !(a.applicantName.toLowerCase().includes(q.toLowerCase()) || a.organisation.toLowerCase().includes(q.toLowerCase()))) return false;
-      if (stageFilter && a.stage !== stageFilter) return false;
-      return true;
-    });
-  }, [crm.applications, q, stageFilter]);
+  const filtered = applications.filter((a) => {
+    if (search && !(a.applicantName.toLowerCase().includes(search.toLowerCase()) || a.organisation.toLowerCase().includes(search.toLowerCase()))) return false;
+    if (stageFilter && a.stage !== stageFilter) return false;
+    return true;
+  });
 
   const grouped: Record<ApplicationStage, Application[]> = ALL_STAGES.reduce((acc, s) => {
     acc[s] = filtered.filter((a) => a.stage === s);
@@ -50,38 +63,50 @@ function ApplicationsIndex() {
         title="Applications"
         subtitle="Membership applications pipeline — approve applicants and send onboarding."
         actions={
-          <div className="inline-flex rounded-lg border border-gray-300 overflow-hidden">
-            <button onClick={() => setView("board")} className={`px-3 py-1.5 text-sm inline-flex items-center gap-1 ${view === "board" ? "bg-bali-blue text-white" : "bg-white text-gray-700 hover:bg-gray-50"}`}>
+          <div className="inline-flex rounded-lg border border-gray-300 overflow-hidden bg-white">
+            <button onClick={() => setView("board")} className={`px-3 py-1.5 text-sm inline-flex items-center gap-1 ${view === "board" ? "bg-bali-blue text-white" : "text-gray-700 hover:bg-gray-50"}`}>
               <LayoutGrid className="w-4 h-4" /> Board
             </button>
-            <button onClick={() => setView("list")} className={`px-3 py-1.5 text-sm inline-flex items-center gap-1 ${view === "list" ? "bg-bali-blue text-white" : "bg-white text-gray-700 hover:bg-gray-50"}`}>
+            <button onClick={() => setView("list")} className={`px-3 py-1.5 text-sm inline-flex items-center gap-1 ${view === "list" ? "bg-bali-blue text-white" : "text-gray-700 hover:bg-gray-50"}`}>
               <List className="w-4 h-4" /> List
             </button>
           </div>
         }
       />
-      <div className="p-8 space-y-4">
-        <div className="bg-white rounded-2xl border border-gray-200 p-4 flex flex-wrap items-center gap-3">
+      <div className="space-y-4">
+        <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-4 flex flex-wrap items-center gap-3">
           <div className="relative flex-1 min-w-[220px]">
             <Search className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" aria-hidden />
-            <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search applicant or organisation…"
+            <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search applicant or organisation…"
               className="w-full pl-9 pr-3 py-2 text-sm rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-bali-blue/25 focus:border-bali-blue" />
           </div>
-          <select value={stageFilter} onChange={(e) => setStageFilter(e.target.value as ApplicationStage | "")} className="rounded-lg border border-gray-300 px-3 py-2 text-sm bg-white">
+          <select value={stageFilter} onChange={(e) => setStageFilter(e.target.value as ApplicationStage | "")}
+            className="rounded-lg border border-gray-300 px-3 py-2 text-sm bg-white">
             <option value="">All stages</option>
             {ALL_STAGES.map((s) => <option key={s} value={s}>{s}</option>)}
           </select>
-          <span className="text-xs text-gray-500 ml-auto"><strong className="text-gray-900">{filtered.length}</strong> application{filtered.length === 1 ? "" : "s"}</span>
+          <span className="text-xs text-gray-500 ml-auto">
+            <strong className="text-bali-slate">{filtered.length}</strong> application{filtered.length === 1 ? "" : "s"}
+          </span>
         </div>
 
-        {view === "board" ? (
+        {q.isLoading ? (
+          <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-10 text-sm text-gray-500 text-center">Loading applications…</div>
+        ) : q.error ? (
+          <div className="bg-white rounded-xl border border-red-200 shadow-sm p-6 text-sm text-red-700">{(q.error as Error).message}</div>
+        ) : view === "board" ? (
           <div className="overflow-x-auto">
             <div className="flex gap-4 min-w-max pb-4">
               {ALL_STAGES.map((stage) => (
                 <div key={stage}
                   onDragOver={(e) => e.preventDefault()}
-                  onDrop={() => { if (dragId) { moveApplicationStage(dragId, stage); setDragId(null); } }}
-                  className={`w-72 flex-shrink-0 rounded-2xl border-2 border-dashed p-3 ${STAGE_COLOUR[stage]}`}>
+                  onDrop={() => {
+                    if (!dragId) return;
+                    const src = applications.find((a) => a.id === dragId);
+                    if (src && src.stage !== stage) move.mutate({ id: src.id, from: src.stage, to: stage });
+                    setDragId(null);
+                  }}
+                  className={`w-72 flex-shrink-0 rounded-xl border-2 border-dashed p-3 ${STAGE_COLOUR[stage]}`}>
                   <div className="flex items-center justify-between mb-3 px-1">
                     <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700">{stage}</h3>
                     <span className="text-xs font-semibold text-gray-600 bg-white/70 rounded-full px-2 py-0.5">{grouped[stage].length}</span>
@@ -89,11 +114,11 @@ function ApplicationsIndex() {
                   <div className="space-y-2">
                     {grouped[stage].map((a) => (
                       <div key={a.id} draggable onDragStart={() => setDragId(a.id)}
-                        className="bg-white rounded-lg border border-gray-200 p-3 shadow-sm cursor-grab active:cursor-grabbing hover:border-bali-blue">
+                        className="bg-white rounded-lg border border-gray-100 shadow-sm p-3 cursor-grab active:cursor-grabbing hover:border-bali-blue">
                         <Link to="/admin/applications/$id" params={{ id: a.id }} className="block">
-                          <p className="text-sm font-semibold text-gray-900 hover:text-bali-blue">{a.applicantName}</p>
+                          <p className="text-sm font-semibold text-bali-slate hover:text-bali-blue">{a.applicantName}</p>
                           <p className="text-xs text-gray-500 truncate">{a.organisation}</p>
-                          <p className="text-[11px] text-gray-500 mt-1">{a.town} · {a.discipline}</p>
+                          <p className="text-[11px] text-gray-500 mt-1">{a.town || "—"} · {a.discipline}</p>
                           <p className="text-[10px] text-gray-400 mt-1">Applied {new Date(a.dateApplied).toLocaleDateString("en-GB")}</p>
                         </Link>
                       </div>
@@ -107,7 +132,7 @@ function ApplicationsIndex() {
             </div>
           </div>
         ) : (
-          <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden">
+          <div className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
             {filtered.length === 0 ? (
               <div className="p-10 text-center text-sm text-gray-500">No applications.</div>
             ) : (
@@ -127,14 +152,15 @@ function ApplicationsIndex() {
                   {filtered.map((a) => (
                     <tr key={a.id} className="hover:bg-gray-50">
                       <td className="px-4 py-3 font-medium">
-                        <Link to="/admin/applications/$id" params={{ id: a.id }} className="text-gray-900 hover:text-bali-blue">{a.applicantName}</Link>
+                        <Link to="/admin/applications/$id" params={{ id: a.id }} className="text-bali-slate hover:text-bali-blue">{a.applicantName}</Link>
                       </td>
                       <td className="px-4 py-3 text-gray-600">{a.organisation}</td>
-                      <td className="px-4 py-3 text-gray-600">{a.town}, {a.region}</td>
+                      <td className="px-4 py-3 text-gray-600">{[a.town, a.region].filter(Boolean).join(", ") || "—"}</td>
                       <td className="px-4 py-3 text-gray-600">{a.discipline}</td>
                       <td className="px-4 py-3 text-gray-600 whitespace-nowrap">{new Date(a.dateApplied).toLocaleDateString("en-GB")}</td>
                       <td className="px-4 py-3">
-                        <select value={a.stage} onChange={(e) => moveApplicationStage(a.id, e.target.value as ApplicationStage)}
+                        <select value={a.stage}
+                          onChange={(e) => move.mutate({ id: a.id, from: a.stage, to: e.target.value as ApplicationStage })}
                           className="text-xs rounded-md border border-gray-300 bg-white px-2 py-1 focus:outline-none focus:ring-2 focus:ring-bali-blue/25">
                           {ALL_STAGES.map((s) => <option key={s} value={s}>{s}</option>)}
                         </select>

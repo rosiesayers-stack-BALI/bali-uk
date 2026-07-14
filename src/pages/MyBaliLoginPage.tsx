@@ -1,20 +1,11 @@
 import { useState, type FormEvent } from "react";
-import { useNavigate, useSearch } from "@tanstack/react-router";
+import { useNavigate } from "@tanstack/react-router";
 import SmartLink from "../components/SmartLink";
 import AuthLayout from "../components/mybali/AuthLayout";
 import { useMyBaliAuth } from "../services/auth-context";
 
-function safeDest(dest: unknown): string {
-  if (typeof dest !== "string") return "/my-bali";
-  // only allow same-origin paths
-  if (!dest.startsWith("/") || dest.startsWith("//")) return "/my-bali";
-  return dest;
-}
-
 export default function MyBaliLoginPage() {
   const navigate = useNavigate();
-  const search = useSearch({ strict: false }) as { dest?: string };
-  const dest = safeDest(search?.dest);
   const { login } = useMyBaliAuth();
 
   const [email, setEmail] = useState("");
@@ -29,7 +20,8 @@ export default function MyBaliLoginPage() {
     setLoading(true);
     try {
       await login(email, password);
-      navigate({ to: dest });
+      // Always land on the My BALI dashboard after a successful sign-in.
+      navigate({ to: "/my-bali" });
     } catch (err) {
       setError(err instanceof Error ? err.message : "Sign in failed.");
     } finally {
