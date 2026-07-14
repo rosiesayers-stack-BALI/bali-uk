@@ -1,13 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
-  Award, BadgeCheck, Briefcase, Building2, CalendarDays, Download,
+  Award, BadgeCheck, Briefcase, Building2, CalendarDays, Clock, Download,
   ExternalLink, Eye, FileText, Gavel, Globe, GraduationCap, Handshake, IdCard,
-  LineChart, Mail, MousePointerClick, Newspaper, ScrollText, Shield, Sparkles,
-  UserRound, Users, Video,
+  LineChart as LineIcon, Mail, MapPin, MousePointerClick, Newspaper, ScrollText, Shield, Sparkles,
+  TrendingUp, TrendingDown, UserRound, Users, Video, ArrowRight,
 } from "lucide-react";
+import { ResponsiveContainer, LineChart, Line } from "recharts";
 import { Card, PageHeader } from "../components/mybali/DashboardShell";
 import {
-  BENEFITS, RESOURCES, MEMBERSHIP, MEMBER_FEED, STATS,
+  BENEFITS, RESOURCES, MEMBERSHIP, MEMBER_EVENTS, STATS_TIMESERIES, pctChange,
+  NEWS_ARTICLES, EVENT_TYPE_COLORS,
 } from "../services/mybali-data";
 
 export const Route = createFileRoute("/my-bali/")({
@@ -16,33 +18,13 @@ export const Route = createFileRoute("/my-bali/")({
 });
 
 const BENEFIT_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
-  logo: BadgeCheck,
-  digital: Sparkles,
-  "hr-hs": Shield,
-  insure: Handshake,
-  jobs: Briefcase,
-  dispute: Gavel,
-  utp: Award,
+  logo: BadgeCheck, digital: Sparkles, "hr-hs": Shield, insure: Handshake,
+  jobs: Briefcase, dispute: Gavel, utp: Award,
 };
-
 const RESOURCE_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
-  brand: Sparkles,
-  domestic: ScrollText,
-  "landscape-news": Newspaper,
-  webinar: Video,
-  stickers: IdCard,
-  quality: BadgeCheck,
-  bank: Building2,
-  articles: FileText,
+  brand: Sparkles, domestic: ScrollText, "landscape-news": Newspaper, webinar: Video,
+  stickers: IdCard, quality: BadgeCheck, bank: Building2, articles: FileText,
 };
-
-const STAT_ICONS = {
-  websiteViews: Globe,
-  profileViews: Eye,
-  logins: UserRound,
-  searchResults: LineChart,
-  emailClicks: MousePointerClick,
-} as const;
 
 const QUICK_ACTIONS = [
   { label: "Update details", to: "/my-bali/profile/personal", icon: UserRound },
@@ -52,20 +34,137 @@ const QUICK_ACTIONS = [
   { label: "Download membership certificate", to: "/my-bali/profile", icon: Download },
 ] as const;
 
+function fmtShort(iso: string) {
+  return new Date(iso + (iso.length === 10 ? "T00:00:00" : "")).toLocaleDateString("en-GB", {
+    day: "2-digit", month: "short", year: "numeric",
+  });
+}
+
+const STAT_TILES = [
+  { key: "websiteViews" as const, label: "Website views", icon: Globe, color: "#65a30d" },
+  { key: "profileViews" as const, label: "Profile views", icon: Eye, color: "#1e3a5f" },
+  { key: "logins" as const, label: "Logins", icon: UserRound, color: "#0891b2" },
+  { key: "searchResults" as const, label: "Search results", icon: LineIcon, color: "#16a34a" },
+  { key: "emailClicks" as const, label: "Email clicks", icon: MousePointerClick, color: "#d97706" },
+];
+
 function DashboardIndex() {
+  const featured = NEWS_ARTICLES.find((a) => a.featured) ?? NEWS_ARTICLES[0];
+  const recentNews = NEWS_ARTICLES.filter((a) => a.id !== featured.id).slice(0, 3);
+  const today = new Date().toISOString().slice(0, 10);
+  const upcoming = [...MEMBER_EVENTS].filter((e) => e.date >= "2026-01-01").sort((a, b) => a.date.localeCompare(b.date)).slice(0, 4);
+
   return (
     <>
       <PageHeader title="Your dashboard" subtitle="A snapshot of your BALI membership." />
 
-      {/* Snapshot tiles */}
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-8">
-        <SnapshotTile icon={CalendarDays} label="Membership expiry" value={MEMBERSHIP.expiry} accent="bali-blue" />
-        <SnapshotTile icon={GraduationCap} label="Event bookings" value={String(MEMBERSHIP.eventBookings)} accent="bali-green" />
-        <SnapshotTile icon={Eye} label="Profile views" value={STATS.profileViews.toLocaleString()} accent="bali-flow" />
-        <SnapshotTile icon={Globe} label="Website views" value={STATS.websiteViews.toLocaleString()} accent="bali-grass" />
+      {/* Stat tiles with sparklines */}
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5 mb-8">
+        {STAT_TILES.map((t) => {
+          const data = STATS_TIMESERIES[t.key];
+          const value = data[data.length - 1].value;
+          const change = pctChange(data);
+          const up = change >= 0;
+          const Icon = t.icon;
+          return (
+            <div key={t.key} className="bg-white rounded-xl border border-gray-100 shadow-sm p-4">
+              <div className="flex items-center justify-between mb-1">
+                <span className="grid place-items-center w-8 h-8 rounded-lg" style={{ backgroundColor: `${t.color}18`, color: t.color }}>
+                  <Icon className="w-4 h-4" aria-hidden />
+                </span>
+                <span className={`inline-flex items-center gap-0.5 text-[11px] font-semibold px-1.5 py-0.5 rounded ${up ? "text-green-700 bg-green-50" : "text-red-700 bg-red-50"}`}>
+                  {up ? <TrendingUp className="w-3 h-3" aria-hidden /> : <TrendingDown className="w-3 h-3" aria-hidden />}
+                  {up ? "+" : ""}{change}%
+                </span>
+              </div>
+              <div className="text-2xl font-bold text-bali-slate tabular-nums">{value.toLocaleString()}</div>
+              <div className="text-[11px] text-gray-500 uppercase tracking-wide font-semibold">{t.label}</div>
+              <div className="h-8 mt-1 -mx-1">
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart data={data}>
+                    <Line type="monotone" dataKey="value" stroke={t.color} strokeWidth={1.75} dot={false} />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+          );
+        })}
       </div>
 
-      {/* Profile actions + stats */}
+      {/* Featured News */}
+      <section className="mb-8">
+        <div className="flex items-end justify-between mb-4">
+          <h3 className="text-xl font-bold text-bali-slate flex items-center gap-2">
+            <Newspaper className="w-5 h-5 text-bali-blue" aria-hidden /> News for members
+          </h3>
+          <Link to="/my-bali/news" className="text-sm text-bali-blue font-semibold hover:underline">All news →</Link>
+        </div>
+        <article className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden grid md:grid-cols-[1.2fr_1fr]">
+          <div className="relative min-h-[220px]">
+            <img src={featured.image} alt="" className="absolute inset-0 w-full h-full object-cover" />
+          </div>
+          <div className="p-6 flex flex-col">
+            <span className="inline-flex self-start text-[10px] uppercase tracking-wide font-semibold px-2 py-0.5 rounded-full bg-bali-blue/10 text-bali-blue mb-2">
+              Featured · {featured.category}
+            </span>
+            <h4 className="text-xl font-bold text-bali-slate leading-snug">{featured.title}</h4>
+            <p className="text-xs text-gray-500 mt-1.5 flex items-center gap-1.5"><CalendarDays className="w-3.5 h-3.5" aria-hidden /> {fmtShort(featured.date)}</p>
+            <p className="text-sm text-gray-600 mt-2">{featured.excerpt}</p>
+            <Link to="/my-bali/news" className="mt-auto inline-flex items-center gap-1.5 text-bali-blue text-sm font-semibold hover:underline pt-4">
+              Read the article <ArrowRight className="w-4 h-4" aria-hidden />
+            </Link>
+          </div>
+        </article>
+
+        <div className="grid gap-4 sm:grid-cols-3 mt-4">
+          {recentNews.map((a) => (
+            <Link key={a.id} to="/my-bali/news" className="group bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-md hover:border-bali-blue/30 transition flex flex-col">
+              <div className="aspect-[16/10] overflow-hidden bg-gray-100">
+                <img src={a.image} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div className="p-4 flex-1 flex flex-col">
+                <span className="text-[10px] uppercase tracking-wide font-semibold text-bali-blue">{a.category}</span>
+                <h5 className="font-semibold text-sm text-bali-slate mt-1 leading-snug group-hover:text-bali-blue">{a.title}</h5>
+                <p className="text-[11px] text-gray-500 mt-1">{fmtShort(a.date)}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Upcoming events */}
+      <Card className="mb-8">
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="text-lg font-bold text-bali-slate flex items-center gap-2">
+            <CalendarDays className="w-5 h-5 text-bali-blue" aria-hidden /> Upcoming events
+          </h3>
+          <Link to="/my-bali/events" className="text-sm text-bali-blue font-semibold hover:underline">Full calendar →</Link>
+        </div>
+        <ul className="grid gap-3 sm:grid-cols-2">
+          {upcoming.map((e) => (
+            <li key={e.id} className="grid grid-cols-[auto_minmax(0,1fr)] gap-3 items-start border border-gray-100 rounded-lg p-3">
+              <div className={`shrink-0 grid place-items-center w-12 h-12 rounded-lg ${EVENT_TYPE_COLORS[e.type] ?? "bg-gray-400 text-white"}`}>
+                <div className="text-center leading-tight">
+                  <div className="text-[9px] uppercase font-semibold opacity-90">
+                    {new Date(e.date + "T00:00:00").toLocaleDateString("en-GB", { month: "short" })}
+                  </div>
+                  <div className="text-base font-bold">{new Date(e.date + "T00:00:00").getDate()}</div>
+                </div>
+              </div>
+              <div className="min-w-0">
+                <p className="text-[10px] uppercase tracking-wide font-semibold text-bali-blue">{e.type}</p>
+                <p className="font-semibold text-sm text-bali-slate truncate">{e.title}</p>
+                <p className="text-[11px] text-gray-500 flex flex-wrap gap-x-2 mt-0.5">
+                  <span className="inline-flex items-center gap-1"><Clock className="w-3 h-3" aria-hidden /> {e.time ?? "TBC"}</span>
+                  <span className="inline-flex items-center gap-1 truncate"><MapPin className="w-3 h-3" aria-hidden /> {e.venue}</span>
+                </p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </Card>
+
+      {/* Profile actions + at-a-glance */}
       <div className="grid gap-6 lg:grid-cols-3 mb-8">
         <Card className="lg:col-span-2">
           <div className="flex items-center justify-between mb-5">
@@ -92,30 +191,18 @@ function DashboardIndex() {
         </Card>
 
         <Card>
-          <div className="flex items-center justify-between mb-5">
-            <h3 className="text-lg font-bold text-bali-slate">Statistics</h3>
-            <Link to="/my-bali/statistics" className="text-sm text-bali-blue font-semibold hover:underline">View →</Link>
-          </div>
-          <ul className="space-y-3 text-sm">
-            {[
-              { k: "Website views", v: STATS.websiteViews, i: STAT_ICONS.websiteViews },
-              { k: "Profile views", v: STATS.profileViews, i: STAT_ICONS.profileViews },
-              { k: "Logins", v: STATS.logins, i: STAT_ICONS.logins },
-              { k: "Search results", v: STATS.searchResults, i: STAT_ICONS.searchResults },
-              { k: "Email clicks", v: STATS.emailClicks, i: STAT_ICONS.emailClicks },
-            ].map((s) => {
-              const Icon = s.i;
-              return (
-                <li key={s.k} className="flex items-center justify-between border-b border-gray-100 pb-2 last:border-0 last:pb-0">
-                  <span className="flex items-center gap-2 text-gray-600">
-                    <Icon className="w-4 h-4 text-bali-blue/70" aria-hidden />
-                    {s.k}
-                  </span>
-                  <span className="font-semibold text-bali-slate tabular-nums">{s.v.toLocaleString()}</span>
-                </li>
-              );
-            })}
-          </ul>
+          <h3 className="text-lg font-bold text-bali-slate mb-4">Membership</h3>
+          <dl className="space-y-3 text-sm">
+            <Row label="Category" value={MEMBERSHIP.category} />
+            <Row label="Status" value={<span className="inline-flex items-center gap-1 text-green-700 font-semibold"><BadgeCheck className="w-4 h-4" aria-hidden /> {MEMBERSHIP.status}</span>} />
+            <Row label="Renews" value={MEMBERSHIP.expiry} />
+            <Row label="Member since" value={MEMBERSHIP.memberSince} />
+            <Row label="Membership no." value={MEMBERSHIP.membershipNumber} />
+            <Row label="Event bookings" value={String(MEMBERSHIP.eventBookings)} />
+          </dl>
+          <Link to={MEMBERSHIP.directoryUrl} className="mt-4 inline-flex items-center gap-1.5 text-sm text-bali-blue font-semibold hover:underline">
+            View your directory listing <ExternalLink className="w-3.5 h-3.5" aria-hidden />
+          </Link>
         </Card>
       </div>
 
@@ -165,66 +252,15 @@ function DashboardIndex() {
           </ul>
         </Card>
       </div>
-
-      {/* Feed */}
-      <Card>
-        <div className="flex items-center justify-between mb-5">
-          <h3 className="text-lg font-bold text-bali-slate flex items-center gap-2">
-            <Newspaper className="w-5 h-5 text-bali-blue" aria-hidden />
-            Member news & documents
-          </h3>
-          <Link to="/my-bali/content" className="text-sm text-bali-blue font-semibold hover:underline">My content →</Link>
-        </div>
-        <ul className="divide-y divide-gray-100">
-          {MEMBER_FEED.map((n) => (
-            <li key={n.id} className="py-4 first:pt-0 last:pb-0">
-              <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-3">
-                <div className="min-w-0">
-                  <p className="flex items-center gap-2 text-xs text-gray-500 mb-1">
-                    <Mail className="w-3.5 h-3.5" aria-hidden />
-                    <span>{n.date}</span>
-                  </p>
-                  <h4 className="font-semibold text-bali-slate">{n.title}</h4>
-                  <p className="text-sm text-gray-600 mt-1">{n.excerpt}</p>
-                </div>
-                <a href={n.href} className="shrink-0 inline-flex items-center gap-1 text-sm text-bali-blue font-semibold hover:underline">
-                  View <ExternalLink className="w-3.5 h-3.5" aria-hidden />
-                </a>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </Card>
     </>
   );
 }
 
-function SnapshotTile({
-  icon: Icon,
-  label,
-  value,
-  accent,
-}: {
-  icon: React.ComponentType<{ className?: string }>;
-  label: string;
-  value: string;
-  accent: "bali-blue" | "bali-green" | "bali-flow" | "bali-grass";
-}) {
-  const bg = {
-    "bali-blue": "bg-bali-blue/10 text-bali-blue",
-    "bali-green": "bg-bali-green/10 text-bali-green",
-    "bali-flow": "bg-bali-flow/10 text-bali-flow",
-    "bali-grass": "bg-bali-grass/10 text-bali-grass",
-  }[accent];
+function Row({ label, value }: { label: string; value: React.ReactNode }) {
   return (
-    <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-5 flex items-center gap-4">
-      <span className={`grid place-items-center w-11 h-11 rounded-lg shrink-0 ${bg}`}>
-        <Icon className="w-5 h-5" aria-hidden />
-      </span>
-      <div className="min-w-0">
-        <p className="text-xs uppercase tracking-wide text-gray-500 font-semibold">{label}</p>
-        <p className="text-xl font-bold text-bali-slate tabular-nums truncate">{value}</p>
-      </div>
+    <div className="flex items-center justify-between border-b border-gray-100 pb-2 last:border-0 last:pb-0">
+      <dt className="text-gray-500">{label}</dt>
+      <dd className="font-semibold text-bali-slate text-right">{value}</dd>
     </div>
   );
 }
