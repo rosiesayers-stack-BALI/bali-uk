@@ -150,6 +150,7 @@ export function toApplication(row: MembershipApplicationRow, overlays: Record<st
     region: String(p.region ?? ""),
     discipline: String(p.discipline ?? categoryLabel(row.category)),
     category: row.category,
+    applicationType: normaliseApplicationType(row.category),
     dateApplied: row.created_at,
     stage,
     onboarding: overlay?.onboarding ?? (stage === "Active" ? "Completed" : "Not started"),
