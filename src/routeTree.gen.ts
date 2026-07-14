@@ -72,9 +72,12 @@ import { Route as HelpMediaIndexRouteImport } from './routes/help.media.index'
 import { Route as AdminTrainingIndexRouteImport } from './routes/admin.training.index'
 import { Route as AdminSubmissionsIndexRouteImport } from './routes/admin.submissions.index'
 import { Route as AdminPolicyIndexRouteImport } from './routes/admin.policy.index'
+import { Route as AdminPeopleIndexRouteImport } from './routes/admin.people.index'
+import { Route as AdminOrganisationsIndexRouteImport } from './routes/admin.organisations.index'
 import { Route as AdminNewsIndexRouteImport } from './routes/admin.news.index'
 import { Route as AdminLissIndexRouteImport } from './routes/admin.liss.index'
 import { Route as AdminEventsIndexRouteImport } from './routes/admin.events.index'
+import { Route as AdminApplicationsIndexRouteImport } from './routes/admin.applications.index'
 import { Route as MyBaliProfileWhosWhoRouteImport } from './routes/my-bali.profile.whos-who'
 import { Route as MyBaliProfilePersonalRouteImport } from './routes/my-bali.profile.personal'
 import { Route as MyBaliProfilePasswordRouteImport } from './routes/my-bali.profile.password'
@@ -139,9 +142,12 @@ import { Route as ApiPublicMembershipApplicationRouteImport } from './routes/api
 import { Route as ApiPublicConferenceInterestRouteImport } from './routes/api/public/conference-interest'
 import { Route as AdminTrainingIdRouteImport } from './routes/admin.training.$id'
 import { Route as AdminPolicyIdRouteImport } from './routes/admin.policy.$id'
+import { Route as AdminPeopleIdRouteImport } from './routes/admin.people.$id'
+import { Route as AdminOrganisationsIdRouteImport } from './routes/admin.organisations.$id'
 import { Route as AdminNewsIdRouteImport } from './routes/admin.news.$id'
 import { Route as AdminLissIdRouteImport } from './routes/admin.liss.$id'
 import { Route as AdminEventsIdRouteImport } from './routes/admin.events.$id'
+import { Route as AdminApplicationsIdRouteImport } from './routes/admin.applications.$id'
 import { Route as LissCscsApplyCategoryIndexRouteImport } from './routes/liss-cscs.apply.$category.index'
 import { Route as ApiPublicHooksWorkbooksSyncRouteImport } from './routes/api/public/hooks/workbooks-sync'
 import { Route as LissCscsApplyCategoryCardIndexRouteImport } from './routes/liss-cscs.apply.$category.$card.index'
@@ -464,6 +470,16 @@ const AdminPolicyIndexRoute = AdminPolicyIndexRouteImport.update({
   path: '/policy/',
   getParentRoute: () => AdminRoute,
 } as any)
+const AdminPeopleIndexRoute = AdminPeopleIndexRouteImport.update({
+  id: '/people/',
+  path: '/people/',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminOrganisationsIndexRoute = AdminOrganisationsIndexRouteImport.update({
+  id: '/organisations/',
+  path: '/organisations/',
+  getParentRoute: () => AdminRoute,
+} as any)
 const AdminNewsIndexRoute = AdminNewsIndexRouteImport.update({
   id: '/news/',
   path: '/news/',
@@ -477,6 +493,11 @@ const AdminLissIndexRoute = AdminLissIndexRouteImport.update({
 const AdminEventsIndexRoute = AdminEventsIndexRouteImport.update({
   id: '/events/',
   path: '/events/',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminApplicationsIndexRoute = AdminApplicationsIndexRouteImport.update({
+  id: '/applications/',
+  path: '/applications/',
   getParentRoute: () => AdminRoute,
 } as any)
 const MyBaliProfileWhosWhoRoute = MyBaliProfileWhosWhoRouteImport.update({
@@ -836,6 +857,16 @@ const AdminPolicyIdRoute = AdminPolicyIdRouteImport.update({
   path: '/policy/$id',
   getParentRoute: () => AdminRoute,
 } as any)
+const AdminPeopleIdRoute = AdminPeopleIdRouteImport.update({
+  id: '/people/$id',
+  path: '/people/$id',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminOrganisationsIdRoute = AdminOrganisationsIdRouteImport.update({
+  id: '/organisations/$id',
+  path: '/organisations/$id',
+  getParentRoute: () => AdminRoute,
+} as any)
 const AdminNewsIdRoute = AdminNewsIdRouteImport.update({
   id: '/news/$id',
   path: '/news/$id',
@@ -849,6 +880,11 @@ const AdminLissIdRoute = AdminLissIdRouteImport.update({
 const AdminEventsIdRoute = AdminEventsIdRouteImport.update({
   id: '/events/$id',
   path: '/events/$id',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminApplicationsIdRoute = AdminApplicationsIdRouteImport.update({
+  id: '/applications/$id',
+  path: '/applications/$id',
   getParentRoute: () => AdminRoute,
 } as any)
 const LissCscsApplyCategoryIndexRoute =
@@ -934,9 +970,12 @@ export interface FileRoutesByFullPath {
   '/my-bali/': typeof MyBaliIndexRoute
   '/news/': typeof NewsIndexRoute
   '/policy/': typeof PolicyIndexRoute
+  '/admin/applications/$id': typeof AdminApplicationsIdRoute
   '/admin/events/$id': typeof AdminEventsIdRoute
   '/admin/liss/$id': typeof AdminLissIdRoute
   '/admin/news/$id': typeof AdminNewsIdRoute
+  '/admin/organisations/$id': typeof AdminOrganisationsIdRoute
+  '/admin/people/$id': typeof AdminPeopleIdRoute
   '/admin/policy/$id': typeof AdminPolicyIdRoute
   '/admin/training/$id': typeof AdminTrainingIdRoute
   '/api/public/conference-interest': typeof ApiPublicConferenceInterestRoute
@@ -1001,9 +1040,12 @@ export interface FileRoutesByFullPath {
   '/my-bali/profile/password': typeof MyBaliProfilePasswordRoute
   '/my-bali/profile/personal': typeof MyBaliProfilePersonalRoute
   '/my-bali/profile/whos-who': typeof MyBaliProfileWhosWhoRoute
+  '/admin/applications/': typeof AdminApplicationsIndexRoute
   '/admin/events/': typeof AdminEventsIndexRoute
   '/admin/liss/': typeof AdminLissIndexRoute
   '/admin/news/': typeof AdminNewsIndexRoute
+  '/admin/organisations/': typeof AdminOrganisationsIndexRoute
+  '/admin/people/': typeof AdminPeopleIndexRoute
   '/admin/policy/': typeof AdminPolicyIndexRoute
   '/admin/submissions/': typeof AdminSubmissionsIndexRoute
   '/admin/training/': typeof AdminTrainingIndexRoute
@@ -1070,9 +1112,12 @@ export interface FileRoutesByTo {
   '/my-bali': typeof MyBaliIndexRoute
   '/news': typeof NewsIndexRoute
   '/policy': typeof PolicyIndexRoute
+  '/admin/applications/$id': typeof AdminApplicationsIdRoute
   '/admin/events/$id': typeof AdminEventsIdRoute
   '/admin/liss/$id': typeof AdminLissIdRoute
   '/admin/news/$id': typeof AdminNewsIdRoute
+  '/admin/organisations/$id': typeof AdminOrganisationsIdRoute
+  '/admin/people/$id': typeof AdminPeopleIdRoute
   '/admin/policy/$id': typeof AdminPolicyIdRoute
   '/admin/training/$id': typeof AdminTrainingIdRoute
   '/api/public/conference-interest': typeof ApiPublicConferenceInterestRoute
@@ -1137,9 +1182,12 @@ export interface FileRoutesByTo {
   '/my-bali/profile/password': typeof MyBaliProfilePasswordRoute
   '/my-bali/profile/personal': typeof MyBaliProfilePersonalRoute
   '/my-bali/profile/whos-who': typeof MyBaliProfileWhosWhoRoute
+  '/admin/applications': typeof AdminApplicationsIndexRoute
   '/admin/events': typeof AdminEventsIndexRoute
   '/admin/liss': typeof AdminLissIndexRoute
   '/admin/news': typeof AdminNewsIndexRoute
+  '/admin/organisations': typeof AdminOrganisationsIndexRoute
+  '/admin/people': typeof AdminPeopleIndexRoute
   '/admin/policy': typeof AdminPolicyIndexRoute
   '/admin/submissions': typeof AdminSubmissionsIndexRoute
   '/admin/training': typeof AdminTrainingIndexRoute
@@ -1210,9 +1258,12 @@ export interface FileRoutesById {
   '/my-bali/': typeof MyBaliIndexRoute
   '/news/': typeof NewsIndexRoute
   '/policy/': typeof PolicyIndexRoute
+  '/admin/applications/$id': typeof AdminApplicationsIdRoute
   '/admin/events/$id': typeof AdminEventsIdRoute
   '/admin/liss/$id': typeof AdminLissIdRoute
   '/admin/news/$id': typeof AdminNewsIdRoute
+  '/admin/organisations/$id': typeof AdminOrganisationsIdRoute
+  '/admin/people/$id': typeof AdminPeopleIdRoute
   '/admin/policy/$id': typeof AdminPolicyIdRoute
   '/admin/training/$id': typeof AdminTrainingIdRoute
   '/api/public/conference-interest': typeof ApiPublicConferenceInterestRoute
@@ -1277,9 +1328,12 @@ export interface FileRoutesById {
   '/my-bali/profile/password': typeof MyBaliProfilePasswordRoute
   '/my-bali/profile/personal': typeof MyBaliProfilePersonalRoute
   '/my-bali/profile/whos-who': typeof MyBaliProfileWhosWhoRoute
+  '/admin/applications/': typeof AdminApplicationsIndexRoute
   '/admin/events/': typeof AdminEventsIndexRoute
   '/admin/liss/': typeof AdminLissIndexRoute
   '/admin/news/': typeof AdminNewsIndexRoute
+  '/admin/organisations/': typeof AdminOrganisationsIndexRoute
+  '/admin/people/': typeof AdminPeopleIndexRoute
   '/admin/policy/': typeof AdminPolicyIndexRoute
   '/admin/submissions/': typeof AdminSubmissionsIndexRoute
   '/admin/training/': typeof AdminTrainingIndexRoute
@@ -1351,9 +1405,12 @@ export interface FileRouteTypes {
     | '/my-bali/'
     | '/news/'
     | '/policy/'
+    | '/admin/applications/$id'
     | '/admin/events/$id'
     | '/admin/liss/$id'
     | '/admin/news/$id'
+    | '/admin/organisations/$id'
+    | '/admin/people/$id'
     | '/admin/policy/$id'
     | '/admin/training/$id'
     | '/api/public/conference-interest'
@@ -1418,9 +1475,12 @@ export interface FileRouteTypes {
     | '/my-bali/profile/password'
     | '/my-bali/profile/personal'
     | '/my-bali/profile/whos-who'
+    | '/admin/applications/'
     | '/admin/events/'
     | '/admin/liss/'
     | '/admin/news/'
+    | '/admin/organisations/'
+    | '/admin/people/'
     | '/admin/policy/'
     | '/admin/submissions/'
     | '/admin/training/'
@@ -1487,9 +1547,12 @@ export interface FileRouteTypes {
     | '/my-bali'
     | '/news'
     | '/policy'
+    | '/admin/applications/$id'
     | '/admin/events/$id'
     | '/admin/liss/$id'
     | '/admin/news/$id'
+    | '/admin/organisations/$id'
+    | '/admin/people/$id'
     | '/admin/policy/$id'
     | '/admin/training/$id'
     | '/api/public/conference-interest'
@@ -1554,9 +1617,12 @@ export interface FileRouteTypes {
     | '/my-bali/profile/password'
     | '/my-bali/profile/personal'
     | '/my-bali/profile/whos-who'
+    | '/admin/applications'
     | '/admin/events'
     | '/admin/liss'
     | '/admin/news'
+    | '/admin/organisations'
+    | '/admin/people'
     | '/admin/policy'
     | '/admin/submissions'
     | '/admin/training'
@@ -1626,9 +1692,12 @@ export interface FileRouteTypes {
     | '/my-bali/'
     | '/news/'
     | '/policy/'
+    | '/admin/applications/$id'
     | '/admin/events/$id'
     | '/admin/liss/$id'
     | '/admin/news/$id'
+    | '/admin/organisations/$id'
+    | '/admin/people/$id'
     | '/admin/policy/$id'
     | '/admin/training/$id'
     | '/api/public/conference-interest'
@@ -1693,9 +1762,12 @@ export interface FileRouteTypes {
     | '/my-bali/profile/password'
     | '/my-bali/profile/personal'
     | '/my-bali/profile/whos-who'
+    | '/admin/applications/'
     | '/admin/events/'
     | '/admin/liss/'
     | '/admin/news/'
+    | '/admin/organisations/'
+    | '/admin/people/'
     | '/admin/policy/'
     | '/admin/submissions/'
     | '/admin/training/'
@@ -2211,6 +2283,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminPolicyIndexRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/admin/people/': {
+      id: '/admin/people/'
+      path: '/people'
+      fullPath: '/admin/people/'
+      preLoaderRoute: typeof AdminPeopleIndexRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/organisations/': {
+      id: '/admin/organisations/'
+      path: '/organisations'
+      fullPath: '/admin/organisations/'
+      preLoaderRoute: typeof AdminOrganisationsIndexRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/admin/news/': {
       id: '/admin/news/'
       path: '/news'
@@ -2230,6 +2316,13 @@ declare module '@tanstack/react-router' {
       path: '/events'
       fullPath: '/admin/events/'
       preLoaderRoute: typeof AdminEventsIndexRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/applications/': {
+      id: '/admin/applications/'
+      path: '/applications'
+      fullPath: '/admin/applications/'
+      preLoaderRoute: typeof AdminApplicationsIndexRouteImport
       parentRoute: typeof AdminRoute
     }
     '/my-bali/profile/whos-who': {
@@ -2680,6 +2773,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminPolicyIdRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/admin/people/$id': {
+      id: '/admin/people/$id'
+      path: '/people/$id'
+      fullPath: '/admin/people/$id'
+      preLoaderRoute: typeof AdminPeopleIdRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/organisations/$id': {
+      id: '/admin/organisations/$id'
+      path: '/organisations/$id'
+      fullPath: '/admin/organisations/$id'
+      preLoaderRoute: typeof AdminOrganisationsIdRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/admin/news/$id': {
       id: '/admin/news/$id'
       path: '/news/$id'
@@ -2699,6 +2806,13 @@ declare module '@tanstack/react-router' {
       path: '/events/$id'
       fullPath: '/admin/events/$id'
       preLoaderRoute: typeof AdminEventsIdRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/applications/$id': {
+      id: '/admin/applications/$id'
+      path: '/applications/$id'
+      fullPath: '/admin/applications/$id'
+      preLoaderRoute: typeof AdminApplicationsIdRouteImport
       parentRoute: typeof AdminRoute
     }
     '/liss-cscs/apply/$category/': {
@@ -2735,14 +2849,20 @@ declare module '@tanstack/react-router' {
 interface AdminRouteChildren {
   AdminResetPasswordRoute: typeof AdminResetPasswordRoute
   AdminIndexRoute: typeof AdminIndexRoute
+  AdminApplicationsIdRoute: typeof AdminApplicationsIdRoute
   AdminEventsIdRoute: typeof AdminEventsIdRoute
   AdminLissIdRoute: typeof AdminLissIdRoute
   AdminNewsIdRoute: typeof AdminNewsIdRoute
+  AdminOrganisationsIdRoute: typeof AdminOrganisationsIdRoute
+  AdminPeopleIdRoute: typeof AdminPeopleIdRoute
   AdminPolicyIdRoute: typeof AdminPolicyIdRoute
   AdminTrainingIdRoute: typeof AdminTrainingIdRoute
+  AdminApplicationsIndexRoute: typeof AdminApplicationsIndexRoute
   AdminEventsIndexRoute: typeof AdminEventsIndexRoute
   AdminLissIndexRoute: typeof AdminLissIndexRoute
   AdminNewsIndexRoute: typeof AdminNewsIndexRoute
+  AdminOrganisationsIndexRoute: typeof AdminOrganisationsIndexRoute
+  AdminPeopleIndexRoute: typeof AdminPeopleIndexRoute
   AdminPolicyIndexRoute: typeof AdminPolicyIndexRoute
   AdminSubmissionsIndexRoute: typeof AdminSubmissionsIndexRoute
   AdminTrainingIndexRoute: typeof AdminTrainingIndexRoute
@@ -2751,14 +2871,20 @@ interface AdminRouteChildren {
 const AdminRouteChildren: AdminRouteChildren = {
   AdminResetPasswordRoute: AdminResetPasswordRoute,
   AdminIndexRoute: AdminIndexRoute,
+  AdminApplicationsIdRoute: AdminApplicationsIdRoute,
   AdminEventsIdRoute: AdminEventsIdRoute,
   AdminLissIdRoute: AdminLissIdRoute,
   AdminNewsIdRoute: AdminNewsIdRoute,
+  AdminOrganisationsIdRoute: AdminOrganisationsIdRoute,
+  AdminPeopleIdRoute: AdminPeopleIdRoute,
   AdminPolicyIdRoute: AdminPolicyIdRoute,
   AdminTrainingIdRoute: AdminTrainingIdRoute,
+  AdminApplicationsIndexRoute: AdminApplicationsIndexRoute,
   AdminEventsIndexRoute: AdminEventsIndexRoute,
   AdminLissIndexRoute: AdminLissIndexRoute,
   AdminNewsIndexRoute: AdminNewsIndexRoute,
+  AdminOrganisationsIndexRoute: AdminOrganisationsIndexRoute,
+  AdminPeopleIndexRoute: AdminPeopleIndexRoute,
   AdminPolicyIndexRoute: AdminPolicyIndexRoute,
   AdminSubmissionsIndexRoute: AdminSubmissionsIndexRoute,
   AdminTrainingIndexRoute: AdminTrainingIndexRoute,
