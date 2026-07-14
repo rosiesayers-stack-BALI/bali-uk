@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { PageHeader } from "@/components/admin/PageHeader";
 import { useCrm } from "@/lib/admin/mock-crm";
+import { fetchApplications, toApplication, useAppOverlays } from "@/lib/admin/applications";
 import {
   Newspaper, Calendar, FileText, GraduationCap, IdCard,
   Users, Building2, ClipboardList, TrendingUp, Clock,
@@ -14,6 +15,7 @@ export const Route = createFileRoute("/admin/")({
 
 function AdminDashboard() {
   const crm = useCrm();
+  const overlays = useAppOverlays();
 
   const counts = useQuery({
     queryKey: ["admin", "counts"],
@@ -32,16 +34,22 @@ function AdminDashboard() {
     },
   });
 
+  const appsQuery = useQuery({
+    queryKey: ["admin", "applications"],
+    queryFn: fetchApplications,
+  });
+  const applications = (appsQuery.data ?? []).map((r) => toApplication(r, overlays));
+
   const totalMembers = crm.people.filter((p) => p.status === "Active").length;
   const totalOrgs = crm.organisations.filter((o) => o.status === "Active").length;
   const monthAgo = Date.now() - 30 * 86400000;
-  const newThisMonth = crm.applications.filter((a) => new Date(a.dateApplied).getTime() > monthAgo).length;
-  const awaitingReview = crm.applications.filter((a) => a.stage === "Applied" || a.stage === "Under review").length;
-  const onboardingInProgress = crm.applications.filter(
+  const newThisMonth = applications.filter((a) => new Date(a.dateApplied).getTime() > monthAgo).length;
+  const awaitingReview = applications.filter((a) => a.stage === "Applied" || a.stage === "Under review").length;
+  const onboardingInProgress = applications.filter(
     (a) => a.stage === "Onboarding link sent" && a.onboarding !== "Completed",
   ).length;
 
-  const recent = [...crm.applications]
+  const recent = applications
     .flatMap((a) => a.history.map((h) => ({ ...h, app: a })))
     .sort((a, b) => b.at.localeCompare(a.at))
     .slice(0, 8);
@@ -64,24 +72,24 @@ function AdminDashboard() {
 
   return (
     <div>
-      <PageHeader title="Dashboard" subtitle="Overview of members, applications and content." />
-      <div className="p-8 space-y-8 max-w-6xl">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+      <PageHeader title="Overview" subtitle="Members, applications and content at a glance." />
+      <div className="space-y-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
           {tiles.map(({ label, value, icon: Icon, colour, to }) => (
-            <Link key={label} to={to} className="bg-white rounded-2xl border border-gray-200 p-5 hover:border-bali-blue hover:shadow-md transition-all group">
+            <Link key={label} to={to} className="bg-white rounded-xl border border-gray-100 shadow-sm p-5 hover:border-bali-blue hover:shadow-md transition-all group">
               <div className={`inline-flex items-center justify-center w-9 h-9 rounded-lg ${colour} mb-3`}>
                 <Icon className="w-4 h-4" />
               </div>
-              <p className="text-2xl font-bold text-gray-900">{value}</p>
+              <p className="text-2xl font-bold text-bali-slate">{value}</p>
               <p className="text-xs font-medium text-gray-600 mt-1 group-hover:text-bali-blue">{label}</p>
             </Link>
           ))}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div className="lg:col-span-2 bg-white rounded-2xl border border-gray-200 p-6">
+          <section className="lg:col-span-2 bg-white rounded-xl border border-gray-100 shadow-sm p-6">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="font-bold text-gray-900">Recent application activity</h2>
+              <h2 className="font-bold text-bali-slate">Recent application activity</h2>
               <Link to="/admin/applications" className="text-sm text-bali-blue hover:underline">View all →</Link>
             </div>
             {recent.length === 0 ? (
@@ -106,23 +114,23 @@ function AdminDashboard() {
                 ))}
               </ul>
             )}
-          </div>
+          </section>
 
-          <div className="bg-white rounded-2xl border border-gray-200 p-6">
-            <h2 className="font-bold text-gray-900 mb-4">Content</h2>
-            <ul className="space-y-2">
+          <section className="bg-white rounded-xl border border-gray-100 shadow-sm p-6">
+            <h2 className="font-bold text-bali-slate mb-4">Content</h2>
+            <ul className="space-y-1">
               {contentCards.map(({ to, label, icon: Icon, count }) => (
                 <li key={to}>
                   <Link to={to} className="flex items-center justify-between gap-2 px-3 py-2 rounded-lg hover:bg-gray-50">
                     <span className="flex items-center gap-2 text-sm text-gray-700">
                       <Icon className="w-4 h-4 text-gray-500" /> {label}
                     </span>
-                    <span className="text-sm font-semibold text-gray-900">{count ?? "—"}</span>
+                    <span className="text-sm font-semibold text-bali-slate">{count ?? "—"}</span>
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </section>
         </div>
       </div>
     </div>
