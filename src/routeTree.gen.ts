@@ -72,6 +72,7 @@ import { Route as HelpMediaIndexRouteImport } from './routes/help.media.index'
 import { Route as AdminTrainingIndexRouteImport } from './routes/admin.training.index'
 import { Route as AdminSubmissionsIndexRouteImport } from './routes/admin.submissions.index'
 import { Route as AdminPolicyIndexRouteImport } from './routes/admin.policy.index'
+import { Route as AdminPeopleIndexRouteImport } from './routes/admin.people.index'
 import { Route as AdminNewsIndexRouteImport } from './routes/admin.news.index'
 import { Route as AdminLissIndexRouteImport } from './routes/admin.liss.index'
 import { Route as AdminEventsIndexRouteImport } from './routes/admin.events.index'
@@ -462,6 +463,11 @@ const AdminSubmissionsIndexRoute = AdminSubmissionsIndexRouteImport.update({
 const AdminPolicyIndexRoute = AdminPolicyIndexRouteImport.update({
   id: '/policy/',
   path: '/policy/',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminPeopleIndexRoute = AdminPeopleIndexRouteImport.update({
+  id: '/people/',
+  path: '/people/',
   getParentRoute: () => AdminRoute,
 } as any)
 const AdminNewsIndexRoute = AdminNewsIndexRouteImport.update({
@@ -1004,6 +1010,7 @@ export interface FileRoutesByFullPath {
   '/admin/events/': typeof AdminEventsIndexRoute
   '/admin/liss/': typeof AdminLissIndexRoute
   '/admin/news/': typeof AdminNewsIndexRoute
+  '/admin/people/': typeof AdminPeopleIndexRoute
   '/admin/policy/': typeof AdminPolicyIndexRoute
   '/admin/submissions/': typeof AdminSubmissionsIndexRoute
   '/admin/training/': typeof AdminTrainingIndexRoute
@@ -1140,6 +1147,7 @@ export interface FileRoutesByTo {
   '/admin/events': typeof AdminEventsIndexRoute
   '/admin/liss': typeof AdminLissIndexRoute
   '/admin/news': typeof AdminNewsIndexRoute
+  '/admin/people': typeof AdminPeopleIndexRoute
   '/admin/policy': typeof AdminPolicyIndexRoute
   '/admin/submissions': typeof AdminSubmissionsIndexRoute
   '/admin/training': typeof AdminTrainingIndexRoute
@@ -1280,6 +1288,7 @@ export interface FileRoutesById {
   '/admin/events/': typeof AdminEventsIndexRoute
   '/admin/liss/': typeof AdminLissIndexRoute
   '/admin/news/': typeof AdminNewsIndexRoute
+  '/admin/people/': typeof AdminPeopleIndexRoute
   '/admin/policy/': typeof AdminPolicyIndexRoute
   '/admin/submissions/': typeof AdminSubmissionsIndexRoute
   '/admin/training/': typeof AdminTrainingIndexRoute
@@ -1421,6 +1430,7 @@ export interface FileRouteTypes {
     | '/admin/events/'
     | '/admin/liss/'
     | '/admin/news/'
+    | '/admin/people/'
     | '/admin/policy/'
     | '/admin/submissions/'
     | '/admin/training/'
@@ -1557,6 +1567,7 @@ export interface FileRouteTypes {
     | '/admin/events'
     | '/admin/liss'
     | '/admin/news'
+    | '/admin/people'
     | '/admin/policy'
     | '/admin/submissions'
     | '/admin/training'
@@ -1696,6 +1707,7 @@ export interface FileRouteTypes {
     | '/admin/events/'
     | '/admin/liss/'
     | '/admin/news/'
+    | '/admin/people/'
     | '/admin/policy/'
     | '/admin/submissions/'
     | '/admin/training/'
@@ -2209,6 +2221,13 @@ declare module '@tanstack/react-router' {
       path: '/policy'
       fullPath: '/admin/policy/'
       preLoaderRoute: typeof AdminPolicyIndexRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/people/': {
+      id: '/admin/people/'
+      path: '/people'
+      fullPath: '/admin/people/'
+      preLoaderRoute: typeof AdminPeopleIndexRouteImport
       parentRoute: typeof AdminRoute
     }
     '/admin/news/': {
@@ -2743,6 +2762,7 @@ interface AdminRouteChildren {
   AdminEventsIndexRoute: typeof AdminEventsIndexRoute
   AdminLissIndexRoute: typeof AdminLissIndexRoute
   AdminNewsIndexRoute: typeof AdminNewsIndexRoute
+  AdminPeopleIndexRoute: typeof AdminPeopleIndexRoute
   AdminPolicyIndexRoute: typeof AdminPolicyIndexRoute
   AdminSubmissionsIndexRoute: typeof AdminSubmissionsIndexRoute
   AdminTrainingIndexRoute: typeof AdminTrainingIndexRoute
@@ -2759,6 +2779,7 @@ const AdminRouteChildren: AdminRouteChildren = {
   AdminEventsIndexRoute: AdminEventsIndexRoute,
   AdminLissIndexRoute: AdminLissIndexRoute,
   AdminNewsIndexRoute: AdminNewsIndexRoute,
+  AdminPeopleIndexRoute: AdminPeopleIndexRoute,
   AdminPolicyIndexRoute: AdminPolicyIndexRoute,
   AdminSubmissionsIndexRoute: AdminSubmissionsIndexRoute,
   AdminTrainingIndexRoute: AdminTrainingIndexRoute,
