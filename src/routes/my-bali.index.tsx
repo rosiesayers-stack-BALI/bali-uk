@@ -29,7 +29,6 @@ const RESOURCE_ICONS: Record<string, React.ComponentType<{ className?: string }>
 const QUICK_ACTIONS = [
   { label: "Update details", to: "/my-bali/profile/personal", icon: UserRound },
   { label: "Update directory listing", to: "/my-bali/profile/directory", icon: Building2 },
-  { label: "Who's Who entry", to: "/my-bali/profile/whos-who", icon: Users },
   { label: "View directory entry", to: "/directory/search", icon: ExternalLink },
   { label: "Download membership certificate", to: "/my-bali/profile", icon: Download },
 ] as const;
