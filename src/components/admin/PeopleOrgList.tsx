@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { PageHeader } from "@/components/admin/PageHeader";
 import { useCrm, ALL_REGIONS, ALL_DISCIPLINES, type Discipline, type Region } from "@/lib/admin/mock-crm";
 import { APPLICATION_TYPES, getApplicationType, type ApplicationTypeId } from "@/lib/membership-types";
+import { FeeInline } from "@/components/admin/FeeDisplay";
 import { ArrowUpDown } from "lucide-react";
 
 type SortKey = "name" | "town" | "region" | "discipline" | "status" | "applicationType";
