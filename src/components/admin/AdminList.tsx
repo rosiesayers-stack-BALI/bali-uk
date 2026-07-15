@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Plus, Edit, Trash2, Eye, EyeOff } from "lucide-react";
-import { supabase } from "@/lib/admin/mock-db";
+import { supabase } from "@/integrations/supabase/client";
 import { PageHeader } from "./PageHeader";
 
 type Row = {

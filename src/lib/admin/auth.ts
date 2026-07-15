@@ -1,10 +1,11 @@
-// Admin auth hook — thin wrapper around the mock staff auth service.
-// TODO: replace with real backend session check once available.
+// Admin auth hook — thin wrapper around the real Supabase-backed staff auth.
 import { useEffect, useState } from "react";
 import {
   adminLogout,
   getCurrentStaff,
+  isAdminAuthInitialized,
   subscribeStaff,
+  waitForAdminAuthInit,
   type StaffUser,
 } from "@/services/admin-auth";
 
@@ -16,13 +17,20 @@ export type AdminAuthState = {
 
 export function useAdminAuth(): AdminAuthState {
   const [user, setUser] = useState<StaffUser | null>(() => getCurrentStaff());
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState<boolean>(() => !isAdminAuthInitialized());
 
   useEffect(() => {
-    // Sync with any hydrated value from localStorage on mount.
-    setUser(getCurrentStaff());
-    setLoading(false);
-    return subscribeStaff(setUser);
+    let cancelled = false;
+    waitForAdminAuthInit().then(() => {
+      if (cancelled) return;
+      setUser(getCurrentStaff());
+      setLoading(false);
+    });
+    const unsub = subscribeStaff((u) => setUser(u));
+    return () => {
+      cancelled = true;
+      unsub();
+    };
   }, []);
 
   return {

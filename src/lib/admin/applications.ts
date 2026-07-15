@@ -13,7 +13,7 @@
 // → application → invoice/payment → active member).
 
 import { useSyncExternalStore } from "react";
-import { supabase } from "@/lib/admin/mock-db";
+import { supabase } from "@/integrations/supabase/client";
 import { normaliseApplicationType, type ApplicationTypeId } from "@/lib/membership-types";
 
 export type ApplicationStage =

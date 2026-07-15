@@ -1,6 +1,14 @@
-// Mock auth service — frontend-only, in-memory + localStorage.
-// TODO: replace every function in this file with real backend API calls
-// once our own backend server is available.
+// Real authentication backed by Supabase Auth.
+//
+// This module keeps the same public API surface the rest of the app already
+// consumes (login/logout/forgotPassword/resetPassword/changePassword/
+// getCurrentUser/subscribe), so downstream components don't need to change.
+//
+// The exported `MockUser` name is preserved for backwards compat — it now
+// represents a real authenticated user.
+
+import { supabase } from "@/integrations/supabase/client";
+import type { User as SupabaseUser } from "@supabase/supabase-js";
 
 export type MockUser = {
   id: string;
@@ -8,113 +16,114 @@ export type MockUser = {
   name: string;
 };
 
-type StoredUser = MockUser & { password: string };
-
-const STORAGE_KEY = "mybali_session_v1";
-const FAKE_DELAY_MS = 300;
-
-// Seeded demo users. TODO: remove once real backend is wired.
-const users: StoredUser[] = [
-  // Main contact for Greenacres Landscapes Ltd — full org-editing rights.
-  { id: "u_demo", email: "demo@bali.org.uk", name: "Demo Member", password: "password123" },
-  // Nominated contact for the same organisation — read-only view of org
-  // details. Demonstrates the main-vs-nominated permission split.
-  { id: "u_nominated", email: "nominated@bali.org.uk", name: "Nominated Contact", password: "password123" },
-];
-
-// In-memory reset tokens (email -> token, expires).
-const resetTokens = new Map<string, { email: string; expiresAt: number }>();
-
 type Listener = (user: MockUser | null) => void;
 const listeners = new Set<Listener>();
 
-let currentUser: MockUser | null = readStoredUser();
+let currentUser: MockUser | null = null;
+let initialized = false;
+let resolveInit: () => void = () => {};
+const initPromise = new Promise<void>((resolve) => {
+  resolveInit = resolve;
+});
 
-function readStoredUser(): MockUser | null {
-  if (typeof window === "undefined") return null;
-  try {
-    const raw = window.localStorage.getItem(STORAGE_KEY);
-    return raw ? (JSON.parse(raw) as MockUser) : null;
-  } catch {
-    return null;
-  }
-}
-
-function writeStoredUser(user: MockUser | null) {
-  if (typeof window === "undefined") return;
-  try {
-    if (user) window.localStorage.setItem(STORAGE_KEY, JSON.stringify(user));
-    else window.localStorage.removeItem(STORAGE_KEY);
-  } catch {
-    /* ignore */
-  }
+function toAppUser(u: SupabaseUser | null | undefined): MockUser | null {
+  if (!u) return null;
+  const meta = (u.user_metadata ?? {}) as Record<string, unknown>;
+  const first = typeof meta.first_name === "string" ? meta.first_name : "";
+  const last = typeof meta.last_name === "string" ? meta.last_name : "";
+  const full = typeof meta.full_name === "string" ? meta.full_name : "";
+  const fromMeta = full || `${first} ${last}`.trim();
+  const emailLocal = u.email?.split("@")[0]?.replace(/\./g, " ") ?? "Member";
+  const name = fromMeta || emailLocal;
+  return { id: u.id, email: u.email ?? "", name };
 }
 
 function emit() {
   for (const l of listeners) l(currentUser);
 }
 
-function delay<T>(value: T): Promise<T> {
-  return new Promise((resolve) => setTimeout(() => resolve(value), FAKE_DELAY_MS));
+function markInitialized() {
+  if (!initialized) {
+    initialized = true;
+    resolveInit();
+  }
 }
 
-// TODO: replace with real backend API call (POST /auth/login).
+// Bootstrap current session on module load (client-side) and subscribe to
+// Supabase auth changes so all consumers stay in sync.
+if (typeof window !== "undefined") {
+  supabase.auth.getSession().then(({ data }) => {
+    currentUser = toAppUser(data.session?.user);
+    markInitialized();
+    emit();
+  });
+  supabase.auth.onAuthStateChange((_event, session) => {
+    currentUser = toAppUser(session?.user);
+    markInitialized();
+    emit();
+  });
+}
+
+export function waitForAuthInit(): Promise<void> {
+  return initPromise;
+}
+
+export function isAuthInitialized(): boolean {
+  return initialized;
+}
+
 export async function login(email: string, password: string): Promise<MockUser> {
-  await delay(null);
-  const found = users.find(
-    (u) => u.email.toLowerCase() === email.trim().toLowerCase() && u.password === password,
-  );
-  if (!found) throw new Error("Invalid email or password.");
-  const user: MockUser = { id: found.id, email: found.email, name: found.name };
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email: email.trim(),
+    password,
+  });
+  if (error || !data.user) {
+    throw new Error(error?.message === "Invalid login credentials"
+      ? "Invalid email or password."
+      : error?.message ?? "Sign in failed.");
+  }
+  const user = toAppUser(data.user)!;
   currentUser = user;
-  writeStoredUser(user);
   emit();
   return user;
 }
 
-// TODO: replace with real backend API call (POST /auth/logout).
 export async function logout(): Promise<void> {
-  await delay(null);
+  await supabase.auth.signOut();
   currentUser = null;
-  writeStoredUser(null);
   emit();
 }
 
-// TODO: replace with real backend API call (POST /auth/forgot-password).
 export async function forgotPassword(email: string): Promise<{ resetToken: string }> {
-  await delay(null);
-  const token = Math.random().toString(36).slice(2) + Date.now().toString(36);
-  resetTokens.set(token, { email: email.trim().toLowerCase(), expiresAt: Date.now() + 1000 * 60 * 30 });
-  // Demo aid: surface the reset link in the console.
-  if (typeof window !== "undefined") {
-    // eslint-disable-next-line no-console
-    console.info(`[mock-auth] Reset link: ${window.location.origin}/reset-password?token=${token}`);
-  }
-  return { resetToken: token };
+  const redirectTo =
+    typeof window !== "undefined" ? `${window.location.origin}/reset-password` : undefined;
+  const { error } = await supabase.auth.resetPasswordForEmail(email.trim(), { redirectTo });
+  if (error) throw new Error(error.message);
+  // Supabase handles the reset token via the emailed magic link; no token
+  // is surfaced to the client here. Return an empty string for API compat.
+  return { resetToken: "" };
 }
 
-// TODO: replace with real backend API call (POST /auth/reset-password).
-export async function resetPassword(token: string, newPassword: string): Promise<void> {
-  await delay(null);
-  const entry = resetTokens.get(token);
-  if (!entry || entry.expiresAt < Date.now()) {
-    throw new Error("This reset link is invalid or has expired. Please request a new one.");
-  }
-  const user = users.find((u) => u.email.toLowerCase() === entry.email);
-  if (!user) throw new Error("Account not found.");
+// The user arrives on /reset-password via a Supabase magic link which
+// establishes a temporary session in the URL hash. The `_token` arg is
+// ignored — we just call updateUser on the active session.
+export async function resetPassword(_token: string, newPassword: string): Promise<void> {
   if (newPassword.length < 8) throw new Error("Password must be at least 8 characters.");
-  user.password = newPassword;
-  resetTokens.delete(token);
+  const { error } = await supabase.auth.updateUser({ password: newPassword });
+  if (error) throw new Error(error.message);
 }
 
-// TODO: replace with real backend API call (POST /auth/change-password).
 export async function changePassword(oldPassword: string, newPassword: string): Promise<void> {
-  await delay(null);
   if (!currentUser) throw new Error("You must be signed in.");
-  const stored = users.find((u) => u.id === currentUser!.id);
-  if (!stored || stored.password !== oldPassword) throw new Error("Current password is incorrect.");
   if (newPassword.length < 8) throw new Error("New password must be at least 8 characters.");
-  stored.password = newPassword;
+  // Re-authenticate with the current password to verify it.
+  const { error: verifyErr } = await supabase.auth.signInWithPassword({
+    email: currentUser.email,
+    password: oldPassword,
+  });
+  if (verifyErr) throw new Error("Current password is incorrect.");
+  const { error } = await supabase.auth.updateUser({ password: newPassword });
+  if (error) throw new Error(error.message);
 }
 
 export function getCurrentUser(): MockUser | null {

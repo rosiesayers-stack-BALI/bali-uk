@@ -1,4 +1,12 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+  type ReactNode,
+} from "react";
 import * as auth from "./auth";
 import type { MockUser } from "./auth";
 
@@ -15,13 +23,23 @@ type AuthContextValue = {
 const AuthContext = createContext<AuthContextValue | null>(null);
 
 export function MyBaliAuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<MockUser | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState<MockUser | null>(() => auth.getCurrentUser());
+  const [loading, setLoading] = useState<boolean>(() => !auth.isAuthInitialized());
 
   useEffect(() => {
-    setUser(auth.getCurrentUser());
-    setLoading(false);
-    return auth.subscribe(setUser);
+    let cancelled = false;
+    auth.waitForAuthInit().then(() => {
+      if (cancelled) return;
+      setUser(auth.getCurrentUser());
+      setLoading(false);
+    });
+    const unsub = auth.subscribe((u) => {
+      setUser(u);
+    });
+    return () => {
+      cancelled = true;
+      unsub();
+    };
   }, []);
 
   const value = useMemo<AuthContextValue>(

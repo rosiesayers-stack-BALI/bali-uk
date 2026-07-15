@@ -1,12 +1,18 @@
-import { supabase as realSupabase } from "@/integrations/supabase/client";
-// News + events read from the same mock/service store the /admin area writes to,
-// so admin changes appear immediately on the public site.
-// TODO: replace mockDb with real backend/CMS API when available.
-import { supabase as mockDb } from "@/lib/admin/mock-db";
-export { subscribeTable } from "@/lib/admin/mock-db";
+// News + events (and policy + training) read from Lovable Cloud (Supabase).
+// Public reads use anon SELECT policies on the news_articles/events tables
+// (published = true). Admin writes go through the same tables so the /news
+// and /events pages reflect admin changes on next navigation/refresh.
+import { supabase } from "@/integrations/supabase/client";
 
-// Policy + training still use the Supabase-backed reads for now.
-const supabase = realSupabase;
+// No-op subscription hook: we don't have realtime on these tables, so
+// consumers refetch on route navigation instead. Kept as an export so the
+// call sites in news/events routes don't have to change.
+// TODO: switch to Supabase Realtime for live updates if the news/events
+// tables get added to the supabase_realtime publication.
+export function subscribeTable(_table: string, _cb: () => void): () => void {
+  return () => {};
+}
+
 
 export type NewsRow = {
   id: string;
@@ -85,7 +91,7 @@ const handle = <T,>({ data, error }: { data: unknown; error: { message: string }
 
 export const fetchNewsList = async (): Promise<NewsRow[]> =>
   handle(
-    await mockDb
+    await supabase
       .from("news_articles")
       .select("*")
       .eq("published", true)
@@ -94,7 +100,7 @@ export const fetchNewsList = async (): Promise<NewsRow[]> =>
   );
 
 export const fetchNewsBySlug = async (slug: string): Promise<NewsRow | null> => {
-  const { data, error } = await mockDb
+  const { data, error } = await supabase
     .from("news_articles")
     .select("*")
     .eq("slug", slug)
@@ -106,7 +112,7 @@ export const fetchNewsBySlug = async (slug: string): Promise<NewsRow | null> => 
 
 export const fetchEventsList = async (): Promise<EventRow[]> => {
   const today = new Date().toISOString().slice(0, 10);
-  const rows = await mockDb
+  const rows = await supabase
     .from("events")
     .select("*")
     .eq("published", true)
@@ -119,7 +125,7 @@ export const fetchEventsList = async (): Promise<EventRow[]> => {
 // offer a future/past toggle. TODO: replace with a CMS/API call when wired up.
 export const fetchAllEventsList = async (): Promise<EventRow[]> =>
   handle(
-    await mockDb
+    await supabase
       .from("events")
       .select("*")
       .eq("published", true)
@@ -128,7 +134,7 @@ export const fetchAllEventsList = async (): Promise<EventRow[]> =>
 
 
 export const fetchEventBySlug = async (slug: string): Promise<EventRow | null> => {
-  const { data, error } = await mockDb
+  const { data, error } = await supabase
     .from("events")
     .select("*")
     .eq("slug", slug)

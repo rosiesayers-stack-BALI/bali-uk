@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { supabase } from "@/lib/admin/mock-db";
+import { supabase } from "@/integrations/supabase/client";
 import { PageHeader } from "@/components/admin/PageHeader";
 import { statsFor, useHeadline, computeTrending, setHeadline, clearHeadline } from "@/lib/admin/news-stats";
 import { Plus, Edit, Trash2, Eye, EyeOff, Flame, Star, TrendingUp, ArrowUpDown } from "lucide-react";

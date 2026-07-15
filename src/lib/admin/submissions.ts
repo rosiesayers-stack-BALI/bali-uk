@@ -1,4 +1,4 @@
-import { supabase } from "@/lib/admin/mock-db";
+import { supabase } from "@/integrations/supabase/client";
 import { slugify } from "@/lib/portal/slugify";
 
 export type AdminSubmission = {
