@@ -38,7 +38,7 @@ export const PIPELINE_STAGES: ApplicationStage[] = [
 export const SIDE_STAGES: ApplicationStage[] = ["Rejected", "On-hold"];
 export const ALL_STAGES: ApplicationStage[] = [...PIPELINE_STAGES, ...SIDE_STAGES];
 
-export type OnboardingStatus = "Not started" | "Started" | "Completed";
+export type OnboardingStatus = "Not started" | "Link sent" | "Started" | "Completed";
 export type PaymentMethod = "Card" | "Invoice" | "Not set";
 export type FeeStatus = "Unpaid" | "Awaiting invoice" | "Paid" | "N/A";
 
