@@ -162,6 +162,8 @@ function AppDetailBody({
           </section>
         </div>
 
+        <div className="space-y-6">
+        <FeeCard id={app.applicationType} />
         <section className="bg-white rounded-xl border border-gray-100 shadow-sm p-6">
           <h2 className="font-bold text-bali-slate mb-4">Stage history</h2>
           <ol className="space-y-4 border-l-2 border-gray-200 pl-4">
