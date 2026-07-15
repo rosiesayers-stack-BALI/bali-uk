@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { supabase } from "@/lib/admin/mock-db";
+import { supabase } from "@/integrations/supabase/client";
 import { PageHeader } from "@/components/admin/PageHeader";
 import { CalendarDays, ChevronLeft, ChevronRight, LayoutGrid, List, Plus, Edit, Trash2, Eye, EyeOff, MapPin, Clock, X } from "lucide-react";
 import { EVENT_TYPE_COLORS } from "@/services/mybali-data";

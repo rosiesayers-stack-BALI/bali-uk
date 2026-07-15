@@ -5,7 +5,7 @@
 // TODO: replace every function in this file with real backend API calls
 // once our own backend server is available.
 
-import { supabase } from "@/lib/admin/mock-db";
+import { supabase } from "@/integrations/supabase/client";
 
 export async function getLissFileUrl(args: { data: { path: string } }): Promise<{ url: string }> {
   const { data, error } = await supabase.storage

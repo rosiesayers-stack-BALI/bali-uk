@@ -1,4 +1,4 @@
-import { supabase } from "@/lib/admin/mock-db";
+import { supabase } from "@/integrations/supabase/client";
 
 const BUCKET = "content-images";
 
