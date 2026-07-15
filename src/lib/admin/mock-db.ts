@@ -111,6 +111,8 @@ function seedEventsRows(): Row[] {
     image_url: ((e.image as { url?: string } | undefined)?.url) ?? null,
     image_alt: ((e.image as { alt?: string } | undefined)?.alt) ?? "",
     booking_url: (e.booking_url as string) ?? (e.bookingUrl as string) ?? null,
+    member_price: (e.member_price as number | undefined) ?? null,
+    nonmember_price: (e.nonmember_price as number | undefined) ?? null,
     published: true,
     created_at: now,
     updated_at: now,
