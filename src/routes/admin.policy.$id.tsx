@@ -1,7 +1,7 @@
 import { createFileRoute, useNavigate, useParams } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/lib/admin/mock-db";
 import { PageHeader } from "@/components/admin/PageHeader";
 import { ImageField } from "@/components/admin/ImageField";
 import { ParagraphsField } from "@/components/admin/ParagraphsField";

@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/lib/admin/mock-db";
 import { PageHeader } from "@/components/admin/PageHeader";
 
 export const Route = createFileRoute("/admin/liss/")({
@@ -86,7 +86,7 @@ function AdminLissList() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
-                {list.data.map((row) => (
+                {list.data.map((row: any) => (
                   <tr key={row.id} className="hover:bg-gray-50">
                     <td className="px-4 py-3">
                       <div className="font-medium text-gray-900">{row.full_name}</div>

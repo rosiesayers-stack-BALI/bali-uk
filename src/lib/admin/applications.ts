@@ -9,7 +9,7 @@
 // TODO: replace the overlay with real backend columns/tables.
 
 import { useSyncExternalStore } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/lib/admin/mock-db";
 import { normaliseApplicationType, type ApplicationTypeId } from "@/lib/membership-types";
 
 export type ApplicationStage =

@@ -1,4 +1,4 @@
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/lib/admin/mock-db";
 import { slugify } from "@/lib/portal/slugify";
 
 export type AdminSubmission = {
@@ -56,7 +56,7 @@ export async function approveNewsSubmission(sub: AdminSubmission, notes?: string
   const iso = today.toISOString().slice(0, 10);
   const dateText = today.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
 
-  const { data: article, error: insErr } = await supabase
+  const insertRes = await supabase
     .from("news_articles")
     .insert({
       slug,
@@ -72,7 +72,8 @@ export async function approveNewsSubmission(sub: AdminSubmission, notes?: string
     })
     .select("id, slug")
     .single();
-  if (insErr) throw insErr;
+  if (insertRes.error) throw insertRes.error;
+  const article = insertRes.data as { id: string; slug: string };
 
   const { error: updErr } = await supabase
     .from("member_submissions")

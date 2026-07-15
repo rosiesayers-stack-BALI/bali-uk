@@ -64,7 +64,6 @@ import { Route as DirectorySupplierRouteImport } from './routes/directory.suppli
 import { Route as DirectorySearchRouteImport } from './routes/directory.search'
 import { Route as DirectoryDesignerRouteImport } from './routes/directory.designer'
 import { Route as DirectoryContractorRouteImport } from './routes/directory.contractor'
-import { Route as AdminResetPasswordRouteImport } from './routes/admin.reset-password'
 import { Route as AboutAwardsRouteImport } from './routes/about.awards'
 import { Route as MyBaliProfileIndexRouteImport } from './routes/my-bali.profile.index'
 import { Route as LissCscsApplyIndexRouteImport } from './routes/liss-cscs.apply.index'
@@ -428,11 +427,6 @@ const DirectoryContractorRoute = DirectoryContractorRouteImport.update({
   id: '/directory/contractor',
   path: '/directory/contractor',
   getParentRoute: () => rootRouteImport,
-} as any)
-const AdminResetPasswordRoute = AdminResetPasswordRouteImport.update({
-  id: '/reset-password',
-  path: '/reset-password',
-  getParentRoute: () => AdminRoute,
 } as any)
 const AboutAwardsRoute = AboutAwardsRouteImport.update({
   id: '/about/awards',
@@ -918,7 +912,6 @@ export interface FileRoutesByFullPath {
   '/reset-password': typeof ResetPasswordRoute
   '/search': typeof SearchRoute
   '/about/awards': typeof AboutAwardsRoute
-  '/admin/reset-password': typeof AdminResetPasswordRoute
   '/directory/contractor': typeof DirectoryContractorRoute
   '/directory/designer': typeof DirectoryDesignerRoute
   '/directory/search': typeof DirectorySearchRoute
@@ -1060,7 +1053,6 @@ export interface FileRoutesByTo {
   '/reset-password': typeof ResetPasswordRoute
   '/search': typeof SearchRoute
   '/about/awards': typeof AboutAwardsRoute
-  '/admin/reset-password': typeof AdminResetPasswordRoute
   '/directory/contractor': typeof DirectoryContractorRoute
   '/directory/designer': typeof DirectoryDesignerRoute
   '/directory/search': typeof DirectorySearchRoute
@@ -1204,7 +1196,6 @@ export interface FileRoutesById {
   '/reset-password': typeof ResetPasswordRoute
   '/search': typeof SearchRoute
   '/about/awards': typeof AboutAwardsRoute
-  '/admin/reset-password': typeof AdminResetPasswordRoute
   '/directory/contractor': typeof DirectoryContractorRoute
   '/directory/designer': typeof DirectoryDesignerRoute
   '/directory/search': typeof DirectorySearchRoute
@@ -1350,7 +1341,6 @@ export interface FileRouteTypes {
     | '/reset-password'
     | '/search'
     | '/about/awards'
-    | '/admin/reset-password'
     | '/directory/contractor'
     | '/directory/designer'
     | '/directory/search'
@@ -1492,7 +1482,6 @@ export interface FileRouteTypes {
     | '/reset-password'
     | '/search'
     | '/about/awards'
-    | '/admin/reset-password'
     | '/directory/contractor'
     | '/directory/designer'
     | '/directory/search'
@@ -1635,7 +1624,6 @@ export interface FileRouteTypes {
     | '/reset-password'
     | '/search'
     | '/about/awards'
-    | '/admin/reset-password'
     | '/directory/contractor'
     | '/directory/designer'
     | '/directory/search'
@@ -2214,13 +2202,6 @@ declare module '@tanstack/react-router' {
       fullPath: '/directory/contractor'
       preLoaderRoute: typeof DirectoryContractorRouteImport
       parentRoute: typeof rootRouteImport
-    }
-    '/admin/reset-password': {
-      id: '/admin/reset-password'
-      path: '/reset-password'
-      fullPath: '/admin/reset-password'
-      preLoaderRoute: typeof AdminResetPasswordRouteImport
-      parentRoute: typeof AdminRoute
     }
     '/about/awards': {
       id: '/about/awards'
@@ -2828,7 +2809,6 @@ declare module '@tanstack/react-router' {
 }
 
 interface AdminRouteChildren {
-  AdminResetPasswordRoute: typeof AdminResetPasswordRoute
   AdminIndexRoute: typeof AdminIndexRoute
   AdminApplicationsIdRoute: typeof AdminApplicationsIdRoute
   AdminEventsIdRoute: typeof AdminEventsIdRoute
@@ -2850,7 +2830,6 @@ interface AdminRouteChildren {
 }
 
 const AdminRouteChildren: AdminRouteChildren = {
-  AdminResetPasswordRoute: AdminResetPasswordRoute,
   AdminIndexRoute: AdminIndexRoute,
   AdminApplicationsIdRoute: AdminApplicationsIdRoute,
   AdminEventsIdRoute: AdminEventsIdRoute,

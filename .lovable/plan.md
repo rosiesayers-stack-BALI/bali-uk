@@ -1,109 +1,82 @@
+## Goal
 
-## Current state
+Make /admin fully consistent with /my-bali — mock auth + local mock/service data layer, no Supabase — without breaking /my-bali, /portal, or the public site.
 
-**1) Supabase / backend integrations in use (Lovable Cloud = Supabase under the hood)**
+## Already done in this turn
 
-Yes — Supabase is connected and used extensively. `.env` has `VITE_SUPABASE_URL` / `VITE_SUPABASE_PUBLISHABLE_KEY`, and 33 files reference it, including:
+- **Mock staff auth** — new `src/services/admin-auth.ts` with a seeded demo staff user (`admin@bali.org.uk` / `admin123`, role `admin`), separate localStorage key so it's fully isolated from member auth.
+- **`src/lib/admin/auth.ts`** rewritten as a thin hook around the mock service (no Supabase).
+- **`AdminGate`** now redirects to a staff sign-in screen when not signed in or role isn't staff.
+- **`AdminLogin`** rebuilt as email/password only, styled with the /my-bali chrome (Navbar, hero, Footer). Google/OAuth/password-reset paths removed.
+- **`src/routes/admin.reset-password.tsx`** deleted (it was Supabase-only).
+- `AdminShell` already uses the /my-bali chrome (Navbar, gradient hero, Footer, CookieBanner) — kept as-is.
 
-- Client wrappers: `src/integrations/supabase/{client,client.server,auth-middleware,auth-attacher}.ts`, `src/integrations/lovable/index.ts`
-- App bootstrap: `src/start.ts` (registers `attachSupabaseAuth` middleware)
-- Member auth + portal: `src/pages/LoginPage.tsx` (email/password sign-in), `src/routes/portal.tsx` (guarded via `supabase.auth.getUser`), portal features (`src/lib/portal/api.ts`, `src/lib/portal/courses.ts`, `src/components/portal/*`)
-- Admin area: `src/lib/admin/*`, `src/components/admin/*`, all `src/routes/admin.*.tsx` including `admin.reset-password.tsx`
-- Server functions / public API routes: `src/routes/api/public/*` (membership, conference, workbooks webhook), `src/lib/liss-*.functions.ts`
-- Content: `src/lib/content/db.ts`
+## Still to do (proposed scope)
 
-**2) Existing login / member area**
+Each admin CRUD screen currently calls Supabase directly. To retire Supabase from /admin, I'll introduce a **mock content service** and rewire each route to it. Existing UI, forms, image fields, previews, filters and analytics stay; only the data source changes.
 
-Yes:
-- `/login` → `src/pages/LoginPage.tsx` — real Supabase email+password login, redirects to `/portal`
-- `/portal` → `src/pages/PortalPage.tsx` — the member dashboard (Directory editor, News submit, Training Provider Hub, notifications), guarded by Supabase `getUser()`
-- `/admin/*` — separate staff admin area with its own Supabase-backed login/reset
-- No `/forgotten-password` or `/reset-password` route exists at the member level (only `/admin/reset-password`)
+### 1. New mock content service — `src/services/admin-content.ts`
 
----
+Single module exposing typed CRUD + list APIs for:
 
-## Plan — add a parallel, frontend-only "My BALI" auth
+- `newsArticles` (list / get / create / update / delete / publish)
+- `events`
+- `policyPosts`
+- `trainingCourses` (with status workflow: pending/published/rejected/changes_requested)
+- `lissApplications` (list / get / update status / notes)
+- `submissions` (membership + short-apply form submissions)
+- `dashboardCounts()` — aggregated counts for the admin dashboard tiles
 
-Scope note: The user wants no Supabase for auth **for the new My BALI area**. The existing Supabase-backed `/portal`, `/admin/*`, and public API routes are load-bearing (directory editor, training hub, admin CMS, membership application webhooks). Ripping Supabase out project-wide is a much larger job and would break unrelated features. This plan therefore:
+Backed by:
+- Seed data pulled from existing `src/content/*.ts` / `*.json` (news, events, policy, training-courses) so the admin loads with realistic content on first run.
+- In-memory arrays + localStorage persistence (same pattern as `admin-auth`), with a tiny pub/sub so lists refresh after writes.
+- Each function commented `// TODO: replace with real backend API call`.
 
-- Builds the new My BALI flow as a standalone, mock-auth area, isolated from Supabase.
-- Leaves `/portal`, `/admin/*`, and API routes untouched.
-- Assumption (flag if wrong): the existing `/login` + `/portal` remain as-is; the new area lives at `/my-bali` with its own `/login`, `/forgotten-password`, `/reset-password`.
+### 2. Rewire admin routes (Supabase → mock service)
 
-If you actually want to **replace** the current member portal entirely (delete `/portal` and its Supabase wiring), say so and I'll extend the plan — that's a bigger change.
+- `src/routes/admin.index.tsx` — dashboard counts from `dashboardCounts()`.
+- `src/routes/admin.news.index.tsx` + `admin.news.$id.tsx` — list/edit/preview/publish, Trending + paid Headline slot preserved.
+- `src/routes/admin.events.index.tsx` + `admin.events.$id.tsx` — list, month view, publish, delete.
+- `src/routes/admin.policy.index.tsx` + `admin.policy.$id.tsx`.
+- `src/routes/admin.training.index.tsx` + `admin.training.$id.tsx` — status workflow preserved.
+- `src/routes/admin.liss.index.tsx` + `admin.liss.$id.tsx` — list + detail, status updates.
+- `src/routes/admin.submissions.index.tsx` — reads from mock submissions.
 
-### Mock auth service
+React Query is retained; only the `queryFn` bodies change. Mutations invalidate the same keys they do today so the UI still refreshes.
 
-`src/services/auth.ts` — single module, no React, no network. Exposes:
+### 3. Image / file handling
 
-```
-login(email, password)             -> Promise<User>
-logout()                           -> Promise<void>
-forgotPassword(email)              -> Promise<{ resetToken: string }>  // demo returns token
-resetPassword(token, newPassword)  -> Promise<void>
-changePassword(oldPw, newPw)       -> Promise<void>
-getCurrentUser()                   -> User | null
-subscribe(listener)                -> unsubscribe                       // for context
-```
+`ImageField` currently uploads to Supabase Storage. Swap to a lightweight local approach:
+- Accept an image URL string, or read a chosen file as a data URL and store that. Good enough for the mock/prototype layer.
+- TODO comment to swap to real object storage later.
 
-Details:
-- In-memory demo users seeded at module load (e.g. `demo@bali.org.uk` / `password123`).
-- Session persisted to `localStorage` under `mybali_session_v1` so refresh keeps you signed in; SSR-safe (guard `typeof window`).
-- Reset tokens stored in-memory with short TTL; `forgotPassword` logs the reset URL to the console for demo purposes.
-- Every exported function starts with `// TODO: replace with real backend API call to <endpoint>`.
-- Artificial ~300ms delay so loading states are testable.
+### 4. Cleanup
 
-### React auth context
+- Remove Supabase imports from all `src/routes/admin.*.tsx` files.
+- Leave `src/integrations/supabase/*` in place (still used by /portal and public site).
+- Leave `src/lib/admin/submissions.ts`, `functions.ts`, `storage.ts` — replace their bodies with mock-service calls (keep exports so callers don't break) or delete if unreferenced after the rewire.
+- Do NOT touch `/portal`, `/my-bali`, or public routes.
 
-`src/services/auth-context.tsx` — `<MyBaliAuthProvider>` + `useMyBaliAuth()` hook. Wraps the service, exposes `{ user, loading, login, logout, ... }`, subscribes to the service so all consumers update together. Mounted inside `__root.tsx` (alongside the existing `QueryClientProvider`) so it's available everywhere but adds zero network traffic.
+### 5. Preserved features
 
-### Routes (TanStack Start, file-based)
+- Dashboard summary tiles + recent activity.
+- People/Organisations lists with unified search + filters (already mock).
+- Applications pipeline (already mock/local, reading from submissions).
+- Membership categories + 2026-27 fee display (already in place).
+- News: create/edit/delete, live Preview, engagement analytics, Trending auto-promote, paid Headline slot.
+- Calendar/Events manager (month view + list).
+- LISS applications review, Training course workflow, Policy manager, Submissions inbox.
+- /my-bali chrome (Navbar/hero/Footer) across every admin screen.
 
-Public:
-- `src/routes/login.tsx` — **already exists and is Supabase-backed**. Options:
-  - (A) Repoint it to the mock service (breaks current members).
-  - (B) Recommended: leave existing `/login` alone; put the new mock login at `/login` only if you confirm you want to replace it. Otherwise use `/my-bali/login`.
-  - Assumption for this plan: **replace `/login` with the mock version** since the brief says "Login (/login)". I'll keep the old Supabase login component around as `LoginPageLegacy.tsx` for reference but unrouted. Confirm if you'd rather keep both.
-- `src/routes/forgotten-password.tsx` — email form → `forgotPassword()` → success message ("If the email exists, we've sent a reset link"); in dev also surface the demo reset link.
-- `src/routes/reset-password.tsx` — reads `?token=` search param, new-password + confirm form → `resetPassword()` → redirect to `/login`.
+## Out of scope
 
-Protected:
-- `src/routes/_mybali/route.tsx` — pathless layout, `ssr: false`, `beforeLoad` reads `getCurrentUser()`; if null, `throw redirect({ to: '/login', search: { dest: location.href } })`.
-- `src/routes/_mybali/my-bali.tsx` → URL `/my-bali` — dashboard shell: welcome, account summary, "Change password", "Sign out". Styled to match existing portal (Tailwind, `bali-blue`, same card/`rounded-2xl shadow-lg` treatment as `LoginPage.tsx`).
+- Real backend endpoints (each mock function is marked with a `TODO`).
+- /portal migration (explicitly excluded by the user).
+- Any change to /my-bali or public routes.
 
-Login redirect-back: `/login` accepts `?dest=` search param (validated same-origin path), and after successful `login()` navigates to `dest` or `/my-bali`.
+## Risks / notes
 
-### Styling / consistency
+- Big surface area — I'll do the migration route-by-route in one pass, typecheck after each cluster, and keep the same query keys so mutations still refresh lists.
+- Persistence is localStorage-only, so clearing storage resets admin content — matches the /my-bali prototype behaviour.
 
-- Reuse existing Tailwind tokens (`bali-blue`, `bali-grass`, `bali-slate`), the utility bar + split-panel layout already in `LoginPage.tsx`, and the same header/footer treatment for the three new auth pages so they feel like one family.
-- The `/my-bali` dashboard reuses the portal's card patterns but is standalone (does not import Supabase-touching components).
-
-### Non-goals / explicit exclusions
-
-- No changes to `/portal`, `/admin/*`, `src/lib/portal/*`, `src/lib/admin/*`, `src/routes/api/public/*`, or any Supabase integration file.
-- No env-var changes, no migrations.
-- No real email sending; forgotten-password shows the reset token/link in the UI in dev only.
-
----
-
-## Files to add
-
-- `src/services/auth.ts` — mock auth service
-- `src/services/auth-context.tsx` — provider + hook
-- `src/routes/forgotten-password.tsx`
-- `src/routes/reset-password.tsx`
-- `src/routes/_mybali/route.tsx` — protected pathless layout
-- `src/routes/_mybali/my-bali.tsx` — dashboard (URL `/my-bali`)
-- `src/components/mybali/AuthLayout.tsx` — shared split-panel shell reused by login/forgotten/reset
-
-## Files to change
-
-- `src/routes/__root.tsx` — wrap `<Outlet />` in `<MyBaliAuthProvider>`
-- `src/routes/login.tsx` — swap component to new mock-auth `LoginPage`, accept `?dest=` (only if you confirm replacing the existing member login)
-- `src/pages/LoginPage.tsx` — either rewrite for mock auth, or rename to `LoginPageLegacy.tsx` and add a new `MyBaliLoginPage.tsx` (decision hinges on the question above)
-
-## Open questions before I build
-
-1. **Replace or coexist?** Should the new mock `/login` replace the current Supabase member login, or live at a different path so the existing `/portal` keeps working?
-2. **Delete `/portal`?** If mock auth replaces Supabase auth, do you also want `/portal` (Directory editor, Training Provider Hub, notifications) removed or left dormant? Those features rely on Supabase and will error if the login no longer produces a Supabase session.
-3. Demo credentials to seed (default: `demo@bali.org.uk` / `password123`)?
+Reply "go" (or with tweaks) and I'll implement the content service and rewire every admin route in the next turn.

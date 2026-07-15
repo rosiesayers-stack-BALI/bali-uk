@@ -1,8 +1,7 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { useServerFn } from "@tanstack/react-start";
 import { ArrowLeft, Download, Trash2 } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/lib/admin/mock-db";
 import { PageHeader } from "@/components/admin/PageHeader";
 import {
   getLissFileUrl,
@@ -27,9 +26,6 @@ function AdminLissDetail() {
   const { id } = Route.useParams();
   const qc = useQueryClient();
   const navigate = useNavigate();
-  const signFile = useServerFn(getLissFileUrl);
-  const updateStatus = useServerFn(updateLissApplicationStatus);
-  const removeApp = useServerFn(deleteLissApplication);
 
   const app = useQuery({
     queryKey: ["admin", "liss_applications", id],
@@ -40,19 +36,20 @@ function AdminLissDetail() {
         .eq("id", id)
         .single();
       if (error) throw error;
-      return data;
+      return data as any;
     },
   });
 
   const setStatus = useMutation({
-    mutationFn: (status: (typeof STATUSES)[number]) => updateStatus({ data: { id, status } }),
+    mutationFn: (status: (typeof STATUSES)[number]) =>
+      updateLissApplicationStatus({ data: { id, status } }),
     onSuccess: () => {
       qc.invalidateQueries({ queryKey: ["admin", "liss_applications"] });
     },
   });
 
   const remove = useMutation({
-    mutationFn: () => removeApp({ data: { id } }),
+    mutationFn: () => deleteLissApplication({ data: { id } }),
     onSuccess: () => {
       qc.invalidateQueries({ queryKey: ["admin", "liss_applications"] });
       navigate({ to: "/admin/liss" });
@@ -61,7 +58,7 @@ function AdminLissDetail() {
 
   async function openFile(path: string) {
     try {
-      const { url } = await signFile({ data: { path } });
+      const { url } = await getLissFileUrl({ data: { path } });
       window.open(url, "_blank", "noopener,noreferrer");
     } catch (e) {
       alert((e as Error).message);
