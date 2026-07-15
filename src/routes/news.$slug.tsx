@@ -58,6 +58,8 @@ export const Route = createFileRoute("/news/$slug")({
 
 function NewsArticlePage() {
   const { article, prev, next } = Route.useLoaderData();
+  const router = useRouter();
+  useEffect(() => subscribeTable("news_articles", () => router.invalidate()), [router]);
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
