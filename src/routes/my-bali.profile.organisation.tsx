@@ -28,11 +28,15 @@ function OrgEdit() {
     setTimeout(() => setSaved(false), 2500);
   };
 
+  const { canEdit, reason } = useCanEditOrganisation();
+
   return (
     <Card>
       <h2 className="text-lg font-semibold text-gray-900 mb-4">Organisation details</h2>
+      {!canEdit && reason && <ReadOnlyBanner reason={reason} />}
       {saved && <Banner>Organisation saved (mock).</Banner>}
       <form onSubmit={submit} className="grid gap-4 sm:grid-cols-2">
+        <fieldset disabled={!canEdit} className="contents">
         <Field label="Organisation name" className="sm:col-span-2" required>
           <input className="input" value={form.name} onChange={(e) => set("name", e.target.value)} required />
         </Field>
