@@ -49,6 +49,7 @@ function PersonDetail() {
         </div>
 
         <div className="space-y-6">
+          <FeeCard id={person.applicationType} />
           <div className="bg-white rounded-2xl border border-gray-200 p-6">
             <h2 className="font-bold text-gray-900 mb-3 flex items-center gap-2"><Building2 className="w-4 h-4" /> Organisation</h2>
             {org ? (
