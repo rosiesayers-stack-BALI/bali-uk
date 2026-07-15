@@ -74,7 +74,7 @@ function NewsEditor() {
       image_url: form.image_url,
       image_alt: form.image_alt,
       body_paragraphs: form.body_paragraphs,
-      published: form.published,
+      published: Boolean(form.published),
     };
     const res = isNew
       ? await supabase.from("news_articles").insert(payload).select("id").single()
