@@ -117,6 +117,7 @@ export function PeopleOrgList({ kind }: { kind: "people" | "organisations" }) {
                         </button>
                       </th>
                     ))}
+                    <th className="px-4 py-3">Fee (26-27)</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
