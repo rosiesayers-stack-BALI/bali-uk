@@ -13,6 +13,7 @@ import {
   LogOut,
   BadgeCheck,
   ExternalLink,
+  Mail,
 } from "lucide-react";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
@@ -30,6 +31,7 @@ const NAV = [
   { to: "/my-bali/resources", label: "My resources", icon: FolderOpen },
   { to: "/my-bali/technical-documents", label: "Technical documents", icon: FileText },
   { to: "/my-bali/content", label: "My content", icon: Newspaper },
+  { to: "/my-bali/email-preferences", label: "Email preferences", icon: Mail },
 ] as const;
 
 export default function DashboardShell({ children }: { children: ReactNode }) {
