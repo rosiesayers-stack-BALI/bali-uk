@@ -37,30 +37,23 @@ function NewsIndex() {
   // Live-refresh when the shared mock store changes (admin edits).
   useEffect(() => subscribeTable("news_articles", () => router.invalidate()), [router]);
 
-  // Headline (paid pinned) first, then trending, then newest-first.
-  const ordered = useMemo(() => {
+  // Headline (paid pinned) first, then trending, then newest-first (already sorted by loader).
+  const { featured, pinnedTrending, rest } = useMemo(() => {
+    if (articles.length === 0) return { featured: undefined, pinnedTrending: null, rest: [] as NewsRow[] };
     const trendingId = computeTrending(articles.map((a: NewsRow) => ({ id: a.id, title: a.title })));
     const headlineRow = articles.find((a: NewsRow) => a.id === headline.headlineId);
     const trendingRow = articles.find(
       (a: NewsRow) => a.id === trendingId && a.id !== headline.headlineId,
     );
-    const rest = articles.filter(
-      (a: NewsRow) => a.id !== headline.headlineId && a.id !== trendingId,
-    );
-    return {
-      featured: headlineRow ?? trendingRow ?? articles[0],
-      pinnedTrending: headlineRow && trendingRow ? trendingRow : null,
-      rest: [
-        ...(headlineRow ? [] : []),
-        ...(headlineRow && trendingRow ? [] : trendingRow && !headlineRow ? [] : []),
-        ...rest,
-      ],
-    };
+    const featuredRow = headlineRow ?? trendingRow ?? articles[0];
+    const restRows = articles.filter((a: NewsRow) => a.id !== featuredRow?.id);
+    // If headline is featured, surface trending as the first regular tile.
+    if (headlineRow && trendingRow) {
+      const withoutTrending = restRows.filter((a) => a.id !== trendingRow.id);
+      return { featured: featuredRow, pinnedTrending: trendingRow, rest: withoutTrending };
+    }
+    return { featured: featuredRow, pinnedTrending: null as NewsRow | null, rest: restRows };
   }, [articles, headline.headlineId]);
-
-  const featured = ordered.featured;
-  const rest = ordered.rest;
-  const pinnedTrending = ordered.pinnedTrending;
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
