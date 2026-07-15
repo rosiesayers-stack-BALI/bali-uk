@@ -1,9 +1,9 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { PageHeader } from "@/components/admin/PageHeader";
-import { StatusPill, ApplicationTypeBadge } from "@/components/admin/PeopleOrgList";
+import { StatusPill, ApplicationTypeBadge, ContactRolePill } from "@/components/admin/PeopleOrgList";
 import { FeeCard } from "@/components/admin/FeeDisplay";
-import { useCrm } from "@/lib/admin/mock-crm";
-import { Mail, Phone, MapPin, Briefcase, Building2 } from "lucide-react";
+import { useCrm, setAsMainContact } from "@/lib/admin/mock-crm";
+import { Mail, Phone, MapPin, Briefcase, Building2, Star } from "lucide-react";
 
 export const Route = createFileRoute("/admin/people/$id")({
   component: PersonDetail,
