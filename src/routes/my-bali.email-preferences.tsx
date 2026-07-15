@@ -5,9 +5,9 @@ import { Mail, Save, ShieldCheck } from "lucide-react";
 import { PageHeader, Card } from "@/components/mybali/DashboardShell";
 import {
   NEWSLETTERS, getOptIns, setOptIns,
-  CURRENT_MEMBER_PERSON_ID,
   type NewsletterKey,
 } from "@/lib/admin/mock-mailing";
+import { useCurrentPerson } from "@/lib/mybali/contact-role";
 
 export const Route = createFileRoute("/my-bali/email-preferences")({
   head: () => ({ meta: [{ title: "Email preferences — My BALI" }] }),
@@ -15,30 +15,41 @@ export const Route = createFileRoute("/my-bali/email-preferences")({
 });
 
 function EmailPreferences() {
+  const person = useCurrentPerson();
   const [opts, setOpts] = useState<NewsletterKey[]>([]);
   const [dirty, setDirty] = useState(false);
 
   useEffect(() => {
-    setOpts(getOptIns(CURRENT_MEMBER_PERSON_ID));
-  }, []);
+    if (person) setOpts(getOptIns(person.id));
+  }, [person]);
 
   const toggle = (k: NewsletterKey) => {
     setOpts((cur) => cur.includes(k) ? cur.filter((x) => x !== k) : [...cur, k]);
     setDirty(true);
   };
 
-  const save = () => {
-    setOptIns(CURRENT_MEMBER_PERSON_ID, opts);
-    setDirty(false);
-    toast.success("Email preferences saved");
+  const save = async () => {
+    if (!person) return;
+    try {
+      await setOptIns(person.id, opts);
+      setDirty(false);
+      toast.success("Email preferences saved");
+    } catch (e) {
+      toast.error((e as Error).message ?? "Failed to save");
+    }
   };
 
-  const unsubAll = () => {
+  const unsubAll = async () => {
+    if (!person) return;
     if (!confirm("Unsubscribe from all BALI emails? You can opt back in at any time.")) return;
-    setOpts([]);
-    setOptIns(CURRENT_MEMBER_PERSON_ID, []);
-    setDirty(false);
-    toast("You have been unsubscribed from all BALI emails.");
+    try {
+      await setOptIns(person.id, []);
+      setOpts([]);
+      setDirty(false);
+      toast("You have been unsubscribed from all BALI emails.");
+    } catch (e) {
+      toast.error((e as Error).message ?? "Failed to unsubscribe");
+    }
   };
 
   return (

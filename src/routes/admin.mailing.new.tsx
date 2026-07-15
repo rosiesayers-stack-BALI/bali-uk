@@ -17,14 +17,18 @@ function NewMailingList() {
   const [description, setDescription] = useState("");
   const [filter, setFilter] = useState<SegmentFilter>(EMPTY_FILTER);
 
-  const save = () => {
+  const save = async () => {
     if (!name.trim()) {
       toast.error("Give the mailing list a name.");
       return;
     }
-    const seg = createSegment({ name: name.trim(), description: description.trim(), filter });
-    toast.success(`Created "${seg.name}"`);
-    navigate({ to: "/admin/mailing/$id", params: { id: seg.id } });
+    try {
+      const seg = await createSegment({ name: name.trim(), description: description.trim(), filter });
+      toast.success(`Created "${seg.name}"`);
+      navigate({ to: "/admin/mailing/$id", params: { id: seg.id } });
+    } catch (e) {
+      toast.error((e as Error).message ?? "Failed to create mailing list");
+    }
   };
 
   return (

@@ -34,7 +34,7 @@ function ApplicationsIndex() {
   const qc = useQueryClient();
   const q = useQuery({ queryKey: ["admin", "applications"], queryFn: fetchApplications });
   const applications: Application[] = useMemo(
-    () => (q.data ?? []).map((r) => toApplication(r, overlays)),
+    () => (q.data ?? []).map((r) => toApplication(r)),
     [q.data, overlays],
   );
 

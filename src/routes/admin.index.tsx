@@ -38,7 +38,7 @@ function AdminDashboard() {
     queryKey: ["admin", "applications"],
     queryFn: fetchApplications,
   });
-  const applications = (appsQuery.data ?? []).map((r) => toApplication(r, overlays));
+  const applications = (appsQuery.data ?? []).map((r) => toApplication(r));
 
   const totalMembers = crm.people.filter((p) => p.status === "Active").length;
   const totalOrgs = crm.organisations.filter((o) => o.status === "Active").length;

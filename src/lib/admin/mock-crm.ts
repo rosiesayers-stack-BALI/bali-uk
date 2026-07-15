@@ -56,6 +56,7 @@ export type Person = {
   joined: string;
   applicationType: ApplicationTypeId;
   contactRole: ContactRole;
+  newsletterOpts: string[];
 };
 
 export type Organisation = {
@@ -139,6 +140,7 @@ type PersonRow = {
   phone: string | null;
   job_title: string | null;
   contact_role: string | null;
+  newsletter_opts: unknown;
 };
 
 function mapOrg(row: OrgRow): Organisation {
@@ -160,6 +162,9 @@ function mapOrg(row: OrgRow): Organisation {
 
 function mapPerson(row: PersonRow, orgMap: Map<string, Organisation>): Person {
   const org = row.wb_org_id ? orgMap.get(row.wb_org_id) ?? null : null;
+  const opts = Array.isArray(row.newsletter_opts)
+    ? (row.newsletter_opts as unknown[]).filter((x): x is string => typeof x === "string")
+    : [];
   return {
     id: row.wb_id,
     name: row.name ?? "",
@@ -175,6 +180,7 @@ function mapPerson(row: PersonRow, orgMap: Map<string, Organisation>): Person {
     joined: org?.memberSince ?? "",
     applicationType: org?.applicationType ?? "associate_individual",
     contactRole: row.contact_role === "nominated" ? "nominated" : "main",
+    newsletterOpts: opts,
   };
 }
 
@@ -201,7 +207,7 @@ export async function refreshCrm(): Promise<void> {
       .select("wb_id,name,category,status,region,disciplines,town,county,phone,website,membership_expires_at,created_at"),
     supabase
       .from("workbooks_people")
-      .select("wb_id,wb_org_id,name,email,phone,job_title,contact_role"),
+      .select("wb_id,wb_org_id,name,email,phone,job_title,contact_role,newsletter_opts"),
   ]);
   if (oe || pe) return;
   const orgList: Organisation[] = (orgs ?? []).map((r) => mapOrg(r as OrgRow));

@@ -33,7 +33,7 @@ function AppDetail() {
   if (q.isLoading) return <div className="text-sm text-gray-500">Loading…</div>;
   if (q.error) return <div className="text-sm text-red-600">{(q.error as Error).message}</div>;
   if (!q.data) throw notFound();
-  const app = toApplication(q.data, overlays);
+  const app = toApplication(q.data);
 
   const invalidate = () => {
     qc.invalidateQueries({ queryKey: ["admin", "application", id] });
