@@ -43,10 +43,13 @@ function AdminDashboard() {
   const totalMembers = crm.people.filter((p) => p.status === "Active").length;
   const totalOrgs = crm.organisations.filter((o) => o.status === "Active").length;
   const monthAgo = Date.now() - 30 * 86400000;
-  const newThisMonth = applications.filter((a) => new Date(a.dateApplied).getTime() > monthAgo).length;
-  const awaitingReview = applications.filter((a) => a.stage === "Applied" || a.stage === "Under review").length;
-  const onboardingInProgress = applications.filter(
-    (a) => a.stage === "Onboarding link sent" && a.onboarding !== "Completed",
+  const newEnquiries = applications.filter(
+    (a) => a.stage === "Enquiry received" && new Date(a.dateApplied).getTime() > monthAgo,
+  ).length;
+  const awaitingApplication = applications.filter((a) => a.stage === "Awaiting application").length;
+  const awaitingFee = applications.filter((a) => a.stage === "Application received – awaiting fee").length;
+  const activeThisMonth = applications.filter(
+    (a) => a.stage === "Active" && new Date(a.dateApplied).getTime() > monthAgo,
   ).length;
 
   const recent = applications
@@ -57,9 +60,10 @@ function AdminDashboard() {
   const tiles = [
     { label: "Active members", value: totalMembers, icon: Users, colour: "bg-blue-50 text-bali-blue", to: "/admin/people" },
     { label: "Active organisations", value: totalOrgs, icon: Building2, colour: "bg-emerald-50 text-bali-green", to: "/admin/organisations" },
-    { label: "New applications (30d)", value: newThisMonth, icon: TrendingUp, colour: "bg-amber-50 text-amber-700", to: "/admin/applications" },
-    { label: "Awaiting review", value: awaitingReview, icon: ClipboardList, colour: "bg-rose-50 text-rose-700", to: "/admin/applications" },
-    { label: "Onboarding in progress", value: onboardingInProgress, icon: Clock, colour: "bg-purple-50 text-purple-700", to: "/admin/applications" },
+    { label: "New enquiries (30d)", value: newEnquiries, icon: TrendingUp, colour: "bg-amber-50 text-amber-700", to: "/admin/applications" },
+    { label: "Awaiting application", value: awaitingApplication, icon: ClipboardList, colour: "bg-purple-50 text-purple-700", to: "/admin/applications" },
+    { label: "Awaiting fee", value: awaitingFee, icon: Clock, colour: "bg-orange-50 text-orange-700", to: "/admin/applications" },
+    { label: "Active this month", value: activeThisMonth, icon: Clock, colour: "bg-emerald-50 text-bali-green", to: "/admin/applications" },
   ];
 
   const contentCards = [
