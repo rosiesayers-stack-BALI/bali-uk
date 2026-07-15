@@ -1,11 +1,13 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useMemo } from "react";
+import { createFileRoute, useRouter } from "@tanstack/react-router";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CookieBanner from "../components/CookieBanner";
 import Link from "../components/SmartLink";
 import AdBanner from "../components/ads/AdBanner";
 import SponsoredCard from "../components/ads/SponsoredCard";
-import { fetchNewsList, type NewsRow } from "../lib/content/db";
+import { fetchNewsList, subscribeTable, type NewsRow } from "../lib/content/db";
+import { useHeadline, computeTrending } from "../lib/admin/news-stats";
 
 export const Route = createFileRoute("/news/")({
   head: () => ({
