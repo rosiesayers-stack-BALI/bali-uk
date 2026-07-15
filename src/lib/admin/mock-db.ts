@@ -36,7 +36,7 @@ type PgResult<T> = { data: T; error: { message: string } | null; count?: number 
 
 // ---------- Storage layer ----------
 
-const STORAGE_PREFIX = "bali_admin_mockdb_v2:";
+const STORAGE_PREFIX = "bali_admin_mockdb_v3:";
 const listeners = new Map<TableName, Set<() => void>>();
 
 function loadTable<T extends Row>(name: TableName, seed: () => T[]): T[] {
