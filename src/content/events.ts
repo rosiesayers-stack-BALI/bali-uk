@@ -11,7 +11,25 @@ export type EventItem = {
   body: string[];
   image: { url: string; alt: string };
   booking_url?: string;
+  // Placeholder prices (GBP, inc VAT). TODO: source real pricing from backend.
+  member_price: number;
+  nonmember_price: number;
 };
+
+// Placeholder pricing tiers per category (GBP, inc VAT).
+// TODO: replace with real per-event pricing from backend/CMS.
+function placeholderPricing(category: string): { member_price: number; nonmember_price: number } {
+  switch (category) {
+    case "Webinar":
+      return { member_price: 0, nonmember_price: 0 };
+    case "Supplier Forum":
+      return { member_price: 25, nonmember_price: 75 };
+    case "BALI Chalk Fund":
+      return { member_price: 30, nonmember_price: 45 };
+    default:
+      return { member_price: 45, nonmember_price: 95 };
+  }
+}
 
 const book = (slug: string) => `https://www.bali.org.uk/events/${slug}/`;
 
