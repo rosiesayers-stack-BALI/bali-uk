@@ -52,6 +52,8 @@ export const Route = createFileRoute("/events/$slug")({
 
 function EventPage() {
   const { event, prev, next } = Route.useLoaderData();
+  const router = useRouter();
+  useEffect(() => subscribeTable("events", () => router.invalidate()), [router]);
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Navbar />
