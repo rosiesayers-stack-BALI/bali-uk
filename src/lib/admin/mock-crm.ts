@@ -207,7 +207,7 @@ export async function refreshCrm(): Promise<void> {
       .select("wb_id,name,category,status,region,disciplines,town,county,phone,website,membership_expires_at,created_at"),
     supabase
       .from("workbooks_people")
-      .select("wb_id,wb_org_id,name,email,phone,job_title,contact_role"),
+      .select("wb_id,wb_org_id,name,email,phone,job_title,contact_role,newsletter_opts"),
   ]);
   if (oe || pe) return;
   const orgList: Organisation[] = (orgs ?? []).map((r) => mapOrg(r as OrgRow));
