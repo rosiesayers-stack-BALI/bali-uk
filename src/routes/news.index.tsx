@@ -115,6 +115,33 @@ function NewsIndex() {
         <div className="max-w-6xl mx-auto px-6">
           <AdBanner placement="news-inline" className="mb-10" />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {pinnedTrending && (
+              <Link
+                key={pinnedTrending.slug}
+                to="/news/$slug"
+                params={{ slug: pinnedTrending.slug }}
+                className="group bg-white rounded-2xl border-2 border-bali-grass overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all"
+              >
+                {pinnedTrending.image_url && (
+                  <img
+                    src={pinnedTrending.image_url}
+                    alt={pinnedTrending.image_alt ?? pinnedTrending.title}
+                    loading="lazy"
+                    className="w-full h-44 object-cover"
+                  />
+                )}
+                <div className="p-5">
+                  <span className="inline-block bg-bali-grass text-bali-slate text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full mb-2">Trending</span>
+                  {pinnedTrending.date_text && (
+                    <p className="text-xs text-gray-500 uppercase tracking-widest mb-2">{pinnedTrending.date_text}</p>
+                  )}
+                  <h3 className="font-bold text-gray-900 leading-snug group-hover:text-bali-blue transition-colors line-clamp-3">
+                    {pinnedTrending.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 mt-2 line-clamp-3">{pinnedTrending.description}</p>
+                </div>
+              </Link>
+            )}
             {rest.map((a: NewsRow, i: number) => {
               const card = (
                 <Link
