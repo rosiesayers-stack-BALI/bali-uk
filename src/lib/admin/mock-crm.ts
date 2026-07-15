@@ -140,6 +140,7 @@ type PersonRow = {
   phone: string | null;
   job_title: string | null;
   contact_role: string | null;
+  newsletter_opts: unknown;
 };
 
 function mapOrg(row: OrgRow): Organisation {
