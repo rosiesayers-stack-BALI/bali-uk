@@ -135,6 +135,7 @@ import { Route as HelpEquipmentDrivingForBetterBusinessRouteImport } from './rou
 import { Route as HelpDisputeMemberInformationRouteImport } from './routes/help.dispute.member-information'
 import { Route as HelpDisputeFrequentlyAskedQuestionsRouteImport } from './routes/help.dispute.frequently-asked-questions'
 import { Route as HelpDisputeClientInformationRouteImport } from './routes/help.dispute.client-information'
+import { Route as EventsSlugBookRouteImport } from './routes/events.$slug.book'
 import { Route as ApiPublicMembershipEnquiryRouteImport } from './routes/api/public/membership-enquiry'
 import { Route as ApiPublicMembershipApplicationRouteImport } from './routes/api/public/membership-application'
 import { Route as ApiPublicConferenceInterestRouteImport } from './routes/api/public/conference-interest'
@@ -817,6 +818,11 @@ const HelpDisputeClientInformationRoute =
     path: '/client-information',
     getParentRoute: () => HelpDisputeRoute,
   } as any)
+const EventsSlugBookRoute = EventsSlugBookRouteImport.update({
+  id: '/book',
+  path: '/book',
+  getParentRoute: () => EventsSlugRoute,
+} as any)
 const ApiPublicMembershipEnquiryRoute =
   ApiPublicMembershipEnquiryRouteImport.update({
     id: '/api/public/membership-enquiry',
@@ -918,7 +924,7 @@ export interface FileRoutesByFullPath {
   '/directory/supplier': typeof DirectorySupplierRoute
   '/directory/training': typeof DirectoryTrainingRoute
   '/directory/why': typeof DirectoryWhyRoute
-  '/events/$slug': typeof EventsSlugRoute
+  '/events/$slug': typeof EventsSlugRouteWithChildren
   '/events/sponsor': typeof EventsSponsorRoute
   '/events/training': typeof EventsTrainingRoute
   '/help/contract': typeof HelpContractRoute
@@ -968,6 +974,7 @@ export interface FileRoutesByFullPath {
   '/api/public/conference-interest': typeof ApiPublicConferenceInterestRoute
   '/api/public/membership-application': typeof ApiPublicMembershipApplicationRoute
   '/api/public/membership-enquiry': typeof ApiPublicMembershipEnquiryRoute
+  '/events/$slug/book': typeof EventsSlugBookRoute
   '/help/dispute/client-information': typeof HelpDisputeClientInformationRoute
   '/help/dispute/frequently-asked-questions': typeof HelpDisputeFrequentlyAskedQuestionsRoute
   '/help/dispute/member-information': typeof HelpDisputeMemberInformationRoute
@@ -1059,7 +1066,7 @@ export interface FileRoutesByTo {
   '/directory/supplier': typeof DirectorySupplierRoute
   '/directory/training': typeof DirectoryTrainingRoute
   '/directory/why': typeof DirectoryWhyRoute
-  '/events/$slug': typeof EventsSlugRoute
+  '/events/$slug': typeof EventsSlugRouteWithChildren
   '/events/sponsor': typeof EventsSponsorRoute
   '/events/training': typeof EventsTrainingRoute
   '/help/contract': typeof HelpContractRoute
@@ -1108,6 +1115,7 @@ export interface FileRoutesByTo {
   '/api/public/conference-interest': typeof ApiPublicConferenceInterestRoute
   '/api/public/membership-application': typeof ApiPublicMembershipApplicationRoute
   '/api/public/membership-enquiry': typeof ApiPublicMembershipEnquiryRoute
+  '/events/$slug/book': typeof EventsSlugBookRoute
   '/help/dispute/client-information': typeof HelpDisputeClientInformationRoute
   '/help/dispute/frequently-asked-questions': typeof HelpDisputeFrequentlyAskedQuestionsRoute
   '/help/dispute/member-information': typeof HelpDisputeMemberInformationRoute
@@ -1202,7 +1210,7 @@ export interface FileRoutesById {
   '/directory/supplier': typeof DirectorySupplierRoute
   '/directory/training': typeof DirectoryTrainingRoute
   '/directory/why': typeof DirectoryWhyRoute
-  '/events/$slug': typeof EventsSlugRoute
+  '/events/$slug': typeof EventsSlugRouteWithChildren
   '/events/sponsor': typeof EventsSponsorRoute
   '/events/training': typeof EventsTrainingRoute
   '/help/contract': typeof HelpContractRoute
@@ -1252,6 +1260,7 @@ export interface FileRoutesById {
   '/api/public/conference-interest': typeof ApiPublicConferenceInterestRoute
   '/api/public/membership-application': typeof ApiPublicMembershipApplicationRoute
   '/api/public/membership-enquiry': typeof ApiPublicMembershipEnquiryRoute
+  '/events/$slug/book': typeof EventsSlugBookRoute
   '/help/dispute/client-information': typeof HelpDisputeClientInformationRoute
   '/help/dispute/frequently-asked-questions': typeof HelpDisputeFrequentlyAskedQuestionsRoute
   '/help/dispute/member-information': typeof HelpDisputeMemberInformationRoute
@@ -1397,6 +1406,7 @@ export interface FileRouteTypes {
     | '/api/public/conference-interest'
     | '/api/public/membership-application'
     | '/api/public/membership-enquiry'
+    | '/events/$slug/book'
     | '/help/dispute/client-information'
     | '/help/dispute/frequently-asked-questions'
     | '/help/dispute/member-information'
@@ -1537,6 +1547,7 @@ export interface FileRouteTypes {
     | '/api/public/conference-interest'
     | '/api/public/membership-application'
     | '/api/public/membership-enquiry'
+    | '/events/$slug/book'
     | '/help/dispute/client-information'
     | '/help/dispute/frequently-asked-questions'
     | '/help/dispute/member-information'
@@ -1680,6 +1691,7 @@ export interface FileRouteTypes {
     | '/api/public/conference-interest'
     | '/api/public/membership-application'
     | '/api/public/membership-enquiry'
+    | '/events/$slug/book'
     | '/help/dispute/client-information'
     | '/help/dispute/frequently-asked-questions'
     | '/help/dispute/member-information'
@@ -1774,7 +1786,7 @@ export interface RootRouteChildren {
   DirectorySupplierRoute: typeof DirectorySupplierRoute
   DirectoryTrainingRoute: typeof DirectoryTrainingRoute
   DirectoryWhyRoute: typeof DirectoryWhyRoute
-  EventsSlugRoute: typeof EventsSlugRoute
+  EventsSlugRoute: typeof EventsSlugRouteWithChildren
   EventsSponsorRoute: typeof EventsSponsorRoute
   EventsTrainingRoute: typeof EventsTrainingRoute
   HelpContractRoute: typeof HelpContractRoute
@@ -2700,6 +2712,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HelpDisputeClientInformationRouteImport
       parentRoute: typeof HelpDisputeRoute
     }
+    '/events/$slug/book': {
+      id: '/events/$slug/book'
+      path: '/book'
+      fullPath: '/events/$slug/book'
+      preLoaderRoute: typeof EventsSlugBookRouteImport
+      parentRoute: typeof EventsSlugRoute
+    }
     '/api/public/membership-enquiry': {
       id: '/api/public/membership-enquiry'
       path: '/api/public/membership-enquiry'
@@ -2903,6 +2922,18 @@ const MyBaliRouteChildren: MyBaliRouteChildren = {
 const MyBaliRouteWithChildren =
   MyBaliRoute._addFileChildren(MyBaliRouteChildren)
 
+interface EventsSlugRouteChildren {
+  EventsSlugBookRoute: typeof EventsSlugBookRoute
+}
+
+const EventsSlugRouteChildren: EventsSlugRouteChildren = {
+  EventsSlugBookRoute: EventsSlugBookRoute,
+}
+
+const EventsSlugRouteWithChildren = EventsSlugRoute._addFileChildren(
+  EventsSlugRouteChildren,
+)
+
 interface HelpDisputeRouteChildren {
   HelpDisputeClientInformationRoute: typeof HelpDisputeClientInformationRoute
   HelpDisputeFrequentlyAskedQuestionsRoute: typeof HelpDisputeFrequentlyAskedQuestionsRoute
@@ -3099,7 +3130,7 @@ const rootRouteChildren: RootRouteChildren = {
   DirectorySupplierRoute: DirectorySupplierRoute,
   DirectoryTrainingRoute: DirectoryTrainingRoute,
   DirectoryWhyRoute: DirectoryWhyRoute,
-  EventsSlugRoute: EventsSlugRoute,
+  EventsSlugRoute: EventsSlugRouteWithChildren,
   EventsSponsorRoute: EventsSponsorRoute,
   EventsTrainingRoute: EventsTrainingRoute,
   HelpContractRoute: HelpContractRoute,
