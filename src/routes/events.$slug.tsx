@@ -1,9 +1,10 @@
-import { createFileRoute, notFound } from "@tanstack/react-router";
+import { useEffect } from "react";
+import { createFileRoute, notFound, useRouter } from "@tanstack/react-router";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CookieBanner from "../components/CookieBanner";
 import Link from "../components/SmartLink";
-import { fetchEventBySlug, fetchEventsList } from "../lib/content/db";
+import { fetchEventBySlug, fetchEventsList, subscribeTable } from "../lib/content/db";
 
 export const Route = createFileRoute("/events/$slug")({
   loader: async ({ params }) => {
