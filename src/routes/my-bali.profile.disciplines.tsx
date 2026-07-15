@@ -3,6 +3,7 @@ import { useState, type FormEvent } from "react";
 import { Card } from "../components/mybali/DashboardShell";
 import { Banner } from "./my-bali.profile.personal";
 import { DISCIPLINES } from "../services/mybali-data";
+import { useCanEditOrganisation, ReadOnlyBanner } from "@/lib/mybali/contact-role";
 
 export const Route = createFileRoute("/my-bali/profile/disciplines")({
   component: DisciplinesEdit,
