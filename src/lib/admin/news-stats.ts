@@ -63,9 +63,11 @@ function writeHeadline(v: HeadlineRecord) {
 }
 
 const listeners = new Set<() => void>();
-function emit() { listeners.forEach((l) => l()); }
+// Cache latest snapshot so useSyncExternalStore has a stable reference.
+let headlineCache: HeadlineRecord = readHeadline();
+function emit() { headlineCache = readHeadline(); listeners.forEach((l) => l()); }
 function sub(l: () => void) { listeners.add(l); return () => listeners.delete(l); }
-function snap() { return readHeadline(); }
+function snap() { return headlineCache; }
 export function useHeadline() {
   return useSyncExternalStore(sub, snap, snap);
 }
