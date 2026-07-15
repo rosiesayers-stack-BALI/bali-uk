@@ -87,13 +87,13 @@ function deriveOrgType(o: Omit<Organisation, "id" | "applicationType">): Applica
   const year = Number(o.memberSince.slice(0, 4));
   const accredited = year <= 2017;
   switch (o.discipline) {
-    case "Contractor":       return accredited ? "accredited_contractor" : "registered_contractor";
-    case "Designer":         return accredited ? "accredited_designer" : "registered_designer";
-    case "Supplier":         return "service_supplier";
-    case "Training Provider":return "training_provider";
-    case "Consultant":       return accredited ? "registered_affiliate" : "affiliate";
-    case "Maintenance":      return accredited ? "accredited_contractor" : "registered_contractor";
-    default:                 return "affiliate";
+    case "Contractor":       return accredited ? "accredited_contractor" : "associate_contractor";
+    case "Designer":         return accredited ? "accredited_designer" : "associate_designer";
+    case "Supplier":         return accredited ? "accredited_supplier" : "associate_supplier";
+    case "Training Provider":return "bali_training_provider";
+    case "Consultant":       return "associate_individual";
+    case "Maintenance":      return accredited ? "accredited_contractor" : "associate_contractor";
+    default:                 return "associate_individual";
   }
 }
 
