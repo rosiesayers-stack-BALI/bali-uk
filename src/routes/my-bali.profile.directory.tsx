@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { Card } from "../components/mybali/DashboardShell";
 import { Field, Banner, FieldStyles } from "./my-bali.profile.personal";
+import { useCanEditOrganisation, ReadOnlyBanner } from "@/lib/mybali/contact-role";
 
 export const Route = createFileRoute("/my-bali/profile/directory")({
   component: DirectoryEdit,
