@@ -124,8 +124,19 @@ function EventsEditor() {
           <input type="url" value={form.booking_url} onChange={(e) => setForm({ ...form, booking_url: e.target.value })} className={cls} />
         </F>
         <label className="flex items-center gap-2 text-sm">
-          <input type="checkbox" checked={form.published} onChange={(e) => setForm({ ...form, published: e.target.checked })} />
-          Publish
+          <input
+            type="checkbox"
+            checked={!!form.published}
+            onChange={(e) => setForm((f) => ({ ...f, published: e.target.checked }))}
+          />
+          Publish (visible on the public site)
+          <span
+            className={`ml-2 inline-flex items-center text-xs font-semibold px-2 py-0.5 rounded-full ${
+              form.published ? "bg-green-100 text-green-800" : "bg-gray-200 text-gray-700"
+            }`}
+          >
+            {form.published ? "Will be Published" : "Will be saved as Draft"}
+          </span>
         </label>
         {error && <p className="text-sm text-red-600">{error}</p>}
         <div className="flex gap-2">
