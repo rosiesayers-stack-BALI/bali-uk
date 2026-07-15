@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Link, useRouter, useRouterState, useNavigate } from "@tanstack/react-router";
 import {
   LogOut, Newspaper, Calendar, FileText, GraduationCap, LayoutDashboard,
-  Inbox, Users, Building2, ClipboardList, Search, ShieldCheck,
+  Inbox, Users, Building2, ClipboardList, Search, ShieldCheck, Mail, Zap,
 } from "lucide-react";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
@@ -16,6 +16,8 @@ const NAV = [
   { to: "/admin/organisations", label: "Organisations", icon: Building2 },
   { to: "/admin/applications", label: "Applications", icon: ClipboardList },
   { to: "/admin/submissions", label: "Submissions", icon: Inbox },
+  { to: "/admin/mailing", label: "Mailing lists", icon: Mail },
+  { to: "/admin/automations", label: "Automations", icon: Zap },
   { to: "/admin/news", label: "News", icon: Newspaper },
   { to: "/admin/events", label: "Events", icon: Calendar },
   { to: "/admin/policy", label: "Policy", icon: FileText },
