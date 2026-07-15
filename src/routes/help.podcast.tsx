@@ -454,17 +454,30 @@ function Page() {
           {/* FULL ARCHIVE EMBED */}
           <h3>Browse the full archive</h3>
           <p className="text-slate-600 -mt-1 mb-4">Every episode of Dig Deep, in one player.</p>
-          <div className="not-prose mb-12 rounded-2xl overflow-hidden border border-slate-200 bg-white">
+          <div className="not-prose mb-4 rounded-2xl overflow-hidden border border-slate-200 bg-white">
             <iframe
               title="Dig Deep — full archive"
-              src="https://www.podbean.com/player-v2/?pbad=1&i=rosiesayers-podcast&from=embed&square=1&share=0&download=0&fonts=Arial&skin=1&font-color=auto&rtl=0&logo_link=podcast_page&btn-skin=7&size=400"
+              src="https://www.podbean.com/player-v2/?i=6p4rn-142a785-pbblog-playlist&share=1&download=1&rtl=0&fonts=Arial&skin=1&font-color=auto&logo_link=episode_page&order=episodic&limit=10&filter=all&ss=a713390a017602015775e868a2cf26b0&btn-skin=7&size=480"
               width="100%"
-              height="400"
+              height="480"
               frameBorder={0}
               loading="lazy"
+              allow="autoplay"
               className="block w-full"
             />
           </div>
+          <p className="not-prose mb-12 text-sm text-slate-500">
+            Playlist not loading?{" "}
+            <a
+              href="https://rosiesayers.podbean.com/"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-bali-green font-semibold underline"
+            >
+              Listen on Podbean
+            </a>
+            .
+          </p>
 
           {/* NEWSLETTER */}
           <div className="not-prose mb-6 p-6 md:p-8 rounded-2xl text-white" style={{ background: "linear-gradient(135deg, #1D4D59 0%, #0E8B61 100%)" }}>
