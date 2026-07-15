@@ -87,9 +87,12 @@ function AppDetailBody({
               <Field icon={MapPin} label="Location" value={[app.town, app.county, app.region].filter(Boolean).join(" · ") || "—"} />
               <Field icon={Briefcase} label="Discipline" value={app.discipline} />
               <Field icon={Tag} label="Application type" value={
-                <span className="inline-flex items-center gap-2">
-                  <ApplicationTypeBadge id={app.applicationType} />
-                  <span className="text-xs text-gray-500">{getApplicationType(app.applicationType)?.label ?? app.category}</span>
+                <span className="inline-flex flex-col gap-1">
+                  <span className="inline-flex items-center gap-2">
+                    <ApplicationTypeBadge id={app.applicationType} />
+                    <span className="text-xs text-gray-500">{getApplicationType(app.applicationType)?.label ?? app.category}</span>
+                  </span>
+                  <FeeInline id={app.applicationType} />
                 </span>
               } />
             </dl>
