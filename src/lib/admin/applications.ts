@@ -225,10 +225,13 @@ export async function updateStage(id: string, to: ApplicationStage, from: Applic
   const row = await loadRow(id);
   const history = toArray<AppHistory>(row.history);
   history.push({ id: `h-${Date.now()}`, at: new Date().toISOString(), from, to, by, note });
-  const patch: Record<string, unknown> = { status: to, history };
-  if (to === "Application received – awaiting fee") patch.fee_status = "Unpaid";
-  if (to === "Application received – paid") patch.fee_status = "Paid";
-  const { error } = await supabase.from("membership_applications").update(patch).eq("id", id);
+  const feeStatus: FeeStatus | undefined =
+    to === "Application received – awaiting fee" ? "Unpaid" :
+    to === "Application received – paid" ? "Paid" : undefined;
+  const { error } = await supabase
+    .from("membership_applications")
+    .update({ status: to, history: history as unknown as never, ...(feeStatus ? { fee_status: feeStatus } : {}) })
+    .eq("id", id);
   if (error) throw error;
 }
 
