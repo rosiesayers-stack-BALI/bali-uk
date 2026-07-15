@@ -293,7 +293,7 @@ export async function sendOnboardingLink(id: string, from: ApplicationStage) {
   history.push({ id: `h-${Date.now()}`, at: new Date().toISOString(), from, to: "Approved", by: "Staff", note: "Onboarding link generated" });
   const { error } = await supabase
     .from("membership_applications")
-    .update({ onboarding_link: link, history })
+    .update({ onboarding_link: link, onboarding_status: "Link sent", history })
     .eq("id", id);
   if (error) throw error;
   return link;
