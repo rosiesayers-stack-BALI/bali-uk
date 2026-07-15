@@ -38,7 +38,7 @@ export const PIPELINE_STAGES: ApplicationStage[] = [
 export const SIDE_STAGES: ApplicationStage[] = ["Rejected", "On-hold"];
 export const ALL_STAGES: ApplicationStage[] = [...PIPELINE_STAGES, ...SIDE_STAGES];
 
-export type OnboardingStatus = "Not started" | "Started" | "Completed";
+export type OnboardingStatus = "Not started" | "Link sent" | "Started" | "Completed";
 export type PaymentMethod = "Card" | "Invoice" | "Not set";
 export type FeeStatus = "Unpaid" | "Awaiting invoice" | "Paid" | "N/A";
 
@@ -130,7 +130,7 @@ function normaliseFeeStatus(raw: string | null | undefined, stage: ApplicationSt
   return "N/A";
 }
 function normaliseOnboarding(raw: string | null | undefined, stage: ApplicationStage): OnboardingStatus {
-  if (raw === "Not started" || raw === "Started" || raw === "Completed") return raw;
+  if (raw === "Not started" || raw === "Link sent" || raw === "Started" || raw === "Completed") return raw;
   return stage === "Active" ? "Completed" : "Not started";
 }
 
@@ -293,7 +293,7 @@ export async function sendOnboardingLink(id: string, from: ApplicationStage) {
   history.push({ id: `h-${Date.now()}`, at: new Date().toISOString(), from, to: "Approved", by: "Staff", note: "Onboarding link generated" });
   const { error } = await supabase
     .from("membership_applications")
-    .update({ onboarding_link: link, history })
+    .update({ onboarding_link: link, onboarding_status: "Link sent", history })
     .eq("id", id);
   if (error) throw error;
   return link;
