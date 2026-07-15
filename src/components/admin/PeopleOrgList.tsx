@@ -136,7 +136,12 @@ export function PeopleOrgList({ kind }: { kind: "people" | "organisations" }) {
                       <td className="px-4 py-3"><ApplicationTypeBadge id={r.applicationType} /></td>
                       <td className="px-4 py-3"><FeeInline id={r.applicationType} /></td>
                       <td className="px-4 py-3">
-                        <StatusPill status={r.status} />
+                        <span className="inline-flex items-center gap-1">
+                          <StatusPill status={r.status} />
+                          {kind === "people" && "contactRole" in r && (
+                            <ContactRolePill role={(r as { contactRole: "main" | "nominated" }).contactRole} />
+                          )}
+                        </span>
                       </td>
                     </tr>
                   ))}
