@@ -133,6 +133,7 @@ export function PeopleOrgList({ kind }: { kind: "people" | "organisations" }) {
                       <td className="px-4 py-3 text-gray-600">{r.region}</td>
                       <td className="px-4 py-3 text-gray-600">{r.discipline}</td>
                       <td className="px-4 py-3"><ApplicationTypeBadge id={r.applicationType} /></td>
+                      <td className="px-4 py-3"><FeeInline id={r.applicationType} /></td>
                       <td className="px-4 py-3">
                         <StatusPill status={r.status} />
                       </td>
