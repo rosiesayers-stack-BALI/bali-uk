@@ -59,14 +59,18 @@ function OrgDetail() {
             <ul className="space-y-2">
               {people.map((p) => (
                 <li key={p.id}>
-                  <Link to="/admin/people/$id" params={{ id: p.id }} className="text-sm font-semibold text-bali-blue hover:underline">
-                    {p.name}
-                  </Link>
+                  <div className="flex items-center gap-2">
+                    <Link to="/admin/people/$id" params={{ id: p.id }} className="text-sm font-semibold text-bali-blue hover:underline">
+                      {p.name}
+                    </Link>
+                    <ContactRolePill role={p.contactRole} />
+                  </div>
                   <p className="text-xs text-gray-500">{p.role}</p>
                 </li>
               ))}
             </ul>
           )}
+          <p className="text-[11px] text-gray-400 italic mt-3">TODO: main / nominated contact model — enforce server-side later (mirrors Workbooks).</p>
         </div>
         </div>
       </div>
