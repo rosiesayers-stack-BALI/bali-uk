@@ -162,6 +162,9 @@ function mapOrg(row: OrgRow): Organisation {
 
 function mapPerson(row: PersonRow, orgMap: Map<string, Organisation>): Person {
   const org = row.wb_org_id ? orgMap.get(row.wb_org_id) ?? null : null;
+  const opts = Array.isArray(row.newsletter_opts)
+    ? (row.newsletter_opts as unknown[]).filter((x): x is string => typeof x === "string")
+    : [];
   return {
     id: row.wb_id,
     name: row.name ?? "",
@@ -177,6 +180,7 @@ function mapPerson(row: PersonRow, orgMap: Map<string, Organisation>): Person {
     joined: org?.memberSince ?? "",
     applicationType: org?.applicationType ?? "associate_individual",
     contactRole: row.contact_role === "nominated" ? "nominated" : "main",
+    newsletterOpts: opts,
   };
 }
 
