@@ -3,6 +3,7 @@ import { useState, type FormEvent } from "react";
 import { Card } from "../components/mybali/DashboardShell";
 import { Field, Banner, FieldStyles } from "./my-bali.profile.personal";
 import { ORGANISATION, REGIONS, COUNTRIES } from "../services/mybali-data";
+import { useCanEditOrganisation, ReadOnlyBanner } from "@/lib/mybali/contact-role";
 
 export const Route = createFileRoute("/my-bali/profile/organisation")({
   component: OrgEdit,
@@ -27,11 +28,15 @@ function OrgEdit() {
     setTimeout(() => setSaved(false), 2500);
   };
 
+  const { canEdit, reason } = useCanEditOrganisation();
+
   return (
     <Card>
       <h2 className="text-lg font-semibold text-gray-900 mb-4">Organisation details</h2>
+      {!canEdit && reason && <ReadOnlyBanner reason={reason} />}
       {saved && <Banner>Organisation saved (mock).</Banner>}
       <form onSubmit={submit} className="grid gap-4 sm:grid-cols-2">
+        <fieldset disabled={!canEdit} className="contents">
         <Field label="Organisation name" className="sm:col-span-2" required>
           <input className="input" value={form.name} onChange={(e) => set("name", e.target.value)} required />
         </Field>
@@ -98,8 +103,9 @@ function OrgEdit() {
         </fieldset>
 
         <div className="sm:col-span-2 flex justify-end">
-          <button type="submit" className="bg-bali-blue hover:bg-blue-800 text-white font-semibold px-6 py-2.5 rounded-lg text-sm">Save changes</button>
+          <button type="submit" disabled={!canEdit} className="bg-bali-blue hover:bg-blue-800 text-white font-semibold px-6 py-2.5 rounded-lg text-sm disabled:bg-gray-300 disabled:cursor-not-allowed">Save changes</button>
         </div>
+        </fieldset>
       </form>
       <FieldStyles />
     </Card>

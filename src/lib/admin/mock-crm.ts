@@ -27,6 +27,16 @@ export type Region =
 
 export type MembershipStatus = "Active" | "Lapsed" | "Prospect" | "Applicant";
 
+// Main vs nominated contact permission model.
+// A person is EITHER the main contact for their organisation OR a nominated
+// contact — never both. Only ONE main contact per organisation.
+//
+// TODO: this maps directly to Workbooks' "main / nominated contact" model
+// on the CRM side. When we wire the real backend, enforce this rule
+// server-side (exactly one main contact per organisation) with a DB
+// constraint or trigger — the client check here is UX only.
+export type ContactRole = "main" | "nominated";
+
 export type Person = {
   id: string;
   name: string;
@@ -41,6 +51,7 @@ export type Person = {
   status: MembershipStatus;
   joined: string;
   applicationType: ApplicationTypeId; // persists after approval
+  contactRole: ContactRole;
 };
 
 export type Organisation = {
@@ -81,8 +92,6 @@ const ORG_SEED: Array<Omit<Organisation, "id" | "applicationType">> = [
   { name: "Tyneside Tree Care", town: "Newcastle", county: "Tyne and Wear", region: "North East", discipline: "Maintenance", website: "tynesidetrees.co.uk", phone: "0191 555 6600", status: "Active", memberSince: "2019-04-22", size: "1-10" },
 ];
 
-// Assign a placeholder application type per seed row. Accredited variants for
-// long-standing (memberSince <= 2017) members; registered otherwise.
 function deriveOrgType(o: Omit<Organisation, "id" | "applicationType">): ApplicationTypeId {
   const year = Number(o.memberSince.slice(0, 4));
   const accredited = year <= 2017;
@@ -100,7 +109,6 @@ function deriveOrgType(o: Omit<Organisation, "id" | "applicationType">): Applica
 function makeOrgs(): Organisation[] {
   return ORG_SEED.map((o, i) => ({ ...o, id: `org-${i + 1}`, applicationType: deriveOrgType(o) }));
 }
-// silence unused warning while making it referenceable for future tooling
 void APPLICATION_TYPES;
 
 const FIRST = ["Amelia","James","Priya","Ollie","Sara","Marcus","Ella","Tom","Harriet","Rhys","Isla","Ben","Chloe","David","Fiona","Grace","Henry","Jack","Kate","Liam","Nadia","Owen","Poppy","Ravi","Sophie","Theo","Ursula","Vince","Wren","Yara"];
@@ -129,26 +137,67 @@ function makePeople(orgs: Organisation[]): Person[] {
         status: org.status,
         joined: org.memberSince,
         applicationType: org.applicationType,
+        // First person of each org is the main contact; the rest are nominated.
+        contactRole: k === 0 ? "main" : "nominated",
       });
     }
     i++;
   }
-  people.push({ id: `p-${people.length + 1}`, name: "Rosa Kingsley", role: "Independent Designer", email: "rosa@kingsleydesign.co.uk", phone: "07700 900123", town: "Oxford", county: "Oxfordshire", region: "South East", discipline: "Designer", organisationId: null, status: "Active", joined: "2022-05-01", applicationType: "associate_individual" });
-  people.push({ id: `p-${people.length + 1}`, name: "Alan Beckworth", role: "Consultant", email: "alan@beckworth.co.uk", phone: "07700 900987", town: "Leeds", county: "West Yorkshire", region: "Yorkshire", discipline: "Consultant", organisationId: null, status: "Active", joined: "2021-11-11", applicationType: "associate_individual" });
+  people.push({ id: `p-${people.length + 1}`, name: "Rosa Kingsley", role: "Independent Designer", email: "rosa@kingsleydesign.co.uk", phone: "07700 900123", town: "Oxford", county: "Oxfordshire", region: "South East", discipline: "Designer", organisationId: null, status: "Active", joined: "2022-05-01", applicationType: "associate_individual", contactRole: "main" });
+  people.push({ id: `p-${people.length + 1}`, name: "Alan Beckworth", role: "Consultant", email: "alan@beckworth.co.uk", phone: "07700 900987", town: "Leeds", county: "West Yorkshire", region: "Yorkshire", discipline: "Consultant", organisationId: null, status: "Active", joined: "2021-11-11", applicationType: "associate_individual", contactRole: "main" });
+
+  // Demo accounts wired to /my-bali auth (see src/services/auth.ts).
+  // Both belong to Greenacres Landscapes Ltd (org-1) so we can show the
+  // main-vs-nominated permission split on a single organisation.
+  const greenacresPeople = people.filter((p) => p.organisationId === "org-1");
+  const demoMain = greenacresPeople[0];
+  if (demoMain) { demoMain.name = "Demo Member"; demoMain.email = "demo@bali.org.uk"; demoMain.contactRole = "main"; }
+  const demoNominated = greenacresPeople[1];
+  if (demoNominated) { demoNominated.name = "Nominated Contact"; demoNominated.email = "nominated@bali.org.uk"; demoNominated.contactRole = "nominated"; }
+
   return people;
 }
 
 type State = { organisations: Organisation[]; people: Person[] };
 function initial(): State { const orgs = makeOrgs(); return { organisations: orgs, people: makePeople(orgs) }; }
 
-const state: State = initial();
+let state: State = initial();
 const listeners = new Set<() => void>();
 function subscribe(l: () => void) { listeners.add(l); return () => listeners.delete(l); }
 function getSnapshot() { return state; }
+function emit() { for (const l of listeners) l(); }
 export function useCrm() { return useSyncExternalStore(subscribe, getSnapshot, getSnapshot); }
 
 export function getPerson(id: string) { return state.people.find((p) => p.id === id); }
 export function getOrganisation(id: string) { return state.organisations.find((o) => o.id === id); }
+
+/** Find the person record for a signed-in /my-bali user by email. */
+export function getPersonByEmail(email: string | null | undefined): Person | null {
+  if (!email) return null;
+  const e = email.trim().toLowerCase();
+  return state.people.find((p) => p.email.toLowerCase() === e) ?? null;
+}
+
+/**
+ * Make `personId` the main contact for their organisation, and demote any
+ * previous main contact in that organisation to a nominated contact.
+ * TODO: replace with backend call that enforces the constraint server-side.
+ */
+export function setAsMainContact(personId: string) {
+  const target = state.people.find((p) => p.id === personId);
+  if (!target || !target.organisationId) return;
+  const orgId = target.organisationId;
+  state = {
+    ...state,
+    people: state.people.map((p) => {
+      if (p.organisationId !== orgId) return p;
+      if (p.id === personId) return { ...p, contactRole: "main" as const };
+      if (p.contactRole === "main") return { ...p, contactRole: "nominated" as const };
+      return p;
+    }),
+  };
+  emit();
+}
 
 export const ALL_REGIONS = REGIONS;
 export const ALL_DISCIPLINES = DISCIPLINES;

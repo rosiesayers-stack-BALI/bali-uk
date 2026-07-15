@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { Card } from "../components/mybali/DashboardShell";
 import { Field, Banner, FieldStyles } from "./my-bali.profile.personal";
+import { useCanEditOrganisation, ReadOnlyBanner } from "@/lib/mybali/contact-role";
 
 export const Route = createFileRoute("/my-bali/profile/directory")({
   component: DirectoryEdit,
@@ -39,11 +40,15 @@ function DirectoryEdit() {
     setTimeout(() => setSaved(false), 2500);
   };
 
+  const { canEdit, reason } = useCanEditOrganisation();
+
   return (
     <Card>
       <h2 className="text-lg font-semibold text-gray-900 mb-4">Directory listing</h2>
+      {!canEdit && reason && <ReadOnlyBanner reason={reason} />}
       {saved && <Banner>Directory listing saved (mock).</Banner>}
       <form onSubmit={submit} className="space-y-8">
+        <fieldset disabled={!canEdit} className="contents">
         <section>
           <h3 className="font-semibold text-gray-900 mb-3">Images</h3>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -101,8 +106,9 @@ function DirectoryEdit() {
         />
 
         <div className="flex justify-end">
-          <button className="bg-bali-blue hover:bg-blue-800 text-white font-semibold px-6 py-2.5 rounded-lg text-sm">Save listing</button>
+          <button disabled={!canEdit} className="bg-bali-blue hover:bg-blue-800 text-white font-semibold px-6 py-2.5 rounded-lg text-sm disabled:bg-gray-300 disabled:cursor-not-allowed">Save listing</button>
         </div>
+        </fieldset>
       </form>
       <FieldStyles />
     </Card>

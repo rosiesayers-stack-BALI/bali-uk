@@ -15,7 +15,11 @@ const FAKE_DELAY_MS = 300;
 
 // Seeded demo users. TODO: remove once real backend is wired.
 const users: StoredUser[] = [
+  // Main contact for Greenacres Landscapes Ltd — full org-editing rights.
   { id: "u_demo", email: "demo@bali.org.uk", name: "Demo Member", password: "password123" },
+  // Nominated contact for the same organisation — read-only view of org
+  // details. Demonstrates the main-vs-nominated permission split.
+  { id: "u_nominated", email: "nominated@bali.org.uk", name: "Nominated Contact", password: "password123" },
 ];
 
 // In-memory reset tokens (email -> token, expires).

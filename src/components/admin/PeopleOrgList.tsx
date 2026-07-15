@@ -136,7 +136,12 @@ export function PeopleOrgList({ kind }: { kind: "people" | "organisations" }) {
                       <td className="px-4 py-3"><ApplicationTypeBadge id={r.applicationType} /></td>
                       <td className="px-4 py-3"><FeeInline id={r.applicationType} /></td>
                       <td className="px-4 py-3">
-                        <StatusPill status={r.status} />
+                        <span className="inline-flex items-center gap-1">
+                          <StatusPill status={r.status} />
+                          {kind === "people" && "contactRole" in r && (
+                            <ContactRolePill role={(r as { contactRole: "main" | "nominated" }).contactRole} />
+                          )}
+                        </span>
                       </td>
                     </tr>
                   ))}
@@ -158,6 +163,17 @@ export function StatusPill({ status }: { status: string }) {
     status === "Applicant" ? "bg-amber-100 text-amber-700" :
     "bg-gray-100 text-gray-700";
   return <span className={`inline-block text-[11px] font-semibold px-2 py-0.5 rounded-full ${cls}`}>{status}</span>;
+}
+
+export function ContactRolePill({ role }: { role: "main" | "nominated" }) {
+  const cls = role === "main"
+    ? "bg-bali-blue text-white"
+    : "bg-gray-100 text-gray-700 border border-gray-200";
+  return (
+    <span className={`inline-block text-[10px] font-semibold px-2 py-0.5 rounded-full ${cls}`} title={role === "main" ? "Main contact for the organisation" : "Nominated contact — cannot edit organisation-level details"}>
+      {role === "main" ? "Main contact" : "Nominated"}
+    </span>
+  );
 }
 
 export function ApplicationTypeBadge({ id, short = false }: { id: string; short?: boolean }) {
