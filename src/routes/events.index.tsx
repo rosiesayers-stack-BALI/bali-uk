@@ -102,7 +102,10 @@ const PAGE_SIZE = 9;
 function EventsIndex() {
   const { events } = Route.useLoaderData();
   const router = useRouter();
-  useEffect(() => subscribeTable("events", () => router.invalidate()), [router]);
+  useEffect(() => {
+    router.invalidate();
+    return subscribeTable("events", () => router.invalidate());
+  }, [router]);
 
   // filter state
   const [q, setQ] = useState("");

@@ -43,7 +43,22 @@ function loadTable<T extends Row>(name: TableName, seed: () => T[]): T[] {
   if (typeof window === "undefined") return seed();
   try {
     const raw = window.localStorage.getItem(STORAGE_PREFIX + name);
-    if (raw) return JSON.parse(raw) as T[];
+    if (raw) {
+      let rows = JSON.parse(raw) as T[];
+      // One-off cleanup: remove the abandoned end-to-end test article.
+      if (name === "news_articles") {
+        const before = rows.length;
+        rows = rows.filter((r) => (r as Row).slug !== "claude-e2e-test");
+        if (rows.length !== before) {
+          try {
+            window.localStorage.setItem(STORAGE_PREFIX + name, JSON.stringify(rows));
+          } catch {
+            /* ignore */
+          }
+        }
+      }
+      return rows;
+    }
   } catch {
     /* ignore */
   }
