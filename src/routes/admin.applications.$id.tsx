@@ -179,6 +179,7 @@ function AppDetailBody({
             ))}
           </ol>
         </section>
+        </div>
       </div>
 
       {toast && (
