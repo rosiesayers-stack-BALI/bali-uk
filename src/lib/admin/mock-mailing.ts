@@ -5,11 +5,9 @@
 
 import { useSyncExternalStore } from "react";
 import type {
-  Person, Organisation, Region, MembershipStatus,
+  Person, Region, MembershipStatus,
 } from "./mock-crm";
-import { ALL_REGIONS } from "./mock-crm";
 import type { ApplicationTypeId } from "@/lib/membership-types";
-import { APPLICATION_TYPES } from "@/lib/membership-types";
 
 // ------------- Newsletter opt-ins -------------
 
