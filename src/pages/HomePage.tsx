@@ -364,10 +364,10 @@ export default function HomePage() {
             <RevealDiv delay={0.2}>
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { src: bannerHome1.url, caption: 'Award-winning garden design', mt: '' },
-                  { src: bannerWeb.url, caption: 'Professional landscaping', mt: 'mt-6' },
-                  { src: bannerHome3.url, caption: 'Precision maintenance', mt: '-mt-2' },
-                  { src: bannerMountbatten.url, caption: 'Quality materials & supply', mt: 'mt-4' },
+                  { src: 'https://www.bali.org.uk/public/banners/large_homepage-banner-1.jpeg', caption: 'Award-winning garden design', mt: '' },
+                  { src: 'https://www.bali.org.uk/public/banners/large_web-banner.png', caption: 'Professional landscaping', mt: 'mt-6' },
+                  { src: 'https://www.bali.org.uk/public/banners/large_homepage-banner-3.jpeg', caption: 'Precision maintenance', mt: '-mt-2' },
+                  { src: 'https://www.bali.org.uk/public/banners/large_private-estate-pwp-banner-crop.jpeg', caption: 'Quality materials & supply', mt: 'mt-4' },
                 ].map((img) => (
                   <div key={img.src} className={`bg-white rounded-2xl overflow-hidden shadow-md ${img.mt}`}>
                     <img src={img.src} alt={img.caption} className="w-full h-40 object-cover" />
