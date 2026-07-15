@@ -35,7 +35,11 @@ function NewsIndex() {
   const headline = useHeadline();
 
   // Live-refresh when the shared mock store changes (admin edits).
-  useEffect(() => subscribeTable("news_articles", () => router.invalidate()), [router]);
+  useEffect(() => {
+    // Force a client-side reload so we read localStorage (SSR loader ran with seed only).
+    router.invalidate();
+    return subscribeTable("news_articles", () => router.invalidate());
+  }, [router]);
 
   // Headline (paid pinned) first, then trending, then newest-first (already sorted by loader).
   const { featured, pinnedTrending, rest } = useMemo(() => {
