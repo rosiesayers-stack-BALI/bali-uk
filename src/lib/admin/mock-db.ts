@@ -36,7 +36,7 @@ type PgResult<T> = { data: T; error: { message: string } | null; count?: number 
 
 // ---------- Storage layer ----------
 
-const STORAGE_PREFIX = "bali_admin_mockdb_v2:";
+const STORAGE_PREFIX = "bali_admin_mockdb_v3:";
 const listeners = new Map<TableName, Set<() => void>>();
 
 function loadTable<T extends Row>(name: TableName, seed: () => T[]): T[] {
@@ -111,6 +111,8 @@ function seedEventsRows(): Row[] {
     image_url: ((e.image as { url?: string } | undefined)?.url) ?? null,
     image_alt: ((e.image as { alt?: string } | undefined)?.alt) ?? "",
     booking_url: (e.booking_url as string) ?? (e.bookingUrl as string) ?? null,
+    member_price: (e.member_price as number | undefined) ?? null,
+    nonmember_price: (e.nonmember_price as number | undefined) ?? null,
     published: true,
     created_at: now,
     updated_at: now,

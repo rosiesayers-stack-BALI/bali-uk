@@ -35,6 +35,8 @@ export type EventRow = {
   image_alt: string | null;
   booking_url: string | null;
   sort_order: number;
+  member_price?: number | null;
+  nonmember_price?: number | null;
 };
 
 export type PolicyRow = {

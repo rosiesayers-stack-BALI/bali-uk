@@ -11,7 +11,25 @@ export type EventItem = {
   body: string[];
   image: { url: string; alt: string };
   booking_url?: string;
+  // Placeholder prices (GBP, inc VAT). TODO: source real pricing from backend.
+  member_price: number;
+  nonmember_price: number;
 };
+
+// Placeholder pricing tiers per category (GBP, inc VAT).
+// TODO: replace with real per-event pricing from backend/CMS.
+function placeholderPricing(category: string): { member_price: number; nonmember_price: number } {
+  switch (category) {
+    case "Webinar":
+      return { member_price: 0, nonmember_price: 0 };
+    case "Supplier Forum":
+      return { member_price: 25, nonmember_price: 75 };
+    case "BALI Chalk Fund":
+      return { member_price: 30, nonmember_price: 45 };
+    default:
+      return { member_price: 45, nonmember_price: 95 };
+  }
+}
 
 const book = (slug: string) => `https://www.bali.org.uk/events/${slug}/`;
 
@@ -122,18 +140,22 @@ const raw = [
   },
 ];
 
-export const events: EventItem[] = raw.map((e) => ({
-  slug: e.slug,
-  title: e.title,
-  date: e.date,
-  iso_date: e.iso_date,
-  venue: e.venue,
-  category: categoryFor(e.title),
-  description: `${e.title} — ${e.venue}, ${e.date}.`,
-  body: [
-    `${e.title} at ${e.venue} on ${e.date}.`,
-    "Book your place and see full details on bali.org.uk.",
-  ],
-  image: { url: e.image, alt: e.title },
-  booking_url: book(e.slug),
-}));
+export const events: EventItem[] = raw.map((e) => {
+  const category = categoryFor(e.title);
+  return {
+    slug: e.slug,
+    title: e.title,
+    date: e.date,
+    iso_date: e.iso_date,
+    venue: e.venue,
+    category,
+    description: `${e.title} — ${e.venue}, ${e.date}.`,
+    body: [
+      `${e.title} at ${e.venue} on ${e.date}.`,
+      "Book your place and see full details on bali.org.uk.",
+    ],
+    image: { url: e.image, alt: e.title },
+    booking_url: book(e.slug),
+    ...placeholderPricing(category),
+  };
+});

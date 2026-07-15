@@ -88,13 +88,9 @@ function EventPage() {
           <div className="mt-10 p-6 rounded-2xl bg-gradient-to-br from-bali-blue/5 to-bali-purple/5 border border-bali-blue/10">
             <h3 className="font-bold text-bali-blue mb-2">Book your place</h3>
             <p className="text-gray-700 text-sm mb-4">
-              {event.booking_url ? "Book directly using the link below." : "Bookings for this event are managed by the BALI team. Get in touch to reserve your place."}
+              Reserve your place using the secure booking form. You'll be able to add colleagues as delegates on the same booking.
             </p>
-            {event.booking_url ? (
-              <a href={event.booking_url} target="_blank" rel="noreferrer" className="inline-block bg-bali-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-bali-purple transition-colors">Book now →</a>
-            ) : (
-              <Link to="/$" params={{ _splat: "contact-us" }} className="inline-block bg-bali-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-bali-purple transition-colors">Contact the team →</Link>
-            )}
+            <Link to="/events/$slug/book" params={{ slug: event.slug }} className="inline-block bg-bali-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-bali-purple transition-colors">Book now →</Link>
           </div>
           <div className="mt-12 pt-8 border-t border-gray-200 grid sm:grid-cols-2 gap-4">
             {prev ? (
