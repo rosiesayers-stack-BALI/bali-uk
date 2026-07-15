@@ -178,6 +178,43 @@ function seedTrainingRows(): Row[] {
   }));
 }
 
+// Seed a realistic BALI enquiry → application pipeline so /admin/applications
+// shows content on first visit. TODO: replace with real backend data.
+function seedMembershipApplicationsRows(): Row[] {
+  const now = Date.now();
+  const day = 86400000;
+  const iso = (d: number) => new Date(now - d * day).toISOString();
+  const rows: Array<{
+    applicant_name: string; applicant_email: string; company_name: string;
+    category: string; town: string; county: string; region: string;
+    phone: string; status: string; source: string; payment_method?: string;
+    days: number;
+  }> = [
+    { applicant_name: "Harriet Blake", applicant_email: "harriet@willowscapes.co.uk", company_name: "Willowscapes Ltd", category: "associate_contractor", town: "Oxford", county: "Oxfordshire", region: "South East", phone: "01865 555 004", status: "Enquiry received", source: "BALI Website", days: 2 },
+    { applicant_name: "Marcus Doyle", applicant_email: "marcus@doyle-design.com", company_name: "Doyle Design Studio", category: "associate_designer", town: "Edinburgh", county: "Midlothian", region: "Scotland", phone: "0131 555 210", status: "Enquiry received", source: "BALI Website", days: 5 },
+    { applicant_name: "Priya Nash", applicant_email: "priya@nashsupply.co.uk", company_name: "Nash Supply Co", category: "associate_supplier", town: "Leicester", county: "Leicestershire", region: "Midlands", phone: "0116 555 812", status: "Qualifying", source: "BALI Website", days: 9 },
+    { applicant_name: "Owen Foster", applicant_email: "owen@fostergrounds.uk", company_name: "Foster Grounds Care", category: "accredited_contractor", town: "Bristol", county: "Bristol", region: "South West", phone: "0117 555 040", status: "Awaiting application", source: "Referral", days: 14 },
+    { applicant_name: "Isla Reid", applicant_email: "isla@reidlandscape.scot", company_name: "Reid Landscape", category: "accredited_contractor", town: "Glasgow", county: "Lanarkshire", region: "Scotland", phone: "0141 555 991", status: "Application received – awaiting fee", source: "BALI Website", payment_method: "Invoice", days: 21 },
+    { applicant_name: "Ben Harper", applicant_email: "ben@harpertrees.co.uk", company_name: "Harper Tree Services", category: "associate_contractor", town: "Norwich", county: "Norfolk", region: "Midlands", phone: "01603 555 700", status: "Application received – paid", source: "BALI Website", payment_method: "Card", days: 25 },
+    { applicant_name: "Sara Ellis", applicant_email: "sara@ellisdesign.co.uk", company_name: "Ellis Garden Design", category: "accredited_designer", town: "Truro", county: "Cornwall", region: "South West", phone: "01872 555 088", status: "Approved", source: "BALI Website", payment_method: "Card", days: 34 },
+    { applicant_name: "Rhys Jones", applicant_email: "rhys@jonesnursery.wales", company_name: "Jones Nursery", category: "accredited_supplier", town: "Swansea", county: "Swansea", region: "Wales", phone: "01792 555 330", status: "Active", source: "BALI Website", payment_method: "Invoice", days: 60 },
+    { applicant_name: "Kate Mills", applicant_email: "kate@millsconsult.co.uk", company_name: "Mills Consulting", category: "associate_individual", town: "Sheffield", county: "South Yorkshire", region: "Yorkshire", phone: "0114 555 220", status: "On-hold", source: "Referral", days: 45 },
+    { applicant_name: "Tom Ford", applicant_email: "tom@fordroots.co.uk", company_name: "Ford Roots Ltd", category: "associate_contractor", town: "Cambridge", county: "Cambridgeshire", region: "Midlands", phone: "01223 555 616", status: "Rejected", source: "BALI Website", days: 40 },
+  ];
+  return rows.map((r) => ({
+    id: uid(),
+    category: r.category,
+    applicant_name: r.applicant_name,
+    applicant_email: r.applicant_email,
+    company_name: r.company_name,
+    payload: { town: r.town, county: r.county, region: r.region, phone: r.phone, source: r.source, payment_method: r.payment_method ?? "Not set" },
+    status: r.status,
+    notes: null,
+    created_at: iso(r.days),
+    updated_at: iso(Math.max(0, r.days - 1)),
+  }));
+}
+
 // In-memory tables, hydrated lazily on first access.
 type Table = { rows: Row[]; loaded: boolean; seed: () => Row[] };
 const tables: Record<TableName, Table> = {
@@ -186,7 +223,7 @@ const tables: Record<TableName, Table> = {
   policy_posts: { rows: [], loaded: false, seed: seedPolicyRows },
   training_courses: { rows: [], loaded: false, seed: seedTrainingRows },
   liss_applications: { rows: [], loaded: false, seed: () => [] },
-  membership_applications: { rows: [], loaded: false, seed: () => [] },
+  membership_applications: { rows: [], loaded: false, seed: seedMembershipApplicationsRows },
   member_submissions: { rows: [], loaded: false, seed: () => [] },
   notifications: { rows: [], loaded: false, seed: () => [] },
 };
