@@ -173,6 +173,7 @@ function ApplicationsIndex() {
                       </td>
                       <td className="px-4 py-3 text-gray-600">{a.organisation}</td>
                       <td className="px-4 py-3"><ApplicationTypeBadge id={a.applicationType} /></td>
+                      <td className="px-4 py-3"><FeeInline id={a.applicationType} /></td>
                       <td className="px-4 py-3 text-gray-600">{[a.town, a.region].filter(Boolean).join(", ") || "—"}</td>
                       <td className="px-4 py-3 text-gray-600">{a.discipline}</td>
                       <td className="px-4 py-3 text-gray-600 whitespace-nowrap">{new Date(a.dateApplied).toLocaleDateString("en-GB")}</td>
