@@ -9,6 +9,7 @@ import {
 } from "@/lib/admin/applications";
 import { Mail, Phone, MapPin, Briefcase, Check, X, Link as LinkIcon, Copy, PauseCircle, Tag } from "lucide-react";
 import { ApplicationTypeBadge } from "@/components/admin/PeopleOrgList";
+import { FeeCard, FeeInline } from "@/components/admin/FeeDisplay";
 import { getApplicationType } from "@/lib/membership-types";
 
 export const Route = createFileRoute("/admin/applications/$id")({
