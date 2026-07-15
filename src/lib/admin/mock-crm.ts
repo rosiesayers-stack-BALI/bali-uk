@@ -87,13 +87,13 @@ function deriveOrgType(o: Omit<Organisation, "id" | "applicationType">): Applica
   const year = Number(o.memberSince.slice(0, 4));
   const accredited = year <= 2017;
   switch (o.discipline) {
-    case "Contractor":       return accredited ? "accredited_contractor" : "registered_contractor";
-    case "Designer":         return accredited ? "accredited_designer" : "registered_designer";
-    case "Supplier":         return "service_supplier";
-    case "Training Provider":return "training_provider";
-    case "Consultant":       return accredited ? "registered_affiliate" : "affiliate";
-    case "Maintenance":      return accredited ? "accredited_contractor" : "registered_contractor";
-    default:                 return "affiliate";
+    case "Contractor":       return accredited ? "accredited_contractor" : "associate_contractor";
+    case "Designer":         return accredited ? "accredited_designer" : "associate_designer";
+    case "Supplier":         return accredited ? "accredited_supplier" : "associate_supplier";
+    case "Training Provider":return "bali_training_provider";
+    case "Consultant":       return "associate_individual";
+    case "Maintenance":      return accredited ? "accredited_contractor" : "associate_contractor";
+    default:                 return "associate_individual";
   }
 }
 
@@ -133,8 +133,8 @@ function makePeople(orgs: Organisation[]): Person[] {
     }
     i++;
   }
-  people.push({ id: `p-${people.length + 1}`, name: "Rosa Kingsley", role: "Independent Designer", email: "rosa@kingsleydesign.co.uk", phone: "07700 900123", town: "Oxford", county: "Oxfordshire", region: "South East", discipline: "Designer", organisationId: null, status: "Active", joined: "2022-05-01", applicationType: "individual_professional" });
-  people.push({ id: `p-${people.length + 1}`, name: "Alan Beckworth", role: "Consultant", email: "alan@beckworth.co.uk", phone: "07700 900987", town: "Leeds", county: "West Yorkshire", region: "Yorkshire", discipline: "Consultant", organisationId: null, status: "Active", joined: "2021-11-11", applicationType: "individual_professional" });
+  people.push({ id: `p-${people.length + 1}`, name: "Rosa Kingsley", role: "Independent Designer", email: "rosa@kingsleydesign.co.uk", phone: "07700 900123", town: "Oxford", county: "Oxfordshire", region: "South East", discipline: "Designer", organisationId: null, status: "Active", joined: "2022-05-01", applicationType: "associate_individual" });
+  people.push({ id: `p-${people.length + 1}`, name: "Alan Beckworth", role: "Consultant", email: "alan@beckworth.co.uk", phone: "07700 900987", town: "Leeds", county: "West Yorkshire", region: "Yorkshire", discipline: "Consultant", organisationId: null, status: "Active", joined: "2021-11-11", applicationType: "associate_individual" });
   return people;
 }
 

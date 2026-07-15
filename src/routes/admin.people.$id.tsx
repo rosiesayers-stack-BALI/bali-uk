@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { PageHeader } from "@/components/admin/PageHeader";
 import { StatusPill, ApplicationTypeBadge } from "@/components/admin/PeopleOrgList";
+import { FeeCard } from "@/components/admin/FeeDisplay";
 import { useCrm } from "@/lib/admin/mock-crm";
 import { Mail, Phone, MapPin, Briefcase, Building2 } from "lucide-react";
 
@@ -48,6 +49,7 @@ function PersonDetail() {
         </div>
 
         <div className="space-y-6">
+          <FeeCard id={person.applicationType} />
           <div className="bg-white rounded-2xl border border-gray-200 p-6">
             <h2 className="font-bold text-gray-900 mb-3 flex items-center gap-2"><Building2 className="w-4 h-4" /> Organisation</h2>
             {org ? (

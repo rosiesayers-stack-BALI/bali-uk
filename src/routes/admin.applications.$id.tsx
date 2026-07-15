@@ -9,6 +9,7 @@ import {
 } from "@/lib/admin/applications";
 import { Mail, Phone, MapPin, Briefcase, Check, X, Link as LinkIcon, Copy, PauseCircle, Tag } from "lucide-react";
 import { ApplicationTypeBadge } from "@/components/admin/PeopleOrgList";
+import { FeeCard, FeeInline } from "@/components/admin/FeeDisplay";
 import { getApplicationType } from "@/lib/membership-types";
 
 export const Route = createFileRoute("/admin/applications/$id")({
@@ -86,9 +87,12 @@ function AppDetailBody({
               <Field icon={MapPin} label="Location" value={[app.town, app.county, app.region].filter(Boolean).join(" · ") || "—"} />
               <Field icon={Briefcase} label="Discipline" value={app.discipline} />
               <Field icon={Tag} label="Application type" value={
-                <span className="inline-flex items-center gap-2">
-                  <ApplicationTypeBadge id={app.applicationType} />
-                  <span className="text-xs text-gray-500">{getApplicationType(app.applicationType)?.label ?? app.category}</span>
+                <span className="inline-flex flex-col gap-1">
+                  <span className="inline-flex items-center gap-2">
+                    <ApplicationTypeBadge id={app.applicationType} />
+                    <span className="text-xs text-gray-500">{getApplicationType(app.applicationType)?.label ?? app.category}</span>
+                  </span>
+                  <FeeInline id={app.applicationType} />
                 </span>
               } />
             </dl>
@@ -158,6 +162,8 @@ function AppDetailBody({
           </section>
         </div>
 
+        <div className="space-y-6">
+        <FeeCard id={app.applicationType} />
         <section className="bg-white rounded-xl border border-gray-100 shadow-sm p-6">
           <h2 className="font-bold text-bali-slate mb-4">Stage history</h2>
           <ol className="space-y-4 border-l-2 border-gray-200 pl-4">
@@ -173,6 +179,7 @@ function AppDetailBody({
             ))}
           </ol>
         </section>
+        </div>
       </div>
 
       {toast && (

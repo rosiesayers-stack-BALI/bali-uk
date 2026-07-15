@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { PageHeader } from "@/components/admin/PageHeader";
 import { useCrm, ALL_REGIONS, ALL_DISCIPLINES, type Discipline, type Region } from "@/lib/admin/mock-crm";
 import { APPLICATION_TYPES, getApplicationType, type ApplicationTypeId } from "@/lib/membership-types";
+import { FeeInline } from "@/components/admin/FeeDisplay";
 import { ArrowUpDown } from "lucide-react";
 
 type SortKey = "name" | "town" | "region" | "discipline" | "status" | "applicationType";
@@ -116,6 +117,7 @@ export function PeopleOrgList({ kind }: { kind: "people" | "organisations" }) {
                         </button>
                       </th>
                     ))}
+                    <th className="px-4 py-3">Fee (26-27)</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
@@ -132,6 +134,7 @@ export function PeopleOrgList({ kind }: { kind: "people" | "organisations" }) {
                       <td className="px-4 py-3 text-gray-600">{r.region}</td>
                       <td className="px-4 py-3 text-gray-600">{r.discipline}</td>
                       <td className="px-4 py-3"><ApplicationTypeBadge id={r.applicationType} /></td>
+                      <td className="px-4 py-3"><FeeInline id={r.applicationType} /></td>
                       <td className="px-4 py-3">
                         <StatusPill status={r.status} />
                       </td>

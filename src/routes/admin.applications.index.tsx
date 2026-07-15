@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { PageHeader } from "@/components/admin/PageHeader";
+import { FeeInline } from "@/components/admin/FeeDisplay";
 import { ApplicationTypeBadge } from "@/components/admin/PeopleOrgList";
 import {
   fetchApplications, toApplication, updateStage, useAppOverlays,
@@ -156,6 +157,7 @@ function ApplicationsIndex() {
                     <th className="px-4 py-3">Applicant</th>
                     <th className="px-4 py-3">Organisation</th>
                     <th className="px-4 py-3">Application type</th>
+                    <th className="px-4 py-3">Fee (26-27)</th>
                     <th className="px-4 py-3">Location</th>
                     <th className="px-4 py-3">Discipline</th>
                     <th className="px-4 py-3">Applied</th>
@@ -171,6 +173,7 @@ function ApplicationsIndex() {
                       </td>
                       <td className="px-4 py-3 text-gray-600">{a.organisation}</td>
                       <td className="px-4 py-3"><ApplicationTypeBadge id={a.applicationType} /></td>
+                      <td className="px-4 py-3"><FeeInline id={a.applicationType} /></td>
                       <td className="px-4 py-3 text-gray-600">{[a.town, a.region].filter(Boolean).join(", ") || "—"}</td>
                       <td className="px-4 py-3 text-gray-600">{a.discipline}</td>
                       <td className="px-4 py-3 text-gray-600 whitespace-nowrap">{new Date(a.dateApplied).toLocaleDateString("en-GB")}</td>

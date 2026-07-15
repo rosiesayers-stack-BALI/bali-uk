@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { PageHeader } from "@/components/admin/PageHeader";
 import { StatusPill, ApplicationTypeBadge } from "@/components/admin/PeopleOrgList";
+import { FeeCard } from "@/components/admin/FeeDisplay";
 import { useCrm } from "@/lib/admin/mock-crm";
 import { Globe, Phone, MapPin, Briefcase, Users } from "lucide-react";
 
@@ -48,6 +49,8 @@ function OrgDetail() {
           </div>
         </div>
 
+        <div className="space-y-6">
+        <FeeCard id={org.applicationType} />
         <div className="bg-white rounded-2xl border border-gray-200 p-6">
           <h2 className="font-bold text-gray-900 mb-3">Linked people ({people.length})</h2>
           {people.length === 0 ? (
@@ -64,6 +67,7 @@ function OrgDetail() {
               ))}
             </ul>
           )}
+        </div>
         </div>
       </div>
     </div>
