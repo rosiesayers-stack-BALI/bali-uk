@@ -49,7 +49,7 @@ function NewsIndex() {
     const restRows = articles.filter((a: NewsRow) => a.id !== featuredRow?.id);
     // If headline is featured, surface trending as the first regular tile.
     if (headlineRow && trendingRow) {
-      const withoutTrending = restRows.filter((a) => a.id !== trendingRow.id);
+      const withoutTrending = restRows.filter((a: NewsRow) => a.id !== trendingRow.id);
       return { featured: featuredRow, pinnedTrending: trendingRow, rest: withoutTrending };
     }
     return { featured: featuredRow, pinnedTrending: null as NewsRow | null, rest: restRows };
