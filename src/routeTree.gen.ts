@@ -36,6 +36,7 @@ import { Route as MyBaliResourcesRouteImport } from './routes/my-bali.resources'
 import { Route as MyBaliProfileRouteImport } from './routes/my-bali.profile'
 import { Route as MyBaliNewsRouteImport } from './routes/my-bali.news'
 import { Route as MyBaliEventsRouteImport } from './routes/my-bali.events'
+import { Route as MyBaliEmailPreferencesRouteImport } from './routes/my-bali.email-preferences'
 import { Route as MyBaliContentRouteImport } from './routes/my-bali.content'
 import { Route as MyBaliBenefitsRouteImport } from './routes/my-bali.benefits'
 import { Route as MembershipHardshipFundRouteImport } from './routes/membership.hardship-fund'
@@ -74,8 +75,10 @@ import { Route as AdminPolicyIndexRouteImport } from './routes/admin.policy.inde
 import { Route as AdminPeopleIndexRouteImport } from './routes/admin.people.index'
 import { Route as AdminOrganisationsIndexRouteImport } from './routes/admin.organisations.index'
 import { Route as AdminNewsIndexRouteImport } from './routes/admin.news.index'
+import { Route as AdminMailingIndexRouteImport } from './routes/admin.mailing.index'
 import { Route as AdminLissIndexRouteImport } from './routes/admin.liss.index'
 import { Route as AdminEventsIndexRouteImport } from './routes/admin.events.index'
+import { Route as AdminAutomationsIndexRouteImport } from './routes/admin.automations.index'
 import { Route as AdminApplicationsIndexRouteImport } from './routes/admin.applications.index'
 import { Route as MyBaliProfilePersonalRouteImport } from './routes/my-bali.profile.personal'
 import { Route as MyBaliProfilePasswordRouteImport } from './routes/my-bali.profile.password'
@@ -144,6 +147,8 @@ import { Route as AdminPolicyIdRouteImport } from './routes/admin.policy.$id'
 import { Route as AdminPeopleIdRouteImport } from './routes/admin.people.$id'
 import { Route as AdminOrganisationsIdRouteImport } from './routes/admin.organisations.$id'
 import { Route as AdminNewsIdRouteImport } from './routes/admin.news.$id'
+import { Route as AdminMailingNewRouteImport } from './routes/admin.mailing.new'
+import { Route as AdminMailingIdRouteImport } from './routes/admin.mailing.$id'
 import { Route as AdminLissIdRouteImport } from './routes/admin.liss.$id'
 import { Route as AdminEventsIdRouteImport } from './routes/admin.events.$id'
 import { Route as AdminApplicationsIdRouteImport } from './routes/admin.applications.$id'
@@ -286,6 +291,11 @@ const MyBaliNewsRoute = MyBaliNewsRouteImport.update({
 const MyBaliEventsRoute = MyBaliEventsRouteImport.update({
   id: '/events',
   path: '/events',
+  getParentRoute: () => MyBaliRoute,
+} as any)
+const MyBaliEmailPreferencesRoute = MyBaliEmailPreferencesRouteImport.update({
+  id: '/email-preferences',
+  path: '/email-preferences',
   getParentRoute: () => MyBaliRoute,
 } as any)
 const MyBaliContentRoute = MyBaliContentRouteImport.update({
@@ -479,6 +489,11 @@ const AdminNewsIndexRoute = AdminNewsIndexRouteImport.update({
   path: '/news/',
   getParentRoute: () => AdminRoute,
 } as any)
+const AdminMailingIndexRoute = AdminMailingIndexRouteImport.update({
+  id: '/mailing/',
+  path: '/mailing/',
+  getParentRoute: () => AdminRoute,
+} as any)
 const AdminLissIndexRoute = AdminLissIndexRouteImport.update({
   id: '/liss/',
   path: '/liss/',
@@ -487,6 +502,11 @@ const AdminLissIndexRoute = AdminLissIndexRouteImport.update({
 const AdminEventsIndexRoute = AdminEventsIndexRouteImport.update({
   id: '/events/',
   path: '/events/',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminAutomationsIndexRoute = AdminAutomationsIndexRouteImport.update({
+  id: '/automations/',
+  path: '/automations/',
   getParentRoute: () => AdminRoute,
 } as any)
 const AdminApplicationsIndexRoute = AdminApplicationsIndexRouteImport.update({
@@ -866,6 +886,16 @@ const AdminNewsIdRoute = AdminNewsIdRouteImport.update({
   path: '/news/$id',
   getParentRoute: () => AdminRoute,
 } as any)
+const AdminMailingNewRoute = AdminMailingNewRouteImport.update({
+  id: '/mailing/new',
+  path: '/mailing/new',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminMailingIdRoute = AdminMailingIdRouteImport.update({
+  id: '/mailing/$id',
+  path: '/mailing/$id',
+  getParentRoute: () => AdminRoute,
+} as any)
 const AdminLissIdRoute = AdminLissIdRouteImport.update({
   id: '/liss/$id',
   path: '/liss/$id',
@@ -946,6 +976,7 @@ export interface FileRoutesByFullPath {
   '/membership/hardship-fund': typeof MembershipHardshipFundRoute
   '/my-bali/benefits': typeof MyBaliBenefitsRoute
   '/my-bali/content': typeof MyBaliContentRoute
+  '/my-bali/email-preferences': typeof MyBaliEmailPreferencesRoute
   '/my-bali/events': typeof MyBaliEventsRoute
   '/my-bali/news': typeof MyBaliNewsRoute
   '/my-bali/profile': typeof MyBaliProfileRouteWithChildren
@@ -966,6 +997,8 @@ export interface FileRoutesByFullPath {
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
   '/admin/events/$id': typeof AdminEventsIdRoute
   '/admin/liss/$id': typeof AdminLissIdRoute
+  '/admin/mailing/$id': typeof AdminMailingIdRoute
+  '/admin/mailing/new': typeof AdminMailingNewRoute
   '/admin/news/$id': typeof AdminNewsIdRoute
   '/admin/organisations/$id': typeof AdminOrganisationsIdRoute
   '/admin/people/$id': typeof AdminPeopleIdRoute
@@ -1034,8 +1067,10 @@ export interface FileRoutesByFullPath {
   '/my-bali/profile/password': typeof MyBaliProfilePasswordRoute
   '/my-bali/profile/personal': typeof MyBaliProfilePersonalRoute
   '/admin/applications/': typeof AdminApplicationsIndexRoute
+  '/admin/automations/': typeof AdminAutomationsIndexRoute
   '/admin/events/': typeof AdminEventsIndexRoute
   '/admin/liss/': typeof AdminLissIndexRoute
+  '/admin/mailing/': typeof AdminMailingIndexRoute
   '/admin/news/': typeof AdminNewsIndexRoute
   '/admin/organisations/': typeof AdminOrganisationsIndexRoute
   '/admin/people/': typeof AdminPeopleIndexRoute
@@ -1088,6 +1123,7 @@ export interface FileRoutesByTo {
   '/membership/hardship-fund': typeof MembershipHardshipFundRoute
   '/my-bali/benefits': typeof MyBaliBenefitsRoute
   '/my-bali/content': typeof MyBaliContentRoute
+  '/my-bali/email-preferences': typeof MyBaliEmailPreferencesRoute
   '/my-bali/events': typeof MyBaliEventsRoute
   '/my-bali/news': typeof MyBaliNewsRoute
   '/my-bali/resources': typeof MyBaliResourcesRoute
@@ -1107,6 +1143,8 @@ export interface FileRoutesByTo {
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
   '/admin/events/$id': typeof AdminEventsIdRoute
   '/admin/liss/$id': typeof AdminLissIdRoute
+  '/admin/mailing/$id': typeof AdminMailingIdRoute
+  '/admin/mailing/new': typeof AdminMailingNewRoute
   '/admin/news/$id': typeof AdminNewsIdRoute
   '/admin/organisations/$id': typeof AdminOrganisationsIdRoute
   '/admin/people/$id': typeof AdminPeopleIdRoute
@@ -1175,8 +1213,10 @@ export interface FileRoutesByTo {
   '/my-bali/profile/password': typeof MyBaliProfilePasswordRoute
   '/my-bali/profile/personal': typeof MyBaliProfilePersonalRoute
   '/admin/applications': typeof AdminApplicationsIndexRoute
+  '/admin/automations': typeof AdminAutomationsIndexRoute
   '/admin/events': typeof AdminEventsIndexRoute
   '/admin/liss': typeof AdminLissIndexRoute
+  '/admin/mailing': typeof AdminMailingIndexRoute
   '/admin/news': typeof AdminNewsIndexRoute
   '/admin/organisations': typeof AdminOrganisationsIndexRoute
   '/admin/people': typeof AdminPeopleIndexRoute
@@ -1232,6 +1272,7 @@ export interface FileRoutesById {
   '/membership/hardship-fund': typeof MembershipHardshipFundRoute
   '/my-bali/benefits': typeof MyBaliBenefitsRoute
   '/my-bali/content': typeof MyBaliContentRoute
+  '/my-bali/email-preferences': typeof MyBaliEmailPreferencesRoute
   '/my-bali/events': typeof MyBaliEventsRoute
   '/my-bali/news': typeof MyBaliNewsRoute
   '/my-bali/profile': typeof MyBaliProfileRouteWithChildren
@@ -1252,6 +1293,8 @@ export interface FileRoutesById {
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
   '/admin/events/$id': typeof AdminEventsIdRoute
   '/admin/liss/$id': typeof AdminLissIdRoute
+  '/admin/mailing/$id': typeof AdminMailingIdRoute
+  '/admin/mailing/new': typeof AdminMailingNewRoute
   '/admin/news/$id': typeof AdminNewsIdRoute
   '/admin/organisations/$id': typeof AdminOrganisationsIdRoute
   '/admin/people/$id': typeof AdminPeopleIdRoute
@@ -1320,8 +1363,10 @@ export interface FileRoutesById {
   '/my-bali/profile/password': typeof MyBaliProfilePasswordRoute
   '/my-bali/profile/personal': typeof MyBaliProfilePersonalRoute
   '/admin/applications/': typeof AdminApplicationsIndexRoute
+  '/admin/automations/': typeof AdminAutomationsIndexRoute
   '/admin/events/': typeof AdminEventsIndexRoute
   '/admin/liss/': typeof AdminLissIndexRoute
+  '/admin/mailing/': typeof AdminMailingIndexRoute
   '/admin/news/': typeof AdminNewsIndexRoute
   '/admin/organisations/': typeof AdminOrganisationsIndexRoute
   '/admin/people/': typeof AdminPeopleIndexRoute
@@ -1378,6 +1423,7 @@ export interface FileRouteTypes {
     | '/membership/hardship-fund'
     | '/my-bali/benefits'
     | '/my-bali/content'
+    | '/my-bali/email-preferences'
     | '/my-bali/events'
     | '/my-bali/news'
     | '/my-bali/profile'
@@ -1398,6 +1444,8 @@ export interface FileRouteTypes {
     | '/admin/applications/$id'
     | '/admin/events/$id'
     | '/admin/liss/$id'
+    | '/admin/mailing/$id'
+    | '/admin/mailing/new'
     | '/admin/news/$id'
     | '/admin/organisations/$id'
     | '/admin/people/$id'
@@ -1466,8 +1514,10 @@ export interface FileRouteTypes {
     | '/my-bali/profile/password'
     | '/my-bali/profile/personal'
     | '/admin/applications/'
+    | '/admin/automations/'
     | '/admin/events/'
     | '/admin/liss/'
+    | '/admin/mailing/'
     | '/admin/news/'
     | '/admin/organisations/'
     | '/admin/people/'
@@ -1520,6 +1570,7 @@ export interface FileRouteTypes {
     | '/membership/hardship-fund'
     | '/my-bali/benefits'
     | '/my-bali/content'
+    | '/my-bali/email-preferences'
     | '/my-bali/events'
     | '/my-bali/news'
     | '/my-bali/resources'
@@ -1539,6 +1590,8 @@ export interface FileRouteTypes {
     | '/admin/applications/$id'
     | '/admin/events/$id'
     | '/admin/liss/$id'
+    | '/admin/mailing/$id'
+    | '/admin/mailing/new'
     | '/admin/news/$id'
     | '/admin/organisations/$id'
     | '/admin/people/$id'
@@ -1607,8 +1660,10 @@ export interface FileRouteTypes {
     | '/my-bali/profile/password'
     | '/my-bali/profile/personal'
     | '/admin/applications'
+    | '/admin/automations'
     | '/admin/events'
     | '/admin/liss'
+    | '/admin/mailing'
     | '/admin/news'
     | '/admin/organisations'
     | '/admin/people'
@@ -1663,6 +1718,7 @@ export interface FileRouteTypes {
     | '/membership/hardship-fund'
     | '/my-bali/benefits'
     | '/my-bali/content'
+    | '/my-bali/email-preferences'
     | '/my-bali/events'
     | '/my-bali/news'
     | '/my-bali/profile'
@@ -1683,6 +1739,8 @@ export interface FileRouteTypes {
     | '/admin/applications/$id'
     | '/admin/events/$id'
     | '/admin/liss/$id'
+    | '/admin/mailing/$id'
+    | '/admin/mailing/new'
     | '/admin/news/$id'
     | '/admin/organisations/$id'
     | '/admin/people/$id'
@@ -1751,8 +1809,10 @@ export interface FileRouteTypes {
     | '/my-bali/profile/password'
     | '/my-bali/profile/personal'
     | '/admin/applications/'
+    | '/admin/automations/'
     | '/admin/events/'
     | '/admin/liss/'
+    | '/admin/mailing/'
     | '/admin/news/'
     | '/admin/organisations/'
     | '/admin/people/'
@@ -2017,6 +2077,13 @@ declare module '@tanstack/react-router' {
       path: '/events'
       fullPath: '/my-bali/events'
       preLoaderRoute: typeof MyBaliEventsRouteImport
+      parentRoute: typeof MyBaliRoute
+    }
+    '/my-bali/email-preferences': {
+      id: '/my-bali/email-preferences'
+      path: '/email-preferences'
+      fullPath: '/my-bali/email-preferences'
+      preLoaderRoute: typeof MyBaliEmailPreferencesRouteImport
       parentRoute: typeof MyBaliRoute
     }
     '/my-bali/content': {
@@ -2285,6 +2352,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminNewsIndexRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/admin/mailing/': {
+      id: '/admin/mailing/'
+      path: '/mailing'
+      fullPath: '/admin/mailing/'
+      preLoaderRoute: typeof AdminMailingIndexRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/admin/liss/': {
       id: '/admin/liss/'
       path: '/liss'
@@ -2297,6 +2371,13 @@ declare module '@tanstack/react-router' {
       path: '/events'
       fullPath: '/admin/events/'
       preLoaderRoute: typeof AdminEventsIndexRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/automations/': {
+      id: '/admin/automations/'
+      path: '/automations'
+      fullPath: '/admin/automations/'
+      preLoaderRoute: typeof AdminAutomationsIndexRouteImport
       parentRoute: typeof AdminRoute
     }
     '/admin/applications/': {
@@ -2775,6 +2856,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminNewsIdRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/admin/mailing/new': {
+      id: '/admin/mailing/new'
+      path: '/mailing/new'
+      fullPath: '/admin/mailing/new'
+      preLoaderRoute: typeof AdminMailingNewRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/mailing/$id': {
+      id: '/admin/mailing/$id'
+      path: '/mailing/$id'
+      fullPath: '/admin/mailing/$id'
+      preLoaderRoute: typeof AdminMailingIdRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/admin/liss/$id': {
       id: '/admin/liss/$id'
       path: '/liss/$id'
@@ -2832,14 +2927,18 @@ interface AdminRouteChildren {
   AdminApplicationsIdRoute: typeof AdminApplicationsIdRoute
   AdminEventsIdRoute: typeof AdminEventsIdRoute
   AdminLissIdRoute: typeof AdminLissIdRoute
+  AdminMailingIdRoute: typeof AdminMailingIdRoute
+  AdminMailingNewRoute: typeof AdminMailingNewRoute
   AdminNewsIdRoute: typeof AdminNewsIdRoute
   AdminOrganisationsIdRoute: typeof AdminOrganisationsIdRoute
   AdminPeopleIdRoute: typeof AdminPeopleIdRoute
   AdminPolicyIdRoute: typeof AdminPolicyIdRoute
   AdminTrainingIdRoute: typeof AdminTrainingIdRoute
   AdminApplicationsIndexRoute: typeof AdminApplicationsIndexRoute
+  AdminAutomationsIndexRoute: typeof AdminAutomationsIndexRoute
   AdminEventsIndexRoute: typeof AdminEventsIndexRoute
   AdminLissIndexRoute: typeof AdminLissIndexRoute
+  AdminMailingIndexRoute: typeof AdminMailingIndexRoute
   AdminNewsIndexRoute: typeof AdminNewsIndexRoute
   AdminOrganisationsIndexRoute: typeof AdminOrganisationsIndexRoute
   AdminPeopleIndexRoute: typeof AdminPeopleIndexRoute
@@ -2853,14 +2952,18 @@ const AdminRouteChildren: AdminRouteChildren = {
   AdminApplicationsIdRoute: AdminApplicationsIdRoute,
   AdminEventsIdRoute: AdminEventsIdRoute,
   AdminLissIdRoute: AdminLissIdRoute,
+  AdminMailingIdRoute: AdminMailingIdRoute,
+  AdminMailingNewRoute: AdminMailingNewRoute,
   AdminNewsIdRoute: AdminNewsIdRoute,
   AdminOrganisationsIdRoute: AdminOrganisationsIdRoute,
   AdminPeopleIdRoute: AdminPeopleIdRoute,
   AdminPolicyIdRoute: AdminPolicyIdRoute,
   AdminTrainingIdRoute: AdminTrainingIdRoute,
   AdminApplicationsIndexRoute: AdminApplicationsIndexRoute,
+  AdminAutomationsIndexRoute: AdminAutomationsIndexRoute,
   AdminEventsIndexRoute: AdminEventsIndexRoute,
   AdminLissIndexRoute: AdminLissIndexRoute,
+  AdminMailingIndexRoute: AdminMailingIndexRoute,
   AdminNewsIndexRoute: AdminNewsIndexRoute,
   AdminOrganisationsIndexRoute: AdminOrganisationsIndexRoute,
   AdminPeopleIndexRoute: AdminPeopleIndexRoute,
@@ -2898,6 +3001,7 @@ const MyBaliProfileRouteWithChildren = MyBaliProfileRoute._addFileChildren(
 interface MyBaliRouteChildren {
   MyBaliBenefitsRoute: typeof MyBaliBenefitsRoute
   MyBaliContentRoute: typeof MyBaliContentRoute
+  MyBaliEmailPreferencesRoute: typeof MyBaliEmailPreferencesRoute
   MyBaliEventsRoute: typeof MyBaliEventsRoute
   MyBaliNewsRoute: typeof MyBaliNewsRoute
   MyBaliProfileRoute: typeof MyBaliProfileRouteWithChildren
@@ -2910,6 +3014,7 @@ interface MyBaliRouteChildren {
 const MyBaliRouteChildren: MyBaliRouteChildren = {
   MyBaliBenefitsRoute: MyBaliBenefitsRoute,
   MyBaliContentRoute: MyBaliContentRoute,
+  MyBaliEmailPreferencesRoute: MyBaliEmailPreferencesRoute,
   MyBaliEventsRoute: MyBaliEventsRoute,
   MyBaliNewsRoute: MyBaliNewsRoute,
   MyBaliProfileRoute: MyBaliProfileRouteWithChildren,
