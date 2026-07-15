@@ -68,6 +68,7 @@ function OrgDetail() {
             </ul>
           )}
         </div>
+        </div>
       </div>
     </div>
   );
