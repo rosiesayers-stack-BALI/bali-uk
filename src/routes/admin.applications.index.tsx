@@ -18,11 +18,12 @@ export const Route = createFileRoute("/admin/applications/")({
 const ALL_STAGES: ApplicationStage[] = [...PIPELINE_STAGES, ...SIDE_STAGES];
 
 const STAGE_COLOUR: Record<ApplicationStage, string> = {
-  "Applied": "border-blue-300 bg-blue-50",
-  "Under review": "border-amber-300 bg-amber-50",
-  "Checks/references": "border-purple-300 bg-purple-50",
+  "Enquiry received": "border-blue-300 bg-blue-50",
+  "Qualifying": "border-amber-300 bg-amber-50",
+  "Awaiting application": "border-purple-300 bg-purple-50",
+  "Application received – awaiting fee": "border-orange-300 bg-orange-50",
+  "Application received – paid": "border-teal-300 bg-teal-50",
   "Approved": "border-emerald-300 bg-emerald-50",
-  "Onboarding link sent": "border-teal-300 bg-teal-50",
   "Active": "border-green-400 bg-green-50",
   "Rejected": "border-rose-300 bg-rose-50",
   "On-hold": "border-gray-300 bg-gray-50",
