@@ -140,18 +140,22 @@ const raw = [
   },
 ];
 
-export const events: EventItem[] = raw.map((e) => ({
-  slug: e.slug,
-  title: e.title,
-  date: e.date,
-  iso_date: e.iso_date,
-  venue: e.venue,
-  category: categoryFor(e.title),
-  description: `${e.title} — ${e.venue}, ${e.date}.`,
-  body: [
-    `${e.title} at ${e.venue} on ${e.date}.`,
-    "Book your place and see full details on bali.org.uk.",
-  ],
-  image: { url: e.image, alt: e.title },
-  booking_url: book(e.slug),
-}));
+export const events: EventItem[] = raw.map((e) => {
+  const category = categoryFor(e.title);
+  return {
+    slug: e.slug,
+    title: e.title,
+    date: e.date,
+    iso_date: e.iso_date,
+    venue: e.venue,
+    category,
+    description: `${e.title} — ${e.venue}, ${e.date}.`,
+    body: [
+      `${e.title} at ${e.venue} on ${e.date}.`,
+      "Book your place and see full details on bali.org.uk.",
+    ],
+    image: { url: e.image, alt: e.title },
+    booking_url: book(e.slug),
+    ...placeholderPricing(category),
+  };
+});
