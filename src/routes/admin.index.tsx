@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/lib/admin/mock-db";
 import { PageHeader } from "@/components/admin/PageHeader";
 import { useCrm } from "@/lib/admin/mock-crm";
 import { fetchApplications, toApplication, useAppOverlays } from "@/lib/admin/applications";
