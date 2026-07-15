@@ -103,8 +103,9 @@ function OrgEdit() {
         </fieldset>
 
         <div className="sm:col-span-2 flex justify-end">
-          <button type="submit" className="bg-bali-blue hover:bg-blue-800 text-white font-semibold px-6 py-2.5 rounded-lg text-sm">Save changes</button>
+          <button type="submit" disabled={!canEdit} className="bg-bali-blue hover:bg-blue-800 text-white font-semibold px-6 py-2.5 rounded-lg text-sm disabled:bg-gray-300 disabled:cursor-not-allowed">Save changes</button>
         </div>
+        </fieldset>
       </form>
       <FieldStyles />
     </Card>
