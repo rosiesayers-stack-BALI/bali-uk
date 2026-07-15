@@ -40,11 +40,15 @@ function DirectoryEdit() {
     setTimeout(() => setSaved(false), 2500);
   };
 
+  const { canEdit, reason } = useCanEditOrganisation();
+
   return (
     <Card>
       <h2 className="text-lg font-semibold text-gray-900 mb-4">Directory listing</h2>
+      {!canEdit && reason && <ReadOnlyBanner reason={reason} />}
       {saved && <Banner>Directory listing saved (mock).</Banner>}
       <form onSubmit={submit} className="space-y-8">
+        <fieldset disabled={!canEdit} className="contents">
         <section>
           <h3 className="font-semibold text-gray-900 mb-3">Images</h3>
           <div className="grid gap-4 sm:grid-cols-2">
