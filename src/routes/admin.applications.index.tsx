@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { PageHeader } from "@/components/admin/PageHeader";
+import { FeeInline } from "@/components/admin/FeeDisplay";
 import { ApplicationTypeBadge } from "@/components/admin/PeopleOrgList";
 import {
   fetchApplications, toApplication, updateStage, useAppOverlays,
