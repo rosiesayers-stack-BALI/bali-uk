@@ -130,7 +130,7 @@ function normaliseFeeStatus(raw: string | null | undefined, stage: ApplicationSt
   return "N/A";
 }
 function normaliseOnboarding(raw: string | null | undefined, stage: ApplicationStage): OnboardingStatus {
-  if (raw === "Not started" || raw === "Started" || raw === "Completed") return raw;
+  if (raw === "Not started" || raw === "Link sent" || raw === "Started" || raw === "Completed") return raw;
   return stage === "Active" ? "Completed" : "Not started";
 }
 
