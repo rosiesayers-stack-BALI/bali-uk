@@ -74,7 +74,7 @@ function NewsEditor() {
       image_url: form.image_url,
       image_alt: form.image_alt,
       body_paragraphs: form.body_paragraphs,
-      published: form.published,
+      published: Boolean(form.published),
     };
     const res = isNew
       ? await supabase.from("news_articles").insert(payload).select("id").single()
@@ -159,10 +159,17 @@ function NewsEditor() {
         <label className="flex items-center gap-2 text-sm">
           <input
             type="checkbox"
-            checked={form.published}
-            onChange={(e) => setForm({ ...form, published: e.target.checked })}
+            checked={!!form.published}
+            onChange={(e) => setForm((f) => ({ ...f, published: e.target.checked }))}
           />
           Publish (visible on the public site)
+          <span
+            className={`ml-2 inline-flex items-center text-xs font-semibold px-2 py-0.5 rounded-full ${
+              form.published ? "bg-green-100 text-green-800" : "bg-gray-200 text-gray-700"
+            }`}
+          >
+            {form.published ? "Will be Published" : "Will be saved as Draft"}
+          </span>
         </label>
         {error && <p className="text-sm text-red-600">{error}</p>}
         <div className="flex gap-2">
