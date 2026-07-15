@@ -59,11 +59,28 @@ function PersonDetail() {
           <div className="bg-white rounded-2xl border border-gray-200 p-6">
             <h2 className="font-bold text-gray-900 mb-3 flex items-center gap-2"><Building2 className="w-4 h-4" /> Organisation</h2>
             {org ? (
-              <div>
-                <Link to="/admin/organisations/$id" params={{ id: org.id }} className="text-bali-blue hover:underline font-semibold">
-                  {org.name}
-                </Link>
-                <p className="text-xs text-gray-500 mt-1">{org.discipline} · {org.town}</p>
+              <div className="space-y-3">
+                <div>
+                  <Link to="/admin/organisations/$id" params={{ id: org.id }} className="text-bali-blue hover:underline font-semibold">
+                    {org.name}
+                  </Link>
+                  <p className="text-xs text-gray-500 mt-1">{org.discipline} · {org.town}</p>
+                </div>
+                <div className="pt-3 border-t border-gray-100">
+                  <p className="text-xs uppercase tracking-wider text-gray-500 font-semibold mb-1">Contact role</p>
+                  <div className="flex items-center justify-between gap-2">
+                    <ContactRolePill role={person.contactRole} />
+                    {person.contactRole !== "main" && (
+                      <button
+                        onClick={() => setAsMainContact(person.id)}
+                        className="inline-flex items-center gap-1 text-xs font-semibold text-bali-blue hover:text-blue-800"
+                        title="Promote this person to main contact for the organisation. Any existing main contact will be demoted to nominated.">
+                        <Star className="w-3 h-3" /> Set as main contact
+                      </button>
+                    )}
+                  </div>
+                  <p className="text-[11px] text-gray-400 italic mt-2">TODO: server-side enforcement — this mirrors Workbooks' main / nominated contact model.</p>
+                </div>
               </div>
             ) : (
               <p className="text-sm text-gray-500">Independent member — no organisation.</p>
