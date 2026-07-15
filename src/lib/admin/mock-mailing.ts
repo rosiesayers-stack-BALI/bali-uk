@@ -343,6 +343,4 @@ export function filteredPeople(people: Person[], filter: SegmentFilter): Person[
 // Small helper labels
 export const ALL_STATUSES: MembershipStatus[] = ["Active", "Lapsed", "Prospect", "Applicant"];
 
-// Silence unused warnings for values re-exported for clarity/typing.
-void APPLICATION_TYPES; void ALL_REGIONS;
-export type { Person, Organisation };
+export type { Person };
