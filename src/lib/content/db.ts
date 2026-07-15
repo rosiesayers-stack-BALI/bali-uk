@@ -83,7 +83,7 @@ const handle = <T,>({ data, error }: { data: unknown; error: { message: string }
 
 export const fetchNewsList = async (): Promise<NewsRow[]> =>
   handle(
-    await supabase
+    await mockDb
       .from("news_articles")
       .select("*")
       .eq("published", true)
@@ -92,51 +92,48 @@ export const fetchNewsList = async (): Promise<NewsRow[]> =>
   );
 
 export const fetchNewsBySlug = async (slug: string): Promise<NewsRow | null> => {
-  const { data, error } = await supabase
+  const { data, error } = await mockDb
     .from("news_articles")
     .select("*")
     .eq("slug", slug)
     .eq("published", true)
     .maybeSingle();
   if (error) throw new Error(error.message);
-  return data;
+  return data as NewsRow | null;
 };
 
 export const fetchEventsList = async (): Promise<EventRow[]> => {
   const today = new Date().toISOString().slice(0, 10);
-  return handle(
-    await supabase
-      .from("events")
-      .select("*")
-      .eq("published", true)
-      .or(`iso_date.gte.${today},iso_date.is.null`)
-      .order("iso_date", { ascending: true, nullsFirst: false })
-      .order("sort_order", { ascending: false }),
-  );
+  const rows = await mockDb
+    .from("events")
+    .select("*")
+    .eq("published", true)
+    .order("iso_date", { ascending: true, nullsFirst: false });
+  const all = handle<EventRow[]>(rows);
+  return all.filter((e) => !e.iso_date || e.iso_date >= today);
 };
 
 // Returns every published event (upcoming + past), for pages that need to
 // offer a future/past toggle. TODO: replace with a CMS/API call when wired up.
 export const fetchAllEventsList = async (): Promise<EventRow[]> =>
   handle(
-    await supabase
+    await mockDb
       .from("events")
       .select("*")
       .eq("published", true)
-      .order("iso_date", { ascending: true, nullsFirst: false })
-      .order("sort_order", { ascending: false }),
+      .order("iso_date", { ascending: true, nullsFirst: false }),
   );
 
 
 export const fetchEventBySlug = async (slug: string): Promise<EventRow | null> => {
-  const { data, error } = await supabase
+  const { data, error } = await mockDb
     .from("events")
     .select("*")
     .eq("slug", slug)
     .eq("published", true)
     .maybeSingle();
   if (error) throw new Error(error.message);
-  return data;
+  return data as EventRow | null;
 };
 
 export const fetchPolicyList = async (): Promise<PolicyRow[]> =>
