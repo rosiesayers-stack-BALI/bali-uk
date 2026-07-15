@@ -157,6 +157,7 @@ function ApplicationsIndex() {
                     <th className="px-4 py-3">Applicant</th>
                     <th className="px-4 py-3">Organisation</th>
                     <th className="px-4 py-3">Application type</th>
+                    <th className="px-4 py-3">Fee (26-27)</th>
                     <th className="px-4 py-3">Location</th>
                     <th className="px-4 py-3">Discipline</th>
                     <th className="px-4 py-3">Applied</th>
