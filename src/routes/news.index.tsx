@@ -31,7 +31,36 @@ export const Route = createFileRoute("/news/")({
 
 function NewsIndex() {
   const { articles } = Route.useLoaderData();
-  const [featured, ...rest] = articles;
+  const router = useRouter();
+  const headline = useHeadline();
+
+  // Live-refresh when the shared mock store changes (admin edits).
+  useEffect(() => subscribeTable("news_articles", () => router.invalidate()), [router]);
+
+  // Headline (paid pinned) first, then trending, then newest-first.
+  const ordered = useMemo(() => {
+    const trendingId = computeTrending(articles.map((a: NewsRow) => ({ id: a.id, title: a.title })));
+    const headlineRow = articles.find((a: NewsRow) => a.id === headline.headlineId);
+    const trendingRow = articles.find(
+      (a: NewsRow) => a.id === trendingId && a.id !== headline.headlineId,
+    );
+    const rest = articles.filter(
+      (a: NewsRow) => a.id !== headline.headlineId && a.id !== trendingId,
+    );
+    return {
+      featured: headlineRow ?? trendingRow ?? articles[0],
+      pinnedTrending: headlineRow && trendingRow ? trendingRow : null,
+      rest: [
+        ...(headlineRow ? [] : []),
+        ...(headlineRow && trendingRow ? [] : trendingRow && !headlineRow ? [] : []),
+        ...rest,
+      ],
+    };
+  }, [articles, headline.headlineId]);
+
+  const featured = ordered.featured;
+  const rest = ordered.rest;
+  const pinnedTrending = ordered.pinnedTrending;
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
