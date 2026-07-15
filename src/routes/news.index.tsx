@@ -1,11 +1,13 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useMemo } from "react";
+import { createFileRoute, useRouter } from "@tanstack/react-router";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CookieBanner from "../components/CookieBanner";
 import Link from "../components/SmartLink";
 import AdBanner from "../components/ads/AdBanner";
 import SponsoredCard from "../components/ads/SponsoredCard";
-import { fetchNewsList, type NewsRow } from "../lib/content/db";
+import { fetchNewsList, subscribeTable, type NewsRow } from "../lib/content/db";
+import { useHeadline, computeTrending } from "../lib/admin/news-stats";
 
 export const Route = createFileRoute("/news/")({
   head: () => ({
@@ -29,7 +31,29 @@ export const Route = createFileRoute("/news/")({
 
 function NewsIndex() {
   const { articles } = Route.useLoaderData();
-  const [featured, ...rest] = articles;
+  const router = useRouter();
+  const headline = useHeadline();
+
+  // Live-refresh when the shared mock store changes (admin edits).
+  useEffect(() => subscribeTable("news_articles", () => router.invalidate()), [router]);
+
+  // Headline (paid pinned) first, then trending, then newest-first (already sorted by loader).
+  const { featured, pinnedTrending, rest } = useMemo(() => {
+    if (articles.length === 0) return { featured: undefined, pinnedTrending: null, rest: [] as NewsRow[] };
+    const trendingId = computeTrending(articles.map((a: NewsRow) => ({ id: a.id, title: a.title })));
+    const headlineRow = articles.find((a: NewsRow) => a.id === headline.headlineId);
+    const trendingRow = articles.find(
+      (a: NewsRow) => a.id === trendingId && a.id !== headline.headlineId,
+    );
+    const featuredRow = headlineRow ?? trendingRow ?? articles[0];
+    const restRows = articles.filter((a: NewsRow) => a.id !== featuredRow?.id);
+    // If headline is featured, surface trending as the first regular tile.
+    if (headlineRow && trendingRow) {
+      const withoutTrending = restRows.filter((a: NewsRow) => a.id !== trendingRow.id);
+      return { featured: featuredRow, pinnedTrending: trendingRow, rest: withoutTrending };
+    }
+    return { featured: featuredRow, pinnedTrending: null as NewsRow | null, rest: restRows };
+  }, [articles, headline.headlineId]);
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -66,8 +90,13 @@ function NewsIndex() {
                 />
               )}
               <div className="p-8">
-                <span className="text-xs uppercase tracking-widest text-bali-purple font-semibold">
-                  Featured · {featured.date_text || "Latest"}
+                <span className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-bali-purple font-semibold">
+                  {featured.id === headline.headlineId ? (
+                    <span className="bg-bali-purple text-white px-2 py-0.5 rounded-full">Headline</span>
+                  ) : (
+                    <span className="bg-bali-grass text-bali-slate px-2 py-0.5 rounded-full">Trending</span>
+                  )}
+                  · {featured.date_text || "Latest"}
                 </span>
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-3 mb-3 group-hover:text-bali-blue transition-colors">
                   {featured.title}
@@ -86,6 +115,33 @@ function NewsIndex() {
         <div className="max-w-6xl mx-auto px-6">
           <AdBanner placement="news-inline" className="mb-10" />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {pinnedTrending && (
+              <Link
+                key={pinnedTrending.slug}
+                to="/news/$slug"
+                params={{ slug: pinnedTrending.slug }}
+                className="group bg-white rounded-2xl border-2 border-bali-grass overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all"
+              >
+                {pinnedTrending.image_url && (
+                  <img
+                    src={pinnedTrending.image_url}
+                    alt={pinnedTrending.image_alt ?? pinnedTrending.title}
+                    loading="lazy"
+                    className="w-full h-44 object-cover"
+                  />
+                )}
+                <div className="p-5">
+                  <span className="inline-block bg-bali-grass text-bali-slate text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full mb-2">Trending</span>
+                  {pinnedTrending.date_text && (
+                    <p className="text-xs text-gray-500 uppercase tracking-widest mb-2">{pinnedTrending.date_text}</p>
+                  )}
+                  <h3 className="font-bold text-gray-900 leading-snug group-hover:text-bali-blue transition-colors line-clamp-3">
+                    {pinnedTrending.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 mt-2 line-clamp-3">{pinnedTrending.description}</p>
+                </div>
+              </Link>
+            )}
             {rest.map((a: NewsRow, i: number) => {
               const card = (
                 <Link

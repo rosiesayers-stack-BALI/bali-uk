@@ -1,5 +1,5 @@
 import { useMemo, useState, useEffect, useDeferredValue } from "react";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, useRouter } from "@tanstack/react-router";
 import { Monitor, Calendar as CalendarIcon, MapPin, Filter as FilterIcon, X, ChevronDown } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -7,7 +7,7 @@ import CookieBanner from "../components/CookieBanner";
 import Link from "../components/SmartLink";
 import AdBanner from "../components/ads/AdBanner";
 import SponsoredCard from "../components/ads/SponsoredCard";
-import { fetchAllEventsList, type EventRow } from "../lib/content/db";
+import { fetchAllEventsList, subscribeTable, type EventRow } from "../lib/content/db";
 
 export const Route = createFileRoute("/events/")({
   head: () => ({
@@ -101,6 +101,8 @@ const PAGE_SIZE = 9;
 
 function EventsIndex() {
   const { events } = Route.useLoaderData();
+  const router = useRouter();
+  useEffect(() => subscribeTable("events", () => router.invalidate()), [router]);
 
   // filter state
   const [q, setQ] = useState("");
