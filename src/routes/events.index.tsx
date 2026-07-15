@@ -457,14 +457,13 @@ function WebinarCard({ event }: { event: EventRow }) {
           <span className="text-gray-500 font-normal">· Time TBC</span>
         </p>
         {event.description && <p className="text-sm text-gray-600 mt-3 line-clamp-3 flex-1">{event.description}</p>}
-        {booking && (
-          <a
-            href={booking}
-            className="mt-5 inline-flex items-center justify-center gap-2 bg-bali-purple hover:bg-bali-blue text-white font-semibold text-sm px-4 py-2.5 rounded-lg transition"
-          >
-            Reserve your spot
-          </a>
-        )}
+        <Link
+          to="/events/$slug/book"
+          params={{ slug: event.slug }}
+          className="mt-5 inline-flex items-center justify-center gap-2 bg-bali-purple hover:bg-bali-blue text-white font-semibold text-sm px-4 py-2.5 rounded-lg transition"
+        >
+          Reserve your spot
+        </Link>
       </div>
     </article>
   );
