@@ -90,8 +90,13 @@ function NewsIndex() {
                 />
               )}
               <div className="p-8">
-                <span className="text-xs uppercase tracking-widest text-bali-purple font-semibold">
-                  Featured · {featured.date_text || "Latest"}
+                <span className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-bali-purple font-semibold">
+                  {featured.id === headline.headlineId ? (
+                    <span className="bg-bali-purple text-white px-2 py-0.5 rounded-full">Headline</span>
+                  ) : (
+                    <span className="bg-bali-grass text-bali-slate px-2 py-0.5 rounded-full">Trending</span>
+                  )}
+                  · {featured.date_text || "Latest"}
                 </span>
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-3 mb-3 group-hover:text-bali-blue transition-colors">
                   {featured.title}
