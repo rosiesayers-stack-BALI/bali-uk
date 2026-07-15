@@ -454,6 +454,39 @@ export type Database = {
         }
         Relationships: []
       }
+      mailing_lists: {
+        Row: {
+          created_at: string
+          created_by: string | null
+          description: string | null
+          filter: Json
+          id: string
+          member_count: number
+          name: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          created_by?: string | null
+          description?: string | null
+          filter?: Json
+          id?: string
+          member_count?: number
+          name: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          created_by?: string | null
+          description?: string | null
+          filter?: Json
+          id?: string
+          member_count?: number
+          name?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       member_links: {
         Row: {
           created_at: string
@@ -527,47 +560,116 @@ export type Database = {
         Row: {
           applicant_email: string
           applicant_name: string | null
+          applicant_user_id: string | null
+          application_link: string | null
           category: string
           company_name: string | null
           created_at: string
+          docs: Json
+          fee_status: string
           file_uploads: Json | null
+          history: Json
           id: string
           notes: string | null
+          notes_log: Json
+          onboarding_link: string | null
+          onboarding_status: string
           payload: Json
+          payment_method: string
           pushed_at: string | null
+          refs: Json
+          source: string
           status: string
           updated_at: string
+          wb_org_id: string | null
           workbooks_lead_id: string | null
         }
         Insert: {
           applicant_email: string
           applicant_name?: string | null
+          applicant_user_id?: string | null
+          application_link?: string | null
           category: string
           company_name?: string | null
           created_at?: string
+          docs?: Json
+          fee_status?: string
           file_uploads?: Json | null
+          history?: Json
           id?: string
           notes?: string | null
+          notes_log?: Json
+          onboarding_link?: string | null
+          onboarding_status?: string
           payload: Json
+          payment_method?: string
           pushed_at?: string | null
+          refs?: Json
+          source?: string
           status?: string
           updated_at?: string
+          wb_org_id?: string | null
           workbooks_lead_id?: string | null
         }
         Update: {
           applicant_email?: string
           applicant_name?: string | null
+          applicant_user_id?: string | null
+          application_link?: string | null
           category?: string
           company_name?: string | null
           created_at?: string
+          docs?: Json
+          fee_status?: string
           file_uploads?: Json | null
+          history?: Json
           id?: string
           notes?: string | null
+          notes_log?: Json
+          onboarding_link?: string | null
+          onboarding_status?: string
           payload?: Json
+          payment_method?: string
           pushed_at?: string | null
+          refs?: Json
+          source?: string
           status?: string
           updated_at?: string
+          wb_org_id?: string | null
           workbooks_lead_id?: string | null
+        }
+        Relationships: []
+      }
+      membership_categories: {
+        Row: {
+          created_at: string
+          description: string | null
+          fees: Json
+          id: string
+          label: string
+          sort_order: number
+          tier: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          fees?: Json
+          id: string
+          label: string
+          sort_order?: number
+          tier: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          fees?: Json
+          id?: string
+          label?: string
+          sort_order?: number
+          tier?: string
+          updated_at?: string
         }
         Relationships: []
       }
@@ -1041,20 +1143,26 @@ export type Database = {
         Row: {
           address_line1: string | null
           address_line2: string | null
+          banner_url: string | null
           category: string | null
           country: string | null
           county: string | null
           created_at: string
+          description: string | null
           disciplines: Json | null
           exclude_from_promotion: boolean | null
           id: string
+          logo_url: string | null
+          membership_expires_at: string | null
           name: string
+          next_qsr_due: string | null
           phone: string | null
           postcode: string | null
           public_email: string | null
           raw: Json | null
           reg_number: string | null
           region: string | null
+          socials: Json
           status: string | null
           synced_at: string
           town: string | null
@@ -1066,20 +1174,26 @@ export type Database = {
         Insert: {
           address_line1?: string | null
           address_line2?: string | null
+          banner_url?: string | null
           category?: string | null
           country?: string | null
           county?: string | null
           created_at?: string
+          description?: string | null
           disciplines?: Json | null
           exclude_from_promotion?: boolean | null
           id?: string
+          logo_url?: string | null
+          membership_expires_at?: string | null
           name: string
+          next_qsr_due?: string | null
           phone?: string | null
           postcode?: string | null
           public_email?: string | null
           raw?: Json | null
           reg_number?: string | null
           region?: string | null
+          socials?: Json
           status?: string | null
           synced_at?: string
           town?: string | null
@@ -1091,20 +1205,26 @@ export type Database = {
         Update: {
           address_line1?: string | null
           address_line2?: string | null
+          banner_url?: string | null
           category?: string | null
           country?: string | null
           county?: string | null
           created_at?: string
+          description?: string | null
           disciplines?: Json | null
           exclude_from_promotion?: boolean | null
           id?: string
+          logo_url?: string | null
+          membership_expires_at?: string | null
           name?: string
+          next_qsr_due?: string | null
           phone?: string | null
           postcode?: string | null
           public_email?: string | null
           raw?: Json | null
           reg_number?: string | null
           region?: string | null
+          socials?: Json
           status?: string | null
           synced_at?: string
           town?: string | null
@@ -1117,43 +1237,82 @@ export type Database = {
       }
       workbooks_people: {
         Row: {
+          address_line1: string | null
+          address_line2: string | null
+          contact_role: string
+          country: string | null
+          county: string | null
           created_at: string
           email: string | null
+          first_name: string | null
           id: string
           is_main_contact: boolean | null
+          job_title: string | null
+          last_name: string | null
           login_email: string | null
+          mobile: string | null
           name: string | null
+          newsletter_opts: Json
           phone: string | null
+          postcode: string | null
           raw: Json | null
           synced_at: string
+          title: string | null
+          town: string | null
           updated_at: string
           wb_id: string
           wb_org_id: string | null
         }
         Insert: {
+          address_line1?: string | null
+          address_line2?: string | null
+          contact_role?: string
+          country?: string | null
+          county?: string | null
           created_at?: string
           email?: string | null
+          first_name?: string | null
           id?: string
           is_main_contact?: boolean | null
+          job_title?: string | null
+          last_name?: string | null
           login_email?: string | null
+          mobile?: string | null
           name?: string | null
+          newsletter_opts?: Json
           phone?: string | null
+          postcode?: string | null
           raw?: Json | null
           synced_at?: string
+          title?: string | null
+          town?: string | null
           updated_at?: string
           wb_id: string
           wb_org_id?: string | null
         }
         Update: {
+          address_line1?: string | null
+          address_line2?: string | null
+          contact_role?: string
+          country?: string | null
+          county?: string | null
           created_at?: string
           email?: string | null
+          first_name?: string | null
           id?: string
           is_main_contact?: boolean | null
+          job_title?: string | null
+          last_name?: string | null
           login_email?: string | null
+          mobile?: string | null
           name?: string | null
+          newsletter_opts?: Json
           phone?: string | null
+          postcode?: string | null
           raw?: Json | null
           synced_at?: string
+          title?: string | null
+          town?: string | null
           updated_at?: string
           wb_id?: string
           wb_org_id?: string | null
