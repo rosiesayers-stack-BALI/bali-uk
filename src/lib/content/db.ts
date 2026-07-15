@@ -1,4 +1,12 @@
-import { supabase } from "@/integrations/supabase/client";
+import { supabase as realSupabase } from "@/integrations/supabase/client";
+// News + events read from the same mock/service store the /admin area writes to,
+// so admin changes appear immediately on the public site.
+// TODO: replace mockDb with real backend/CMS API when available.
+import { supabase as mockDb } from "@/lib/admin/mock-db";
+export { subscribeTable } from "@/lib/admin/mock-db";
+
+// Policy + training still use the Supabase-backed reads for now.
+const supabase = realSupabase;
 
 export type NewsRow = {
   id: string;
