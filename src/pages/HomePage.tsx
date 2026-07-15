@@ -4,57 +4,52 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import CookieBanner from '../components/CookieBanner'
 import AdBanner from '../components/ads/AdBanner'
-import bannerMountbatten from '../assets/bali/large_mountbatten-house-min.jpeg.asset.json'
-import bannerWeb from '../assets/bali/large_web-banner.png.asset.json'
-import bannerHome3 from '../assets/bali/large_homepage-banner-3.jpeg.asset.json'
-import bannerHome1 from '../assets/bali/large_homepage-banner-1.jpeg.asset.json'
 
 // ── Hero slides data ──────────────────────────────────────────────────────────
 // Matches the four banners used on bali.org.uk
 const slides = [
   {
-    bg: 'linear-gradient(135deg, #1D4D59 0%, #21509A 60%, #0E8B61 100%)',
-    image: bannerMountbatten.url,
-    eyebrow: 'Celebrating over 50 Years',
-    eyebrowColor: 'text-bali-grass',
-    title: 'The Gold Standard\nin Landscaping',
-    body: "The UK's leading trade association and accreditation body for landscape professionals — delivering excellence through standards, innovation and leadership.",
-    ctas: [
-      { label: 'Join Today', href: '/join', style: 'bg-bali-green hover:bg-green-700 text-white' },
-      { label: 'Find a Professional', href: '/directory', style: 'bg-white/10 hover:bg-white/20 border border-white/40 text-white backdrop-blur-sm' },
-    ],
-  },
-  {
     bg: 'linear-gradient(135deg, #0E8B61 0%, #1D4D59 100%)',
-    image: bannerWeb.url,
+    image: 'https://www.bali.org.uk/public/banners/large_private-estate-pwp-banner-crop.jpeg',
     eyebrow: 'Now Available',
     eyebrowColor: 'text-bali-grass',
-    title: 'Landscape News\nSpring Edition',
-    body: 'Read the latest issue of Landscape News — packed with industry insights, member spotlights, and professional development features.',
+    title: 'Landscape News\nSummer out now!',
+    body: 'Read the latest issue of Landscape News — packed with industry insights, member spotlights and professional development features.',
     ctas: [
-      { label: 'Read Digital Issue', href: '/news/magazine', style: 'bg-white text-bali-green hover:bg-gray-100' },
+      { label: 'Read the digital issue', href: '/news', style: 'bg-white text-bali-green hover:bg-gray-100' },
     ],
   },
   {
     bg: 'linear-gradient(135deg, #21509A 0%, #6D4276 100%)',
-    image: bannerHome3.url,
+    image: 'https://www.bali.org.uk/public/banners/large_web-banner.png',
     eyebrow: 'Free Member Benefit',
     eyebrowColor: 'text-yellow-300',
     title: 'Free HR &\nHealth Checks',
-    body: 'Access free HR reviews, employment law advice, and health & safety health checks as a BALI member — saving your business thousands per year.',
+    body: 'Access Free HR & Health Checks today as a member.',
     ctas: [
-      { label: 'Explore Member Benefits', href: '/join', style: 'bg-bali-grass hover:bg-green-600 text-white' },
+      { label: 'Find out more about member benefits', href: '/membership', style: 'bg-bali-grass hover:bg-green-600 text-white' },
+    ],
+  },
+  {
+    bg: 'linear-gradient(135deg, #1D4D59 0%, #21509A 60%, #0E8B61 100%)',
+    image: 'https://www.bali.org.uk/public/banners/large_homepage-banner-3.jpeg',
+    eyebrow: 'Celebrating over 50 Years',
+    eyebrowColor: 'text-bali-grass',
+    title: 'Join BALI today:\nthe gold standard in landscaping',
+    body: 'Access Accredited Logo, Technical Support, Events, Training, and Exclusive Discounts.',
+    ctas: [
+      { label: 'Join today', href: '/join', style: 'bg-bali-green hover:bg-green-700 text-white' },
     ],
   },
   {
     bg: 'linear-gradient(135deg, #1D4D59 0%, #0E8B61 100%)',
-    image: bannerHome1.url,
+    image: 'https://www.bali.org.uk/public/banners/large_homepage-banner-1.jpeg',
     eyebrow: 'Find a Professional',
     eyebrowColor: 'text-bali-grass',
-    title: "Designers, Contractors\n& Suppliers",
-    body: "Know you're hiring the best — search our online directory of accredited BALI members across the UK.",
+    title: 'Find a landscape designer,\ncontractor or supplier',
+    body: "Know you're hiring the best.",
     ctas: [
-      { label: 'Search the Directory', href: '/directory', style: 'bg-white text-bali-blue hover:bg-gray-100' },
+      { label: 'Search our online directory', href: '/directory', style: 'bg-white text-bali-blue hover:bg-gray-100' },
     ],
   },
 ]
@@ -65,7 +60,7 @@ const stats = [
   { value: '1,800+', label: 'Total Members' },
   { value: '45', label: 'National Landscape Awards' },
   { value: '36k', label: 'Passed ROLO Operatives' },
-  { value: '20k', label: 'LISS SmartCards' },
+  { value: '20k', label: 'LISS/CSCS SmartCards' },
 ]
 
 // ── Quick actions ─────────────────────────────────────────────────────────────
