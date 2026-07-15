@@ -56,6 +56,7 @@ export type Person = {
   joined: string;
   applicationType: ApplicationTypeId;
   contactRole: ContactRole;
+  newsletterOpts: string[];
 };
 
 export type Organisation = {
