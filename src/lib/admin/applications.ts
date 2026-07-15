@@ -120,12 +120,19 @@ function ensure(id: string, all: Record<string, Overlay>): Overlay {
 }
 
 const overlayListeners = new Set<() => void>();
-function emitOverlay() { overlayListeners.forEach((l) => l()); }
+// Cache the latest snapshot so useSyncExternalStore sees a stable reference
+// between emits — otherwise readOverlays() returns a fresh object every call
+// and React loops.
+let overlayCache: Record<string, Overlay> = readOverlays();
+function emitOverlay() {
+  overlayCache = readOverlays();
+  overlayListeners.forEach((l) => l());
+}
 export function subscribeOverlay(l: () => void) {
   overlayListeners.add(l);
   return () => overlayListeners.delete(l);
 }
-function overlaySnapshot() { return readOverlays(); }
+function overlaySnapshot() { return overlayCache; }
 export function useAppOverlays() {
   return useSyncExternalStore(subscribeOverlay, overlaySnapshot, overlaySnapshot);
 }
