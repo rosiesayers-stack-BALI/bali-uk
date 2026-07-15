@@ -76,7 +76,7 @@ function EventsEditor() {
       image_url: form.image_url,
       image_alt: form.image_alt,
       booking_url: form.booking_url || null,
-      published: form.published,
+      published: Boolean(form.published),
     };
     const res = isNew
       ? await supabase.from("events").insert(payload).select("id").single()
