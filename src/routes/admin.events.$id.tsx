@@ -141,9 +141,47 @@ function EventsEditor() {
             <input value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })} className={cls} />
           </F>
         </div>
+        <div className="grid grid-cols-2 gap-4">
+          <F label="Start time" hint="e.g. 09:30">
+            <input value={form.start_time} onChange={(e) => setForm({ ...form, start_time: e.target.value })} className={cls} />
+          </F>
+          <F label="End time" hint="optional, e.g. 15:30">
+            <input value={form.end_time} onChange={(e) => setForm({ ...form, end_time: e.target.value })} className={cls} />
+          </F>
+        </div>
         <F label="Venue">
           <input value={form.venue} onChange={(e) => setForm({ ...form, venue: e.target.value })} className={cls} />
         </F>
+        <fieldset className="border border-gray-200 rounded-lg p-4 space-y-4">
+          <legend className="px-2 text-sm font-semibold text-bali-slate">Booking &amp; pricing</legend>
+          <div className="grid grid-cols-2 gap-4">
+            <F label="Member price (£)" hint="Leave blank for free / TBC">
+              <input type="number" min="0" step="0.01" value={form.member_price} onChange={(e) => setForm({ ...form, member_price: e.target.value })} className={cls} />
+            </F>
+            <F label="Non-member price (£)">
+              <input type="number" min="0" step="0.01" value={form.non_member_price} onChange={(e) => setForm({ ...form, non_member_price: e.target.value })} className={cls} />
+            </F>
+            <F label="Capacity" hint="0 = unlimited">
+              <input type="number" min="0" step="1" value={form.capacity} onChange={(e) => setForm({ ...form, capacity: Number(e.target.value) || 0 })} className={cls} />
+            </F>
+            <label className="flex items-center gap-2 text-sm mt-6">
+              <input type="checkbox" checked={form.booking_enabled} onChange={(e) => setForm({ ...form, booking_enabled: e.target.checked })} />
+              Booking enabled (show "Book now")
+            </label>
+          </div>
+          <div className="flex flex-wrap gap-4 text-sm">
+            <span className="font-medium text-gray-700">Payment options:</span>
+            <label className="inline-flex items-center gap-2">
+              <input type="checkbox" checked={form.payment_card} onChange={(e) => setForm({ ...form, payment_card: e.target.checked })} />
+              Pay by card
+            </label>
+            <label className="inline-flex items-center gap-2">
+              <input type="checkbox" checked={form.payment_invoice} onChange={(e) => setForm({ ...form, payment_invoice: e.target.checked })} />
+              Pay by invoice
+            </label>
+          </div>
+          {/* TODO: replace mock payment with real Stripe/GoCardless integration. */}
+        </fieldset>
         <F label="Description (summary)">
           <textarea rows={3} value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} className={cls} />
         </F>
