@@ -235,3 +235,117 @@ function F({ label, hint, children }: { label: string; hint?: string; children: 
     </div>
   );
 }
+
+type BookingRow = {
+  id: string;
+  attendee_name: string | null;
+  attendee_email: string | null;
+  places: number;
+  amount: number | null;
+  status: string;
+  payment_provider: string | null;
+  payment_ref: string | null;
+  paid_at: string | null;
+  attended: boolean;
+  created_at: string;
+};
+
+function AttendeesPanel({ eventId }: { eventId: string }) {
+  const qc = useQueryClient();
+  const bookings = useQuery({
+    queryKey: ["admin", "event-bookings", eventId],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from("workbooks_bookings")
+        .select("id, attendee_name, attendee_email, places, amount, status, payment_provider, payment_ref, paid_at, attended, created_at")
+        .eq("event_id", eventId)
+        .order("created_at", { ascending: false });
+      if (error) throw error;
+      return data as BookingRow[];
+    },
+  });
+
+  const toggleAttended = useMutation({
+    mutationFn: async ({ id, attended }: { id: string; attended: boolean }) => {
+      const { error } = await supabase.from("workbooks_bookings").update({ attended }).eq("id", id);
+      if (error) throw error;
+    },
+    onSuccess: () => qc.invalidateQueries({ queryKey: ["admin", "event-bookings", eventId] }),
+  });
+
+  const rows = bookings.data ?? [];
+  const totalPlaces = rows.reduce((s, r) => s + (r.places ?? 0), 0);
+  const totalAmount = rows.reduce((s, r) => s + Number(r.amount ?? 0), 0);
+  const gbp = (v: number | null | undefined) =>
+    new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" }).format(Number(v ?? 0));
+
+  return (
+    <section className="p-8 pt-0 max-w-5xl">
+      <div className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+        <div className="px-5 py-4 border-b border-gray-100 flex flex-wrap items-center justify-between gap-3">
+          <h2 className="text-lg font-bold text-bali-slate">Attendees &amp; bookings</h2>
+          <div className="text-sm text-gray-600">
+            <span className="font-semibold text-bali-slate">{rows.length}</span> booking{rows.length === 1 ? "" : "s"} · {" "}
+            <span className="font-semibold text-bali-slate">{totalPlaces}</span> place{totalPlaces === 1 ? "" : "s"} · {" "}
+            <span className="font-semibold text-bali-slate">{gbp(totalAmount)}</span> total
+          </div>
+        </div>
+        {bookings.isLoading ? (
+          <div className="p-8 text-sm text-gray-500 text-center">Loading bookings…</div>
+        ) : rows.length === 0 ? (
+          <div className="p-8 text-sm text-gray-500 text-center">No bookings yet.</div>
+        ) : (
+          <table className="w-full text-sm">
+            <thead className="bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+              <tr>
+                <th className="px-4 py-3">Attendee</th>
+                <th className="px-4 py-3">Places</th>
+                <th className="px-4 py-3">Amount</th>
+                <th className="px-4 py-3">Status</th>
+                <th className="px-4 py-3">Payment</th>
+                <th className="px-4 py-3">Paid</th>
+                <th className="px-4 py-3">Attended</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-100">
+              {rows.map((b) => (
+                <tr key={b.id} className="hover:bg-gray-50">
+                  <td className="px-4 py-3">
+                    <div className="font-medium text-bali-slate">{b.attendee_name || "—"}</div>
+                    <div className="text-xs text-gray-500">{b.attendee_email}</div>
+                  </td>
+                  <td className="px-4 py-3">{b.places}</td>
+                  <td className="px-4 py-3 whitespace-nowrap">{gbp(b.amount)}</td>
+                  <td className="px-4 py-3">
+                    <span className={`inline-block text-[11px] font-semibold px-2 py-0.5 rounded-full ${
+                      b.status === "Confirmed" ? "bg-green-100 text-green-800" :
+                      b.status === "Awaiting payment" ? "bg-amber-100 text-amber-800" :
+                      "bg-gray-200 text-gray-700"
+                    }`}>{b.status}</span>
+                  </td>
+                  <td className="px-4 py-3 text-gray-600">
+                    {b.payment_provider || "—"}
+                    {b.payment_ref && <div className="text-[11px] text-gray-400 font-mono">{b.payment_ref}</div>}
+                  </td>
+                  <td className="px-4 py-3 text-gray-600 whitespace-nowrap">
+                    {b.paid_at ? new Date(b.paid_at).toLocaleDateString("en-GB") : "—"}
+                  </td>
+                  <td className="px-4 py-3">
+                    <label className="inline-flex items-center gap-2 text-sm">
+                      <input
+                        type="checkbox"
+                        checked={b.attended}
+                        onChange={(e) => toggleAttended.mutate({ id: b.id, attended: e.target.checked })}
+                      />
+                      <span className="sr-only">Attended</span>
+                    </label>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+      </div>
+    </section>
+  );
+}
