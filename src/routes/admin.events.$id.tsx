@@ -52,18 +52,35 @@ function EventsEditor() {
 
   useEffect(() => {
     if (existing.data) {
+      const d = existing.data as typeof existing.data & {
+        start_time: string | null;
+        end_time: string | null;
+        member_price: number | null;
+        non_member_price: number | null;
+        capacity: number | null;
+        booking_enabled: boolean | null;
+        payment_options: { card?: boolean; invoice?: boolean } | null;
+      };
       setForm({
-        slug: existing.data.slug,
-        title: existing.data.title,
-        date_text: existing.data.date_text ?? "",
-        venue: existing.data.venue ?? "",
-        category: existing.data.category ?? "",
-        description: existing.data.description ?? "",
-        body_paragraphs: (existing.data.body_paragraphs as string[]) ?? [],
-        image_url: existing.data.image_url,
-        image_alt: existing.data.image_alt ?? "",
-        booking_url: existing.data.booking_url ?? "",
-        published: existing.data.published,
+        slug: d.slug,
+        title: d.title,
+        date_text: d.date_text ?? "",
+        start_time: d.start_time ?? "",
+        end_time: d.end_time ?? "",
+        venue: d.venue ?? "",
+        category: d.category ?? "",
+        description: d.description ?? "",
+        body_paragraphs: (d.body_paragraphs as string[]) ?? [],
+        image_url: d.image_url,
+        image_alt: d.image_alt ?? "",
+        booking_url: d.booking_url ?? "",
+        published: d.published,
+        member_price: d.member_price != null ? String(d.member_price) : "",
+        non_member_price: d.non_member_price != null ? String(d.non_member_price) : "",
+        capacity: d.capacity ?? 0,
+        booking_enabled: d.booking_enabled ?? true,
+        payment_card: d.payment_options?.card ?? true,
+        payment_invoice: d.payment_options?.invoice ?? true,
       });
     }
   }, [existing.data]);
@@ -77,6 +94,8 @@ function EventsEditor() {
       title: form.title,
       date_text: form.date_text,
       iso_date: toIsoDate(form.date_text),
+      start_time: form.start_time || null,
+      end_time: form.end_time || null,
       venue: form.venue,
       category: form.category,
       description: form.description,
@@ -85,6 +104,11 @@ function EventsEditor() {
       image_alt: form.image_alt,
       booking_url: form.booking_url || null,
       published: Boolean(form.published),
+      member_price: form.member_price === "" ? null : Number(form.member_price),
+      non_member_price: form.non_member_price === "" ? null : Number(form.non_member_price),
+      capacity: Number(form.capacity) || 0,
+      booking_enabled: Boolean(form.booking_enabled),
+      payment_options: { card: form.payment_card, invoice: form.payment_invoice },
     };
     const res = isNew
       ? await supabase.from("events").insert(payload).select("id").single()
