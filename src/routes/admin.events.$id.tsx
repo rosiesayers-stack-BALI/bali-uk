@@ -218,6 +218,7 @@ function EventsEditor() {
           </button>
         </div>
       </form>
+      {!isNew && <AttendeesPanel eventId={id} />}
     </div>
   );
 }
