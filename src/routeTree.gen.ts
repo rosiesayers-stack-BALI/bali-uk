@@ -58,7 +58,6 @@ import { Route as HelpContractsRouteImport } from './routes/help.contracts'
 import { Route as HelpContractRouteImport } from './routes/help.contract'
 import { Route as EventsTrainingRouteImport } from './routes/events.training'
 import { Route as EventsSponsorRouteImport } from './routes/events.sponsor'
-import { Route as EventsSlugRouteImport } from './routes/events.$slug'
 import { Route as DirectoryWhyRouteImport } from './routes/directory.why'
 import { Route as DirectoryTrainingRouteImport } from './routes/directory.training'
 import { Route as DirectorySupplierRouteImport } from './routes/directory.supplier'
@@ -69,6 +68,7 @@ import { Route as AboutAwardsRouteImport } from './routes/about.awards'
 import { Route as MyBaliProfileIndexRouteImport } from './routes/my-bali.profile.index'
 import { Route as LissCscsApplyIndexRouteImport } from './routes/liss-cscs.apply.index'
 import { Route as HelpMediaIndexRouteImport } from './routes/help.media.index'
+import { Route as EventsSlugIndexRouteImport } from './routes/events.$slug.index'
 import { Route as AdminTrainingIndexRouteImport } from './routes/admin.training.index'
 import { Route as AdminSubmissionsIndexRouteImport } from './routes/admin.submissions.index'
 import { Route as AdminPolicyIndexRouteImport } from './routes/admin.policy.index'
@@ -404,11 +404,6 @@ const EventsSponsorRoute = EventsSponsorRouteImport.update({
   path: '/events/sponsor',
   getParentRoute: () => rootRouteImport,
 } as any)
-const EventsSlugRoute = EventsSlugRouteImport.update({
-  id: '/events/$slug',
-  path: '/events/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const DirectoryWhyRoute = DirectoryWhyRouteImport.update({
   id: '/directory/why',
   path: '/directory/why',
@@ -457,6 +452,11 @@ const LissCscsApplyIndexRoute = LissCscsApplyIndexRouteImport.update({
 const HelpMediaIndexRoute = HelpMediaIndexRouteImport.update({
   id: '/help/media/',
   path: '/help/media/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventsSlugIndexRoute = EventsSlugIndexRouteImport.update({
+  id: '/events/$slug/',
+  path: '/events/$slug/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminTrainingIndexRoute = AdminTrainingIndexRouteImport.update({
@@ -839,9 +839,9 @@ const HelpDisputeClientInformationRoute =
     getParentRoute: () => HelpDisputeRoute,
   } as any)
 const EventsSlugBookRoute = EventsSlugBookRouteImport.update({
-  id: '/book',
-  path: '/book',
-  getParentRoute: () => EventsSlugRoute,
+  id: '/events/$slug/book',
+  path: '/events/$slug/book',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ApiPublicMembershipEnquiryRoute =
   ApiPublicMembershipEnquiryRouteImport.update({
@@ -954,7 +954,6 @@ export interface FileRoutesByFullPath {
   '/directory/supplier': typeof DirectorySupplierRoute
   '/directory/training': typeof DirectoryTrainingRoute
   '/directory/why': typeof DirectoryWhyRoute
-  '/events/$slug': typeof EventsSlugRouteWithChildren
   '/events/sponsor': typeof EventsSponsorRoute
   '/events/training': typeof EventsTrainingRoute
   '/help/contract': typeof HelpContractRoute
@@ -1077,6 +1076,7 @@ export interface FileRoutesByFullPath {
   '/admin/policy/': typeof AdminPolicyIndexRoute
   '/admin/submissions/': typeof AdminSubmissionsIndexRoute
   '/admin/training/': typeof AdminTrainingIndexRoute
+  '/events/$slug/': typeof EventsSlugIndexRoute
   '/help/media/': typeof HelpMediaIndexRoute
   '/liss-cscs/apply/': typeof LissCscsApplyIndexRoute
   '/my-bali/profile/': typeof MyBaliProfileIndexRoute
@@ -1101,7 +1101,6 @@ export interface FileRoutesByTo {
   '/directory/supplier': typeof DirectorySupplierRoute
   '/directory/training': typeof DirectoryTrainingRoute
   '/directory/why': typeof DirectoryWhyRoute
-  '/events/$slug': typeof EventsSlugRouteWithChildren
   '/events/sponsor': typeof EventsSponsorRoute
   '/events/training': typeof EventsTrainingRoute
   '/help/contract': typeof HelpContractRoute
@@ -1223,6 +1222,7 @@ export interface FileRoutesByTo {
   '/admin/policy': typeof AdminPolicyIndexRoute
   '/admin/submissions': typeof AdminSubmissionsIndexRoute
   '/admin/training': typeof AdminTrainingIndexRoute
+  '/events/$slug': typeof EventsSlugIndexRoute
   '/help/media': typeof HelpMediaIndexRoute
   '/liss-cscs/apply': typeof LissCscsApplyIndexRoute
   '/my-bali/profile': typeof MyBaliProfileIndexRoute
@@ -1250,7 +1250,6 @@ export interface FileRoutesById {
   '/directory/supplier': typeof DirectorySupplierRoute
   '/directory/training': typeof DirectoryTrainingRoute
   '/directory/why': typeof DirectoryWhyRoute
-  '/events/$slug': typeof EventsSlugRouteWithChildren
   '/events/sponsor': typeof EventsSponsorRoute
   '/events/training': typeof EventsTrainingRoute
   '/help/contract': typeof HelpContractRoute
@@ -1373,6 +1372,7 @@ export interface FileRoutesById {
   '/admin/policy/': typeof AdminPolicyIndexRoute
   '/admin/submissions/': typeof AdminSubmissionsIndexRoute
   '/admin/training/': typeof AdminTrainingIndexRoute
+  '/events/$slug/': typeof EventsSlugIndexRoute
   '/help/media/': typeof HelpMediaIndexRoute
   '/liss-cscs/apply/': typeof LissCscsApplyIndexRoute
   '/my-bali/profile/': typeof MyBaliProfileIndexRoute
@@ -1401,7 +1401,6 @@ export interface FileRouteTypes {
     | '/directory/supplier'
     | '/directory/training'
     | '/directory/why'
-    | '/events/$slug'
     | '/events/sponsor'
     | '/events/training'
     | '/help/contract'
@@ -1524,6 +1523,7 @@ export interface FileRouteTypes {
     | '/admin/policy/'
     | '/admin/submissions/'
     | '/admin/training/'
+    | '/events/$slug/'
     | '/help/media/'
     | '/liss-cscs/apply/'
     | '/my-bali/profile/'
@@ -1548,7 +1548,6 @@ export interface FileRouteTypes {
     | '/directory/supplier'
     | '/directory/training'
     | '/directory/why'
-    | '/events/$slug'
     | '/events/sponsor'
     | '/events/training'
     | '/help/contract'
@@ -1670,6 +1669,7 @@ export interface FileRouteTypes {
     | '/admin/policy'
     | '/admin/submissions'
     | '/admin/training'
+    | '/events/$slug'
     | '/help/media'
     | '/liss-cscs/apply'
     | '/my-bali/profile'
@@ -1696,7 +1696,6 @@ export interface FileRouteTypes {
     | '/directory/supplier'
     | '/directory/training'
     | '/directory/why'
-    | '/events/$slug'
     | '/events/sponsor'
     | '/events/training'
     | '/help/contract'
@@ -1819,6 +1818,7 @@ export interface FileRouteTypes {
     | '/admin/policy/'
     | '/admin/submissions/'
     | '/admin/training/'
+    | '/events/$slug/'
     | '/help/media/'
     | '/liss-cscs/apply/'
     | '/my-bali/profile/'
@@ -1846,7 +1846,6 @@ export interface RootRouteChildren {
   DirectorySupplierRoute: typeof DirectorySupplierRoute
   DirectoryTrainingRoute: typeof DirectoryTrainingRoute
   DirectoryWhyRoute: typeof DirectoryWhyRoute
-  EventsSlugRoute: typeof EventsSlugRouteWithChildren
   EventsSponsorRoute: typeof EventsSponsorRoute
   EventsTrainingRoute: typeof EventsTrainingRoute
   HelpContractRoute: typeof HelpContractRoute
@@ -1878,8 +1877,10 @@ export interface RootRouteChildren {
   ApiPublicConferenceInterestRoute: typeof ApiPublicConferenceInterestRoute
   ApiPublicMembershipApplicationRoute: typeof ApiPublicMembershipApplicationRoute
   ApiPublicMembershipEnquiryRoute: typeof ApiPublicMembershipEnquiryRoute
+  EventsSlugBookRoute: typeof EventsSlugBookRoute
   HelpMediaSlugRoute: typeof HelpMediaSlugRoute
   JoinCategoryApplyRoute: typeof JoinCategoryApplyRoute
+  EventsSlugIndexRoute: typeof EventsSlugIndexRoute
   HelpMediaIndexRoute: typeof HelpMediaIndexRoute
   LissCscsApplyIndexRoute: typeof LissCscsApplyIndexRoute
   ApiPublicHooksWorkbooksSyncRoute: typeof ApiPublicHooksWorkbooksSyncRoute
@@ -2233,13 +2234,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EventsSponsorRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/events/$slug': {
-      id: '/events/$slug'
-      path: '/events/$slug'
-      fullPath: '/events/$slug'
-      preLoaderRoute: typeof EventsSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/directory/why': {
       id: '/directory/why'
       path: '/directory/why'
@@ -2308,6 +2302,13 @@ declare module '@tanstack/react-router' {
       path: '/help/media'
       fullPath: '/help/media/'
       preLoaderRoute: typeof HelpMediaIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/events/$slug/': {
+      id: '/events/$slug/'
+      path: '/events/$slug'
+      fullPath: '/events/$slug/'
+      preLoaderRoute: typeof EventsSlugIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/training/': {
@@ -2795,10 +2796,10 @@ declare module '@tanstack/react-router' {
     }
     '/events/$slug/book': {
       id: '/events/$slug/book'
-      path: '/book'
+      path: '/events/$slug/book'
       fullPath: '/events/$slug/book'
       preLoaderRoute: typeof EventsSlugBookRouteImport
-      parentRoute: typeof EventsSlugRoute
+      parentRoute: typeof rootRouteImport
     }
     '/api/public/membership-enquiry': {
       id: '/api/public/membership-enquiry'
@@ -3027,18 +3028,6 @@ const MyBaliRouteChildren: MyBaliRouteChildren = {
 const MyBaliRouteWithChildren =
   MyBaliRoute._addFileChildren(MyBaliRouteChildren)
 
-interface EventsSlugRouteChildren {
-  EventsSlugBookRoute: typeof EventsSlugBookRoute
-}
-
-const EventsSlugRouteChildren: EventsSlugRouteChildren = {
-  EventsSlugBookRoute: EventsSlugBookRoute,
-}
-
-const EventsSlugRouteWithChildren = EventsSlugRoute._addFileChildren(
-  EventsSlugRouteChildren,
-)
-
 interface HelpDisputeRouteChildren {
   HelpDisputeClientInformationRoute: typeof HelpDisputeClientInformationRoute
   HelpDisputeFrequentlyAskedQuestionsRoute: typeof HelpDisputeFrequentlyAskedQuestionsRoute
@@ -3235,7 +3224,6 @@ const rootRouteChildren: RootRouteChildren = {
   DirectorySupplierRoute: DirectorySupplierRoute,
   DirectoryTrainingRoute: DirectoryTrainingRoute,
   DirectoryWhyRoute: DirectoryWhyRoute,
-  EventsSlugRoute: EventsSlugRouteWithChildren,
   EventsSponsorRoute: EventsSponsorRoute,
   EventsTrainingRoute: EventsTrainingRoute,
   HelpContractRoute: HelpContractRoute,
@@ -3267,8 +3255,10 @@ const rootRouteChildren: RootRouteChildren = {
   ApiPublicConferenceInterestRoute: ApiPublicConferenceInterestRoute,
   ApiPublicMembershipApplicationRoute: ApiPublicMembershipApplicationRoute,
   ApiPublicMembershipEnquiryRoute: ApiPublicMembershipEnquiryRoute,
+  EventsSlugBookRoute: EventsSlugBookRoute,
   HelpMediaSlugRoute: HelpMediaSlugRoute,
   JoinCategoryApplyRoute: JoinCategoryApplyRoute,
+  EventsSlugIndexRoute: EventsSlugIndexRoute,
   HelpMediaIndexRoute: HelpMediaIndexRoute,
   LissCscsApplyIndexRoute: LissCscsApplyIndexRoute,
   ApiPublicHooksWorkbooksSyncRoute: ApiPublicHooksWorkbooksSyncRoute,
