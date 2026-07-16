@@ -20,6 +20,8 @@ function EventsEditor() {
     slug: "",
     title: "",
     date_text: "",
+    start_time: "",
+    end_time: "",
     venue: "",
     category: "",
     description: "",
@@ -28,6 +30,12 @@ function EventsEditor() {
     image_alt: "",
     booking_url: "",
     published: true,
+    member_price: "" as string,
+    non_member_price: "" as string,
+    capacity: 0,
+    booking_enabled: true,
+    payment_card: true,
+    payment_invoice: true,
   });
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
