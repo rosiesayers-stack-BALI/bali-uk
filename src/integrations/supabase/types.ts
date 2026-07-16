@@ -319,54 +319,75 @@ export type Database = {
       events: {
         Row: {
           body_paragraphs: string[]
+          booking_enabled: boolean
           booking_url: string | null
+          capacity: number
           category: string
           created_at: string
           date_text: string
           description: string
+          end_time: string | null
           id: string
           image_alt: string | null
           image_url: string | null
           iso_date: string | null
+          member_price: number | null
+          non_member_price: number | null
+          payment_options: Json
           published: boolean
           slug: string
           sort_order: number
+          start_time: string | null
           title: string
           updated_at: string
           venue: string
         }
         Insert: {
           body_paragraphs?: string[]
+          booking_enabled?: boolean
           booking_url?: string | null
+          capacity?: number
           category?: string
           created_at?: string
           date_text?: string
           description?: string
+          end_time?: string | null
           id?: string
           image_alt?: string | null
           image_url?: string | null
           iso_date?: string | null
+          member_price?: number | null
+          non_member_price?: number | null
+          payment_options?: Json
           published?: boolean
           slug: string
           sort_order?: number
+          start_time?: string | null
           title: string
           updated_at?: string
           venue?: string
         }
         Update: {
           body_paragraphs?: string[]
+          booking_enabled?: boolean
           booking_url?: string | null
+          capacity?: number
           category?: string
           created_at?: string
           date_text?: string
           description?: string
+          end_time?: string | null
           id?: string
           image_alt?: string | null
           image_url?: string | null
           iso_date?: string | null
+          member_price?: number | null
+          non_member_price?: number | null
+          payment_options?: Json
           published?: boolean
           slug?: string
           sort_order?: number
+          start_time?: string | null
           title?: string
           updated_at?: string
           venue?: string
@@ -993,6 +1014,7 @@ export type Database = {
       workbooks_bookings: {
         Row: {
           amount: number | null
+          attended: boolean
           attendee_email: string | null
           attendee_name: string | null
           created_at: string
@@ -1003,6 +1025,7 @@ export type Database = {
           paid_at: string | null
           payment_provider: string | null
           payment_ref: string | null
+          places: number
           raw: Json | null
           status: string
           synced_at: string | null
@@ -1013,6 +1036,7 @@ export type Database = {
         }
         Insert: {
           amount?: number | null
+          attended?: boolean
           attendee_email?: string | null
           attendee_name?: string | null
           created_at?: string
@@ -1023,6 +1047,7 @@ export type Database = {
           paid_at?: string | null
           payment_provider?: string | null
           payment_ref?: string | null
+          places?: number
           raw?: Json | null
           status?: string
           synced_at?: string | null
@@ -1033,6 +1058,7 @@ export type Database = {
         }
         Update: {
           amount?: number | null
+          attended?: boolean
           attendee_email?: string | null
           attendee_name?: string | null
           created_at?: string
@@ -1043,6 +1069,7 @@ export type Database = {
           paid_at?: string | null
           payment_provider?: string | null
           payment_ref?: string | null
+          places?: number
           raw?: Json | null
           status?: string
           synced_at?: string | null
