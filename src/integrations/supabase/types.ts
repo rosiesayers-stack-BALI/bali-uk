@@ -1141,8 +1141,10 @@ export type Database = {
       }
       workbooks_orgs: {
         Row: {
+          actual_turnover: number | null
           address_line1: string | null
           address_line2: string | null
+          bali_ncf: boolean
           banner_url: string | null
           category: string | null
           country: string | null
@@ -1153,27 +1155,40 @@ export type Database = {
           exclude_from_promotion: boolean | null
           id: string
           logo_url: string | null
+          member_id: string | null
+          membership_band: string | null
+          membership_contract_no: string | null
           membership_expires_at: string | null
+          membership_start_date: string | null
           name: string
           next_qsr_due: string | null
+          online_training: boolean
+          parent_org_wb_id: string | null
           phone: string | null
           postcode: string | null
           public_email: string | null
           raw: Json | null
           reg_number: string | null
           region: string | null
+          resignation_date: string | null
+          sage_account_ref: string | null
           socials: Json
           status: string | null
           synced_at: string
+          tmhfa_by_bali: boolean
+          tmhfa_in_position: boolean
           town: string | null
+          training_provider_org: string | null
           updated_at: string
           vat_number: string | null
           wb_id: string
           website: string | null
         }
         Insert: {
+          actual_turnover?: number | null
           address_line1?: string | null
           address_line2?: string | null
+          bali_ncf?: boolean
           banner_url?: string | null
           category?: string | null
           country?: string | null
@@ -1184,27 +1199,40 @@ export type Database = {
           exclude_from_promotion?: boolean | null
           id?: string
           logo_url?: string | null
+          member_id?: string | null
+          membership_band?: string | null
+          membership_contract_no?: string | null
           membership_expires_at?: string | null
+          membership_start_date?: string | null
           name: string
           next_qsr_due?: string | null
+          online_training?: boolean
+          parent_org_wb_id?: string | null
           phone?: string | null
           postcode?: string | null
           public_email?: string | null
           raw?: Json | null
           reg_number?: string | null
           region?: string | null
+          resignation_date?: string | null
+          sage_account_ref?: string | null
           socials?: Json
           status?: string | null
           synced_at?: string
+          tmhfa_by_bali?: boolean
+          tmhfa_in_position?: boolean
           town?: string | null
+          training_provider_org?: string | null
           updated_at?: string
           vat_number?: string | null
           wb_id: string
           website?: string | null
         }
         Update: {
+          actual_turnover?: number | null
           address_line1?: string | null
           address_line2?: string | null
+          bali_ncf?: boolean
           banner_url?: string | null
           category?: string | null
           country?: string | null
@@ -1215,19 +1243,30 @@ export type Database = {
           exclude_from_promotion?: boolean | null
           id?: string
           logo_url?: string | null
+          member_id?: string | null
+          membership_band?: string | null
+          membership_contract_no?: string | null
           membership_expires_at?: string | null
+          membership_start_date?: string | null
           name?: string
           next_qsr_due?: string | null
+          online_training?: boolean
+          parent_org_wb_id?: string | null
           phone?: string | null
           postcode?: string | null
           public_email?: string | null
           raw?: Json | null
           reg_number?: string | null
           region?: string | null
+          resignation_date?: string | null
+          sage_account_ref?: string | null
           socials?: Json
           status?: string | null
           synced_at?: string
+          tmhfa_by_bali?: boolean
+          tmhfa_in_position?: boolean
           town?: string | null
+          training_provider_org?: string | null
           updated_at?: string
           vat_number?: string | null
           wb_id?: string
