@@ -74,6 +74,9 @@ function EventPage() {
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">{event.title}</h1>
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-blue-100">
               <span><strong className="text-white">Date:</strong> {event.date_text}</span>
+              {event.start_time && (
+                <span><strong className="text-white">Time:</strong> {event.start_time}{event.end_time ? `–${event.end_time}` : ""}</span>
+              )}
               <span><strong className="text-white">Venue:</strong> {event.venue}</span>
             </div>
           </div>
