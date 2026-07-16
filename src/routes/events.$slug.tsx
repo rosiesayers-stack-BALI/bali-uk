@@ -74,6 +74,9 @@ function EventPage() {
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">{event.title}</h1>
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-blue-100">
               <span><strong className="text-white">Date:</strong> {event.date_text}</span>
+              {event.start_time && (
+                <span><strong className="text-white">Time:</strong> {event.start_time}{event.end_time ? `–${event.end_time}` : ""}</span>
+              )}
               <span><strong className="text-white">Venue:</strong> {event.venue}</span>
             </div>
           </div>
@@ -88,13 +91,21 @@ function EventPage() {
           <div className="prose prose-lg max-w-none space-y-5 text-gray-700 leading-relaxed">
             {event.body_paragraphs.map((p: string, i: number) => <p key={i}>{p}</p>)}
           </div>
-          <div className="mt-10 p-6 rounded-2xl bg-gradient-to-br from-bali-blue/5 to-bali-purple/5 border border-bali-blue/10">
-            <h3 className="font-bold text-bali-blue mb-2">Book your place</h3>
-            <p className="text-gray-700 text-sm mb-4">
-              Reserve your place using the secure booking form. You'll be able to add colleagues as delegates on the same booking.
-            </p>
-            <Link to="/events/$slug/book" params={{ slug: event.slug }} className="inline-block bg-bali-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-bali-purple transition-colors">Book now →</Link>
-          </div>
+          {event.booking_enabled !== false ? (
+            <div className="mt-10 p-6 rounded-2xl bg-gradient-to-br from-bali-blue/5 to-bali-purple/5 border border-bali-blue/10">
+              <h3 className="font-bold text-bali-blue mb-3">Book your place</h3>
+              <div className="grid sm:grid-cols-2 gap-3 mb-4">
+                <PriceCard label="Member price" value={event.member_price} />
+                <PriceCard label="Non-member price" value={event.non_member_price ?? event.nonmember_price} />
+              </div>
+              <p className="text-xs text-gray-500 mb-4">Prices inc. VAT. Sign in to /my-bali to get the member rate automatically.</p>
+              <Link to="/events/$slug/book" params={{ slug: event.slug }} className="inline-block bg-bali-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-bali-purple transition-colors">Book now →</Link>
+            </div>
+          ) : (
+            <div className="mt-10 p-6 rounded-2xl bg-gray-50 border border-gray-200 text-sm text-gray-600">
+              Booking for this event isn't open yet — please check back soon.
+            </div>
+          )}
           <div className="mt-12 pt-8 border-t border-gray-200 grid sm:grid-cols-2 gap-4">
             {prev ? (
               <Link to="/events/$slug" params={{ slug: prev.slug }} className="group p-5 border border-gray-200 rounded-xl hover:border-bali-blue hover:shadow-md transition-all">
@@ -116,6 +127,18 @@ function EventPage() {
       </article>
       <Footer />
       <CookieBanner />
+    </div>
+  );
+}
+
+function PriceCard({ label, value }: { label: string; value: number | null | undefined }) {
+  const txt = value == null ? "TBC" : value === 0 ? "Free" :
+    new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" }).format(Number(value));
+  return (
+    <div className="rounded-xl border border-gray-200 bg-white p-4">
+      <div className="text-xs uppercase tracking-widest font-semibold text-gray-500">{label}</div>
+      <div className="mt-1 text-2xl font-extrabold text-bali-slate">{txt}</div>
+      <div className="text-xs text-gray-500 mt-0.5">inc. VAT</div>
     </div>
   );
 }

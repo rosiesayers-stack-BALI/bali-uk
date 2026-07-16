@@ -43,6 +43,12 @@ export type EventRow = {
   sort_order: number;
   member_price?: number | null;
   nonmember_price?: number | null;
+  non_member_price?: number | null;
+  start_time?: string | null;
+  end_time?: string | null;
+  booking_enabled?: boolean;
+  capacity?: number;
+  payment_options?: { card?: boolean; invoice?: boolean } | null;
 };
 
 export type PolicyRow = {

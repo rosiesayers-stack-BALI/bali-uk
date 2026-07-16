@@ -319,54 +319,75 @@ export type Database = {
       events: {
         Row: {
           body_paragraphs: string[]
+          booking_enabled: boolean
           booking_url: string | null
+          capacity: number
           category: string
           created_at: string
           date_text: string
           description: string
+          end_time: string | null
           id: string
           image_alt: string | null
           image_url: string | null
           iso_date: string | null
+          member_price: number | null
+          non_member_price: number | null
+          payment_options: Json
           published: boolean
           slug: string
           sort_order: number
+          start_time: string | null
           title: string
           updated_at: string
           venue: string
         }
         Insert: {
           body_paragraphs?: string[]
+          booking_enabled?: boolean
           booking_url?: string | null
+          capacity?: number
           category?: string
           created_at?: string
           date_text?: string
           description?: string
+          end_time?: string | null
           id?: string
           image_alt?: string | null
           image_url?: string | null
           iso_date?: string | null
+          member_price?: number | null
+          non_member_price?: number | null
+          payment_options?: Json
           published?: boolean
           slug: string
           sort_order?: number
+          start_time?: string | null
           title: string
           updated_at?: string
           venue?: string
         }
         Update: {
           body_paragraphs?: string[]
+          booking_enabled?: boolean
           booking_url?: string | null
+          capacity?: number
           category?: string
           created_at?: string
           date_text?: string
           description?: string
+          end_time?: string | null
           id?: string
           image_alt?: string | null
           image_url?: string | null
           iso_date?: string | null
+          member_price?: number | null
+          non_member_price?: number | null
+          payment_options?: Json
           published?: boolean
           slug?: string
           sort_order?: number
+          start_time?: string | null
           title?: string
           updated_at?: string
           venue?: string
@@ -993,6 +1014,7 @@ export type Database = {
       workbooks_bookings: {
         Row: {
           amount: number | null
+          attended: boolean
           attendee_email: string | null
           attendee_name: string | null
           created_at: string
@@ -1003,6 +1025,7 @@ export type Database = {
           paid_at: string | null
           payment_provider: string | null
           payment_ref: string | null
+          places: number
           raw: Json | null
           status: string
           synced_at: string | null
@@ -1013,6 +1036,7 @@ export type Database = {
         }
         Insert: {
           amount?: number | null
+          attended?: boolean
           attendee_email?: string | null
           attendee_name?: string | null
           created_at?: string
@@ -1023,6 +1047,7 @@ export type Database = {
           paid_at?: string | null
           payment_provider?: string | null
           payment_ref?: string | null
+          places?: number
           raw?: Json | null
           status?: string
           synced_at?: string | null
@@ -1033,6 +1058,7 @@ export type Database = {
         }
         Update: {
           amount?: number | null
+          attended?: boolean
           attendee_email?: string | null
           attendee_name?: string | null
           created_at?: string
@@ -1043,6 +1069,7 @@ export type Database = {
           paid_at?: string | null
           payment_provider?: string | null
           payment_ref?: string | null
+          places?: number
           raw?: Json | null
           status?: string
           synced_at?: string | null
@@ -1141,8 +1168,10 @@ export type Database = {
       }
       workbooks_orgs: {
         Row: {
+          actual_turnover: number | null
           address_line1: string | null
           address_line2: string | null
+          bali_ncf: boolean
           banner_url: string | null
           category: string | null
           country: string | null
@@ -1153,27 +1182,40 @@ export type Database = {
           exclude_from_promotion: boolean | null
           id: string
           logo_url: string | null
+          member_id: string | null
+          membership_band: string | null
+          membership_contract_no: string | null
           membership_expires_at: string | null
+          membership_start_date: string | null
           name: string
           next_qsr_due: string | null
+          online_training: boolean
+          parent_org_wb_id: string | null
           phone: string | null
           postcode: string | null
           public_email: string | null
           raw: Json | null
           reg_number: string | null
           region: string | null
+          resignation_date: string | null
+          sage_account_ref: string | null
           socials: Json
           status: string | null
           synced_at: string
+          tmhfa_by_bali: boolean
+          tmhfa_in_position: boolean
           town: string | null
+          training_provider_org: string | null
           updated_at: string
           vat_number: string | null
           wb_id: string
           website: string | null
         }
         Insert: {
+          actual_turnover?: number | null
           address_line1?: string | null
           address_line2?: string | null
+          bali_ncf?: boolean
           banner_url?: string | null
           category?: string | null
           country?: string | null
@@ -1184,27 +1226,40 @@ export type Database = {
           exclude_from_promotion?: boolean | null
           id?: string
           logo_url?: string | null
+          member_id?: string | null
+          membership_band?: string | null
+          membership_contract_no?: string | null
           membership_expires_at?: string | null
+          membership_start_date?: string | null
           name: string
           next_qsr_due?: string | null
+          online_training?: boolean
+          parent_org_wb_id?: string | null
           phone?: string | null
           postcode?: string | null
           public_email?: string | null
           raw?: Json | null
           reg_number?: string | null
           region?: string | null
+          resignation_date?: string | null
+          sage_account_ref?: string | null
           socials?: Json
           status?: string | null
           synced_at?: string
+          tmhfa_by_bali?: boolean
+          tmhfa_in_position?: boolean
           town?: string | null
+          training_provider_org?: string | null
           updated_at?: string
           vat_number?: string | null
           wb_id: string
           website?: string | null
         }
         Update: {
+          actual_turnover?: number | null
           address_line1?: string | null
           address_line2?: string | null
+          bali_ncf?: boolean
           banner_url?: string | null
           category?: string | null
           country?: string | null
@@ -1215,19 +1270,30 @@ export type Database = {
           exclude_from_promotion?: boolean | null
           id?: string
           logo_url?: string | null
+          member_id?: string | null
+          membership_band?: string | null
+          membership_contract_no?: string | null
           membership_expires_at?: string | null
+          membership_start_date?: string | null
           name?: string
           next_qsr_due?: string | null
+          online_training?: boolean
+          parent_org_wb_id?: string | null
           phone?: string | null
           postcode?: string | null
           public_email?: string | null
           raw?: Json | null
           reg_number?: string | null
           region?: string | null
+          resignation_date?: string | null
+          sage_account_ref?: string | null
           socials?: Json
           status?: string | null
           synced_at?: string
+          tmhfa_by_bali?: boolean
+          tmhfa_in_position?: boolean
           town?: string | null
+          training_provider_org?: string | null
           updated_at?: string
           vat_number?: string | null
           wb_id?: string
