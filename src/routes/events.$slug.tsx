@@ -130,3 +130,15 @@ function EventPage() {
     </div>
   );
 }
+
+function PriceCard({ label, value }: { label: string; value: number | null | undefined }) {
+  const txt = value == null ? "TBC" : value === 0 ? "Free" :
+    new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" }).format(Number(value));
+  return (
+    <div className="rounded-xl border border-gray-200 bg-white p-4">
+      <div className="text-xs uppercase tracking-widest font-semibold text-gray-500">{label}</div>
+      <div className="mt-1 text-2xl font-extrabold text-bali-slate">{txt}</div>
+      <div className="text-xs text-gray-500 mt-0.5">inc. VAT</div>
+    </div>
+  );
+}
