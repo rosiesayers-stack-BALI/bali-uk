@@ -6,7 +6,7 @@ import CookieBanner from "../components/CookieBanner";
 import Link from "../components/SmartLink";
 import { fetchEventBySlug, fetchEventsList, subscribeTable } from "../lib/content/db";
 
-export const Route = createFileRoute("/events/$slug")({
+export const Route = createFileRoute("/events/$slug/")({
   loader: async ({ params }) => {
     const [event, all] = await Promise.all([fetchEventBySlug(params.slug), fetchEventsList()]);
     if (!event) throw notFound();
