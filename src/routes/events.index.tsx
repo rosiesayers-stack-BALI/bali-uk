@@ -7,6 +7,7 @@ import CookieBanner from "../components/CookieBanner";
 import Link from "../components/SmartLink";
 import AdBanner from "../components/ads/AdBanner";
 import SponsoredCard from "../components/ads/SponsoredCard";
+import EventBookingModal, { isSoldOut, spacesLeft } from "../components/events/EventBookingModal";
 import { fetchAllEventsList, subscribeTable, type EventRow } from "../lib/content/db";
 
 export const Route = createFileRoute("/events/")({
