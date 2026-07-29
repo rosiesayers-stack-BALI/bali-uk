@@ -140,6 +140,12 @@ function EventPage() {
           </div>
         </div>
       </article>
+      <EventBookingModal
+        event={event}
+        open={bookingOpen}
+        onClose={() => setBookingOpen(false)}
+        onBooked={() => router.invalidate()}
+      />
       <Footer />
       <CookieBanner />
     </div>
