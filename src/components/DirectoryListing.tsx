@@ -1,6 +1,11 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { MEMBERS, REGIONS, CATEGORY_LABEL, type Member, type MemberCategory } from "../lib/directory/members";
+import { REGIONS, CATEGORY_LABEL, type MemberCategory } from "../lib/directory/members";
+import {
+  listDirectoryCompanies,
+  staticCompanies,
+  type DirectoryCompany,
+} from "../lib/directory/public-profiles";
 import { FEATURED_MEMBERS } from "../lib/ads/slots";
 import SponsoredCard from "./ads/SponsoredCard";
 
@@ -16,10 +21,24 @@ export default function DirectoryListing({ initialCategory = "all", lockCategory
   const [query, setQuery] = useState("");
   const [region, setRegion] = useState<string>("all");
   const [category, setCategory] = useState<MemberCategory | "all">(initialCategory);
+  // Live member listings from the database, merged with the static demo set.
+  const [dbCompanies, setDbCompanies] = useState<DirectoryCompany[]>([]);
+
+  useEffect(() => {
+    let alive = true;
+    listDirectoryCompanies()
+      .then((rows) => alive && setDbCompanies(rows))
+      .catch(() => undefined);
+    return () => {
+      alive = false;
+    };
+  }, []);
+
+  const all = useMemo(() => [...dbCompanies, ...staticCompanies()], [dbCompanies]);
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
-    const filtered = MEMBERS.filter((m: Member) => {
+    const filtered = all.filter((m) => {
       if (category !== "all" && m.category !== category) return false;
       if (region !== "all" && m.region !== region) return false;
       if (q && !(`${m.name} ${m.specialism} ${m.description}`.toLowerCase().includes(q))) return false;
@@ -31,7 +50,8 @@ export default function DirectoryListing({ initialCategory = "all", lockCategory
       const bf = FEATURED_BY_ID.has(b.id) ? 1 : 0;
       return bf - af;
     });
-  }, [query, region, category]);
+  }, [query, region, category, all]);
+
 
   return (
     <section className="max-w-7xl mx-auto px-6 py-12">
