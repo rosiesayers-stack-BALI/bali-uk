@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { X, Calendar as CalendarIcon, MapPin, Clock, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
 import { useServerFn } from "@tanstack/react-start";
 import type { EventRow } from "../../lib/content/db";
@@ -76,7 +77,10 @@ export default function EventBookingModal({
     return () => clearTimeout(t);
   }, [state, onClose]);
 
-  if (!open) return null;
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  if (!open || !mounted) return null;
 
   function validate(): Errors {
     const e: Errors = {};
@@ -138,7 +142,7 @@ export default function EventBookingModal({
 
   const heading = `Book your place — ${event.title}`;
 
-  return (
+  return createPortal(
     <div className="fixed inset-0 z-[100] flex items-start sm:items-center justify-center p-0 sm:p-6 overflow-y-auto">
       <div className="fixed inset-0 bg-black/60" onClick={onClose} aria-hidden />
       <div
@@ -342,7 +346,8 @@ export default function EventBookingModal({
           )}
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
 
