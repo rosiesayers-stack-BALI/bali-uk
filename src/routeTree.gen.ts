@@ -140,6 +140,7 @@ import { Route as HelpDisputeMemberInformationRouteImport } from './routes/help.
 import { Route as HelpDisputeFrequentlyAskedQuestionsRouteImport } from './routes/help.dispute.frequently-asked-questions'
 import { Route as HelpDisputeClientInformationRouteImport } from './routes/help.dispute.client-information'
 import { Route as EventsSlugBookRouteImport } from './routes/events.$slug.book'
+import { Route as DirectoryCompanySlugRouteImport } from './routes/directory.company.$slug'
 import { Route as ApiPublicMembershipEnquiryRouteImport } from './routes/api/public/membership-enquiry'
 import { Route as ApiPublicMembershipApplicationRouteImport } from './routes/api/public/membership-application'
 import { Route as ApiPublicConferenceInterestRouteImport } from './routes/api/public/conference-interest'
@@ -849,6 +850,11 @@ const EventsSlugBookRoute = EventsSlugBookRouteImport.update({
   path: '/events/$slug/book',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DirectoryCompanySlugRoute = DirectoryCompanySlugRouteImport.update({
+  id: '/directory/company/$slug',
+  path: '/directory/company/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiPublicMembershipEnquiryRoute =
   ApiPublicMembershipEnquiryRouteImport.update({
     id: '/api/public/membership-enquiry',
@@ -1013,6 +1019,7 @@ export interface FileRoutesByFullPath {
   '/api/public/conference-interest': typeof ApiPublicConferenceInterestRoute
   '/api/public/membership-application': typeof ApiPublicMembershipApplicationRoute
   '/api/public/membership-enquiry': typeof ApiPublicMembershipEnquiryRoute
+  '/directory/company/$slug': typeof DirectoryCompanySlugRoute
   '/events/$slug/book': typeof EventsSlugBookRoute
   '/help/dispute/client-information': typeof HelpDisputeClientInformationRoute
   '/help/dispute/frequently-asked-questions': typeof HelpDisputeFrequentlyAskedQuestionsRoute
@@ -1160,6 +1167,7 @@ export interface FileRoutesByTo {
   '/api/public/conference-interest': typeof ApiPublicConferenceInterestRoute
   '/api/public/membership-application': typeof ApiPublicMembershipApplicationRoute
   '/api/public/membership-enquiry': typeof ApiPublicMembershipEnquiryRoute
+  '/directory/company/$slug': typeof DirectoryCompanySlugRoute
   '/events/$slug/book': typeof EventsSlugBookRoute
   '/help/dispute/client-information': typeof HelpDisputeClientInformationRoute
   '/help/dispute/frequently-asked-questions': typeof HelpDisputeFrequentlyAskedQuestionsRoute
@@ -1311,6 +1319,7 @@ export interface FileRoutesById {
   '/api/public/conference-interest': typeof ApiPublicConferenceInterestRoute
   '/api/public/membership-application': typeof ApiPublicMembershipApplicationRoute
   '/api/public/membership-enquiry': typeof ApiPublicMembershipEnquiryRoute
+  '/directory/company/$slug': typeof DirectoryCompanySlugRoute
   '/events/$slug/book': typeof EventsSlugBookRoute
   '/help/dispute/client-information': typeof HelpDisputeClientInformationRoute
   '/help/dispute/frequently-asked-questions': typeof HelpDisputeFrequentlyAskedQuestionsRoute
@@ -1463,6 +1472,7 @@ export interface FileRouteTypes {
     | '/api/public/conference-interest'
     | '/api/public/membership-application'
     | '/api/public/membership-enquiry'
+    | '/directory/company/$slug'
     | '/events/$slug/book'
     | '/help/dispute/client-information'
     | '/help/dispute/frequently-asked-questions'
@@ -1610,6 +1620,7 @@ export interface FileRouteTypes {
     | '/api/public/conference-interest'
     | '/api/public/membership-application'
     | '/api/public/membership-enquiry'
+    | '/directory/company/$slug'
     | '/events/$slug/book'
     | '/help/dispute/client-information'
     | '/help/dispute/frequently-asked-questions'
@@ -1760,6 +1771,7 @@ export interface FileRouteTypes {
     | '/api/public/conference-interest'
     | '/api/public/membership-application'
     | '/api/public/membership-enquiry'
+    | '/directory/company/$slug'
     | '/events/$slug/book'
     | '/help/dispute/client-information'
     | '/help/dispute/frequently-asked-questions'
@@ -1889,6 +1901,7 @@ export interface RootRouteChildren {
   ApiPublicConferenceInterestRoute: typeof ApiPublicConferenceInterestRoute
   ApiPublicMembershipApplicationRoute: typeof ApiPublicMembershipApplicationRoute
   ApiPublicMembershipEnquiryRoute: typeof ApiPublicMembershipEnquiryRoute
+  DirectoryCompanySlugRoute: typeof DirectoryCompanySlugRoute
   EventsSlugBookRoute: typeof EventsSlugBookRoute
   HelpMediaSlugRoute: typeof HelpMediaSlugRoute
   JoinCategoryApplyRoute: typeof JoinCategoryApplyRoute
@@ -2820,6 +2833,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EventsSlugBookRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/directory/company/$slug': {
+      id: '/directory/company/$slug'
+      path: '/directory/company/$slug'
+      fullPath: '/directory/company/$slug'
+      preLoaderRoute: typeof DirectoryCompanySlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/public/membership-enquiry': {
       id: '/api/public/membership-enquiry'
       path: '/api/public/membership-enquiry'
@@ -3276,6 +3296,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiPublicConferenceInterestRoute: ApiPublicConferenceInterestRoute,
   ApiPublicMembershipApplicationRoute: ApiPublicMembershipApplicationRoute,
   ApiPublicMembershipEnquiryRoute: ApiPublicMembershipEnquiryRoute,
+  DirectoryCompanySlugRoute: DirectoryCompanySlugRoute,
   EventsSlugBookRoute: EventsSlugBookRoute,
   HelpMediaSlugRoute: HelpMediaSlugRoute,
   JoinCategoryApplyRoute: JoinCategoryApplyRoute,
@@ -3290,13 +3311,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
