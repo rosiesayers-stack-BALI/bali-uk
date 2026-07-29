@@ -48,6 +48,8 @@ export type EventRow = {
   end_time?: string | null;
   booking_enabled?: boolean;
   capacity?: number;
+  /** Remaining places; null/undefined when capacity is 0 (unlimited). */
+  spaces_remaining?: number | null;
   payment_options?: { card?: boolean; invoice?: boolean } | null;
 };
 
