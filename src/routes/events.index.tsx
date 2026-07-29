@@ -422,19 +422,32 @@ function EventCard({ event }: { event: EventRow }) {
             <MapPin className="w-3.5 h-3.5 shrink-0" aria-hidden />
             <span className="truncate">{event.venue}</span>
           </span>
-          {/* TODO: replace with real availability data from CMS */}
-          <span className="text-[11px] font-semibold text-bali-grass whitespace-nowrap">Places available</span>
+          <span className={`text-[11px] font-semibold whitespace-nowrap ${soldOut ? "text-red-600" : "text-bali-grass"}`}>
+            {soldOut ? "Sold out" : left !== null ? `${left} place${left === 1 ? "" : "s"} left` : "Places available"}
+          </span>
         </div>
         {!past && (
-          <Link
-            to="/events/$slug/book"
-            params={{ slug: event.slug }}
-            className="mt-4 inline-flex items-center justify-center gap-2 bg-bali-blue hover:bg-bali-purple text-white font-semibold text-sm px-4 py-2.5 rounded-lg transition"
-          >
-            Book now
-          </Link>
+          soldOut ? (
+            <button
+              type="button"
+              disabled
+              aria-disabled="true"
+              className="mt-4 inline-flex items-center justify-center gap-2 bg-gray-200 text-gray-500 font-semibold text-sm px-4 py-2.5 rounded-lg cursor-not-allowed"
+            >
+              Sold Out
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={() => setOpen(true)}
+              className="mt-4 inline-flex items-center justify-center gap-2 bg-bali-blue hover:bg-bali-purple text-white font-semibold text-sm px-4 py-2.5 rounded-lg transition"
+            >
+              Book Now
+            </button>
+          )
         )}
       </div>
+      <EventBookingModal event={event} open={open} onClose={() => setOpen(false)} onBooked={() => router.invalidate()} />
     </article>
   );
 }
