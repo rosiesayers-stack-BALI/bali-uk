@@ -37,6 +37,7 @@ import { Route as MyBaliProfileRouteImport } from './routes/my-bali.profile'
 import { Route as MyBaliNewsRouteImport } from './routes/my-bali.news'
 import { Route as MyBaliEventsRouteImport } from './routes/my-bali.events'
 import { Route as MyBaliEmailPreferencesRouteImport } from './routes/my-bali.email-preferences'
+import { Route as MyBaliDocumentsRouteImport } from './routes/my-bali.documents'
 import { Route as MyBaliContentRouteImport } from './routes/my-bali.content'
 import { Route as MyBaliBenefitsRouteImport } from './routes/my-bali.benefits'
 import { Route as MembershipHardshipFundRouteImport } from './routes/membership.hardship-fund'
@@ -296,6 +297,11 @@ const MyBaliEventsRoute = MyBaliEventsRouteImport.update({
 const MyBaliEmailPreferencesRoute = MyBaliEmailPreferencesRouteImport.update({
   id: '/email-preferences',
   path: '/email-preferences',
+  getParentRoute: () => MyBaliRoute,
+} as any)
+const MyBaliDocumentsRoute = MyBaliDocumentsRouteImport.update({
+  id: '/documents',
+  path: '/documents',
   getParentRoute: () => MyBaliRoute,
 } as any)
 const MyBaliContentRoute = MyBaliContentRouteImport.update({
@@ -975,6 +981,7 @@ export interface FileRoutesByFullPath {
   '/membership/hardship-fund': typeof MembershipHardshipFundRoute
   '/my-bali/benefits': typeof MyBaliBenefitsRoute
   '/my-bali/content': typeof MyBaliContentRoute
+  '/my-bali/documents': typeof MyBaliDocumentsRoute
   '/my-bali/email-preferences': typeof MyBaliEmailPreferencesRoute
   '/my-bali/events': typeof MyBaliEventsRoute
   '/my-bali/news': typeof MyBaliNewsRoute
@@ -1122,6 +1129,7 @@ export interface FileRoutesByTo {
   '/membership/hardship-fund': typeof MembershipHardshipFundRoute
   '/my-bali/benefits': typeof MyBaliBenefitsRoute
   '/my-bali/content': typeof MyBaliContentRoute
+  '/my-bali/documents': typeof MyBaliDocumentsRoute
   '/my-bali/email-preferences': typeof MyBaliEmailPreferencesRoute
   '/my-bali/events': typeof MyBaliEventsRoute
   '/my-bali/news': typeof MyBaliNewsRoute
@@ -1271,6 +1279,7 @@ export interface FileRoutesById {
   '/membership/hardship-fund': typeof MembershipHardshipFundRoute
   '/my-bali/benefits': typeof MyBaliBenefitsRoute
   '/my-bali/content': typeof MyBaliContentRoute
+  '/my-bali/documents': typeof MyBaliDocumentsRoute
   '/my-bali/email-preferences': typeof MyBaliEmailPreferencesRoute
   '/my-bali/events': typeof MyBaliEventsRoute
   '/my-bali/news': typeof MyBaliNewsRoute
@@ -1422,6 +1431,7 @@ export interface FileRouteTypes {
     | '/membership/hardship-fund'
     | '/my-bali/benefits'
     | '/my-bali/content'
+    | '/my-bali/documents'
     | '/my-bali/email-preferences'
     | '/my-bali/events'
     | '/my-bali/news'
@@ -1569,6 +1579,7 @@ export interface FileRouteTypes {
     | '/membership/hardship-fund'
     | '/my-bali/benefits'
     | '/my-bali/content'
+    | '/my-bali/documents'
     | '/my-bali/email-preferences'
     | '/my-bali/events'
     | '/my-bali/news'
@@ -1717,6 +1728,7 @@ export interface FileRouteTypes {
     | '/membership/hardship-fund'
     | '/my-bali/benefits'
     | '/my-bali/content'
+    | '/my-bali/documents'
     | '/my-bali/email-preferences'
     | '/my-bali/events'
     | '/my-bali/news'
@@ -2085,6 +2097,13 @@ declare module '@tanstack/react-router' {
       path: '/email-preferences'
       fullPath: '/my-bali/email-preferences'
       preLoaderRoute: typeof MyBaliEmailPreferencesRouteImport
+      parentRoute: typeof MyBaliRoute
+    }
+    '/my-bali/documents': {
+      id: '/my-bali/documents'
+      path: '/documents'
+      fullPath: '/my-bali/documents'
+      preLoaderRoute: typeof MyBaliDocumentsRouteImport
       parentRoute: typeof MyBaliRoute
     }
     '/my-bali/content': {
@@ -3002,6 +3021,7 @@ const MyBaliProfileRouteWithChildren = MyBaliProfileRoute._addFileChildren(
 interface MyBaliRouteChildren {
   MyBaliBenefitsRoute: typeof MyBaliBenefitsRoute
   MyBaliContentRoute: typeof MyBaliContentRoute
+  MyBaliDocumentsRoute: typeof MyBaliDocumentsRoute
   MyBaliEmailPreferencesRoute: typeof MyBaliEmailPreferencesRoute
   MyBaliEventsRoute: typeof MyBaliEventsRoute
   MyBaliNewsRoute: typeof MyBaliNewsRoute
@@ -3015,6 +3035,7 @@ interface MyBaliRouteChildren {
 const MyBaliRouteChildren: MyBaliRouteChildren = {
   MyBaliBenefitsRoute: MyBaliBenefitsRoute,
   MyBaliContentRoute: MyBaliContentRoute,
+  MyBaliDocumentsRoute: MyBaliDocumentsRoute,
   MyBaliEmailPreferencesRoute: MyBaliEmailPreferencesRoute,
   MyBaliEventsRoute: MyBaliEventsRoute,
   MyBaliNewsRoute: MyBaliNewsRoute,
@@ -3269,13 +3290,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
