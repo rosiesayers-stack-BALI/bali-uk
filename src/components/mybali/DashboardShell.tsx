@@ -30,6 +30,7 @@ const NAV = [
   { to: "/my-bali/benefits", label: "My benefits", icon: Gift },
   { to: "/my-bali/resources", label: "My resources", icon: FolderOpen },
   { to: "/my-bali/technical-documents", label: "Technical documents", icon: FileText },
+  { to: "/my-bali/documents", label: "Documents & Resources", icon: FolderOpen },
   { to: "/my-bali/content", label: "My content", icon: Newspaper },
   { to: "/my-bali/email-preferences", label: "Email preferences", icon: Mail },
 ] as const;
