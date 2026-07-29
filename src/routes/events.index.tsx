@@ -363,6 +363,8 @@ function EventsIndex() {
 // ---- cards --------------------------------------------------------------
 
 function EventCard({ event }: { event: EventRow }) {
+  const router = useRouter();
+  const [open, setOpen] = useState(false);
   const t = effectiveType(event);
   const parts = event.date_text.split(" ");
   const day = parts[0] ?? event.date_text;
@@ -373,6 +375,9 @@ function EventCard({ event }: { event: EventRow }) {
   // primaryTag = region for generic regional events, else the event type.
   const past = isPast(event);
   const booking = event.booking_url;
+  const left = spacesLeft(event);
+  const soldOut = isSoldOut(event);
+
 
   return (
     <article className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-bali-blue hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col">
