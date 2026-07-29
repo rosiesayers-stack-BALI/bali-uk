@@ -98,8 +98,19 @@ function EventPage() {
                 <PriceCard label="Member price" value={event.member_price} />
                 <PriceCard label="Non-member price" value={event.non_member_price ?? event.nonmember_price} />
               </div>
-              <p className="text-xs text-gray-500 mb-4">Prices inc. VAT. Sign in to /my-bali to get the member rate automatically.</p>
-              <Link to="/events/$slug/book" params={{ slug: event.slug }} className="inline-block bg-bali-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-bali-purple transition-colors">Book now →</Link>
+              <p className="text-xs text-gray-500 mb-4">
+                Prices inc. VAT. Member rates apply automatically when you select your membership tier.
+                {left !== null && <> {" "}<span className="font-semibold text-bali-grass">{left} space{left === 1 ? "" : "s"} remaining.</span></>}
+              </p>
+              {soldOut ? (
+                <button type="button" disabled aria-disabled="true" className="inline-block bg-gray-300 text-gray-600 px-6 py-3 rounded-lg font-semibold cursor-not-allowed">
+                  Sold Out
+                </button>
+              ) : (
+                <button type="button" onClick={() => setBookingOpen(true)} className="inline-block bg-bali-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-bali-purple transition-colors">
+                  Book Now →
+                </button>
+              )}
             </div>
           ) : (
             <div className="mt-10 p-6 rounded-2xl bg-gray-50 border border-gray-200 text-sm text-gray-600">
