@@ -1,0 +1,1 @@
+REVOKE ALL ON FUNCTION public.decrement_event_spaces() FROM PUBLIC, anon, authenticated;

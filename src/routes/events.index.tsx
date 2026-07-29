@@ -7,6 +7,7 @@ import CookieBanner from "../components/CookieBanner";
 import Link from "../components/SmartLink";
 import AdBanner from "../components/ads/AdBanner";
 import SponsoredCard from "../components/ads/SponsoredCard";
+import EventBookingModal, { isSoldOut, spacesLeft } from "../components/events/EventBookingModal";
 import { fetchAllEventsList, subscribeTable, type EventRow } from "../lib/content/db";
 
 export const Route = createFileRoute("/events/")({
@@ -363,6 +364,8 @@ function EventsIndex() {
 // ---- cards --------------------------------------------------------------
 
 function EventCard({ event }: { event: EventRow }) {
+  const router = useRouter();
+  const [open, setOpen] = useState(false);
   const t = effectiveType(event);
   const parts = event.date_text.split(" ");
   const day = parts[0] ?? event.date_text;
@@ -373,6 +376,9 @@ function EventCard({ event }: { event: EventRow }) {
   // primaryTag = region for generic regional events, else the event type.
   const past = isPast(event);
   const booking = event.booking_url;
+  const left = spacesLeft(event);
+  const soldOut = isSoldOut(event);
+
 
   return (
     <article className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-bali-blue hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col">
@@ -422,25 +428,40 @@ function EventCard({ event }: { event: EventRow }) {
             <MapPin className="w-3.5 h-3.5 shrink-0" aria-hidden />
             <span className="truncate">{event.venue}</span>
           </span>
-          {/* TODO: replace with real availability data from CMS */}
-          <span className="text-[11px] font-semibold text-bali-grass whitespace-nowrap">Places available</span>
+          <span className={`text-[11px] font-semibold whitespace-nowrap ${soldOut ? "text-red-600" : "text-bali-grass"}`}>
+            {soldOut ? "Sold out" : left !== null ? `${left} place${left === 1 ? "" : "s"} left` : "Places available"}
+          </span>
         </div>
         {!past && (
-          <Link
-            to="/events/$slug/book"
-            params={{ slug: event.slug }}
-            className="mt-4 inline-flex items-center justify-center gap-2 bg-bali-blue hover:bg-bali-purple text-white font-semibold text-sm px-4 py-2.5 rounded-lg transition"
-          >
-            Book now
-          </Link>
+          soldOut ? (
+            <button
+              type="button"
+              disabled
+              aria-disabled="true"
+              className="mt-4 inline-flex items-center justify-center gap-2 bg-gray-200 text-gray-500 font-semibold text-sm px-4 py-2.5 rounded-lg cursor-not-allowed"
+            >
+              Sold Out
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={() => setOpen(true)}
+              className="mt-4 inline-flex items-center justify-center gap-2 bg-bali-blue hover:bg-bali-purple text-white font-semibold text-sm px-4 py-2.5 rounded-lg transition"
+            >
+              Book Now
+            </button>
+          )
         )}
       </div>
+      <EventBookingModal event={event} open={open} onClose={() => setOpen(false)} onBooked={() => router.invalidate()} />
     </article>
   );
 }
 
 function WebinarCard({ event }: { event: EventRow }) {
-  const booking = event.booking_url;
+  const router = useRouter();
+  const [open, setOpen] = useState(false);
+  const soldOut = isSoldOut(event);
   const dateLong = event.iso_date
     ? new Date(event.iso_date + "T00:00:00").toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" })
     : event.date_text;
@@ -456,18 +477,28 @@ function WebinarCard({ event }: { event: EventRow }) {
         <p className="mt-3 text-sm text-gray-700 font-semibold inline-flex items-center gap-2">
           <CalendarIcon className="w-4 h-4 text-bali-purple" aria-hidden />
           {dateLong}
-          {/* TODO: surface real start time from CMS */}
-          <span className="text-gray-500 font-normal">· Time TBC</span>
+          {event.start_time ? (
+            <span className="text-gray-500 font-normal">· {event.start_time}{event.end_time ? `–${event.end_time}` : ""}</span>
+          ) : (
+            <span className="text-gray-500 font-normal">· Time TBC</span>
+          )}
         </p>
         {event.description && <p className="text-sm text-gray-600 mt-3 line-clamp-3 flex-1">{event.description}</p>}
-        <Link
-          to="/events/$slug/book"
-          params={{ slug: event.slug }}
-          className="mt-5 inline-flex items-center justify-center gap-2 bg-bali-purple hover:bg-bali-blue text-white font-semibold text-sm px-4 py-2.5 rounded-lg transition"
-        >
-          Reserve your spot
-        </Link>
+        {soldOut ? (
+          <button type="button" disabled aria-disabled="true" className="mt-5 inline-flex items-center justify-center gap-2 bg-gray-200 text-gray-500 font-semibold text-sm px-4 py-2.5 rounded-lg cursor-not-allowed">
+            Sold Out
+          </button>
+        ) : (
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            className="mt-5 inline-flex items-center justify-center gap-2 bg-bali-purple hover:bg-bali-blue text-white font-semibold text-sm px-4 py-2.5 rounded-lg transition"
+          >
+            Reserve your spot
+          </button>
+        )}
       </div>
+      <EventBookingModal event={event} open={open} onClose={() => setOpen(false)} onBooked={() => router.invalidate()} />
     </article>
   );
 }
