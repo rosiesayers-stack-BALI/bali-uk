@@ -1,9 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { createFileRoute, notFound, useRouter } from "@tanstack/react-router";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CookieBanner from "../components/CookieBanner";
 import Link from "../components/SmartLink";
+import EventBookingModal, { isSoldOut, spacesLeft } from "../components/events/EventBookingModal";
 import { fetchEventBySlug, fetchEventsList, subscribeTable } from "../lib/content/db";
 
 export const Route = createFileRoute("/events/$slug/")({
