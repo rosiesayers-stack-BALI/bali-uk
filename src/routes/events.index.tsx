@@ -459,7 +459,9 @@ function EventCard({ event }: { event: EventRow }) {
 }
 
 function WebinarCard({ event }: { event: EventRow }) {
-  const booking = event.booking_url;
+  const router = useRouter();
+  const [open, setOpen] = useState(false);
+  const soldOut = isSoldOut(event);
   const dateLong = event.iso_date
     ? new Date(event.iso_date + "T00:00:00").toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" })
     : event.date_text;
@@ -475,18 +477,28 @@ function WebinarCard({ event }: { event: EventRow }) {
         <p className="mt-3 text-sm text-gray-700 font-semibold inline-flex items-center gap-2">
           <CalendarIcon className="w-4 h-4 text-bali-purple" aria-hidden />
           {dateLong}
-          {/* TODO: surface real start time from CMS */}
-          <span className="text-gray-500 font-normal">· Time TBC</span>
+          {event.start_time ? (
+            <span className="text-gray-500 font-normal">· {event.start_time}{event.end_time ? `–${event.end_time}` : ""}</span>
+          ) : (
+            <span className="text-gray-500 font-normal">· Time TBC</span>
+          )}
         </p>
         {event.description && <p className="text-sm text-gray-600 mt-3 line-clamp-3 flex-1">{event.description}</p>}
-        <Link
-          to="/events/$slug/book"
-          params={{ slug: event.slug }}
-          className="mt-5 inline-flex items-center justify-center gap-2 bg-bali-purple hover:bg-bali-blue text-white font-semibold text-sm px-4 py-2.5 rounded-lg transition"
-        >
-          Reserve your spot
-        </Link>
+        {soldOut ? (
+          <button type="button" disabled aria-disabled="true" className="mt-5 inline-flex items-center justify-center gap-2 bg-gray-200 text-gray-500 font-semibold text-sm px-4 py-2.5 rounded-lg cursor-not-allowed">
+            Sold Out
+          </button>
+        ) : (
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            className="mt-5 inline-flex items-center justify-center gap-2 bg-bali-purple hover:bg-bali-blue text-white font-semibold text-sm px-4 py-2.5 rounded-lg transition"
+          >
+            Reserve your spot
+          </button>
+        )}
       </div>
+      <EventBookingModal event={event} open={open} onClose={() => setOpen(false)} onBooked={() => router.invalidate()} />
     </article>
   );
 }
