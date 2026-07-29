@@ -337,6 +337,7 @@ export type Database = {
           published: boolean
           slug: string
           sort_order: number
+          spaces_remaining: number | null
           start_time: string | null
           title: string
           updated_at: string
@@ -362,6 +363,7 @@ export type Database = {
           published?: boolean
           slug: string
           sort_order?: number
+          spaces_remaining?: number | null
           start_time?: string | null
           title: string
           updated_at?: string
@@ -387,6 +389,7 @@ export type Database = {
           published?: boolean
           slug?: string
           sort_order?: number
+          spaces_remaining?: number | null
           start_time?: string | null
           title?: string
           updated_at?: string
@@ -1017,10 +1020,13 @@ export type Database = {
           attended: boolean
           attendee_email: string | null
           attendee_name: string | null
+          company: string | null
           created_at: string
+          dietary_requirements: string | null
           event_id: string | null
           event_slug: string | null
           id: string
+          membership_tier: string | null
           notes: string | null
           paid_at: string | null
           payment_provider: string | null
@@ -1029,6 +1035,7 @@ export type Database = {
           raw: Json | null
           status: string
           synced_at: string | null
+          terms_accepted: boolean
           updated_at: string
           wb_id: string | null
           wb_org_id: string | null
@@ -1039,10 +1046,13 @@ export type Database = {
           attended?: boolean
           attendee_email?: string | null
           attendee_name?: string | null
+          company?: string | null
           created_at?: string
+          dietary_requirements?: string | null
           event_id?: string | null
           event_slug?: string | null
           id?: string
+          membership_tier?: string | null
           notes?: string | null
           paid_at?: string | null
           payment_provider?: string | null
@@ -1051,6 +1061,7 @@ export type Database = {
           raw?: Json | null
           status?: string
           synced_at?: string | null
+          terms_accepted?: boolean
           updated_at?: string
           wb_id?: string | null
           wb_org_id?: string | null
@@ -1061,10 +1072,13 @@ export type Database = {
           attended?: boolean
           attendee_email?: string | null
           attendee_name?: string | null
+          company?: string | null
           created_at?: string
+          dietary_requirements?: string | null
           event_id?: string | null
           event_slug?: string | null
           id?: string
+          membership_tier?: string | null
           notes?: string | null
           paid_at?: string | null
           payment_provider?: string | null
@@ -1073,6 +1087,7 @@ export type Database = {
           raw?: Json | null
           status?: string
           synced_at?: string | null
+          terms_accepted?: boolean
           updated_at?: string
           wb_id?: string | null
           wb_org_id?: string | null
