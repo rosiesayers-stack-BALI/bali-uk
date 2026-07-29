@@ -54,6 +54,9 @@ export const Route = createFileRoute("/events/$slug/")({
 function EventPage() {
   const { event, prev, next } = Route.useLoaderData();
   const router = useRouter();
+  const [bookingOpen, setBookingOpen] = useState(false);
+  const left = spacesLeft(event);
+  const soldOut = isSoldOut(event);
   useEffect(() => {
     router.invalidate();
     return subscribeTable("events", () => router.invalidate());
