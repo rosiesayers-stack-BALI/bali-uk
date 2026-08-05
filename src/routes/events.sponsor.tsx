@@ -50,7 +50,7 @@ function SponsorPage() {
             </h2>
             <p className="text-gray-700 leading-relaxed text-lg">
               To register your interest in sponsoring a BALI event, please email{" "}
-              <a href="mailto:joanna.pieprzak@bali.org.uk" className="text-bali-warm font-semibold hover:underline">
+              <a href="mailto:joanna.pieprzak@bali.org.uk" className="text-bali-warm-ink font-semibold hover:underline">
                 joanna.pieprzak@bali.org.uk
               </a>{" "}
               and a member of the team will be in touch.

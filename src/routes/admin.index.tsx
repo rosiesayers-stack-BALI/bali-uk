@@ -59,11 +59,11 @@ function AdminDashboard() {
 
   const tiles = [
     { label: "Active members", value: totalMembers, icon: Users, colour: "bg-blue-50 text-bali-blue", to: "/admin/people" },
-    { label: "Active organisations", value: totalOrgs, icon: Building2, colour: "bg-emerald-50 text-bali-green", to: "/admin/organisations" },
+    { label: "Active organisations", value: totalOrgs, icon: Building2, colour: "bg-emerald-50 text-bali-leaf-ink", to: "/admin/organisations" },
     { label: "New enquiries (30d)", value: newEnquiries, icon: TrendingUp, colour: "bg-amber-50 text-amber-700", to: "/admin/applications" },
     { label: "Awaiting application", value: awaitingApplication, icon: ClipboardList, colour: "bg-purple-50 text-purple-700", to: "/admin/applications" },
     { label: "Awaiting fee", value: awaitingFee, icon: Clock, colour: "bg-orange-50 text-orange-700", to: "/admin/applications" },
-    { label: "Active this month", value: activeThisMonth, icon: Clock, colour: "bg-emerald-50 text-bali-green", to: "/admin/applications" },
+    { label: "Active this month", value: activeThisMonth, icon: Clock, colour: "bg-emerald-50 text-bali-leaf-ink", to: "/admin/applications" },
   ];
 
   const contentCards = [
@@ -102,7 +102,7 @@ function AdminDashboard() {
               <ul className="divide-y divide-gray-100">
                 {recent.map((r) => (
                   <li key={`${r.app.id}-${r.id}`} className="py-3 flex items-start gap-3">
-                    <div className="w-8 h-8 rounded-full bg-emerald-100 text-bali-green flex items-center justify-center text-xs font-bold flex-shrink-0">
+                    <div className="w-8 h-8 rounded-full bg-emerald-100 text-bali-leaf-ink flex items-center justify-center text-xs font-bold flex-shrink-0">
                       {r.app.applicantName.split(" ").map((n) => n[0]).join("").slice(0, 2)}
                     </div>
                     <div className="min-w-0 flex-1">

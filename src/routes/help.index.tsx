@@ -93,7 +93,7 @@ function HelpHub() {
           {GROUPS.map((g) => (
             <div key={g.title}>
               <div className="flex items-baseline gap-4 mb-2">
-                <span className="text-bali-green font-bold tracking-widest text-sm">{g.eyebrow}</span>
+                <span className="text-bali-leaf-ink font-bold tracking-widest text-sm">{g.eyebrow}</span>
                 <h2 className="font-bold text-2xl md:text-3xl text-bali-blue">{g.title}</h2>
               </div>
               <p className="text-slate-600 max-w-3xl mb-6 leading-relaxed">{g.lede}</p>
@@ -105,13 +105,13 @@ function HelpHub() {
                     className="group p-6 bg-white border border-slate-200 rounded-2xl hover:border-bali-green hover:shadow-lg transition-all flex flex-col"
                   >
                     <div className="flex items-start justify-between gap-3 mb-2">
-                      <h3 className="font-bold text-lg text-slate-900 group-hover:text-bali-green transition-colors">{t.title}</h3>
-                      {t.members && <span className="text-[10px] uppercase tracking-wider font-bold text-bali-green border border-bali-green/40 bg-bali-green/5 rounded-full px-2 py-1 whitespace-nowrap">Members</span>}
+                      <h3 className="font-bold text-lg text-slate-900 group-hover:text-bali-leaf-ink transition-colors">{t.title}</h3>
+                      {t.members && <span className="text-[10px] uppercase tracking-wider font-bold text-bali-leaf-ink border border-bali-green/40 bg-bali-green/5 rounded-full px-2 py-1 whitespace-nowrap">Members</span>}
                     </div>
                     <p className="text-sm text-slate-600 leading-relaxed flex-1">{t.desc}</p>
                     <div className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
-                      <span className="text-bali-green font-bold text-sm">Open section</span>
-                      <svg className="w-5 h-5 text-bali-green group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                      <span className="text-bali-leaf-ink font-bold text-sm">Open section</span>
+                      <svg className="w-5 h-5 text-bali-leaf-ink group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                     </div>
                   </Link>
                 ))}

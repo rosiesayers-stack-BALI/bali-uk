@@ -68,7 +68,7 @@ function NewsIndex() {
         style={{ background: "linear-gradient(135deg, #6D4276 0%, #21509A 100%)" }}
       >
         <div className="max-w-6xl mx-auto px-6">
-          <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass">
+          <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass-light">
             BALI News
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">Latest News</h1>

@@ -24,7 +24,7 @@ export default function StubPage({
   const renderCta = (cta: NonNullable<StubPageProps["ctaPrimary"]>, primary: boolean) => {
     const cls = primary
       ? "bg-bali-green text-white hover:bg-bali-slate px-8 py-4 rounded-full font-bold transition-colors shadow-lg"
-      : "border border-bali-green text-bali-green hover:bg-bali-green hover:text-white px-8 py-4 rounded-full font-bold transition-colors";
+      : "border border-bali-green text-bali-leaf-ink hover:bg-bali-green hover:text-white px-8 py-4 rounded-full font-bold transition-colors";
     if (cta.external || cta.href.startsWith("http") || cta.href.startsWith("mailto:") || cta.href.startsWith("tel:")) {
       return (
         <a key={cta.label} href={cta.href} className={cls} target={cta.external ? "_blank" : undefined} rel={cta.external ? "noopener noreferrer" : undefined}>
@@ -68,7 +68,7 @@ export default function StubPage({
             <div className="grid md:grid-cols-2 gap-4 mb-12">
               {bullets.map((b) => (
                 <div key={b} className="flex gap-3 p-5 bg-slate-50 rounded-xl border border-slate-100">
-                  <svg className="w-5 h-5 text-bali-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
+                  <svg className="w-5 h-5 text-bali-leaf-ink flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-slate-700 text-sm leading-relaxed">{b}</span>

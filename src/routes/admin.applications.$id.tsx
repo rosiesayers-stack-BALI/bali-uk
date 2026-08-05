@@ -193,7 +193,7 @@ function AppDetailBody({
                     <p className="font-semibold text-bali-slate">{r.name} <span className="text-gray-500 font-normal">· {r.organisation}</span></p>
                     <p className="text-xs text-gray-500">{r.email}</p>
                   </div>
-                  <span className={`text-[11px] font-semibold px-2 py-0.5 rounded-full ${r.status === "Received" ? "bg-emerald-100 text-bali-green" : r.status === "Requested" ? "bg-amber-100 text-amber-700" : "bg-gray-100 text-gray-700"}`}>{r.status}</span>
+                  <span className={`text-[11px] font-semibold px-2 py-0.5 rounded-full ${r.status === "Received" ? "bg-emerald-100 text-bali-leaf-ink" : r.status === "Requested" ? "bg-amber-100 text-amber-700" : "bg-gray-100 text-gray-700"}`}>{r.status}</span>
                 </div>
               ))}
             </div>

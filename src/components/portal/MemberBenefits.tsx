@@ -133,7 +133,7 @@ export function MemberBenefits({ memberType }: { memberType: MemberType | null }
 
       {priority.length > 0 && (
         <section className="mb-5">
-          <h4 className="text-xs font-semibold uppercase tracking-wide text-bali-green mb-2">
+          <h4 className="text-xs font-semibold uppercase tracking-wide text-bali-leaf-ink mb-2">
             Prioritised for {memberType}
           </h4>
           <div className="grid md:grid-cols-2 gap-3">

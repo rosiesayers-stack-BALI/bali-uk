@@ -62,12 +62,12 @@ function DirectoryHub() {
                 to={c.href}
                 className="group p-6 bg-white border border-slate-200 rounded-2xl hover:border-bali-green hover:shadow-lg transition-all"
               >
-                <div className="text-3xl font-bold text-bali-green mb-1">
+                <div className="text-3xl font-bold text-bali-leaf-ink mb-1">
                   {MEMBER_COUNT_BY_CATEGORY[c.slug as keyof typeof MEMBER_COUNT_BY_CATEGORY]}
                 </div>
                 <div className="font-bold text-slate-900 mb-1">{c.label}s</div>
                 <div className="text-xs text-slate-500 leading-relaxed mb-4">{c.desc}</div>
-                <span className="text-bali-green text-sm font-semibold group-hover:underline">Browse {c.label.toLowerCase()}s →</span>
+                <span className="text-bali-leaf-ink text-sm font-semibold group-hover:underline">Browse {c.label.toLowerCase()}s →</span>
               </Link>
             ))}
           </div>

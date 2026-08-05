@@ -80,7 +80,7 @@ function NewsArticlePage() {
               <span className="opacity-60">/</span>
               <span className="text-white truncate max-w-xs">{article.title}</span>
             </nav>
-            <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass">BALI News</p>
+            <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass-light">BALI News</p>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">{article.title}</h1>
             {article.date_text && <p className="text-blue-100 text-sm">{article.date_text}</p>}
           </div>

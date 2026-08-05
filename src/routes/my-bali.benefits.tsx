@@ -29,7 +29,7 @@ function BenefitsPage() {
           return (
             <Card key={b.id} className="group transition-shadow hover:shadow-md">
               <div className="flex items-start gap-4">
-                <span className="grid place-items-center w-11 h-11 rounded-lg bg-bali-green/10 text-bali-green shrink-0 group-hover:bg-bali-green group-hover:text-white transition-colors">
+                <span className="grid place-items-center w-11 h-11 rounded-lg bg-bali-green/10 text-bali-leaf-ink shrink-0 group-hover:bg-bali-green group-hover:text-white transition-colors">
                   <Icon className="w-5 h-5" aria-hidden />
                 </span>
                 <div className="min-w-0">

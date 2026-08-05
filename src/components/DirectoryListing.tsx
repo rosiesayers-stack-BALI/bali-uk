@@ -108,7 +108,7 @@ export default function DirectoryListing({ initialCategory = "all", lockCategory
         {(query || region !== "all" || (!lockCategory && category !== "all")) && (
           <button
             onClick={() => { setQuery(""); setRegion("all"); if (!lockCategory) setCategory("all"); }}
-            className="text-sm text-bali-green font-semibold hover:underline"
+            className="text-sm text-bali-leaf-ink font-semibold hover:underline"
           >
             Clear filters
           </button>
@@ -144,7 +144,7 @@ export default function DirectoryListing({ initialCategory = "all", lockCategory
                     </span>
                   )}
                   <div className="flex items-start justify-between gap-3 mb-3">
-                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 text-bali-green text-[10px] font-bold uppercase tracking-wider">
+                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 text-bali-leaf-ink text-[10px] font-bold uppercase tracking-wider">
                       <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round"><path d="M5 13l4 4L19 7" /></svg>
                       Accredited
                     </span>
@@ -163,7 +163,7 @@ export default function DirectoryListing({ initialCategory = "all", lockCategory
                   )}
                   <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
                     <span className="text-xs font-semibold text-slate-700">{m.specialism}</span>
-                    <span className="text-bali-green text-sm font-bold">View profile →</span>
+                    <span className="text-bali-leaf-ink text-sm font-bold">View profile →</span>
                   </div>
                 </article>
               </Link>,

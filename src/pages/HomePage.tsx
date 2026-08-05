@@ -12,11 +12,11 @@ const slides = [
     bg: 'linear-gradient(135deg, #0E8B61 0%, #1D4D59 100%)',
     image: 'https://www.bali.org.uk/public/banners/large_private-estate-pwp-banner-crop.jpeg',
     eyebrow: 'Now Available',
-    eyebrowColor: 'text-bali-grass',
+    eyebrowColor: 'text-bali-grass-light',
     title: 'Landscape News\nSummer out now!',
     body: 'Read the latest issue of Landscape News — packed with industry insights, member spotlights and professional development features.',
     ctas: [
-      { label: 'Read the digital issue', href: '/news', style: 'bg-white text-bali-green hover:bg-gray-100' },
+      { label: 'Read the digital issue', href: '/news', style: 'bg-white text-bali-leaf-ink hover:bg-gray-100' },
     ],
   },
   {
@@ -34,7 +34,7 @@ const slides = [
     bg: 'linear-gradient(135deg, #1D4D59 0%, #21509A 60%, #0E8B61 100%)',
     image: 'https://www.bali.org.uk/public/banners/large_homepage-banner-3.jpeg',
     eyebrow: 'Celebrating over 50 Years',
-    eyebrowColor: 'text-bali-grass',
+    eyebrowColor: 'text-bali-grass-light',
     title: 'Join BALI today:\nthe gold standard in landscaping',
     body: 'Access Accredited Logo, Technical Support, Events, Training, and Exclusive Discounts.',
     ctas: [
@@ -45,7 +45,7 @@ const slides = [
     bg: 'linear-gradient(135deg, #1D4D59 0%, #0E8B61 100%)',
     image: 'https://www.bali.org.uk/public/banners/large_homepage-banner-1.jpeg',
     eyebrow: 'Find a Professional',
-    eyebrowColor: 'text-bali-grass',
+    eyebrowColor: 'text-bali-grass-light',
     title: 'Find a landscape designer,\ncontractor or supplier',
     body: "Know you're hiring the best.",
     ctas: [
@@ -80,8 +80,8 @@ const actions = [
     href: '/join',
     border: 'hover:border-bali-green',
     iconBg: 'bg-bali-green/10 group-hover:bg-bali-green',
-    iconColor: 'text-bali-green group-hover:text-white',
-    ctaColor: 'text-bali-green',
+    iconColor: 'text-bali-leaf-ink group-hover:text-white',
+    ctaColor: 'text-bali-leaf-ink',
     title: 'Join Our Network',
     body: 'Access the UK\'s leading Trade Association — exclusive benefits, technical support, events and training.',
     cta: 'Make Enquiry',
@@ -102,8 +102,8 @@ const actions = [
     href: '/liss-cscs',
     border: 'hover:border-bali-flow',
     iconBg: 'bg-bali-flow/10 group-hover:bg-bali-flow',
-    iconColor: 'text-bali-flow group-hover:text-white',
-    ctaColor: 'text-bali-flow',
+    iconColor: 'text-bali-flow-ink group-hover:text-white',
+    ctaColor: 'text-bali-flow-ink',
     title: 'LISS SmartCards',
     body: 'Apply online to gain access to live commercial land-based sites across the UK.',
     cta: 'Apply Now',
@@ -342,7 +342,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <RevealDiv>
-              <p className="text-bali-green font-semibold uppercase tracking-widest text-sm mb-3">Since 1976</p>
+              <p className="text-bali-leaf-ink font-semibold uppercase tracking-widest text-sm mb-3">Since 1976</p>
               <h2 className="text-4xl font-bold text-gray-900 leading-tight mb-5">
                 We're the UK's leading landscaping Trade Association
               </h2>
@@ -385,7 +385,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4">
           <RevealDiv className="flex flex-col md:flex-row items-center gap-8 text-white">
             <div className="flex-1">
-              <p className="text-bali-grass uppercase tracking-widest text-sm font-semibold mb-3">Industry Report 2025</p>
+              <p className="text-bali-grass-light uppercase tracking-widest text-sm font-semibold mb-3">Industry Report 2025</p>
               <h2 className="text-3xl font-bold mb-4">BALI's Lay of the Land Report 2025</h2>
               <p className="text-blue-100 leading-relaxed mb-6">
                 Our comprehensive annual industry report, packed with data, insights and trends shaping the UK landscape sector.
@@ -396,7 +396,7 @@ export default function HomePage() {
             </div>
             <div className="flex-shrink-0 w-64 h-64 bg-white/10 rounded-2xl flex items-center justify-center border border-white/20 backdrop-blur-sm">
               <div className="text-center text-white">
-                <svg className="w-16 h-16 mx-auto mb-3 text-bali-grass" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-16 h-16 mx-auto mb-3 text-bali-grass-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
                 <p className="font-bold text-xl">Lay of the Land</p>
@@ -411,7 +411,7 @@ export default function HomePage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <RevealDiv className="text-center mb-12">
-            <p className="text-bali-green font-semibold uppercase tracking-widest text-sm mb-3">In our members' words</p>
+            <p className="text-bali-leaf-ink font-semibold uppercase tracking-widest text-sm mb-3">In our members' words</p>
             <h2 className="text-3xl font-bold text-gray-900">Why BALI matters</h2>
           </RevealDiv>
           <div className="grid md:grid-cols-3 gap-6">
@@ -464,7 +464,7 @@ export default function HomePage() {
             Access the accredited logo, technical support, events, training, exclusive discounts and a nationwide network of the finest landscape professionals.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <Link to="/join" className="bg-white text-bali-green hover:bg-gray-100 px-8 py-3 rounded-lg font-bold transition-all hover:scale-105 shadow-lg">
+            <Link to="/join" className="bg-white text-bali-leaf-ink hover:bg-gray-100 px-8 py-3 rounded-lg font-bold transition-all hover:scale-105 shadow-lg">
               Join Today
             </Link>
             <Link to="/join#categories" className="bg-green-700 hover:bg-green-800 text-white border border-white/20 px-8 py-3 rounded-lg font-bold transition-all">

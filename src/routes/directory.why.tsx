@@ -44,7 +44,7 @@ function Page() {
             {reasons.map((r) => (
               <div key={r.t} className="p-7 bg-white border border-slate-200 rounded-2xl">
                 <div className="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center mb-4">
-                  <svg className="w-5 h-5 text-bali-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round"><path d="M5 13l4 4L19 7" /></svg>
+                  <svg className="w-5 h-5 text-bali-leaf-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round"><path d="M5 13l4 4L19 7" /></svg>
                 </div>
                 <h3 className="font-bold text-lg mb-2 text-slate-900">{r.t}</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">{r.b}</p>

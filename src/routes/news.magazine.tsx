@@ -196,12 +196,12 @@ function Page() {
             <div className="not-prose mb-14">
               <div className="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-3 mb-4">
                 <div className="min-w-0">
-                  <div className="text-xs font-bold uppercase tracking-wider text-bali-green mb-1.5">Latest issue</div>
+                  <div className="text-xs font-bold uppercase tracking-wider text-bali-leaf-ink mb-1.5">Latest issue</div>
                   <h3 className="font-bold text-2xl md:text-3xl text-bali-blue leading-tight">{latest.season}</h3>
                   <div className="text-sm text-slate-500 mt-1">{latest.published} · {latest.pages} pages</div>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-2 shrink-0">
-                  <a href={issuuPage(latest.issuuId)} target="_blank" rel="noopener noreferrer" className="text-xs font-bold px-3 py-2 rounded-full border border-slate-200 hover:border-bali-green hover:text-bali-green transition-colors text-slate-600">Open on Issuu ↗</a>
+                  <a href={issuuPage(latest.issuuId)} target="_blank" rel="noopener noreferrer" className="text-xs font-bold px-3 py-2 rounded-full border border-slate-200 hover:border-bali-green hover:text-bali-leaf-ink transition-colors text-slate-600">Open on Issuu ↗</a>
                   <button onClick={() => setModalIssue(latest)} className="text-xs font-bold px-3 py-2 rounded-full bg-bali-green text-white hover:bg-bali-slate transition-colors">Fullscreen ⤢</button>
                 </div>
               </div>
@@ -234,7 +234,7 @@ function Page() {
               <div className="grid sm:grid-cols-2 gap-3 mt-6">
                 {latest.highlights.map((h, i) => (
                   <div key={h.title} className="p-4 bg-white border border-slate-200 rounded-xl">
-                    <div className="text-[10px] font-bold uppercase tracking-wider text-bali-green mb-1.5">In this issue · {String(i + 1).padStart(2, "0")}</div>
+                    <div className="text-[10px] font-bold uppercase tracking-wider text-bali-leaf-ink mb-1.5">In this issue · {String(i + 1).padStart(2, "0")}</div>
                     <div className="font-bold text-slate-900 mb-1 leading-snug">{h.title}</div>
                     <p className="text-sm text-slate-600 leading-relaxed mb-2.5">{h.body}</p>
                     <div className="flex flex-wrap gap-1.5">
@@ -269,7 +269,7 @@ function Page() {
                     <button
                       key={t}
                       onClick={() => setTopic(t)}
-                      className={`text-xs font-semibold px-3 py-1.5 rounded-full border transition-colors ${active ? "bg-bali-green text-white border-bali-green" : "bg-white text-slate-600 border-slate-200 hover:border-bali-green hover:text-bali-green"}`}
+                      className={`text-xs font-semibold px-3 py-1.5 rounded-full border transition-colors ${active ? "bg-bali-green text-white border-bali-green" : "bg-white text-slate-600 border-slate-200 hover:border-bali-green hover:text-bali-leaf-ink"}`}
                     >
                       {t}
                     </button>
@@ -297,20 +297,20 @@ function Page() {
                     <ul className="space-y-1.5 text-sm text-slate-600 mb-3 flex-1">
                       {matchingHighlights.slice(0, 3).map((h) => (
                         <li key={h.title} className="leading-snug">
-                          <span className="text-bali-green mr-1.5">›</span>{h.title}
+                          <span className="text-bali-leaf-ink mr-1.5">›</span>{h.title}
                         </li>
                       ))}
                     </ul>
                     <div className="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 text-xs">
-                      <button onClick={() => setModalIssue(iss)} className="font-bold text-bali-green hover:underline">Read →</button>
-                      <a href={issuuPage(iss.issuuId)} target="_blank" rel="noopener noreferrer" className="font-semibold text-slate-500 hover:text-bali-green">Issuu ↗</a>
+                      <button onClick={() => setModalIssue(iss)} className="font-bold text-bali-leaf-ink hover:underline">Read →</button>
+                      <a href={issuuPage(iss.issuuId)} target="_blank" rel="noopener noreferrer" className="font-semibold text-slate-500 hover:text-bali-leaf-ink">Issuu ↗</a>
                     </div>
                   </div>
                 </article>
               ))}
               {filteredArchive.length === 0 && (
                 <div className="col-span-full p-8 text-center text-slate-500 border border-dashed border-slate-200 rounded-2xl">
-                  No issues match your search. <button onClick={() => { setQuery(""); setTopic("All"); }} className="text-bali-green font-semibold underline">Clear filters</button>
+                  No issues match your search. <button onClick={() => { setQuery(""); setTopic("All"); }} className="text-bali-leaf-ink font-semibold underline">Clear filters</button>
                 </div>
               )}
             </div>
@@ -321,19 +321,19 @@ function Page() {
                 <div className="text-2xl mb-2">✍️</div>
                 <h4 className="font-bold text-slate-900 mb-1">Pitch a story</h4>
                 <p className="text-sm text-slate-600 leading-relaxed mb-3">Got a project, opinion or piece of expertise the industry should hear? Email the editor.</p>
-                <span className="text-sm font-bold text-bali-green">landscapenews@bali.org.uk →</span>
+                <span className="text-sm font-bold text-bali-leaf-ink">landscapenews@bali.org.uk →</span>
               </a>
               <a href="/about/advertise" className="p-6 rounded-2xl border border-slate-200 bg-white hover:border-bali-green hover:shadow-md transition-all">
                 <div className="text-2xl mb-2">📣</div>
                 <h4 className="font-bold text-slate-900 mb-1">Advertise in Landscape News</h4>
                 <p className="text-sm text-slate-600 leading-relaxed mb-3">Quarterly print + digital. Full media-pack rates, specs and deadlines.</p>
-                <span className="text-sm font-bold text-bali-green">See ad rates →</span>
+                <span className="text-sm font-bold text-bali-leaf-ink">See ad rates →</span>
               </a>
               <a href="/join" className="p-6 rounded-2xl border border-slate-200 bg-white hover:border-bali-green hover:shadow-md transition-all">
                 <div className="text-2xl mb-2">📬</div>
                 <h4 className="font-bold text-slate-900 mb-1">Get it in print</h4>
                 <p className="text-sm text-slate-600 leading-relaxed mb-3">Print copies are posted free to BALI members every quarter. Join the Association.</p>
-                <span className="text-sm font-bold text-bali-green">Become a member →</span>
+                <span className="text-sm font-bold text-bali-leaf-ink">Become a member →</span>
               </a>
             </div>
           </>

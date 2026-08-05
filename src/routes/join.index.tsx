@@ -202,7 +202,7 @@ function JoinPage() {
               <div className="flex flex-wrap gap-4">
                 <a
                   href="#categories"
-                  className="bg-white text-bali-green hover:bg-emerald-50 px-8 py-4 rounded-full font-bold transition-all shadow-xl shadow-black/10"
+                  className="bg-white text-bali-leaf-ink hover:bg-emerald-50 px-8 py-4 rounded-full font-bold transition-all shadow-xl shadow-black/10"
                 >
                   View categories
                 </a>
@@ -250,7 +250,7 @@ function JoinPage() {
               { v: "48hr", l: "Enquiry response time" },
             ].map((s) => (
               <div key={s.l}>
-                <div className="text-3xl font-bold text-bali-green">{s.v}</div>
+                <div className="text-3xl font-bold text-bali-leaf-ink">{s.v}</div>
                 <div className="text-xs uppercase tracking-wider text-slate-500 mt-2">{s.l}</div>
               </div>
             ))}
@@ -283,7 +283,7 @@ function JoinPage() {
                 >
                   <div className="w-12 h-12 bg-emerald-50 rounded-lg flex items-center justify-center mb-6">
                     <svg
-                      className="w-6 h-6 text-bali-green"
+                      className="w-6 h-6 text-bali-leaf-ink"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -350,10 +350,10 @@ function JoinPage() {
                     <h3 className="font-bold text-xl mb-3 text-slate-900">{c.title}</h3>
                     <p className="text-slate-500 text-sm leading-relaxed mb-6">{c.description}</p>
                     <div className="flex items-center justify-between pt-5 border-t border-slate-100">
-                      <span className="text-bali-green font-bold text-sm">
+                      <span className="text-bali-leaf-ink font-bold text-sm">
                         {hasForm ? "Apply online" : "Enquire by email"}
                       </span>
-                      <svg className="w-5 h-5 text-bali-green group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+                      <svg className="w-5 h-5 text-bali-leaf-ink group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
                         <path d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
                     </div>
@@ -394,7 +394,7 @@ function JoinPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {steps.map((s) => (
               <div key={s.n} className="p-8 bg-slate-50 rounded-2xl">
-                <div className="text-bali-green font-bold text-sm tracking-widest mb-4">{s.n}</div>
+                <div className="text-bali-leaf-ink font-bold text-sm tracking-widest mb-4">{s.n}</div>
                 <h3 className="font-bold text-lg mb-2">{s.title}</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">{s.body}</p>
               </div>
@@ -420,7 +420,7 @@ function JoinPage() {
                   <summary className="cursor-pointer list-none p-6 flex items-center justify-between font-semibold text-slate-900 hover:bg-slate-50">
                     <span>{f.q}</span>
                     <svg
-                      className="w-5 h-5 text-bali-green transition-transform group-open:rotate-180"
+                      className="w-5 h-5 text-bali-leaf-ink transition-transform group-open:rotate-180"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -452,7 +452,7 @@ function JoinPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 to="/membership/enquiry"
-                className="w-full sm:w-auto bg-white text-bali-green px-10 py-4 rounded-full font-bold hover:bg-emerald-50 transition-colors shadow-xl"
+                className="w-full sm:w-auto bg-white text-bali-leaf-ink px-10 py-4 rounded-full font-bold hover:bg-emerald-50 transition-colors shadow-xl"
               >
                 Send an enquiry
               </Link>

@@ -67,7 +67,7 @@ function CategoryPage() {
             <span className="opacity-60">/</span>
             <span className="text-white">{category.label}</span>
           </nav>
-          <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass">LISS — Apply</p>
+          <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass-light">LISS — Apply</p>
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-3">{category.label}</h1>
           <p className="text-blue-100 text-lg">Please select the appropriate SmartCard below.</p>
         </div>

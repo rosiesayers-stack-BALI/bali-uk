@@ -53,7 +53,7 @@ export const Route = createFileRoute("/help/media/$slug")({
       <Navbar />
       <main className="flex-1 max-w-3xl mx-auto px-6 py-24 text-center">
         <h1 className="text-3xl font-bold text-bali-blue mb-4">Video not found</h1>
-        <Link to="/help/media" className="text-bali-green font-semibold">← Back to Media</Link>
+        <Link to="/help/media" className="text-bali-leaf-ink font-semibold">← Back to Media</Link>
       </main>
       <Footer />
     </div>
@@ -64,7 +64,7 @@ export const Route = createFileRoute("/help/media/$slug")({
       <main className="flex-1 max-w-3xl mx-auto px-6 py-24 text-center">
         <h1 className="text-3xl font-bold text-bali-blue mb-4">Something went wrong</h1>
         <p className="text-slate-600 mb-6">{error.message}</p>
-        <button onClick={reset} className="text-bali-green font-semibold">Try again</button>
+        <button onClick={reset} className="text-bali-leaf-ink font-semibold">Try again</button>
       </main>
       <Footer />
     </div>
@@ -103,7 +103,7 @@ function VideoPage() {
         </section>
 
         <section className="max-w-3xl mx-auto px-6 py-12">
-          <p className="text-xs uppercase tracking-wider text-bali-green font-bold mb-3">{themeLabel}</p>
+          <p className="text-xs uppercase tracking-wider text-bali-leaf-ink font-bold mb-3">{themeLabel}</p>
           <h1 className="font-bold text-3xl md:text-4xl text-bali-blue leading-tight mb-3">{video.title}</h1>
           <p className="text-slate-500 text-sm mb-8">Published {new Date(video.published).toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" })}</p>
 
@@ -130,7 +130,7 @@ function VideoPage() {
             </details>
           ) : (
             <div className="border-t border-slate-200 pt-10 text-sm text-slate-500">
-              <p><strong className="text-slate-700">Transcript:</strong> Coming soon. <Link to="/contact" className="text-bali-green font-semibold">Request a transcript</Link>.</p>
+              <p><strong className="text-slate-700">Transcript:</strong> Coming soon. <Link to="/contact" className="text-bali-leaf-ink font-semibold">Request a transcript</Link>.</p>
             </div>
           )}
         </section>
@@ -146,7 +146,7 @@ function VideoPage() {
                       <img src={`https://i.ytimg.com/vi/${v.videoId}/hqdefault.jpg`} alt="" loading="lazy" className="w-full h-full object-cover" />
                     </div>
                     <div className="p-4">
-                      <h3 className="font-bold text-sm leading-snug group-hover:text-bali-green transition-colors">{v.title}</h3>
+                      <h3 className="font-bold text-sm leading-snug group-hover:text-bali-leaf-ink transition-colors">{v.title}</h3>
                     </div>
                   </Link>
                 ))}

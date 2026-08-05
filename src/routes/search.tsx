@@ -123,7 +123,7 @@ function SearchPage() {
               </span>
               <button
                 onClick={() => update("q", results.didYouMean!)}
-                className="font-semibold text-bali-green hover:underline"
+                className="font-semibold text-bali-leaf-ink hover:underline"
               >
                 {results.didYouMean}
               </button>
@@ -136,7 +136,7 @@ function SearchPage() {
               {hasAnyFilter && (
                 <>
                   {" "}·{" "}
-                  <button onClick={clearAll} className="text-bali-green font-semibold hover:underline">Clear all filters</button>
+                  <button onClick={clearAll} className="text-bali-leaf-ink font-semibold hover:underline">Clear all filters</button>
                 </>
               )}
             </p>
@@ -164,7 +164,7 @@ function SearchPage() {
                         return (
                           <article key={r.id} className="bg-white border border-slate-200 rounded-2xl p-6 hover:border-bali-green hover:shadow-lg transition-all flex flex-col">
                             <div className="flex items-start justify-between gap-3 mb-3">
-                              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 text-bali-green text-[10px] font-bold uppercase tracking-wider">Accredited</span>
+                              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 text-bali-leaf-ink text-[10px] font-bold uppercase tracking-wider">Accredited</span>
                               <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">{CATEGORY_LABEL[m.category]}</span>
                             </div>
                             <h3 className="font-bold text-lg text-slate-900 mb-1">{m.name}</h3>
@@ -175,7 +175,7 @@ function SearchPage() {
                                 <span key={p} className="text-[10px] font-semibold uppercase tracking-wider text-slate-500 bg-slate-100 px-2 py-1 rounded-full">{p}</span>
                               ))}
                             </div>
-                            <Link to="/contact" className="text-bali-green text-sm font-bold hover:underline">Enquire →</Link>
+                            <Link to="/contact" className="text-bali-leaf-ink text-sm font-bold hover:underline">Enquire →</Link>
                           </article>
                         );
                       })}
@@ -224,7 +224,7 @@ function ResultCard({ result, groupLabel }: { result: ResultCardResult; groupLab
         </div>
       )}
       <div className="p-5 flex-1 flex flex-col">
-        <span className="text-[10px] font-bold uppercase tracking-wider text-bali-green mb-2">{groupLabel}</span>
+        <span className="text-[10px] font-bold uppercase tracking-wider text-bali-leaf-ink mb-2">{groupLabel}</span>
         <h3 className="font-bold text-slate-900 mb-2 line-clamp-2">{result.title}</h3>
         {result.meta && <p className="text-xs text-slate-500 mb-2">{result.meta}</p>}
         {result.description && <p className="text-sm text-slate-600 line-clamp-3 flex-1">{result.description}</p>}

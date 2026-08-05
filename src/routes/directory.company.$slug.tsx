@@ -126,7 +126,7 @@ function CompanyProfilePage() {
           <section className="max-w-5xl mx-auto px-6 py-16">
             <p className="text-slate-600">
               We couldn't find that company.{" "}
-              <Link to="/directory/search" className="text-bali-green font-semibold hover:underline">
+              <Link to="/directory/search" className="text-bali-leaf-ink font-semibold hover:underline">
                 Search the directory
               </Link>
               .
@@ -185,7 +185,7 @@ function CompanyProfilePage() {
                     href={company.websiteUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-bali-green hover:underline break-all"
+                    className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-bali-leaf-ink hover:underline break-all"
                   >
                     <Globe className="w-4 h-4 shrink-0" /> Visit website
                   </a>
@@ -201,7 +201,7 @@ function CompanyProfilePage() {
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label={label}
-                          className="w-9 h-9 rounded-lg border border-slate-200 flex items-center justify-center text-slate-600 hover:text-bali-green hover:border-bali-green transition-colors"
+                          className="w-9 h-9 rounded-lg border border-slate-200 flex items-center justify-center text-slate-600 hover:text-bali-leaf-ink hover:border-bali-green transition-colors"
                         >
                           <Icon className="w-4 h-4" />
                         </a>

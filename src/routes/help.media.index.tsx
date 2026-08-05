@@ -101,7 +101,7 @@ function MediaIndex() {
                       </div>
                       <div className="p-5 flex-1 flex flex-col">
                         <p className="text-xs uppercase tracking-wider text-slate-500 mb-2">{new Date(v.published).toLocaleDateString("en-GB", { year: "numeric", month: "long" })}</p>
-                        <h3 className="font-bold text-slate-900 leading-snug group-hover:text-bali-green transition-colors">{v.title}</h3>
+                        <h3 className="font-bold text-slate-900 leading-snug group-hover:text-bali-leaf-ink transition-colors">{v.title}</h3>
                       </div>
                     </Link>
                   ))}

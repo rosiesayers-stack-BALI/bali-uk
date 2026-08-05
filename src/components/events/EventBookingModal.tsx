@@ -200,7 +200,7 @@ export default function EventBookingModal({
               <DetailBox label="Venue" value={event.venue} />
             </dl>
             {left !== null && (
-              <p className="text-sm font-semibold text-bali-grass">
+              <p className="text-sm font-semibold text-bali-grass-ink">
                 {left} space{left === 1 ? "" : "s"} remaining
               </p>
             )}
@@ -210,7 +210,7 @@ export default function EventBookingModal({
 
           {state === "done" ? (
             <div className="text-center py-6">
-              <CheckCircle2 className="w-12 h-12 text-bali-grass mx-auto mb-4" aria-hidden />
+              <CheckCircle2 className="w-12 h-12 text-bali-grass-ink mx-auto mb-4" aria-hidden />
               <h3 className="text-xl font-bold text-bali-slate mb-2">Booking confirmed</h3>
               <p className="text-gray-700 max-w-md mx-auto">
                 Thanks {fullName.split(" ")[0] || fullName}, your place at <strong>{event.title}</strong> is booked.

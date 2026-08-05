@@ -151,10 +151,10 @@ export default function SmartSearch({ onNavigate }: { onNavigate?: () => void })
                   }`}
                 >
                   <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full flex-shrink-0 mt-0.5 ${
-                    s.type === "Member" ? "bg-emerald-100 text-bali-green" :
+                    s.type === "Member" ? "bg-emerald-100 text-bali-leaf-ink" :
                     s.type === "News" ? "bg-blue-100 text-bali-blue" :
                     s.type === "Event" ? "bg-amber-100 text-amber-700" :
-                    s.type === "Membership" ? "bg-emerald-100 text-bali-green" :
+                    s.type === "Membership" ? "bg-emerald-100 text-bali-leaf-ink" :
                     s.type === "Help" ? "bg-purple-100 text-purple-700" :
                     s.type === "Policy" ? "bg-rose-100 text-rose-700" :
                     s.type === "Page" ? "bg-slate-200 text-slate-700" :

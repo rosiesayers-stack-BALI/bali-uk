@@ -26,7 +26,7 @@ export const Route = createFileRoute("/join/$category/apply")({
       <Navbar />
       <main className="flex-1 max-w-2xl mx-auto px-6 py-20 text-center">
         <h1 className="text-3xl font-bold text-bali-blue mb-4">Membership category not found</h1>
-        <Link to="/join" className="text-bali-green font-bold underline">Back to all categories</Link>
+        <Link to="/join" className="text-bali-leaf-ink font-bold underline">Back to all categories</Link>
       </main>
       <Footer />
     </div>
@@ -90,12 +90,12 @@ function ApplyPage() {
           <section className="max-w-4xl mx-auto px-6 pt-10">
             <div className="bg-white border border-slate-200 rounded-2xl p-6 lg:p-7 shadow-sm flex flex-col md:flex-row md:items-center gap-5">
               <div className="flex-1">
-                <div className="text-xs font-bold uppercase tracking-wider text-bali-green mb-1">Two ways to apply</div>
+                <div className="text-xs font-bold uppercase tracking-wider text-bali-leaf-ink mb-1">Two ways to apply</div>
                 <h2 className="text-lg font-bold text-bali-blue mb-1">Prefer to fill in offline?</h2>
                 <p className="text-sm text-slate-600">
                   Download the editable PDF, complete it at your own pace, then email it with any
                   supporting documents to{" "}
-                  <a href="mailto:membership@bali.org.uk" className="text-bali-green font-semibold underline">
+                  <a href="mailto:membership@bali.org.uk" className="text-bali-leaf-ink font-semibold underline">
                     membership@bali.org.uk
                   </a>
                   . Otherwise, complete the online form below.

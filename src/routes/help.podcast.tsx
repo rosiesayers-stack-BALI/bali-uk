@@ -283,12 +283,12 @@ function Page() {
         <>
           {/* LATEST EPISODE — hero player */}
           <div className="not-prose mb-12">
-            <div className="text-xs font-bold uppercase tracking-wider text-bali-green mb-3">Latest episode · Ep. {latest.n} · {latest.date} · {latest.length}</div>
+            <div className="text-xs font-bold uppercase tracking-wider text-bali-leaf-ink mb-3">Latest episode · Ep. {latest.n} · {latest.date} · {latest.length}</div>
             <h2 className="font-bold text-2xl md:text-3xl text-slate-900 mb-3 leading-tight">{latest.title}</h2>
             <p className="text-slate-600 leading-relaxed mb-5">{latest.desc}</p>
             <div className="flex flex-wrap gap-2 mb-5">
               {latest.themes.map((t) => (
-                <span key={t} className="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-bali-green border border-emerald-100">{t}</span>
+                <span key={t} className="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-bali-leaf-ink border border-emerald-100">{t}</span>
               ))}
             </div>
             <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-white">
@@ -306,18 +306,18 @@ function Page() {
             {/* Guests + guide for the latest episode */}
             <div className="grid md:grid-cols-2 gap-6 mt-6">
               <div className="p-5 rounded-2xl bg-white border border-slate-200">
-                <div className="text-xs font-bold uppercase tracking-wider text-bali-green mb-3">In this episode</div>
+                <div className="text-xs font-bold uppercase tracking-wider text-bali-leaf-ink mb-3">In this episode</div>
                 <ul className="space-y-1.5 text-sm text-slate-700 list-disc pl-5">
                   {latest.guide.map((g) => <li key={g}>{g}</li>)}
                 </ul>
               </div>
               <div className="p-5 rounded-2xl bg-white border border-slate-200">
-                <div className="text-xs font-bold uppercase tracking-wider text-bali-green mb-3">Guests</div>
+                <div className="text-xs font-bold uppercase tracking-wider text-bali-leaf-ink mb-3">Guests</div>
                 <ul className="space-y-4">
                   {latest.guests.map((g) => (
                     <li key={g.name}>
                       <div className="font-bold text-slate-900 text-sm leading-tight">{g.name}</div>
-                      <div className="text-xs text-bali-green font-semibold mb-1">{g.role}</div>
+                      <div className="text-xs text-bali-leaf-ink font-semibold mb-1">{g.role}</div>
                       <p className="text-sm text-slate-600 leading-relaxed">{g.bio}</p>
                     </li>
                   ))}
@@ -355,7 +355,7 @@ function Page() {
             <div className="flex flex-col md:flex-row gap-6 items-start">
               <div className="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-full bg-bali-green text-white flex items-center justify-center text-3xl font-bold">RS</div>
               <div>
-                <div className="text-xs font-bold uppercase tracking-wider text-bali-green mb-1">Your host</div>
+                <div className="text-xs font-bold uppercase tracking-wider text-bali-leaf-ink mb-1">Your host</div>
                 <h3 className="font-bold text-xl text-slate-900 mb-2">Rosie Sayers</h3>
                 <p className="text-slate-600 leading-relaxed">Rosie hosts Dig Deep on behalf of BALI, drawing on years of conversations with growers, contractors, designers and industry leaders. The show is engineered and produced by independent audio studio <strong className="text-slate-900">Blunt & Brave</strong>.</p>
               </div>
@@ -387,7 +387,7 @@ function Page() {
                   <button
                     key={t}
                     onClick={() => setTheme(t)}
-                    className={`text-xs font-semibold px-3 py-1.5 rounded-full border transition-colors ${active ? "bg-bali-green text-white border-bali-green" : "bg-white text-slate-600 border-slate-200 hover:border-bali-green hover:text-bali-green"}`}
+                    className={`text-xs font-semibold px-3 py-1.5 rounded-full border transition-colors ${active ? "bg-bali-green text-white border-bali-green" : "bg-white text-slate-600 border-slate-200 hover:border-bali-green hover:text-bali-leaf-ink"}`}
                   >
                     {t}
                   </button>
@@ -401,11 +401,11 @@ function Page() {
             {filtered.map((e) => (
               <li key={e.n} className="group p-5 bg-white border border-slate-200 rounded-xl hover:border-bali-green hover:shadow-md transition-all">
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-50 text-bali-green flex items-center justify-center group-hover:bg-bali-green group-hover:text-white transition-colors" aria-hidden>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-50 text-bali-leaf-ink flex items-center justify-center group-hover:bg-bali-green group-hover:text-white transition-colors" aria-hidden>
                     <svg className="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                   </div>
                   <div className="min-w-0 flex-1">
-                    <div className="text-xs font-bold uppercase tracking-wider text-bali-green mb-1">Ep. {e.n} · {e.date} · {e.length}</div>
+                    <div className="text-xs font-bold uppercase tracking-wider text-bali-leaf-ink mb-1">Ep. {e.n} · {e.date} · {e.length}</div>
                     <div className="font-bold text-slate-900 mb-1.5 leading-snug">{e.title}</div>
                     <p className="text-sm text-slate-600 leading-relaxed mb-2.5">{e.desc}</p>
                     <div className="flex flex-wrap gap-1.5 mb-3">
@@ -414,7 +414,7 @@ function Page() {
                       ))}
                     </div>
                     <details className="group/details mt-2 border-t border-slate-100 pt-3">
-                      <summary className="cursor-pointer list-none flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-bali-green hover:text-bali-slate select-none">
+                      <summary className="cursor-pointer list-none flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-bali-leaf-ink hover:text-bali-slate select-none">
                         <svg className="w-3.5 h-3.5 transition-transform group-open/details:rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
                         Guests &amp; episode guide
                       </summary>
@@ -431,7 +431,7 @@ function Page() {
                             {e.guests.map((g) => (
                               <li key={g.name}>
                                 <div className="font-bold text-slate-900 text-sm leading-tight">{g.name}</div>
-                                <div className="text-xs text-bali-green font-semibold mb-1">{g.role}</div>
+                                <div className="text-xs text-bali-leaf-ink font-semibold mb-1">{g.role}</div>
                                 <p className="text-sm text-slate-600 leading-relaxed">{g.bio}</p>
                               </li>
                             ))}
@@ -446,7 +446,7 @@ function Page() {
             ))}
             {filtered.length === 0 && (
               <li className="p-8 text-center text-slate-500 border border-dashed border-slate-200 rounded-xl">
-                No episodes match your search. <button onClick={() => { setQuery(""); setTheme("All"); }} className="text-bali-green font-semibold underline">Clear filters</button>
+                No episodes match your search. <button onClick={() => { setQuery(""); setTheme("All"); }} className="text-bali-leaf-ink font-semibold underline">Clear filters</button>
               </li>
             )}
           </ul>
@@ -472,7 +472,7 @@ function Page() {
               href="https://rosiesayers.podbean.com/"
               target="_blank"
               rel="noreferrer noopener"
-              className="text-bali-green font-semibold underline"
+              className="text-bali-leaf-ink font-semibold underline"
             >
               Listen on Podbean
             </a>
@@ -497,7 +497,7 @@ function Page() {
                   aria-label="Email address"
                   className="flex-1 px-4 py-3 rounded-full text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-white/60 text-sm"
                 />
-                <button type="submit" className="px-6 py-3 rounded-full bg-white text-bali-green font-bold text-sm hover:bg-emerald-50 transition-colors">Notify me</button>
+                <button type="submit" className="px-6 py-3 rounded-full bg-white text-bali-leaf-ink font-bold text-sm hover:bg-emerald-50 transition-colors">Notify me</button>
               </form>
             </div>
           </div>

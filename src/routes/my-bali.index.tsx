@@ -218,7 +218,7 @@ function DashboardIndex() {
               return (
                 <li key={b.id}>
                   <a href="#" className="group flex items-center gap-2.5 rounded-lg p-2 hover:bg-bali-blue/5 transition-colors">
-                    <span className="grid place-items-center w-8 h-8 rounded-lg bg-bali-green/10 text-bali-green shrink-0">
+                    <span className="grid place-items-center w-8 h-8 rounded-lg bg-bali-green/10 text-bali-leaf-ink shrink-0">
                       <Icon className="w-4 h-4" aria-hidden />
                     </span>
                     <span className="text-sm font-medium text-gray-800 group-hover:text-bali-blue">{b.title}</span>

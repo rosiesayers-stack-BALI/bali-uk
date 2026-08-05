@@ -182,7 +182,7 @@ function TrainingPage() {
           <div className="text-sm text-slate-500">
             Showing <span className="font-bold text-slate-900">{Math.min(visible, filtered.length)}</span> of <span className="font-bold text-slate-900">{filtered.length}</span> courses
             {(query || cat !== "All" || mode !== "All" || month !== "All") && (
-              <button onClick={() => { setQuery(""); setCat("All"); setMode("All"); setMonth("All"); setVisible(PAGE_SIZE); }} className="ml-3 text-bali-warm font-semibold hover:underline">Clear filters</button>
+              <button onClick={() => { setQuery(""); setCat("All"); setMode("All"); setMonth("All"); setVisible(PAGE_SIZE); }} className="ml-3 text-bali-warm-ink font-semibold hover:underline">Clear filters</button>
             )}
           </div>
         </div>
@@ -220,7 +220,7 @@ function TrainingPage() {
                       </div>
                     </div>
                     <div className="p-4 flex-1 flex flex-col">
-                      <div className="text-xs font-bold uppercase tracking-wider text-bali-warm mb-1.5">{c.date}</div>
+                      <div className="text-xs font-bold uppercase tracking-wider text-bali-warm-ink mb-1.5">{c.date}</div>
                       <h3 className="font-bold text-slate-900 leading-snug mb-2 line-clamp-3">{c.title}</h3>
                       <p className="text-sm text-slate-600 leading-relaxed mb-3 line-clamp-2 flex-1">{c.desc}</p>
                       {c.providerSlug && (
@@ -242,7 +242,7 @@ function TrainingPage() {
                       )}
                       <div className="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 text-xs">
                         <span className="text-slate-500 truncate">{c.venue}</span>
-                        <span className="font-bold text-bali-warm group-hover:underline shrink-0">Book →</span>
+                        <span className="font-bold text-bali-warm-ink group-hover:underline shrink-0">Book →</span>
                       </div>
                     </div>
                   </a>
@@ -273,7 +273,7 @@ function TrainingPage() {
             </div>
             <div className="flex flex-col gap-3">
               <a href="https://www.bali.org.uk/liss-cscs/" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-full bg-bali-warm text-white font-bold text-sm text-center hover:bg-bali-purple transition-colors">LISS smartcards →</a>
-              <Link to="/contact" className="px-6 py-3 rounded-full border-2 border-bali-warm text-bali-warm font-bold text-sm text-center hover:bg-bali-warm hover:text-white transition-colors">Become a training provider</Link>
+              <Link to="/contact" className="px-6 py-3 rounded-full border-2 border-bali-warm text-bali-warm-ink font-bold text-sm text-center hover:bg-bali-warm hover:text-white transition-colors">Become a training provider</Link>
             </div>
           </div>
         </section>
