@@ -182,7 +182,7 @@ export default function ApplicationForm({ config: rawConfig }: Props) {
     return (
       <div className="max-w-3xl mx-auto px-6 py-16 text-center">
         <div className="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mx-auto mb-6">
-          <svg className="w-8 h-8 text-bali-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+          <svg className="w-8 h-8 text-bali-leaf-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
@@ -328,7 +328,7 @@ export default function ApplicationForm({ config: rawConfig }: Props) {
             <div className="grid sm:grid-cols-3 gap-2">
               {REGIONS.map((r) => (
                 <label key={r} className="flex items-center gap-2 text-sm text-slate-700">
-                  <input type="checkbox" value={r} {...form.register("company.regions")} className="h-4 w-4 rounded text-bali-green focus:ring-bali-green" />
+                  <input type="checkbox" value={r} {...form.register("company.regions")} className="h-4 w-4 rounded text-bali-leaf-ink focus:ring-bali-green" />
                   {r}
                 </label>
               ))}
@@ -354,7 +354,7 @@ export default function ApplicationForm({ config: rawConfig }: Props) {
           <div className="grid sm:grid-cols-2 gap-2">
             {config.disciplines.map((d) => (
               <label key={d} className="flex items-center gap-2 text-sm text-slate-700">
-                <input type="checkbox" value={d} {...form.register("disciplines")} className="h-4 w-4 rounded text-bali-green focus:ring-bali-green" />
+                <input type="checkbox" value={d} {...form.register("disciplines")} className="h-4 w-4 rounded text-bali-leaf-ink focus:ring-bali-green" />
                 {d}
               </label>
             ))}
@@ -378,7 +378,7 @@ export default function ApplicationForm({ config: rawConfig }: Props) {
                   const src = form.getValues(idx === 1 ? "applicantContact" : "mainContact");
                   form.setValue(c.key, { ...src });
                 }}
-                className="text-xs font-semibold text-bali-green hover:underline"
+                className="text-xs font-semibold text-bali-leaf-ink hover:underline"
               >
                 Same as {idx === 1 ? "applicant" : "main"}
               </button>
@@ -404,7 +404,7 @@ export default function ApplicationForm({ config: rawConfig }: Props) {
             <div className="grid sm:grid-cols-2 gap-2">
               {COMMS_PREFS.map((p) => (
                 <label key={p} className="flex items-center gap-2 text-sm text-slate-700">
-                  <input type="checkbox" value={p} {...form.register(`${c.key}.commsPrefs` as const)} className="h-4 w-4 rounded text-bali-green focus:ring-bali-green" />
+                  <input type="checkbox" value={p} {...form.register(`${c.key}.commsPrefs` as const)} className="h-4 w-4 rounded text-bali-leaf-ink focus:ring-bali-green" />
                   {p}
                 </label>
               ))}
@@ -459,7 +459,7 @@ export default function ApplicationForm({ config: rawConfig }: Props) {
                   <input
                     type="checkbox"
                     {...form.register(`documents.${doc}` as never)}
-                    className="h-4 w-4 rounded text-bali-green focus:ring-bali-green"
+                    className="h-4 w-4 rounded text-bali-leaf-ink focus:ring-bali-green"
                   />
                   I'll send this separately
                 </label>
@@ -476,7 +476,7 @@ export default function ApplicationForm({ config: rawConfig }: Props) {
                   }
                   setFiles((prev) => ({ ...prev, [doc]: f }));
                 }}
-                className="text-sm text-slate-600 file:mr-3 file:px-4 file:py-2 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-emerald-50 file:text-bali-green hover:file:bg-emerald-100"
+                className="text-sm text-slate-600 file:mr-3 file:px-4 file:py-2 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-emerald-50 file:text-bali-leaf-ink hover:file:bg-emerald-100"
               />
             </div>
           ))}
@@ -488,20 +488,20 @@ export default function ApplicationForm({ config: rawConfig }: Props) {
         <h2 className={sectionTitleCls}>Terms & code of conduct</h2>
         <p className={sectionDescCls}>
           Read our full{" "}
-          <a href="https://bali.org.uk" target="_blank" rel="noopener noreferrer" className="text-bali-green underline">
+          <a href="https://bali.org.uk" target="_blank" rel="noopener noreferrer" className="text-bali-leaf-ink underline">
             terms & conditions
           </a>{" "}
           and code of conduct at bali.org.uk.
         </p>
         <label className="flex items-start gap-3 mb-4">
-          <input type="checkbox" {...form.register("agreeTerms")} className="mt-1 h-5 w-5 rounded text-bali-green focus:ring-bali-green" />
+          <input type="checkbox" {...form.register("agreeTerms")} className="mt-1 h-5 w-5 rounded text-bali-leaf-ink focus:ring-bali-green" />
           <span className="text-sm text-slate-700">
             I am authorised on behalf of the organisation/individual applying for membership to agree to the Association's terms and conditions, including the annual renewal terms.
           </span>
         </label>
         {errors.agreeTerms && <p className={errCls}>{errors.agreeTerms.message as string}</p>}
         <label className="flex items-start gap-3 mb-6">
-          <input type="checkbox" {...form.register("agreeCode")} className="mt-1 h-5 w-5 rounded text-bali-green focus:ring-bali-green" />
+          <input type="checkbox" {...form.register("agreeCode")} className="mt-1 h-5 w-5 rounded text-bali-leaf-ink focus:ring-bali-green" />
           <span className="text-sm text-slate-700">
             I am authorised on behalf of the organisation/individual applying for membership to agree to the Association's code of conduct.
           </span>
@@ -538,7 +538,7 @@ export default function ApplicationForm({ config: rawConfig }: Props) {
         <button
           type="submit"
           disabled={submitting}
-          className="bg-bali-green text-white px-10 py-4 rounded-full font-bold hover:bg-emerald-700 transition-colors shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
+          className="bg-bali-leaf-ink text-white px-10 py-4 rounded-full font-bold hover:bg-emerald-700 transition-colors shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
         >
           {submitting ? "Submitting…" : "Submit application"}
         </button>

@@ -99,7 +99,7 @@ export default function IndividualApplicationForm({ config }: Props) {
     return (
       <div className="max-w-3xl mx-auto px-6 py-16 text-center">
         <div className="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mx-auto mb-6">
-          <svg className="w-8 h-8 text-bali-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+          <svg className="w-8 h-8 text-bali-leaf-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
@@ -155,7 +155,7 @@ export default function IndividualApplicationForm({ config }: Props) {
                   type="checkbox"
                   value={p}
                   {...form.register("applicantContact.commsPrefs")}
-                  className="h-4 w-4 rounded text-bali-green focus:ring-bali-green"
+                  className="h-4 w-4 rounded text-bali-leaf-ink focus:ring-bali-green"
                 />
                 {p}
               </label>
@@ -168,20 +168,20 @@ export default function IndividualApplicationForm({ config }: Props) {
         <h2 className={sectionTitleCls}>2. Terms & code of conduct</h2>
         <p className={sectionDescCls}>
           Read our full{" "}
-          <a href="https://bali.org.uk" target="_blank" rel="noopener noreferrer" className="text-bali-green underline">
+          <a href="https://bali.org.uk" target="_blank" rel="noopener noreferrer" className="text-bali-leaf-ink underline">
             terms & conditions
           </a>{" "}
           and code of conduct at bali.org.uk.
         </p>
         <label className="flex items-start gap-3 mb-4">
-          <input type="checkbox" {...form.register("agreeTerms")} className="mt-1 h-5 w-5 rounded text-bali-green focus:ring-bali-green" />
+          <input type="checkbox" {...form.register("agreeTerms")} className="mt-1 h-5 w-5 rounded text-bali-leaf-ink focus:ring-bali-green" />
           <span className="text-sm text-slate-700">
             I agree to the Association's terms and conditions, including the annual renewal terms.
           </span>
         </label>
         {errors.agreeTerms && <p className={errCls}>{errors.agreeTerms.message as string}</p>}
         <label className="flex items-start gap-3 mb-6">
-          <input type="checkbox" {...form.register("agreeCode")} className="mt-1 h-5 w-5 rounded text-bali-green focus:ring-bali-green" />
+          <input type="checkbox" {...form.register("agreeCode")} className="mt-1 h-5 w-5 rounded text-bali-leaf-ink focus:ring-bali-green" />
           <span className="text-sm text-slate-700">I agree to the Association's code of conduct.</span>
         </label>
         {errors.agreeCode && <p className={errCls}>{errors.agreeCode.message as string}</p>}
@@ -206,7 +206,7 @@ export default function IndividualApplicationForm({ config }: Props) {
         <button
           type="submit"
           disabled={submitting}
-          className="bg-bali-green text-white px-10 py-4 rounded-full font-bold hover:bg-emerald-700 transition-colors shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
+          className="bg-bali-leaf-ink text-white px-10 py-4 rounded-full font-bold hover:bg-emerald-700 transition-colors shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
         >
           {submitting ? "Submitting…" : "Submit application"}
         </button>

@@ -157,7 +157,7 @@ export function PeopleOrgList({ kind }: { kind: "people" | "organisations" }) {
 
 export function StatusPill({ status }: { status: string }) {
   const cls =
-    status === "Active" ? "bg-emerald-100 text-bali-green" :
+    status === "Active" ? "bg-emerald-100 text-bali-leaf-ink" :
     status === "Prospect" ? "bg-blue-100 text-bali-blue" :
     status === "Lapsed" ? "bg-gray-200 text-gray-700" :
     status === "Applicant" ? "bg-amber-100 text-amber-700" :

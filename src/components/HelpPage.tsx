@@ -51,7 +51,7 @@ export default function HelpPage({
 
         <section className="max-w-5xl mx-auto px-6 py-12 lg:py-16">
           {body && (
-            <div className="help-content max-w-none mb-10 text-slate-700 leading-relaxed [&_h3]:text-bali-blue [&_h3]:font-bold [&_h3]:text-xl [&_h3]:mt-8 [&_h3]:mb-3 [&_h4]:font-bold [&_h4]:text-lg [&_h4]:mt-6 [&_h4]:mb-2 [&_p]:mb-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-5 [&_ul]:space-y-2 [&_li]:text-slate-700 [&_a]:text-bali-green [&_a]:font-semibold [&_a:hover]:underline [&_strong]:text-slate-900">
+            <div className="help-content max-w-none mb-10 text-slate-700 leading-relaxed [&_h3]:text-bali-blue [&_h3]:font-bold [&_h3]:text-xl [&_h3]:mt-8 [&_h3]:mb-3 [&_h4]:font-bold [&_h4]:text-lg [&_h4]:mt-6 [&_h4]:mb-2 [&_p]:mb-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-5 [&_ul]:space-y-2 [&_li]:text-slate-700 [&_a]:text-bali-leaf-ink [&_a]:font-semibold [&_a:hover]:underline [&_strong]:text-slate-900">
               {body}
             </div>
           )}
@@ -66,10 +66,10 @@ export default function HelpPage({
                   const inner = (
                     <>
                       <div>
-                        <div className="font-bold text-slate-900 group-hover:text-bali-green transition-colors">{s.title}</div>
+                        <div className="font-bold text-slate-900 group-hover:text-bali-leaf-ink transition-colors">{s.title}</div>
                         {s.description && <div className="text-sm text-slate-500 mt-1 leading-relaxed">{s.description}</div>}
                       </div>
-                      <svg className="w-5 h-5 text-bali-green flex-shrink-0 mt-1 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                      <svg className="w-5 h-5 text-bali-leaf-ink flex-shrink-0 mt-1 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                     </>
                   );
                   return isExternal ? (
@@ -90,13 +90,13 @@ export default function HelpPage({
                   <li key={d.title}>
                     <a href={d.href} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between gap-4 p-4 hover:bg-white transition-colors">
                       <div className="flex items-center gap-3">
-                        <svg className="w-5 h-5 text-bali-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                        <svg className="w-5 h-5 text-bali-leaf-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
                         <div>
                           <div className="font-semibold text-slate-900">{d.title}</div>
                           {d.meta && <div className="text-xs text-slate-500">{d.meta}</div>}
                         </div>
                       </div>
-                      <span className="text-bali-green font-semibold text-sm">Download →</span>
+                      <span className="text-bali-leaf-ink font-semibold text-sm">Download →</span>
                     </a>
                   </li>
                 ))}
@@ -108,8 +108,8 @@ export default function HelpPage({
             <h2 className="font-bold text-xl text-bali-blue mb-2">Need to talk to someone?</h2>
             <p className="text-slate-600 mb-5">Our team responds to every member enquiry within 48 hours.</p>
             <div className="flex flex-wrap gap-3">
-              <Link to="/contact" className="bg-bali-green text-white px-6 py-3 rounded-full font-bold hover:bg-bali-slate transition-colors">Contact the team</Link>
-              <a href="mailto:contact@bali.org.uk" className="border border-bali-green text-bali-green px-6 py-3 rounded-full font-bold hover:bg-bali-green hover:text-white transition-colors">Email contact@bali.org.uk</a>
+              <Link to="/contact" className="bg-bali-leaf-ink text-white px-6 py-3 rounded-full font-bold hover:bg-bali-slate transition-colors">Contact the team</Link>
+              <a href="mailto:contact@bali.org.uk" className="border border-bali-leaf-ink text-bali-leaf-ink px-6 py-3 rounded-full font-bold hover:bg-bali-leaf-ink hover:text-white transition-colors">Email contact@bali.org.uk</a>
             </div>
           </div>
         </section>

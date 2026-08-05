@@ -95,7 +95,7 @@ export default function PortalPage() {
             <div className="w-10 h-10 rounded-full bg-bali-green flex items-center justify-center font-bold text-sm flex-shrink-0">JD</div>
             <div className="min-w-0">
               <p className="font-semibold text-sm truncate">John's Landscaping Ltd</p>
-              <span className="text-xs bg-bali-grass/30 text-bali-grass px-2 py-0.5 rounded-full">{memberTypeLabel}</span>
+              <span className="text-xs bg-bali-grass/30 text-bali-grass-light px-2 py-0.5 rounded-full">{memberTypeLabel}</span>
             </div>
           </div>
         </div>
@@ -213,9 +213,9 @@ export default function PortalPage() {
               <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-4 mb-6">
                 {[
                   { icon: 'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z', bg: 'bg-bali-blue/10', color: 'text-bali-blue', value: 'Accredited', sub: 'Contractor · Member since 2019', badge: { text: 'Active', cls: 'bg-green-100 text-green-700' } },
-                  { icon: 'M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z', bg: 'bg-bali-green/10', color: 'text-bali-green', value: '47', sub: 'Directory profile views', badge: { text: 'This month', cls: 'text-gray-400 text-xs' } },
-                  { icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z', bg: 'bg-bali-flow/10', color: 'text-bali-flow', value: '2', sub: 'Events booked', badge: { text: 'Upcoming', cls: 'text-gray-400 text-xs' } },
-                  { icon: 'M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0', bg: 'bg-bali-warm/10', color: 'text-bali-warm', value: '5', sub: 'LISS SmartCards', badge: { text: 'Valid cards', cls: 'text-gray-400 text-xs' } },
+                  { icon: 'M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z', bg: 'bg-bali-green/10', color: 'text-bali-leaf-ink', value: '47', sub: 'Directory profile views', badge: { text: 'This month', cls: 'text-gray-400 text-xs' } },
+                  { icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z', bg: 'bg-bali-flow/10', color: 'text-bali-flow-ink', value: '2', sub: 'Events booked', badge: { text: 'Upcoming', cls: 'text-gray-400 text-xs' } },
+                  { icon: 'M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0', bg: 'bg-bali-warm/10', color: 'text-bali-warm-ink', value: '5', sub: 'LISS SmartCards', badge: { text: 'Valid cards', cls: 'text-gray-400 text-xs' } },
                 ].map((card) => (
                   <div key={card.value} className="bg-white rounded-xl p-5 border border-gray-200 hover:shadow-md transition-all">
                     <div className="flex items-center justify-between mb-3">
@@ -240,9 +240,9 @@ export default function PortalPage() {
                   <div className="space-y-2">
                     {filterQuickActions([
                       { label: 'Renew Membership', color: 'hover:border-bali-blue', textColor: 'group-hover:text-bali-blue', action: 'membership' as Section },
-                      { label: 'Update Directory Listing', color: 'hover:border-bali-green', textColor: 'group-hover:text-bali-green', action: 'directory' as Section, benefitId: 'directory-listing' },
-                      { label: 'Apply for SmartCard', color: 'hover:border-bali-flow', textColor: 'group-hover:text-bali-flow', action: 'liss' as Section },
-                      { label: 'Book HR Health Check', color: 'hover:border-bali-warm', textColor: 'group-hover:text-bali-warm', action: 'support' as Section, benefitId: 'technical-support' },
+                      { label: 'Update Directory Listing', color: 'hover:border-bali-green', textColor: 'group-hover:text-bali-leaf-ink', action: 'directory' as Section, benefitId: 'directory-listing' },
+                      { label: 'Apply for SmartCard', color: 'hover:border-bali-flow', textColor: 'group-hover:text-bali-flow-ink', action: 'liss' as Section },
+                      { label: 'Book HR Health Check', color: 'hover:border-bali-warm', textColor: 'group-hover:text-bali-warm-ink', action: 'support' as Section, benefitId: 'technical-support' },
                       { label: 'Download Accredited Logo', color: 'hover:border-gray-300', textColor: '', action: 'documents' as Section, benefitId: 'accredited-logo' },
                     ], memberType).map((qa) => (
 
@@ -269,7 +269,7 @@ export default function PortalPage() {
                   <div className="space-y-3">
                     {[
                       { day: '14', month: 'Jul', title: 'National Conference 2026', loc: 'Stoneleigh Park', bg: 'bg-bali-blue', status: 'Booked', statusCls: 'bg-bali-blue/10 text-bali-blue' },
-                      { day: '22', month: 'Jul', title: 'ROLO Training Course', loc: 'Online — Webinar', bg: 'bg-bali-green', status: 'Booked', statusCls: 'bg-bali-green/10 text-bali-green' },
+                      { day: '22', month: 'Jul', title: 'ROLO Training Course', loc: 'Online — Webinar', bg: 'bg-bali-green', status: 'Booked', statusCls: 'bg-bali-green/10 text-bali-leaf-ink' },
                     ].map((ev) => (
                       <div key={ev.title} className="flex gap-3 p-3 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors cursor-pointer" onClick={() => go('events')}>
                         <div className={`w-10 h-10 ${ev.bg} rounded-lg flex flex-col items-center justify-center text-white flex-shrink-0`}>
@@ -389,7 +389,7 @@ export default function PortalPage() {
                     <p className="font-bold text-gray-900">{/* API: membership fee */}—</p>
                   </div>
                 </div>
-                <button className="bg-bali-green hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-all">
+                <button className="bg-bali-leaf-ink hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-all">
                   Renew Membership Now
                 </button>
               </div>
@@ -410,7 +410,7 @@ export default function PortalPage() {
               <div className="space-y-3">
                 {[
                   { day: '14', month: 'Jul', title: 'National Landscape Conference 2026', loc: 'Stoneleigh Park, Warwickshire · 9am–5pm', price: '', booked: true, bg: 'bg-bali-blue', wrapCls: 'bg-blue-50 border-bali-blue/20', badgeCls: 'bg-bali-blue text-white' },
-                  { day: '22', month: 'Jul', title: 'ROLO Training Course — Online', loc: 'Webinar · 10am–1pm', price: '', booked: true, bg: 'bg-bali-green', wrapCls: 'bg-green-50 border-bali-green/20', badgeCls: 'bg-bali-green text-white' },
+                  { day: '22', month: 'Jul', title: 'ROLO Training Course — Online', loc: 'Webinar · 10am–1pm', price: '', booked: true, bg: 'bg-bali-leaf-ink', wrapCls: 'bg-green-50 border-bali-leaf-ink/20', badgeCls: 'bg-bali-leaf-ink text-white' },
                   { day: '5', month: 'Aug', title: 'Health & Safety in Landscaping', loc: 'Birmingham NEC · Full day', price: 'Members: £95 · Non-members: £145', booked: false, bg: 'bg-gray-100', wrapCls: 'bg-white border-gray-200', badgeCls: '' },
                   { day: '18', month: 'Sep', title: 'Business Development for Landscapers', loc: 'Online Webinar · 2 hours', price: 'Free for members', booked: false, bg: 'bg-gray-100', wrapCls: 'bg-white border-gray-200', badgeCls: '' },
                 ].map((ev) => (
@@ -449,7 +449,7 @@ export default function PortalPage() {
                   { name: 'H&S Policy Template', meta: 'PDF · 320KB · Updated Nov 2025', color: 'text-red-500' },
                   { name: 'Lay of the Land Report 2025', meta: 'PDF · 8.2MB · Published 2025', color: 'text-red-500' },
                   { name: 'Risk Assessment Templates', meta: 'XLSX · 215KB · Updated Feb 2026', color: 'text-green-500' },
-                  { name: 'Landscape News — All Issues', meta: 'PDF · Archive · Members only', color: 'text-bali-flow' },
+                  { name: 'Landscape News — All Issues', meta: 'PDF · Archive · Members only', color: 'text-bali-flow-ink' },
                 ].map((doc) => (
                   <button key={doc.name} className="flex items-center gap-3 p-4 border border-gray-200 rounded-xl hover:border-bali-blue hover:bg-blue-50 transition-all text-left group">
                     <svg className={`w-8 h-8 ${doc.color} flex-shrink-0`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -500,7 +500,7 @@ export default function PortalPage() {
                   </table>
                 </div>
                 <div className="mt-5 flex gap-3">
-                  <button className="bg-bali-flow hover:bg-cyan-700 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-all">Apply for New Card</button>
+                  <button className="bg-bali-flow-ink hover:bg-cyan-700 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-all">Apply for New Card</button>
                   <button className="border border-gray-300 text-gray-600 hover:bg-gray-50 px-5 py-2.5 rounded-lg text-sm transition-all">Check Qualification</button>
                 </div>
               </div>
@@ -545,10 +545,10 @@ export default function PortalPage() {
           {section === 'support' && (
             <div className="max-w-3xl grid sm:grid-cols-2 gap-4">
               {[
-                { title: 'Free HR Health Check', body: 'Book a one-to-one review with our HR partner Quest — covering employment law, contracts, and HR best practice.', cta: 'Book HR Review', bg: 'bg-bali-warm', icon: 'bg-bali-warm/10', iconColor: 'text-bali-warm', iconPath: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z' },
-                { title: 'H&S Health Check', body: 'Assess your health and safety compliance and get tailored recommendations and downloadable policy templates.', cta: 'Start H&S Check', bg: 'bg-bali-green', icon: 'bg-bali-green/10', iconColor: 'text-bali-green', iconPath: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
+                { title: 'Free HR Health Check', body: 'Book a one-to-one review with our HR partner Quest — covering employment law, contracts, and HR best practice.', cta: 'Book HR Review', bg: 'bg-bali-warm', icon: 'bg-bali-warm/10', iconColor: 'text-bali-warm-ink', iconPath: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z' },
+                { title: 'H&S Health Check', body: 'Assess your health and safety compliance and get tailored recommendations and downloadable policy templates.', cta: 'Start H&S Check', bg: 'bg-bali-green', icon: 'bg-bali-green/10', iconColor: 'text-bali-leaf-ink', iconPath: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
                 { title: 'Dispute Resolution', body: "Access BALI's dispute resolution service for professional guidance on client or contractor disputes.", cta: 'Request Support', bg: 'bg-bali-blue', icon: 'bg-bali-blue/10', iconColor: 'text-bali-blue', iconPath: 'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z' },
-                { title: 'Contact the Team', body: 'Get in touch with the BALI team directly. We aim to respond to all enquiries within 48 hours.', cta: 'Contact BALI', bg: 'bg-bali-flow', icon: 'bg-bali-flow/10', iconColor: 'text-bali-flow', iconPath: 'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z' },
+                { title: 'Contact the Team', body: 'Get in touch with the BALI team directly. We aim to respond to all enquiries within 48 hours.', cta: 'Contact BALI', bg: 'bg-bali-flow', icon: 'bg-bali-flow/10', iconColor: 'text-bali-flow-ink', iconPath: 'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z' },
               ].map((card) => (
                 <div key={card.title} className="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-md transition-all">
                   <div className={`w-12 h-12 ${card.icon} rounded-xl flex items-center justify-center mb-4`}>

@@ -60,7 +60,7 @@ export default function ConferenceInterestForm() {
 
           {status === "success" ? (
             <div className="rounded-2xl border border-bali-green/30 bg-bali-green/10 p-6 text-gray-800">
-              <p className="font-semibold text-bali-green mb-1">Thanks — you're on the list.</p>
+              <p className="font-semibold text-bali-leaf-ink mb-1">Thanks — you're on the list.</p>
               <p className="text-sm">We'll email you as soon as Conference 2026 tickets go on sale.</p>
             </div>
           ) : (
@@ -120,7 +120,7 @@ export default function ConferenceInterestForm() {
                 "radial-gradient(circle at 20% 20%, rgba(255,255,255,0.4), transparent 40%), radial-gradient(circle at 80% 80%, rgba(255,255,255,0.3), transparent 50%)",
             }} />
             <div className="relative">
-              <p className="uppercase tracking-widest text-xs font-semibold text-bali-grass mb-3">Sponsor the day</p>
+              <p className="uppercase tracking-widest text-xs font-semibold text-bali-grass-light mb-3">Sponsor the day</p>
               <h3 className="text-2xl sm:text-3xl font-bold leading-tight mb-4">
                 Put your brand in the room with the UK's landscape leaders
               </h3>

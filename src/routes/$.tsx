@@ -48,17 +48,17 @@ const themes: Record<
   { gradient: string; accent: string; accentBg: string; iconColor: string; btn: string }
 > = {
   blue: {
-    gradient: "linear-gradient(135deg, #1D4D59 0%, #21509A 60%, #0E8B61 100%)",
+    gradient: "linear-gradient(135deg, #1D4D59 0%, #21509A 60%, #0A6B4B 100%)",
     accent: "text-bali-blue",
     accentBg: "bg-bali-blue/10",
     iconColor: "text-bali-blue",
     btn: "bg-bali-blue hover:bg-blue-800",
   },
   green: {
-    gradient: "linear-gradient(135deg, #0E8B61 0%, #1D4D59 100%)",
-    accent: "text-bali-green",
+    gradient: "linear-gradient(135deg, #0A6B4B 0%, #1D4D59 100%)",
+    accent: "text-bali-leaf-ink",
     accentBg: "bg-bali-green/10",
-    iconColor: "text-bali-green",
+    iconColor: "text-bali-leaf-ink",
     btn: "bg-bali-green hover:bg-green-700",
   },
   slate: {
@@ -69,17 +69,17 @@ const themes: Record<
     btn: "bg-bali-slate hover:bg-slate-800",
   },
   flow: {
-    gradient: "linear-gradient(135deg, #30A1C0 0%, #21509A 100%)",
-    accent: "text-bali-flow",
+    gradient: "linear-gradient(135deg, #1F6E86 0%, #21509A 100%)",
+    accent: "text-bali-flow-ink",
     accentBg: "bg-bali-flow/10",
-    iconColor: "text-bali-flow",
+    iconColor: "text-bali-flow-ink",
     btn: "bg-bali-flow hover:bg-cyan-700",
   },
   warm: {
-    gradient: "linear-gradient(135deg, #CF5E2C 0%, #6D4276 100%)",
-    accent: "text-bali-warm",
+    gradient: "linear-gradient(135deg, #A2431C 0%, #6D4276 100%)",
+    accent: "text-bali-warm-ink",
     accentBg: "bg-bali-warm/10",
-    iconColor: "text-bali-warm",
+    iconColor: "text-bali-warm-ink",
     btn: "bg-bali-warm hover:bg-orange-700",
   },
   purple: {
@@ -111,7 +111,7 @@ function SplatPage() {
 
 function MembershipCTA() {
   return (
-    <section className="relative overflow-hidden text-white py-20" style={{ background: "linear-gradient(135deg, #0E8B61 0%, #1D4D59 60%, #21509A 100%)" }}>
+    <section className="relative overflow-hidden text-white py-20" style={{ background: "linear-gradient(135deg, #0A6B4B 0%, #1D4D59 60%, #21509A 100%)" }}>
       <div
         className="absolute inset-0 opacity-10 pointer-events-none"
         style={{
@@ -122,7 +122,7 @@ function MembershipCTA() {
       <div className="max-w-5xl mx-auto px-6 relative">
         <div className="grid md:grid-cols-5 gap-10 items-center">
           <div className="md:col-span-3">
-            <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass">Join the Association</p>
+            <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass-light">Join the Association</p>
             <h2 className="text-3xl sm:text-4xl font-bold leading-tight mb-4">
               Ready to grow your business with BALI?
             </h2>
@@ -133,13 +133,13 @@ function MembershipCTA() {
             <div className="flex flex-wrap gap-3">
               <Link
                 to="/join"
-                className="bg-white text-bali-green hover:bg-gray-100 px-7 py-3.5 rounded-lg font-bold transition-all hover:scale-105 shadow-xl"
+                className="bg-white text-bali-leaf-ink hover:bg-gray-100 px-7 py-3.5 rounded-lg font-bold transition-all hover:scale-105 shadow-xl"
               >
                 Apply now →
               </Link>
               <Link
                 to="/membership/enquiry"
-                className="bg-bali-green hover:bg-green-700 text-white px-7 py-3.5 rounded-lg font-bold transition-all hover:scale-105 shadow-lg"
+                className="bg-bali-leaf-ink hover:bg-green-700 text-white px-7 py-3.5 rounded-lg font-bold transition-all hover:scale-105 shadow-lg"
               >
                 Make an enquiry
               </Link>
@@ -217,7 +217,7 @@ function MemberTestimonials() {
               className="bg-white border border-gray-200 rounded-2xl shadow-md p-7 flex flex-col max-md:min-w-[85%] max-md:snap-center"
             >
               <svg
-                className="w-9 h-9 text-bali-green mb-4"
+                className="w-9 h-9 text-bali-leaf-ink mb-4"
                 fill="currentColor"
                 viewBox="0 0 32 32"
                 aria-hidden="true"
@@ -228,7 +228,7 @@ function MemberTestimonials() {
                 "{tst.quote}"
               </blockquote>
               <figcaption className="mt-6 flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-bali-green/10 text-bali-green flex items-center justify-center font-bold text-sm flex-shrink-0">
+                <div className="w-12 h-12 rounded-full bg-bali-green/10 text-bali-leaf-ink flex items-center justify-center font-bold text-sm flex-shrink-0">
                   {tst.initials}
                 </div>
                 <div className="min-w-0 flex-1">
@@ -374,7 +374,7 @@ function AdvertCTA({ themeKey }: { themeKey: Theme }) {
           </Link>
           <Link
             to="mailto:joanna.pieprzak@bali.org.uk?subject=BALI%20advertising%20enquiry"
-            className="bg-bali-green hover:bg-green-700 text-white px-7 py-3 rounded-lg font-bold transition-all hover:scale-105"
+            className="bg-bali-leaf-ink hover:bg-green-700 text-white px-7 py-3 rounded-lg font-bold transition-all hover:scale-105"
           >
             Enquire now
           </Link>
@@ -431,7 +431,7 @@ function RichPage({ path, content }: { path: string; content: PageContent }) {
             />
             <div className="max-w-6xl mx-auto px-6 relative">
               <Breadcrumbs path={path} />
-              <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass">
+              <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass-light">
                 {content.eyebrow}
               </p>
               <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-5 max-w-3xl animate-fade-up">
@@ -484,7 +484,7 @@ function RichPage({ path, content }: { path: string; content: PageContent }) {
           <div className="max-w-6xl mx-auto px-6 relative grid lg:grid-cols-5 gap-10 items-center">
             <div className="lg:col-span-3">
               <Breadcrumbs path={path} />
-              <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass">
+              <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass-light">
                 {content.eyebrow}
               </p>
               <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-5 max-w-3xl animate-fade-up">
@@ -774,7 +774,7 @@ function RichPage({ path, content }: { path: string; content: PageContent }) {
               </Link>
               <Link
                 to="/join"
-                className="bg-bali-green hover:bg-green-700 text-white px-7 py-3 rounded-lg font-bold transition-all hover:scale-105"
+                className="bg-bali-leaf-ink hover:bg-green-700 text-white px-7 py-3 rounded-lg font-bold transition-all hover:scale-105"
               >
                 Join Today
               </Link>
@@ -796,7 +796,7 @@ function ComingSoon({ path }: { path: string }) {
       >
         <div className="max-w-6xl mx-auto px-6 relative">
           <Breadcrumbs path={path} />
-          <p className="text-bali-grass uppercase tracking-widest text-sm font-semibold mb-3">BALI</p>
+          <p className="text-bali-grass-light uppercase tracking-widest text-sm font-semibold mb-3">BALI</p>
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-4 animate-fade-up">{title}</h1>
           <p className="text-blue-100 text-lg max-w-2xl">
             This page is part of the BALI website and is being prepared.

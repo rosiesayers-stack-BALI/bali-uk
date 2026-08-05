@@ -129,7 +129,7 @@ function ContactPage() {
         className="relative text-white"
         style={{
           backgroundImage:
-            "linear-gradient(135deg, #1D4D59 0%, #21509A 60%, #0E8B61 100%)",
+            "linear-gradient(135deg, #1D4D59 0%, #21509A 60%, #0A6B4B 100%)",
         }}
       >
         <div className="max-w-7xl mx-auto px-4 py-14 sm:py-16">
@@ -394,7 +394,7 @@ function ContactPage() {
           <div className="flex gap-3 sm:justify-end">
             <Link
               to="/join"
-              className="bg-bali-green text-white px-5 py-3 rounded-lg font-medium hover:bg-green-700 transition-colors"
+              className="bg-bali-leaf-ink text-white px-5 py-3 rounded-lg font-medium hover:bg-green-700 transition-colors"
             >
               Join BALI
             </Link>

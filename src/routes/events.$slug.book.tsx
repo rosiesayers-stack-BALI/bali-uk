@@ -144,7 +144,7 @@ function BookingPage() {
               <span className="opacity-60">/</span>
               <span className="text-white">Book</span>
             </nav>
-            <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass">Booking</p>
+            <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass-light">Booking</p>
             <h1 className="text-3xl sm:text-4xl font-bold leading-tight mb-4">{event.title}</h1>
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-blue-100 text-sm">
               <span className="inline-flex items-center gap-2"><CalendarIcon className="w-4 h-4" aria-hidden />{event.date_text}{event.start_time ? ` · ${event.start_time}${event.end_time ? `–${event.end_time}` : ""}` : ""}</span>
@@ -166,7 +166,7 @@ function BookingPage() {
               </p>
             )}
             {isMember && (
-              <p className="mt-3 text-sm text-bali-grass font-medium">
+              <p className="mt-3 text-sm text-bali-grass-ink font-medium">
                 Signed in as {person?.name || user?.email} — member price applied.
               </p>
             )}
@@ -314,7 +314,7 @@ function ConfirmationScreen({ event, result, attendeeEmail }: { event: EventRow;
         <div className="max-w-2xl mx-auto px-6">
           <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 text-center">
             <div className="mx-auto w-14 h-14 rounded-full bg-bali-grass/10 grid place-items-center mb-4">
-              <CheckCircle2 className="w-8 h-8 text-bali-grass" aria-hidden />
+              <CheckCircle2 className="w-8 h-8 text-bali-grass-ink" aria-hidden />
             </div>
             <h1 className="text-2xl font-bold text-bali-slate mb-2">
               {result.status === "Confirmed" ? "Booking confirmed" : "Booking received"}

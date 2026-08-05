@@ -33,7 +33,7 @@ function DirectoryHub() {
       <Navbar />
       <main className="flex-1">
         {/* Hero */}
-        <section className="text-white" style={{ background: "linear-gradient(135deg, #1D4D59 0%, #0E8B61 100%)" }}>
+        <section className="text-white" style={{ background: "linear-gradient(135deg, #1D4D59 0%, #0A6B4B 100%)" }}>
           <div className="max-w-6xl mx-auto px-6 py-20 lg:py-24">
             <div className="flex items-center gap-3 text-emerald-200 font-semibold tracking-widest uppercase text-xs mb-6">
               <span className="h-px w-8 bg-emerald-300" />
@@ -62,12 +62,12 @@ function DirectoryHub() {
                 to={c.href}
                 className="group p-6 bg-white border border-slate-200 rounded-2xl hover:border-bali-green hover:shadow-lg transition-all"
               >
-                <div className="text-3xl font-bold text-bali-green mb-1">
+                <div className="text-3xl font-bold text-bali-leaf-ink mb-1">
                   {MEMBER_COUNT_BY_CATEGORY[c.slug as keyof typeof MEMBER_COUNT_BY_CATEGORY]}
                 </div>
                 <div className="font-bold text-slate-900 mb-1">{c.label}s</div>
                 <div className="text-xs text-slate-500 leading-relaxed mb-4">{c.desc}</div>
-                <span className="text-bali-green text-sm font-semibold group-hover:underline">Browse {c.label.toLowerCase()}s →</span>
+                <span className="text-bali-leaf-ink text-sm font-semibold group-hover:underline">Browse {c.label.toLowerCase()}s →</span>
               </Link>
             ))}
           </div>
@@ -82,7 +82,7 @@ function DirectoryHub() {
             <p className="text-slate-600 max-w-2xl mx-auto mb-8">
               Accredited members commit to professional standards, fair contracts and quality workmanship — backed by an independent dispute resolution service.
             </p>
-            <Link to="/directory/why" className="inline-block bg-bali-green text-white px-8 py-4 rounded-full font-bold hover:bg-bali-slate transition-colors shadow-lg">
+            <Link to="/directory/why" className="inline-block bg-bali-leaf-ink text-white px-8 py-4 rounded-full font-bold hover:bg-bali-slate transition-colors shadow-lg">
               How we vet our members
             </Link>
           </div>

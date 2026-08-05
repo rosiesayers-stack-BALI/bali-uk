@@ -64,7 +64,7 @@ function PreviewArticle({ data }: { data: NewsPreviewData }) {
               <span className="opacity-60">/</span>
               <span className="text-white truncate max-w-xs">{data.title || "Untitled article"}</span>
             </nav>
-            <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass">BALI News</p>
+            <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass-light">BALI News</p>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
               {data.title || "Untitled article"}
             </h1>

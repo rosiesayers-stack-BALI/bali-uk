@@ -168,7 +168,7 @@ function EventsIndex() {
       {/* hero */}
       <section className="py-16 text-white relative overflow-hidden" style={{ background: "linear-gradient(135deg, #21509A 0%, #6D4276 100%)" }}>
         <div className="max-w-6xl mx-auto px-6">
-          <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass">BALI Events</p>
+          <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass-light">BALI Events</p>
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">Upcoming Events</h1>
           <p className="text-blue-100 text-lg max-w-2xl">
             National conferences, regional connects, supplier forums, webinars and training days — built for and by the UK landscape industry.
@@ -428,7 +428,7 @@ function EventCard({ event }: { event: EventRow }) {
             <MapPin className="w-3.5 h-3.5 shrink-0" aria-hidden />
             <span className="truncate">{event.venue}</span>
           </span>
-          <span className={`text-[11px] font-semibold whitespace-nowrap ${soldOut ? "text-red-600" : "text-bali-grass"}`}>
+          <span className={`text-[11px] font-semibold whitespace-nowrap ${soldOut ? "text-red-600" : "text-bali-grass-ink"}`}>
             {soldOut ? "Sold out" : left !== null ? `${left} place${left === 1 ? "" : "s"} left` : "Places available"}
           </span>
         </div>

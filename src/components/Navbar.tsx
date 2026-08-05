@@ -146,15 +146,15 @@ export default function Navbar({ transparent = false }: NavbarProps) {
             The UK's leading landscaping trade association
           </span>
           <div className="flex gap-4 ml-auto items-center">
-            <Link to="/contact" className="hover:text-bali-grass transition-colors font-medium uppercase tracking-wide text-xs">
+            <Link to="/contact" className="hover:text-bali-grass-light transition-colors font-medium uppercase tracking-wide text-xs">
               Contact
             </Link>
             <span className="text-blue-300">|</span>
-            <Link to="/join" className="hover:text-bali-grass transition-colors font-medium uppercase tracking-wide text-xs">
+            <Link to="/join" className="hover:text-bali-grass-light transition-colors font-medium uppercase tracking-wide text-xs">
               Join
             </Link>
             <span className="text-blue-300">|</span>
-            <Link to="/login" className="hover:text-bali-grass transition-colors font-medium uppercase tracking-wide text-xs">
+            <Link to="/login" className="hover:text-bali-grass-light transition-colors font-medium uppercase tracking-wide text-xs">
               Login
             </Link>
           </div>
@@ -243,7 +243,7 @@ export default function Navbar({ transparent = false }: NavbarProps) {
               </Link>
               <Link
                 to="/join"
-                className="block mt-2 bg-bali-green text-white text-center py-2 px-3 rounded font-medium"
+                className="block mt-2 bg-bali-leaf-ink text-white text-center py-2 px-3 rounded font-medium"
                 onClick={() => setMobileOpen(false)}
               >
                 Join BALI

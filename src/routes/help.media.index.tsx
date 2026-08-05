@@ -62,7 +62,7 @@ function MediaIndex() {
     <div className="min-h-screen bg-white text-slate-900 flex flex-col">
       <Navbar />
       <main className="flex-1">
-        <section className="text-white" style={{ background: "linear-gradient(135deg, #1D4D59 0%, #0E8B61 100%)" }}>
+        <section className="text-white" style={{ background: "linear-gradient(135deg, #1D4D59 0%, #0A6B4B 100%)" }}>
           <div className="max-w-6xl mx-auto px-6 py-20 lg:py-24">
             <div className="flex items-center gap-3 text-emerald-200 font-semibold tracking-widest uppercase text-xs mb-6">
               <span className="h-px w-8 bg-emerald-300" />
@@ -94,14 +94,14 @@ function MediaIndex() {
                       <div className="relative aspect-video bg-slate-100">
                         <img src={thumb(v.videoId)} alt="" loading="lazy" className="w-full h-full object-cover" />
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="w-14 h-14 rounded-full bg-white/90 group-hover:bg-bali-green group-hover:text-white transition-colors flex items-center justify-center shadow-lg">
+                          <div className="w-14 h-14 rounded-full bg-white/90 group-hover:bg-bali-leaf-ink group-hover:text-white transition-colors flex items-center justify-center shadow-lg">
                             <svg viewBox="0 0 24 24" className="w-6 h-6 ml-1" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
                           </div>
                         </div>
                       </div>
                       <div className="p-5 flex-1 flex flex-col">
                         <p className="text-xs uppercase tracking-wider text-slate-500 mb-2">{new Date(v.published).toLocaleDateString("en-GB", { year: "numeric", month: "long" })}</p>
-                        <h3 className="font-bold text-slate-900 leading-snug group-hover:text-bali-green transition-colors">{v.title}</h3>
+                        <h3 className="font-bold text-slate-900 leading-snug group-hover:text-bali-leaf-ink transition-colors">{v.title}</h3>
                       </div>
                     </Link>
                   ))}

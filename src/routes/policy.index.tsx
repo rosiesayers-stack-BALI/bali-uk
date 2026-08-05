@@ -51,7 +51,7 @@ function PolicyIndex() {
 
       <section className="py-20 text-white relative overflow-hidden" style={{ background: "linear-gradient(135deg, #21509A 0%, #6D4276 100%)" }}>
         <div className="max-w-6xl mx-auto px-6 relative">
-          <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass">Policy & Campaigns</p>
+          <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass-light">Policy & Campaigns</p>
           <h1 className="text-4xl sm:text-5xl font-bold mb-4 max-w-3xl leading-tight">Your hub for landscape industry policy & campaigns</h1>
           <p className="text-blue-100 text-lg max-w-2xl">
             The latest policy updates, government consultation responses and campaigns from BALI's policy team — representing 1,800 businesses and over 950 accredited members across the UK.

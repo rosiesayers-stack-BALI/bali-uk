@@ -81,7 +81,7 @@ function BenefitCard({ benefit, tone }: { benefit: Benefit; tone: 'priority' | '
         : 'border-gray-200 bg-gray-50'
   const badgeCls =
     tone === 'priority'
-      ? 'bg-bali-green text-white'
+      ? 'bg-bali-leaf-ink text-white'
       : tone === 'available'
         ? 'bg-bali-blue/10 text-bali-blue'
         : 'bg-gray-200 text-gray-600'
@@ -133,7 +133,7 @@ export function MemberBenefits({ memberType }: { memberType: MemberType | null }
 
       {priority.length > 0 && (
         <section className="mb-5">
-          <h4 className="text-xs font-semibold uppercase tracking-wide text-bali-green mb-2">
+          <h4 className="text-xs font-semibold uppercase tracking-wide text-bali-leaf-ink mb-2">
             Prioritised for {memberType}
           </h4>
           <div className="grid md:grid-cols-2 gap-3">

@@ -26,7 +26,7 @@ export const Route = createFileRoute("/join/$category/apply")({
       <Navbar />
       <main className="flex-1 max-w-2xl mx-auto px-6 py-20 text-center">
         <h1 className="text-3xl font-bold text-bali-blue mb-4">Membership category not found</h1>
-        <Link to="/join" className="text-bali-green font-bold underline">Back to all categories</Link>
+        <Link to="/join" className="text-bali-leaf-ink font-bold underline">Back to all categories</Link>
       </main>
       <Footer />
     </div>
@@ -70,7 +70,7 @@ function ApplyPage() {
     <div className="min-h-screen bg-slate-50 flex flex-col">
       <Navbar />
       <main className="flex-1">
-        <section className="text-white" style={{ background: "linear-gradient(135deg, #0E8B61 0%, #1D4D59 100%)" }}>
+        <section className="text-white" style={{ background: "linear-gradient(135deg, #0A6B4B 0%, #1D4D59 100%)" }}>
           <div className="max-w-4xl mx-auto px-6 py-14">
             <Link to="/join" className="inline-flex items-center gap-2 text-emerald-200 text-sm font-semibold mb-4 hover:text-white">
               ← Back to membership categories
@@ -90,12 +90,12 @@ function ApplyPage() {
           <section className="max-w-4xl mx-auto px-6 pt-10">
             <div className="bg-white border border-slate-200 rounded-2xl p-6 lg:p-7 shadow-sm flex flex-col md:flex-row md:items-center gap-5">
               <div className="flex-1">
-                <div className="text-xs font-bold uppercase tracking-wider text-bali-green mb-1">Two ways to apply</div>
+                <div className="text-xs font-bold uppercase tracking-wider text-bali-leaf-ink mb-1">Two ways to apply</div>
                 <h2 className="text-lg font-bold text-bali-blue mb-1">Prefer to fill in offline?</h2>
                 <p className="text-sm text-slate-600">
                   Download the editable PDF, complete it at your own pace, then email it with any
                   supporting documents to{" "}
-                  <a href="mailto:membership@bali.org.uk" className="text-bali-green font-semibold underline">
+                  <a href="mailto:membership@bali.org.uk" className="text-bali-leaf-ink font-semibold underline">
                     membership@bali.org.uk
                   </a>
                   . Otherwise, complete the online form below.
@@ -107,7 +107,7 @@ function ApplyPage() {
                     key={p.href}
                     href={p.href}
                     download
-                    className="inline-flex items-center justify-center gap-2 bg-bali-green text-white px-5 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition"
+                    className="inline-flex items-center justify-center gap-2 bg-bali-leaf-ink text-white px-5 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition"
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round">
                       <path d="M12 4v12m0 0l-4-4m4 4l4-4M4 20h16" />

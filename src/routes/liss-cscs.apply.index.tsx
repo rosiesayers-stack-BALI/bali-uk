@@ -51,7 +51,7 @@ function ApplyLanding() {
             <span className="opacity-60">/</span>
             <span className="text-white">Apply for a SmartCard</span>
           </nav>
-          <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass">LISS</p>
+          <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass-light">LISS</p>
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-5 max-w-4xl">
             Apply for a LISS SmartCard
           </h1>

@@ -44,7 +44,7 @@ function FeesPage() {
         {/* Hero */}
         <section
           className="relative text-white overflow-hidden"
-          style={{ background: "linear-gradient(135deg, #1D4D59 0%, #21509A 60%, #0E8B61 100%)" }}
+          style={{ background: "linear-gradient(135deg, #1D4D59 0%, #21509A 60%, #0A6B4B 100%)" }}
         >
           <div className="max-w-6xl mx-auto px-6 py-16 lg:py-20">
             <nav className="text-sm text-blue-100/80 mb-4 flex flex-wrap items-center gap-2">
@@ -54,7 +54,7 @@ function FeesPage() {
               <span className="opacity-60">/</span>
               <span className="text-white">Fees</span>
             </nav>
-            <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass">
+            <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass-light">
               Membership
             </p>
             <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-5 max-w-3xl">
@@ -85,7 +85,7 @@ function FeesPage() {
                     <tr key={f.category} className="hover:bg-slate-50/50">
                       <td className="px-5 py-4 font-semibold text-slate-900">{f.category}</td>
                       <td className="px-5 py-4 text-slate-600 text-sm hidden sm:table-cell">{f.basis}</td>
-                      <td className="px-5 py-4 text-right font-semibold text-bali-green whitespace-nowrap">
+                      <td className="px-5 py-4 text-right font-semibold text-bali-leaf-ink whitespace-nowrap">
                         {f.from}
                       </td>
                     </tr>
@@ -123,7 +123,7 @@ function FeesPage() {
                   "Regional networking groups and technical webinars",
                 ].map((b) => (
                   <li key={b} className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-bali-green flex-shrink-0 mt-1" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-bali-leaf-ink flex-shrink-0 mt-1" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                     <span>{b}</span>
@@ -143,7 +143,7 @@ function FeesPage() {
               what documents you'll need.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              <Link to="/membership/enquiry" className="bg-bali-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700">
+              <Link to="/membership/enquiry" className="bg-bali-leaf-ink text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700">
                 Send an enquiry
               </Link>
               <Link to="/join" className="border border-slate-300 px-6 py-3 rounded-lg font-semibold hover:bg-slate-50">

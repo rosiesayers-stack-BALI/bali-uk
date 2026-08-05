@@ -186,7 +186,7 @@ export default function ShortApplyForm({ config }: Props) {
     return (
       <section className="max-w-3xl mx-auto px-6 py-16 text-center">
         <div className="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mx-auto mb-6">
-          <svg className="w-8 h-8 text-bali-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+          <svg className="w-8 h-8 text-bali-leaf-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
@@ -197,7 +197,7 @@ export default function ShortApplyForm({ config }: Props) {
         <p className="text-slate-500 text-sm max-w-xl mx-auto">
           We aim to respond within 48 working hours with the right application pack for your business and
           a tailored fee quote. If it's urgent, call us on{" "}
-          <a className="text-bali-green font-semibold underline" href="tel:+442476690333">+44 (0)24 7669 0333</a>.
+          <a className="text-bali-leaf-ink font-semibold underline" href="tel:+442476690333">+44 (0)24 7669 0333</a>.
         </p>
       </section>
     );
@@ -301,7 +301,7 @@ export default function ShortApplyForm({ config }: Props) {
             <label className="flex items-start gap-3 text-sm text-slate-600">
               <input
                 type="checkbox"
-                className="mt-1 h-4 w-4 rounded border-slate-300 text-bali-green focus:ring-bali-green/30"
+                className="mt-1 h-4 w-4 rounded border-slate-300 text-bali-leaf-ink focus:ring-bali-green/30"
                 {...form.register("consent")}
               />
               <span>
@@ -318,7 +318,7 @@ export default function ShortApplyForm({ config }: Props) {
             <button
               type="submit"
               disabled={submitting}
-              className="inline-flex items-center justify-center bg-bali-green text-white px-7 py-3.5 rounded-lg font-bold hover:bg-emerald-700 transition disabled:opacity-60"
+              className="inline-flex items-center justify-center bg-bali-leaf-ink text-white px-7 py-3.5 rounded-lg font-bold hover:bg-emerald-700 transition disabled:opacity-60"
             >
               {submitting ? "Sending…" : "Send to membership team"}
             </button>

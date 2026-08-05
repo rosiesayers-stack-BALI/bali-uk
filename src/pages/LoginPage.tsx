@@ -48,7 +48,7 @@ export default function LoginPage() {
             </svg>
             Back to website
           </Link>
-          <Link to="/join" className="hover:text-bali-grass transition-colors font-medium uppercase tracking-wide text-xs">
+          <Link to="/join" className="hover:text-bali-grass-light transition-colors font-medium uppercase tracking-wide text-xs">
             Not a member? Join today
           </Link>
         </div>
@@ -70,7 +70,7 @@ export default function LoginPage() {
         {/* Left panel */}
         <div
           className="hidden lg:flex flex-col justify-between w-1/2 p-12 relative overflow-hidden"
-          style={{ background: 'linear-gradient(150deg, #21509A 0%, #1D4D59 60%, #0E8B61 100%)' }}
+          style={{ background: 'linear-gradient(150deg, #21509A 0%, #1D4D59 60%, #0A6B4B 100%)' }}
         >
           <div
             className="absolute inset-0 opacity-10"
@@ -97,7 +97,7 @@ export default function LoginPage() {
                 'Apply for & manage LISS SmartCards',
               ].map((item) => (
                 <li key={item} className="flex items-center gap-3 text-blue-100">
-                  <svg className="w-5 h-5 text-bali-grass flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-bali-grass-light flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   {item}
@@ -107,7 +107,7 @@ export default function LoginPage() {
           </div>
           <div className="relative mt-8">
             <p className="text-blue-200 text-sm">Not yet a member?</p>
-            <Link to="/join" className="text-white font-semibold hover:text-bali-grass transition-colors text-sm underline underline-offset-2">
+            <Link to="/join" className="text-white font-semibold hover:text-bali-grass-light transition-colors text-sm underline underline-offset-2">
               Join BALI today →
             </Link>
           </div>

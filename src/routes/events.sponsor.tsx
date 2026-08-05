@@ -17,7 +17,7 @@ export const Route = createFileRoute("/events/sponsor")({
 });
 
 function SponsorPage() {
-  const gradient = "linear-gradient(135deg, #CF5E2C 0%, #6D4276 100%)";
+  const gradient = "linear-gradient(135deg, #A2431C 0%, #6D4276 100%)";
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Navbar />
@@ -50,7 +50,7 @@ function SponsorPage() {
             </h2>
             <p className="text-gray-700 leading-relaxed text-lg">
               To register your interest in sponsoring a BALI event, please email{" "}
-              <a href="mailto:joanna.pieprzak@bali.org.uk" className="text-bali-warm font-semibold hover:underline">
+              <a href="mailto:joanna.pieprzak@bali.org.uk" className="text-bali-warm-ink font-semibold hover:underline">
                 joanna.pieprzak@bali.org.uk
               </a>{" "}
               and a member of the team will be in touch.
@@ -58,7 +58,7 @@ function SponsorPage() {
             <div className="mt-8">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-white bg-bali-warm hover:bg-orange-700 transition-all hover:scale-105 shadow"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-white bg-bali-warm-ink hover:bg-orange-700 transition-all hover:scale-105 shadow"
               >
                 Contact us
               </Link>

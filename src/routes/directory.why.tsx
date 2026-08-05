@@ -32,7 +32,7 @@ function Page() {
     <div className="min-h-screen bg-white flex flex-col">
       <Navbar />
       <main className="flex-1">
-        <section className="text-white" style={{ background: "linear-gradient(135deg, #1D4D59 0%, #0E8B61 100%)" }}>
+        <section className="text-white" style={{ background: "linear-gradient(135deg, #1D4D59 0%, #0A6B4B 100%)" }}>
           <div className="max-w-5xl mx-auto px-6 py-20 lg:py-24">
             <div className="text-emerald-200 font-semibold tracking-widest uppercase text-xs mb-6">Quality you can trust</div>
             <h1 className="font-bold text-4xl md:text-6xl mb-6">{TITLE}</h1>
@@ -44,7 +44,7 @@ function Page() {
             {reasons.map((r) => (
               <div key={r.t} className="p-7 bg-white border border-slate-200 rounded-2xl">
                 <div className="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center mb-4">
-                  <svg className="w-5 h-5 text-bali-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round"><path d="M5 13l4 4L19 7" /></svg>
+                  <svg className="w-5 h-5 text-bali-leaf-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round"><path d="M5 13l4 4L19 7" /></svg>
                 </div>
                 <h3 className="font-bold text-lg mb-2 text-slate-900">{r.t}</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">{r.b}</p>
@@ -52,7 +52,7 @@ function Page() {
             ))}
           </div>
           <div className="mt-12 text-center">
-            <Link to="/directory" className="inline-block bg-bali-green text-white px-8 py-4 rounded-full font-bold hover:bg-bali-slate transition-colors shadow-lg">
+            <Link to="/directory" className="inline-block bg-bali-leaf-ink text-white px-8 py-4 rounded-full font-bold hover:bg-bali-slate transition-colors shadow-lg">
               Browse the directory
             </Link>
           </div>

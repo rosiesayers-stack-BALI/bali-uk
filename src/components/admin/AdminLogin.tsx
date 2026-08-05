@@ -30,7 +30,7 @@ export function AdminLogin() {
       <Navbar />
       <section
         className="relative text-white overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #1D4D59 0%, #21509A 55%, #0E8B61 100%)" }}
+        style={{ background: "linear-gradient(135deg, #1D4D59 0%, #21509A 55%, #0A6B4B 100%)" }}
       >
         <div className="relative max-w-7xl mx-auto px-4 py-10 lg:py-12">
           <p className="text-white/70 text-xs uppercase tracking-[0.2em] font-semibold mb-2">

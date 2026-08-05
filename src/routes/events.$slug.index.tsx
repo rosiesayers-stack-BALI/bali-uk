@@ -74,7 +74,7 @@ function EventPage() {
               <span className="opacity-60">/</span>
               <span className="text-white truncate max-w-xs">{event.title}</span>
             </nav>
-            <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass">{event.category}</p>
+            <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass-light">{event.category}</p>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">{event.title}</h1>
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-blue-100">
               <span><strong className="text-white">Date:</strong> {event.date_text}</span>
@@ -104,7 +104,7 @@ function EventPage() {
               </div>
               <p className="text-xs text-gray-500 mb-4">
                 Prices inc. VAT. Member rates apply automatically when you select your membership tier.
-                {left !== null && <> {" "}<span className="font-semibold text-bali-grass">{left} space{left === 1 ? "" : "s"} remaining.</span></>}
+                {left !== null && <> {" "}<span className="font-semibold text-bali-grass-ink">{left} space{left === 1 ? "" : "s"} remaining.</span></>}
               </p>
               {soldOut ? (
                 <button type="button" disabled aria-disabled="true" className="inline-block bg-gray-300 text-gray-600 px-6 py-3 rounded-lg font-semibold cursor-not-allowed">

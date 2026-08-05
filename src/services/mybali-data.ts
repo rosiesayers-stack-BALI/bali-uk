@@ -188,7 +188,7 @@ export const MEMBER_EVENTS: MemberEvent[] = [
 
 export const EVENT_TYPE_COLORS: Record<string, string> = {
   "BALI National Event": "bg-bali-blue text-white",
-  "BALI Regional Event": "bg-bali-green text-white",
+  "BALI Regional Event": "bg-bali-leaf-ink text-white",
   "Flower Show": "bg-pink-500 text-white",
   "Industry Awards": "bg-amber-500 text-white",
   "Trade Show": "bg-purple-600 text-white",

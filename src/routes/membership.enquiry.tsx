@@ -104,7 +104,7 @@ function EnquiryPage() {
         {/* Hero */}
         <section
           className="relative text-white overflow-hidden"
-          style={{ background: "linear-gradient(135deg, #1D4D59 0%, #21509A 60%, #0E8B61 100%)" }}
+          style={{ background: "linear-gradient(135deg, #1D4D59 0%, #21509A 60%, #0A6B4B 100%)" }}
         >
           <div className="max-w-6xl mx-auto px-6 py-16 lg:py-20">
             <nav className="text-sm text-blue-100/80 mb-4 flex flex-wrap items-center gap-2">
@@ -114,7 +114,7 @@ function EnquiryPage() {
               <span className="opacity-60">/</span>
               <span className="text-white">Enquiry</span>
             </nav>
-            <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass">
+            <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass-light">
               Membership
             </p>
             <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-5 max-w-3xl">
@@ -136,7 +136,7 @@ function EnquiryPage() {
               <div className="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 sm:p-8">
                 {status === "ok" ? (
                   <div className="text-center py-10">
-                    <div className="w-14 h-14 rounded-full bg-emerald-100 text-bali-green mx-auto flex items-center justify-center mb-5">
+                    <div className="w-14 h-14 rounded-full bg-emerald-100 text-bali-leaf-ink mx-auto flex items-center justify-center mb-5">
                       <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
@@ -144,10 +144,10 @@ function EnquiryPage() {
                     <h2 className="text-2xl font-bold mb-3">Thanks — your enquiry is in.</h2>
                     <p className="text-slate-600 max-w-md mx-auto">
                       A member of the BALI membership team will be in touch within 48 working hours.
-                      If it's urgent, call <a className="text-bali-green font-semibold" href="tel:+442476690333">+44 (0)24 7669 0333</a>.
+                      If it's urgent, call <a className="text-bali-leaf-ink font-semibold" href="tel:+442476690333">+44 (0)24 7669 0333</a>.
                     </p>
                     <div className="mt-8 flex flex-wrap justify-center gap-3">
-                      <Link to="/join" className="bg-bali-green text-white px-5 py-3 rounded-lg font-semibold hover:bg-green-700">
+                      <Link to="/join" className="bg-bali-leaf-ink text-white px-5 py-3 rounded-lg font-semibold hover:bg-green-700">
                         Browse categories
                       </Link>
                       <Link to="/membership" className="border border-slate-300 px-5 py-3 rounded-lg font-semibold hover:bg-slate-50">
@@ -207,7 +207,7 @@ function EnquiryPage() {
                         type="checkbox"
                         name="consent"
                         required
-                        className="mt-1 h-4 w-4 rounded border-slate-300 text-bali-green focus:ring-bali-green/30"
+                        className="mt-1 h-4 w-4 rounded border-slate-300 text-bali-leaf-ink focus:ring-bali-green/30"
                       />
                       <span>
                         I agree to BALI storing my details and contacting me about membership.
@@ -225,13 +225,13 @@ function EnquiryPage() {
                       <button
                         type="submit"
                         disabled={status === "sending"}
-                        className="bg-bali-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 disabled:opacity-60 transition-all"
+                        className="bg-bali-leaf-ink text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 disabled:opacity-60 transition-all"
                       >
                         {status === "sending" ? "Sending…" : "Send enquiry"}
                       </button>
                       <span className="text-sm text-slate-500">
                         Or already know which category fits?{" "}
-                        <Link to="/join" className="text-bali-green font-semibold hover:underline">
+                        <Link to="/join" className="text-bali-leaf-ink font-semibold hover:underline">
                           Apply directly
                         </Link>
                       </span>
@@ -272,7 +272,7 @@ function EnquiryPage() {
                 </p>
                 <Link
                   to="/join"
-                  className="inline-flex items-center gap-2 bg-bali-green text-white px-4 py-2.5 rounded-lg font-semibold hover:bg-green-700"
+                  className="inline-flex items-center gap-2 bg-bali-leaf-ink text-white px-4 py-2.5 rounded-lg font-semibold hover:bg-green-700"
                 >
                   Browse categories
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">

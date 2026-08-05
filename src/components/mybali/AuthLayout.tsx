@@ -19,7 +19,7 @@ export default function AuthLayout({ title, subtitle, children, footer }: Props)
       {/* Hero band */}
       <section className="bg-gradient-to-br from-bali-slate via-bali-blue to-bali-green text-white">
         <div className="max-w-7xl mx-auto px-4 py-10 lg:py-14">
-          <p className="text-bali-grass text-xs uppercase tracking-[0.2em] font-semibold mb-2">
+          <p className="text-bali-grass-light text-xs uppercase tracking-[0.2em] font-semibold mb-2">
             My BALI · Member area
           </p>
           <h1 className="text-3xl lg:text-4xl font-bold tracking-tight">{title}</h1>
