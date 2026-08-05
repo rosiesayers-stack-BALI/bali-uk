@@ -74,7 +74,7 @@ function EventPage() {
               <span className="opacity-60">/</span>
               <span className="text-white truncate max-w-xs">{event.title}</span>
             </nav>
-            <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass-ink">{event.category}</p>
+            <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass-light">{event.category}</p>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">{event.title}</h1>
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-blue-100">
               <span><strong className="text-white">Date:</strong> {event.date_text}</span>

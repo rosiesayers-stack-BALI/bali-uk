@@ -168,7 +168,7 @@ function EventsIndex() {
       {/* hero */}
       <section className="py-16 text-white relative overflow-hidden" style={{ background: "linear-gradient(135deg, #21509A 0%, #6D4276 100%)" }}>
         <div className="max-w-6xl mx-auto px-6">
-          <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass-ink">BALI Events</p>
+          <p className="uppercase tracking-widest text-sm font-semibold mb-3 text-bali-grass-light">BALI Events</p>
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">Upcoming Events</h1>
           <p className="text-blue-100 text-lg max-w-2xl">
             National conferences, regional connects, supplier forums, webinars and training days — built for and by the UK landscape industry.
