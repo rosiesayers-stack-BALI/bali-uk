@@ -202,7 +202,7 @@ function Page() {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-2 shrink-0">
                   <a href={issuuPage(latest.issuuId)} target="_blank" rel="noopener noreferrer" className="text-xs font-bold px-3 py-2 rounded-full border border-slate-200 hover:border-bali-green hover:text-bali-leaf-ink transition-colors text-slate-600">Open on Issuu ↗</a>
-                  <button onClick={() => setModalIssue(latest)} className="text-xs font-bold px-3 py-2 rounded-full bg-bali-green text-white hover:bg-bali-slate transition-colors">Fullscreen ⤢</button>
+                  <button onClick={() => setModalIssue(latest)} className="text-xs font-bold px-3 py-2 rounded-full bg-bali-leaf-ink text-white hover:bg-bali-slate transition-colors">Fullscreen ⤢</button>
                 </div>
               </div>
 
@@ -269,7 +269,7 @@ function Page() {
                     <button
                       key={t}
                       onClick={() => setTopic(t)}
-                      className={`text-xs font-semibold px-3 py-1.5 rounded-full border transition-colors ${active ? "bg-bali-green text-white border-bali-green" : "bg-white text-slate-600 border-slate-200 hover:border-bali-green hover:text-bali-leaf-ink"}`}
+                      className={`text-xs font-semibold px-3 py-1.5 rounded-full border transition-colors ${active ? "bg-bali-leaf-ink text-white border-bali-leaf-ink" : "bg-white text-slate-600 border-slate-200 hover:border-bali-leaf-ink hover:text-bali-leaf-ink"}`}
                     >
                       {t}
                     </button>

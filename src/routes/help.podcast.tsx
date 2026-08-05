@@ -353,7 +353,7 @@ function Page() {
           {/* HOST */}
           <div className="not-prose mb-12 p-6 md:p-8 rounded-2xl bg-gradient-to-br from-emerald-50 to-white border border-emerald-100">
             <div className="flex flex-col md:flex-row gap-6 items-start">
-              <div className="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-full bg-bali-green text-white flex items-center justify-center text-3xl font-bold">RS</div>
+              <div className="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-full bg-bali-leaf-ink text-white flex items-center justify-center text-3xl font-bold">RS</div>
               <div>
                 <div className="text-xs font-bold uppercase tracking-wider text-bali-leaf-ink mb-1">Your host</div>
                 <h3 className="font-bold text-xl text-slate-900 mb-2">Rosie Sayers</h3>
@@ -387,7 +387,7 @@ function Page() {
                   <button
                     key={t}
                     onClick={() => setTheme(t)}
-                    className={`text-xs font-semibold px-3 py-1.5 rounded-full border transition-colors ${active ? "bg-bali-green text-white border-bali-green" : "bg-white text-slate-600 border-slate-200 hover:border-bali-green hover:text-bali-leaf-ink"}`}
+                    className={`text-xs font-semibold px-3 py-1.5 rounded-full border transition-colors ${active ? "bg-bali-leaf-ink text-white border-bali-leaf-ink" : "bg-white text-slate-600 border-slate-200 hover:border-bali-leaf-ink hover:text-bali-leaf-ink"}`}
                   >
                     {t}
                   </button>
@@ -401,7 +401,7 @@ function Page() {
             {filtered.map((e) => (
               <li key={e.n} className="group p-5 bg-white border border-slate-200 rounded-xl hover:border-bali-green hover:shadow-md transition-all">
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-50 text-bali-leaf-ink flex items-center justify-center group-hover:bg-bali-green group-hover:text-white transition-colors" aria-hidden>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-50 text-bali-leaf-ink flex items-center justify-center group-hover:bg-bali-leaf-ink group-hover:text-white transition-colors" aria-hidden>
                     <svg className="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                   </div>
                   <div className="min-w-0 flex-1">

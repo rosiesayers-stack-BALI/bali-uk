@@ -23,8 +23,8 @@ export default function StubPage({
 }: StubPageProps) {
   const renderCta = (cta: NonNullable<StubPageProps["ctaPrimary"]>, primary: boolean) => {
     const cls = primary
-      ? "bg-bali-green text-white hover:bg-bali-slate px-8 py-4 rounded-full font-bold transition-colors shadow-lg"
-      : "border border-bali-green text-bali-leaf-ink hover:bg-bali-green hover:text-white px-8 py-4 rounded-full font-bold transition-colors";
+      ? "bg-bali-leaf-ink text-white hover:bg-bali-slate px-8 py-4 rounded-full font-bold transition-colors shadow-lg"
+      : "border border-bali-leaf-ink text-bali-leaf-ink hover:bg-bali-leaf-ink hover:text-white px-8 py-4 rounded-full font-bold transition-colors";
     if (cta.external || cta.href.startsWith("http") || cta.href.startsWith("mailto:") || cta.href.startsWith("tel:")) {
       return (
         <a key={cta.label} href={cta.href} className={cls} target={cta.external ? "_blank" : undefined} rel={cta.external ? "noopener noreferrer" : undefined}>

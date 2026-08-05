@@ -58,7 +58,7 @@ function SponsorPage() {
             <div className="mt-8">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-white bg-bali-warm hover:bg-orange-700 transition-all hover:scale-105 shadow"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-white bg-bali-warm-ink hover:bg-orange-700 transition-all hover:scale-105 shadow"
               >
                 Contact us
               </Link>

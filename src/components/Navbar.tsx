@@ -243,7 +243,7 @@ export default function Navbar({ transparent = false }: NavbarProps) {
               </Link>
               <Link
                 to="/join"
-                className="block mt-2 bg-bali-green text-white text-center py-2 px-3 rounded font-medium"
+                className="block mt-2 bg-bali-leaf-ink text-white text-center py-2 px-3 rounded font-medium"
                 onClick={() => setMobileOpen(false)}
               >
                 Join BALI

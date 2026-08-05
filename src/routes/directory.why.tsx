@@ -52,7 +52,7 @@ function Page() {
             ))}
           </div>
           <div className="mt-12 text-center">
-            <Link to="/directory" className="inline-block bg-bali-green text-white px-8 py-4 rounded-full font-bold hover:bg-bali-slate transition-colors shadow-lg">
+            <Link to="/directory" className="inline-block bg-bali-leaf-ink text-white px-8 py-4 rounded-full font-bold hover:bg-bali-slate transition-colors shadow-lg">
               Browse the directory
             </Link>
           </div>

@@ -389,7 +389,7 @@ export default function PortalPage() {
                     <p className="font-bold text-gray-900">{/* API: membership fee */}—</p>
                   </div>
                 </div>
-                <button className="bg-bali-green hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-all">
+                <button className="bg-bali-leaf-ink hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-all">
                   Renew Membership Now
                 </button>
               </div>
@@ -410,7 +410,7 @@ export default function PortalPage() {
               <div className="space-y-3">
                 {[
                   { day: '14', month: 'Jul', title: 'National Landscape Conference 2026', loc: 'Stoneleigh Park, Warwickshire · 9am–5pm', price: '', booked: true, bg: 'bg-bali-blue', wrapCls: 'bg-blue-50 border-bali-blue/20', badgeCls: 'bg-bali-blue text-white' },
-                  { day: '22', month: 'Jul', title: 'ROLO Training Course — Online', loc: 'Webinar · 10am–1pm', price: '', booked: true, bg: 'bg-bali-green', wrapCls: 'bg-green-50 border-bali-green/20', badgeCls: 'bg-bali-green text-white' },
+                  { day: '22', month: 'Jul', title: 'ROLO Training Course — Online', loc: 'Webinar · 10am–1pm', price: '', booked: true, bg: 'bg-bali-leaf-ink', wrapCls: 'bg-green-50 border-bali-leaf-ink/20', badgeCls: 'bg-bali-leaf-ink text-white' },
                   { day: '5', month: 'Aug', title: 'Health & Safety in Landscaping', loc: 'Birmingham NEC · Full day', price: 'Members: £95 · Non-members: £145', booked: false, bg: 'bg-gray-100', wrapCls: 'bg-white border-gray-200', badgeCls: '' },
                   { day: '18', month: 'Sep', title: 'Business Development for Landscapers', loc: 'Online Webinar · 2 hours', price: 'Free for members', booked: false, bg: 'bg-gray-100', wrapCls: 'bg-white border-gray-200', badgeCls: '' },
                 ].map((ev) => (
@@ -500,7 +500,7 @@ export default function PortalPage() {
                   </table>
                 </div>
                 <div className="mt-5 flex gap-3">
-                  <button className="bg-bali-flow hover:bg-cyan-700 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-all">Apply for New Card</button>
+                  <button className="bg-bali-flow-ink hover:bg-cyan-700 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-all">Apply for New Card</button>
                   <button className="border border-gray-300 text-gray-600 hover:bg-gray-50 px-5 py-2.5 rounded-lg text-sm transition-all">Check Qualification</button>
                 </div>
               </div>

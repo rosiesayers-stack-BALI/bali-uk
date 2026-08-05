@@ -143,7 +143,7 @@ function AppDetailBody({
                 </button>
               )}
               <button onClick={() => { move.mutate("Approved"); showToast("Application approved."); }}
-                className="inline-flex items-center gap-1.5 bg-bali-green text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-emerald-700">
+                className="inline-flex items-center gap-1.5 bg-bali-leaf-ink text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-emerald-700">
                 <Check className="w-4 h-4" /> Approve
               </button>
               <button onClick={() => { move.mutate("Rejected"); showToast("Application rejected."); }}

@@ -143,7 +143,7 @@ function FeesPage() {
               what documents you'll need.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              <Link to="/membership/enquiry" className="bg-bali-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700">
+              <Link to="/membership/enquiry" className="bg-bali-leaf-ink text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700">
                 Send an enquiry
               </Link>
               <Link to="/join" className="border border-slate-300 px-6 py-3 rounded-lg font-semibold hover:bg-slate-50">

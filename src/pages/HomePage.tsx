@@ -27,7 +27,7 @@ const slides = [
     title: 'Free HR &\nHealth Checks',
     body: 'Access Free HR & Health Checks today as a member.',
     ctas: [
-      { label: 'Find out more about member benefits', href: '/membership', style: 'bg-bali-grass hover:bg-green-600 text-white' },
+      { label: 'Find out more about member benefits', href: '/membership', style: 'bg-bali-grass-ink hover:bg-green-600 text-white' },
     ],
   },
   {
@@ -38,7 +38,7 @@ const slides = [
     title: 'Join BALI today:\nthe gold standard in landscaping',
     body: 'Access Accredited Logo, Technical Support, Events, Training, and Exclusive Discounts.',
     ctas: [
-      { label: 'Join today', href: '/join', style: 'bg-bali-green hover:bg-green-700 text-white' },
+      { label: 'Join today', href: '/join', style: 'bg-bali-leaf-ink hover:bg-green-700 text-white' },
     ],
   },
   {
@@ -269,7 +269,7 @@ export default function HomePage() {
               </select>
               <Link
                 to={`/search?q=${encodeURIComponent(searchKeyword)}&postcode=${encodeURIComponent(searchPostcode)}&projectType=${encodeURIComponent(searchProjectType)}&category=${encodeURIComponent(searchType)}`}
-                className="md:col-span-1 bg-bali-green hover:bg-green-700 text-white px-4 py-3 rounded-lg font-semibold transition-all hover:scale-105 flex items-center justify-center gap-2"
+                className="md:col-span-1 bg-bali-leaf-ink hover:bg-green-700 text-white px-4 py-3 rounded-lg font-semibold transition-all hover:scale-105 flex items-center justify-center gap-2"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />

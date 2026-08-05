@@ -124,7 +124,7 @@ function HelpHub() {
           <div className="max-w-4xl mx-auto px-6 text-center">
             <h2 className="font-bold text-2xl md:text-3xl text-bali-blue mb-4">Can't find what you're looking for?</h2>
             <p className="text-slate-600 mb-6">Our membership and advice teams respond to every enquiry within 48 hours.</p>
-            <Link to="/contact" className="inline-block bg-bali-green text-white px-8 py-4 rounded-full font-bold hover:bg-bali-slate transition-colors shadow-lg">Contact the team</Link>
+            <Link to="/contact" className="inline-block bg-bali-leaf-ink text-white px-8 py-4 rounded-full font-bold hover:bg-bali-slate transition-colors shadow-lg">Contact the team</Link>
           </div>
         </section>
       </main>

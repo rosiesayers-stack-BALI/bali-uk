@@ -81,7 +81,7 @@ function BenefitCard({ benefit, tone }: { benefit: Benefit; tone: 'priority' | '
         : 'border-gray-200 bg-gray-50'
   const badgeCls =
     tone === 'priority'
-      ? 'bg-bali-green text-white'
+      ? 'bg-bali-leaf-ink text-white'
       : tone === 'available'
         ? 'bg-bali-blue/10 text-bali-blue'
         : 'bg-gray-200 text-gray-600'

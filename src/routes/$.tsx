@@ -139,7 +139,7 @@ function MembershipCTA() {
               </Link>
               <Link
                 to="/membership/enquiry"
-                className="bg-bali-green hover:bg-green-700 text-white px-7 py-3.5 rounded-lg font-bold transition-all hover:scale-105 shadow-lg"
+                className="bg-bali-leaf-ink hover:bg-green-700 text-white px-7 py-3.5 rounded-lg font-bold transition-all hover:scale-105 shadow-lg"
               >
                 Make an enquiry
               </Link>
@@ -374,7 +374,7 @@ function AdvertCTA({ themeKey }: { themeKey: Theme }) {
           </Link>
           <Link
             to="mailto:joanna.pieprzak@bali.org.uk?subject=BALI%20advertising%20enquiry"
-            className="bg-bali-green hover:bg-green-700 text-white px-7 py-3 rounded-lg font-bold transition-all hover:scale-105"
+            className="bg-bali-leaf-ink hover:bg-green-700 text-white px-7 py-3 rounded-lg font-bold transition-all hover:scale-105"
           >
             Enquire now
           </Link>
@@ -774,7 +774,7 @@ function RichPage({ path, content }: { path: string; content: PageContent }) {
               </Link>
               <Link
                 to="/join"
-                className="bg-bali-green hover:bg-green-700 text-white px-7 py-3 rounded-lg font-bold transition-all hover:scale-105"
+                className="bg-bali-leaf-ink hover:bg-green-700 text-white px-7 py-3 rounded-lg font-bold transition-all hover:scale-105"
               >
                 Join Today
               </Link>

@@ -341,7 +341,7 @@ function JoinPage() {
                 }`;
                 const badge = (
                   <div className={`inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider mb-5 ${
-                    c.featured ? "bg-bali-green text-white" : "bg-slate-100 text-slate-600"
+                    c.featured ? "bg-bali-leaf-ink text-white" : "bg-slate-100 text-slate-600"
                   }`}>{c.badge}</div>
                 );
                 const body = (

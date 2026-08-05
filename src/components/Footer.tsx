@@ -133,7 +133,7 @@ export default function Footer() {
             </p>
             <Link
               to="/contact"
-              className="inline-block bg-bali-green hover:bg-green-700 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-all hover:scale-105"
+              className="inline-block bg-bali-leaf-ink hover:bg-green-700 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-all hover:scale-105"
             >
               Make Enquiry
             </Link>

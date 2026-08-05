@@ -108,8 +108,8 @@ export default function HelpPage({
             <h2 className="font-bold text-xl text-bali-blue mb-2">Need to talk to someone?</h2>
             <p className="text-slate-600 mb-5">Our team responds to every member enquiry within 48 hours.</p>
             <div className="flex flex-wrap gap-3">
-              <Link to="/contact" className="bg-bali-green text-white px-6 py-3 rounded-full font-bold hover:bg-bali-slate transition-colors">Contact the team</Link>
-              <a href="mailto:contact@bali.org.uk" className="border border-bali-green text-bali-leaf-ink px-6 py-3 rounded-full font-bold hover:bg-bali-green hover:text-white transition-colors">Email contact@bali.org.uk</a>
+              <Link to="/contact" className="bg-bali-leaf-ink text-white px-6 py-3 rounded-full font-bold hover:bg-bali-slate transition-colors">Contact the team</Link>
+              <a href="mailto:contact@bali.org.uk" className="border border-bali-leaf-ink text-bali-leaf-ink px-6 py-3 rounded-full font-bold hover:bg-bali-leaf-ink hover:text-white transition-colors">Email contact@bali.org.uk</a>
             </div>
           </div>
         </section>

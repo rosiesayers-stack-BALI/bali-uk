@@ -168,14 +168,14 @@ function CompanyProfilePage() {
                 {company.websiteUrl ? (
                   <button
                     onClick={enquire}
-                    className="w-full bg-bali-green hover:bg-emerald-700 text-white font-bold px-6 py-3 rounded-lg text-sm transition-colors"
+                    className="w-full bg-bali-leaf-ink hover:bg-emerald-700 text-white font-bold px-6 py-3 rounded-lg text-sm transition-colors"
                   >
                     Enquire →
                   </button>
                 ) : (
                   <Link
                     to="/contact"
-                    className="block text-center w-full bg-bali-green hover:bg-emerald-700 text-white font-bold px-6 py-3 rounded-lg text-sm transition-colors"
+                    className="block text-center w-full bg-bali-leaf-ink hover:bg-emerald-700 text-white font-bold px-6 py-3 rounded-lg text-sm transition-colors"
                   >
                     Enquire →
                   </Link>

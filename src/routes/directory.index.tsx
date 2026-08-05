@@ -82,7 +82,7 @@ function DirectoryHub() {
             <p className="text-slate-600 max-w-2xl mx-auto mb-8">
               Accredited members commit to professional standards, fair contracts and quality workmanship — backed by an independent dispute resolution service.
             </p>
-            <Link to="/directory/why" className="inline-block bg-bali-green text-white px-8 py-4 rounded-full font-bold hover:bg-bali-slate transition-colors shadow-lg">
+            <Link to="/directory/why" className="inline-block bg-bali-leaf-ink text-white px-8 py-4 rounded-full font-bold hover:bg-bali-slate transition-colors shadow-lg">
               How we vet our members
             </Link>
           </div>

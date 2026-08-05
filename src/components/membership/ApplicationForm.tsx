@@ -538,7 +538,7 @@ export default function ApplicationForm({ config: rawConfig }: Props) {
         <button
           type="submit"
           disabled={submitting}
-          className="bg-bali-green text-white px-10 py-4 rounded-full font-bold hover:bg-emerald-700 transition-colors shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
+          className="bg-bali-leaf-ink text-white px-10 py-4 rounded-full font-bold hover:bg-emerald-700 transition-colors shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
         >
           {submitting ? "Submitting…" : "Submit application"}
         </button>

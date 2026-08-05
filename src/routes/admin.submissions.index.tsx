@@ -179,7 +179,7 @@ function SubmissionsPage() {
                           <button
                             disabled={busy}
                             onClick={() => withBusy(s.id, () => approveNewsSubmission(s, note))}
-                            className="bg-bali-green hover:bg-emerald-700 text-white px-4 py-2 rounded-lg text-sm font-semibold disabled:opacity-60 inline-flex items-center gap-1"
+                            className="bg-bali-leaf-ink hover:bg-emerald-700 text-white px-4 py-2 rounded-lg text-sm font-semibold disabled:opacity-60 inline-flex items-center gap-1"
                           >
                             {busy ? <Loader2 className="w-4 h-4 animate-spin" /> : <CheckCircle2 className="w-4 h-4" />}
                             Approve & publish

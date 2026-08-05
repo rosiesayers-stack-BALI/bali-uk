@@ -127,7 +127,7 @@ export default function DashboardShell({ children }: { children: ReactNode }) {
                 placeholder="Search My BALI"
                 className="flex-1 min-w-0 bg-transparent px-3 py-2.5 text-sm text-white placeholder:text-white/60 focus:outline-none"
               />
-              <button type="submit" className="bg-bali-grass hover:bg-bali-green text-white text-sm font-semibold px-4 transition-colors">
+              <button type="submit" className="bg-bali-grass-ink hover:bg-bali-leaf-ink text-white text-sm font-semibold px-4 transition-colors">
                 Search
               </button>
             </div>

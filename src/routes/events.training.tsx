@@ -216,7 +216,7 @@ function TrainingPage() {
                       />
                       <div className="absolute top-3 left-3 flex gap-1.5">
                         <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full bg-white/95 text-slate-700">{cls}</span>
-                        <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full ${vt === "Online" ? "bg-bali-flow/95 text-white" : "bg-bali-warm/95 text-white"}`}>{vt}</span>
+                        <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full ${vt === "Online" ? "bg-bali-flow-ink/95 text-white" : "bg-bali-warm-ink/95 text-white"}`}>{vt}</span>
                       </div>
                     </div>
                     <div className="p-4 flex-1 flex flex-col">
@@ -253,7 +253,7 @@ function TrainingPage() {
               <div className="text-center mt-10">
                 <button
                   onClick={() => setVisible((v) => v + PAGE_SIZE)}
-                  className="px-8 py-3 rounded-full bg-bali-warm text-white font-bold text-sm hover:bg-bali-purple transition-colors"
+                  className="px-8 py-3 rounded-full bg-bali-warm-ink text-white font-bold text-sm hover:bg-bali-purple transition-colors"
                 >
                   Load more ({filtered.length - visible} remaining)
                 </button>
@@ -272,8 +272,8 @@ function TrainingPage() {
               </p>
             </div>
             <div className="flex flex-col gap-3">
-              <a href="https://www.bali.org.uk/liss-cscs/" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-full bg-bali-warm text-white font-bold text-sm text-center hover:bg-bali-purple transition-colors">LISS smartcards →</a>
-              <Link to="/contact" className="px-6 py-3 rounded-full border-2 border-bali-warm text-bali-warm-ink font-bold text-sm text-center hover:bg-bali-warm hover:text-white transition-colors">Become a training provider</Link>
+              <a href="https://www.bali.org.uk/liss-cscs/" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-full bg-bali-warm-ink text-white font-bold text-sm text-center hover:bg-bali-purple transition-colors">LISS smartcards →</a>
+              <Link to="/contact" className="px-6 py-3 rounded-full border-2 border-bali-warm-ink text-bali-warm-ink font-bold text-sm text-center hover:bg-bali-warm-ink hover:text-white transition-colors">Become a training provider</Link>
             </div>
           </div>
         </section>

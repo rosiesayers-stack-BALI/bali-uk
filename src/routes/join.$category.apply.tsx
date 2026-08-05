@@ -107,7 +107,7 @@ function ApplyPage() {
                     key={p.href}
                     href={p.href}
                     download
-                    className="inline-flex items-center justify-center gap-2 bg-bali-green text-white px-5 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition"
+                    className="inline-flex items-center justify-center gap-2 bg-bali-leaf-ink text-white px-5 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition"
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round">
                       <path d="M12 4v12m0 0l-4-4m4 4l4-4M4 20h16" />

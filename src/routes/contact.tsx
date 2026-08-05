@@ -394,7 +394,7 @@ function ContactPage() {
           <div className="flex gap-3 sm:justify-end">
             <Link
               to="/join"
-              className="bg-bali-green text-white px-5 py-3 rounded-lg font-medium hover:bg-green-700 transition-colors"
+              className="bg-bali-leaf-ink text-white px-5 py-3 rounded-lg font-medium hover:bg-green-700 transition-colors"
             >
               Join BALI
             </Link>

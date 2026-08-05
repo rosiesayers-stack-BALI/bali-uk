@@ -149,7 +149,7 @@ function SearchPage() {
               <p className="text-sm text-slate-600 max-w-md mx-auto mb-6">
                 Try broadening your search — clear the postcode, remove the project type, or try a shorter keyword.
               </p>
-              <button onClick={clearAll} className="bg-bali-green text-white px-5 py-2.5 rounded-full font-semibold hover:bg-bali-slate transition-colors">
+              <button onClick={clearAll} className="bg-bali-leaf-ink text-white px-5 py-2.5 rounded-full font-semibold hover:bg-bali-slate transition-colors">
                 Reset search
               </button>
             </div>

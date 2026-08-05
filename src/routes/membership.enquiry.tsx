@@ -147,7 +147,7 @@ function EnquiryPage() {
                       If it's urgent, call <a className="text-bali-leaf-ink font-semibold" href="tel:+442476690333">+44 (0)24 7669 0333</a>.
                     </p>
                     <div className="mt-8 flex flex-wrap justify-center gap-3">
-                      <Link to="/join" className="bg-bali-green text-white px-5 py-3 rounded-lg font-semibold hover:bg-green-700">
+                      <Link to="/join" className="bg-bali-leaf-ink text-white px-5 py-3 rounded-lg font-semibold hover:bg-green-700">
                         Browse categories
                       </Link>
                       <Link to="/membership" className="border border-slate-300 px-5 py-3 rounded-lg font-semibold hover:bg-slate-50">
@@ -225,7 +225,7 @@ function EnquiryPage() {
                       <button
                         type="submit"
                         disabled={status === "sending"}
-                        className="bg-bali-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 disabled:opacity-60 transition-all"
+                        className="bg-bali-leaf-ink text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 disabled:opacity-60 transition-all"
                       >
                         {status === "sending" ? "Sending…" : "Send enquiry"}
                       </button>
@@ -272,7 +272,7 @@ function EnquiryPage() {
                 </p>
                 <Link
                   to="/join"
-                  className="inline-flex items-center gap-2 bg-bali-green text-white px-4 py-2.5 rounded-lg font-semibold hover:bg-green-700"
+                  className="inline-flex items-center gap-2 bg-bali-leaf-ink text-white px-4 py-2.5 rounded-lg font-semibold hover:bg-green-700"
                 >
                   Browse categories
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">

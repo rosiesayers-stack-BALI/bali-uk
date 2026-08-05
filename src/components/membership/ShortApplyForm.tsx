@@ -318,7 +318,7 @@ export default function ShortApplyForm({ config }: Props) {
             <button
               type="submit"
               disabled={submitting}
-              className="inline-flex items-center justify-center bg-bali-green text-white px-7 py-3.5 rounded-lg font-bold hover:bg-emerald-700 transition disabled:opacity-60"
+              className="inline-flex items-center justify-center bg-bali-leaf-ink text-white px-7 py-3.5 rounded-lg font-bold hover:bg-emerald-700 transition disabled:opacity-60"
             >
               {submitting ? "Sending…" : "Send to membership team"}
             </button>
