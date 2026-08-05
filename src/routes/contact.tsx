@@ -129,7 +129,7 @@ function ContactPage() {
         className="relative text-white"
         style={{
           backgroundImage:
-            "linear-gradient(135deg, #1D4D59 0%, #21509A 60%, #0E8B61 100%)",
+            "linear-gradient(135deg, #1D4D59 0%, #21509A 60%, #0A6B4B 100%)",
         }}
       >
         <div className="max-w-7xl mx-auto px-4 py-14 sm:py-16">

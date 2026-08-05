@@ -9,7 +9,7 @@ import AdBanner from '../components/ads/AdBanner'
 // Matches the four banners used on bali.org.uk
 const slides = [
   {
-    bg: 'linear-gradient(135deg, #0E8B61 0%, #1D4D59 100%)',
+    bg: 'linear-gradient(135deg, #0A6B4B 0%, #1D4D59 100%)',
     image: 'https://www.bali.org.uk/public/banners/large_private-estate-pwp-banner-crop.jpeg',
     eyebrow: 'Now Available',
     eyebrowColor: 'text-bali-grass-light',
@@ -31,7 +31,7 @@ const slides = [
     ],
   },
   {
-    bg: 'linear-gradient(135deg, #1D4D59 0%, #21509A 60%, #0E8B61 100%)',
+    bg: 'linear-gradient(135deg, #1D4D59 0%, #21509A 60%, #0A6B4B 100%)',
     image: 'https://www.bali.org.uk/public/banners/large_homepage-banner-3.jpeg',
     eyebrow: 'Celebrating over 50 Years',
     eyebrowColor: 'text-bali-grass-light',
@@ -42,7 +42,7 @@ const slides = [
     ],
   },
   {
-    bg: 'linear-gradient(135deg, #1D4D59 0%, #0E8B61 100%)',
+    bg: 'linear-gradient(135deg, #1D4D59 0%, #0A6B4B 100%)',
     image: 'https://www.bali.org.uk/public/banners/large_homepage-banner-1.jpeg',
     eyebrow: 'Find a Professional',
     eyebrowColor: 'text-bali-grass-light',

@@ -89,7 +89,7 @@ function CompanyProfilePage() {
     <div className="min-h-screen bg-white flex flex-col">
       <Navbar />
       <main className="flex-1">
-        <section className="text-white" style={{ background: "linear-gradient(135deg, #1D4D59 0%, #0E8B61 100%)" }}>
+        <section className="text-white" style={{ background: "linear-gradient(135deg, #1D4D59 0%, #0A6B4B 100%)" }}>
           <div className="max-w-5xl mx-auto px-6 py-12 lg:py-16">
             <Link to="/directory/search" className="inline-flex items-center gap-2 text-emerald-100 text-sm font-semibold hover:underline mb-6">
               <ArrowLeft className="w-4 h-4" /> Back to directory search

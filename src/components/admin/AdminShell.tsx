@@ -117,7 +117,7 @@ export function AdminShell({ children, email }: { children: ReactNode; email?: s
       {/* Hero — mirrors /my-bali chrome */}
       <section
         className="relative text-white overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #1D4D59 0%, #21509A 55%, #0E8B61 100%)" }}
+        style={{ background: "linear-gradient(135deg, #1D4D59 0%, #21509A 55%, #0A6B4B 100%)" }}
       >
         <div className="relative max-w-7xl mx-auto px-4 py-8 lg:py-10 grid gap-6 md:grid-cols-[auto_minmax(0,1fr)_auto] md:items-center">
           <div className="hidden sm:flex items-center justify-center bg-white/95 rounded-xl shadow-lg p-3 h-20 w-40 shrink-0">

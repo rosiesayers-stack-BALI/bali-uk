@@ -185,7 +185,7 @@ function JoinPage() {
       <Navbar />
       <main className="flex-1">
         {/* Hero */}
-        <section className="relative text-white overflow-hidden" style={{ background: "linear-gradient(135deg, #0E8B61 0%, #1D4D59 100%)" }}>
+        <section className="relative text-white overflow-hidden" style={{ background: "linear-gradient(135deg, #0A6B4B 0%, #1D4D59 100%)" }}>
           <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28 grid lg:grid-cols-2 items-center gap-16">
             <div className="relative z-10">
               <div className="flex items-center gap-3 text-emerald-200 font-semibold tracking-widest uppercase text-xs mb-6">
@@ -441,7 +441,7 @@ function JoinPage() {
         {/* Final CTA */}
         <section
           className="relative overflow-hidden py-20 lg:py-24"
-          style={{ background: "linear-gradient(135deg, #1D4D59 0%, #0E8B61 100%)" }}
+          style={{ background: "linear-gradient(135deg, #1D4D59 0%, #0A6B4B 100%)" }}
         >
           <div className="max-w-4xl mx-auto px-6 text-center relative z-10 text-white">
             <h2 className="font-bold text-3xl md:text-5xl mb-6">Ready to join?</h2>

@@ -17,7 +17,7 @@ export const Route = createFileRoute("/events/sponsor")({
 });
 
 function SponsorPage() {
-  const gradient = "linear-gradient(135deg, #CF5E2C 0%, #6D4276 100%)";
+  const gradient = "linear-gradient(135deg, #A2431C 0%, #6D4276 100%)";
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Navbar />

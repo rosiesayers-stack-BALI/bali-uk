@@ -70,7 +70,7 @@ export default function LoginPage() {
         {/* Left panel */}
         <div
           className="hidden lg:flex flex-col justify-between w-1/2 p-12 relative overflow-hidden"
-          style={{ background: 'linear-gradient(150deg, #21509A 0%, #1D4D59 60%, #0E8B61 100%)' }}
+          style={{ background: 'linear-gradient(150deg, #21509A 0%, #1D4D59 60%, #0A6B4B 100%)' }}
         >
           <div
             className="absolute inset-0 opacity-10"

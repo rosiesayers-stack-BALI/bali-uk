@@ -24,7 +24,7 @@ function Page() {
     <div className="min-h-screen bg-white text-slate-900 flex flex-col">
       <Navbar />
       <main className="flex-1">
-        <section className="text-white" style={{ background: "linear-gradient(135deg, #1D4D59 0%, #0E8B61 100%)" }}>
+        <section className="text-white" style={{ background: "linear-gradient(135deg, #1D4D59 0%, #0A6B4B 100%)" }}>
           <div className="max-w-6xl mx-auto px-6 py-16 lg:py-20">
             <div className="text-emerald-200 font-semibold tracking-widest uppercase text-xs mb-4">Landscape Directory</div>
             <h1 className="font-bold text-4xl md:text-5xl mb-4">Find a BALI Accredited Contractor</h1>

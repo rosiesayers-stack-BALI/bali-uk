@@ -480,7 +480,7 @@ function Page() {
           </p>
 
           {/* NEWSLETTER */}
-          <div className="not-prose mb-6 p-6 md:p-8 rounded-2xl text-white" style={{ background: "linear-gradient(135deg, #1D4D59 0%, #0E8B61 100%)" }}>
+          <div className="not-prose mb-6 p-6 md:p-8 rounded-2xl text-white" style={{ background: "linear-gradient(135deg, #1D4D59 0%, #0A6B4B 100%)" }}>
             <div className="grid md:grid-cols-2 gap-6 items-center">
               <div>
                 <h3 className="font-bold text-xl md:text-2xl mb-2">Get new episodes by email</h3>

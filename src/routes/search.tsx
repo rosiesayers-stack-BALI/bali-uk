@@ -58,7 +58,7 @@ function SearchPage() {
       <Navbar />
       <main className="flex-1">
         {/* Header + search form */}
-        <section className="text-white" style={{ background: "linear-gradient(135deg, #1D4D59 0%, #0E8B61 100%)" }}>
+        <section className="text-white" style={{ background: "linear-gradient(135deg, #1D4D59 0%, #0A6B4B 100%)" }}>
           <div className="max-w-6xl mx-auto px-6 py-12 lg:py-16">
             <h1 className="font-bold text-3xl md:text-4xl mb-2">Search BALI</h1>
             <p className="text-emerald-50/90 mb-8">Find accredited members, news, projects and events.</p>

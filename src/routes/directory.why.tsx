@@ -32,7 +32,7 @@ function Page() {
     <div className="min-h-screen bg-white flex flex-col">
       <Navbar />
       <main className="flex-1">
-        <section className="text-white" style={{ background: "linear-gradient(135deg, #1D4D59 0%, #0E8B61 100%)" }}>
+        <section className="text-white" style={{ background: "linear-gradient(135deg, #1D4D59 0%, #0A6B4B 100%)" }}>
           <div className="max-w-5xl mx-auto px-6 py-20 lg:py-24">
             <div className="text-emerald-200 font-semibold tracking-widest uppercase text-xs mb-6">Quality you can trust</div>
             <h1 className="font-bold text-4xl md:text-6xl mb-6">{TITLE}</h1>

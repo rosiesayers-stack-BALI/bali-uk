@@ -104,7 +104,7 @@ function EnquiryPage() {
         {/* Hero */}
         <section
           className="relative text-white overflow-hidden"
-          style={{ background: "linear-gradient(135deg, #1D4D59 0%, #21509A 60%, #0E8B61 100%)" }}
+          style={{ background: "linear-gradient(135deg, #1D4D59 0%, #21509A 60%, #0A6B4B 100%)" }}
         >
           <div className="max-w-6xl mx-auto px-6 py-16 lg:py-20">
             <nav className="text-sm text-blue-100/80 mb-4 flex flex-wrap items-center gap-2">

@@ -163,7 +163,7 @@ function renderApplicationEmail(category: string, payload: Record<string, unknow
 
   const uploadList = uploads.length
     ? `<ul style="padding-left:20px;color:#0f172a">${uploads
-        .map((u) => `<li><strong>${escapeHtml(u.label)}</strong> — <a href="${escapeHtml(u.signedUrl)}" style="color:#0E8B61">Download</a> <span style="color:#64748b;font-size:12px">(link valid 14 days)</span></li>`)
+        .map((u) => `<li><strong>${escapeHtml(u.label)}</strong> — <a href="${escapeHtml(u.signedUrl)}" style="color:#0A6B4B">Download</a> <span style="color:#64748b;font-size:12px">(link valid 14 days)</span></li>`)
         .join("")}</ul>`
     : '<p style="color:#64748b">No files uploaded — applicant may send separately.</p>';
 
@@ -171,7 +171,7 @@ function renderApplicationEmail(category: string, payload: Record<string, unknow
 
   return `<!doctype html><html><body style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f8fafc;margin:0;padding:24px;color:#0f172a">
 <div style="max-width:720px;margin:0 auto;background:#fff;border-radius:12px;padding:32px;border:1px solid #e2e8f0">
-<h1 style="margin:0 0 4px;color:#0E8B61;font-size:22px">New membership application</h1>
+<h1 style="margin:0 0 4px;color:#0A6B4B;font-size:22px">New membership application</h1>
 <p style="margin:0 0 24px;color:#64748b;font-size:14px">Category: <strong style="color:#0f172a">${escapeHtml(category)}</strong></p>
 
 ${renderSection("Company information", [

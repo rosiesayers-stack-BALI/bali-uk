@@ -117,7 +117,7 @@ function TrainingPage() {
       <Navbar />
 
       {/* HERO */}
-      <section className="relative text-white" style={{ background: "linear-gradient(135deg, #CF5E2C 0%, #6D4276 100%)" }}>
+      <section className="relative text-white" style={{ background: "linear-gradient(135deg, #A2431C 0%, #6D4276 100%)" }}>
         <div className="max-w-6xl mx-auto px-6 py-16 sm:py-20">
           <nav className="text-sm text-white/80 mb-4 flex flex-wrap items-center gap-2">
             <Link to="/" className="hover:text-white">Home</Link>

@@ -62,7 +62,7 @@ function MediaIndex() {
     <div className="min-h-screen bg-white text-slate-900 flex flex-col">
       <Navbar />
       <main className="flex-1">
-        <section className="text-white" style={{ background: "linear-gradient(135deg, #1D4D59 0%, #0E8B61 100%)" }}>
+        <section className="text-white" style={{ background: "linear-gradient(135deg, #1D4D59 0%, #0A6B4B 100%)" }}>
           <div className="max-w-6xl mx-auto px-6 py-20 lg:py-24">
             <div className="flex items-center gap-3 text-emerald-200 font-semibold tracking-widest uppercase text-xs mb-6">
               <span className="h-px w-8 bg-emerald-300" />

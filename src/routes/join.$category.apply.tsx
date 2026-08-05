@@ -70,7 +70,7 @@ function ApplyPage() {
     <div className="min-h-screen bg-slate-50 flex flex-col">
       <Navbar />
       <main className="flex-1">
-        <section className="text-white" style={{ background: "linear-gradient(135deg, #0E8B61 0%, #1D4D59 100%)" }}>
+        <section className="text-white" style={{ background: "linear-gradient(135deg, #0A6B4B 0%, #1D4D59 100%)" }}>
           <div className="max-w-4xl mx-auto px-6 py-14">
             <Link to="/join" className="inline-flex items-center gap-2 text-emerald-200 text-sm font-semibold mb-4 hover:text-white">
               ← Back to membership categories

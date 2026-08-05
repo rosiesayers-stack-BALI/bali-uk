@@ -48,14 +48,14 @@ const themes: Record<
   { gradient: string; accent: string; accentBg: string; iconColor: string; btn: string }
 > = {
   blue: {
-    gradient: "linear-gradient(135deg, #1D4D59 0%, #21509A 60%, #0E8B61 100%)",
+    gradient: "linear-gradient(135deg, #1D4D59 0%, #21509A 60%, #0A6B4B 100%)",
     accent: "text-bali-blue",
     accentBg: "bg-bali-blue/10",
     iconColor: "text-bali-blue",
     btn: "bg-bali-blue hover:bg-blue-800",
   },
   green: {
-    gradient: "linear-gradient(135deg, #0E8B61 0%, #1D4D59 100%)",
+    gradient: "linear-gradient(135deg, #0A6B4B 0%, #1D4D59 100%)",
     accent: "text-bali-leaf-ink",
     accentBg: "bg-bali-green/10",
     iconColor: "text-bali-leaf-ink",
@@ -69,14 +69,14 @@ const themes: Record<
     btn: "bg-bali-slate hover:bg-slate-800",
   },
   flow: {
-    gradient: "linear-gradient(135deg, #30A1C0 0%, #21509A 100%)",
+    gradient: "linear-gradient(135deg, #1F6E86 0%, #21509A 100%)",
     accent: "text-bali-flow-ink",
     accentBg: "bg-bali-flow/10",
     iconColor: "text-bali-flow-ink",
     btn: "bg-bali-flow hover:bg-cyan-700",
   },
   warm: {
-    gradient: "linear-gradient(135deg, #CF5E2C 0%, #6D4276 100%)",
+    gradient: "linear-gradient(135deg, #A2431C 0%, #6D4276 100%)",
     accent: "text-bali-warm-ink",
     accentBg: "bg-bali-warm/10",
     iconColor: "text-bali-warm-ink",
@@ -111,7 +111,7 @@ function SplatPage() {
 
 function MembershipCTA() {
   return (
-    <section className="relative overflow-hidden text-white py-20" style={{ background: "linear-gradient(135deg, #0E8B61 0%, #1D4D59 60%, #21509A 100%)" }}>
+    <section className="relative overflow-hidden text-white py-20" style={{ background: "linear-gradient(135deg, #0A6B4B 0%, #1D4D59 60%, #21509A 100%)" }}>
       <div
         className="absolute inset-0 opacity-10 pointer-events-none"
         style={{
