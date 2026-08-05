@@ -33,13 +33,38 @@
 @theme {
   --font-sans: "Roboto", ui-sans-serif, system-ui, sans-serif;
 
+  /* BALI Brand Guidelines (April 2021) — exact brand values.
+     Use for fills, borders, large display type (>=24px, or >=18.66px bold). */
   --color-bali-blue: #21509A;
-  --color-bali-green: #0E8B61;
+  --color-bali-green: #0E8B61;   /* Leaf */
   --color-bali-grass: #66A23F;
   --color-bali-slate: #1D4D59;
-  --color-bali-flow: #30A1C0;
-  --color-bali-warm: #CF5E2C;
-  --color-bali-purple: #6D4276;
+  --color-bali-flow: #30A1C0;    /* Flowing */
+  --color-bali-warm: #CF5E2C;    /* Warming */
+  --color-bali-purple: #6D4276;  /* Designer */
+  --color-bali-cool: #27717A;
+  --color-bali-aster: #28A49E;
+  --color-bali-rose: #E26F89;
+  --color-bali-hydrangea: #3B62AE;
+  --color-bali-begonia: #BA282E;
+
+  /* WCAG AA accessible variants (same hue family, brand-compatible).
+     *-ink  → normal-size text / white-on-colour fills on LIGHT backgrounds (>=4.5:1 vs #fff)
+     *-light → text on Slate / Blue DARK backgrounds (>=4.5:1 vs #1D4D59 and #21509A) */
+  --color-bali-grass-ink: #4A7A2C;   /* 5.11:1 on white */
+  --color-bali-leaf-ink: #0A6B4B;    /* 6.53:1 on white */
+  --color-bali-flow-ink: #1F6E86;    /* 5.78:1 on white */
+  --color-bali-warm-ink: #A2431C;    /* 6.26:1 on white */
+  --color-bali-aster-ink: #1C7873;   /* 5.27:1 on white */
+  --color-bali-rose-ink: #B23A54;    /* 5.79:1 on white */
+
+  --color-bali-grass-light: #A8D98A; /* 5.74:1 on Slate, 4.84:1 on Blue */
+  --color-bali-leaf-light: #7ED3AE;  /* 5.23:1 on Slate */
+  --color-bali-flow-light: #8ED6E8;  /* 5.73:1 on Slate */
+  --color-bali-warm-light: #F0A579;  /* 4.59:1 on Slate */
+  --color-bali-rose-light: #F3B6C4;  /* 5.45:1 on Slate */
+  --color-bali-aster-light: #8FDDD9; /* 5.98:1 on Slate */
+
 
   --animate-fade-up: fadeUp 0.7s ease-out both;
   --animate-fade-in: fadeIn 0.6s ease-out both;
